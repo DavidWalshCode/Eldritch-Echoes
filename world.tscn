@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://brusqmphxxu8w"]
+
+[ext_resource type="PackedScene" uid="uid://b0urauey2ewe4" path="res://environment/rock_boulder.tscn" id="1_lvo3l"]
+[ext_resource type="PackedScene" uid="uid://dk66ke1dwnd6b" path="res://environment/rock_cliff.tscn" id="2_ta23l"]
+[ext_resource type="PackedScene" uid="uid://bobao0xuuru2j" path="res://environment/rock_pillar.tscn" id="3_yanjp"]
+[ext_resource type="PackedScene" uid="uid://dawb3jr15822j" path="res://environment/sand.tscn" id="4_74k3i"]
+[ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="5_0tnbv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7yqkd"]
+
+[sub_resource type="Sky" id="Sky_jumne"]
+sky_material = SubResource("ProceduralSkyMaterial_7yqkd")
+
+[sub_resource type="Environment" id="Environment_ublyh"]
+background_mode = 2
+sky = SubResource("Sky_jumne")
+
+[node name="World" type="Node3D"]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="RockBoulder" parent="Environment" instance=ExtResource("1_lvo3l")]
+transform = Transform3D(0.480102, 0.28263, -0.830435, -0.505573, 0.862782, 0.00135099, 0.716867, 0.419197, 0.557114, -10.6318, 1.46719, 29.702)
+
+[node name="RockBoulder2" parent="Environment" instance=ExtResource("1_lvo3l")]
+transform = Transform3D(0.266801, 0.963752, 0, -0.963752, 0.266801, 0, 0, 0, 1, -17.2476, -0.334942, 20.7305)
+
+[node name="RockBoulder3" parent="Environment" instance=ExtResource("1_lvo3l")]
+transform = Transform3D(0.85921, 0.511623, 0, -0.419527, 0.704545, -0.572375, -0.29284, 0.49179, 0.819992, -23.4477, -0.183783, 29.8618)
+
+[node name="RockCliff" parent="Environment" instance=ExtResource("2_ta23l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.306, 0, 38.8426)
+
+[node name="RockCliff2" parent="Environment" instance=ExtResource("2_ta23l")]
+transform = Transform3D(0.396969, -0.150329, 0.905437, 0.060362, 0.988636, 0.137678, -0.915845, 0, 0.401532, 8.36395, -4.0489, -25.2199)
+
+[node name="RockPillar" parent="Environment" instance=ExtResource("3_yanjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40.5447)
+
+[node name="RockPillar2" parent="Environment" instance=ExtResource("3_yanjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.6892, 0, -18.5166)
+
+[node name="RockPillar3" parent="Environment" instance=ExtResource("3_yanjp")]
+transform = Transform3D(0.350485, 0, 0.936568, 0, 1, 0, -0.936568, 0, 0.350485, -41.268, -1.59427, -24.7011)
+
+[node name="RockPillar4" parent="Environment" instance=ExtResource("3_yanjp")]
+transform = Transform3D(0.813121, 0, -0.582095, 0, 1, 0, 0.582095, 0, 0.813121, -58.6838, -10.5387, 2.29557)
+
+[node name="Sand" parent="Environment" instance=ExtResource("4_74k3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0843353, -7.62939e-06, 0.0469475)
+
+[node name="Sand2" parent="Environment" instance=ExtResource("4_74k3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7929, -7.62939e-06, 0.0469475)
+
+[node name="Sand3" parent="Environment" instance=ExtResource("4_74k3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0843353, -7.62939e-06, -19.9531)
+
+[node name="Sand4" parent="Environment" instance=ExtResource("4_74k3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9157, -7.62939e-06, -19.9531)
+
+[node name="Sand5" parent="Environment" instance=ExtResource("4_74k3i")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -49.9157, -7.62939e-06, -9.95305)
+
+[node name="Sand6" parent="Environment" instance=ExtResource("4_74k3i")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -49.9157, -7.62939e-06, 30.0469)
+
+[node name="Sand7" parent="Environment" instance=ExtResource("4_74k3i")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -9.91566, -7.62939e-06, 30.0469)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ublyh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.320788, 0.890807, -0.321805, -0.643235, 0.454288, 0.616337, 0.69523, 0.00928238, 0.718728, -44.8472, 52.7676, 97.6761)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("5_0tnbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
