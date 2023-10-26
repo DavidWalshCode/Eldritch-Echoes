@@ -46,26 +46,17 @@ transform = Transform3D(0.350485, 0, 0.936568, 0, 1, 0, -0.936568, 0, 0.350485, 
 [node name="RockPillar4" parent="Environment" instance=ExtResource("3_yanjp")]
 transform = Transform3D(0.813121, 0, -0.582095, 0, 1, 0, 0.582095, 0, 0.813121, -58.6838, -10.5387, 2.29557)
 
-[node name="Sand" parent="Environment" instance=ExtResource("4_74k3i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0843353, -7.62939e-06, 0.0469475)
-
-[node name="Sand2" parent="Environment" instance=ExtResource("4_74k3i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7929, -7.62939e-06, 0.0469475)
-
-[node name="Sand3" parent="Environment" instance=ExtResource("4_74k3i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0843353, -7.62939e-06, -19.9531)
-
-[node name="Sand4" parent="Environment" instance=ExtResource("4_74k3i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9157, -7.62939e-06, -19.9531)
-
 [node name="Sand5" parent="Environment" instance=ExtResource("4_74k3i")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -49.9157, -7.62939e-06, -9.95305)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -49.8831, -7.62939e-06, -9.95305)
+
+[node name="Sand8" parent="Environment" instance=ExtResource("4_74k3i")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -10.0018, -7.62939e-06, -9.95305)
 
 [node name="Sand6" parent="Environment" instance=ExtResource("4_74k3i")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -49.9157, -7.62939e-06, 30.0469)
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -49.9157, -7.62939e-06, 30.0469)
 
 [node name="Sand7" parent="Environment" instance=ExtResource("4_74k3i")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -9.91566, -7.62939e-06, 30.0469)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -9.91566, -7.62939e-06, 30.0469)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ublyh")
