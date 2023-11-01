@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ddwnddgyhqxir"
-path="res://.godot/imported/brickwall.glb-38f1e6961dd0a837ab2e0da802d577b1.scn"
+path="res://.godot/imported/brickwall.glb-9e45ec4aa7d6c85090563bcfa551f4e9.scn"
 
 [deps]
 
-source_file="res://environment/assets/buildings/brickwall.glb"
-dest_files=["res://.godot/imported/brickwall.glb-38f1e6961dd0a837ab2e0da802d577b1.scn"]
+source_file="res://environment/assets/bigprops/brickwall.glb"
+dest_files=["res://.godot/imported/brickwall.glb-9e45ec4aa7d6c85090563bcfa551f4e9.scn"]
 
 [params]
 
