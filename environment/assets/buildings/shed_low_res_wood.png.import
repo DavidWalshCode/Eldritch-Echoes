@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4li7h5u0vtsi"
-path.s3tc="res://.godot/imported/shed_door.png-ce04d7d65d91862e871dd888ff4b43b0.s3tc.ctex"
+uid="uid://dql8oh51jone"
+path.s3tc="res://.godot/imported/shed_low_res_wood.png-c2c85cc314009b837fd73c11364b41b6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://environment/assets/shed_door.png"
-dest_files=["res://.godot/imported/shed_door.png-ce04d7d65d91862e871dd888ff4b43b0.s3tc.ctex"]
+source_file="res://environment/assets/buildings/shed_low_res_wood.png"
+dest_files=["res://.godot/imported/shed_low_res_wood.png-c2c85cc314009b837fd73c11364b41b6.s3tc.ctex"]
 
 [params]
 

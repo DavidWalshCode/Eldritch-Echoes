@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ddwnddgyhqxir"
-path="res://.godot/imported/brickwall.glb-8c223c3a4573f09e4791a8a83c53412e.scn"
+uid="uid://ctepreggnrihs"
+path="res://.godot/imported/shed.glb-b3999e948cc67e94e254ae7f8a4770ae.scn"
 
 [deps]
 
-source_file="res://environment/assets/brickwall.glb"
-dest_files=["res://.godot/imported/brickwall.glb-8c223c3a4573f09e4791a8a83c53412e.scn"]
+source_file="res://environment/assets/buildings/shed.glb"
+dest_files=["res://.godot/imported/shed.glb-b3999e948cc67e94e254ae7f8a4770ae.scn"]
 
 [params]
 

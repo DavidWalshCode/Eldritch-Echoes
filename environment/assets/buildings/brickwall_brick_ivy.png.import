@@ -2,26 +2,28 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0op2kmmhb4w5"
-path="res://.godot/imported/grass_lowres.png-368fd6e16546d42566491f3fac3c0d0d.ctex"
+uid="uid://dwtdmtbylgjqh"
+path.s3tc="res://.godot/imported/brickwall_brick_ivy.png-309969d24494083f63392990ea3a492b.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://environment/assets/grass_lowres.png"
-dest_files=["res://.godot/imported/grass_lowres.png-368fd6e16546d42566491f3fac3c0d0d.ctex"]
+source_file="res://environment/assets/buildings/brickwall_brick_ivy.png"
+dest_files=["res://.godot/imported/brickwall_brick_ivy.png-309969d24494083f63392990ea3a492b.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
