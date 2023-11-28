@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cy620bv44k7bk"
-path="res://.godot/imported/rock_cliff.glb-d9e3439c815f7ea558822ad80be6949c.scn"
+uid="uid://b1el8cwpayuai"
+path="res://.godot/imported/sand.glb-533c7459ac7cf22a0018dc98505771ab.scn"
 
 [deps]
 
-source_file="res://environment/assets/rock_cliff.glb"
-dest_files=["res://.godot/imported/rock_cliff.glb-d9e3439c815f7ea558822ad80be6949c.scn"]
+source_file="res://environment/assets/ground/rawground/sand.glb"
+dest_files=["res://.godot/imported/sand.glb-533c7459ac7cf22a0018dc98505771ab.scn"]
 
 [params]
 
@@ -32,7 +32,7 @@ _subresources={
 "materials": {
 "Material": {
 "use_external/enabled": true,
-"use_external/path": "res://environment/assets/rock.tres"
+"use_external/path": "res://environment/assets/ground/rawground/sand1.tres"
 }
 }
 }

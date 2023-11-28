@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cjyjhu5fp2stn"
-path="res://.godot/imported/rock_pillar.glb-ab39433ee1a3a1ffd574ed507601030b.scn"
+uid="uid://cy620bv44k7bk"
+path="res://.godot/imported/rock_cliff.glb-1d320547dcb9ef710e4dece2c87d1bea.scn"
 
 [deps]
 
-source_file="res://environment/assets/rock_pillar.glb"
-dest_files=["res://.godot/imported/rock_pillar.glb-ab39433ee1a3a1ffd574ed507601030b.scn"]
+source_file="res://environment/assets/outsideprops/rawoutsideprops/rock_cliff.glb"
+dest_files=["res://.godot/imported/rock_cliff.glb-1d320547dcb9ef710e4dece2c87d1bea.scn"]
 
 [params]
 
@@ -32,7 +32,7 @@ _subresources={
 "materials": {
 "Material": {
 "use_external/enabled": true,
-"use_external/path": "res://environment/assets/rock.tres"
+"use_external/path": "res://environment/assets/outsideprops/rawoutsideprops/rockgrassy.tres"
 }
 }
 }

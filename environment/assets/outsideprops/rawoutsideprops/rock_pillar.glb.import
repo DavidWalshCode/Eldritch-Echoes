@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ctepreggnrihs"
-path="res://.godot/imported/shed.glb-b3999e948cc67e94e254ae7f8a4770ae.scn"
+uid="uid://cjyjhu5fp2stn"
+path="res://.godot/imported/rock_pillar.glb-d861ce1085a18eba9ad1d1bdf62d7ce5.scn"
 
 [deps]
 
-source_file="res://environment/assets/buildings/shed.glb"
-dest_files=["res://.godot/imported/shed.glb-b3999e948cc67e94e254ae7f8a4770ae.scn"]
+source_file="res://environment/assets/outsideprops/rawoutsideprops/rock_pillar.glb"
+dest_files=["res://.godot/imported/rock_pillar.glb-d861ce1085a18eba9ad1d1bdf62d7ce5.scn"]
 
 [params]
 
@@ -28,5 +28,12 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/outsideprops/rawoutsideprops/rockgrassy.tres"
+}
+}
+}
 gltf/embedded_image_handling=1

@@ -2,18 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0ygccwj6e3ya"
-path.s3tc="res://.godot/imported/shed_window.png-27e57ddeeaa525c4bed65e0e55b3a91a.s3tc.ctex"
+uid="uid://8mlim1x3kxgp"
+path.s3tc="res://.godot/imported/jungle_stone_d.jpg-2dcc50c1e2fcea1f6bf81ce553912329.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://environment/assets/buildings/shed_window.png"
-dest_files=["res://.godot/imported/shed_window.png-27e57ddeeaa525c4bed65e0e55b3a91a.s3tc.ctex"]
+source_file="res://environment/assets/outsideprops/rawoutsideprops/jungle_stone_d.jpg"
+dest_files=["res://.godot/imported/jungle_stone_d.jpg-2dcc50c1e2fcea1f6bf81ce553912329.s3tc.ctex"]
 
 [params]
 

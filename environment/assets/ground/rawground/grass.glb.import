@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ddwnddgyhqxir"
-path="res://.godot/imported/brickwall.glb-9e45ec4aa7d6c85090563bcfa551f4e9.scn"
+uid="uid://c7e4pf14y5c61"
+path="res://.godot/imported/grass.glb-c3f04bbeb59f67f7306d4e4a8e0f566f.scn"
 
 [deps]
 
-source_file="res://environment/assets/bigprops/brickwall.glb"
-dest_files=["res://.godot/imported/brickwall.glb-9e45ec4aa7d6c85090563bcfa551f4e9.scn"]
+source_file="res://environment/assets/ground/rawground/grass.glb"
+dest_files=["res://.godot/imported/grass.glb-c3f04bbeb59f67f7306d4e4a8e0f566f.scn"]
 
 [params]
 
@@ -28,5 +28,12 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/ground/rawground/grass1.tres"
+}
+}
+}
 gltf/embedded_image_handling=1
