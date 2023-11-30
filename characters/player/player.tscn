@@ -1,11 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=11 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
+[ext_resource type="Script" path="res://characters/player/weapon_manager.gd" id="2_c6p01"]
 [ext_resource type="PackedScene" uid="uid://d167a1bqe4u0o" path="res://characters/character_mover.tscn" id="2_k2lt6"]
+[ext_resource type="PackedScene" uid="uid://m5rjrq1bs3oo" path="res://characters/health_manager.tscn" id="3_c6yru"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwpu4"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_oe3gr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q1ft4"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_6xo04"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bq1pe"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5fi32"]
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
@@ -23,4 +33,28 @@ mesh = SubResource("CapsuleMesh_oe3gr")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
+[node name="WeaponManager" type="Node3D" parent="Camera3D"]
+transform = Transform3D(0.254703, 0, 0, 0, 0.222342, 0, 0, 0, 0.255777, 0.219509, -0.264904, -0.683624)
+script = ExtResource("2_c6p01")
+
+[node name="Weapons" type="Node3D" parent="Camera3D/WeaponManager"]
+
+[node name="Machete" type="MeshInstance3D" parent="Camera3D/WeaponManager/Weapons"]
+mesh = SubResource("BoxMesh_q1ft4")
+
+[node name="MachineGun" type="MeshInstance3D" parent="Camera3D/WeaponManager/Weapons"]
+visible = false
+mesh = SubResource("SphereMesh_6xo04")
+
+[node name="Shotgun" type="MeshInstance3D" parent="Camera3D/WeaponManager/Weapons"]
+visible = false
+mesh = SubResource("CylinderMesh_bq1pe")
+
+[node name="RocketLauncher" type="MeshInstance3D" parent="Camera3D/WeaponManager/Weapons"]
+visible = false
+mesh = SubResource("CapsuleMesh_5fi32")
+
 [node name="CharacterMover" parent="." instance=ExtResource("2_k2lt6")]
+
+[node name="HealthManager" parent="." instance=ExtResource("3_c6yru")]
+verbose = false

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://m5rjrq1bs3oo"]
+
+[ext_resource type="Script" path="res://characters/health_manager.gd" id="1_h718n"]
+
+[node name="HealthManager" type="Node3D"]
+script = ExtResource("1_h718n")
+verbose = true
