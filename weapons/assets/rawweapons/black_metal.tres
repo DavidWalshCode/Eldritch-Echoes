@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dg5ulxx8h5v24"]
+
+[ext_resource type="Texture2D" uid="uid://dtlt6w2nro3c3" path="res://weapons/assets/rawweapons/blackmetal.png" id="1_xv0i0"]
+
+[resource]
+specular_mode = 2
+albedo_texture = ExtResource("1_xv0i0")
+texture_filter = 2

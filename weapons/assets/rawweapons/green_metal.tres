@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d2yg7avijbust"]
+
+[ext_resource type="Texture2D" uid="uid://8ke4tl5fmgv" path="res://weapons/assets/rawweapons/greenmetal.png" id="1_annkt"]
+
+[resource]
+specular_mode = 2
+albedo_texture = ExtResource("1_annkt")
+texture_filter = 2
