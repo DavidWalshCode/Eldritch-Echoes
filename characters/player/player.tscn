@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=26 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://characters/player/weapon_manager.gd" id="2_c6p01"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://m5rjrq1bs3oo" path="res://characters/health_manager.tscn" id="3_c6yru"]
 [ext_resource type="PackedScene" uid="uid://dbww8l40ny5bs" path="res://weapons/assets/rawweapons/machete.glb" id="3_ck32y"]
 [ext_resource type="PackedScene" uid="uid://cmlj5aagpq6ln" path="res://weapons/assets/rawweapons/machinegun.glb" id="3_te2x3"]
+[ext_resource type="Script" path="res://weapons/weapon.gd" id="4_qyhjh"]
 [ext_resource type="PackedScene" uid="uid://byunlgbocn88k" path="res://weapons/assets/rawweapons/rocketlauncher.glb" id="5_l5ban"]
 [ext_resource type="PackedScene" uid="uid://nvmmiy60msaq" path="res://weapons/assets/rawweapons/shotgun.glb" id="6_ppfjd"]
 [ext_resource type="PackedScene" uid="uid://cseo8mpaiiufc" path="res://weapons/attackemitters/attack_emitter.tscn" id="7_bs2up"]
@@ -229,6 +230,9 @@ mesh = SubResource("CapsuleMesh_oe3gr")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
+[node name="FirePoint" type="Node3D" parent="Camera3D"]
+unique_name_in_owner = true
+
 [node name="WeaponManager" type="Node3D" parent="Camera3D"]
 transform = Transform3D(0.254703, 0, 0, 0, 0.222342, 0, 0, 0, 0.255777, 0.266923, -0.174175, -0.678828)
 script = ExtResource("2_c6p01")
@@ -252,21 +256,28 @@ libraries = {
 "": SubResource("AnimationLibrary_1xukp")
 }
 
-[node name="Machine Gun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
+[node name="MachineGun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.140979)
 visible = false
+script = ExtResource("4_qyhjh")
+automatic = true
+attack_rate = 0.1
 
-[node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/Machine Gun"]
+[node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/MachineGun"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/WeaponManager/Weapons/Machine Gun/Graphics"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/WeaponManager/Weapons/MachineGun/Graphics"]
 autoplay = "RESET"
 libraries = {
 "": SubResource("AnimationLibrary_n8vdt")
 }
 
-[node name="MachineGun" parent="Camera3D/WeaponManager/Weapons/Machine Gun/Graphics" instance=ExtResource("3_te2x3")]
+[node name="MachineGun" parent="Camera3D/WeaponManager/Weapons/MachineGun/Graphics" instance=ExtResource("3_te2x3")]
 transform = Transform3D(2.05908, 0, 0, 0, 1.69975, 0, 0, 0, 1.69975, 0.411056, -0.44855, 0.660143)
+
+[node name="AttackEmitter" parent="Camera3D/WeaponManager/Weapons/MachineGun" instance=ExtResource("7_bs2up")]
+
+[node name="HitScanAttackEmitter" parent="Camera3D/WeaponManager/Weapons/MachineGun/AttackEmitter" instance=ExtResource("8_de1u1")]
 
 [node name="Shotgun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 visible = false
@@ -297,15 +308,9 @@ libraries = {
 [node name="RocketLauncher" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Graphics" instance=ExtResource("5_l5ban")]
 transform = Transform3D(1.2503, 0, 0, 0, 1.2503, 0, 0, 0, 1.2503, 0.414483, -0.86586, -0.419782)
 
-[node name="AttackEmitter" parent="Camera3D" instance=ExtResource("7_bs2up")]
-
-[node name="Timer" type="Timer" parent="Camera3D/AttackEmitter"]
-autostart = true
-
-[node name="HitScanAttackEmitter" parent="Camera3D/AttackEmitter" instance=ExtResource("8_de1u1")]
-
 [node name="CharacterMover" parent="." instance=ExtResource("2_k2lt6")]
+jump_force = 17.0
+max_speed = 20.0
+move_accel = 5.0
 
 [node name="HealthManager" parent="." instance=ExtResource("3_c6yru")]
-
-[connection signal="timeout" from="Camera3D/AttackEmitter/Timer" to="Camera3D/AttackEmitter" method="fire"]

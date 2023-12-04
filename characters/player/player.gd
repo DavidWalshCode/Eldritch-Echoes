@@ -11,8 +11,8 @@ extends CharacterBody3D
 const HOTKEYS = { # Hotkeys for weapon switching
 	KEY_1: 0, # 1 for melee weapon
 	KEY_2: 1, # 2 for machine gun
-	KEY_3: 2, # 3 for rocket launcher
-	KEY_4: 3, # 4 for shotgun
+	KEY_3: 2, # 3 for shotgun
+	KEY_4: 3, # 4 for rocket launcher
 	KEY_5: 4,
 	KEY_6: 5,
 	KEY_7: 6,
@@ -68,6 +68,8 @@ func _process(delta):
 	character_mover.set_move_dir(move_dir)
 	if Input.is_action_just_pressed("jump"): # Currently 'Space'
 		character_mover.jump()
+	
+	weapon_manager.attack(Input.is_action_just_pressed("attack"), Input.is_action_pressed("attack")) # Attack
 
 func kill():
 	dead = true
