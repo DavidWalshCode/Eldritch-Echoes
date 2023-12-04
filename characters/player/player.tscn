@@ -261,6 +261,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.140979)
 visible = false
 script = ExtResource("4_qyhjh")
 automatic = true
+ammo = 50
 attack_rate = 0.1
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/MachineGun"]
@@ -309,8 +310,5 @@ libraries = {
 transform = Transform3D(1.2503, 0, 0, 0, 1.2503, 0, 0, 0, 1.2503, 0.414483, -0.86586, -0.419782)
 
 [node name="CharacterMover" parent="." instance=ExtResource("2_k2lt6")]
-jump_force = 17.0
-max_speed = 20.0
-move_accel = 5.0
 
 [node name="HealthManager" parent="." instance=ExtResource("3_c6yru")]

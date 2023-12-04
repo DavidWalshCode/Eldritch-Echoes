@@ -1,10 +1,10 @@
 extends Node3D
 
-@export var jump_force = 15.0
+@export var jump_force = 17.0
 @export var gravity = 30.0
 
-@export var max_speed = 15.0
-@export var move_accel = 4.0
+@export var max_speed = 20.0
+@export var move_accel = 5.0
 @export var stop_drag = 0.9
 
 var character_body : CharacterBody3D
