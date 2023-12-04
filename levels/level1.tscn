@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://brusqmphxxu8w"]
+[gd_scene load_steps=12 format=3 uid="uid://brusqmphxxu8w"]
 
 [ext_resource type="PackedScene" uid="uid://bbgwnkh1pgxg6" path="res://environment/assets/outsideprops/rock_boulder.tscn" id="1_ckw1s"]
 [ext_resource type="PackedScene" uid="uid://bskhjsn5g71vi" path="res://environment/assets/outsideprops/rock_cliff.tscn" id="2_v7vk8"]
 [ext_resource type="PackedScene" uid="uid://dpi5qrl7udofx" path="res://environment/assets/outsideprops/rock_pillar.tscn" id="3_1ra72"]
 [ext_resource type="PackedScene" uid="uid://32jsvy2mqg47" path="res://environment/assets/ground/sand.tscn" id="4_ludcq"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="5_y2rsx"]
+[ext_resource type="PackedScene" uid="uid://cseo8mpaiiufc" path="res://weapons/attackemitters/attack_emitter.tscn" id="6_fcmwa"]
+[ext_resource type="PackedScene" uid="uid://dm2b4wrpid53g" path="res://weapons/attackemitters/hit_scan_attack_emitter.tscn" id="7_ahqfa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7yqkd"]
 
@@ -14,6 +16,8 @@ sky_material = SubResource("ProceduralSkyMaterial_7yqkd")
 [sub_resource type="Environment" id="Environment_ublyh"]
 background_mode = 2
 sky = SubResource("Sky_jumne")
+
+[sub_resource type="BoxMesh" id="BoxMesh_a0dya"]
 
 [node name="Level1" type="Node3D"]
 
@@ -91,3 +95,16 @@ shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("5_y2rsx")]
 transform = Transform3D(-0.9855, 0, 0.169676, 0, 1, 0, -0.169676, 0, -0.9855, 20.0873, 1.3443, -10.4791)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1052, 1.26136, -8.1398)
+mesh = SubResource("BoxMesh_a0dya")
+
+[node name="AttackEmitter" parent="MeshInstance3D" instance=ExtResource("6_fcmwa")]
+
+[node name="HitScanAttackEmitter" parent="MeshInstance3D/AttackEmitter" instance=ExtResource("7_ahqfa")]
+
+[node name="Timer" type="Timer" parent="MeshInstance3D/AttackEmitter"]
+autostart = true
+
+[connection signal="timeout" from="MeshInstance3D/AttackEmitter/Timer" to="MeshInstance3D/AttackEmitter" method="fire"]

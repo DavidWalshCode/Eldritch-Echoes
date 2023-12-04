@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=25 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://characters/player/weapon_manager.gd" id="2_c6p01"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cmlj5aagpq6ln" path="res://weapons/assets/rawweapons/machinegun.glb" id="3_te2x3"]
 [ext_resource type="PackedScene" uid="uid://byunlgbocn88k" path="res://weapons/assets/rawweapons/rocketlauncher.glb" id="5_l5ban"]
 [ext_resource type="PackedScene" uid="uid://nvmmiy60msaq" path="res://weapons/assets/rawweapons/shotgun.glb" id="6_ppfjd"]
+[ext_resource type="PackedScene" uid="uid://cseo8mpaiiufc" path="res://weapons/attackemitters/attack_emitter.tscn" id="7_bs2up"]
+[ext_resource type="PackedScene" uid="uid://dm2b4wrpid53g" path="res://weapons/attackemitters/hit_scan_attack_emitter.tscn" id="8_de1u1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwpu4"]
 
@@ -212,7 +214,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody3D"]
-collision_layer = 2
+collision_layer = 6
 collision_mask = 3
 script = ExtResource("1_sw706")
 
@@ -295,7 +297,15 @@ libraries = {
 [node name="RocketLauncher" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Graphics" instance=ExtResource("5_l5ban")]
 transform = Transform3D(1.2503, 0, 0, 0, 1.2503, 0, 0, 0, 1.2503, 0.414483, -0.86586, -0.419782)
 
+[node name="AttackEmitter" parent="Camera3D" instance=ExtResource("7_bs2up")]
+
+[node name="Timer" type="Timer" parent="Camera3D/AttackEmitter"]
+autostart = true
+
+[node name="HitScanAttackEmitter" parent="Camera3D/AttackEmitter" instance=ExtResource("8_de1u1")]
+
 [node name="CharacterMover" parent="." instance=ExtResource("2_k2lt6")]
 
 [node name="HealthManager" parent="." instance=ExtResource("3_c6yru")]
-verbose = false
+
+[connection signal="timeout" from="Camera3D/AttackEmitter/Timer" to="Camera3D/AttackEmitter" method="fire"]

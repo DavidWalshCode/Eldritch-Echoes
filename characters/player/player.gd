@@ -72,3 +72,6 @@ func _process(delta):
 func kill():
 	dead = true
 	character_mover.set_move_dir(Vector3.ZERO) # Make sure the player can't move when they die
+
+func hurt(damage_data : DamageData):
+	health_manager.hurt(damage_data)
