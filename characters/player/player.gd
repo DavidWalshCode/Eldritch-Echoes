@@ -26,7 +26,6 @@ var dead = false
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	health_manager.died.connect(kill)
-	
 
 func _input(event):
 	if dead:

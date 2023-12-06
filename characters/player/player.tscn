@@ -260,11 +260,9 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.104714)
 script = ExtResource("4_qyhjh")
 automatic = true
-ammo = 50
 attack_rate = 0.1
 
 [node name="AttackEmitter" parent="Camera3D/WeaponManager/Weapons/MachineGun" instance=ExtResource("7_bs2up")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="HitScanAttackEmitter" parent="Camera3D/WeaponManager/Weapons/MachineGun/AttackEmitter" instance=ExtResource("8_de1u1")]
 
@@ -284,7 +282,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0563715)
 visible = false
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/Shotgun"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 rotation_edit_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/WeaponManager/Weapons/Shotgun/Graphics"]
@@ -310,5 +307,6 @@ libraries = {
 transform = Transform3D(1.2503, 0, 0, 0, 1.2503, 0, 0, 0, 1.2503, 0.414483, -0.86586, -0.419782)
 
 [node name="CharacterMover" parent="." instance=ExtResource("2_k2lt6")]
+jump_force = 14.0
 
 [node name="HealthManager" parent="." instance=ExtResource("3_c6yru")]

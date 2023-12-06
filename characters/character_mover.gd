@@ -11,6 +11,8 @@ var character_body : CharacterBody3D
 var move_drag = 0.0
 var move_dir : Vector3
 
+var double_jump_available = true
+
 func _ready():
 	character_body = get_parent()
 	move_drag = float(move_accel) / max_speed
@@ -20,6 +22,10 @@ func set_move_dir(new_move_dir : Vector3):
 
 func jump():
 	if character_body.is_on_floor():
+		character_body.velocity.y = jump_force
+		double_jump_available = true
+	elif double_jump_available: 
+		double_jump_available = false
 		character_body.velocity.y = jump_force
 
 # Runs 60 times a sec, fixedupdate in Unity
