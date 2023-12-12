@@ -310,3 +310,4 @@ transform = Transform3D(1.2503, 0, 0, 0, 1.2503, 0, 0, 0, 1.2503, 0.414483, -0.8
 jump_force = 14.0
 
 [node name="HealthManager" parent="." instance=ExtResource("3_c6yru")]
+verbose = false

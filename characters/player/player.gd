@@ -22,7 +22,6 @@ const HOTKEYS = { # Hotkeys for weapon switching
 }
 
 var dead = false
-var times_died = 0
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -50,11 +49,16 @@ func _input(event):
 func _process(delta):
 	if Input.is_action_just_pressed("quit"): # Currently 'Esc'
 		get_tree().quit()
+	
 	if Input.is_action_just_pressed("restart"): # Currently 'r'
 		get_tree().reload_current_scene()
+	
+	if Input.is_action_just_pressed("kill_player"): # Currently 'k'
+		kill()
+	
 	if Input.is_action_just_pressed("fullscreen"): # Currently 'f'
-		var fs = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
-		if fs:
+		var fullscreen = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
+		if fullscreen:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
@@ -71,9 +75,34 @@ func _process(delta):
 	
 	weapon_manager.attack(Input.is_action_just_pressed("attack"), Input.is_action_pressed("attack")) # Attack
 
-func kill():
-	dead = true
-	character_mover.set_move_dir(Vector3.ZERO) # Make sure the player can't move when they die
-
 func hurt(damage_data : DamageData):
 	health_manager.hurt(damage_data)
+
+func kill():
+	#dead = true
+	#character_mover.set_move_dir(Vector3.ZERO) # Make sure the player can't move when they die
+	
+	Global.death_count += 1  # Increment death count
+	print("Death count: ", Global.death_count)
+	load_next_level_based_on_death_count()
+
+func load_next_level_based_on_death_count():
+	# Switch case for loading a level based on the player death count
+	match Global.death_count: 
+		1:
+			load_next_level() # Load Level 2, death count is 1
+		2:
+			load_next_level() # Load Level 3, death count is 2
+		3:
+			load_next_level() # Load Level 4, death count is 3
+		4:
+			load_next_level() # Load Level 5, death count is 4
+		_:
+			get_tree().quit() # get_tree().change_scene("res://Game_Over.tscn") # Default case
+
+func load_next_level():
+	var current_scene_file = get_tree().current_scene.scene_file_path
+	var next_level_number = current_scene_file.to_int() + 1
+	
+	var next_level_path = "res://levels/level_" + str(next_level_number) + ".tscn" # Could also have const FILE_BEGIN = "res://levels/level_"
+	get_tree().change_scene_to_file(next_level_path)
