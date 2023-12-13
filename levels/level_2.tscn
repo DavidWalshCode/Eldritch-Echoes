@@ -7,12 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="5_i4pyy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7yqkd"]
+sky_top_color = Color(0.835294, 0.584314, 0.0823529, 1)
 
 [sub_resource type="Sky" id="Sky_jumne"]
 sky_material = SubResource("ProceduralSkyMaterial_7yqkd")
 
 [sub_resource type="Environment" id="Environment_ublyh"]
 background_mode = 2
+background_energy_multiplier = 0.5
 sky = SubResource("Sky_jumne")
 
 [node name="Level2" type="Node3D"]

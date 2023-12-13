@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="5_7igh4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7yqkd"]
+sky_top_color = Color(0.905882, 0.317647, 0.901961, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+sky_curve = 1.883
 
 [sub_resource type="Sky" id="Sky_jumne"]
 sky_material = SubResource("ProceduralSkyMaterial_7yqkd")

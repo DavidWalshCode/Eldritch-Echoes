@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="5_k32r6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7yqkd"]
+sky_top_color = Color(0.568627, 0.156863, 0.0745098, 1)
+sky_horizon_color = Color(0.2, 0.0352941, 0.00392157, 1)
 
 [sub_resource type="Sky" id="Sky_jumne"]
 sky_material = SubResource("ProceduralSkyMaterial_7yqkd")
@@ -87,6 +89,7 @@ environment = SubResource("Environment_ublyh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.320788, 0.890807, -0.321805, -0.643235, 0.454288, 0.616337, 0.69523, 0.00928238, 0.718728, -44.8472, 52.7676, 97.6761)
+light_color = Color(0.964706, 0, 0.133333, 1)
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("5_k32r6")]

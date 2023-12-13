@@ -87,6 +87,7 @@ environment = SubResource("Environment_ublyh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.320788, 0.890807, -0.321805, -0.643235, 0.454288, 0.616337, 0.69523, 0.00928238, 0.718728, -44.8472, 52.7676, 97.6761)
+light_color = Color(0.733333, 0.34902, 0, 1)
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("5_vl5v1")]
