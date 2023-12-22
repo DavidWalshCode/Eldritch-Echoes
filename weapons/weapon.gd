@@ -48,10 +48,11 @@ func attack(input_just_pressed : bool, input_held : bool):
 	animation_player.stop()
 	animation_player.play("attack")
 	
+	# TESTING SHOOTING GIVES KNOCKBACK TO FLY, E.G. ROCKET JUMPING IN TF2
 	# Get camera direction at a normalised vector 3d
 	# Recoil is take the direction youre firing in, reverse it and add some factor amount to the velocity
-	var facing_direction = camera_3d.global_transform.basis.z
-	player.velocity += facing_direction * 5
+	# var facing_direction = camera_3d.global_transform.basis.z
+	# player.velocity += facing_direction * 5
 	
 func recoil_knockback(recoil_knockback_power):
 	#recoil(power):
