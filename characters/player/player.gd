@@ -90,13 +90,13 @@ func load_next_level_based_on_death_count():
 	# Switch case for loading a level based on the player death count
 	match Global.death_count: 
 		1:
-			load_next_level() # Load Level 2, death count is 1
+			load_next_level() # Load level 2, death count is 1
 		2:
-			load_next_level() # Load Level 3, death count is 2
+			load_next_level() # Load level 3, death count is 2
 		3:
-			load_next_level() # Load Level 4, death count is 3
+			load_next_level() # Load level 4, death count is 3
 		4:
-			load_next_level() # Load Level 5, death count is 4
+			load_next_level() # load Level 5, death count is 4
 		_:
 			get_tree().quit() # get_tree().change_scene("res://Game_Over.tscn") # Default case
 
