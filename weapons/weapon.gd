@@ -69,7 +69,8 @@ func actually_attack():
 	attack_emitter.global_transform = fire_point.global_transform
 	attack_emitter.fire()
 
-func set_active(a : bool):
-	visible = a
-	if !a:
+func set_active(active : bool):
+	$Crosshair.visible = active
+	visible = active
+	if !active:
 		animation_player.play("RESET")

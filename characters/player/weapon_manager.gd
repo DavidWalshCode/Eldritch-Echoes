@@ -22,7 +22,7 @@ func attack(input_just_pressed : bool, input_held : bool):
 
 func disable_all_weapons():
 	for weapon in weapons:
-		if has_method("set_active"):
+		if weapon.has_method("set_active"):
 			weapon.set_active(false)
 		else:
 			weapon.hide()
@@ -51,7 +51,7 @@ func switch_to_weapon_slot(slot_index : int)->bool:
 	current_slot = slot_index
 	current_weapon = weapons[current_slot]
 	
-	if has_method("set_active"):
+	if current_weapon.has_method("set_active"):
 		current_weapon.set_active(true)
 	else:
 		current_weapon.show()
