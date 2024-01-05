@@ -257,7 +257,7 @@ fov = 90.0
 unique_name_in_owner = true
 
 [node name="WeaponManager" type="Node3D" parent="Camera3D"]
-transform = Transform3D(0.254703, 0, 0, 0, 0.222342, 0, 0, 0, 0.255777, 0.266923, -0.174175, -0.604254)
+transform = Transform3D(0.254703, 0, 0, 0, 0.222342, 0, 0, 0, 0.255777, 0.266923, -0.174175, -0.569313)
 script = ExtResource("2_c6p01")
 
 [node name="Weapons" type="Node3D" parent="Camera3D/WeaponManager"]

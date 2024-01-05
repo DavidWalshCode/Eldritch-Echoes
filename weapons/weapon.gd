@@ -5,8 +5,8 @@ class_name Weapon
 @onready var animation_player : AnimationPlayer = $Graphics/AnimationPlayer
 @onready var attack_emitter : AttackEmitter = $AttackEmitter
 @onready var fire_point : Node3D = %FirePoint
-@onready var camera_3d = $"../../.."
-@onready var player = $"../../../.."
+#@onready var camera_3d = $"../../.."
+#@onready var player = $"../../../.."
 
 @export var automatic = false
 @export var damage = 5
