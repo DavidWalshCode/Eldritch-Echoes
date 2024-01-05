@@ -5,4 +5,4 @@
 [node name="AreaDamageEmitter" type="Node3D"]
 script = ExtResource("1_j5fh4")
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="LineOfSightRayCast" type="RayCast3D" parent="."]

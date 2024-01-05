@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl150msgq7vur"]
+
+[ext_resource type="Script" path="res://weapons/projectiles/projectile.gd" id="1_e4g08"]
+
+[node name="Projectile" type="Node3D"]
+script = ExtResource("1_e4g08")
+
+[node name="Graphics" type="Node3D" parent="."]
+
+[node name="CollisionRayCast" type="RayCast3D" parent="."]
+enabled = false
+collision_mask = 5
+collide_with_areas = true

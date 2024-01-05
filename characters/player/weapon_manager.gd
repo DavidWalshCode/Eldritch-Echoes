@@ -6,6 +6,10 @@ var current_slot = 0
 var current_weapon = null
 
 func _ready():
+	for weapon in weapons:
+		if weapon.has_method("set_bodies_to_exclude"):
+			weapon.set_bodies_to_exclude([get_parent().get_parent()]) # Excludes the player and camera, knows dont hit the player
+			
 	disable_all_weapons()
 	for _i in range(weapons.size()):
 		#weapons_unlocked.append(false)

@@ -3,7 +3,7 @@ extends Node3D
 @export var max_health = 100
 @onready var current_health = max_health
 @export var gib_at = -10
-@export var verbose = false
+@export var verbose = true
 
 signal died
 signal healed

@@ -12,8 +12,9 @@ class_name Weapon
 @export var damage = 5
 @export var ammo = 1000
 @export var attack_rate = 0.2
-@export var recoil_knockback_power = 10
 var last_attack_time = -9999.9
+#@export var recoil_knockback_power = 10
+@export var animation_controlled_attack = false
 
 signal fired
 signal out_of_ammo
@@ -42,8 +43,9 @@ func attack(input_just_pressed : bool, input_held : bool):
 	if ammo > 0:
 		ammo -= 1
 	
-	attack_emitter.global_transform = fire_point.global_transform
-	attack_emitter.fire()
+	if !animation_controlled_attack:
+		actually_attack()
+	
 	last_attack_time = current_time
 	animation_player.stop()
 	animation_player.play("attack")
@@ -56,12 +58,16 @@ func attack(input_just_pressed : bool, input_held : bool):
 	# var facing_direction = camera_3d.global_transform.basis.z
 	# player.velocity += facing_direction * 5
 	
-func recoil_knockback(recoil_knockback_power):
+#func recoil_knockback(recoil_knockback_power):
 	#recoil(power):
 		#player.x -= some_factor * power;
 		#player.y -= some_BIG_factor * power;
 		#player.z -= some_factor * power;
-	return
+	#return
+
+func actually_attack():
+	attack_emitter.global_transform = fire_point.global_transform
+	attack_emitter.fire()
 
 func set_active(a : bool):
 	visible = a

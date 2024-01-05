@@ -1,0 +1,102 @@
+[gd_scene load_steps=14 format=3 uid="uid://opt6mrqu2jqe"]
+
+[ext_resource type="PackedScene" uid="uid://bl150msgq7vur" path="res://weapons/projectiles/projectile.tscn" id="1_kujtm"]
+[ext_resource type="PackedScene" uid="uid://coerxuptsgxrc" path="res://weapons/projectiles/assets/rocket.glb" id="2_hiucq"]
+[ext_resource type="Script" path="res://weapons/projectiles/rocket.gd" id="2_u5d6h"]
+[ext_resource type="PackedScene" uid="uid://cbi2uae24fd3r" path="res://effects/muzzleflash/muzzleflash3.glb" id="3_erksw"]
+[ext_resource type="PackedScene" uid="uid://cbtf6d7s603ra" path="res://weapons/attackemitters/area_damage_emitter.tscn" id="5_jg43v"]
+
+[sub_resource type="Animation" id="Animation_vmmb5"]
+resource_name = "spin"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 6.28319)]
+}
+
+[sub_resource type="Animation" id="Animation_aihlr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ekjoj"]
+_data = {
+"RESET": SubResource("Animation_aihlr"),
+"spin": SubResource("Animation_vmmb5")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kie2m"]
+transparency = 1
+vertex_color_use_as_albedo = true
+
+[sub_resource type="Gradient" id="Gradient_2l36i"]
+offsets = PackedFloat32Array(0.512195, 0.99187)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8irno"]
+gradient = SubResource("Gradient_2l36i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nmjpn"]
+emission_shape = 1
+emission_sphere_radius = 0.35
+particle_flag_rotate_y = true
+gravity = Vector3(0, 0.3, 0)
+angular_velocity_min = -15.0
+angular_velocity_max = 15.0
+angle_max = 720.0
+scale_min = 0.2
+scale_max = 0.4
+color = Color(0.407843, 0.407843, 0.407843, 0.698039)
+color_ramp = SubResource("GradientTexture1D_8irno")
+
+[sub_resource type="SphereMesh" id="SphereMesh_acq7n"]
+radial_segments = 7
+rings = 3
+
+[node name="Rocket" instance=ExtResource("1_kujtm")]
+script = ExtResource("2_u5d6h")
+
+[node name="Graphics" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="rocket" parent="Graphics" index="0" instance=ExtResource("2_hiucq")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 1.90316e-07, 1.98296e-07, 0.970209)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Graphics" index="1"]
+autoplay = "spin"
+libraries = {
+"": SubResource("AnimationLibrary_ekjoj")
+}
+
+[node name="muzzleflash3" parent="Graphics" index="2" instance=ExtResource("3_erksw")]
+transform = Transform3D(0.638309, 1.49012e-08, 0, 4.47035e-08, 0.695342, 0, 0, 0, 0.407085, 0, 0, 0.967986)
+
+[node name="CollisionRayCast" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.000420131)
+
+[node name="TrailSmokeParticles" type="GPUParticles3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.12018)
+material_override = SubResource("StandardMaterial3D_kie2m")
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_nmjpn")
+draw_pass_1 = SubResource("SphereMesh_acq7n")
+
+[node name="AreaDamageEmitter" parent="." index="3" instance=ExtResource("5_jg43v")]
