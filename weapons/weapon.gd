@@ -47,6 +47,8 @@ func attack(input_just_pressed : bool, input_held : bool):
 	last_attack_time = current_time
 	animation_player.stop()
 	animation_player.play("attack")
+	if has_node("Graphics/MuzzleFlash"):
+		$Graphics/MuzzleFlash.flash()
 	
 	# TESTING SHOOTING GIVES KNOCKBACK TO FLY, E.G. ROCKET JUMPING IN TF2
 	# Get camera direction at a normalised vector 3d
