@@ -11,18 +11,18 @@
 [ext_resource type="PackedScene" uid="uid://cbtf6d7s603ra" path="res://weapons/attackemitters/area_damage_emitter.tscn" id="6_jrgnc"]
 [ext_resource type="PackedScene" uid="uid://nvmmiy60msaq" path="res://weapons/assets/rawweapons/shotgun.glb" id="6_ppfjd"]
 [ext_resource type="PackedScene" uid="uid://cseo8mpaiiufc" path="res://weapons/attackemitters/attack_emitter.tscn" id="7_bs2up"]
-[ext_resource type="Texture2D" uid="uid://caugx3v714q77" path="res://weapons/crosshairs/crosshair001.png" id="8_6pibq"]
 [ext_resource type="PackedScene" uid="uid://dkceu074onyx3" path="res://effects/muzzleflash/muzzle_flash.tscn" id="8_a6f6a"]
 [ext_resource type="PackedScene" uid="uid://dm2b4wrpid53g" path="res://weapons/attackemitters/hit_scan_attack_emitter.tscn" id="8_de1u1"]
+[ext_resource type="Texture2D" uid="uid://bcgjiousj5q8i" path="res://weapons/crosshairs/crosshair013.png" id="8_shnt2"]
 [ext_resource type="PackedScene" uid="uid://cd7ygljv63g7b" path="res://effects/muzzleflash/muzzleflash1.glb" id="9_k8nox"]
 [ext_resource type="PackedScene" uid="uid://cbi2uae24fd3r" path="res://effects/muzzleflash/muzzleflash3.glb" id="11_i3xgg"]
-[ext_resource type="Texture2D" uid="uid://b4uy7f6g3bq3i" path="res://weapons/crosshairs/crosshair065.png" id="12_8u8ct"]
+[ext_resource type="Texture2D" uid="uid://ds8clcnm78r5c" path="res://weapons/crosshairs/crosshair150.png" id="12_65i83"]
 [ext_resource type="PackedScene" uid="uid://qrw2plryhi4p" path="res://weapons/attackemitters/burst_emitter.tscn" id="12_7642p"]
 [ext_resource type="PackedScene" uid="uid://dvih676eskm1v" path="res://weapons/attackemitters/spray_emitter.tscn" id="13_gux8a"]
 [ext_resource type="PackedScene" uid="uid://bc1qcptontamp" path="res://effects/muzzleflash/muzzleflash2.glb" id="16_t5aqn"]
 [ext_resource type="PackedScene" uid="uid://bm64bcj3p4lw5" path="res://weapons/attackemitters/projectile_emitter.tscn" id="17_mbee8"]
-[ext_resource type="Texture2D" uid="uid://dc8s7imd1wp3a" path="res://weapons/crosshairs/crosshair066.png" id="17_o80jd"]
-[ext_resource type="Texture2D" uid="uid://lg4u0xaqktbg" path="res://weapons/crosshairs/crosshair026.png" id="21_qbo7u"]
+[ext_resource type="Texture2D" uid="uid://d5lstyg85dkb" path="res://weapons/crosshairs/crosshair175.png" id="17_uf0m2"]
+[ext_resource type="Texture2D" uid="uid://gwo6t1tt0xd3" path="res://weapons/crosshairs/crosshair177.png" id="21_rtel5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwpu4"]
 
@@ -313,7 +313,7 @@ offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-texture = ExtResource("8_6pibq")
+texture = ExtResource("8_shnt2")
 
 [node name="MachineGun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.104714)
@@ -356,7 +356,7 @@ offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-texture = ExtResource("12_8u8ct")
+texture = ExtResource("21_rtel5")
 
 [node name="Shotgun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0563715)
@@ -404,7 +404,7 @@ offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-texture = ExtResource("17_o80jd")
+texture = ExtResource("17_uf0m2")
 
 [node name="RocketLauncher" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 script = ExtResource("4_qyhjh")
@@ -444,7 +444,7 @@ offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-texture = ExtResource("21_qbo7u")
+texture = ExtResource("12_65i83")
 
 [node name="CharacterMover" parent="." instance=ExtResource("2_k2lt6")]
 jump_force = 15.0
