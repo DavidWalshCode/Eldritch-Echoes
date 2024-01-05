@@ -112,6 +112,9 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 40.131, 0, 0)
 [node name="Grass3" parent="Environment" instance=ExtResource("5_tbk4v")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 40)
 
+[node name="Grass6" parent="Environment" instance=ExtResource("5_tbk4v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8254, 0, 50)
+
 [node name="Grass5" parent="Environment" instance=ExtResource("5_tbk4v")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 22.0667, 0, 40)
 

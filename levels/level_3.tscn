@@ -79,6 +79,9 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 19.2294, 0, 16.472)
 [node name="Grass" parent="Environment" instance=ExtResource("5_ogcn4")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 40.131, 0, 40)
 
+[node name="Grass4" parent="Environment" instance=ExtResource("5_ogcn4")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 34.6488, 0, 40)
+
 [node name="Grass2" parent="Environment" instance=ExtResource("5_ogcn4")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 40, 0, 0)
 
