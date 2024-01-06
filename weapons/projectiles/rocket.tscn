@@ -207,4 +207,4 @@ process_material = SubResource("ParticleProcessMaterial_umljj")
 draw_pass_1 = SubResource("SphereMesh_acq7n")
 
 [node name="AreaDamageEmitter" parent="." index="6" instance=ExtResource("5_jg43v")]
-attack_radius = 2.0
+attack_radius = 2.5
