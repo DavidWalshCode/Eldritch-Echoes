@@ -10,7 +10,6 @@ extends Node3D
 var character_body : CharacterBody3D
 var move_drag = 0.0
 var move_dir : Vector3
-
 var double_jump_available = true
 
 func _ready():
