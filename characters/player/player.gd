@@ -18,7 +18,7 @@ const HOTKEYS = { # Hotkeys for weapon switching
 	KEY_7: 6,
 	KEY_8: 7,
 	KEY_9: 8,
-	KEY_0: 9,
+	KEY_0: 9
 }
 
 var dead = false

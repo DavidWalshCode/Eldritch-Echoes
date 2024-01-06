@@ -23,7 +23,7 @@ func fire():
 		if collider.has_method("hurt") and has_line_of_sight(collider):
 			var damage_data = DamageData.new()
 			damage_data.amount = damage
-			damage_data.hit_pos = collider.global_position + Vector3.UP
+			damage_data.hit_position = collider.global_position + Vector3.UP
 			collider.hurt(damage_data)
 	super()
 	

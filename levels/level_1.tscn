@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://brusqmphxxu8w"]
+[gd_scene load_steps=12 format=3 uid="uid://brusqmphxxu8w"]
 
 [ext_resource type="PackedScene" uid="uid://bbgwnkh1pgxg6" path="res://environment/assets/outsideprops/rock_boulder.tscn" id="1_rhrkr"]
 [ext_resource type="PackedScene" uid="uid://bskhjsn5g71vi" path="res://environment/assets/outsideprops/rock_cliff.tscn" id="2_t0cpd"]
 [ext_resource type="PackedScene" uid="uid://dpi5qrl7udofx" path="res://environment/assets/outsideprops/rock_pillar.tscn" id="3_rfswq"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="5_1n71g"]
 [ext_resource type="PackedScene" uid="uid://dgv4mfmb626mm" path="res://environment/assets/ground/grass.tscn" id="5_b5m8g"]
+[ext_resource type="Script" path="res://characters/health_manager.gd" id="6_h6yie"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7yqkd"]
 sky_top_color = Color(0.180392, 0.431373, 0.831373, 1)
@@ -16,6 +17,10 @@ sky_material = SubResource("ProceduralSkyMaterial_7yqkd")
 [sub_resource type="Environment" id="Environment_ublyh"]
 background_mode = 2
 sky = SubResource("Sky_jumne")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2iuiu"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_h30eo"]
 
 [node name="Level1" type="Node3D"]
 
@@ -84,3 +89,14 @@ shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("5_1n71g")]
 transform = Transform3D(-0.9855, 0, 0.169676, 0, 1, 0, -0.169676, 0, -0.9855, 20.0873, 1.3443, -10.4791)
+
+[node name="TestTarget" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1.60216, 5)
+collision_layer = 6
+script = ExtResource("6_h6yie")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestTarget"]
+shape = SubResource("SphereShape3D_2iuiu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestTarget"]
+mesh = SubResource("SphereMesh_h30eo")

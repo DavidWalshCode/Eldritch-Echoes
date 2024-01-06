@@ -12,4 +12,4 @@ func on_hit(hit_collider : Node3D, hit_position : Vector3, hit_normal : Vector3)
 	$ExplosionSparkParticles.restart()
 	
 	await get_tree().create_timer(0.15).timeout
-	$ExplosionSmokeParticles
+	$ExplosionSmokeParticles.restart()

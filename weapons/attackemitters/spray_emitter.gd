@@ -1,6 +1,6 @@
 extends AttackEmitter
 
-@export var spray_arc = 5.0
+@export var spray_arc = 2.0
 
 # Rotate along the
 func fire():

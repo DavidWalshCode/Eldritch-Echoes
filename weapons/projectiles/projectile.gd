@@ -20,13 +20,14 @@ func _ready():
 	await get_tree().create_timer(MAX_PROJECTILE_LIFESPAN).timeout
 	queue_free()
 	
-func set_bodies_to_exclude(bte : Array):
-	bodies_to_exclude = bte
-	for b in bte:
-		collision_ray_cast.add_exception(b)
+func set_bodies_to_exclude(bodies_to_be_excluded : Array):
+	bodies_to_exclude = bodies_to_be_excluded
+	for bodies in bodies_to_be_excluded:
+		collision_ray_cast.add_exception(bodies)
 
 func _physics_process(delta):
 	process_movement(delta) # Seperated so can add different logic to projectiles, e.g. grenades with gravity (can overwrite process_movement in subclasses)
+	check_collision()
 
 func process_movement(delta):
 	last_position = global_position
