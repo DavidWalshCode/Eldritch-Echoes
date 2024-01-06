@@ -322,11 +322,8 @@ script = ExtResource("4_qyhjh")
 automatic = true
 attack_rate = 0.1
 
-[node name="AttackEmitter" parent="Camera3D/WeaponManager/Weapons/MachineGun" instance=ExtResource("7_bs2up")]
-
-[node name="HitScanAttackEmitter" parent="Camera3D/WeaponManager/Weapons/MachineGun/AttackEmitter" instance=ExtResource("8_de1u1")]
-
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/MachineGun"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="MachineGun" parent="Camera3D/WeaponManager/Weapons/MachineGun/Graphics" instance=ExtResource("3_te2x3")]
 transform = Transform3D(2.05908, 0, 0, 0, 1.69975, 0, 0, 0, 1.58144, 0.411056, -0.44855, 0.660143)
@@ -342,6 +339,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.411, 0.106001, -2.11951)
 
 [node name="muzzleflash1" parent="Camera3D/WeaponManager/Weapons/MachineGun/Graphics/MuzzleFlash" instance=ExtResource("9_k8nox")]
 transform = Transform3D(-2.05908, 0, 1.38254e-07, 0, 1.69976, 0, -1.80011e-07, 0, -1.58144, -0.00195646, 0.000213146, 0.0173593)
+
+[node name="AttackEmitter" parent="Camera3D/WeaponManager/Weapons/MachineGun" instance=ExtResource("7_bs2up")]
+
+[node name="HitScanAttackEmitter" parent="Camera3D/WeaponManager/Weapons/MachineGun/AttackEmitter" instance=ExtResource("8_de1u1")]
 
 [node name="Crosshair" type="TextureRect" parent="Camera3D/WeaponManager/Weapons/MachineGun"]
 anchors_preset = 8
