@@ -18,6 +18,9 @@ sky_material = SubResource("ProceduralSkyMaterial_7yqkd")
 background_mode = 2
 background_energy_multiplier = 0.5
 sky = SubResource("Sky_jumne")
+ambient_light_source = 3
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
 
 [node name="Level2" type="Node3D"]
 
@@ -90,7 +93,8 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 40.2345)
 environment = SubResource("Environment_ublyh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.320788, 0.890807, -0.321805, -0.643235, 0.454288, 0.616337, 0.69523, 0.00928238, 0.718728, -44.8472, 52.7676, 97.6761)
+transform = Transform3D(0.45218, 0.153721, 0.87858, -0.454479, -0.807857, 0.375254, 0.767452, -0.568979, -0.295434, 22.9948, 52.7676, 43.2198)
+light_color = Color(0.980392, 0.952941, 0, 1)
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("5_i4pyy")]

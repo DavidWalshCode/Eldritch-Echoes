@@ -17,6 +17,8 @@ sky_material = SubResource("ProceduralSkyMaterial_7yqkd")
 [sub_resource type="Environment" id="Environment_ublyh"]
 background_mode = 2
 sky = SubResource("Sky_jumne")
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.06
 
 [node name="Level4" type="Node3D"]
 

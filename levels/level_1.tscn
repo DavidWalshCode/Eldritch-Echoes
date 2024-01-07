@@ -17,6 +17,7 @@ sky_material = SubResource("ProceduralSkyMaterial_7yqkd")
 [sub_resource type="Environment" id="Environment_ublyh"]
 background_mode = 2
 sky = SubResource("Sky_jumne")
+ambient_light_source = 3
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2iuiu"]
 
@@ -84,7 +85,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 40, 0, 0)
 environment = SubResource("Environment_ublyh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.320788, 0.890807, -0.321805, -0.643235, 0.454288, 0.616337, 0.69523, 0.00928238, 0.718728, -44.8472, 52.7676, 97.6761)
+transform = Transform3D(0.320788, 0.890807, -0.321805, -0.643235, 0.454288, 0.616338, 0.69523, 0.00928265, 0.718728, -44.8472, 52.7676, 97.6761)
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("5_1n71g")]
