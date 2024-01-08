@@ -116,10 +116,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.4),
+"times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.272566), Vector3(0, 0.481797, 0.95253), Vector3(0, 0, 0.272566)]
+"values": [Vector3(0, 0, 0.272566), Vector3(-0.111275, 0.428424, 1.11539), Vector3(0, 0, 0.272566)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -128,10 +128,10 @@ tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.4),
+"times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.760178, 0, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0.85638, 0, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_jkvcw"]
@@ -284,7 +284,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_othcl"]
 resource_name = "attack"
-length = 0.3
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -292,7 +292,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
+"times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0.952919), Vector3(0, 0, 0)]
@@ -482,13 +482,13 @@ texture = ExtResource("12_qp6js")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0234432, 0, 0.0563729)
 script = ExtResource("4_qyhjh")
 damage = 12
-attack_rate = 0.9
+attack_rate = 0.6
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/Shotgun"]
 rotation_edit_mode = 1
 
 [node name="OverUnderShotgun" parent="Camera3D/WeaponManager/Weapons/Shotgun/Graphics" instance=ExtResource("20_rqlhh")]
-transform = Transform3D(-4.91917e-08, 0, 2.93614, 0, 2.35191, 0, -1.12538, 0, -1.28343e-07, 0.237199, -1.85025, -0.0372531)
+transform = Transform3D(-4.91917e-08, 0, 2.93614, 0, 2.43088, 0, -1.12538, 0, -1.28343e-07, 0.237199, -1.92209, -0.0372527)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/WeaponManager/Weapons/Shotgun/Graphics"]
 libraries = {
@@ -533,6 +533,7 @@ damage = 40
 attack_rate = 0.5
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/RocketLauncher"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="GrenadeLauncher" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Graphics" instance=ExtResource("24_t2e6a")]
 transform = Transform3D(-3.0598e-08, 0, -0.697001, 0, 0.802001, 0, 0.7, 0, -3.04668e-08, 0.433278, -0.461131, 1.18796)
