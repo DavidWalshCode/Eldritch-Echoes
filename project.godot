@@ -18,6 +18,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://global.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [filesystem]
 
