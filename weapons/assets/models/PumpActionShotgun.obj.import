@@ -1,0 +1,65 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dwoxarx6kk1wg"
+path="res://.godot/imported/PumpActionShotgun.obj-5ea527b0962eb13538feafaa8169849e.scn"
+
+[deps]
+
+source_file="res://weapons/assets/models/PumpActionShotgun.obj"
+dest_files=["res://.godot/imported/PumpActionShotgun.obj-5ea527b0962eb13538feafaa8169849e.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"Material.121": {
+"use_external/enabled": true,
+"use_external/path": "res://weapons/assets/materials/pump_action_shoutgun_material.tres"
+},
+"Material.124": {
+"use_external/enabled": true,
+"use_external/path": "res://weapons/assets/materials/pump_action_shoutgun_material.tres"
+},
+"Material.127": {
+"use_external/enabled": true,
+"use_external/path": "res://weapons/assets/materials/pump_action_shoutgun_material.tres"
+},
+"Material.135": {
+"use_external/enabled": true,
+"use_external/path": "res://weapons/assets/materials/pump_action_shoutgun_material.tres"
+},
+"Material.141": {
+"use_external/enabled": true,
+"use_external/path": "res://weapons/assets/materials/pump_action_shoutgun_material.tres"
+}
+},
+"nodes": {
+"PATH:ShellLowPolyGreen_002": {
+"import/skip_import": true
+},
+"PATH:ShellLowPolyRed_002": {
+"import/skip_import": true
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

@@ -1,0 +1,105 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://c6rld6wf52yn5"
+path="res://.godot/imported/MP5.obj-2815eb94165c914ecc4fa8255889b806.scn"
+
+[deps]
+
+source_file="res://weapons/assets/models/MP5.obj"
+dest_files=["res://.godot/imported/MP5.obj-2815eb94165c914ecc4fa8255889b806.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"Material.026": {
+"use_external/enabled": true,
+"use_external/path": "res://weapons/assets/materials/mp5_material.tres"
+},
+"Material.030": {
+"use_external/enabled": true,
+"use_external/path": "res://weapons/assets/materials/mp5_material.tres"
+},
+"Material.033": {
+"use_external/enabled": true,
+"use_external/path": "res://weapons/assets/materials/mp5_material.tres"
+},
+"Material.034": {
+"use_external/enabled": true,
+"use_external/path": "res://weapons/assets/materials/mp5_material.tres"
+},
+"Material.035": {
+"use_external/enabled": true,
+"use_external/path": "res://weapons/assets/materials/mp5_material.tres"
+},
+"Material.036": {
+"use_external/enabled": true,
+"use_external/path": "res://weapons/assets/materials/mp5_material.tres"
+},
+"Material.037": {
+"use_external/enabled": true,
+"use_external/path": "res://weapons/assets/materials/mp5_material.tres"
+},
+"Material.038": {
+"use_external/enabled": true,
+"use_external/path": "res://weapons/assets/materials/mp5_material.tres"
+},
+"Material.039": {
+"use_external/enabled": true,
+"use_external/path": "res://weapons/assets/materials/mp5_material.tres"
+}
+},
+"nodes": {
+"PATH:9MM_001": {
+"import/skip_import": true
+},
+"PATH:9MM_003": {
+"import/skip_import": true
+},
+"PATH:MP5BodyFull": {
+"import/skip_import": true
+},
+"PATH:MP5FullStock": {
+"import/skip_import": true
+},
+"PATH:MP5KBody": {
+"import/skip_import": true
+},
+"PATH:MP5Magazene": {
+"import/skip_import": true
+},
+"PATH:MP5MagazeneFull": {
+"import/skip_import": true
+},
+"PATH:MP5Magazene_002": {
+"import/skip_import": true
+},
+"PATH:Trigger_002": {
+"import/skip_import": true
+},
+"PATH:Trigger_003": {
+"import/skip_import": true
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

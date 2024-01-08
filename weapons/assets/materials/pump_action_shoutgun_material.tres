@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dnsbl1ci6f52j"]
+
+[ext_resource type="Texture2D" uid="uid://b0i8wcftbgv77" path="res://weapons/assets/materials/PAShotgunText.png" id="1_p5kn0"]
+
+[resource]
+albedo_texture = ExtResource("1_p5kn0")
+texture_filter = 2

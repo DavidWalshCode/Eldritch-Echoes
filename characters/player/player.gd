@@ -10,10 +10,10 @@ extends CharacterBody3D
 
 const HOTKEYS = { # Hotkeys for weapon switching
 	KEY_1: 0, # 1 for melee weapon
-	KEY_2: 1, # 2 for machine gun
-	KEY_3: 2, # 3 for shotgun
-	KEY_4: 3, # 4 for rocket launcher
-	KEY_5: 4,
+	KEY_2: 1, # 2 for revolvers
+	KEY_3: 2, # 3 for machine gun
+	KEY_4: 3, # 4 for shotgun
+	KEY_5: 4, # 5 for rocket launcher
 	KEY_6: 5,
 	KEY_7: 6,
 	KEY_8: 7,

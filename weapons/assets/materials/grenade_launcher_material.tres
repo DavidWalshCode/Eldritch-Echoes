@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b7bn3id28df4q"]
+
+[ext_resource type="Texture2D" uid="uid://cagtpv0rvwrj" path="res://weapons/assets/materials/gl.png" id="1_ncse2"]
+
+[resource]
+albedo_texture = ExtResource("1_ncse2")
+texture_filter = 2
