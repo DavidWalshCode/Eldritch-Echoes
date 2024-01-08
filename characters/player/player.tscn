@@ -334,6 +334,7 @@ script = ExtResource("2_c6p01")
 
 [node name="Machete" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1.25345, 0, 0, 0, 1.25346, 0, 0, 0, 1.25345, 0.727612, -0.808232, -0.0604396)
+visible = false
 script = ExtResource("4_qyhjh")
 automatic = true
 damage = 20
@@ -488,13 +489,14 @@ size_flags_horizontal = 4
 texture = ExtResource("12_qp6js")
 
 [node name="Shotgun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0234432, 0, 0.0563729)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0234432, 0, 0.0563734)
 visible = false
 script = ExtResource("4_qyhjh")
 damage = 12
 attack_rate = 0.6
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/Shotgun"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0)
 rotation_edit_mode = 1
 
 [node name="OverUnderShotgun" parent="Camera3D/WeaponManager/Weapons/Shotgun/Graphics" instance=ExtResource("20_rqlhh")]
@@ -537,7 +539,6 @@ size_flags_horizontal = 4
 texture = ExtResource("17_uf0m2")
 
 [node name="RocketLauncher" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
-visible = false
 script = ExtResource("4_qyhjh")
 damage = 40
 attack_rate = 0.5
