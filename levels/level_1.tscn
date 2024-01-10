@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="5_1n71g"]
 [ext_resource type="PackedScene" uid="uid://dgv4mfmb626mm" path="res://environment/assets/ground/grass.tscn" id="5_b5m8g"]
 [ext_resource type="Script" path="res://characters/health_manager.gd" id="6_h6yie"]
-[ext_resource type="PackedScene" uid="uid://d1ukhe18kfgu0" path="res://characters/npc/villager_woman_1.tscn" id="7_756k7"]
+[ext_resource type="PackedScene" uid="uid://byal5udftrlek" path="res://characters/npc/scenes/villager_woman_1.tscn" id="7_s5i1m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7yqkd"]
 sky_top_color = Color(0.180392, 0.431373, 0.831373, 1)
@@ -103,5 +103,5 @@ shape = SubResource("SphereShape3D_2iuiu")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TestTarget"]
 mesh = SubResource("SphereMesh_h30eo")
 
-[node name="VillagerWoman1" parent="." instance=ExtResource("7_756k7")]
-transform = Transform3D(-0.591865, 0, -0.619293, 0, 0.82542, 0, 0.598262, 0, -0.61267, 27.3421, 0.449589, 1.50387)
+[node name="VillagerWoman1" parent="." instance=ExtResource("7_s5i1m")]
+transform = Transform3D(-0.537992, 0, -0.849303, 0, 0.858467, 0, 0.803551, 0, -0.568623, 28, 0.497243, 1)

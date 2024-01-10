@@ -51,6 +51,8 @@ func attack(input_just_pressed : bool, input_held : bool):
 	animation_player.play("attack")
 	if has_node("Graphics/MuzzleFlash"):
 		$Graphics/MuzzleFlash.flash()
+	if has_node("Graphics/MuzzleFlash2"): # For the revolvers, not very efficiently implemented, keep an eye on it
+		$Graphics/MuzzleFlash2.flash()
 	
 	# TESTING SHOOTING GIVES KNOCKBACK TO FLY, E.G. ROCKET JUMPING IN TF2
 	# Get camera direction at a normalised vector 3d

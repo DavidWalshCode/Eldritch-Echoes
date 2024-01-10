@@ -39,7 +39,7 @@ func switch_to_next_weapon():
 		if switch_to_weapon_slot(wrapped_index):
 			break
 
-func switch_to_weapon_slot(slot_index : int)->bool:
+func switch_to_weapon_slot(slot_index : int) -> bool:
 	if slot_index >= weapons.size() or slot_index < 0:
 		return false
 	

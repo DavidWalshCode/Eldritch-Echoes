@@ -155,10 +155,10 @@ delete_on_hit_after_time = 2.0
 transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 1.90316e-07, 1.98296e-07, 0.970209)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Graphics" index="1"]
-autoplay = "spin"
 libraries = {
 "": SubResource("AnimationLibrary_ekjoj")
 }
+autoplay = "spin"
 
 [node name="muzzleflash3" parent="Graphics" index="2" instance=ExtResource("3_erksw")]
 transform = Transform3D(0.638309, 1.49012e-08, 0, 4.47035e-08, 0.695342, 0, 0, 0, 0.407085, 0, 0, 0.967986)

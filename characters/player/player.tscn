@@ -1,14 +1,12 @@
-[gd_scene load_steps=45 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=43 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://characters/player/weapon_manager.gd" id="2_c6p01"]
 [ext_resource type="PackedScene" uid="uid://d167a1bqe4u0o" path="res://characters/character_mover.tscn" id="2_k2lt6"]
 [ext_resource type="PackedScene" uid="uid://m5rjrq1bs3oo" path="res://characters/health_manager.tscn" id="3_c6yru"]
-[ext_resource type="PackedScene" uid="uid://dbww8l40ny5bs" path="res://weapons/assets/rawweapons/machete.glb" id="3_ck32y"]
 [ext_resource type="Script" path="res://weapons/weapon.gd" id="4_qyhjh"]
 [ext_resource type="PackedScene" uid="uid://cfnr0uiu3amis" path="res://weapons/assets/models/EspadaSword.obj" id="5_u532v"]
 [ext_resource type="PackedScene" uid="uid://cbtf6d7s603ra" path="res://weapons/attackemitters/area_damage_emitter.tscn" id="6_jrgnc"]
-[ext_resource type="PackedScene" uid="uid://qeagyc328hcx" path="res://weapons/assets/models/Axe.obj" id="6_tv1an"]
 [ext_resource type="PackedScene" uid="uid://cseo8mpaiiufc" path="res://weapons/attackemitters/attack_emitter.tscn" id="7_bs2up"]
 [ext_resource type="PackedScene" uid="uid://dkceu074onyx3" path="res://effects/muzzleflash/muzzle_flash.tscn" id="8_a6f6a"]
 [ext_resource type="PackedScene" uid="uid://dm2b4wrpid53g" path="res://weapons/attackemitters/hit_scan_attack_emitter.tscn" id="8_de1u1"]
@@ -61,7 +59,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_iw6rw"]
 resource_name = "attack"
-length = 0.5
+length = 0.6
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -70,10 +68,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.15, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.28287, 0), Vector3(-0.445532, 0.852318, -0.268565), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 1.33273, 0), Vector3(-0.445532, 0.852318, -0.268565), Vector3(-1.08479, 0.145662, -0.58066), Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -82,10 +80,10 @@ tracks/1/path = NodePath(".:quaternion")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.15, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Quaternion(0, 0, 0, 1), Quaternion(0.231005, -0.189019, -0.180087, 0.937271), Quaternion(-0.737704, 0.0776184, -0.249268, 0.622603), Quaternion(0, 0, 0, 1)]
+"values": [Quaternion(0, 0, 0, 1), Quaternion(0.266215, -0.182087, -0.187093, 0.927885), Quaternion(-0.853657, 0.0254422, -0.0539642, 0.517408), Quaternion(0.956987, -0.257079, -0.0236697, -0.132389), Quaternion(0, 0, 0, 1)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -106,34 +104,6 @@ tracks/2/keys = {
 _data = {
 "RESET": SubResource("Animation_8nud0"),
 "attack": SubResource("Animation_iw6rw")
-}
-
-[sub_resource type="Animation" id="Animation_hclfc"]
-resource_name = "attack"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0.272566), Vector3(-0.111275, 0.428424, 1.10596), Vector3(0, 0, 0.272566)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.965987, 0, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_jkvcw"]
@@ -162,6 +132,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hclfc"]
+resource_name = "attack"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.272566), Vector3(-0.111275, 0.428424, 1.10596), Vector3(0, 0, 0.272566)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.965987, 0, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a1rt6"]
@@ -236,7 +234,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_2561s"]
 resource_name = "attack"
-length = 0.6
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -245,10 +242,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.25, 0.35, 0.45, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.25, 0.3, 0.35, 0.45, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.350049), Vector3(0, -0.0764518, 0.368291), Vector3(0, -0.0989323, 0.244378), Vector3(0, -0.607319, 0.336612), Vector3(0, 0.285145, 0.174698), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.350049), Vector3(0, -0.0764518, 0.368291), Vector3(0, -0.0989323, 0.244378), Vector3(0, -0.553545, 0.297637), Vector3(0, -0.833975, 0.336612), Vector3(0, 0.400484, 0.174698), Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -257,10 +254,10 @@ tracks/1/path = NodePath(".:quaternion")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.25, 0.35, 0.45, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.25, 0.3, 0.35, 0.45, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Quaternion(0, 0, 0, 1), Quaternion(0, 0, 0, 1), Quaternion(0.640894, 0, 0, 0.76763), Quaternion(0.640894, 0, 0, 0.76763), Quaternion(0.640894, 0, 0, 0.76763), Quaternion(0, 0, 0, 1)]
+"values": [Quaternion(0, 0, 0, 1), Quaternion(0, 0, 0, 1), Quaternion(0.656842, 0, 0, 0.754028), Quaternion(0.675329, 0, 0, 0.737517), Quaternion(0.640894, 0, 0, 0.76763), Quaternion(0.650536, 0, 0, 0.759476), Quaternion(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y26wx"]
@@ -286,7 +283,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_othcl"]
 resource_name = "attack"
-length = 0.5
+length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -294,10 +291,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
+"times": PackedFloat32Array(0, 0.1, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.952919), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.905184), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2c808"]
@@ -320,7 +317,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_oe3gr")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7913, 0)
 fov = 90.0
 
 [node name="FirePoint" type="Node3D" parent="Camera3D"]
@@ -337,25 +334,17 @@ transform = Transform3D(1.25345, 0, 0, 0, 1.25346, 0, 0, 0, 1.25345, 0.727612, -
 visible = false
 script = ExtResource("4_qyhjh")
 automatic = true
-damage = 20
+damage = 30
 ammo = -1
-attack_rate = 0.4
+attack_rate = 0.5
 animation_controlled_attack = true
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/Machete"]
 transform = Transform3D(1.09669, 0, 0, 0, 1.09017, 0, 0, 0, 1.00001, 0, 0, 0)
 rotation_edit_mode = 1
 
-[node name="Machete" parent="Camera3D/WeaponManager/Weapons/Machete/Graphics" instance=ExtResource("3_ck32y")]
-transform = Transform3D(1, 0, 0, 0, 1.09641, 0, 0, 0, 0.999999, 0.00709128, 0.0406768, 0)
-visible = false
-
 [node name="EspadaSword" parent="Camera3D/WeaponManager/Weapons/Machete/Graphics" instance=ExtResource("5_u532v")]
-transform = Transform3D(-1.50628, 1.94325e-07, -2.65005, -2.4969e-07, -4.21479, 0, -2.42663, 3.1306e-07, 1.64496, 0.0293679, 3.185, 0.0421987)
-
-[node name="Axe" parent="Camera3D/WeaponManager/Weapons/Machete/Graphics" instance=ExtResource("6_tv1an")]
-transform = Transform3D(0.497452, 0, 0.097748, 0, 0.298464, 0, -0.154577, 0, 0.314567, -0.00310707, 0.715954, -0.0526888)
-visible = false
+transform = Transform3D(-1.50628, 1.7914e-07, -2.65005, -2.4969e-07, -3.88543, 0, -2.42663, 2.88596e-07, 1.64496, 0.0293679, 3.02371, 0.0421987)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/WeaponManager/Weapons/Machete/Graphics"]
 libraries = {
@@ -391,7 +380,6 @@ texture = ExtResource("8_op1cy")
 
 [node name="Revolvers" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.104714)
-visible = false
 script = ExtResource("4_qyhjh")
 damage = 25
 attack_rate = 0.5
@@ -412,9 +400,15 @@ libraries = {
 autoplay = "RESET"
 
 [node name="MuzzleFlash" parent="Camera3D/WeaponManager/Weapons/Revolvers/Graphics" instance=ExtResource("8_a6f6a")]
-transform = Transform3D(0.599999, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.801645, 0.117557, -1.6318)
+transform = Transform3D(0.579554, -0.155291, 0, 0.155291, 0.579556, 0, 0, 0, 0.6, 0.801645, 0.117557, -1.6318)
 
 [node name="muzzleflash1" parent="Camera3D/WeaponManager/Weapons/Revolvers/Graphics/MuzzleFlash" instance=ExtResource("9_k8nox")]
+transform = Transform3D(-2.05908, 0, 1.38254e-07, 0, 1.69976, 0, -1.80011e-07, 0, -1.58144, -0.00195646, 0.000213146, 0.0173593)
+
+[node name="MuzzleFlash2" parent="Camera3D/WeaponManager/Weapons/Revolvers/Graphics" instance=ExtResource("8_a6f6a")]
+transform = Transform3D(0.405863, 0.441899, 0, -0.441899, 0.405864, 0, 0, 0, 0.6, -2.89179, 0.117557, -1.6318)
+
+[node name="muzzleflash1" parent="Camera3D/WeaponManager/Weapons/Revolvers/Graphics/MuzzleFlash2" instance=ExtResource("9_k8nox")]
 transform = Transform3D(-2.05908, 0, 1.38254e-07, 0, 1.69976, 0, -1.80011e-07, 0, -1.58144, -0.00195646, 0.000213146, 0.0173593)
 
 [node name="AttackEmitter" parent="Camera3D/WeaponManager/Weapons/Revolvers" instance=ExtResource("7_bs2up")]
@@ -452,7 +446,6 @@ damage = 10
 attack_rate = 0.1
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/MachineGun"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="MG3" parent="Camera3D/WeaponManager/Weapons/MachineGun/Graphics" instance=ExtResource("28_ix21b")]
 transform = Transform3D(1.4, 0, 0, 0, 1.603, 0, 0, 0, 1.26268, 0.52233, -0.722473, -0.330897)
@@ -489,14 +482,14 @@ size_flags_horizontal = 4
 texture = ExtResource("12_qp6js")
 
 [node name="Shotgun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0234432, 0, 0.0563734)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0234432, 0, 0.0563736)
 visible = false
 script = ExtResource("4_qyhjh")
-damage = 12
-attack_rate = 0.6
+damage = 15
+attack_rate = 0.9
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/Shotgun"]
-transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0)
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 rotation_edit_mode = 1
 
 [node name="OverUnderShotgun" parent="Camera3D/WeaponManager/Weapons/Shotgun/Graphics" instance=ExtResource("20_rqlhh")]
@@ -539,9 +532,10 @@ size_flags_horizontal = 4
 texture = ExtResource("17_uf0m2")
 
 [node name="RocketLauncher" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
+visible = false
 script = ExtResource("4_qyhjh")
-damage = 40
-attack_rate = 0.5
+damage = 60
+attack_rate = 0.7
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/RocketLauncher"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
