@@ -73,11 +73,8 @@ func _process(delta):
 	
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forwards", "move_backwards") # Currently 'WASD'
 	var move_dir = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	
 	character_mover.set_move_dir(move_dir)
-	
-	# Update camera lean
-	update_camera_lean(delta)
+	update_camera_lean(delta) # Update camera lean
 	
 	if Input.is_action_just_pressed("jump"): # Currently 'Space'
 		character_mover.jump()
