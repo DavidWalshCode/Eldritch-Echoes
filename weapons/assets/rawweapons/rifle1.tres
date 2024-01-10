@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dt2kx5615qdlq"]
-
-[ext_resource type="Texture2D" uid="uid://c12mbrf5u8eu6" path="res://weapons/assets/rawweapons/Tac_M14_Text.png" id="1_1a6tm"]
-
-[resource]
-albedo_texture = ExtResource("1_1a6tm")
-texture_filter = 2
