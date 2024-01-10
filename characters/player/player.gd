@@ -8,6 +8,11 @@ extends CharacterBody3D
 @export var mouse_sensitivity_h = 0.13 # Horizontal mouse sens
 @export var mouse_sensitivity_v = 0.13 # Vertical mouse sens
 
+# Camera lean variables
+@export var max_camera_lean = 1.5  # Maximum lean angle in degrees
+@export var camera_lean_speed = 10.0  # Speed at which the camera leans
+var current_camera_lean = 0.0  # Current lean angle
+
 const HOTKEYS = { # Hotkeys for weapon switching
 	KEY_1: 0, # 1 for melee weapon
 	KEY_2: 1, # 2 for revolvers
@@ -70,6 +75,10 @@ func _process(delta):
 	var move_dir = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	character_mover.set_move_dir(move_dir)
+	
+	# Update camera lean
+	update_camera_lean(delta)
+	
 	if Input.is_action_just_pressed("jump"): # Currently 'Space'
 		character_mover.jump()
 	
@@ -106,3 +115,24 @@ func load_next_level():
 	
 	var next_level_path = "res://levels/level_" + str(next_level_number) + ".tscn" # Could also have const FILE_BEGIN = "res://levels/level_"
 	get_tree().change_scene_to_file(next_level_path)
+
+func update_camera_lean(delta):
+	var input_direction = 0.0
+
+	if Input.is_action_pressed("move_right"):
+		input_direction = -1.0
+	elif Input.is_action_pressed("move_left"):
+		input_direction = 1.0
+
+	# Update current camera lean based on input direction
+	if input_direction != 0.0:
+		current_camera_lean += delta * camera_lean_speed * input_direction
+	else:
+		# Gradually return the camera to the center if no input is detected
+		current_camera_lean = lerp(current_camera_lean, 0.0, delta * camera_lean_speed)
+
+	# Clamp the current camera lean to the maximum values
+	current_camera_lean = clamp(current_camera_lean, -max_camera_lean, max_camera_lean)
+
+	# Apply the lean to the camera's rotation
+	camera_3d.rotation_degrees.z = current_camera_lean

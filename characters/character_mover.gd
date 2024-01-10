@@ -6,6 +6,7 @@ extends Node3D
 @export var max_speed = 20.0
 @export var move_accel = 5.0
 @export var stop_drag = 0.9
+@export var air_drag = 0.25
 
 var character_body : CharacterBody3D
 var move_drag = 0.0
@@ -37,6 +38,9 @@ func _physics_process(delta):
 	var drag = move_drag
 	if move_dir.is_zero_approx():
 		drag = stop_drag
+	# Use air_drag if the character is not on the floor
+	if not character_body.is_on_floor():
+		drag = air_drag
 	
 	var flat_velo = character_body.velocity
 	flat_velo.y = 0.0
