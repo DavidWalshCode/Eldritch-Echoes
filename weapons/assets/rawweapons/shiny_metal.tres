@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cmml8rc1aexmh"]
-
-[ext_resource type="Texture2D" uid="uid://ym6rnd83mqhs" path="res://weapons/assets/rawweapons/shinymetal.png" id="1_1tph1"]
-
-[resource]
-specular_mode = 2
-albedo_texture = ExtResource("1_1tph1")
-texture_filter = 2

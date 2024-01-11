@@ -33,11 +33,11 @@ _subresources={
 "materials": {
 "BlackMetal": {
 "use_external/enabled": true,
-"use_external/path": "res://weapons/assets/rawweapons/black_metal.tres"
+"use_external/path": "res://weapons/projectiles/assets/black_metal.tres"
 },
 "GreenPlating": {
 "use_external/enabled": true,
-"use_external/path": "res://weapons/assets/rawweapons/green_metal.tres"
+"use_external/path": "res://weapons/projectiles/assets/green_metal.tres"
 }
 }
 }
