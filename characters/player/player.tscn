@@ -317,7 +317,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_oe3gr")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7913, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.89849, 0)
 fov = 90.0
 
 [node name="FirePoint" type="Node3D" parent="Camera3D"]
@@ -487,7 +487,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0234432, 0, 0.0563736)
 visible = false
 script = ExtResource("4_qyhjh")
 automatic = true
-damage = 15
+damage = 20
 attack_rate = 0.9
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/Shotgun"]
@@ -504,15 +504,21 @@ libraries = {
 autoplay = "RESET"
 
 [node name="MuzzleFlash" parent="Camera3D/WeaponManager/Weapons/Shotgun/Graphics" instance=ExtResource("8_a6f6a")]
-transform = Transform3D(1.15666, 0, 0, 0, 1.28612, 0, 0, 0, 0.999999, 0.236253, 0.0972905, -2.81217)
+transform = Transform3D(1.15666, 0, 0, 0, 1.28612, 0, 0, 0, 0.999999, 0.236253, 0.211175, -2.81217)
 
 [node name="muzzleflash3" parent="Camera3D/WeaponManager/Weapons/Shotgun/Graphics/MuzzleFlash" instance=ExtResource("11_i3xgg")]
+transform = Transform3D(-2.04025, 0, -1.92008e-07, 0, 2.03723, 0, 1.78365e-07, 0, -2.19631, 0, 0, 0)
+
+[node name="MuzzleFlash2" parent="Camera3D/WeaponManager/Weapons/Shotgun/Graphics" instance=ExtResource("8_a6f6a")]
+transform = Transform3D(1.15666, 0, 0, 0, 1.28612, 0, 0, 0, 0.999999, 0.236253, -0.0273728, -2.81217)
+
+[node name="muzzleflash3" parent="Camera3D/WeaponManager/Weapons/Shotgun/Graphics/MuzzleFlash2" instance=ExtResource("11_i3xgg")]
 transform = Transform3D(-2.04025, 0, -1.92008e-07, 0, 2.03723, 0, 1.78365e-07, 0, -2.19631, 0, 0, 0)
 
 [node name="AttackEmitter" parent="Camera3D/WeaponManager/Weapons/Shotgun" instance=ExtResource("7_bs2up")]
 
 [node name="BurstEmitter" parent="Camera3D/WeaponManager/Weapons/Shotgun/AttackEmitter" instance=ExtResource("12_7642p")]
-burst_count = 6
+burst_count = 8
 
 [node name="SprayEmitter" parent="Camera3D/WeaponManager/Weapons/Shotgun/AttackEmitter/BurstEmitter" instance=ExtResource("13_gux8a")]
 spray_arc = 1.5

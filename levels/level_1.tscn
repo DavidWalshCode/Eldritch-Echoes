@@ -104,4 +104,4 @@ shape = SubResource("SphereShape3D_2iuiu")
 mesh = SubResource("SphereMesh_h30eo")
 
 [node name="VillagerWoman1" parent="." instance=ExtResource("7_s5i1m")]
-transform = Transform3D(-0.537992, 0, -0.849303, 0, 0.858467, 0, 0.803551, 0, -0.568623, 28, 0.497243, 1)
+transform = Transform3D(-0.537992, 0, -0.849303, 0, 0.865375, 0, 0.803551, 0, -0.568623, 28, 0.497243, 1)

@@ -6,7 +6,7 @@ extends Node3D
 @export var max_speed = 20.0
 @export var move_accel = 5.0
 @export var stop_drag = 0.15
-@export var air_drag = 0.18
+@export var air_drag = 0.19
 
 var character_body : CharacterBody3D
 var move_drag = 0.0
