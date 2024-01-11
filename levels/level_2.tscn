@@ -8,8 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://dgv4mfmb626mm" path="res://environment/assets/ground/grass.tscn" id="5_wahoc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7yqkd"]
-sky_top_color = Color(0.768627, 0.619608, 0.152941, 1)
-sky_horizon_color = Color(0.960784, 0.756863, 0.411765, 1)
+sky_top_color = Color(0.937255, 0.976471, 0.282353, 1)
+sky_horizon_color = Color(0.407843, 0.290196, 0.0705882, 1)
+sky_curve = 0.356762
+ground_curve = 0.196984
+sun_curve = 0.487352
 
 [sub_resource type="Sky" id="Sky_jumne"]
 sky_material = SubResource("ProceduralSkyMaterial_7yqkd")
@@ -93,7 +96,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 40.2345)
 environment = SubResource("Environment_ublyh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.45218, 0.153721, 0.87858, -0.454479, -0.807857, 0.375254, 0.767452, -0.568979, -0.295434, 22.9948, 52.7676, 43.2198)
+transform = Transform3D(0.45218, 0.153721, 0.87858, -0.161066, -0.954769, 0.249948, 0.877263, -0.254531, -0.406968, 22.9948, 52.7676, 43.2198)
 light_color = Color(0.980392, 0.952941, 0, 1)
 shadow_enabled = true
 

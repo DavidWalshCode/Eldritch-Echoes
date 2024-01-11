@@ -343,7 +343,7 @@ animation_controlled_attack = true
 transform = Transform3D(1.09669, 0, 0, 0, 1.09017, 0, 0, 0, 1.00001, 0, 0, 0)
 rotation_edit_mode = 1
 
-[node name="EspadaSword" parent="Camera3D/WeaponManager/Weapons/Machete/Graphics" instance=ExtResource("5_u532v")]
+[node name="Sword" parent="Camera3D/WeaponManager/Weapons/Machete/Graphics" instance=ExtResource("5_u532v")]
 transform = Transform3D(-1.50628, 1.7914e-07, -2.65005, -2.4969e-07, -3.88543, 0, -2.42663, 2.88596e-07, 1.64496, 0.0293679, 3.02371, 0.0421987)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/WeaponManager/Weapons/Machete/Graphics"]
@@ -381,6 +381,7 @@ texture = ExtResource("8_op1cy")
 [node name="Revolvers" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.104714)
 script = ExtResource("4_qyhjh")
+automatic = true
 damage = 25
 attack_rate = 0.5
 
@@ -400,13 +401,13 @@ libraries = {
 autoplay = "RESET"
 
 [node name="MuzzleFlash" parent="Camera3D/WeaponManager/Weapons/Revolvers/Graphics" instance=ExtResource("8_a6f6a")]
-transform = Transform3D(0.579554, -0.155291, 0, 0.155291, 0.579556, 0, 0, 0, 0.6, 0.801645, 0.117557, -1.6318)
+transform = Transform3D(0.579554, -0.155291, 0, 0.155291, 0.579556, 0, 0, 0, 0.6, 0.801645, 0.118989, -1.6318)
 
 [node name="muzzleflash1" parent="Camera3D/WeaponManager/Weapons/Revolvers/Graphics/MuzzleFlash" instance=ExtResource("9_k8nox")]
 transform = Transform3D(-2.05908, 0, 1.38254e-07, 0, 1.69976, 0, -1.80011e-07, 0, -1.58144, -0.00195646, 0.000213146, 0.0173593)
 
 [node name="MuzzleFlash2" parent="Camera3D/WeaponManager/Weapons/Revolvers/Graphics" instance=ExtResource("8_a6f6a")]
-transform = Transform3D(0.405863, 0.441899, 0, -0.441899, 0.405864, 0, 0, 0, 0.6, -2.89179, 0.117557, -1.6318)
+transform = Transform3D(0.405863, 0.441899, 0, -0.441899, 0.405864, 0, 0, 0, 0.6, -2.89179, 0.121853, -1.6318)
 
 [node name="muzzleflash1" parent="Camera3D/WeaponManager/Weapons/Revolvers/Graphics/MuzzleFlash2" instance=ExtResource("9_k8nox")]
 transform = Transform3D(-2.05908, 0, 1.38254e-07, 0, 1.69976, 0, -1.80011e-07, 0, -1.58144, -0.00195646, 0.000213146, 0.0173593)
@@ -418,7 +419,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.161085)
 burst_count = 2
 
 [node name="SprayEmitter" parent="Camera3D/WeaponManager/Weapons/Revolvers/AttackEmitter/BurstEmitter" instance=ExtResource("13_gux8a")]
-spray_arc = 1.0
+spray_arc = 0.7
 
 [node name="HitScanAttackEmitter" parent="Camera3D/WeaponManager/Weapons/Revolvers/AttackEmitter/BurstEmitter/SprayEmitter" instance=ExtResource("8_de1u1")]
 
@@ -485,6 +486,7 @@ texture = ExtResource("12_qp6js")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0234432, 0, 0.0563736)
 visible = false
 script = ExtResource("4_qyhjh")
+automatic = true
 damage = 15
 attack_rate = 0.9
 
@@ -513,6 +515,7 @@ transform = Transform3D(-2.04025, 0, -1.92008e-07, 0, 2.03723, 0, 1.78365e-07, 0
 burst_count = 6
 
 [node name="SprayEmitter" parent="Camera3D/WeaponManager/Weapons/Shotgun/AttackEmitter/BurstEmitter" instance=ExtResource("13_gux8a")]
+spray_arc = 1.5
 
 [node name="HitScanAttackEmitter" parent="Camera3D/WeaponManager/Weapons/Shotgun/AttackEmitter/BurstEmitter/SprayEmitter" instance=ExtResource("8_de1u1")]
 
@@ -534,13 +537,13 @@ texture = ExtResource("17_uf0m2")
 [node name="RocketLauncher" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 visible = false
 script = ExtResource("4_qyhjh")
+automatic = true
 damage = 60
 attack_rate = 0.7
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/RocketLauncher"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="GrenadeLauncher" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Graphics" instance=ExtResource("24_t2e6a")]
+[node name="RocketLauncher" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Graphics" instance=ExtResource("24_t2e6a")]
 transform = Transform3D(-3.0598e-08, 0, -0.697001, 0, 0.802001, 0, 0.7, 0, -3.04668e-08, 0.433278, -0.461131, 1.18796)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Graphics"]
@@ -574,7 +577,6 @@ texture = ExtResource("12_65i83")
 
 [node name="CharacterMover" parent="." instance=ExtResource("2_k2lt6")]
 visible = false
-jump_force = 15.0
 
 [node name="HealthManager" parent="." instance=ExtResource("3_c6yru")]
 visible = false
