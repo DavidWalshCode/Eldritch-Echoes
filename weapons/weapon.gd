@@ -5,7 +5,7 @@ class_name Weapon
 @onready var animation_player : AnimationPlayer = $Graphics/AnimationPlayer
 @onready var attack_emitter : AttackEmitter = $AttackEmitter
 @onready var fire_point : Node3D = %FirePoint
-#@onready var camera_3d = $"../../.."
+@onready var camera_3d = $"../../.."
 #@onready var player = $"../../../.."
 
 @export var automatic = false
@@ -15,6 +15,10 @@ class_name Weapon
 var last_attack_time = -9999.9
 #@export var recoil_knockback_power = 10
 @export var animation_controlled_attack = false
+
+# Recoil variables
+@export var recoil_strength = 0.8
+var recoil_amount = 0.0
 
 signal fired
 signal out_of_ammo
@@ -54,6 +58,8 @@ func attack(input_just_pressed : bool, input_held : bool):
 	if has_node("Graphics/MuzzleFlash2"): # For the revolvers, not very efficiently implemented, keep an eye on it
 		$Graphics/MuzzleFlash2.flash()
 	
+	apply_recoil()
+	
 	# TESTING SHOOTING GIVES KNOCKBACK TO FLY, E.G. ROCKET JUMPING IN TF2
 	# Get camera direction at a normalised vector 3d
 	# Recoil is take the direction youre firing in, reverse it and add some factor amount to the velocity
@@ -76,3 +82,11 @@ func set_active(active : bool):
 	visible = active
 	if !active:
 		animation_player.play("RESET")
+
+func apply_recoil():
+	var steps = 5 # Number of steps to split the recoil into
+	var recoil_step = recoil_strength / steps
+	for i in range(steps):
+		camera_3d.rotation_degrees.x += recoil_step
+		# Wait for a short duration between each step
+		await get_tree().create_timer(0.02).timeout
