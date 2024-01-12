@@ -125,8 +125,7 @@ func update_camera_lean(delta):
 	if input_direction != 0.0:
 		current_camera_lean += delta * camera_lean_speed * input_direction
 	else:
-		# Gradually return the camera to the center if no input is detected
-		current_camera_lean = lerp(current_camera_lean, 0.0, delta * camera_lean_speed)
+		current_camera_lean = lerp(current_camera_lean, 0.0, delta * camera_lean_speed) # Gradually return the camera to the center if no input is detected
 
 	# Clamp the current camera lean to the maximum values
 	current_camera_lean = clamp(current_camera_lean, -max_camera_lean, max_camera_lean)

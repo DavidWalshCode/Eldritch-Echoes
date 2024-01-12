@@ -6,17 +6,14 @@ class_name Weapon
 @onready var attack_emitter : AttackEmitter = $AttackEmitter
 @onready var fire_point : Node3D = %FirePoint
 @onready var camera_3d = $"../../.."
-#@onready var player = $"../../../.."
 
 @export var automatic = false
 @export var damage = 5
 @export var ammo = 1000
 @export var attack_rate = 0.2
-var last_attack_time = -9999.9
-#@export var recoil_knockback_power = 10
 @export var animation_controlled_attack = false
+var last_attack_time = -9999.9
 
-# Recoil variables
 @export var recoil_strength = 0.8
 var recoil_amount = 0.0
 
@@ -55,23 +52,10 @@ func attack(input_just_pressed : bool, input_held : bool):
 	animation_player.play("attack")
 	if has_node("Graphics/MuzzleFlash"):
 		$Graphics/MuzzleFlash.flash()
-	if has_node("Graphics/MuzzleFlash2"): # For the revolvers, not very efficiently implemented, keep an eye on it
+	if has_node("Graphics/MuzzleFlash2"): # Not the best implementation for making the second flash show, keep an eye on it
 		$Graphics/MuzzleFlash2.flash()
 	
 	apply_recoil()
-	
-	# TESTING SHOOTING GIVES KNOCKBACK TO FLY, E.G. ROCKET JUMPING IN TF2
-	# Get camera direction at a normalised vector 3d
-	# Recoil is take the direction youre firing in, reverse it and add some factor amount to the velocity
-	# var facing_direction = camera_3d.global_transform.basis.z
-	# player.velocity += facing_direction * 5
-	
-#func recoil_knockback(recoil_knockback_power):
-	#recoil(power):
-		#player.x -= some_factor * power;
-		#player.y -= some_BIG_factor * power;
-		#player.z -= some_factor * power;
-	#return
 
 func actually_attack():
 	attack_emitter.global_transform = fire_point.global_transform
@@ -88,5 +72,4 @@ func apply_recoil():
 	var recoil_step = recoil_strength / steps
 	for i in range(steps):
 		camera_3d.rotation_degrees.x += recoil_step
-		# Wait for a short duration between each step
-		await get_tree().create_timer(0.02).timeout
+		await get_tree().create_timer(0.02).timeout # Wait for a short duration between each step
