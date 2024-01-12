@@ -334,7 +334,7 @@ transform = Transform3D(1.25345, 0, 0, 0, 1.25346, 0, 0, 0, 1.25345, 0.727612, -
 visible = false
 script = ExtResource("4_qyhjh")
 automatic = true
-damage = 30
+damage = 50
 ammo = -1
 attack_rate = 0.5
 animation_controlled_attack = true
@@ -598,6 +598,7 @@ stretch_mode = 3
 
 [node name="CharacterMover" parent="." instance=ExtResource("2_k2lt6")]
 visible = false
+jump_force = 14.0
 
 [node name="HealthManager" parent="." instance=ExtResource("3_c6yru")]
 visible = false
