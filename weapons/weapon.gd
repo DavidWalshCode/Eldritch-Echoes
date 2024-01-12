@@ -84,7 +84,7 @@ func set_active(active : bool):
 		animation_player.play("RESET")
 
 func apply_recoil():
-	var steps = 5 # Number of steps to split the recoil into
+	var steps = 8.0 # Number of steps to split the recoil into
 	var recoil_step = recoil_strength / steps
 	for i in range(steps):
 		camera_3d.rotation_degrees.x += recoil_step

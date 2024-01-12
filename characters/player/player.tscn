@@ -388,7 +388,7 @@ script = ExtResource("4_qyhjh")
 automatic = true
 damage = 25
 attack_rate = 0.5
-recoil_strength = 1.8
+recoil_strength = 1.6
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/Revolvers"]
 transform = Transform3D(0.999996, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0.272566)
@@ -452,7 +452,6 @@ script = ExtResource("4_qyhjh")
 automatic = true
 damage = 10
 attack_rate = 0.1
-recoil_strength = 1.1
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/MachineGun"]
 
@@ -499,7 +498,7 @@ script = ExtResource("4_qyhjh")
 automatic = true
 damage = 20
 attack_rate = 0.9
-recoil_strength = 3.0
+recoil_strength = 4.0
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/Shotgun"]
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -559,7 +558,7 @@ script = ExtResource("4_qyhjh")
 automatic = true
 damage = 60
 attack_rate = 0.7
-recoil_strength = 3.0
+recoil_strength = 3.5
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/RocketLauncher"]
 
