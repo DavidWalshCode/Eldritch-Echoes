@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dvih676eskm1v" path="res://weapons/attackemitters/spray_emitter.tscn" id="13_gux8a"]
 [ext_resource type="PackedScene" uid="uid://bc1qcptontamp" path="res://effects/muzzleflash/muzzleflash2.glb" id="16_t5aqn"]
 [ext_resource type="PackedScene" uid="uid://bm64bcj3p4lw5" path="res://weapons/attackemitters/projectile_emitter.tscn" id="17_mbee8"]
-[ext_resource type="Texture2D" uid="uid://d5lstyg85dkb" path="res://weapons/crosshairs/crosshair175.png" id="17_uf0m2"]
+[ext_resource type="Texture2D" uid="uid://vc4chj4vcs0q" path="res://weapons/crosshairs/crosshair175.png" id="17_uf0m2"]
 [ext_resource type="PackedScene" uid="uid://bpuosqmv1qir7" path="res://weapons/assets/models/OverUnderShotgun.obj" id="20_rqlhh"]
 [ext_resource type="PackedScene" uid="uid://bavyos7xq4r84" path="res://weapons/assets/models/GrenadeLauncher.obj" id="24_t2e6a"]
 [ext_resource type="PackedScene" uid="uid://divrxgfwrd75b" path="res://weapons/assets/models/MG3.obj" id="28_ix21b"]
@@ -364,6 +364,7 @@ only_hit_environment = true
 target_position = Vector3(0, 0, -2)
 
 [node name="Crosshair" type="TextureRect" parent="Camera3D/WeaponManager/Weapons/Machete"]
+modulate = Color(0.313726, 0.313726, 0.313726, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -377,9 +378,12 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 texture = ExtResource("8_op1cy")
+expand_mode = 1
+stretch_mode = 3
 
 [node name="Revolvers" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.104714)
+visible = false
 script = ExtResource("4_qyhjh")
 automatic = true
 damage = 25
@@ -424,6 +428,7 @@ spray_arc = 0.7
 [node name="HitScanAttackEmitter" parent="Camera3D/WeaponManager/Weapons/Revolvers/AttackEmitter/BurstEmitter/SprayEmitter" instance=ExtResource("8_de1u1")]
 
 [node name="Crosshair" type="TextureRect" parent="Camera3D/WeaponManager/Weapons/Revolvers"]
+modulate = Color(0.313726, 0.313726, 0.313726, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -437,6 +442,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 texture = ExtResource("13_0q4yo")
+stretch_mode = 3
 
 [node name="MachineGun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1352e-05, 0, -0.104714)
@@ -468,6 +474,7 @@ transform = Transform3D(-2.05908, 0, 1.38254e-07, 0, 1.69976, 0, -1.80011e-07, 0
 [node name="HitScanAttackEmitter" parent="Camera3D/WeaponManager/Weapons/MachineGun/AttackEmitter" instance=ExtResource("8_de1u1")]
 
 [node name="Crosshair" type="TextureRect" parent="Camera3D/WeaponManager/Weapons/MachineGun"]
+modulate = Color(0.313726, 0.313726, 0.313726, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -481,10 +488,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 texture = ExtResource("12_qp6js")
+stretch_mode = 3
 
 [node name="Shotgun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0234432, 0, 0.0563736)
-visible = false
 script = ExtResource("4_qyhjh")
 automatic = true
 damage = 20
@@ -504,13 +511,13 @@ libraries = {
 autoplay = "RESET"
 
 [node name="MuzzleFlash" parent="Camera3D/WeaponManager/Weapons/Shotgun/Graphics" instance=ExtResource("8_a6f6a")]
-transform = Transform3D(1.15666, 0, 0, 0, 1.28612, 0, 0, 0, 0.999999, 0.236253, 0.211175, -2.81217)
+transform = Transform3D(-5.05591e-08, -1.28612, 0, 1.15666, -5.62181e-08, 0, 0, 0, 0.999999, 0.211251, 0.172881, -2.812)
 
 [node name="muzzleflash3" parent="Camera3D/WeaponManager/Weapons/Shotgun/Graphics/MuzzleFlash" instance=ExtResource("11_i3xgg")]
 transform = Transform3D(-2.04025, 0, -1.92008e-07, 0, 2.03723, 0, 1.78365e-07, 0, -2.19631, 0, 0, 0)
 
 [node name="MuzzleFlash2" parent="Camera3D/WeaponManager/Weapons/Shotgun/Graphics" instance=ExtResource("8_a6f6a")]
-transform = Transform3D(1.15666, 0, 0, 0, 1.28612, 0, 0, 0, 0.999999, 0.236253, -0.0273728, -2.81217)
+transform = Transform3D(1.15666, 0, 0, 0, 1.28612, 0, 0, 0, 0.999999, 0.211, -0.0251365, -2.812)
 
 [node name="muzzleflash3" parent="Camera3D/WeaponManager/Weapons/Shotgun/Graphics/MuzzleFlash2" instance=ExtResource("11_i3xgg")]
 transform = Transform3D(-2.04025, 0, -1.92008e-07, 0, 2.03723, 0, 1.78365e-07, 0, -2.19631, 0, 0, 0)
@@ -526,6 +533,7 @@ spray_arc = 1.5
 [node name="HitScanAttackEmitter" parent="Camera3D/WeaponManager/Weapons/Shotgun/AttackEmitter/BurstEmitter/SprayEmitter" instance=ExtResource("8_de1u1")]
 
 [node name="Crosshair" type="TextureRect" parent="Camera3D/WeaponManager/Weapons/Shotgun"]
+modulate = Color(0.313726, 0.313726, 0.313726, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -539,6 +547,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 texture = ExtResource("17_uf0m2")
+stretch_mode = 3
 
 [node name="RocketLauncher" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 visible = false
@@ -567,6 +576,7 @@ transform = Transform3D(-1.43814, 0, -1.22648e-07, 0, 1.55737, 0, 1.25727e-07, 0
 [node name="ProjectileEmitter" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/AttackEmitter" instance=ExtResource("17_mbee8")]
 
 [node name="Crosshair" type="TextureRect" parent="Camera3D/WeaponManager/Weapons/RocketLauncher"]
+modulate = Color(0.313726, 0.313726, 0.313726, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -580,6 +590,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 texture = ExtResource("12_65i83")
+stretch_mode = 3
 
 [node name="CharacterMover" parent="." instance=ExtResource("2_k2lt6")]
 visible = false
