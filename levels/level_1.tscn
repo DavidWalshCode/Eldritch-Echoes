@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://brusqmphxxu8w"]
+[gd_scene load_steps=18 format=3 uid="uid://brusqmphxxu8w"]
 
 [ext_resource type="PackedScene" uid="uid://bbgwnkh1pgxg6" path="res://environment/assets/outsideprops/rock_boulder.tscn" id="1_rhrkr"]
 [ext_resource type="PackedScene" uid="uid://bskhjsn5g71vi" path="res://environment/assets/outsideprops/rock_cliff.tscn" id="2_t0cpd"]
@@ -6,7 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="5_1n71g"]
 [ext_resource type="PackedScene" uid="uid://dgv4mfmb626mm" path="res://environment/assets/ground/grass.tscn" id="5_b5m8g"]
 [ext_resource type="Script" path="res://characters/health_manager.gd" id="6_h6yie"]
-[ext_resource type="PackedScene" uid="uid://byal5udftrlek" path="res://characters/npc/scenes/villager_woman_1.tscn" id="7_s5i1m"]
+[ext_resource type="PackedScene" uid="uid://cpu20qg3iiof8" path="res://characters/npc/scenes/villager_woman_1.tscn" id="7_s5i1m"]
+[ext_resource type="PackedScene" uid="uid://htlhq6xpsfle" path="res://characters/npc/scenes/viking_armour_man_1.tscn" id="8_sh6lw"]
+[ext_resource type="PackedScene" uid="uid://e4sjydpcdwsb" path="res://characters/npc/scenes/knight_1.tscn" id="9_e7xbm"]
+[ext_resource type="PackedScene" uid="uid://bupq35mm43272" path="res://characters/npc/scenes/mutant_skeleton_1.tscn" id="10_q1ejs"]
+[ext_resource type="PackedScene" uid="uid://bis8jin3jtnyo" path="res://characters/npc/scenes/nun_1.tscn" id="11_wxon7"]
+[ext_resource type="PackedScene" uid="uid://cepvdg3h5k1hr" path="res://characters/npc/scenes/villager_male_1.tscn" id="12_khl8n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7yqkd"]
 sky_top_color = Color(0.180392, 0.431373, 0.831373, 1)
@@ -101,7 +106,25 @@ script = ExtResource("6_h6yie")
 shape = SubResource("SphereShape3D_2iuiu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TestTarget"]
+layers = 3
 mesh = SubResource("SphereMesh_h30eo")
 
-[node name="VillagerWoman1" parent="." instance=ExtResource("7_s5i1m")]
-transform = Transform3D(-0.537992, 0, -0.849303, 0, 0.865375, 0, 0.803551, 0, -0.568623, 28, 0.497243, 1)
+[node name="NPCs" type="Node3D" parent="."]
+
+[node name="VikingArmourMan1" parent="NPCs" instance=ExtResource("8_sh6lw")]
+transform = Transform3D(0.199932, 0, -0.97981, 0, 1, 0, 0.97981, 0, 0.199932, 27.9498, 0.490556, 0.0259113)
+
+[node name="Knight1" parent="NPCs" instance=ExtResource("9_e7xbm")]
+transform = Transform3D(0.590876, 0, -0.754934, 0, 1.08375, 0, -0.745419, 0, -0.598418, 27.5296, 0.449624, 2.51913)
+
+[node name="MutantSkeleton1" parent="NPCs" instance=ExtResource("10_q1ejs")]
+transform = Transform3D(0.501649, 0, -1.08615, 0, 1.37294, 0, 1.36506, 0, 0.399151, 27.756, 0.397567, -1.21617)
+
+[node name="Nun1" parent="NPCs" instance=ExtResource("11_wxon7")]
+transform = Transform3D(0.6252, 0, -0.848626, 0, 1.11295, 0, 0.863363, 0, 0.614528, 27.2927, 0.294561, -2.41718)
+
+[node name="VillagerWoman1" parent="NPCs" instance=ExtResource("7_s5i1m")]
+transform = Transform3D(-0.381126, 0, -0.942566, 0, 0.846156, 0, 0.840617, 0, -0.427349, 28.0019, 0.361921, 1.38336)
+
+[node name="VillagerMale1" parent="NPCs" instance=ExtResource("12_khl8n")]
+transform = Transform3D(-0.492413, 0, -0.561319, 0, 0.8003, 0, 0.556591, 0, -0.496596, 27.0698, 0.378669, 3.56474)

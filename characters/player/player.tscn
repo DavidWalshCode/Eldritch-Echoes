@@ -558,7 +558,7 @@ script = ExtResource("4_qyhjh")
 automatic = true
 damage = 60
 attack_rate = 0.7
-recoil_strength = 5.0
+recoil_strength = 4.0
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/RocketLauncher"]
 

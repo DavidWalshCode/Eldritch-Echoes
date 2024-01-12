@@ -1,0 +1,59 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bm50bkqs4y6ns"
+path="res://.godot/imported/viking_armour_man_1.obj-be14a8101d3afbb722d7ef88df4aa313.scn"
+
+[deps]
+
+source_file="res://characters/npc/models/viking_armour_man_1.obj"
+dest_files=["res://.godot/imported/viking_armour_man_1.obj-be14a8101d3afbb722d7ef88df4aa313.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"Vik": {
+"use_external/enabled": true,
+"use_external/path": "res://characters/npc/materials/viking_armour_man_1_first_material.tres"
+},
+"Vik2": {
+"use_external/enabled": true,
+"use_external/path": "res://characters/npc/materials/viking_armour_man_1_second_material.tres"
+}
+},
+"nodes": {
+"PATH:Axe_01": {
+"import/skip_import": true
+},
+"PATH:Knife_01": {
+"import/skip_import": true
+},
+"PATH:Shield_01": {
+"import/skip_import": true
+},
+"PATH:Sword_01": {
+"import/skip_import": true
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1
