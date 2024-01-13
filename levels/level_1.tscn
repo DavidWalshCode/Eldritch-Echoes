@@ -115,13 +115,13 @@ mesh = SubResource("SphereMesh_h30eo")
 transform = Transform3D(0.211414, 0, -1.13203, 0, 1.09815, 0, 1.03608, 0, 0.230994, 27.9498, 0.490556, 0.0259113)
 
 [node name="Knight1" parent="NPCs" instance=ExtResource("9_e7xbm")]
-transform = Transform3D(0.590876, 0, -0.754934, 0, 1.08375, 0, -0.745419, 0, -0.598418, 27.5296, 0.449624, 2.51913)
+transform = Transform3D(0.605444, 0, -0.845191, 0, 1.12995, 0, -0.763797, 0, -0.669963, 27.5296, 0.449624, 2.51913)
 
 [node name="MutantSkeleton1" parent="NPCs" instance=ExtResource("10_q1ejs")]
-transform = Transform3D(0.501649, 0, -1.08615, 0, 1.37294, 0, 1.36506, 0, 0.399151, 27.756, 0.397567, -1.21617)
+transform = Transform3D(0.48386, 0, -1.52854, 0, 1.44362, 0, 1.31665, 0, 0.561725, 27.756, 0.397567, -1.21617)
 
 [node name="Nun1" parent="NPCs" instance=ExtResource("11_wxon7")]
-transform = Transform3D(-0.628098, 0, -1.10586, 0, 1.28761, 0, -0.867365, 0, 0.8008, 27.2927, 0.294561, -2.41718)
+transform = Transform3D(-0.644235, 0, -1.08528, 0, 1.28761, 0, -0.889649, 0, 0.785902, 27.2927, 0.294561, -2.41718)
 
 [node name="VillagerWoman1" parent="NPCs" instance=ExtResource("7_s5i1m")]
 transform = Transform3D(-0.381126, 0, -0.942566, 0, 0.846156, 0, 0.840617, 0, -0.427349, 28.0019, 0.361921, 1.38336)
