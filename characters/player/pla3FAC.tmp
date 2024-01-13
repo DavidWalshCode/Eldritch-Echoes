@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=46 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://characters/player/weapon_manager.gd" id="2_c6p01"]
@@ -20,16 +20,14 @@
 [ext_resource type="Texture2D" uid="uid://b76018ogd47jt" path="res://weapons/crosshairs/crosshair176.png" id="13_0q4yo"]
 [ext_resource type="PackedScene" uid="uid://dvih676eskm1v" path="res://weapons/attackemitters/spray_emitter.tscn" id="13_gux8a"]
 [ext_resource type="AudioStream" uid="uid://dwvm6hfgjj84c" path="res://audio/sfx/weapons/pistol.wav" id="15_ifxbi"]
-[ext_resource type="AudioStream" uid="uid://b03e6xoj0comp" path="res://audio/sfx/weapons/weapon_gun_1911_A_19_dry_fire.mp3" id="16_gfb3c"]
 [ext_resource type="PackedScene" uid="uid://bc1qcptontamp" path="res://effects/muzzleflash/muzzleflash2.glb" id="16_t5aqn"]
 [ext_resource type="PackedScene" uid="uid://bm64bcj3p4lw5" path="res://weapons/attackemitters/projectile_emitter.tscn" id="17_mbee8"]
 [ext_resource type="Texture2D" uid="uid://vc4chj4vcs0q" path="res://weapons/crosshairs/crosshair175.png" id="17_uf0m2"]
-[ext_resource type="AudioStream" uid="uid://bk4kjtvupj3ww" path="res://audio/sfx/weapons/rifle_edited2.wav" id="19_h2h01"]
+[ext_resource type="AudioStream" uid="uid://ccwbc5jhdfhc1" path="res://audio/sfx/weapons/lmg_fire01.mp3" id="18_7lmtu"]
 [ext_resource type="PackedScene" uid="uid://bpuosqmv1qir7" path="res://weapons/assets/models/OverUnderShotgun.obj" id="20_rqlhh"]
 [ext_resource type="AudioStream" uid="uid://dwjdf5g0bvm1f" path="res://audio/sfx/weapons/shotgun.wav" id="22_3i304"]
 [ext_resource type="PackedScene" uid="uid://bavyos7xq4r84" path="res://weapons/assets/models/GrenadeLauncher.obj" id="24_t2e6a"]
 [ext_resource type="PackedScene" uid="uid://divrxgfwrd75b" path="res://weapons/assets/models/MG3.obj" id="28_ix21b"]
-[ext_resource type="AudioStream" uid="uid://p38ebj58uir0" path="res://audio/sfx/weapons/firework_rocket_launch.mp3" id="28_vim8o"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwpu4"]
 
@@ -338,7 +336,7 @@ script = ExtResource("2_c6p01")
 transform = Transform3D(1.25345, 0, 0, 0, 1.25346, 0, 0, 0, 1.25345, 0.727612, -0.808232, -0.0604396)
 script = ExtResource("4_qyhjh")
 automatic = true
-damage = 40
+damage = 50
 ammo = -1
 attack_rate = 0.5
 animation_controlled_attack = true
@@ -389,14 +387,13 @@ stretch_mode = 3
 [node name="Audio" type="Node3D" parent="Camera3D/WeaponManager/Weapons/Machete"]
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Machete/Audio"]
+stream = ExtResource("15_ifxbi")
 bus = &"sfx"
 
 [node name="Revolvers" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.104714)
 visible = false
 script = ExtResource("4_qyhjh")
-min_pitch_scale = 0.85
-max_pitch_scale = 0.9
 automatic = true
 damage = 25
 attack_rate = 0.5
@@ -464,18 +461,15 @@ stream = ExtResource("15_ifxbi")
 bus = &"sfx"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Revolvers/Audio"]
-stream = ExtResource("16_gfb3c")
 bus = &"sfx"
 
 [node name="MachineGun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1352e-05, 0, -0.104714)
 visible = false
 script = ExtResource("4_qyhjh")
-min_pitch_scale = 0.7
-max_pitch_scale = 0.8
 automatic = true
-damage = 15
-attack_rate = 0.09
+damage = 10
+attack_rate = 0.1
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/MachineGun"]
 
@@ -517,12 +511,11 @@ stretch_mode = 3
 
 [node name="Audio" type="Node3D" parent="Camera3D/WeaponManager/Weapons/MachineGun"]
 
-[node name="ShootSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/MachineGun/Audio"]
-stream = ExtResource("19_h2h01")
+[node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/MachineGun/Audio"]
 bus = &"sfx"
 
-[node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/MachineGun/Audio"]
-stream = ExtResource("16_gfb3c")
+[node name="ShootSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/MachineGun/Audio"]
+stream = ExtResource("18_7lmtu")
 bus = &"sfx"
 
 [node name="Shotgun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
@@ -598,8 +591,6 @@ bus = &"sfx"
 [node name="RocketLauncher" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 visible = false
 script = ExtResource("4_qyhjh")
-min_pitch_scale = 0.7
-max_pitch_scale = 0.8
 automatic = true
 damage = 60
 attack_rate = 0.7
@@ -644,7 +635,7 @@ stretch_mode = 3
 [node name="Audio" type="Node3D" parent="Camera3D/WeaponManager/Weapons/RocketLauncher"]
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Audio"]
-stream = ExtResource("28_vim8o")
+stream = ExtResource("15_ifxbi")
 bus = &"sfx"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Audio"]

@@ -7,6 +7,14 @@ class_name Weapon
 @onready var fire_point : Node3D = %FirePoint
 @onready var camera_3d = $"../../.."
 
+@onready var shoot_sound = $Audio/ShootSound
+@onready var out_of_ammo_sound = $"../Revolvers/Audio/OutOfAmmoSound"
+
+
+# Pitch variation range
+@export var min_pitch_scale = 0.9
+@export var max_pitch_scale = 1.1
+
 @export var automatic = false
 @export var damage = 5
 @export var ammo = 1000
@@ -35,6 +43,7 @@ func attack(input_just_pressed : bool, input_held : bool):
 	if ammo == 0:
 		if input_just_pressed:
 			out_of_ammo.emit()
+			out_of_ammo_sound.play()
 		return
 	
 	var current_time = Time.get_ticks_msec() / 1000.0
@@ -54,6 +63,11 @@ func attack(input_just_pressed : bool, input_held : bool):
 		$Graphics/MuzzleFlash.flash()
 	if has_node("Graphics/MuzzleFlash2"): # Not the best implementation for making the second flash show, keep an eye on it
 		$Graphics/MuzzleFlash2.flash()
+	
+	# Randomize pitch scale
+	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
+	shoot_sound.pitch_scale = random_pitch
+	shoot_sound.play()
 	
 	apply_recoil()
 
