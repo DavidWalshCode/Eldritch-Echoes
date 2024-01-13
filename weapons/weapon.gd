@@ -10,7 +10,6 @@ class_name Weapon
 @onready var shoot_sound = $Audio/ShootSound
 @onready var out_of_ammo_sound = $"../Revolvers/Audio/OutOfAmmoSound"
 
-
 # Pitch variation range
 @export var min_pitch_scale = 0.9
 @export var max_pitch_scale = 1.1
@@ -64,10 +63,7 @@ func attack(input_just_pressed : bool, input_held : bool):
 	if has_node("Graphics/MuzzleFlash2"): # Not the best implementation for making the second flash show, keep an eye on it
 		$Graphics/MuzzleFlash2.flash()
 	
-	# Randomize pitch scale
-	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
-	shoot_sound.pitch_scale = random_pitch
-	shoot_sound.play()
+	play_shoot_sound()
 	
 	apply_recoil()
 
@@ -87,3 +83,9 @@ func apply_recoil():
 	for i in range(steps):
 		camera_3d.rotation_degrees.x += recoil_step
 		await get_tree().create_timer(0.02).timeout # Wait for a short duration between each step
+
+func play_shoot_sound():
+	# Randomize pitch scale
+	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
+	shoot_sound.pitch_scale = random_pitch
+	shoot_sound.play()

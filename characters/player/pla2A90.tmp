@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=55 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://characters/player/weapon_manager.gd" id="2_c6p01"]
@@ -37,7 +37,6 @@
 [ext_resource type="AudioStream" uid="uid://da634j4yxvvkr" path="res://audio/sfx/player/jump/Voice_Female_V1_Jump_Mono_02.wav" id="34_nrq7m"]
 [ext_resource type="AudioStream" uid="uid://fkhh2hd3lgsq" path="res://audio/sfx/player/jump/Voice_Female_V1_Jump_Mono_03.wav" id="35_o8281"]
 [ext_resource type="AudioStream" uid="uid://byeweh7mwlvlv" path="res://audio/sfx/player/jump/Voice_Female_V1_Jump_Mono_04.wav" id="36_qlltj"]
-[ext_resource type="AudioStream" uid="uid://drlkfcusfc8el" path="res://audio/sfx/player/jump/Voice_Female_V1_Jump_Mono_05.wav" id="37_2233w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwpu4"]
 
@@ -468,7 +467,6 @@ stretch_mode = 3
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Revolvers/Audio"]
 stream = ExtResource("15_ifxbi")
-volume_db = -8.0
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Revolvers/Audio"]
 stream = ExtResource("16_gfb3c")
@@ -525,7 +523,6 @@ stretch_mode = 3
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/MachineGun/Audio"]
 stream = ExtResource("19_h2h01")
-volume_db = -5.0
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/MachineGun/Audio"]
 stream = ExtResource("16_gfb3c")
@@ -595,7 +592,6 @@ stretch_mode = 3
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Shotgun/Audio"]
 stream = ExtResource("22_3i304")
-volume_db = -12.0
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Shotgun/Audio"]
 
@@ -649,7 +645,6 @@ stretch_mode = 3
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Audio"]
 stream = ExtResource("28_vim8o")
-volume_db = -7.0
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Audio"]
 
@@ -658,52 +653,37 @@ visible = false
 jump_force = 14.0
 
 [node name="Audio" type="Node3D" parent="CharacterMover"]
-visible = false
 
-[node name="FootstepSounds" type="Node3D" parent="CharacterMover/Audio"]
-visible = false
+[node name="RunningSounds" type="Node3D" parent="CharacterMover/Audio"]
 
-[node name="FootstepSound1" type="AudioStreamPlayer" parent="CharacterMover/Audio/FootstepSounds"]
+[node name="RunningSound1" type="AudioStreamPlayer" parent="CharacterMover/Audio/RunningSounds"]
 stream = ExtResource("30_ajrhu")
-volume_db = -20.0
 bus = &"SFX"
 
-[node name="FootstepSound2" type="AudioStreamPlayer" parent="CharacterMover/Audio/FootstepSounds"]
+[node name="RunningSound2" type="AudioStreamPlayer" parent="CharacterMover/Audio/RunningSounds"]
 stream = ExtResource("31_3rpv5")
-volume_db = -20.0
 bus = &"SFX"
 
-[node name="FootstepSound3" type="AudioStreamPlayer" parent="CharacterMover/Audio/FootstepSounds"]
+[node name="RunningSound3" type="AudioStreamPlayer" parent="CharacterMover/Audio/RunningSounds"]
 stream = ExtResource("31_lxk3n")
-volume_db = -20.0
 bus = &"SFX"
 
 [node name="JumpSounds" type="Node3D" parent="CharacterMover/Audio"]
-visible = false
 
 [node name="JumpSound1" type="AudioStreamPlayer" parent="CharacterMover/Audio/JumpSounds"]
 stream = ExtResource("32_mk37s")
-volume_db = -8.0
 bus = &"SFX"
 
 [node name="JumpSound2" type="AudioStreamPlayer" parent="CharacterMover/Audio/JumpSounds"]
 stream = ExtResource("34_nrq7m")
-volume_db = -8.0
 bus = &"SFX"
 
 [node name="JumpSound3" type="AudioStreamPlayer" parent="CharacterMover/Audio/JumpSounds"]
 stream = ExtResource("35_o8281")
-volume_db = -8.0
 bus = &"SFX"
 
 [node name="JumpSound4" type="AudioStreamPlayer" parent="CharacterMover/Audio/JumpSounds"]
 stream = ExtResource("36_qlltj")
-volume_db = -8.0
-bus = &"SFX"
-
-[node name="JumpSound5" type="AudioStreamPlayer" parent="CharacterMover/Audio/JumpSounds"]
-stream = ExtResource("37_2233w")
-volume_db = -8.0
 bus = &"SFX"
 
 [node name="HealthManager" parent="." instance=ExtResource("3_c6yru")]
