@@ -49,6 +49,11 @@ func _input(event):
 	
 	if event is InputEventKey and event.pressed and event.keycode in HOTKEYS: # Use numbers (hotkeys) for weapon switching
 		weapon_manager.switch_to_weapon_slot(HOTKEYS[event.keycode])
+		
+	if event.is_action_pressed("crouch"):
+		character_mover.start_crouching()
+	elif event.is_action_released("crouch"):
+		character_mover.stop_crouching()
 
 # Equivalent to update() in Unity, runs every frame
 func _process(delta):
@@ -78,6 +83,9 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("jump"): # Currently 'Space'
 		character_mover.jump()
+	
+	#if Input.is_action_just_pressed("crouch"): # Currently 'Ctrl'
+		#character_mover.crouch()
 	
 	weapon_manager.attack(Input.is_action_just_pressed("attack"), Input.is_action_pressed("attack")) # Attack
 

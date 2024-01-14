@@ -1,8 +1,9 @@
-[gd_scene load_steps=62 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=67 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://characters/player/weapon_manager.gd" id="2_c6p01"]
 [ext_resource type="PackedScene" uid="uid://d167a1bqe4u0o" path="res://characters/character_mover.tscn" id="2_k2lt6"]
+[ext_resource type="Material" uid="uid://cmj2yny3jsvtl" path="res://characters/npc/materials/viking_armour_man_1_first_material.tres" id="2_xnvd3"]
 [ext_resource type="PackedScene" uid="uid://m5rjrq1bs3oo" path="res://characters/health_manager.tscn" id="3_c6yru"]
 [ext_resource type="Script" path="res://weapons/weapon.gd" id="4_qyhjh"]
 [ext_resource type="PackedScene" uid="uid://cfnr0uiu3amis" path="res://weapons/assets/models/EspadaSword.obj" id="5_u532v"]
@@ -48,6 +49,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwpu4"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_oe3gr"]
+material = ExtResource("2_xnvd3")
 
 [sub_resource type="Animation" id="Animation_8nud0"]
 length = 0.001
@@ -322,6 +324,92 @@ _data = {
 "attack": SubResource("Animation_othcl")
 }
 
+[sub_resource type="Animation" id="Animation_w0ctb"]
+resource_name = "crouch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:shape:height")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.0, 1.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1, 0), Vector3(0, 0.75, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.89849, 0), Vector3(0, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3i1ox"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:shape:height")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.89849, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_54k3e"]
+_data = {
+"RESET": SubResource("Animation_3i1ox"),
+"crouch": SubResource("Animation_w0ctb")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_c7i7v"]
+
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 6
 collision_mask = 3
@@ -331,9 +419,9 @@ script = ExtResource("1_sw706")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_xwpu4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
 mesh = SubResource("CapsuleMesh_oe3gr")
+skeleton = NodePath("../..")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.89849, 0)
@@ -667,6 +755,7 @@ stream = ExtResource("16_gfb3c")
 [node name="CharacterMover" parent="." instance=ExtResource("2_k2lt6")]
 visible = false
 jump_force = 14.0
+crouch_speed = 7.0
 
 [node name="Audio" type="Node3D" parent="CharacterMover"]
 visible = false
@@ -694,27 +783,27 @@ visible = false
 
 [node name="JumpSound1" type="AudioStreamPlayer" parent="CharacterMover/Audio/JumpSounds"]
 stream = ExtResource("32_mk37s")
-volume_db = -10.0
+volume_db = -12.0
 bus = &"SFX"
 
 [node name="JumpSound2" type="AudioStreamPlayer" parent="CharacterMover/Audio/JumpSounds"]
 stream = ExtResource("34_nrq7m")
-volume_db = -10.0
+volume_db = -12.0
 bus = &"SFX"
 
 [node name="JumpSound3" type="AudioStreamPlayer" parent="CharacterMover/Audio/JumpSounds"]
 stream = ExtResource("35_o8281")
-volume_db = -10.0
+volume_db = -12.0
 bus = &"SFX"
 
 [node name="JumpSound4" type="AudioStreamPlayer" parent="CharacterMover/Audio/JumpSounds"]
 stream = ExtResource("36_qlltj")
-volume_db = -10.0
+volume_db = -12.0
 bus = &"SFX"
 
 [node name="JumpSound5" type="AudioStreamPlayer" parent="CharacterMover/Audio/JumpSounds"]
 stream = ExtResource("37_2233w")
-volume_db = -10.0
+volume_db = -12.0
 bus = &"SFX"
 
 [node name="HealthManager" parent="." instance=ExtResource("3_c6yru")]
@@ -753,5 +842,18 @@ bus = &"SFX"
 stream = ExtResource("44_fpauj")
 volume_db = -8.0
 bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_54k3e")
+}
+
+[node name="CrouchShapeCast" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("SphereShape3D_c7i7v")
+target_position = Vector3(0, 0.5, 0)
+debug_shape_custom_color = Color(0, 1, 0, 1)
+
+[connection signal="animation_started" from="AnimationPlayer" to="CharacterMover" method="_on_animation_player_animation_started"]
 
 [editable path="Camera3D/WeaponManager/Weapons/Machete/AttackEmitter/HitScanAttackEmitter"]
