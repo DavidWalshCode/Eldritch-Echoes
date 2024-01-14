@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=62 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://characters/player/weapon_manager.gd" id="2_c6p01"]
@@ -38,6 +38,12 @@
 [ext_resource type="AudioStream" uid="uid://fkhh2hd3lgsq" path="res://audio/sfx/player/jump/Voice_Female_V1_Jump_Mono_03.wav" id="35_o8281"]
 [ext_resource type="AudioStream" uid="uid://byeweh7mwlvlv" path="res://audio/sfx/player/jump/Voice_Female_V1_Jump_Mono_04.wav" id="36_qlltj"]
 [ext_resource type="AudioStream" uid="uid://drlkfcusfc8el" path="res://audio/sfx/player/jump/Voice_Female_V1_Jump_Mono_05.wav" id="37_2233w"]
+[ext_resource type="AudioStream" uid="uid://cionacx4sdxlt" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_01.wav" id="39_tnvee"]
+[ext_resource type="AudioStream" uid="uid://cmiqntcy6rplc" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_02.wav" id="40_bbfdy"]
+[ext_resource type="AudioStream" uid="uid://dmciahxrc6a3b" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_03.wav" id="41_svykw"]
+[ext_resource type="AudioStream" uid="uid://m3d3nmleaht" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_04.wav" id="42_01m48"]
+[ext_resource type="AudioStream" uid="uid://y2yd12pxafnd" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_05.wav" id="43_gj86l"]
+[ext_resource type="AudioStream" uid="uid://d3cgputosjxjw" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_06.wav" id="44_fpauj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwpu4"]
 
@@ -399,6 +405,9 @@ stretch_mode = 3
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Machete/Audio"]
 
+[node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Machete/Audio"]
+stream = ExtResource("16_gfb3c")
+
 [node name="Revolvers" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.104714)
 script = ExtResource("4_qyhjh")
@@ -481,7 +490,7 @@ min_pitch_scale = 0.7
 max_pitch_scale = 0.8
 automatic = true
 damage = 15
-attack_rate = 0.09
+attack_rate = 0.1
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/MachineGun"]
 
@@ -598,6 +607,7 @@ stream = ExtResource("22_3i304")
 volume_db = -12.0
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Shotgun/Audio"]
+stream = ExtResource("16_gfb3c")
 
 [node name="RocketLauncher" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 visible = false
@@ -652,6 +662,7 @@ stream = ExtResource("28_vim8o")
 volume_db = -7.0
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Audio"]
+stream = ExtResource("16_gfb3c")
 
 [node name="CharacterMover" parent="." instance=ExtResource("2_k2lt6")]
 visible = false
@@ -708,5 +719,39 @@ bus = &"SFX"
 
 [node name="HealthManager" parent="." instance=ExtResource("3_c6yru")]
 visible = false
+
+[node name="Audio" type="Node3D" parent="HealthManager"]
+
+[node name="HurtSounds" type="Node3D" parent="HealthManager/Audio"]
+
+[node name="HurtSound1" type="AudioStreamPlayer" parent="HealthManager/Audio/HurtSounds"]
+stream = ExtResource("39_tnvee")
+volume_db = -8.0
+bus = &"SFX"
+
+[node name="HurtSound2" type="AudioStreamPlayer" parent="HealthManager/Audio/HurtSounds"]
+stream = ExtResource("40_bbfdy")
+volume_db = -8.0
+bus = &"SFX"
+
+[node name="HurtSound3" type="AudioStreamPlayer" parent="HealthManager/Audio/HurtSounds"]
+stream = ExtResource("41_svykw")
+volume_db = -8.0
+bus = &"SFX"
+
+[node name="HurtSound4" type="AudioStreamPlayer" parent="HealthManager/Audio/HurtSounds"]
+stream = ExtResource("42_01m48")
+volume_db = -8.0
+bus = &"SFX"
+
+[node name="HurtSound5" type="AudioStreamPlayer" parent="HealthManager/Audio/HurtSounds"]
+stream = ExtResource("43_gj86l")
+volume_db = -8.0
+bus = &"SFX"
+
+[node name="HurtSound6" type="AudioStreamPlayer" parent="HealthManager/Audio/HurtSounds"]
+stream = ExtResource("44_fpauj")
+volume_db = -8.0
+bus = &"SFX"
 
 [editable path="Camera3D/WeaponManager/Weapons/Machete/AttackEmitter/HitScanAttackEmitter"]

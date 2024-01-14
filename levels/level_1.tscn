@@ -140,3 +140,5 @@ transform = Transform3D(-0.592618, 0, 0.805484, 0, 1, 0, -0.805484, 0, -0.592618
 
 [node name="Ambience1" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("14_egb5r")
+volume_db = -6.0
+bus = &"Ambience"

@@ -5,6 +5,8 @@ extends Node3D
 @export var gib_at = -10
 @export var verbose = true
 
+#@onready var hurt_sounds = $Audio/HurtSounds.get_children()
+
 signal died
 signal healed
 signal damaged
@@ -19,7 +21,10 @@ func _ready():
 func hurt(damage_data : DamageData):
 	if current_health <= 0:
 		return
+		
 	current_health -= damage_data.amount
+	#play_hurt_sound()
+	
 	if current_health <= gib_at:
 		gibbed.emit()
 	if current_health <= 0:
@@ -38,3 +43,6 @@ func heal(amount : int):
 	health_changed.emit(current_health, max_health)
 	if verbose:
 		print("Healed for %s, Health: %s/%s" % [amount, current_health, max_health])
+
+#func play_hurt_sound():
+	#hurt_sounds[randi() % hurt_sounds.size()].play() # Randomly play a hurt sound

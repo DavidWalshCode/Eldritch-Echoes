@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/forest.ogg-633ab2f7c3e7cad537b527ab4c5c21d9.o
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

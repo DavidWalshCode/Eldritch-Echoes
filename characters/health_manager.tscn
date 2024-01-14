@@ -4,4 +4,3 @@
 
 [node name="HealthManager" type="Node3D"]
 script = ExtResource("1_h718n")
-verbose = true

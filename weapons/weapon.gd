@@ -8,7 +8,7 @@ class_name Weapon
 @onready var camera_3d = $"../../.."
 
 @onready var shoot_sound = $Audio/ShootSound
-@onready var out_of_ammo_sound = $"../Revolvers/Audio/OutOfAmmoSound"
+@onready var out_of_ammo_sound = $Audio/OutOfAmmoSound
 
 # Pitch variation range
 @export var min_pitch_scale = 0.9
