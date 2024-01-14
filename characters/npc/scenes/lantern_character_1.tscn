@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://mcodumgw8823"]
+
+[ext_resource type="PackedScene" uid="uid://j6d2fdjh1m18" path="res://characters/npc/models/lantern_character_1.obj" id="1_bpp85"]
+
+[node name="LanternCharacter1" instance=ExtResource("1_bpp85")]

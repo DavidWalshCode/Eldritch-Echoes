@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://brusqmphxxu8w"]
+[gd_scene load_steps=21 format=3 uid="uid://brusqmphxxu8w"]
 
+[ext_resource type="Script" path="res://levels/level_1.gd" id="1_38psm"]
 [ext_resource type="PackedScene" uid="uid://bbgwnkh1pgxg6" path="res://environment/assets/outsideprops/rock_boulder.tscn" id="1_rhrkr"]
 [ext_resource type="PackedScene" uid="uid://bskhjsn5g71vi" path="res://environment/assets/outsideprops/rock_cliff.tscn" id="2_t0cpd"]
 [ext_resource type="PackedScene" uid="uid://dpi5qrl7udofx" path="res://environment/assets/outsideprops/rock_pillar.tscn" id="3_rfswq"]
@@ -12,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bupq35mm43272" path="res://characters/npc/scenes/mutant_skeleton_1.tscn" id="10_q1ejs"]
 [ext_resource type="PackedScene" uid="uid://bis8jin3jtnyo" path="res://characters/npc/scenes/nun_1.tscn" id="11_wxon7"]
 [ext_resource type="PackedScene" uid="uid://cepvdg3h5k1hr" path="res://characters/npc/scenes/villager_male_1.tscn" id="12_khl8n"]
+[ext_resource type="AudioStream" uid="uid://4uhgisbwq7gv" path="res://audio/ambience/Dark_Rainy_Night(ambience).ogg" id="14_egb5r"]
+[ext_resource type="PackedScene" uid="uid://mcodumgw8823" path="res://characters/npc/scenes/lantern_character_1.tscn" id="14_fn874"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7yqkd"]
 sky_top_color = Color(0.180392, 0.431373, 0.831373, 1)
@@ -30,6 +33,7 @@ ambient_light_source = 3
 [sub_resource type="SphereMesh" id="SphereMesh_h30eo"]
 
 [node name="Level1" type="Node3D"]
+script = ExtResource("1_38psm")
 
 [node name="Environment" type="Node3D" parent="."]
 
@@ -128,3 +132,11 @@ transform = Transform3D(-0.381126, 0, -0.942566, 0, 0.846156, 0, 0.840617, 0, -0
 
 [node name="VillagerMale1" parent="NPCs" instance=ExtResource("12_khl8n")]
 transform = Transform3D(-0.492413, 0, -0.561319, 0, 0.8003, 0, 0.556591, 0, -0.496596, 27.0698, 0.378669, 3.56474)
+
+[node name="LanternCharacter1" parent="NPCs" instance=ExtResource("14_fn874")]
+transform = Transform3D(-0.592618, 0, 0.805484, 0, 1, 0, -0.805484, 0, -0.592618, 26, 0.316152, 4.61175)
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="Ambience1" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("14_egb5r")

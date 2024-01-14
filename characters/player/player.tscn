@@ -525,7 +525,7 @@ stretch_mode = 3
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/MachineGun/Audio"]
 stream = ExtResource("19_h2h01")
-volume_db = -5.0
+volume_db = -11.0
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/MachineGun/Audio"]
 stream = ExtResource("16_gfb3c")
