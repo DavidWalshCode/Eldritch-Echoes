@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://brusqmphxxu8w"]
+[gd_scene load_steps=22 format=3 uid="uid://brusqmphxxu8w"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_38psm"]
 [ext_resource type="PackedScene" uid="uid://bbgwnkh1pgxg6" path="res://environment/assets/outsideprops/rock_boulder.tscn" id="1_rhrkr"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="5_1n71g"]
 [ext_resource type="PackedScene" uid="uid://dgv4mfmb626mm" path="res://environment/assets/ground/grass.tscn" id="5_b5m8g"]
 [ext_resource type="Script" path="res://characters/health_manager.gd" id="6_h6yie"]
+[ext_resource type="PackedScene" uid="uid://deet40dn2j7nb" path="res://effects/rain/rain_effect.tscn" id="7_pnde6"]
 [ext_resource type="PackedScene" uid="uid://cpu20qg3iiof8" path="res://characters/npc/scenes/villager_woman_1.tscn" id="7_s5i1m"]
 [ext_resource type="PackedScene" uid="uid://htlhq6xpsfle" path="res://characters/npc/scenes/viking_armour_man_1.tscn" id="8_sh6lw"]
 [ext_resource type="PackedScene" uid="uid://e4sjydpcdwsb" path="res://characters/npc/scenes/knight_1.tscn" id="9_e7xbm"]
@@ -27,6 +28,7 @@ sky_material = SubResource("ProceduralSkyMaterial_7yqkd")
 background_mode = 2
 sky = SubResource("Sky_jumne")
 ambient_light_source = 3
+volumetric_fog_enabled = true
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2iuiu"]
 
@@ -101,6 +103,8 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("5_1n71g")]
 transform = Transform3D(-0.9855, 0, 0.169676, 0, 1, 0, -0.169676, 0, -0.9855, 20.0873, 0.709427, -10.4791)
 
+[node name="RainEffect" parent="Player" instance=ExtResource("7_pnde6")]
+
 [node name="TestTarget" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1.60216, 5)
 collision_layer = 6
@@ -140,5 +144,5 @@ transform = Transform3D(-0.592618, 0, 0.805484, 0, 1, 0, -0.805484, 0, -0.592618
 
 [node name="Ambience1" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("14_egb5r")
-volume_db = -6.0
+volume_db = -11.0
 bus = &"Ambience"
