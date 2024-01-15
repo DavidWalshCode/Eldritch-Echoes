@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://opt6mrqu2jqe"]
+[gd_scene load_steps=53 format=3 uid="uid://opt6mrqu2jqe"]
 
 [ext_resource type="PackedScene" uid="uid://bl150msgq7vur" path="res://weapons/projectiles/projectile.tscn" id="1_kujtm"]
 [ext_resource type="PackedScene" uid="uid://coerxuptsgxrc" path="res://weapons/projectiles/assets/rocket.glb" id="2_hiucq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cbi2uae24fd3r" path="res://effects/muzzleflash/muzzleflash3.glb" id="3_erksw"]
 [ext_resource type="Texture2D" uid="uid://dhud8rywluaw6" path="res://effects/circle32.png" id="5_8nqg7"]
 [ext_resource type="PackedScene" uid="uid://cbtf6d7s603ra" path="res://weapons/attackemitters/area_damage_emitter.tscn" id="5_jg43v"]
+[ext_resource type="AudioStream" uid="uid://bxh7j8p3l1axi" path="res://audio/sfx/weapons/magic-fire-impact.wav" id="7_tl8ur"]
 
 [sub_resource type="Animation" id="Animation_aihlr"]
 length = 0.001
@@ -382,3 +383,27 @@ draw_pass_1 = SubResource("SphereMesh_acq7n")
 
 [node name="AreaDamageEmitter" parent="." index="6" instance=ExtResource("5_jg43v")]
 attack_radius = 2.5
+
+[node name="Audio" type="Node3D" parent="." index="7"]
+
+[node name="ExplosionSounds" type="Node3D" parent="Audio" index="0"]
+
+[node name="ExplosionSound1" type="AudioStreamPlayer3D" parent="Audio/ExplosionSounds" index="0"]
+stream = ExtResource("7_tl8ur")
+bus = &"SFX"
+
+[node name="ExplosionSound2" type="AudioStreamPlayer3D" parent="Audio/ExplosionSounds" index="1"]
+stream = ExtResource("7_tl8ur")
+bus = &"SFX"
+
+[node name="ExplosionSound3" type="AudioStreamPlayer3D" parent="Audio/ExplosionSounds" index="2"]
+stream = ExtResource("7_tl8ur")
+bus = &"SFX"
+
+[node name="ExplosionSound4" type="AudioStreamPlayer3D" parent="Audio/ExplosionSounds" index="3"]
+stream = ExtResource("7_tl8ur")
+bus = &"SFX"
+
+[node name="ExplosionSound5" type="AudioStreamPlayer3D" parent="Audio/ExplosionSounds" index="4"]
+stream = ExtResource("7_tl8ur")
+bus = &"SFX"
