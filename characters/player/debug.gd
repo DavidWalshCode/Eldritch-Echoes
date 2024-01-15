@@ -10,7 +10,7 @@ func _ready():
 func _process(delta):
 	if visible:
 		frames_per_second = "%.2f" % (1.0 / delta)
-		add_property("FPS", frames_per_second, 1)
+		add_property("FPS", frames_per_second, 1) # Adding FPS to debug panel
 
 func _input(event):
 	if event.is_action_pressed("debug"):

@@ -9,12 +9,12 @@ func fire():
 	query_params.shape = SphereShape3D.new()
 	query_params.shape.radius = attack_radius
 	query_params.collision_mask = 2
-	var transform = global_transform
+	var new_transform = global_transform
 	
 	if offset_by_radius:
-		transform.origin = to_global(Vector3.FORWARD * attack_radius)
+		new_transform.origin = to_global(Vector3.FORWARD * attack_radius)
 	
-	query_params.transform = transform
+	query_params.transform = new_transform
 	query_params.exclude = bodies_to_exclude
 	var intersect_results : Array[Dictionary] = get_world_3d().direct_space_state.intersect_shape(query_params)
 	

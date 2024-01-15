@@ -31,6 +31,8 @@ var dead = false
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	health_manager.died.connect(kill)
+	
+	Global.debug.add_property("Death Count", Global.death_count, 1) # Adding death count to debug panel
 
 func _input(event):
 	if dead:
@@ -94,7 +96,6 @@ func kill():
 	#character_mover.set_move_dir(Vector3.ZERO) # Make sure the player can't move when they die
 	
 	Global.death_count += 1  # Increment death count
-	print("Death count: ", Global.death_count)
 	load_next_level_based_on_death_count()
 
 func load_next_level_based_on_death_count():

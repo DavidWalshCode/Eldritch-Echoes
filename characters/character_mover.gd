@@ -120,7 +120,7 @@ func _physics_process(delta):
 	character_body.move_and_slide()
 	
 	current_speed = character_body.velocity.length()
-	Global.debug.add_property("Movement Speed", current_speed, 2) # Adding movement speed to debug panel
+	Global.debug.add_property("Movement Speed", current_speed, 1) # Adding movement speed to debug panel
 
 	# Footstep sound logic
 	if character_body.is_on_floor() and not move_dir.is_zero_approx():
