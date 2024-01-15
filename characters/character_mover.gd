@@ -1,16 +1,17 @@
 extends Node3D
 
-@export var jump_force = 15.0
+@export var jump_force = 14.0
 @export var gravity = 30.0
 
 @export var max_speed = 20.0
 @export var move_accel = 5.0
-@export var stop_drag = 0.11
-@export var air_drag = 0.19
+@export var stop_drag = 0.11 #0.11
+@export var air_drag = 0.19 #0.05
 
 var character_body : CharacterBody3D
 var move_drag = 0.0
 var move_dir : Vector3
+var current_speed
 var double_jump_available = true
 var is_crouching : bool = false
 
@@ -24,11 +25,24 @@ var last_footstep_time = -9999.0  # Last time a footstep sound was played
 @onready var crouch_shape_cast = $"../CrouchShapeCast"
 @export var crouch_movement_speed_modifier = 0.6  # % of normal speed when crouching
 
+@export var min_slide_speed = 10.0  # Minimum speed to start sliding
+@export var slide_speed_modifier = 1.5  # Speed modifier during sliding
+var is_sliding : bool = false
+var slide_timer : Timer
+@onready var sliding_sounds = $Audio/SlidingSounds.get_children()
+
 func _ready():
 	character_body = get_parent()
 	move_drag = float(move_accel) / max_speed
 	
 	crouch_shape_cast.add_exception($"..") # Add crouch check collision shapecast exception for Player node
+	
+	# Create a Timer node for sliding
+	slide_timer = Timer.new()
+	slide_timer.wait_time = 0.7  # Set the duration of sliding
+	slide_timer.one_shot = true  # Timer stops after firing once
+	add_child(slide_timer)
+	slide_timer.connect("timeout", Callable(self, "_on_slide_timer_timeout"))
 
 func set_move_dir(new_move_dir : Vector3):
 	move_dir = new_move_dir
@@ -46,10 +60,19 @@ func jump():
 
 func start_crouching():
 	if !is_crouching and crouch_shape_cast.is_colliding() == false:
+		if current_speed > min_slide_speed:
+			is_sliding = true
+			slide_timer.start()  # Start the sliding timer
+			play_sliding_sound()  # Play a sliding sound
+		else:
+			is_sliding = false
 		crouching(true)
 
 func stop_crouching():
 	if is_crouching:
+		is_sliding = false  # Stop sliding when uncrouching
+		slide_timer.stop()  # Stop the timer if it's running
+		stop_sliding_sounds()
 		crouching(false)
 
 func crouching(state : bool):
@@ -62,6 +85,10 @@ func crouching(state : bool):
 func _on_animation_player_animation_started(anim_name):
 	if anim_name == "crouch":
 		is_crouching = !is_crouching
+
+func _on_slide_timer_timeout():
+	is_sliding = false  # Stop sliding
+	stop_sliding_sounds()
 
 # Runs 60 times a sec, fixedupdate in Unity
 func _physics_process(delta):
@@ -82,12 +109,18 @@ func _physics_process(delta):
 	# Adjust move_accel based on crouching state
 	var adjusted_move_accel = move_accel
 	if is_crouching and character_body.is_on_floor():
-		adjusted_move_accel *= crouch_movement_speed_modifier
+		if is_sliding:
+			adjusted_move_accel *= slide_speed_modifier
+		else:
+			adjusted_move_accel *= crouch_movement_speed_modifier
 
 	character_body.velocity += adjusted_move_accel * move_dir - flat_velo * drag
 	#character_body.velocity += move_accel * move_dir - flat_velo * drag
 
 	character_body.move_and_slide()
+	
+	current_speed = character_body.velocity.length()
+	Global.debug.add_property("Movement Speed", current_speed, 2) # Adding movement speed to debug panel
 
 	# Footstep sound logic
 	if character_body.is_on_floor() and not move_dir.is_zero_approx():
@@ -105,4 +138,11 @@ func play_footstep_sound():
 func play_jump_sound():
 	jump_sounds[randi() % jump_sounds.size()].play() # Randomly play a jump sound
 
+func play_sliding_sound():
+	sliding_sounds[randi() % sliding_sounds.size()].play() # Randomly play a jump sound
+
+func stop_sliding_sounds():
+	for sound in sliding_sounds:
+		if sound.playing:
+			sound.stop()
 
