@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=71 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://characters/player/weapon_manager.gd" id="2_c6p01"]
@@ -48,6 +48,7 @@
 [ext_resource type="AudioStream" uid="uid://d3cgputosjxjw" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_06.wav" id="44_fpauj"]
 [ext_resource type="Theme" uid="uid://du0vpxg4q0mij" path="res://ui/themes/debug_theme.tres" id="46_ynthf"]
 [ext_resource type="Script" path="res://characters/player/debug.gd" id="47_g4vyg"]
+[ext_resource type="Script" path="res://characters/player/reticle.gd" id="49_muf4y"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwpu4"]
 
@@ -475,6 +476,7 @@ only_hit_environment = true
 target_position = Vector3(0, 0, -2)
 
 [node name="Crosshair" type="TextureRect" parent="Camera3D/WeaponManager/Weapons/Machete"]
+visible = false
 modulate = Color(0.313726, 0.313726, 0.313726, 1)
 anchors_preset = 8
 anchor_left = 0.5
@@ -557,6 +559,7 @@ volume_db = -16.0
 stream = ExtResource("16_gfb3c")
 
 [node name="Crosshair" type="TextureRect" parent="Camera3D/WeaponManager/Weapons/Revolvers"]
+visible = false
 modulate = Color(0.313726, 0.313726, 0.313726, 1)
 anchors_preset = 8
 anchor_left = 0.5
@@ -606,6 +609,7 @@ transform = Transform3D(-2.05908, 0, 1.38254e-07, 0, 1.69976, 0, -1.80011e-07, 0
 [node name="HitScanAttackEmitter" parent="Camera3D/WeaponManager/Weapons/MachineGun/AttackEmitter" instance=ExtResource("8_de1u1")]
 
 [node name="Crosshair" type="TextureRect" parent="Camera3D/WeaponManager/Weapons/MachineGun"]
+visible = false
 modulate = Color(0.313726, 0.313726, 0.313726, 1)
 anchors_preset = 8
 anchor_left = 0.5
@@ -676,6 +680,7 @@ spray_arc = 1.5
 [node name="HitScanAttackEmitter" parent="Camera3D/WeaponManager/Weapons/Shotgun/AttackEmitter/BurstEmitter/SprayEmitter" instance=ExtResource("8_de1u1")]
 
 [node name="Crosshair" type="TextureRect" parent="Camera3D/WeaponManager/Weapons/Shotgun"]
+visible = false
 modulate = Color(0.313726, 0.313726, 0.313726, 1)
 anchors_preset = 8
 anchor_left = 0.5
@@ -731,6 +736,7 @@ transform = Transform3D(-1.43814, 0, -1.22648e-07, 0, 1.55737, 0, 1.25727e-07, 0
 [node name="ProjectileEmitter" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/AttackEmitter" instance=ExtResource("17_mbee8")]
 
 [node name="Crosshair" type="TextureRect" parent="Camera3D/WeaponManager/Weapons/RocketLauncher"]
+visible = false
 modulate = Color(0.313726, 0.313726, 0.313726, 1)
 anchors_preset = 8
 anchor_left = 0.5
@@ -878,15 +884,51 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 4
 mouse_filter = 1
+
+[node name="Reticle" type="CenterContainer" parent="UserInterface" node_paths=PackedStringArray("reticle_lines", "player_controller")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("49_muf4y")
+reticle_lines = [NodePath("Top"), NodePath("Right"), NodePath("Bottom"), NodePath("Left")]
+player_controller = NodePath("../..")
+reticle_speed = 0.1
+reticle_distance = 0.5
+dot_radius = 1.5
+dot_colour = Color(0.847059, 0.847059, 0.847059, 1)
+
+[node name="Top" type="Line2D" parent="UserInterface/Reticle"]
+points = PackedVector2Array(0, -5, 0, -15)
+width = 2.0
+default_color = Color(0.847059, 0.847059, 0.847059, 1)
+
+[node name="Right" type="Line2D" parent="UserInterface/Reticle"]
+points = PackedVector2Array(5, 0, 15, 0)
+width = 2.0
+default_color = Color(0.847059, 0.847059, 0.847059, 1)
+
+[node name="Bottom" type="Line2D" parent="UserInterface/Reticle"]
+points = PackedVector2Array(0, 5, 0, 15)
+width = 2.0
+default_color = Color(0.847059, 0.847059, 0.847059, 1)
+
+[node name="Left" type="Line2D" parent="UserInterface/Reticle"]
+points = PackedVector2Array(-5, 0, -15, 0)
+width = 2.0
+default_color = Color(0.847059, 0.847059, 0.847059, 1)
 
 [node name="DebugPanel" type="PanelContainer" parent="UserInterface"]
 custom_minimum_size = Vector2(200, 0)
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 210.0
-offset_bottom = 50.0
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 24.0
 theme = ExtResource("46_ynthf")
 script = ExtResource("47_g4vyg")
 

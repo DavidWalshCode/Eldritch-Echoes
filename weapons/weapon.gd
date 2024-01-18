@@ -72,7 +72,7 @@ func actually_attack():
 	attack_emitter.fire()
 
 func set_active(active : bool):
-	$Crosshair.visible = active
+	#$Crosshair.visible = active
 	visible = active
 	if !active:
 		animation_player.play("RESET")
