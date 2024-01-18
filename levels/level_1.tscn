@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://brusqmphxxu8w"]
+[gd_scene load_steps=24 format=3 uid="uid://brusqmphxxu8w"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_38psm"]
 [ext_resource type="PackedScene" uid="uid://bbgwnkh1pgxg6" path="res://environment/assets/outsideprops/rock_boulder.tscn" id="1_rhrkr"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://cepvdg3h5k1hr" path="res://characters/npc/scenes/villager_male_1.tscn" id="12_khl8n"]
 [ext_resource type="AudioStream" uid="uid://4uhgisbwq7gv" path="res://audio/ambience/Dark_Rainy_Night(ambience).ogg" id="14_egb5r"]
 [ext_resource type="PackedScene" uid="uid://mcodumgw8823" path="res://characters/npc/scenes/lantern_character_1.tscn" id="14_fn874"]
+[ext_resource type="PackedScene" uid="uid://clrhhyj7nrh8n" path="res://environment/assets/village/buildings/scenes/barn_1.tscn" id="17_i2uh4"]
+[ext_resource type="PackedScene" uid="uid://dg54keoxweyee" path="res://environment/assets/village/buildings/scenes/building_1.tscn" id="18_s88j8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7yqkd"]
 sky_top_color = Color(0.180392, 0.431373, 0.831373, 1)
@@ -29,6 +31,7 @@ background_mode = 2
 sky = SubResource("Sky_jumne")
 ambient_light_source = 3
 volumetric_fog_enabled = true
+volumetric_fog_density = 0.03
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2iuiu"]
 
@@ -92,6 +95,14 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 40)
 
 [node name="Grass4" parent="Environment" instance=ExtResource("5_b5m8g")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 40, 0, 0)
+
+[node name="Buildings" type="Node3D" parent="."]
+
+[node name="Barn1" parent="Buildings" instance=ExtResource("17_i2uh4")]
+transform = Transform3D(-1.1352, 0, -0.0598811, 0, 1.10723, 0, 0.0569308, 0, -1.19403, 28.452, -0.0861034, 29.6711)
+
+[node name="Building1" parent="Buildings" instance=ExtResource("18_s88j8")]
+transform = Transform3D(-1.5655, 0, 0.0506021, 0, 1.4946, 0, -0.0597846, 0, -1.32505, 14.4328, 0.118261, 24.6535)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ublyh")

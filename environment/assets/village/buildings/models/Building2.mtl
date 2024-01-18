@@ -1,0 +1,62 @@
+# Blender 3.6.5 MTL File: 'ScreamJam2023AssetFlip.blend'
+# www.blender.org
+
+newmtl TCom_BuildingsDerelict0118_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_BuildingsDerelict0118_S.jpg
+map_d C:/TCom_BuildingsDerelict0118_S.jpg
+
+newmtl TCom_BuildingsHouseOld0087_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_BuildingsHouseOld0087_S.jpg
+map_d C:/TCom_BuildingsHouseOld0087_S.jpg
+
+newmtl TCom_BuildingsUtility0032_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_BuildingsUtility0032_S.jpg
+map_d C:/TCom_BuildingsUtility0032_S.jpg
+
+newmtl TCom_RooftilesCeramicOld0078_1_seamless_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_RooftilesCeramicOld0078_1_seamless_S.jpg
+map_d C:/TCom_RooftilesCeramicOld0078_1_seamless_S.jpg
+
+newmtl stairs
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/stairs.png
+map_d C:/stairs.png
+
+newmtl tile7
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/tile7.png
+map_d C:/tile7.png

@@ -1,0 +1,22 @@
+# Blender 3.6.5 MTL File: 'ScreamJam2023AssetFlip.blend'
+# www.blender.org
+
+newmtl TCom_Shops0148_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_Shops0148_S.jpg
+map_d C:/TCom_Shops0148_S.jpg
+
+newmtl TCom_Shops0220_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_Shops0220_S.jpg
+map_d C:/TCom_Shops0220_S.jpg

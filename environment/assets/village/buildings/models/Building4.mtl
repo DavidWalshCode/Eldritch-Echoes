@@ -1,0 +1,52 @@
+# Blender 3.6.5 MTL File: 'ScreamJam2023AssetFlip.blend'
+# www.blender.org
+
+newmtl TCom_BuildingsDerelict0078_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_BuildingsDerelict0078_S.jpg
+map_d C:/TCom_BuildingsDerelict0078_S.jpg
+
+newmtl TCom_BuildingsDerelict0121_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_BuildingsDerelict0121_S.jpg
+map_d C:/TCom_BuildingsDerelict0121_S.jpg
+
+newmtl TCom_BuildingsDerelict0123_1_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_BuildingsDerelict0123_1_S.jpg
+map_d C:/TCom_BuildingsDerelict0123_1_S.jpg
+
+newmtl TCom_BuildingsDerelict0123_2_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd D:/UL/Year 4 Sem 1/CS4197 Computer Games Development Project 1/Project/Game Assets/Environment/Village/Buildings/assets/textures/cityScaping/TCom_BuildingsDerelict0123_2_S.jpg
+map_d D:/UL/Year 4 Sem 1/CS4197 Computer Games Development Project 1/Project/Game Assets/Environment/Village/Buildings/assets/textures/cityScaping/TCom_BuildingsDerelict0123_2_S.jpg
+
+newmtl TCom_BuildingsHouseOld0323_1_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_BuildingsHouseOld0323_1_S.jpg
+map_d C:/TCom_BuildingsHouseOld0323_1_S.jpg

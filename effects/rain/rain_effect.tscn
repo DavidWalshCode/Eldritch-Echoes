@@ -38,7 +38,7 @@ curve = SubResource("Curve_6xoh7")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(0.998181, 0, 0, 0, 0.998181, 0, 0, 0, 0.998181, 0, 18.0845, 0)
-amount = 800
+amount = 1000
 lifetime = 1.5
 randomness = 0.5
 visibility_aabb = AABB(-10, -20, -10, 20, 20, 20)
