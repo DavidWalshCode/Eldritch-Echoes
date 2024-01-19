@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://brusqmphxxu8w"]
+[gd_scene load_steps=31 format=3 uid="uid://brusqmphxxu8w"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_38psm"]
 [ext_resource type="PackedScene" uid="uid://bbgwnkh1pgxg6" path="res://environment/assets/outsideprops/rock_boulder.tscn" id="1_rhrkr"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cpu20qg3iiof8" path="res://characters/npc/scenes/villager_woman_1.tscn" id="7_s5i1m"]
 [ext_resource type="PackedScene" uid="uid://htlhq6xpsfle" path="res://characters/npc/scenes/viking_armour_man_1.tscn" id="8_sh6lw"]
 [ext_resource type="PackedScene" uid="uid://e4sjydpcdwsb" path="res://characters/npc/scenes/knight_1.tscn" id="9_e7xbm"]
+[ext_resource type="PackedScene" uid="uid://bwtdhxulhkqpj" path="res://environment/assets/village/buildings/scenes/building_3.tscn" id="9_vqhdb"]
 [ext_resource type="PackedScene" uid="uid://bupq35mm43272" path="res://characters/npc/scenes/mutant_skeleton_1.tscn" id="10_q1ejs"]
 [ext_resource type="PackedScene" uid="uid://bis8jin3jtnyo" path="res://characters/npc/scenes/nun_1.tscn" id="11_wxon7"]
 [ext_resource type="PackedScene" uid="uid://cepvdg3h5k1hr" path="res://characters/npc/scenes/villager_male_1.tscn" id="12_khl8n"]
@@ -18,6 +19,12 @@
 [ext_resource type="PackedScene" uid="uid://mcodumgw8823" path="res://characters/npc/scenes/lantern_character_1.tscn" id="14_fn874"]
 [ext_resource type="PackedScene" uid="uid://clrhhyj7nrh8n" path="res://environment/assets/village/buildings/scenes/barn_1.tscn" id="17_i2uh4"]
 [ext_resource type="PackedScene" uid="uid://dg54keoxweyee" path="res://environment/assets/village/buildings/scenes/building_1.tscn" id="18_s88j8"]
+[ext_resource type="PackedScene" uid="uid://7jhenmhl3plm" path="res://environment/assets/village/buildings/scenes/building_2.tscn" id="19_h7v7j"]
+[ext_resource type="PackedScene" uid="uid://d3a7aiyygfn1h" path="res://environment/assets/village/buildings/scenes/building_4.tscn" id="21_p8nrn"]
+[ext_resource type="PackedScene" uid="uid://cbjmt1n078wx3" path="res://environment/assets/village/buildings/scenes/building_5.tscn" id="22_hgejq"]
+[ext_resource type="PackedScene" uid="uid://bqljlkxkcfirf" path="res://environment/assets/village/buildings/scenes/building_6.tscn" id="23_woay7"]
+[ext_resource type="PackedScene" uid="uid://dapvx4ug2hke8" path="res://environment/assets/village/buildings/scenes/separator_walls_1_with_door.tscn" id="24_l4fpe"]
+[ext_resource type="PackedScene" uid="uid://ptoq014o5s5h" path="res://environment/assets/village/buildings/scenes/separator_walls_2.tscn" id="25_rn1lc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7yqkd"]
 sky_top_color = Color(0.180392, 0.431373, 0.831373, 1)
@@ -48,6 +55,21 @@ transform = Transform3D(0.856195, 0, -0.516653, 0.221806, 0.903156, 0.367576, 0.
 [node name="RockBoulder2" parent="Environment" instance=ExtResource("1_rhrkr")]
 transform = Transform3D(0.980986, -0.19408, 0, 0.19408, 0.980986, 0, 0, 0, 1, 40.9519, 0, 45.0157)
 
+[node name="RockBoulder3" parent="Environment" instance=ExtResource("1_rhrkr")]
+transform = Transform3D(0.544351, -0.522652, 0.656138, 0.692584, 0.721338, 0, -0.473297, 0.454431, 0.754641, -4.55612, 5.43795, 46.2674)
+
+[node name="RockBoulder4" parent="Environment" instance=ExtResource("1_rhrkr")]
+transform = Transform3D(0.325381, 0.945541, 0.00895982, 0.896606, -0.305504, -0.32057, -0.300375, 0.112341, -0.947182, 3.75712, 5.43795, 46.2674)
+
+[node name="RockBoulder6" parent="Environment" instance=ExtResource("1_rhrkr")]
+transform = Transform3D(-0.16138, 0.77116, 0.142348, 0.675363, 0.213563, -0.2034, -0.218671, 0.0904663, -0.73325, 8.90183, 5.43795, 46.999)
+
+[node name="RockBoulder7" parent="Environment" instance=ExtResource("1_rhrkr")]
+transform = Transform3D(0.437362, 0.639059, -0.0746252, 0.546939, -0.484537, -0.209896, -0.198867, 0.0728524, -0.741394, 12.7847, 5.94324, 46.2741)
+
+[node name="RockBoulder5" parent="Environment" instance=ExtResource("1_rhrkr")]
+transform = Transform3D(0.993076, 0.0970223, -0.0662427, 0.113307, -0.939963, 0.32192, -0.0310322, -0.327196, -0.944447, -1.13536, 5.43795, 46.741)
+
 [node name="RockCliff" parent="Environment" instance=ExtResource("2_t0cpd")]
 transform = Transform3D(0.981827, 0, -0.189781, 0, 1, 0, 0.189781, 0, 0.981827, -17.175, 0, -24.5399)
 
@@ -60,6 +82,9 @@ transform = Transform3D(0.932198, 0, -0.36195, 0, 1, 0, 0.36195, 0, 0.932198, 24
 [node name="RockCliff4" parent="Environment" instance=ExtResource("2_t0cpd")]
 transform = Transform3D(0.312434, 0, 0.949939, 0, 1, 0, -0.949939, 0, 0.312434, 60.67, 2.4043, 62.2469)
 
+[node name="RockCliff7" parent="Environment" instance=ExtResource("2_t0cpd")]
+transform = Transform3D(-0.261331, 0, -0.0424567, 0, 0.37922, 0, -0.0231944, 0, 0.47836, 20.8217, 1.03167, 49.1979)
+
 [node name="RockCliff5" parent="Environment" instance=ExtResource("2_t0cpd")]
 transform = Transform3D(0.767512, 0, 0.641034, 0, 1, 0, -0.641034, 0, 0.767512, 68.9824, -3.718, 20.6454)
 
@@ -67,7 +92,7 @@ transform = Transform3D(0.767512, 0, 0.641034, 0, 1, 0, -0.641034, 0, 0.767512, 
 transform = Transform3D(0.9019, 0, 0.431944, -0.00498307, 0.999933, 0.0104047, -0.431915, -0.0115364, 0.90184, 59.8016, -7.30421, -18.0679)
 
 [node name="RockPillar" parent="Environment" instance=ExtResource("3_rfswq")]
-transform = Transform3D(0.883537, 0, 0.468362, 0, 1, 0, -0.468362, 0, 0.883537, -5.72957, -10, 49.6317)
+transform = Transform3D(0.883537, 0, 0.468362, 0, 1, 0, -0.468362, 0, 0.883537, -8.48824, -10, 47.5007)
 
 [node name="RockPillar4" parent="Environment" instance=ExtResource("3_rfswq")]
 transform = Transform3D(0.410362, -0.00132275, 0.911922, -0.000489988, 0.999999, 0.00167102, -0.911923, -0.00113257, 0.410361, 32.824, -25.2155, 4.96953)
@@ -79,7 +104,7 @@ transform = Transform3D(0.883537, 0, 0.468362, 0, 1, 0, -0.468362, 0, 0.883537, 
 transform = Transform3D(0.641985, 0, 0.766717, 0, 1, 0, -0.766717, 0, 0.641985, 43.5689, -23.0007, 5.5756)
 
 [node name="RockPillar2" parent="Environment" instance=ExtResource("3_rfswq")]
-transform = Transform3D(0.872939, 0, -0.487829, -0.0132976, 0.999628, -0.0237952, 0.487648, 0.0272587, 0.872615, 13.1267, -14.5821, 46.2294)
+transform = Transform3D(0.95188, 0.00536829, -0.306424, -0.0132976, 0.999628, -0.0237952, 0.306182, 0.0267249, 0.951598, 15.6158, -14.5821, 48.8841)
 
 [node name="RockPillar3" parent="Environment" instance=ExtResource("3_rfswq")]
 transform = Transform3D(0.953528, 0.0151809, -0.300922, 0, 0.99873, 0.0503838, 0.301305, -0.0480423, 0.952317, -8.07355, -15.997, 29.1479)
@@ -103,6 +128,27 @@ transform = Transform3D(-1.1352, 0, -0.0598811, 0, 1.10723, 0, 0.0569308, 0, -1.
 
 [node name="Building1" parent="Buildings" instance=ExtResource("18_s88j8")]
 transform = Transform3D(-1.5655, 0, 0.0506021, 0, 1.4946, 0, -0.0597846, 0, -1.32505, 14.4328, 0.118261, 24.6535)
+
+[node name="Building2" parent="Buildings" instance=ExtResource("19_h7v7j")]
+transform = Transform3D(-1.88357, 0, 0.0323153, 0, 1.7458, 0, -0.050705, 0, -1.20044, 3.12286, 0, 45.2071)
+
+[node name="Building3" parent="Buildings" instance=ExtResource("9_vqhdb")]
+transform = Transform3D(2.30555, 0, 0, 0, 1.91531, 0, 0, 0, 2.49459, 29, 0.0447228, 49)
+
+[node name="Building4" parent="Buildings" instance=ExtResource("21_p8nrn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 0, 28)
+
+[node name="Building5" parent="Buildings" instance=ExtResource("22_hgejq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1812, 0, 18.3203)
+
+[node name="Building6" parent="Buildings" instance=ExtResource("23_woay7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.8994, 0, 16.4147)
+
+[node name="SeparatorWalls1WithDoor" parent="Buildings" instance=ExtResource("24_l4fpe")]
+transform = Transform3D(1, 0, 0, 0, 1.36317, 0, 0, 0, 1.34984, 30.6871, 0.0826302, 16.6286)
+
+[node name="SeparatorWalls2" parent="Buildings" instance=ExtResource("25_rn1lc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.3078, 0, 16.9732)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ublyh")

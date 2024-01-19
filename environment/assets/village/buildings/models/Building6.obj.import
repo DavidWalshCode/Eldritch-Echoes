@@ -29,6 +29,26 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"TCom_BuildingsVarious0097_1_S": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/buildings/materials/building_6_97_material.tres"
+},
+"TCom_Shops0244_S": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/buildings/materials/building_6_244S_material.tres"
+},
+"TCom_Shops0285_S": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/buildings/materials/building_6_285S_material.tres"
+}
+},
+"nodes": {
+"PATH:Building6_": {
+"import/skip_import": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

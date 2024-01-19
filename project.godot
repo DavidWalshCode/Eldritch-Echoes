@@ -28,6 +28,19 @@ window/vsync/vsync_mode=0
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://audio/": "red",
+"res://characters/": "teal",
+"res://dialogue/": "blue",
+"res://effects/": "orange",
+"res://environment/": "green",
+"res://levels/": "yellow",
+"res://ui/": "pink",
+"res://weapons/": "purple"
+}
+
 [filesystem]
 
 import/fbx/enabled=false
