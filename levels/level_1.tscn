@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cepvdg3h5k1hr" path="res://characters/npc/scenes/villager_male_1.tscn" id="12_khl8n"]
 [ext_resource type="AudioStream" uid="uid://4uhgisbwq7gv" path="res://audio/ambience/Dark_Rainy_Night(ambience).ogg" id="14_egb5r"]
 [ext_resource type="PackedScene" uid="uid://mcodumgw8823" path="res://characters/npc/scenes/lantern_character_1.tscn" id="14_fn874"]
-[ext_resource type="PackedScene" uid="uid://clrhhyj7nrh8n" path="res://environment/assets/village/buildings/scenes/barn_1.tscn" id="17_i2uh4"]
+[ext_resource type="PackedScene" uid="uid://dl78e4q470ief" path="res://environment/assets/village/buildings/scenes/barn_1.tscn" id="17_i2uh4"]
 [ext_resource type="PackedScene" uid="uid://dg54keoxweyee" path="res://environment/assets/village/buildings/scenes/building_1.tscn" id="18_s88j8"]
 [ext_resource type="PackedScene" uid="uid://7jhenmhl3plm" path="res://environment/assets/village/buildings/scenes/building_2.tscn" id="19_h7v7j"]
 [ext_resource type="PackedScene" uid="uid://d3a7aiyygfn1h" path="res://environment/assets/village/buildings/scenes/building_4.tscn" id="21_p8nrn"]
@@ -54,21 +54,6 @@ transform = Transform3D(0.856195, 0, -0.516653, 0.221806, 0.903156, 0.367576, 0.
 
 [node name="RockBoulder2" parent="Environment" instance=ExtResource("1_rhrkr")]
 transform = Transform3D(0.980986, -0.19408, 0, 0.19408, 0.980986, 0, 0, 0, 1, 40.9519, 0, 45.0157)
-
-[node name="RockBoulder3" parent="Environment" instance=ExtResource("1_rhrkr")]
-transform = Transform3D(0.544351, -0.522652, 0.656138, 0.692584, 0.721338, 0, -0.473297, 0.454431, 0.754641, -4.55612, 5.43795, 46.2674)
-
-[node name="RockBoulder4" parent="Environment" instance=ExtResource("1_rhrkr")]
-transform = Transform3D(0.325381, 0.945541, 0.00895982, 0.896606, -0.305504, -0.32057, -0.300375, 0.112341, -0.947182, 3.75712, 5.43795, 46.2674)
-
-[node name="RockBoulder6" parent="Environment" instance=ExtResource("1_rhrkr")]
-transform = Transform3D(-0.16138, 0.77116, 0.142348, 0.675363, 0.213563, -0.2034, -0.218671, 0.0904663, -0.73325, 8.90183, 5.43795, 46.999)
-
-[node name="RockBoulder7" parent="Environment" instance=ExtResource("1_rhrkr")]
-transform = Transform3D(0.437362, 0.639059, -0.0746252, 0.546939, -0.484537, -0.209896, -0.198867, 0.0728524, -0.741394, 12.7847, 5.94324, 46.2741)
-
-[node name="RockBoulder5" parent="Environment" instance=ExtResource("1_rhrkr")]
-transform = Transform3D(0.993076, 0.0970223, -0.0662427, 0.113307, -0.939963, 0.32192, -0.0310322, -0.327196, -0.944447, -1.13536, 5.43795, 46.741)
 
 [node name="RockCliff" parent="Environment" instance=ExtResource("2_t0cpd")]
 transform = Transform3D(0.981827, 0, -0.189781, 0, 1, 0, 0.189781, 0, 0.981827, -17.175, 0, -24.5399)
@@ -124,7 +109,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 40, 0, 0)
 [node name="Buildings" type="Node3D" parent="."]
 
 [node name="Barn1" parent="Buildings" instance=ExtResource("17_i2uh4")]
-transform = Transform3D(-1.21066, 0, -0.0731752, 0, 1.27392, 0, 0.0607149, 0, -1.45912, 28.2656, -0.0861034, 29.6711)
+transform = Transform3D(-0.966358, 0, 0.2572, 0, 1, 0, -0.2572, 0, -0.966358, 9, 0, 13)
 
 [node name="Building1" parent="Buildings" instance=ExtResource("18_s88j8")]
 transform = Transform3D(-1.5655, 0, 0.0506021, 0, 1.4946, 0, -0.0597846, 0, -1.32505, 14.4328, 0.118261, 24.6535)
