@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dl1r5w1xrbxys"
-path="res://.godot/imported/Church1.obj-5406f13e447fc1d578231bef06514726.scn"
+uid="uid://bh5gpyh80lr10"
+path="res://.godot/imported/Building7.obj-fbb97e640b2a1e96d8fd10d8b23bb5ae.scn"
 
 [deps]
 
-source_file="res://environment/assets/village/buildings/models/Church1.obj"
-dest_files=["res://.godot/imported/Church1.obj-5406f13e447fc1d578231bef06514726.scn"]
+source_file="res://environment/assets/village/buildings/models/Building7.obj"
+dest_files=["res://.godot/imported/Building7.obj-fbb97e640b2a1e96d8fd10d8b23bb5ae.scn"]
 
 [params]
 

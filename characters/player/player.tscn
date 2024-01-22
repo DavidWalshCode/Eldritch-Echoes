@@ -775,17 +775,17 @@ visible = false
 
 [node name="FootstepSound1" type="AudioStreamPlayer" parent="CharacterMover/Audio/FootstepSounds"]
 stream = ExtResource("30_ajrhu")
-volume_db = -20.0
+volume_db = -25.0
 bus = &"SFX"
 
 [node name="FootstepSound2" type="AudioStreamPlayer" parent="CharacterMover/Audio/FootstepSounds"]
 stream = ExtResource("31_3rpv5")
-volume_db = -20.0
+volume_db = -25.0
 bus = &"SFX"
 
 [node name="FootstepSound3" type="AudioStreamPlayer" parent="CharacterMover/Audio/FootstepSounds"]
 stream = ExtResource("31_lxk3n")
-volume_db = -20.0
+volume_db = -25.0
 bus = &"SFX"
 
 [node name="JumpSounds" type="Node3D" parent="CharacterMover/Audio"]
@@ -793,27 +793,27 @@ visible = false
 
 [node name="JumpSound1" type="AudioStreamPlayer" parent="CharacterMover/Audio/JumpSounds"]
 stream = ExtResource("32_mk37s")
-volume_db = -15.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="JumpSound2" type="AudioStreamPlayer" parent="CharacterMover/Audio/JumpSounds"]
 stream = ExtResource("34_nrq7m")
-volume_db = -15.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="JumpSound3" type="AudioStreamPlayer" parent="CharacterMover/Audio/JumpSounds"]
 stream = ExtResource("35_o8281")
-volume_db = -15.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="JumpSound4" type="AudioStreamPlayer" parent="CharacterMover/Audio/JumpSounds"]
 stream = ExtResource("36_qlltj")
-volume_db = -15.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="JumpSound5" type="AudioStreamPlayer" parent="CharacterMover/Audio/JumpSounds"]
 stream = ExtResource("37_2233w")
-volume_db = -15.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="SlidingSounds" type="Node3D" parent="CharacterMover/Audio"]

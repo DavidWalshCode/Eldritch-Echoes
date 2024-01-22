@@ -1,0 +1,192 @@
+# Blender 3.6.5 MTL File: 'building_01.blend'
+# www.blender.org
+
+newmtl Sign_NoSmoking
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/sign_no_smoking_01.png
+
+newmtl brick_red_04
+Ns 360.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.060976 0.060976 0.060976
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/brick_red_04.jpg
+
+newmtl conduit_white_01
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/conduit_white_01.jpg
+
+newmtl door_shed_a
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl door_shed_b
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl electrical_junctionbox_small
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl gutter_brown_01.jpg
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/gutter_brown_01.jpg
+
+newmtl gutter_brown_bottom.jpg
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/gutter_brown_bottom.jpg
+
+newmtl gutter_brown_elbow_01.jpg
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/UL/Year 4 Sem 1/CS4197 Computer Games Development Project 1/Project/Game Assets/Full Assets Packs/Classic64 Lowpoly Assets/- Classic 64 Asset Pack 0.6/Misc/Materials/gutter_brown_elbow_01.jpg
+
+newmtl metal_grungy_tall_01
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.231707 0.231707 0.231707
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/metal_grungy_tall_01.jpg
+
+newmtl pallet_bottom
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd D:/UL/Year 4 Sem 1/CS4197 Computer Games Development Project 1/Project/Game Assets/Full Assets Packs/Classic64 Lowpoly Assets/- Classic 64 Asset Pack 0.6/Wood/Materials/plywood.png
+
+newmtl pallet_top
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.195122 0.195122 0.195122
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/wood_pallet.png
+
+newmtl panel_electric
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/panel_electric.png
+
+newmtl propane_storage
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/propane_storage.png
+
+newmtl roof_soffit_01
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/UL/Year 4 Sem 1/CS4197 Computer Games Development Project 1/Project/Game Assets/Full Assets Packs/Classic64 Lowpoly Assets/- Classic 64 Asset Pack 0.6/Roof/Materials/roof_soffit_01.jpg
+
+newmtl shingles_old_01
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/UL/Year 4 Sem 1/CS4197 Computer Games Development Project 1/Project/Game Assets/Full Assets Packs/Classic64 Lowpoly Assets/- Classic 64 Asset Pack 0.6/Roof/Materials/shingles_old_01.jpg
+
+newmtl vent
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.036585 0.036585 0.036585
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/vent.png
+
+newmtl window_modern
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.743902 0.743902 0.743902
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/window_modern.png
+
+newmtl wood_planks_2
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/wood_planks_2.png
