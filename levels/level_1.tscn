@@ -50,7 +50,7 @@ script = ExtResource("1_38psm")
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="RockBoulder" parent="Environment" instance=ExtResource("1_rhrkr")]
-transform = Transform3D(0.856195, 0, -0.516653, 0.221806, 0.903156, 0.367576, 0.466618, -0.429313, 0.773277, 46.1074, 0, 34.9185)
+transform = Transform3D(0.856195, 0, -0.516653, 0.221806, 0.903156, 0.367576, 0.466618, -0.429313, 0.773277, 40.5035, 0, 34.9185)
 
 [node name="RockBoulder2" parent="Environment" instance=ExtResource("1_rhrkr")]
 transform = Transform3D(0.980986, -0.19408, 0, 0.19408, 0.980986, 0, 0, 0, 1, 40.9519, 0, 45.0157)

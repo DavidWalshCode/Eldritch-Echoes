@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://opt6mrqu2jqe"]
+[gd_scene load_steps=33 format=3 uid="uid://opt6mrqu2jqe"]
 
 [ext_resource type="PackedScene" uid="uid://bl150msgq7vur" path="res://weapons/projectiles/projectile.tscn" id="1_kujtm"]
 [ext_resource type="PackedScene" uid="uid://coerxuptsgxrc" path="res://weapons/projectiles/assets/rocket.glb" id="2_hiucq"]
@@ -103,21 +103,21 @@ scale_max = 5.0
 scale_curve = SubResource("CurveTexture_ag6i4")
 color_ramp = SubResource("GradientTexture1D_e14ys")
 
-[sub_resource type="Gradient" id="Gradient_q683d"]
-offsets = PackedFloat32Array(0, 0.180791, 0.384181, 0.649718)
-colors = PackedColorArray(1, 1, 1, 1, 0.870588, 0.517647, 0, 1, 1.33563e-06, 0.305009, 0.269518, 1, 0, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_lfghm"]
+offsets = PackedFloat32Array(0, 0.12234, 0.271277, 0.446809, 0.75)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.731359, 0.434761, 1, 1, 0.517647, 0, 1, 0.823529, 0.12549, 0, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_70jri"]
-gradient = SubResource("Gradient_q683d")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nn31k"]
+gradient = SubResource("Gradient_lfghm")
 
-[sub_resource type="Curve" id="Curve_7fkkh"]
+[sub_resource type="Curve" id="Curve_td0ef"]
 _data = [Vector2(0, 0.157895), 0.0, 0.0, 0, 0, Vector2(0.447115, 0.894737), 0.0, 0.0, 0, 0, Vector2(0.798077, 0.947368), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="CurveTexture" id="CurveTexture_ial7u"]
-curve = SubResource("Curve_7fkkh")
+[sub_resource type="CurveTexture" id="CurveTexture_dc15p"]
+curve = SubResource("Curve_td0ef")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ily0k"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nfpfs"]
 particle_flag_rotate_y = true
 angle_max = 720.0
 angular_velocity_min = -15.0
@@ -125,108 +125,8 @@ angular_velocity_max = 15.0
 gravity = Vector3(0, 0.3, 0)
 scale_min = 5.0
 scale_max = 5.0
-scale_curve = SubResource("CurveTexture_ial7u")
-color_ramp = SubResource("GradientTexture1D_70jri")
-
-[sub_resource type="Gradient" id="Gradient_s80pe"]
-offsets = PackedFloat32Array(0, 0.180791, 0.384181, 0.649718)
-colors = PackedColorArray(1, 1, 1, 1, 0.870588, 0.517647, 0, 1, 0.509791, 0, 0.225566, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_6ytmi"]
-gradient = SubResource("Gradient_s80pe")
-
-[sub_resource type="Curve" id="Curve_hk78s"]
-_data = [Vector2(0, 0.157895), 0.0, 0.0, 0, 0, Vector2(0.447115, 0.894737), 0.0, 0.0, 0, 0, Vector2(0.798077, 0.947368), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="CurveTexture" id="CurveTexture_vb8ly"]
-curve = SubResource("Curve_hk78s")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_47q3c"]
-particle_flag_rotate_y = true
-angle_max = 720.0
-angular_velocity_min = -15.0
-angular_velocity_max = 15.0
-gravity = Vector3(0, 0.3, 0)
-scale_min = 5.0
-scale_max = 5.0
-scale_curve = SubResource("CurveTexture_vb8ly")
-color_ramp = SubResource("GradientTexture1D_6ytmi")
-
-[sub_resource type="Gradient" id="Gradient_2chnn"]
-offsets = PackedFloat32Array(0, 0.180791, 0.384181, 0.649718)
-colors = PackedColorArray(1, 1, 1, 1, 0.870588, 0.517647, 0, 1, 0.263059, 9.6069e-05, 0.902707, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_p2suh"]
-gradient = SubResource("Gradient_2chnn")
-
-[sub_resource type="Curve" id="Curve_4b05r"]
-_data = [Vector2(0, 0.157895), 0.0, 0.0, 0, 0, Vector2(0.447115, 0.894737), 0.0, 0.0, 0, 0, Vector2(0.798077, 0.947368), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="CurveTexture" id="CurveTexture_5lw6v"]
-curve = SubResource("Curve_4b05r")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_61yvv"]
-particle_flag_rotate_y = true
-angle_max = 720.0
-angular_velocity_min = -15.0
-angular_velocity_max = 15.0
-gravity = Vector3(0, 0.3, 0)
-scale_min = 5.0
-scale_max = 5.0
-scale_curve = SubResource("CurveTexture_5lw6v")
-color_ramp = SubResource("GradientTexture1D_p2suh")
-
-[sub_resource type="Gradient" id="Gradient_v1eeh"]
-offsets = PackedFloat32Array(0, 0.180791, 0.384181, 0.649718)
-colors = PackedColorArray(1, 1, 1, 1, 0.870588, 0.517647, 0, 1, 0.697803, 0, 0.0658235, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_w3353"]
-gradient = SubResource("Gradient_v1eeh")
-
-[sub_resource type="Curve" id="Curve_hgqlf"]
-_data = [Vector2(0, 0.157895), 0.0, 0.0, 0, 0, Vector2(0.447115, 0.894737), 0.0, 0.0, 0, 0, Vector2(0.798077, 0.947368), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="CurveTexture" id="CurveTexture_tdafj"]
-curve = SubResource("Curve_hgqlf")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2hto8"]
-particle_flag_rotate_y = true
-angle_max = 720.0
-angular_velocity_min = -15.0
-angular_velocity_max = 15.0
-gravity = Vector3(0, 0.3, 0)
-scale_min = 5.0
-scale_max = 5.0
-scale_curve = SubResource("CurveTexture_tdafj")
-color_ramp = SubResource("GradientTexture1D_w3353")
-
-[sub_resource type="Gradient" id="Gradient_kw506"]
-offsets = PackedFloat32Array(0, 0.180791, 0.384181, 0.649718)
-colors = PackedColorArray(1, 1, 1, 1, 0.870588, 0.517647, 0, 1, 0.0119252, 0.342152, 1.92523e-07, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_4sgsj"]
-gradient = SubResource("Gradient_kw506")
-
-[sub_resource type="Curve" id="Curve_5ed6h"]
-_data = [Vector2(0, 0.157895), 0.0, 0.0, 0, 0, Vector2(0.447115, 0.894737), 0.0, 0.0, 0, 0, Vector2(0.798077, 0.947368), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="CurveTexture" id="CurveTexture_l1fes"]
-curve = SubResource("Curve_5ed6h")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y75sm"]
-particle_flag_rotate_y = true
-angle_max = 720.0
-angular_velocity_min = -15.0
-angular_velocity_max = 15.0
-gravity = Vector3(0, 0.3, 0)
-scale_min = 5.0
-scale_max = 5.0
-scale_curve = SubResource("CurveTexture_l1fes")
-color_ramp = SubResource("GradientTexture1D_4sgsj")
+scale_curve = SubResource("CurveTexture_dc15p")
+color_ramp = SubResource("GradientTexture1D_nn31k")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1g7jl"]
 transparency = 2
@@ -318,47 +218,7 @@ emitting = false
 amount = 1
 lifetime = 0.3
 one_shot = true
-process_material = SubResource("ParticleProcessMaterial_ily0k")
-draw_pass_1 = SubResource("SphereMesh_acq7n")
-
-[node name="ExplosionFireball3" type="GPUParticles3D" parent="ExplosionFireballs" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.12018)
-material_override = SubResource("StandardMaterial3D_prh5m")
-emitting = false
-amount = 1
-lifetime = 0.3
-one_shot = true
-process_material = SubResource("ParticleProcessMaterial_47q3c")
-draw_pass_1 = SubResource("SphereMesh_acq7n")
-
-[node name="ExplosionFireball4" type="GPUParticles3D" parent="ExplosionFireballs" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.12018)
-material_override = SubResource("StandardMaterial3D_prh5m")
-emitting = false
-amount = 1
-lifetime = 0.3
-one_shot = true
-process_material = SubResource("ParticleProcessMaterial_61yvv")
-draw_pass_1 = SubResource("SphereMesh_acq7n")
-
-[node name="ExplosionFireball5" type="GPUParticles3D" parent="ExplosionFireballs" index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.12018)
-material_override = SubResource("StandardMaterial3D_prh5m")
-emitting = false
-amount = 1
-lifetime = 0.3
-one_shot = true
-process_material = SubResource("ParticleProcessMaterial_2hto8")
-draw_pass_1 = SubResource("SphereMesh_acq7n")
-
-[node name="ExplosionFireball6" type="GPUParticles3D" parent="ExplosionFireballs" index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.12018)
-material_override = SubResource("StandardMaterial3D_prh5m")
-emitting = false
-amount = 1
-lifetime = 0.3
-one_shot = true
-process_material = SubResource("ParticleProcessMaterial_y75sm")
+process_material = SubResource("ParticleProcessMaterial_nfpfs")
 draw_pass_1 = SubResource("SphereMesh_acq7n")
 
 [node name="ExplosionSparkParticles" type="GPUParticles3D" parent="." index="4"]

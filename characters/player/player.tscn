@@ -39,7 +39,7 @@
 [ext_resource type="AudioStream" uid="uid://fkhh2hd3lgsq" path="res://audio/sfx/player/jump/Voice_Female_V1_Jump_Mono_03.wav" id="35_o8281"]
 [ext_resource type="AudioStream" uid="uid://byeweh7mwlvlv" path="res://audio/sfx/player/jump/Voice_Female_V1_Jump_Mono_04.wav" id="36_qlltj"]
 [ext_resource type="AudioStream" uid="uid://drlkfcusfc8el" path="res://audio/sfx/player/jump/Voice_Female_V1_Jump_Mono_05.wav" id="37_2233w"]
-[ext_resource type="AudioStream" uid="uid://cu6pwh4inqpe8" path="res://audio/sfx/weapons/396705__chaosentertainment__dragslide1.mp3" id="39_gdl4f"]
+[ext_resource type="AudioStream" uid="uid://cu6pwh4inqpe8" path="res://audio/sfx/player/slide/396705__chaosentertainment__dragslide1.mp3" id="39_atilr"]
 [ext_resource type="AudioStream" uid="uid://cionacx4sdxlt" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_01.wav" id="39_tnvee"]
 [ext_resource type="AudioStream" uid="uid://cmiqntcy6rplc" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_02.wav" id="40_bbfdy"]
 [ext_resource type="AudioStream" uid="uid://dmciahxrc6a3b" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_03.wav" id="41_svykw"]
@@ -418,6 +418,7 @@ _data = {
 collision_layer = 6
 collision_mask = 3
 script = ExtResource("1_sw706")
+max_camera_lean = 1.75
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -820,12 +821,12 @@ bus = &"SFX"
 visible = false
 
 [node name="SlidingSound1" type="AudioStreamPlayer" parent="CharacterMover/Audio/SlidingSounds"]
-stream = ExtResource("39_gdl4f")
+stream = ExtResource("39_atilr")
 volume_db = 10.0
 bus = &"SFX"
 
 [node name="SlidingSound2" type="AudioStreamPlayer" parent="CharacterMover/Audio/SlidingSounds"]
-stream = ExtResource("39_gdl4f")
+stream = ExtResource("39_atilr")
 volume_db = 10.0
 bus = &"SFX"
 
