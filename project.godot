@@ -10,9 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Eldritch-Echoes"
+config/name="Eldritch Echoes"
 run/main_scene="res://levels/level_1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(0, 0.117647, 0.0745098, 1)
+boot_splash/image="res://weapons/crosshairs/crosshair150.png"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -23,6 +25,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 [display]
 
 window/vsync/vsync_mode=0
+mouse_cursor/custom_image="res://weapons/crosshairs/crosshair176.png"
 
 [editor_plugins]
 
