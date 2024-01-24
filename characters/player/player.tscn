@@ -20,17 +20,17 @@
 [ext_resource type="Texture2D" uid="uid://vn3wfuoek1uo" path="res://weapons/crosshairs/crosshair057.png" id="12_qp6js"]
 [ext_resource type="Texture2D" uid="uid://b76018ogd47jt" path="res://weapons/crosshairs/crosshair176.png" id="13_0q4yo"]
 [ext_resource type="PackedScene" uid="uid://dvih676eskm1v" path="res://weapons/attackemitters/spray_emitter.tscn" id="13_gux8a"]
-[ext_resource type="AudioStream" uid="uid://dwvm6hfgjj84c" path="res://audio/sfx/weapons/pistol.wav" id="15_ifxbi"]
+[ext_resource type="AudioStream" uid="uid://dwvm6hfgjj84c" path="res://audio/sfx/weapons/pistol/pistol.wav" id="15_ifxbi"]
 [ext_resource type="AudioStream" uid="uid://b03e6xoj0comp" path="res://audio/sfx/weapons/weapon_gun_1911_A_19_dry_fire.mp3" id="16_gfb3c"]
 [ext_resource type="PackedScene" uid="uid://bc1qcptontamp" path="res://effects/muzzleflash/muzzleflash2.glb" id="16_t5aqn"]
 [ext_resource type="PackedScene" uid="uid://bm64bcj3p4lw5" path="res://weapons/attackemitters/projectile_emitter.tscn" id="17_mbee8"]
 [ext_resource type="Texture2D" uid="uid://vc4chj4vcs0q" path="res://weapons/crosshairs/crosshair175.png" id="17_uf0m2"]
-[ext_resource type="AudioStream" uid="uid://bk4kjtvupj3ww" path="res://audio/sfx/weapons/rifle_edited2.wav" id="19_h2h01"]
+[ext_resource type="AudioStream" uid="uid://bk4kjtvupj3ww" path="res://audio/sfx/weapons/machinegun/rifle_edited2.wav" id="19_h2h01"]
 [ext_resource type="PackedScene" uid="uid://bpuosqmv1qir7" path="res://weapons/assets/models/OverUnderShotgun.obj" id="20_rqlhh"]
-[ext_resource type="AudioStream" uid="uid://dwjdf5g0bvm1f" path="res://audio/sfx/weapons/shotgun.wav" id="22_3i304"]
+[ext_resource type="AudioStream" uid="uid://dwjdf5g0bvm1f" path="res://audio/sfx/weapons/shotgun/shotgun.wav" id="22_3i304"]
 [ext_resource type="PackedScene" uid="uid://bavyos7xq4r84" path="res://weapons/assets/models/GrenadeLauncher.obj" id="24_t2e6a"]
 [ext_resource type="PackedScene" uid="uid://divrxgfwrd75b" path="res://weapons/assets/models/MG3.obj" id="28_ix21b"]
-[ext_resource type="AudioStream" uid="uid://iwftlgmkcsxo" path="res://audio/sfx/weapons/Bottle Rocket-SoundBible.com-332895117.wav" id="29_vapxl"]
+[ext_resource type="AudioStream" uid="uid://cjbegjcyihjut" path="res://audio/sfx/weapons/rocketlauncher/163458__lemudcrab__grenade-launcher.wav" id="29_aynkq"]
 [ext_resource type="AudioStream" uid="uid://c2noi17obekqs" path="res://audio/sfx/player/footsteps/SITW_Footstep_1.wav" id="30_ajrhu"]
 [ext_resource type="AudioStream" uid="uid://gyhlfop747ek" path="res://audio/sfx/player/footsteps/SITW_Footstep_2.wav" id="31_3rpv5"]
 [ext_resource type="AudioStream" uid="uid://g1xjo3kg3mi5" path="res://audio/sfx/player/footsteps/SITW_Footstep_3.wav" id="31_lxk3n"]
@@ -757,7 +757,7 @@ stretch_mode = 3
 [node name="Audio" type="Node3D" parent="Camera3D/WeaponManager/Weapons/RocketLauncher"]
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Audio"]
-stream = ExtResource("29_vapxl")
+stream = ExtResource("29_aynkq")
 volume_db = -12.0
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Audio"]

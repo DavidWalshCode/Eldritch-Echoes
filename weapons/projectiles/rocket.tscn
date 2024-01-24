@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://opt6mrqu2jqe"]
+[gd_scene load_steps=37 format=3 uid="uid://opt6mrqu2jqe"]
 
 [ext_resource type="PackedScene" uid="uid://bl150msgq7vur" path="res://weapons/projectiles/projectile.tscn" id="1_kujtm"]
 [ext_resource type="PackedScene" uid="uid://coerxuptsgxrc" path="res://weapons/projectiles/assets/rocket.glb" id="2_hiucq"]
@@ -6,7 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cbi2uae24fd3r" path="res://effects/muzzleflash/muzzleflash3.glb" id="3_erksw"]
 [ext_resource type="Texture2D" uid="uid://dhud8rywluaw6" path="res://effects/circle32.png" id="5_8nqg7"]
 [ext_resource type="PackedScene" uid="uid://cbtf6d7s603ra" path="res://weapons/attackemitters/area_damage_emitter.tscn" id="5_jg43v"]
-[ext_resource type="AudioStream" uid="uid://bxh7j8p3l1axi" path="res://audio/sfx/weapons/magic-fire-impact.wav" id="7_tl8ur"]
+[ext_resource type="AudioStream" uid="uid://cx5us4ek6ywj6" path="res://audio/sfx/weapons/explosion/Magic Fire Impact 1.wav" id="7_mbqls"]
+[ext_resource type="AudioStream" uid="uid://eklhlaqd8tjm" path="res://audio/sfx/weapons/explosion/Magic Fire Impact 2.wav" id="8_qhvkq"]
+[ext_resource type="AudioStream" uid="uid://dg7h4w75y51m6" path="res://audio/sfx/weapons/explosion/Magic Fire Impact 3.wav" id="9_jba4f"]
+[ext_resource type="AudioStream" uid="uid://c26ndul2756p0" path="res://audio/sfx/weapons/explosion/Magic Fire Impact 4.wav" id="10_68gks"]
+[ext_resource type="AudioStream" uid="uid://jdaomi6fe2lu" path="res://audio/sfx/weapons/explosion/Magic Fire Impact 5.wav" id="11_tfi27"]
 
 [sub_resource type="Animation" id="Animation_aihlr"]
 length = 0.001
@@ -249,21 +253,26 @@ attack_radius = 2.5
 [node name="ExplosionSounds" type="Node3D" parent="Audio" index="0"]
 
 [node name="ExplosionSound1" type="AudioStreamPlayer3D" parent="Audio/ExplosionSounds" index="0"]
-stream = ExtResource("7_tl8ur")
+stream = ExtResource("7_mbqls")
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="ExplosionSound2" type="AudioStreamPlayer3D" parent="Audio/ExplosionSounds" index="1"]
-stream = ExtResource("7_tl8ur")
+stream = ExtResource("8_qhvkq")
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="ExplosionSound3" type="AudioStreamPlayer3D" parent="Audio/ExplosionSounds" index="2"]
-stream = ExtResource("7_tl8ur")
+stream = ExtResource("9_jba4f")
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="ExplosionSound4" type="AudioStreamPlayer3D" parent="Audio/ExplosionSounds" index="3"]
-stream = ExtResource("7_tl8ur")
+stream = ExtResource("10_68gks")
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="ExplosionSound5" type="AudioStreamPlayer3D" parent="Audio/ExplosionSounds" index="4"]
-stream = ExtResource("7_tl8ur")
+stream = ExtResource("11_tfi27")
+volume_db = -5.0
 bus = &"SFX"

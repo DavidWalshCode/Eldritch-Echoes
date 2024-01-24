@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bxh7j8p3l1axi"
-path="res://.godot/imported/magic-fire-impact.wav-76c4e7bb1c6358da01d400cc1d73f9be.sample"
+path="res://.godot/imported/magic-fire-impact.wav-936bba9f2ccb32ae3a0caa9c8764ebe9.sample"
 
 [deps]
 
-source_file="res://audio/sfx/weapons/magic-fire-impact.wav"
-dest_files=["res://.godot/imported/magic-fire-impact.wav-76c4e7bb1c6358da01d400cc1d73f9be.sample"]
+source_file="res://audio/sfx/weapons/explosion/magic-fire-impact.wav"
+dest_files=["res://.godot/imported/magic-fire-impact.wav-936bba9f2ccb32ae3a0caa9c8764ebe9.sample"]
 
 [params]
 
