@@ -11,7 +11,6 @@ func on_hit(hit_collider : Node3D, hit_position : Vector3, hit_normal : Vector3)
 	area_damage_emitter.damage = damage
 	area_damage_emitter.fire()
 	
-	#$ExplosionFireball.restart()
 	explosion_fireballs[randi() % explosion_fireballs.size()].restart() # Randomly show an explosion effect
 	$ExplosionSparkParticles.restart()
 	play_explosion_sound()
