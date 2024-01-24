@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=72 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://characters/player/weapon_manager.gd" id="2_c6p01"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dm2b4wrpid53g" path="res://weapons/attackemitters/hit_scan_attack_emitter.tscn" id="8_de1u1"]
 [ext_resource type="Texture2D" uid="uid://b6a4xebwh61tf" path="res://weapons/crosshairs/crosshair139.png" id="8_op1cy"]
 [ext_resource type="PackedScene" uid="uid://cd7ygljv63g7b" path="res://effects/muzzleflash/muzzleflash1.glb" id="9_k8nox"]
+[ext_resource type="AudioStream" uid="uid://mnn65pyepjqs" path="res://audio/sfx/weapons/melee/sword_fire01.wav" id="10_shjtd"]
 [ext_resource type="PackedScene" uid="uid://dx6r7pwvykdug" path="res://weapons/assets/models/ColtPyton.obj" id="10_yemr5"]
 [ext_resource type="PackedScene" uid="uid://cbi2uae24fd3r" path="res://effects/muzzleflash/muzzleflash3.glb" id="11_i3xgg"]
 [ext_resource type="Texture2D" uid="uid://ds8clcnm78r5c" path="res://weapons/crosshairs/crosshair150.png" id="12_65i83"]
@@ -30,7 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://dwjdf5g0bvm1f" path="res://audio/sfx/weapons/shotgun/shotgun.wav" id="22_3i304"]
 [ext_resource type="PackedScene" uid="uid://bavyos7xq4r84" path="res://weapons/assets/models/GrenadeLauncher.obj" id="24_t2e6a"]
 [ext_resource type="PackedScene" uid="uid://divrxgfwrd75b" path="res://weapons/assets/models/MG3.obj" id="28_ix21b"]
-[ext_resource type="AudioStream" uid="uid://cjbegjcyihjut" path="res://audio/sfx/weapons/rocketlauncher/163458__lemudcrab__grenade-launcher.wav" id="29_aynkq"]
+[ext_resource type="AudioStream" uid="uid://3u7swxshnb3v" path="res://audio/sfx/weapons/rocketlauncher/grenade and bottle rocket test 1.wav" id="29_linrk"]
 [ext_resource type="AudioStream" uid="uid://c2noi17obekqs" path="res://audio/sfx/player/footsteps/SITW_Footstep_1.wav" id="30_ajrhu"]
 [ext_resource type="AudioStream" uid="uid://gyhlfop747ek" path="res://audio/sfx/player/footsteps/SITW_Footstep_2.wav" id="31_3rpv5"]
 [ext_resource type="AudioStream" uid="uid://g1xjo3kg3mi5" path="res://audio/sfx/player/footsteps/SITW_Footstep_3.wav" id="31_lxk3n"]
@@ -498,9 +499,10 @@ stretch_mode = 3
 [node name="Audio" type="Node3D" parent="Camera3D/WeaponManager/Weapons/Machete"]
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Machete/Audio"]
+stream = ExtResource("10_shjtd")
+volume_db = -16.0
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Machete/Audio"]
-stream = ExtResource("16_gfb3c")
 
 [node name="SwitchSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Machete/Audio"]
 stream = ExtResource("16_gfb3c")
@@ -769,8 +771,8 @@ stretch_mode = 3
 [node name="Audio" type="Node3D" parent="Camera3D/WeaponManager/Weapons/RocketLauncher"]
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Audio"]
-stream = ExtResource("29_aynkq")
-volume_db = -12.0
+stream = ExtResource("29_linrk")
+volume_db = -15.0
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Audio"]
 stream = ExtResource("16_gfb3c")
