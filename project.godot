@@ -17,6 +17,10 @@ boot_splash/bg_color=Color(0, 0.117647, 0.0745098, 1)
 boot_splash/image="res://ui/TempLogo1.png"
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://audio/default_bus_layout.tres"
+
 [autoload]
 
 Global="*res://global.gd"
