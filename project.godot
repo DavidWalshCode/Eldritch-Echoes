@@ -14,7 +14,7 @@ config/name="Eldritch Echoes"
 run/main_scene="res://levels/level_1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0, 0.117647, 0.0745098, 1)
-boot_splash/image="res://weapons/crosshairs/crosshair150.png"
+boot_splash/image="res://ui/TempLogo1.png"
 config/icon="res://icon.svg"
 
 [autoload]
