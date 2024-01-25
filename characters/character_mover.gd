@@ -31,7 +31,14 @@ var last_footstep_time = -9999.0  # Last time a footstep sound was played
 @export var slide_speed_modifier = 1.5  # Speed modifier during sliding
 var is_sliding : bool = false
 var slide_timer : Timer
-@onready var sliding_sounds = $Audio/SlidingSounds.get_children()
+@onready var sliding_sound = $Audio/SlidingSounds/SlidingSound1
+
+# Pitch variation range
+@export var min_pitch_scale = 0.9
+@export var max_pitch_scale = 1.1
+
+#@onready var slide_effect = $"../SlideEffect"
+@onready var slide_effect = $SlideEffect
 
 func _ready():
 	character_body = get_parent()
@@ -66,8 +73,10 @@ func start_crouching():
 			is_sliding = true
 			slide_timer.start()  # Start the sliding timer
 			play_sliding_sound()  # Play a sliding sound
+			slide_effect.emitting = true
 		else:
 			is_sliding = false
+			slide_effect.emitting = false
 		crouching(true)
 
 func stop_crouching():
@@ -75,6 +84,7 @@ func stop_crouching():
 		is_sliding = false  # Stop sliding when uncrouching
 		slide_timer.stop()  # Stop the timer if it's running
 		stop_sliding_sounds()
+		slide_effect.emitting = false
 		crouching(false)
 
 func crouching(state : bool):
@@ -91,6 +101,7 @@ func _on_animation_player_animation_started(anim_name):
 func _on_slide_timer_timeout():
 	is_sliding = false  # Stop sliding
 	stop_sliding_sounds()
+	slide_effect.emitting = false
 
 # Runs 60 times a sec, fixedupdate in Unity
 func _physics_process(delta):
@@ -142,10 +153,12 @@ func play_jump_sound():
 	jump_sounds[randi() % jump_sounds.size()].play() # Randomly play a jump sound
 
 func play_sliding_sound():
-	sliding_sounds[randi() % sliding_sounds.size()].play() # Randomly play a jump sound
+	if character_body.is_on_floor(): # Only play the sliding sound if the player is on the ground
+		# Randomize pitch scale
+		var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
+		sliding_sound.pitch_scale = random_pitch
+		sliding_sound.play()
 
 func stop_sliding_sounds():
-	for sound in sliding_sounds:
-		if sound.playing:
-			sound.stop()
-
+	if sliding_sound.playing:
+		sliding_sound.stop()

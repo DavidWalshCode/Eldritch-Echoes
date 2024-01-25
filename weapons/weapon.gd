@@ -75,7 +75,7 @@ func set_active(active : bool):
 	#$Crosshair.visible = active
 	visible = active
 	if !active:
-		animation_player.play("RESET")
+		animation_player.play("RESET", 0.3)
 
 func apply_recoil():
 	var steps = 8.0 # Number of steps to split the recoil into

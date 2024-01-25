@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=77 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://characters/player/weapon_manager.gd" id="2_c6p01"]
@@ -40,9 +40,9 @@
 [ext_resource type="AudioStream" uid="uid://fkhh2hd3lgsq" path="res://audio/sfx/player/jump/Voice_Female_V1_Jump_Mono_03.wav" id="35_o8281"]
 [ext_resource type="AudioStream" uid="uid://byeweh7mwlvlv" path="res://audio/sfx/player/jump/Voice_Female_V1_Jump_Mono_04.wav" id="36_qlltj"]
 [ext_resource type="AudioStream" uid="uid://drlkfcusfc8el" path="res://audio/sfx/player/jump/Voice_Female_V1_Jump_Mono_05.wav" id="37_2233w"]
-[ext_resource type="AudioStream" uid="uid://cu6pwh4inqpe8" path="res://audio/sfx/player/slide/396705__chaosentertainment__dragslide1.mp3" id="39_atilr"]
 [ext_resource type="AudioStream" uid="uid://cionacx4sdxlt" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_01.wav" id="39_tnvee"]
 [ext_resource type="AudioStream" uid="uid://cmiqntcy6rplc" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_02.wav" id="40_bbfdy"]
+[ext_resource type="AudioStream" uid="uid://ccvrd8drtsy40" path="res://audio/sfx/player/slide/slide1.wav" id="40_mkg1c"]
 [ext_resource type="AudioStream" uid="uid://dmciahxrc6a3b" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_03.wav" id="41_svykw"]
 [ext_resource type="AudioStream" uid="uid://m3d3nmleaht" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_04.wav" id="42_01m48"]
 [ext_resource type="AudioStream" uid="uid://y2yd12pxafnd" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_05.wav" id="43_gj86l"]
@@ -329,24 +329,6 @@ _data = {
 "attack": SubResource("Animation_othcl")
 }
 
-[sub_resource type="Animation" id="Animation_o41hp"]
-resource_name = "moving"
-length = 0.8
-loop_mode = 1
-step = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Weapons:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.1, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_uaauj"]
 length = 0.001
 tracks/0/type = "value"
@@ -374,11 +356,43 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_o41hp"]
+resource_name = "moving"
+length = 0.8
+loop_mode = 1
+step = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapons:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.1, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ayyqv"]
 _data = {
 "RESET": SubResource("Animation_uaauj"),
 "moving": SubResource("Animation_o41hp")
 }
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qgtxr"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 2.0
+emission_ring_inner_radius = 1.9
+direction = Vector3(0, 0, 1)
+spread = 0.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kb1wp"]
+size = Vector3(0.01, 0.01, 10)
 
 [sub_resource type="Animation" id="Animation_3i1ox"]
 length = 0.001
@@ -853,6 +867,14 @@ visible = false
 crouch_speed = 7.0
 slide_speed_modifier = 1.6
 
+[node name="SlideEffect" type="GPUParticles3D" parent="CharacterMover"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.777472, -3.4704)
+emitting = false
+amount = 10
+lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_qgtxr")
+draw_pass_1 = SubResource("BoxMesh_kb1wp")
+
 [node name="Audio" type="Node3D" parent="CharacterMover"]
 visible = false
 
@@ -906,13 +928,8 @@ bus = &"SFX"
 visible = false
 
 [node name="SlidingSound1" type="AudioStreamPlayer" parent="CharacterMover/Audio/SlidingSounds"]
-stream = ExtResource("39_atilr")
-volume_db = 10.0
-bus = &"SFX"
-
-[node name="SlidingSound2" type="AudioStreamPlayer" parent="CharacterMover/Audio/SlidingSounds"]
-stream = ExtResource("39_atilr")
-volume_db = 10.0
+stream = ExtResource("40_mkg1c")
+volume_db = -11.0
 bus = &"SFX"
 
 [node name="HealthManager" parent="." instance=ExtResource("3_c6yru")]
