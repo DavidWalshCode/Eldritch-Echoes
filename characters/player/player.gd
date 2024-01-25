@@ -14,7 +14,7 @@ extends CharacterBody3D
 var current_camera_lean = 0.0  # Current lean angle
 
 const HOTKEYS = { # Hotkeys for weapon switching
-	KEY_1: 0, # 1 for melee weapon
+	KEY_1: 0, # 1 for sword
 	KEY_2: 1, # 2 for revolvers
 	KEY_3: 2, # 3 for machine gun
 	KEY_4: 3, # 4 for shotgun
