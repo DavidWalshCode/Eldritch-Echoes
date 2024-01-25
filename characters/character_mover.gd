@@ -5,8 +5,8 @@ extends Node3D
 
 @export var max_speed = 20.0
 @export var move_accel = 5.0
-@export var stop_drag = 0.11 #0.11
-@export var air_drag = 0.19 #0.05
+@export var stop_drag = 0.11
+@export var air_drag = 0.19
 
 var character_body : CharacterBody3D
 var move_drag = 0.0
@@ -15,12 +15,14 @@ var current_speed
 var double_jump_available = true
 var is_crouching : bool = false
 
+signal moved(velocity : Vector3, grounded : bool)
+
 @onready var jump_sounds = $Audio/JumpSounds.get_children()
 @onready var footstep_sounds = $Audio/FootstepSounds.get_children()
 @export var footstep_sound_interval = 0.3  # Time in seconds between footstep sounds
 var last_footstep_time = -9999.0  # Last time a footstep sound was played
 
-@onready var animation_player = $"../AnimationPlayer"
+@onready var player_animations = $"../PlayerAnimations"
 @export_range(5, 10, 0.1) var crouch_speed = 0.7
 @onready var crouch_shape_cast = $"../CrouchShapeCast"
 @export var crouch_movement_speed_modifier = 0.6  # % of normal speed when crouching
@@ -78,9 +80,9 @@ func stop_crouching():
 func crouching(state : bool):
 	match state:
 		true:
-			animation_player.play("crouch", 0, crouch_speed)
+			player_animations.play("crouch", 0, crouch_speed)
 		false:
-			animation_player.play("crouch", 0, -crouch_speed, true)
+			player_animations.play("crouch", 0, -crouch_speed, true)
 
 func _on_animation_player_animation_started(anim_name):
 	if anim_name == "crouch":
@@ -118,6 +120,7 @@ func _physics_process(delta):
 	#character_body.velocity += move_accel * move_dir - flat_velo * drag
 
 	character_body.move_and_slide()
+	moved.emit(character_body.velocity, character_body.is_on_floor())
 	
 	current_speed = character_body.velocity.length()
 	Global.debug.add_property("Movement Speed", current_speed, 1) # Adding movement speed to debug panel

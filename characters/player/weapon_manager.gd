@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var weapons = $Weapons.get_children()
+@onready var general_weapon_animations = $GeneralWeaponAnimations
 var weapons_unlocked = []
 var current_slot = 0
 var current_weapon = null
@@ -57,3 +58,11 @@ func switch_to_weapon_slot(slot_index : int) -> bool:
 		current_weapon.show()
 		
 	return true
+
+func update_animation(velocity : Vector3, grounded : bool):
+	if current_weapon is Weapon and !current_weapon.is_idle():
+		general_weapon_animations.play("RESET")
+	elif !grounded or velocity.length() < 5.0:
+		general_weapon_animations.play("RESET", 0.3)
+	else:
+		general_weapon_animations.play("moving", 0.3)

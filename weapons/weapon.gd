@@ -89,3 +89,6 @@ func play_shoot_sound():
 	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
 	shoot_sound.pitch_scale = random_pitch
 	shoot_sound.play()
+
+func is_idle() -> bool:
+	return !animation_player.is_playing()
