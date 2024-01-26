@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ptoq014o5s5h"]
 
-[ext_resource type="Material" uid="uid://bqynjhpauoh5w" path="res://environment/assets/village/buildings/materials/separator_wall_1_material.tres" id="1_rrdyq"]
+[ext_resource type="Material" uid="uid://bqynjhpauoh5w" path="res://environment/assets/village/buildings/materials/Wall1/separator_wall_1_material.tres" id="1_rrdyq"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2xiqi"]
 _surfaces = [{

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://clx188uifdh4d"]
+
+[ext_resource type="Texture2D" uid="uid://blw4qrrskfi3v" path="res://environment/assets/village/buildings/materials/Barn1/Barn_TCom_RooftilesCeramicOld0112_S.png" id="1_68x23"]
+
+[resource]
+albedo_texture = ExtResource("1_68x23")
+uv1_scale = Vector3(0.95, 0.95, 0.95)
+texture_filter = 2

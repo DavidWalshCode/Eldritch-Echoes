@@ -37,8 +37,7 @@ var slide_timer : Timer
 @export var min_pitch_scale = 0.9
 @export var max_pitch_scale = 1.1
 
-#@onready var slide_effect = $"../SlideEffect"
-@onready var slide_effect = $SlideEffect
+@onready var slide_effect = $"../SlideEffect"
 
 func _ready():
 	character_body = get_parent()

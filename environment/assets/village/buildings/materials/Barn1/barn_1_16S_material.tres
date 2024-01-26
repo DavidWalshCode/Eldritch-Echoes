@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://djx1j4bbf1xhb"]
+
+[ext_resource type="Texture2D" uid="uid://bxsqajhmqeltc" path="res://environment/assets/village/buildings/materials/Barn1/Barn_TCom_BuildingsBarn0016_S.png" id="1_sxjkl"]
+
+[resource]
+albedo_texture = ExtResource("1_sxjkl")
+texture_filter = 2

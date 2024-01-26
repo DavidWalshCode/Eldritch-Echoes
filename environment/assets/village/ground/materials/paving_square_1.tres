@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cl3wv4lbjrlxu"]
+
+[ext_resource type="Texture2D" uid="uid://cgtmre5xox2vs" path="res://environment/assets/village/ground/materials/Paving-Square.png" id="1_p4vo7"]
+
+[resource]
+albedo_texture = ExtResource("1_p4vo7")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2

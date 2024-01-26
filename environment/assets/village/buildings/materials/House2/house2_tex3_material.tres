@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://douferukotbxn"]
+
+[ext_resource type="Texture2D" uid="uid://ctf4w4gh6aahi" path="res://environment/assets/village/buildings/materials/House2/house2_tex3.png" id="1_soyhr"]
+
+[resource]
+albedo_texture = ExtResource("1_soyhr")
+texture_filter = 2

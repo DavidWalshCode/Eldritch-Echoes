@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://qatc3jdrbutl"]
-
-[ext_resource type="Texture2D" uid="uid://bh13cyyxbrsls" path="res://environment/assets/village/buildings/materials/Building1_TCom_BuildingsDerelict0018_S.png" id="1_x17to"]
-
-[resource]
-albedo_texture = ExtResource("1_x17to")
-texture_filter = 2

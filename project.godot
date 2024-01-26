@@ -28,6 +28,10 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
+window/size/viewport_width=300
+window/size/viewport_height=120
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/vsync/vsync_mode=0
 mouse_cursor/custom_image="res://weapons/crosshairs/crosshair176.png"
 

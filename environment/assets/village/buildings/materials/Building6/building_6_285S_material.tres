@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://h666rpuveyn7"]
+
+[ext_resource type="Texture2D" uid="uid://cped0a2m7kvfg" path="res://environment/assets/village/buildings/materials/Building6/Building6_TCom_Shops0285_S.png" id="1_mbjud"]
+
+[resource]
+albedo_texture = ExtResource("1_mbjud")

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c20qsdi5naofy"]
+
+[ext_resource type="Texture2D" uid="uid://hpgut5ejfoil" path="res://environment/assets/village/ground/materials/Paving-Cobble.png" id="1_xlqfa"]
+
+[resource]
+albedo_texture = ExtResource("1_xlqfa")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2

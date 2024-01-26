@@ -1,8 +1,8 @@
 [gd_scene load_steps=19 format=3 uid="uid://dl78e4q470ief"]
 
-[ext_resource type="Material" uid="uid://p3i5gd1n085n" path="res://environment/assets/village/buildings/materials/barn_1_10S_material.tres" id="1_iiy8j"]
-[ext_resource type="Material" uid="uid://djx1j4bbf1xhb" path="res://environment/assets/village/buildings/materials/barn_1_16S_material.tres" id="2_qccqe"]
-[ext_resource type="Material" uid="uid://clx188uifdh4d" path="res://environment/assets/village/buildings/materials/barn_1_rooftiles_material.tres" id="3_jad3e"]
+[ext_resource type="Material" uid="uid://p3i5gd1n085n" path="res://environment/assets/village/buildings/materials/Barn1/barn_1_10S_material.tres" id="1_iiy8j"]
+[ext_resource type="Material" uid="uid://djx1j4bbf1xhb" path="res://environment/assets/village/buildings/materials/Barn1/barn_1_16S_material.tres" id="2_qccqe"]
+[ext_resource type="Material" uid="uid://clx188uifdh4d" path="res://environment/assets/village/buildings/materials/Barn1/barn_1_rooftiles_material.tres" id="3_jad3e"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_85mc2"]
 _surfaces = [{
