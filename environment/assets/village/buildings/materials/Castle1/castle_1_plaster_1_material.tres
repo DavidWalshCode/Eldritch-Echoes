@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bt8y36ra4dm0m"]
+
+[ext_resource type="Texture2D" uid="uid://c175hodf3f2r" path="res://environment/assets/village/buildings/materials/Castle1/Plaster_01-512x512.png" id="1_vyva1"]
+
+[resource]
+albedo_texture = ExtResource("1_vyva1")
+texture_filter = 2

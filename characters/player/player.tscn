@@ -488,6 +488,7 @@ direction = Vector3(0, 0, 1)
 spread = 0.0
 initial_velocity_max = 100.0
 gravity = Vector3(0, 0, 0)
+color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kb1wp"]
 size = Vector3(0.01, 0.01, 2)
@@ -503,6 +504,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_xwpu4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+visible = false
 mesh = SubResource("CapsuleMesh_oe3gr")
 skeleton = NodePath("../..")
 
@@ -586,6 +588,7 @@ stream = ExtResource("16_gfb3c")
 
 [node name="Revolvers" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.104714)
+visible = false
 script = ExtResource("4_qyhjh")
 min_pitch_scale = 0.85
 max_pitch_scale = 0.9
@@ -799,7 +802,6 @@ stream = ExtResource("16_gfb3c")
 stream = ExtResource("16_gfb3c")
 
 [node name="RocketLauncher" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
-visible = false
 script = ExtResource("4_qyhjh")
 min_pitch_scale = 0.7
 max_pitch_scale = 0.8
@@ -1040,7 +1042,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="SlideEffect" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.777472, -3.4704)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.877472, -3.4704)
 emitting = false
 amount = 20
 lifetime = 0.1

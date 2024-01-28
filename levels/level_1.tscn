@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://brusqmphxxu8w"]
+[gd_scene load_steps=48 format=3 uid="uid://brusqmphxxu8w"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_38psm"]
 [ext_resource type="PackedScene" uid="uid://bnkd7ov6f2wg0" path="res://environment/assets/village/ground/scenes/dirt_1.tscn" id="3_r6rux"]
@@ -32,13 +32,14 @@
 [ext_resource type="PackedScene" uid="uid://d3a7aiyygfn1h" path="res://environment/assets/village/buildings/scenes/buildings/building_4.tscn" id="21_p8nrn"]
 [ext_resource type="PackedScene" uid="uid://co43l6kv6dbht" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_4.tscn" id="21_s8ahr"]
 [ext_resource type="PackedScene" uid="uid://bd8fhmfjorfay" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_5.tscn" id="22_4wfe0"]
+[ext_resource type="PackedScene" uid="uid://dwnt52co5cn8t" path="res://environment/assets/village/buildings/scenes/buildings/full_castle_1.tscn" id="22_7vpp8"]
 [ext_resource type="PackedScene" uid="uid://cbjmt1n078wx3" path="res://environment/assets/village/buildings/scenes/buildings/building_5.tscn" id="22_hgejq"]
 [ext_resource type="PackedScene" uid="uid://otmsxgsqjb55" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_6.tscn" id="23_8vit4"]
 [ext_resource type="PackedScene" uid="uid://bqljlkxkcfirf" path="res://environment/assets/village/buildings/scenes/buildings/building_6.tscn" id="23_woay7"]
 [ext_resource type="PackedScene" uid="uid://c6d6wmp5xf5c0" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_7.tscn" id="24_4ctt1"]
-[ext_resource type="PackedScene" uid="uid://dapvx4ug2hke8" path="res://environment/assets/village/buildings/scenes/separator_walls_1_with_door.tscn" id="24_l4fpe"]
+[ext_resource type="PackedScene" uid="uid://dapvx4ug2hke8" path="res://environment/assets/village/structures/scenes/separator_walls_1_with_door.tscn" id="24_l4fpe"]
 [ext_resource type="AudioStream" uid="uid://thxjd66rsnr2" path="res://audio/ambience/forest.ogg" id="25_3p4gw"]
-[ext_resource type="PackedScene" uid="uid://ptoq014o5s5h" path="res://environment/assets/village/buildings/scenes/separator_walls_2.tscn" id="25_rn1lc"]
+[ext_resource type="PackedScene" uid="uid://ptoq014o5s5h" path="res://environment/assets/village/structures/scenes/separator_walls_2.tscn" id="25_rn1lc"]
 [ext_resource type="PackedScene" uid="uid://b8vnnfatc45p3" path="res://environment/assets/village/buildings/scenes/houses/house_1_2.tscn" id="27_cokkw"]
 [ext_resource type="PackedScene" uid="uid://dwwpoangnsb8n" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_1.tscn" id="29_ggqgj"]
 
@@ -136,6 +137,9 @@ transform = Transform3D(0.757818, 0, 0, 0, 0.681572, 0, 0, 0, 0.758995, 42.9883,
 [node name="MedievalBuilding7" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("24_4ctt1")]
 transform = Transform3D(0.705963, 0, 0, 0, 0.679425, 0, 0, 0, 0.413329, 1.42129, 0.0777776, 98.2838)
 
+[node name="FullCastle1" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("22_7vpp8")]
+transform = Transform3D(1.03218, 0, 0, 0, 1.17716, 0, 0, 0, 1.08977, 0.217331, 0.0999727, 10)
+
 [node name="RegularBuildings" type="Node3D" parent="Environment/Buildings"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1313, 0, -33.6847)
 
@@ -176,7 +180,7 @@ transform = Transform3D(0.320788, 0.890807, -0.321805, -0.643235, 0.454288, 0.61
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("5_1n71g")]
-transform = Transform3D(-0.9855, 0, 0.169676, 0, 1, 0, -0.169676, 0, -0.9855, 20.0873, 0.709427, -10.4791)
+transform = Transform3D(-0.9855, 0, 0.169676, 0, 1, 0, -0.169676, 0, -0.9855, 2.53835, 0.709427, -10.4791)
 
 [node name="RainEffect" parent="Player" instance=ExtResource("7_pnde6")]
 

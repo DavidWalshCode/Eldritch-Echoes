@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://xlv7u7efii4q"]
+
+[ext_resource type="Texture2D" uid="uid://dvhesg6l2x6s1" path="res://environment/assets/village/buildings/materials/Castle1/Grating_10-512x512.png" id="1_pa36v"]
+
+[resource]
+albedo_texture = ExtResource("1_pa36v")
+texture_filter = 2

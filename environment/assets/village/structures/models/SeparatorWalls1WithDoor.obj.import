@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://g6adbl4gc3g3"
-path="res://.godot/imported/SeparatorWalls2.obj-1d250ada8680b315037ec51ec9d49495.scn"
+uid="uid://bms3mpvipcg7b"
+path="res://.godot/imported/SeparatorWalls1WithDoor.obj-1dc663fcb91c767355793330f35a43f1.scn"
 
 [deps]
 
-source_file="res://environment/assets/village/buildings/models/SeparatorWalls2.obj"
-dest_files=["res://.godot/imported/SeparatorWalls2.obj-1d250ada8680b315037ec51ec9d49495.scn"]
+source_file="res://environment/assets/village/structures/models/SeparatorWalls1WithDoor.obj"
+dest_files=["res://.godot/imported/SeparatorWalls1WithDoor.obj-1dc663fcb91c767355793330f35a43f1.scn"]
 
 [params]
 
@@ -37,10 +37,10 @@ _subresources={
 }
 },
 "nodes": {
-"PATH:SeperatorWall1": {
+"PATH:SeperatorWallArc_": {
 "import/skip_import": true
 },
-"PATH:SeperatorWallArc_": {
+"PATH:SeperatorWallMSH": {
 "import/skip_import": true
 },
 "PATH:SeperatorWall_": {

@@ -13,8 +13,8 @@ config_version=5
 config/name="Eldritch Echoes"
 run/main_scene="res://levels/level_1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-boot_splash/bg_color=Color(0, 0.117647, 0.0745098, 1)
-boot_splash/image="res://ui/TempLogo1.png"
+boot_splash/bg_color=Color(0, 0.0352941, 0.0196078, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [audio]
@@ -33,7 +33,7 @@ window/size/viewport_height=120
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/vsync/vsync_mode=0
-mouse_cursor/custom_image="res://weapons/crosshairs/crosshair176.png"
+mouse_cursor/custom_image="res://ui/mousecursor/cursor-target-10.png"
 
 [editor_plugins]
 

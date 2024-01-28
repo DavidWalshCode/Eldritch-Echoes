@@ -2,26 +2,27 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxcdyqrvv7pq7"
-path="res://.godot/imported/TempLogo1.png-56b1929785402b9f7f54684f1f3d306c.ctex"
+uid="uid://8vkcc4cu1ors"
+path.s3tc="res://.godot/imported/Brick 5 - 512x512.png-1f42d55e02649c7e3a3e809de3b38ab6.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://ui/TempLogo1.png"
-dest_files=["res://.godot/imported/TempLogo1.png-56b1929785402b9f7f54684f1f3d306c.ctex"]
+source_file="res://environment/assets/village/buildings/materials/Castle1/Brick 5 - 512x512.png"
+dest_files=["res://.godot/imported/Brick 5 - 512x512.png-1f42d55e02649c7e3a3e809de3b38ab6.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

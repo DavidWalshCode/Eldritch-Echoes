@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2xvdo4ah0vbj"
-path.s3tc="res://.godot/imported/WayBlockers_TCom_BuildingsHouseOld0150_S.png-3433e46ac055d6ab3573b0abd20b1e48.s3tc.ctex"
+uid="uid://c1k5adb3fdvpv"
+path.s3tc="res://.godot/imported/Roof 1 - 512x512.png-2a82572da59eafb69fbf3ab30dc8134f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://environment/assets/village/buildings/materials/Wall1/WayBlockers_TCom_BuildingsHouseOld0150_S.png"
-dest_files=["res://.godot/imported/WayBlockers_TCom_BuildingsHouseOld0150_S.png-3433e46ac055d6ab3573b0abd20b1e48.s3tc.ctex"]
+source_file="res://environment/assets/village/buildings/materials/Castle1/Roof 1 - 512x512.png"
+dest_files=["res://.godot/imported/Roof 1 - 512x512.png-2a82572da59eafb69fbf3ab30dc8134f.s3tc.ctex"]
 
 [params]
 
