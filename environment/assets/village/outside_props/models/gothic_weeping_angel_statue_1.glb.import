@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://868b4n6o7uag"
-path="res://.godot/imported/bricky_mossy_rough_1.glb-4a022c2a9db6c9612cd903222b5b430b.scn"
+uid="uid://r58edf2vjf8h"
+path="res://.godot/imported/gothic_weeping_angel_statue_1.glb-b868b68eed04bd265a0d6d3940b43bd6.scn"
 
 [deps]
 
-source_file="res://environment/assets/village/ground/models/bricky_mossy_rough_1.glb"
-dest_files=["res://.godot/imported/bricky_mossy_rough_1.glb-4a022c2a9db6c9612cd903222b5b430b.scn"]
+source_file="res://environment/assets/village/outside_props/models/gothic_weeping_angel_statue_1.glb"
+dest_files=["res://.godot/imported/gothic_weeping_angel_statue_1.glb-b868b68eed04bd265a0d6d3940b43bd6.scn"]
 
 [params]
 
@@ -31,9 +31,14 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "materials": {
-"Material": {
+"Material.001": {
 "use_external/enabled": true,
-"use_external/path": "res://environment/assets/village/ground/materials/brick_mossy_1_material.tres"
+"use_external/path": "res://environment/assets/village/outside_props/materials/gothic_weeping_angel_statue_1_material.tres"
+}
+},
+"nodes": {
+"PATH:Empty": {
+"import/skip_import": true
 }
 }
 }

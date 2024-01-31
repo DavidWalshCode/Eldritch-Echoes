@@ -55,6 +55,8 @@ folder_colors={
 [filesystem]
 
 import/fbx/enabled=false
+import/blender/enabled.android=true
+import/blender/enabled.web=true
 
 [importer_defaults]
 

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cm1s0oql8sncv"]
+
+[ext_resource type="Texture2D" uid="uid://fl1k0r87bm4q" path="res://environment/assets/village/outside_props/materials/angel.png" id="1_rm37e"]
+
+[resource]
+albedo_texture = ExtResource("1_rm37e")
+texture_filter = 2
