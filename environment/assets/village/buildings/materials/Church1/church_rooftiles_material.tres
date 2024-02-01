@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cohmmslachnwu"]
+
+[ext_resource type="Texture2D" uid="uid://dyyd80vi18qc3" path="res://environment/assets/village/buildings/materials/Church1/Church_TCom_RooftilesCeramicOld0112_S.png" id="1_e0r7m"]
+
+[resource]
+albedo_texture = ExtResource("1_e0r7m")
+texture_filter = 2

@@ -1,0 +1,93 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://d8ndvd36pgg7"
+path="res://.godot/imported/broken_church_1.obj-87c8811abb84a1e5a92b19cc224080fe.scn"
+
+[deps]
+
+source_file="res://environment/assets/village/buildings/models/buildings/broken_church_1.obj"
+dest_files=["res://.godot/imported/broken_church_1.obj-87c8811abb84a1e5a92b19cc224080fe.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"TCom_BuildingsBarn0005_S": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/buildings/materials/Church1/church_buildings_barn_05S_material.tres"
+},
+"TCom_BuildingsHouseOld0330_S": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/buildings/materials/Church1/church_buildings_house_old_330S_material.tres"
+},
+"TCom_BuildingsTudor0043_2_S": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/buildings/materials/Church1/church_buildings_tudor_043S_material.tres"
+},
+"TCom_BuildingsTudor0082_2_S": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/buildings/materials/Church1/church_buildings_tudor_082S_material.tres"
+},
+"TCom_BuildingsUtility0031_S": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/buildings/materials/Church1/church_buildings_utility_031S_material.tres"
+},
+"TCom_BuildingsVarious0087_1_S": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/buildings/materials/Church1/church_buildings_various_087S_material.tres"
+},
+"TCom_BuildingsVarious0090_S": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/buildings/materials/Church1/church_buildings_various_090S_material.tres"
+},
+"TCom_BuildingsVarious0256_S": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/buildings/materials/Church1/church_buildings_various_256S_material.tres"
+},
+"TCom_BuildingsVarious0257_3_S": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/buildings/materials/Church1/church_buildings_various_257S_material.tres"
+},
+"TCom_RooftilesCeramicOld0112_S": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/buildings/materials/Church1/church_rooftiles_material.tres"
+},
+"TexturesCom_WoodPlanksOld0277_2_seamless_S": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/buildings/materials/Church1/church_wood_planks_material.tres"
+},
+"grass1": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/buildings/materials/Church1/church_grass_material.tres"
+}
+},
+"nodes": {
+"PATH:ChurchHousing1_": {
+"import/skip_import": true
+},
+"PATH:ChurchHousing1__001": {
+"import/skip_import": true
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

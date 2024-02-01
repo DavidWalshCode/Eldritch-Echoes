@@ -1,0 +1,132 @@
+# Blender 3.6.5 MTL File: 'ScreamJam2023AssetFlip.blend'
+# www.blender.org
+
+newmtl DestroyedWall
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/DestroyedWall.png
+map_d C:/DestroyedWall.png
+
+newmtl TCom_BuildingsBarn0005_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_BuildingsBarn0005_S.jpg
+map_d C:/TCom_BuildingsBarn0005_S.jpg
+
+newmtl TCom_BuildingsHouseOld0330_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_BuildingsHouseOld0330_S.jpg
+map_d C:/TCom_BuildingsHouseOld0330_S.jpg
+
+newmtl TCom_BuildingsTudor0043_2_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_BuildingsTudor0043_2_S.jpg
+map_d C:/TCom_BuildingsTudor0043_2_S.jpg
+
+newmtl TCom_BuildingsTudor0082_2_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd D:/UL/Year 4 Sem 1/CS4197 Computer Games Development Project 1/Project/Game Assets/Environment/Village/Buildings/assets/textures/cityScaping/TCom_BuildingsTudor0082_2_S.jpg
+map_d D:/UL/Year 4 Sem 1/CS4197 Computer Games Development Project 1/Project/Game Assets/Environment/Village/Buildings/assets/textures/cityScaping/TCom_BuildingsTudor0082_2_S.jpg
+
+newmtl TCom_BuildingsUtility0031_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_BuildingsUtility0031_S.jpg
+map_d C:/TCom_BuildingsUtility0031_S.jpg
+
+newmtl TCom_BuildingsVarious0087_1_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_BuildingsVarious0087_1_S.jpg
+map_d C:/TCom_BuildingsVarious0087_1_S.jpg
+
+newmtl TCom_BuildingsVarious0090_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_BuildingsVarious0090_S.jpg
+map_d C:/TCom_BuildingsVarious0090_S.jpg
+
+newmtl TCom_BuildingsVarious0256_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_BuildingsVarious0256_S.png
+map_d C:/TCom_BuildingsVarious0256_S.png
+
+newmtl TCom_BuildingsVarious0257_3_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_BuildingsVarious0257_3_S.png
+map_d C:/TCom_BuildingsVarious0257_3_S.png
+
+newmtl TCom_RooftilesCeramicOld0112_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TCom_RooftilesCeramicOld0112_S.jpg
+map_d C:/TCom_RooftilesCeramicOld0112_S.jpg
+
+newmtl TexturesCom_WoodPlanksOld0277_2_seamless_S
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/TexturesCom_WoodPlanksOld0277_2_seamless_S.jpg
+map_d C:/TexturesCom_WoodPlanksOld0277_2_seamless_S.jpg
+
+newmtl grass1
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/grass1.png
+map_d C:/grass1.png

@@ -1,0 +1,44 @@
+[gd_resource type="ArrayMesh" load_steps=4 format=3 uid="uid://d26a3vyy61gam"]
+
+[ext_resource type="Texture2D" uid="uid://dsof71fw408gq" path="res://environment/assets/village/buildings/materials/Church1/Church_TCom_BuildingsVarious0257_3_S.png" id="1_ytcms"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktqyt"]
+resource_name = "TCom_BuildingsVarious0257_3_S"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ytcms")
+texture_repeat = false
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yhqui"]
+_surfaces = [{
+"aabb": AABB(-3.27689, 0.20901, 0.0808795, 6.55379, 13.5293, 0.170313),
+"format": 34359742465,
+"index_count": 12,
+"index_data": PackedByteArray(0, 0, 2, 0, 3, 0, 0, 0, 1, 0, 2, 0, 4, 0, 6, 0, 5, 0, 4, 0, 7, 0, 6, 0),
+"name": "TCom_BuildingsVarious0257_3_S",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(152, 184, 81, 64, 176, 6, 86, 62, 247, 154, 128, 62, 153, 184, 81, 192, 176, 6, 86, 62, 247, 154, 128, 62, 153, 184, 81, 192, 47, 208, 91, 65, 10, 155, 128, 62, 150, 184, 81, 64, 47, 208, 91, 65, 10, 155, 128, 62, 152, 184, 81, 64, 176, 6, 86, 62, 34, 164, 165, 61, 153, 184, 81, 192, 176, 6, 86, 62, 34, 164, 165, 61, 153, 184, 81, 192, 47, 208, 91, 65, 112, 164, 165, 61, 150, 184, 81, 64, 47, 208, 91, 65, 112, 164, 165, 61)
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "Church_TCom_BuildingsVarious0257_3_S"
+_surfaces = [{
+"aabb": AABB(-3.27689, 0.20901, 0.0808795, 6.55379, 13.5293, 0.170313),
+"attribute_data": PackedByteArray(132, 7, 98, 63, 0, 0, 128, 63, 126, 93, 137, 61, 0, 0, 128, 63, 127, 93, 137, 61, 0, 0, 0, 0, 132, 7, 98, 63, 0, 0, 0, 0, 132, 7, 98, 63, 0, 0, 128, 63, 126, 93, 137, 61, 0, 0, 128, 63, 127, 93, 137, 61, 0, 0, 0, 0, 132, 7, 98, 63, 0, 0, 0, 0),
+"format": 34359742487,
+"index_count": 12,
+"index_data": PackedByteArray(0, 0, 2, 0, 3, 0, 0, 0, 1, 0, 2, 0, 4, 0, 6, 0, 5, 0, 4, 0, 7, 0, 6, 0),
+"material": SubResource("StandardMaterial3D_ktqyt"),
+"name": "TCom_BuildingsVarious0257_3_S",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(152, 184, 81, 64, 176, 6, 86, 62, 247, 154, 128, 62, 153, 184, 81, 192, 176, 6, 86, 62, 247, 154, 128, 62, 153, 184, 81, 192, 47, 208, 91, 65, 10, 155, 128, 62, 150, 184, 81, 64, 47, 208, 91, 65, 10, 155, 128, 62, 152, 184, 81, 64, 176, 6, 86, 62, 34, 164, 165, 61, 153, 184, 81, 192, 176, 6, 86, 62, 34, 164, 165, 61, 153, 184, 81, 192, 47, 208, 91, 65, 112, 164, 165, 61, 150, 184, 81, 64, 47, 208, 91, 65, 112, 164, 165, 61, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_yhqui")

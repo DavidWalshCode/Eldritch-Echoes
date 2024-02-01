@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b3t0pevr71y6b"
-path="res://.godot/imported/barn_1.obj-380c85bd13907b25950a04a419c31d23.scn"
+path="res://.godot/imported/barn_1.obj-cef866719938b64c92d0f22991b54b9e.scn"
 
 [deps]
 
-source_file="res://environment/assets/village/buildings/models/barn_1.obj"
-dest_files=["res://.godot/imported/barn_1.obj-380c85bd13907b25950a04a419c31d23.scn"]
+source_file="res://environment/assets/village/buildings/models/buildings/barn_1.obj"
+dest_files=["res://.godot/imported/barn_1.obj-cef866719938b64c92d0f22991b54b9e.scn"]
 
 [params]
 

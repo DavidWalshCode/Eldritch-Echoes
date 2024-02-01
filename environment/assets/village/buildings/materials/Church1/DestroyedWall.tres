@@ -1,0 +1,44 @@
+[gd_resource type="ArrayMesh" load_steps=4 format=3 uid="uid://b8kd6pjkx3hrc"]
+
+[ext_resource type="Texture2D" uid="uid://mekdf7hnn6sg" path="res://environment/assets/village/buildings/materials/Church1/Church_DestroyedWall.png" id="1_0tfc1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brt5t"]
+resource_name = "DestroyedWall"
+transparency = 2
+alpha_scissor_threshold = 0.641
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_0tfc1")
+texture_repeat = false
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b5d6g"]
+_surfaces = [{
+"aabb": AABB(-0.106126, -4.63888e-09, 2.31905e-07, 0.212261, 7.93711, 7.22778),
+"format": 34359742465,
+"index_count": 12,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0, 4, 0, 7, 0, 5, 0, 4, 0, 6, 0, 7, 0),
+"name": "DestroyedWall",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(72, 88, 217, 61, 251, 99, 159, 177, 218, 73, 231, 64, 119, 88, 217, 61, 210, 252, 253, 64, 218, 73, 231, 64, 30, 88, 217, 61, 251, 99, 159, 177, 178, 1, 121, 52, 77, 88, 217, 61, 210, 252, 253, 64, 177, 1, 121, 52, 63, 88, 217, 189, 50, 100, 159, 49, 218, 73, 231, 64, 16, 88, 217, 189, 210, 252, 253, 64, 218, 73, 231, 64, 105, 88, 217, 189, 50, 100, 159, 49, 250, 123, 129, 52, 58, 88, 217, 189, 210, 252, 253, 64, 249, 123, 129, 52)
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "Church_DestroyedWall"
+_surfaces = [{
+"aabb": AABB(-0.106126, -4.63888e-09, 2.31905e-07, 0.212261, 7.93711, 7.22778),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 192, 129, 37, 63, 0, 0, 128, 63, 192, 129, 37, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 192, 129, 37, 63, 0, 0, 128, 63, 192, 129, 37, 63, 0, 0, 0, 0),
+"format": 34359742487,
+"index_count": 12,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0, 4, 0, 7, 0, 5, 0, 4, 0, 6, 0, 7, 0),
+"material": SubResource("StandardMaterial3D_brt5t"),
+"name": "DestroyedWall",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(72, 88, 217, 61, 251, 99, 159, 177, 218, 73, 231, 64, 119, 88, 217, 61, 210, 252, 253, 64, 218, 73, 231, 64, 30, 88, 217, 61, 251, 99, 159, 177, 178, 1, 121, 52, 77, 88, 217, 61, 210, 252, 253, 64, 177, 1, 121, 52, 63, 88, 217, 189, 50, 100, 159, 49, 218, 73, 231, 64, 16, 88, 217, 189, 210, 252, 253, 64, 218, 73, 231, 64, 105, 88, 217, 189, 50, 100, 159, 49, 250, 123, 129, 52, 58, 88, 217, 189, 210, 252, 253, 64, 249, 123, 129, 52, 255, 255, 255, 127, 255, 255, 255, 255, 255, 255, 255, 127, 255, 255, 255, 255, 255, 255, 255, 127, 255, 255, 255, 255, 255, 255, 255, 127, 255, 255, 255, 255, 0, 0, 255, 127, 255, 255, 0, 0, 0, 0, 255, 127, 255, 255, 0, 0, 0, 0, 255, 127, 255, 255, 0, 0, 0, 0, 255, 127, 255, 255, 0, 0)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_b5d6g")

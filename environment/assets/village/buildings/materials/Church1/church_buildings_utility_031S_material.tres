@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://brae3ab6522os"]
+
+[ext_resource type="Texture2D" uid="uid://wxn263jnvp51" path="res://environment/assets/village/buildings/materials/Church1/Church_TCom_BuildingsUtility0031_S.png" id="1_wqxsi"]
+
+[resource]
+albedo_texture = ExtResource("1_wqxsi")
+texture_filter = 2
