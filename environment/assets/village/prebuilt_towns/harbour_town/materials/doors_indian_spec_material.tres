@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cksnav77uuim4"]
+
+[ext_resource type="Texture2D" uid="uid://cgbybqy8fvais" path="res://environment/assets/village/prebuilt_towns/harbour_town/materials/doors_indian_spec.jpg" id="1_rtxn7"]
+
+[resource]
+albedo_texture = ExtResource("1_rtxn7")
+texture_filter = 2

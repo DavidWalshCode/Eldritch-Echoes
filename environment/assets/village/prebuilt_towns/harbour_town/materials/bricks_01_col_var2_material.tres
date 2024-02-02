@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b5g4pvp4nupr3"]
+
+[ext_resource type="Texture2D" uid="uid://opjv86olxsec" path="res://environment/assets/village/prebuilt_towns/harbour_town/materials/Bricks01_COL_VAR2_1K.jpg" id="1_xagjs"]
+
+[resource]
+albedo_texture = ExtResource("1_xagjs")
+texture_filter = 2

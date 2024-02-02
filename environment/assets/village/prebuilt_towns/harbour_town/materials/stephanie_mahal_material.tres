@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ckynigttbnylc"]
+
+[ext_resource type="Texture2D" uid="uid://bvfh5hgb2oos8" path="res://environment/assets/village/prebuilt_towns/harbour_town/materials/stephanie_mahal.png" id="1_8ql6t"]
+
+[resource]
+albedo_texture = ExtResource("1_8ql6t")
+texture_filter = 2
