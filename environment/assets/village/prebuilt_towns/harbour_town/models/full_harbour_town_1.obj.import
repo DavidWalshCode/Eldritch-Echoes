@@ -1,0 +1,137 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://c80y30ixmn2am"
+path="res://.godot/imported/full_harbour_town_1.obj-e44c4a89523aa55d400ed2aebb55b907.scn"
+
+[deps]
+
+source_file="res://environment/assets/village/prebuilt_towns/harbour_town/models/full_harbour_town_1.obj"
+dest_files=["res://.godot/imported/full_harbour_town_1.obj-e44c4a89523aa55d400ed2aebb55b907.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"Danica-240-061": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/steffi_druystpomne_material.tres"
+},
+"Danica-240-061.001": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/danica_240_061_material.tres"
+},
+"Galician_2b_UV": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/galician_2b_uv_material.tres"
+},
+"Galician_2b_UV.001": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/galician_2b_uv_material.tres"
+},
+"bamboo2": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/bamboo_2_material.tres"
+},
+"beidi": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/kom_ombo_material.tres"
+},
+"bruckwork": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/a108_brick_material.tres"
+},
+"cabble": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/danica_240_061_material.tres"
+},
+"flooring": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/4dea_grass_material.tres"
+},
+"galician": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/galician_uv_1_material.tres"
+},
+"gingerbread": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/stephanie_mahal_material.tres"
+},
+"kom_ombo": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/palm_trees_material.tres"
+},
+"mart1": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/mart_1_material.tres"
+},
+"mughal_parts_002.005": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/stephanie_mahal_material.tres"
+},
+"mughal_parts_w_norm": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/stephanie_mahal_material.tres"
+},
+"pentekonter": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/sack_cloth_material.tres"
+},
+"shrubs_oldbrick": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/shrubs_old_brick_material.tres"
+},
+"skelett_Mat": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/keisha_2_material.tres"
+},
+"skelett_Mat.001": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/galician_2a_uv_material.tres"
+},
+"tex_india.001": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/texture_india_02_material.tres"
+},
+"tex_india.004": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/texture_india_02_material.tres"
+},
+"tool_parts": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/stl_tool_rack_material.tres"
+},
+"villa_clachann": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/clachann_2_material.tres"
+},
+"wicker": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/wicker_material.tres"
+},
+"wwagon": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/wwagon_material.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

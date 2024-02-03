@@ -1,47 +1,32 @@
-[gd_scene load_steps=51 format=3 uid="uid://brusqmphxxu8w"]
+[gd_scene load_steps=36 format=3 uid="uid://brusqmphxxu8w"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_38psm"]
 [ext_resource type="PackedScene" uid="uid://d4dpby6nl5gx2" path="res://environment/assets/village/ground/scenes/paving_cobble_rough_1.tscn" id="4_f20o0"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="5_1n71g"]
 [ext_resource type="Script" path="res://characters/health_manager.gd" id="6_h6yie"]
-[ext_resource type="PackedScene" uid="uid://r4koul6tg6hf" path="res://environment/assets/village/buildings/scenes/houses/house_1_1.tscn" id="6_uku04"]
-[ext_resource type="PackedScene" uid="uid://dd2dcfdxwjkr8" path="res://environment/assets/village/buildings/scenes/houses/house_3_1.tscn" id="7_5vql4"]
 [ext_resource type="PackedScene" uid="uid://deet40dn2j7nb" path="res://effects/rain/rain_effect.tscn" id="7_pnde6"]
 [ext_resource type="PackedScene" uid="uid://cpu20qg3iiof8" path="res://characters/npc/scenes/villager_woman_1.tscn" id="7_s5i1m"]
-[ext_resource type="PackedScene" uid="uid://p5wn5bbj2nbt" path="res://environment/assets/village/buildings/scenes/houses/house_1_3.tscn" id="8_c3kqo"]
 [ext_resource type="PackedScene" uid="uid://htlhq6xpsfle" path="res://characters/npc/scenes/viking_armour_man_1.tscn" id="8_sh6lw"]
-[ext_resource type="PackedScene" uid="uid://cxas3bewjrtv6" path="res://environment/assets/village/buildings/scenes/houses/house_5_3.tscn" id="8_ykfgy"]
 [ext_resource type="PackedScene" uid="uid://dxc8y7qsijn0t" path="res://environment/assets/village/ground/scenes/paving_cobble_flat_1.tscn" id="9_6udfi"]
 [ext_resource type="PackedScene" uid="uid://e4sjydpcdwsb" path="res://characters/npc/scenes/knight_1.tscn" id="9_e7xbm"]
-[ext_resource type="PackedScene" uid="uid://bwtdhxulhkqpj" path="res://environment/assets/village/buildings/scenes/buildings/building_regular_3.tscn" id="9_vqhdb"]
 [ext_resource type="PackedScene" uid="uid://bupq35mm43272" path="res://characters/npc/scenes/mutant_skeleton_1.tscn" id="10_q1ejs"]
-[ext_resource type="PackedScene" uid="uid://b70xb3olw4wds" path="res://environment/assets/village/buildings/scenes/houses/house_3_2.tscn" id="10_x8xq6"]
-[ext_resource type="PackedScene" uid="uid://bldtbnb638nd5" path="res://environment/assets/village/buildings/scenes/houses/house_3_3.tscn" id="11_jyk6t"]
 [ext_resource type="PackedScene" uid="uid://bis8jin3jtnyo" path="res://characters/npc/scenes/nun_1.tscn" id="11_wxon7"]
-[ext_resource type="PackedScene" uid="uid://dchrn5tpu3btv" path="res://environment/assets/village/buildings/scenes/houses/house_5_1.tscn" id="12_4pwe1"]
 [ext_resource type="PackedScene" uid="uid://cepvdg3h5k1hr" path="res://characters/npc/scenes/villager_male_1.tscn" id="12_khl8n"]
-[ext_resource type="PackedScene" uid="uid://g615qvxlb1yb" path="res://environment/assets/village/buildings/scenes/houses/house_5_2.tscn" id="13_tpyw0"]
 [ext_resource type="PackedScene" uid="uid://mcodumgw8823" path="res://characters/npc/scenes/lantern_character_1.tscn" id="14_fn874"]
-[ext_resource type="PackedScene" uid="uid://dl78e4q470ief" path="res://environment/assets/village/buildings/scenes/buildings/barn_1.tscn" id="17_i2uh4"]
-[ext_resource type="PackedScene" uid="uid://dg54keoxweyee" path="res://environment/assets/village/buildings/scenes/buildings/building_regular_1.tscn" id="18_s88j8"]
-[ext_resource type="PackedScene" uid="uid://7jhenmhl3plm" path="res://environment/assets/village/buildings/scenes/buildings/building_regular_2.tscn" id="19_h7v7j"]
+[ext_resource type="PackedScene" uid="uid://cfivxmy8y0l0i" path="res://environment/assets/village/prebuilt_towns/small_town/scenes/full_small_town_1.tscn" id="18_vr4gf"]
 [ext_resource type="PackedScene" uid="uid://v25scml6aa42" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_2.tscn" id="19_r0s14"]
 [ext_resource type="PackedScene" uid="uid://b0vq1sr05tjhq" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_3.tscn" id="20_wbcfj"]
-[ext_resource type="PackedScene" uid="uid://d3a7aiyygfn1h" path="res://environment/assets/village/buildings/scenes/buildings/building_regular_4.tscn" id="21_p8nrn"]
 [ext_resource type="PackedScene" uid="uid://co43l6kv6dbht" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_4.tscn" id="21_s8ahr"]
 [ext_resource type="PackedScene" uid="uid://bd8fhmfjorfay" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_5.tscn" id="22_4wfe0"]
 [ext_resource type="PackedScene" uid="uid://dwnt52co5cn8t" path="res://environment/assets/village/buildings/scenes/buildings/full_castle_1.tscn" id="22_7vpp8"]
-[ext_resource type="PackedScene" uid="uid://cbjmt1n078wx3" path="res://environment/assets/village/buildings/scenes/buildings/building_regular_5.tscn" id="22_hgejq"]
 [ext_resource type="PackedScene" uid="uid://otmsxgsqjb55" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_6.tscn" id="23_8vit4"]
-[ext_resource type="PackedScene" uid="uid://bqljlkxkcfirf" path="res://environment/assets/village/buildings/scenes/buildings/building_regular_6.tscn" id="23_woay7"]
 [ext_resource type="PackedScene" uid="uid://c6d6wmp5xf5c0" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_7.tscn" id="24_4ctt1"]
-[ext_resource type="PackedScene" uid="uid://b8vnnfatc45p3" path="res://environment/assets/village/buildings/scenes/houses/house_1_2.tscn" id="27_cokkw"]
 [ext_resource type="PackedScene" uid="uid://dwwpoangnsb8n" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_1.tscn" id="29_ggqgj"]
 [ext_resource type="PackedScene" uid="uid://vbl2hipleqsb" path="res://environment/assets/village/structures/scenes/castle_archway_base_1.tscn" id="32_on3ce"]
 [ext_resource type="PackedScene" uid="uid://5yq2k5mbddkv" path="res://environment/assets/village/structures/scenes/castle_pillar_base_1.tscn" id="33_6hnjy"]
 [ext_resource type="PackedScene" uid="uid://c2vsr7r0es524" path="res://environment/assets/village/structures/scenes/castle_tower_small_base_1.tscn" id="34_wrer4"]
 [ext_resource type="PackedScene" uid="uid://bp8gfhfyy3k10" path="res://environment/assets/village/structures/scenes/castle_wall_base_1.tscn" id="35_5avfy"]
-[ext_resource type="PackedScene" uid="uid://dchrj3aiil5ly" path="res://environment/assets/village/prebuilt_towns/harbour_town/scenes/full_harbour_town.tscn" id="37_33vcn"]
+[ext_resource type="PackedScene" uid="uid://dchrj3aiil5ly" path="res://environment/assets/village/prebuilt_towns/harbour_town/scenes/full_harbour_town_1.tscn" id="37_33vcn"]
 [ext_resource type="PackedScene" uid="uid://lq7366i8slik" path="res://environment/assets/village/outside_props/scenes/gothic_weeping_angel_statue_1.tscn" id="39_6g4s1"]
 [ext_resource type="AudioStream" uid="uid://4uhgisbwq7gv" path="res://audio/ambience/Dark_Rainy_Night(ambience).ogg" id="50_axq87"]
 
@@ -73,7 +58,7 @@ script = ExtResource("1_38psm")
 [node name="Ground" type="Node3D" parent="Environment"]
 
 [node name="PavingCobbleFlat1" parent="Environment/Ground" instance=ExtResource("9_6udfi")]
-transform = Transform3D(21.4686, 0, 0, 0, 1, 0, 0, 0, 16.1145, -0.333435, 0, -27.5384)
+transform = Transform3D(21.4686, 0, 0, 0, 1, 0, 0, 0, 29.0705, -3.82364, 0, -98.0508)
 
 [node name="PavingCobbleRough1" parent="Environment/Ground" instance=ExtResource("4_f20o0")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 19.4426, 0, -22.227)
@@ -98,38 +83,8 @@ transform = Transform3D(2.2158, 0, 0, 0, 1, 0, 0, 0, 1, 99.7575, 0, -43.706)
 
 [node name="Buildings" type="Node3D" parent="Environment"]
 
-[node name="Houses" type="Node3D" parent="Environment/Buildings"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
-
-[node name="House1First" parent="Environment/Buildings/Houses" instance=ExtResource("6_uku04")]
-transform = Transform3D(-0.597289, 0, 0.802026, 0, 1, 0, -0.802026, 0, -0.597289, -72.1389, 0, 18.819)
-
-[node name="House1Second" parent="Environment/Buildings/Houses" instance=ExtResource("27_cokkw")]
-transform = Transform3D(0.894035, 0, 0.542476, 0, 1.11949, 0, -0.558915, 0, 0.867739, -52.1171, 0.0605809, -19.5273)
-
-[node name="House1Third" parent="Environment/Buildings/Houses" instance=ExtResource("8_c3kqo")]
-transform = Transform3D(0.284835, 0, 0.958576, 0, 1, 0, -0.958576, 0, 0.284835, -45.4819, 0, 7.25188)
-
-[node name="House3First" parent="Environment/Buildings/Houses" instance=ExtResource("7_5vql4")]
-transform = Transform3D(0.463281, 0, 0.886212, 0, 1, 0, -0.886212, 0, 0.463281, -65.7328, -0.0650771, -13.0024)
-
-[node name="House3Second" parent="Environment/Buildings/Houses" instance=ExtResource("10_x8xq6")]
-transform = Transform3D(-0.11329, 0, 0.993562, 0, 1, 0, -0.993562, 0, -0.11329, -76.4839, 0, 6.16381)
-
-[node name="House3Third" parent="Environment/Buildings/Houses" instance=ExtResource("11_jyk6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6497, 0, -18.3274)
-
-[node name="House5First" parent="Environment/Buildings/Houses" instance=ExtResource("12_4pwe1")]
-transform = Transform3D(0.911073, 0, 0.412246, 0, 1, 0, -0.412246, 0, 0.911073, -60.1836, 0, 23.7312)
-
-[node name="House5Second" parent="Environment/Buildings/Houses" instance=ExtResource("13_tpyw0")]
-transform = Transform3D(0.972309, 0, -0.2337, 0, 1, 0, 0.2337, 0, 0.972309, -76.9452, 0, -5.17629)
-
-[node name="House5Third" parent="Environment/Buildings/Houses" instance=ExtResource("8_ykfgy")]
-transform = Transform3D(0.90505, 0, 0.425305, 0, 1, 0, -0.425305, 0, 0.90505, -44.316, 0, 21.1099)
-
 [node name="MedievalBuildings" type="Node3D" parent="Environment/Buildings"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.63365)
+transform = Transform3D(0.996593, 0, 0.0824777, 0, 1, 0, -0.0824777, 0, 0.996593, -8.97613, 0, -3.64809)
 
 [node name="MedievalBuilding1" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("29_ggqgj")]
 transform = Transform3D(-3.60916e-08, 0, 0.521967, 0, 0.640199, 0, -0.82568, 0, -2.28159e-08, 52.4857, -0.0159175, -19.6355)
@@ -152,32 +107,11 @@ transform = Transform3D(-3.31253e-08, 0, 0.758995, 0, 0.681572, 0, -0.757818, 0,
 [node name="MedievalBuilding7" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("24_4ctt1")]
 transform = Transform3D(-5.85484e-08, 0, -0.413329, 0, 0.679425, 0, 0.705963, 0, -1.17351e-08, 104.749, 0.00682519, -26.8953)
 
-[node name="FullCastle1" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("22_7vpp8")]
-transform = Transform3D(-1.06743, 0, -1.02452e-07, 0, 1.35724, 0, 9.33177e-08, 0, -1.17192, 1.99973, -0.0176773, 10)
+[node name="Castle" type="Node3D" parent="Environment/Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648312, 0, -6.50797)
 
-[node name="RegularBuildings" type="Node3D" parent="Environment/Buildings"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.8687, 0, -73.6847)
-
-[node name="Barn1" parent="Environment/Buildings/RegularBuildings" instance=ExtResource("17_i2uh4")]
-transform = Transform3D(-0.966358, 0, 0.2572, 0, 1, 0, -0.2572, 0, -0.966358, 9, 0, 13)
-
-[node name="RegularBuilding1" parent="Environment/Buildings/RegularBuildings" instance=ExtResource("18_s88j8")]
-transform = Transform3D(-1.5655, 0, 0.0506021, 0, 1.4946, 0, -0.0597846, 0, -1.32505, 14.4328, 0.118261, 24.6535)
-
-[node name="RegularBuilding2" parent="Environment/Buildings/RegularBuildings" instance=ExtResource("19_h7v7j")]
-transform = Transform3D(-1.88357, 0, 0.0323153, 0, 1.7458, 0, -0.050705, 0, -1.20044, 3.12286, 0, 45.2071)
-
-[node name="RegularBuilding3" parent="Environment/Buildings/RegularBuildings" instance=ExtResource("9_vqhdb")]
-transform = Transform3D(2.30555, 0, 0, 0, 1.91531, 0, 0, 0, 2.49459, 29, 0.0447228, 49)
-
-[node name="RegularBuilding4" parent="Environment/Buildings/RegularBuildings" instance=ExtResource("21_p8nrn")]
-transform = Transform3D(1.33761, 0, 0, 0, 1.81882, 0, 0, 0, 1.83414, 50.9163, 0, 34.8156)
-
-[node name="RegularBuilding5" parent="Environment/Buildings/RegularBuildings" instance=ExtResource("22_hgejq")]
-transform = Transform3D(1.57858, 0, 0, 0, 1.29094, 0, 0, 0, 1.33987, 51.1812, 0, 18.3203)
-
-[node name="RegularBuilding6" parent="Environment/Buildings/RegularBuildings" instance=ExtResource("23_woay7")]
-transform = Transform3D(1.69374, 0, 0, 0, 1.76216, 0, 0, 0, 1.40051, 37.8994, 0, 16.4147)
+[node name="FullCastle1" parent="Environment/Buildings/Castle" instance=ExtResource("22_7vpp8")]
+transform = Transform3D(-1.05514, 0, 0.177346, 0, 1.35724, 0, -0.161534, 0, -1.15842, -6.81589, -0.0176773, -11.5818)
 
 [node name="Structures" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 98)
@@ -201,8 +135,11 @@ transform = Transform3D(0.755956, 0, -0.654622, 0, 1, 0, 0.654622, 0, 0.755956, 
 
 [node name="PrebuiltTowns" type="Node3D" parent="Environment"]
 
-[node name="FullHarbourTown" parent="Environment/PrebuiltTowns" instance=ExtResource("37_33vcn")]
+[node name="FullHarbourTown1" parent="Environment/PrebuiltTowns" instance=ExtResource("37_33vcn")]
 transform = Transform3D(-3.24355e-07, 0, 8.90215, 0, 7.5285, 0, -7.42038, 0, -3.89125e-07, 0, -5.7652, -236)
+
+[node name="FullSmallTown1" parent="Environment/PrebuiltTowns" instance=ExtResource("18_vr4gf")]
+transform = Transform3D(-1.81671, 0, -10.2276, 0, 8.28712, 0, 8.20684, 0, -2.26403, -88.5867, 0, -55.8114)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ublyh")
@@ -217,7 +154,7 @@ visible = false
 material = SubResource("FogMaterial_br7ke")
 
 [node name="Player" parent="." instance=ExtResource("5_1n71g")]
-transform = Transform3D(-0.9855, 0, 0.169676, 0, 1, 0, -0.169676, 0, -0.9855, 2.53835, 0.709427, -10.4791)
+transform = Transform3D(-0.9855, 0, 0.169676, 0, 1, 0, -0.169676, 0, -0.9855, -2.46165, 0.709427, -54.4791)
 
 [node name="RainEffect" parent="Player" instance=ExtResource("7_pnde6")]
 
@@ -234,6 +171,7 @@ layers = 3
 mesh = SubResource("SphereMesh_h30eo")
 
 [node name="NPCs" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
 
 [node name="VikingArmourMan1" parent="NPCs" instance=ExtResource("8_sh6lw")]
 transform = Transform3D(0.211414, 0, -1.13203, 0, 1.09815, 0, 1.03608, 0, 0.230994, 35.8247, -0.0555389, -5.47083)
