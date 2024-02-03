@@ -1,17 +1,19 @@
-[gd_scene load_steps=36 format=3 uid="uid://brusqmphxxu8w"]
+[gd_scene load_steps=34 format=3 uid="uid://brusqmphxxu8w"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_38psm"]
 [ext_resource type="PackedScene" uid="uid://d4dpby6nl5gx2" path="res://environment/assets/village/ground/scenes/paving_cobble_rough_1.tscn" id="4_f20o0"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="5_1n71g"]
 [ext_resource type="Script" path="res://characters/health_manager.gd" id="6_h6yie"]
-[ext_resource type="PackedScene" uid="uid://deet40dn2j7nb" path="res://effects/rain/rain_effect.tscn" id="7_pnde6"]
+[ext_resource type="PackedScene" uid="uid://deet40dn2j7nb" path="res://effects/rain/rain_effect_1.tscn" id="7_pnde6"]
 [ext_resource type="PackedScene" uid="uid://cpu20qg3iiof8" path="res://characters/npc/scenes/villager_woman_1.tscn" id="7_s5i1m"]
 [ext_resource type="PackedScene" uid="uid://htlhq6xpsfle" path="res://characters/npc/scenes/viking_armour_man_1.tscn" id="8_sh6lw"]
 [ext_resource type="PackedScene" uid="uid://dxc8y7qsijn0t" path="res://environment/assets/village/ground/scenes/paving_cobble_flat_1.tscn" id="9_6udfi"]
 [ext_resource type="PackedScene" uid="uid://e4sjydpcdwsb" path="res://characters/npc/scenes/knight_1.tscn" id="9_e7xbm"]
 [ext_resource type="PackedScene" uid="uid://bupq35mm43272" path="res://characters/npc/scenes/mutant_skeleton_1.tscn" id="10_q1ejs"]
 [ext_resource type="PackedScene" uid="uid://bis8jin3jtnyo" path="res://characters/npc/scenes/nun_1.tscn" id="11_wxon7"]
+[ext_resource type="PackedScene" uid="uid://cbiwcmy6wmavi" path="res://environment/assets/village/structures/scenes/castle_big_wall_base_1.tscn" id="12_52cyd"]
 [ext_resource type="PackedScene" uid="uid://cepvdg3h5k1hr" path="res://characters/npc/scenes/villager_male_1.tscn" id="12_khl8n"]
+[ext_resource type="PackedScene" uid="uid://b127y1uhix8do" path="res://environment/assets/village/structures/scenes/castle_big_pillar_base_1.tscn" id="13_tmwbo"]
 [ext_resource type="PackedScene" uid="uid://mcodumgw8823" path="res://characters/npc/scenes/lantern_character_1.tscn" id="14_fn874"]
 [ext_resource type="PackedScene" uid="uid://cfivxmy8y0l0i" path="res://environment/assets/village/prebuilt_towns/small_town/scenes/full_small_town_1.tscn" id="18_vr4gf"]
 [ext_resource type="PackedScene" uid="uid://v25scml6aa42" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_2.tscn" id="19_r0s14"]
@@ -22,10 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://otmsxgsqjb55" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_6.tscn" id="23_8vit4"]
 [ext_resource type="PackedScene" uid="uid://c6d6wmp5xf5c0" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_7.tscn" id="24_4ctt1"]
 [ext_resource type="PackedScene" uid="uid://dwwpoangnsb8n" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_1.tscn" id="29_ggqgj"]
-[ext_resource type="PackedScene" uid="uid://vbl2hipleqsb" path="res://environment/assets/village/structures/scenes/castle_archway_base_1.tscn" id="32_on3ce"]
-[ext_resource type="PackedScene" uid="uid://5yq2k5mbddkv" path="res://environment/assets/village/structures/scenes/castle_pillar_base_1.tscn" id="33_6hnjy"]
-[ext_resource type="PackedScene" uid="uid://c2vsr7r0es524" path="res://environment/assets/village/structures/scenes/castle_tower_small_base_1.tscn" id="34_wrer4"]
-[ext_resource type="PackedScene" uid="uid://bp8gfhfyy3k10" path="res://environment/assets/village/structures/scenes/castle_wall_base_1.tscn" id="35_5avfy"]
 [ext_resource type="PackedScene" uid="uid://dchrj3aiil5ly" path="res://environment/assets/village/prebuilt_towns/harbour_town/scenes/full_harbour_town_1.tscn" id="37_33vcn"]
 [ext_resource type="PackedScene" uid="uid://lq7366i8slik" path="res://environment/assets/village/outside_props/scenes/gothic_weeping_angel_statue_1.tscn" id="39_6g4s1"]
 [ext_resource type="AudioStream" uid="uid://4uhgisbwq7gv" path="res://audio/ambience/Dark_Rainy_Night(ambience).ogg" id="50_axq87"]
@@ -116,22 +114,21 @@ transform = Transform3D(-1.05514, 0, 0.177346, 0, 1.35724, 0, -0.161534, 0, -1.1
 [node name="Structures" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 98)
 
-[node name="CastleArchwayBase1" parent="Environment/Structures" instance=ExtResource("32_on3ce")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.3466, 0, -29.2237)
+[node name="OutsideWalls" type="Node3D" parent="Environment/Structures"]
 
-[node name="CastlePillarBase1" parent="Environment/Structures" instance=ExtResource("33_6hnjy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.2624, 0, -28.9618)
+[node name="CastleBigWallBase1" parent="Environment/Structures/OutsideWalls" instance=ExtResource("12_52cyd")]
+transform = Transform3D(-4, 0, -6.03983e-07, 0, 4, 0, 6.03983e-07, 0, -4, 6, 0, -37.4873)
 
-[node name="CastleTowerSmallBase1" parent="Environment/Structures" instance=ExtResource("34_wrer4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.562, 0, -28.9666)
+[node name="CastleBigWallBase2" parent="Environment/Structures/OutsideWalls" instance=ExtResource("12_52cyd")]
+transform = Transform3D(-4, 0, -6.03983e-07, 0, 4, 0, 6.03983e-07, 0, -4, 38, 0, -37.4873)
 
-[node name="CastleWallBase1" parent="Environment/Structures" instance=ExtResource("35_5avfy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.4756, 0, -29.2236)
+[node name="CastleBigPillarBase1" parent="Environment/Structures/OutsideWalls" instance=ExtResource("13_tmwbo")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 75, 0, -37.5922)
 
 [node name="Props" type="Node3D" parent="Environment"]
 
 [node name="GothicWeepingAngelStatue1" parent="Environment/Props" instance=ExtResource("39_6g4s1")]
-transform = Transform3D(0.755956, 0, -0.654622, 0, 1, 0, 0.654622, 0, 0.755956, 12.1571, 2.03597, -18.939)
+transform = Transform3D(-0.819852, 0, -0.572575, 0, 1, 0, 0.572575, 0, -0.819852, 12.1571, 1.99404, -35.939)
 
 [node name="PrebuiltTowns" type="Node3D" parent="Environment"]
 
@@ -156,7 +153,7 @@ material = SubResource("FogMaterial_br7ke")
 [node name="Player" parent="." instance=ExtResource("5_1n71g")]
 transform = Transform3D(-0.9855, 0, 0.169676, 0, 1, 0, -0.169676, 0, -0.9855, -2.46165, 0.709427, -54.4791)
 
-[node name="RainEffect" parent="Player" instance=ExtResource("7_pnde6")]
+[node name="RainEffect1" parent="Player" instance=ExtResource("7_pnde6")]
 
 [node name="TestTarget" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1.60216, 5)

@@ -34,7 +34,7 @@ use_particle_trails = true
 material = SubResource("StandardMaterial3D_ugdsn")
 curve = SubResource("Curve_6xoh7")
 
-[node name="RainEffect" type="Node3D"]
+[node name="RainEffect1" type="Node3D"]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(0.998181, 0, 0, 0, 0.998181, 0, 0, 0, 0.998181, 0, 18.0845, 0)
