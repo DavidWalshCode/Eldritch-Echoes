@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Eldritch Echoes"
-run/main_scene="res://levels/level_1.tscn"
+run/main_scene="res://levels/town/level_1_town.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0, 0.0352941, 0.0196078, 1)
 boot_splash/show_image=false
@@ -28,12 +28,9 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
-window/size/viewport_width=300
-window/size/viewport_height=120
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/always_on_top=true
 window/vsync/vsync_mode=0
-mouse_cursor/custom_image="res://ui/mousecursor/cursor-target-10.png"
+mouse_cursor/custom_image="res://ui/mouse_cursor/cursor-target-10.png"
 
 [editor_plugins]
 

@@ -1,17 +1,16 @@
 extends CharacterBody3D
 
+@export var mouse_sensitivity_h = 0.13 # Horizontal mouse sens
+@export var mouse_sensitivity_v = 0.13 # Vertical mouse sens
+@export var max_camera_lean = 1.5  # Maximum lean angle in degrees
+@export var camera_lean_speed = 10.0  # Speed at which the camera leans
+
+var current_camera_lean = 0.0  # Current lean angle
+
 @onready var camera_3d = $Camera3D # The $Camera3D is equivalent to get_node("Camera3D")
 @onready var character_mover = $CharacterMover
 @onready var health_manager = $HealthManager
 @onready var weapon_manager = $Camera3D/WeaponManager
-
-@export var mouse_sensitivity_h = 0.13 # Horizontal mouse sens
-@export var mouse_sensitivity_v = 0.13 # Vertical mouse sens
-
-# Camera lean variables
-@export var max_camera_lean = 1.5  # Maximum lean angle in degrees
-@export var camera_lean_speed = 10.0  # Speed at which the camera leans
-var current_camera_lean = 0.0  # Current lean angle
 
 const HOTKEYS = { # Hotkeys for weapon switching
 	KEY_1: 0, # 1 for sword
@@ -23,7 +22,7 @@ const HOTKEYS = { # Hotkeys for weapon switching
 	KEY_7: 6,
 	KEY_8: 7,
 	KEY_9: 8,
-	KEY_0: 9
+	KEY_0: 9,
 }
 
 var dead = false
@@ -116,7 +115,7 @@ func load_next_level():
 	var current_scene_file = get_tree().current_scene.scene_file_path
 	var next_level_number = current_scene_file.to_int() + 1
 	
-	var next_level_path = "res://levels/level_" + str(next_level_number) + ".tscn" # Could also have const FILE_BEGIN = "res://levels/level_"
+	var next_level_path = "res://levels/town/level_" + str(next_level_number) + "_town.tscn" # Could also have const FILE_BEGIN = "res://levels/level_"
 	get_tree().change_scene_to_file(next_level_path)
 
 func update_camera_lean(delta):

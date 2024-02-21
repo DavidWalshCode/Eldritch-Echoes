@@ -2,30 +2,27 @@ extends Node3D
 
 class_name Weapon
 
-@onready var animation_player : AnimationPlayer = $Graphics/AnimationPlayer
-@onready var attack_emitter : AttackEmitter = $AttackEmitter
-@onready var fire_point : Node3D = %FirePoint
-@onready var camera_3d = $"../../.."
+signal fired
+signal out_of_ammo
 
-@onready var shoot_sound = $Audio/ShootSound
-@onready var out_of_ammo_sound = $Audio/OutOfAmmoSound
-
-# Pitch variation range
 @export var min_pitch_scale = 0.9
 @export var max_pitch_scale = 1.1
-
 @export var automatic = false
 @export var damage = 5
 @export var ammo = 1000
 @export var attack_rate = 0.2
 @export var animation_controlled_attack = false
-var last_attack_time = -9999.9
-
 @export var recoil_strength = 0.8
+
+var last_attack_time = -9999.9
 var recoil_amount = 0.0
 
-signal fired
-signal out_of_ammo
+@onready var animation_player : AnimationPlayer = $Graphics/AnimationPlayer
+@onready var attack_emitter : AttackEmitter = $AttackEmitter
+@onready var fire_point : Node3D = %FirePoint
+@onready var camera_3d = $"../../.."
+@onready var shoot_sound = $Audio/ShootSound
+@onready var out_of_ammo_sound = $Audio/OutOfAmmoSound
 
 func _ready():
 	attack_emitter.set_damage(damage)

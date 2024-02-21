@@ -1,12 +1,23 @@
 extends Node3D
 
+signal moved(velocity : Vector3, grounded : bool)
+
+@export_category("Movement") # @export_group("")
 @export var jump_force = 14.0
 @export var gravity = 30.0
-
 @export var max_speed = 20.0
 @export var move_accel = 5.0
 @export var stop_drag = 0.11
 @export var air_drag = 0.19
+@export_range(5, 10, 0.1) var crouch_speed = 0.7
+@export var crouch_movement_speed_modifier = 0.6  # % of normal speed when crouching
+@export var min_slide_speed = 10.0  # Minimum speed to start sliding
+@export var slide_speed_modifier = 1.5  # Speed modifier during sliding
+
+@export_category("Sound")
+@export var footstep_sound_interval = 0.3  # Time in seconds between footstep sounds
+@export var min_pitch_scale = 0.9 # Pitch variation range
+@export var max_pitch_scale = 1.0 # Pitch variation range
 
 var character_body : CharacterBody3D
 var move_drag = 0.0
@@ -14,29 +25,15 @@ var move_dir : Vector3
 var current_speed
 var double_jump_available = true
 var is_crouching : bool = false
-
-signal moved(velocity : Vector3, grounded : bool)
+var is_sliding : bool = false
+var slide_timer : Timer
+var last_footstep_time = -9999.0  # Last time a footstep sound was played
 
 @onready var jump_sounds = $Audio/JumpSounds.get_children()
 @onready var footstep_sounds = $Audio/FootstepSounds.get_children()
-@export var footstep_sound_interval = 0.3  # Time in seconds between footstep sounds
-var last_footstep_time = -9999.0  # Last time a footstep sound was played
-
 @onready var player_animations = $"../PlayerAnimations"
-@export_range(5, 10, 0.1) var crouch_speed = 0.7
 @onready var crouch_shape_cast = $"../CrouchShapeCast"
-@export var crouch_movement_speed_modifier = 0.6  # % of normal speed when crouching
-
-@export var min_slide_speed = 10.0  # Minimum speed to start sliding
-@export var slide_speed_modifier = 1.5  # Speed modifier during sliding
-var is_sliding : bool = false
-var slide_timer : Timer
 @onready var sliding_sound = $Audio/SlidingSounds/SlidingSound1
-
-# Pitch variation range
-@export var min_pitch_scale = 0.9
-@export var max_pitch_scale = 1.1
-
 @onready var slide_effect = $"../SlideEffect"
 
 func _ready():
