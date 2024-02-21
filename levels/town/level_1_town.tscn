@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=3 uid="uid://brusqmphxxu8w"]
 
-[ext_resource type="Script" path="res://levels/level_1.gd" id="1_38psm"]
+[ext_resource type="Script" path="res://levels/level_scripts/level_1_town.gd" id="1_38psm"]
 [ext_resource type="PackedScene" uid="uid://d4dpby6nl5gx2" path="res://environment/assets/village/ground/scenes/paving_cobble_rough_1.tscn" id="4_f20o0"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="5_1n71g"]
 [ext_resource type="Script" path="res://characters/health_manager.gd" id="6_h6yie"]
@@ -48,7 +48,7 @@ volumetric_fog_density = 0.04
 
 [sub_resource type="SphereMesh" id="SphereMesh_h30eo"]
 
-[node name="Level1" type="Node3D"]
+[node name="Level1Town" type="Node3D"]
 script = ExtResource("1_38psm")
 
 [node name="Environment" type="Node3D" parent="."]
@@ -82,34 +82,34 @@ transform = Transform3D(2.2158, 0, 0, 0, 1, 0, 0, 0, 1, 99.7575, 0, -43.706)
 [node name="Buildings" type="Node3D" parent="Environment"]
 
 [node name="MedievalBuildings" type="Node3D" parent="Environment/Buildings"]
-transform = Transform3D(0.996593, 0, 0.0824777, 0, 1, 0, -0.0824777, 0, 0.996593, -8.97613, 0, -3.64809)
+transform = Transform3D(0.962986, 0, 0.0802279, 0, 0.957456, 0, -0.0796964, 0, 0.969408, -8.97613, 0, -3.64809)
 
 [node name="MedievalBuilding1" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("29_ggqgj")]
-transform = Transform3D(-3.60916e-08, 0, 0.521967, 0, 0.640199, 0, -0.82568, 0, -2.28159e-08, 52.4857, -0.0159175, -19.6355)
+transform = Transform3D(0.26827, 0, 0.493648, 0, 0.640199, 0, -0.780883, 0, 0.169591, 45.5855, -0.0159175, -20.2066)
 
 [node name="MedievalBuilding2" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("19_r0s14")]
-transform = Transform3D(-3.05801e-08, 0, 0.685353, 0, 0.695263, 0, -0.699591, 0, -2.99577e-08, 77.7167, 3.8147e-06, -23.9759)
+transform = Transform3D(-0.0769633, 0, 0.681193, 0, 0.695263, 0, -0.695344, 0, -0.075397, 76.1527, 3.8147e-06, -24.1053)
 
 [node name="MedievalBuilding3" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("20_wbcfj")]
-transform = Transform3D(0.725587, 0, 7.10543e-15, 0, 0.583385, 0, -1.42109e-14, 0, 0.772451, 57.0154, -0.00887193, 16.6329)
+transform = Transform3D(0.62518, 0, 0.39206, 0, 0.583385, 0, -0.368274, 0, 0.665559, 57.0154, -0.00887193, 16.6329)
 
 [node name="MedievalBuilding4" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("21_s8ahr")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 51.4519, 0.0451, -65.0447)
+transform = Transform3D(-0.163412, 0, 0.986558, 0, 1, 0, -0.986558, 0, -0.163412, 51.4519, 0.0451, -65.0447)
 
 [node name="MedievalBuilding5" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("22_4wfe0")]
-transform = Transform3D(-3.11143e-08, 0, 0.712928, 0, 0.674064, 0, -0.711813, 0, -3.11631e-08, 86.9114, 0.00228453, 8.37009)
+transform = Transform3D(-4.47035e-08, 0, 0.712928, 0, 0.674064, 0, -0.711813, 0, -2.98023e-08, 88.5509, 0.00228453, 8.50577)
 
 [node name="MedievalBuilding6" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("23_8vit4")]
-transform = Transform3D(-3.31253e-08, 0, 0.758995, 0, 0.681572, 0, -0.757818, 0, -3.31767e-08, 84.4502, 0.0294365, -65.2532)
+transform = Transform3D(0.244732, 0, 0.718327, 0, 0.681572, 0, -0.717213, 0, 0.245112, 88.7591, 0.0294365, -64.8966)
 
 [node name="MedievalBuilding7" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("24_4ctt1")]
-transform = Transform3D(-5.85484e-08, 0, -0.413329, 0, 0.679425, 0, 0.705963, 0, -1.17351e-08, 104.749, 0.00682519, -26.8953)
+transform = Transform3D(-0.133192, 0, -0.405906, 0, 0.679425, 0, 0.693285, 0, -0.0779815, 109.442, 0.00682519, -26.5069)
 
 [node name="Castle" type="Node3D" parent="Environment/Buildings"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648312, 0, -6.50797)
 
 [node name="FullCastle1" parent="Environment/Buildings/Castle" instance=ExtResource("22_7vpp8")]
-transform = Transform3D(-1.05514, 0, 0.177346, 0, 1.35724, 0, -0.161534, 0, -1.15842, -6.81589, -0.0176773, -11.5818)
+transform = Transform3D(-1.05514, 0, 0.177346, 0, 1.35724, 0, -0.161534, 0, -1.15842, -6.81589, -0.0176773, -20.6417)
 
 [node name="Structures" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 98)
@@ -128,15 +128,15 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 75, 0, -37.5922)
 [node name="Props" type="Node3D" parent="Environment"]
 
 [node name="GothicWeepingAngelStatue1" parent="Environment/Props" instance=ExtResource("39_6g4s1")]
-transform = Transform3D(-0.819852, 0, -0.572575, 0, 1, 0, 0.572575, 0, -0.819852, 12.1571, 1.99404, -35.939)
+transform = Transform3D(0.0831386, 0, 0.996538, 0, 1, 0, -0.996538, 0, 0.0831386, -14.2903, 1.99404, -55.4223)
 
 [node name="PrebuiltTowns" type="Node3D" parent="Environment"]
 
 [node name="FullHarbourTown1" parent="Environment/PrebuiltTowns" instance=ExtResource("37_33vcn")]
-transform = Transform3D(-3.24355e-07, 0, 8.90215, 0, 7.5285, 0, -7.42038, 0, -3.89125e-07, 0, -5.7652, -236)
+transform = Transform3D(-3.24355e-07, 0, 8.42952, 0, 7.5285, 0, -7.42038, 0, -3.68466e-07, 0, -4.4664, -237.111)
 
 [node name="FullSmallTown1" parent="Environment/PrebuiltTowns" instance=ExtResource("18_vr4gf")]
-transform = Transform3D(-1.81671, 0, -10.2276, 0, 8.28712, 0, 8.20684, 0, -2.26403, -88.5867, 0, -55.8114)
+transform = Transform3D(-0.364007, 0, -10.4654, 0, 8.28712, 0, 8.39763, 0, -0.45363, -77.4831, 0, -63.5078)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ublyh")
@@ -156,7 +156,7 @@ transform = Transform3D(-0.9855, 0, 0.169676, 0, 1, 0, -0.169676, 0, -0.9855, -2
 [node name="RainEffect1" parent="Player" instance=ExtResource("7_pnde6")]
 
 [node name="TestTarget" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1.60216, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 1.60216, 5)
 collision_layer = 6
 script = ExtResource("6_h6yie")
 
