@@ -204,6 +204,12 @@ msgstr "Open dialogue files in external editor"
 msgid "settings.external_editor_warning"
 msgstr "Note: Syntax highlighting and detailed error checking are not supported in external editors."
 
+msgid "settings.include_characters_in_translations"
+msgstr "Include character names in translation exports"
+
+msgid "settings.include_notes_in_translations"
+msgstr "Include notes (## comments) in translation exports"
+
 msgid "n_of_n"
 msgstr "{index} of {total}"
 
@@ -449,3 +455,12 @@ msgstr "\"{autoload}\" doesn't appear to be a valid autoload."
 
 msgid "runtime.something_went_wrong"
 msgstr "Something went wrong."
+
+msgid "runtime.expected_n_got_n_args"
+msgstr "\"{method}\" was called with {received} arguments but it only has {expected}."
+
+msgid "runtime.unsupported_array_type"
+msgstr "Array[{type}] isn't supported in mutations. Use Array as a type instead."
+
+msgid "runtime.dialogue_balloon_missing_start_method"
+msgstr "Your dialogue balloon is missing a \"start\" or \"Start\" method."

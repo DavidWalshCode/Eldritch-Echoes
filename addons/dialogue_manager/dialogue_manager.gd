@@ -68,9 +68,6 @@ var _node_properties: Array = []
 
 
 func _ready() -> void:
-	# Make the dialogue manager available as a singleton
-	Engine.register_singleton("DialogueManager", self)
-
 	# Cache the known Node2D properties
 	_node_properties = ["Script Variables"]
 	var temp_node: Node2D = Node2D.new()
@@ -95,16 +92,23 @@ func _ready() -> void:
 		if state:
 			game_states.append(state)
 
+	# Make the dialogue manager available as a singleton
+	if Engine.has_singleton("DialogueManager"):
+		Engine.unregister_singleton("DialogueManager")
+	Engine.register_singleton("DialogueManager", self)
+
 	# Connect up the C# signals if need be
-	if _has_dotnet_solution():
+	if DialogueSettings.has_dotnet_solution():
 		_get_dotnet_dialogue_manager().Prepare()
 
 
 ## Step through lines and run any mutations until we either hit some dialogue or the end of the conversation
 func get_next_dialogue_line(resource: DialogueResource, key: String = "", extra_game_states: Array = [], mutation_behaviour: MutationBehaviour = MutationBehaviour.Wait) -> DialogueLine:
 	# You have to provide a valid dialogue resource
-	assert(resource != null, DialogueConstants.translate("runtime.no_resource"))
-	assert(resource.lines.size() > 0, DialogueConstants.translate("runtime.no_content").format({ file_path = resource.resource_path }))
+	if resource == null:
+		assert(false, DialogueConstants.translate("runtime.no_resource"))
+	if resource.lines.size() == 0:
+		assert(false, DialogueConstants.translate("runtime.no_content").format({ file_path = resource.resource_path }))
 
 	# Inject any "using" states into the game_states
 	for state_name in resource.using_states:
@@ -271,9 +275,27 @@ func show_example_dialogue_balloon(resource: DialogueResource, title: String = "
 
 ## Show the configured dialogue balloon
 func show_dialogue_balloon(resource: DialogueResource, title: String = "", extra_game_states: Array = []) -> Node:
-	var balloon: Node = load(DialogueSettings.get_setting("balloon_path", _get_example_balloon_path())).instantiate()
+	var balloon_path: String = DialogueSettings.get_setting("balloon_path", _get_example_balloon_path())
+	if not ResourceLoader.exists(balloon_path):
+		balloon_path = _get_example_balloon_path()
+	return show_dialogue_balloon_scene(balloon_path, resource, title, extra_game_states)
+
+
+## Show a given balloon scene
+func show_dialogue_balloon_scene(balloon_scene, resource: DialogueResource, title: String = "", extra_game_states: Array = []) -> Node:
+	if balloon_scene is String:
+		balloon_scene = load(balloon_scene)
+	if balloon_scene is PackedScene:
+		balloon_scene = balloon_scene.instantiate()
+
+	var balloon: Node = balloon_scene
 	get_current_scene.call().add_child(balloon)
-	balloon.start(resource, title, extra_game_states)
+	if balloon.has_method("start"):
+		balloon.start(resource, title, extra_game_states)
+	elif balloon.has_method("Start"):
+		balloon.Start(resource, title, extra_game_states)
+	else:
+		assert(false, DialogueConstants.translate("runtime.dialogue_balloon_missing_start_method"))
 	return balloon
 
 
@@ -287,15 +309,8 @@ func _get_example_balloon_path() -> String:
 ### Dotnet bridge
 
 
-func _has_dotnet_solution() -> bool:
-	if not DialogueSettings.get_user_value("has_dotnet_solution", false): return false
-	if not ResourceLoader.exists("res://addons/dialogue_manager/DialogueManager.cs"): return false
-	if load("res://addons/dialogue_manager/DialogueManager.cs") == null: return false
-	return true
-
-
 func _get_dotnet_dialogue_manager() -> Node:
-	return load("res://addons/dialogue_manager/DialogueManager.cs").new()
+	return load(get_script().resource_path.get_base_dir() + "/DialogueManager.cs").new()
 
 
 func _bridge_get_next_dialogue_line(resource: DialogueResource, key: String, extra_game_states: Array = []) -> void:
@@ -345,7 +360,8 @@ func get_line(resource: DialogueResource, key: String, extra_game_states: Array)
 	if key in resource.titles.values():
 		passed_title.emit(resource.titles.find_key(key))
 
-	assert(resource.lines.has(key), DialogueConstants.translate("errors.key_not_found").format({ key = key }))
+	if not resource.lines.has(key):
+		assert(false, DialogueConstants.translate("errors.key_not_found").format({ key = key }))
 
 	var data: Dictionary = resource.lines.get(key)
 
@@ -405,10 +421,10 @@ func show_error_for_missing_state_value(message: String, will_show: bool = true)
 
 	if DialogueSettings.get_setting("ignore_missing_state_values", false):
 		push_error(message)
-	else:
+	elif will_show:
 		# If you're here then you're missing a method or property in your game state. The error
 		# message down in the debugger will give you some more information.
-		assert(not will_show, message)
+		assert(false, message)
 
 
 # Translate a string
@@ -880,7 +896,8 @@ func resolve(tokens: Array, extra_game_states: Array):
 			i -= 1
 		i += 1
 
-	assert(limit < 1000, DialogueConstants.translate("runtime.something_went_wrong"))
+	if limit >= 1000:
+		assert(false, DialogueConstants.translate("runtime.something_went_wrong"))
 
 	# Then addition and subtraction
 	i = 0
@@ -896,7 +913,8 @@ func resolve(tokens: Array, extra_game_states: Array):
 			i -= 1
 		i += 1
 
-	assert(limit < 1000, DialogueConstants.translate("runtime.something_went_wrong"))
+	if limit >= 1000:
+		assert(false, DialogueConstants.translate("runtime.something_went_wrong"))
 
 	# Then negations
 	i = 0
@@ -911,7 +929,8 @@ func resolve(tokens: Array, extra_game_states: Array):
 			i -= 1
 		i += 1
 
-	assert(limit < 1000, DialogueConstants.translate("runtime.something_went_wrong"))
+	if limit >= 1000:
+		assert(false, DialogueConstants.translate("runtime.something_went_wrong"))
 
 	# Then comparisons
 	i = 0
@@ -927,7 +946,8 @@ func resolve(tokens: Array, extra_game_states: Array):
 			i -= 1
 		i += 1
 
-	assert(limit < 1000, DialogueConstants.translate("runtime.something_went_wrong"))
+	if limit >= 1000:
+		assert(false, DialogueConstants.translate("runtime.something_went_wrong"))
 
 	# Then and/or
 	i = 0
@@ -943,7 +963,8 @@ func resolve(tokens: Array, extra_game_states: Array):
 			i -= 1
 		i += 1
 
-	assert(limit < 1000, DialogueConstants.translate("runtime.something_went_wrong"))
+	if limit >= 1000:
+		assert(false, DialogueConstants.translate("runtime.something_went_wrong"))
 
 	# Lastly, resolve any assignments
 	i = 0
@@ -985,7 +1006,8 @@ func resolve(tokens: Array, extra_game_states: Array):
 			i -= 1
 		i += 1
 
-	assert(limit < 1000, DialogueConstants.translate("runtime.something_went_wrong"))
+	if limit >= 1000:
+		assert(false, DialogueConstants.translate("runtime.something_went_wrong"))
 
 	# Account for Signal literals in emit calls
 	if tokens[0].value is Signal:
@@ -1101,7 +1123,7 @@ func thing_has_method(thing, method: String, args: Array) -> bool:
 	if thing.has_method(method):
 		return true
 
-	if method.to_snake_case() != method and _has_dotnet_solution():
+	if method.to_snake_case() != method and DialogueSettings.has_dotnet_solution():
 		# If we get this far then the method might be a C# method with a Task return type
 		return _get_dotnet_dialogue_manager().ThingHasMethod(thing, method)
 
@@ -1153,6 +1175,31 @@ func resolve_signal(args: Array, extra_game_states: Array):
 
 func resolve_thing_method(thing, method: String, args: Array):
 	if thing.has_method(method):
+		# Try to convert any literals to the right type
+		var method_args = thing.get_method_list().filter(func(m): return method == m.name)[0].args
+		if method_args.size() < args.size():
+			assert(false, DialogueConstants.translate("runtime.expected_n_got_n_args").format({ expected = method_args.size(), method = method, received = args.size()}))
+		for i in range(0, args.size()):
+			var m: Dictionary = method_args[i]
+			var to_type:int = typeof(args[i])
+			if m.type == TYPE_ARRAY:
+				match m.hint_string:
+					"String":
+						to_type = TYPE_PACKED_STRING_ARRAY
+					"int":
+						to_type = TYPE_PACKED_INT64_ARRAY
+					"float":
+						to_type = TYPE_PACKED_FLOAT64_ARRAY
+					"Vector2":
+						to_type = TYPE_PACKED_VECTOR2_ARRAY
+					"Vector3":
+						to_type = TYPE_PACKED_VECTOR3_ARRAY
+					_:
+						if m.hint_string != "":
+							assert(false, DialogueConstants.translate("runtime.unsupported_array_type").format({ type = m.hint_string}))
+			if typeof(args[i]) != to_type:
+				args[i] = convert(args[i], to_type)
+
 		return await thing.callv(method, args)
 
 	# If we get here then it's probably a C# method with a Task return type

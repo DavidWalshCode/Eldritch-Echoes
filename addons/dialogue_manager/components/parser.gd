@@ -62,6 +62,7 @@ var titles: Dictionary = {}
 var character_names: PackedStringArray = []
 var first_title: String = ""
 var errors: Array[Dictionary] = []
+var raw_text: String = ""
 
 var _imported_line_map: Dictionary = {}
 var _imported_line_count: int = 0
@@ -94,12 +95,16 @@ static func extract_markers_from_string(string: String) -> ResolvedLineData:
 ## Parse some raw dialogue text. Returns a dictionary containing parse results
 func parse(text: String, path: String) -> Error:
 	prepare(text, path)
+	raw_text = text
 
 	# Parse all of the content
 	var known_translations = {}
 
 	# Get list of known autoloads
 	var autoload_names: PackedStringArray = get_autoload_names()
+
+	# Keep track of the last doc comment
+	var doc_comments: Array[String] = []
 
 	# Then parse all lines
 	for id in range(0, raw_lines.size()):
@@ -146,6 +151,10 @@ func parse(text: String, path: String) -> Error:
 
 		# Response
 		elif is_response_line(raw_line):
+			# Add any doc notes
+			line["notes"] = "\n".join(doc_comments)
+			doc_comments = []
+
 			parent_stack.append(str(id))
 			line["type"] = DialogueConstants.TYPE_RESPONSE
 
@@ -314,11 +323,28 @@ func parse(text: String, path: String) -> Error:
 
 			continue
 
+		elif raw_line.strip_edges().begins_with("##"):
+			doc_comments.append(raw_line.replace("##", "").strip_edges())
+			continue
+
 		elif is_line_empty(raw_line) or is_import_line(raw_line):
 			continue
 
 		# Regular dialogue
 		else:
+			# Remove escape character
+			if raw_line.begins_with("\\if"): raw_line = raw_line.substr(1)
+			if raw_line.begins_with("\\elif"): raw_line = raw_line.substr(1)
+			if raw_line.begins_with("\\else"): raw_line = raw_line.substr(1)
+			if raw_line.begins_with("\\while"): raw_line = raw_line.substr(1)
+			if raw_line.begins_with("\\-"): raw_line = raw_line.substr(1)
+			if raw_line.begins_with("\\~"): raw_line = raw_line.substr(1)
+			if raw_line.begins_with("\\=>"): raw_line = raw_line.substr(1)
+
+			# Add any doc notes
+			line["notes"] = "\n".join(doc_comments)
+			doc_comments = []
+
 			# Work out any weighted random siblings
 			if raw_line.begins_with("%"):
 				apply_weighted_random(id, raw_line, indent_size, line)
@@ -453,6 +479,7 @@ func get_data() -> DialogueManagerParseResult:
 	data.first_title = first_title
 	data.lines = parsed_lines
 	data.errors = errors
+	data.raw_text = raw_text
 	return data
 
 
@@ -718,10 +745,13 @@ func apply_weighted_random(id: int, raw_line: String, indent_size: int, line: Di
 	# Look back up the list to find the first weighted random line in this group
 	var original_random_line: Dictionary = {}
 	for i in range(id, 0, -1):
+		# Ignore doc comment lines
+		if raw_lines[i].strip_edges().begins_with("##"):
+			continue
 		# Lines that aren't prefixed with the random token are a dead end
 		if not raw_lines[i].strip_edges().begins_with("%") or get_indent(raw_lines[i]) != indent_size:
 			break
-		# Make sure we group random dialogue and ranom lines separately
+		# Make sure we group random dialogue and random lines separately
 		elif WEIGHTED_RANDOM_SIBLINGS_REGEX.sub(raw_line.strip_edges(), "").begins_with("=") != WEIGHTED_RANDOM_SIBLINGS_REGEX.sub(raw_lines[i].strip_edges(), "").begins_with("="):
 			break
 		# Otherwise we've found the origin
@@ -1166,7 +1196,7 @@ func extract_tags(line: String) -> ResolvedTagData:
 	var tag_matches: Array[RegExMatch] = TAGS_REGEX.search_all(line)
 	for tag_match in tag_matches:
 		line = line.replace(tag_match.get_string(), "")
-		var tags = tag_match.get_string().replace("[#", "").replace("]", "").replace(" ", "").split(",")
+		var tags = tag_match.get_string().replace("[#", "").replace("]", "").replace(", ", ",").split(",")
 		for tag in tags:
 			tag = tag.replace("#", "")
 			if not tag in resolved_tags:

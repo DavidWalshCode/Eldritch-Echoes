@@ -194,6 +194,12 @@ msgstr ""
 msgid "settings.external_editor_warning"
 msgstr ""
 
+msgid "settings.include_characters_in_translations"
+msgstr ""
+
+msgid "settings.include_notes_in_translations"
+msgstr ""
+
 msgid "n_of_n"
 msgstr ""
 
@@ -438,4 +444,13 @@ msgid "runtime.unknown_autoload"
 msgstr ""
 
 msgid "runtime.something_went_wrong"
+msgstr ""
+
+msgid "runtime.expected_n_got_n_args"
+msgstr ""
+
+msgid "runtime.unsupported_array_type"
+msgstr ""
+
+msgid "runtime.dialogue_balloon_missing_start_method"
 msgstr ""

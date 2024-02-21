@@ -215,28 +215,33 @@ func _copy_dialogue_balloon() -> void:
 	directory_dialog.dir_selected.connect(func(path):
 		var plugin_path: String = get_plugin_path()
 
-		var file: FileAccess = FileAccess.open(plugin_path + "/example_balloon/example_balloon.tscn", FileAccess.READ)
-		var file_contents: String = file.get_as_text().replace(plugin_path + "/example_balloon/example_balloon.gd", path + "/balloon.gd")
-		file = FileAccess.open(path + "/balloon.tscn", FileAccess.WRITE)
+		var is_dotnet: bool = DialogueSettings.has_dotnet_solution()
+		var balloon_path: String = path + ("/Balloon.tscn" if is_dotnet else "/balloon.tscn")
+		var balloon_script_path: String = path + ("/DialogueBalloon.cs" if is_dotnet else "/balloon.gd")
+
+		# Copy the balloon scene file and change the script reference
+		var is_small_window: bool = ProjectSettings.get_setting("display/window/size/viewport_width") < 400
+		var example_balloon_file_name: String = "small_example_balloon.tscn" if is_small_window else "example_balloon.tscn"
+		var example_balloon_script_file_name: String = "ExampleBalloon.cs" if is_dotnet else "example_balloon.gd"
+		var file: FileAccess = FileAccess.open(plugin_path + "/example_balloon/" + example_balloon_file_name, FileAccess.READ)
+		var file_contents: String = file.get_as_text().replace(plugin_path + "/example_balloon/example_balloon.gd", balloon_script_path)
+		file = FileAccess.open(balloon_path, FileAccess.WRITE)
 		file.store_string(file_contents)
 		file.close()
 
-		file = FileAccess.open(plugin_path + "/example_balloon/small_example_balloon.tscn", FileAccess.READ)
-		file_contents = file.get_as_text().replace(plugin_path + "/example_balloon/example_balloon.gd", path + "/balloon.gd")
-		file = FileAccess.open(path + "/small_balloon.tscn", FileAccess.WRITE)
-		file.store_string(file_contents)
-		file.close()
-
-		file = FileAccess.open(plugin_path + "/example_balloon/example_balloon.gd", FileAccess.READ)
+		# Copy the script file
+		file = FileAccess.open(plugin_path + "/example_balloon/" + example_balloon_script_file_name, FileAccess.READ)
 		file_contents = file.get_as_text()
-		file = FileAccess.open(path + "/balloon.gd", FileAccess.WRITE)
+		if is_dotnet:
+			file_contents = file_contents.replace("class ExampleBalloon", "class DialogueBalloon")
+		file = FileAccess.open(balloon_script_path, FileAccess.WRITE)
 		file.store_string(file_contents)
 		file.close()
 
 		get_editor_interface().get_resource_filesystem().scan()
-		get_editor_interface().get_file_system_dock().call_deferred("navigate_to_path", path + "/balloon.tscn")
+		get_editor_interface().get_file_system_dock().call_deferred("navigate_to_path", balloon_path)
 
-		DialogueSettings.set_setting("balloon_path", path + "/balloon.tscn")
+		DialogueSettings.set_setting("balloon_path", balloon_path)
 
 		directory_dialog.queue_free()
 	)
