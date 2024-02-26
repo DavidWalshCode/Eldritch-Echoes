@@ -23,8 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://dwnt52co5cn8t" path="res://environment/assets/village/buildings/scenes/buildings/full_castle_1.tscn" id="22_7vpp8"]
 [ext_resource type="PackedScene" uid="uid://otmsxgsqjb55" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_6.tscn" id="23_8vit4"]
 [ext_resource type="PackedScene" uid="uid://c6d6wmp5xf5c0" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_7.tscn" id="24_4ctt1"]
+[ext_resource type="PackedScene" uid="uid://bdc2md8pwfr0u" path="res://environment/assets/village/prebuilt_towns/harbour_town/scenes/full_harbour_town_1.tscn" id="28_40i1d"]
 [ext_resource type="PackedScene" uid="uid://dwwpoangnsb8n" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_1.tscn" id="29_ggqgj"]
-[ext_resource type="PackedScene" uid="uid://dchrj3aiil5ly" path="res://environment/assets/village/prebuilt_towns/harbour_town/scenes/full_harbour_town_1.tscn" id="37_33vcn"]
 [ext_resource type="PackedScene" uid="uid://lq7366i8slik" path="res://environment/assets/village/outside_props/scenes/gothic_weeping_angel_statue_1.tscn" id="39_6g4s1"]
 [ext_resource type="AudioStream" uid="uid://4uhgisbwq7gv" path="res://audio/ambience/Dark_Rainy_Night(ambience).ogg" id="50_axq87"]
 
@@ -132,11 +132,11 @@ transform = Transform3D(0.0831386, 0, 0.996538, 0, 1, 0, -0.996538, 0, 0.0831386
 
 [node name="PrebuiltTowns" type="Node3D" parent="Environment"]
 
-[node name="FullHarbourTown1" parent="Environment/PrebuiltTowns" instance=ExtResource("37_33vcn")]
-transform = Transform3D(-3.24355e-07, 0, 8.42952, 0, 7.5285, 0, -7.42038, 0, -3.68466e-07, 0, -4.4664, -237.111)
-
 [node name="FullSmallTown1" parent="Environment/PrebuiltTowns" instance=ExtResource("18_vr4gf")]
 transform = Transform3D(-0.364007, 0, -10.4654, 0, 8.28712, 0, 8.39763, 0, -0.45363, -77.4831, 0, -63.5078)
+
+[node name="FullHarbourTown1" parent="Environment/PrebuiltTowns" instance=ExtResource("28_40i1d")]
+transform = Transform3D(0.269961, 0, 7.60488, 0, 6.7694, 0, -5.94054, 0, 0.345605, 14.6464, -4.88281e-06, -224.224)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ublyh")
