@@ -39,6 +39,10 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/danica_240_061_material.tres"
 },
+"Danica-240-061.002": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/4dea_grass_material.tres"
+},
 "Galician_2b_UV": {
 "use_external/enabled": true,
 "use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/galician_2b_uv_material.tres"
@@ -90,6 +94,14 @@ _subresources={
 "mughal_parts_w_norm": {
 "use_external/enabled": true,
 "use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/stephanie_mahal_material.tres"
+},
+"mughal_parts_w_norm.001": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/4dea_grass_material.tres"
+},
+"mughal_parts_w_norm.002": {
+"use_external/enabled": true,
+"use_external/path": "res://environment/assets/village/prebuilt_towns/harbour_town/materials/4dea_grass_material.tres"
 },
 "pentekonter": {
 "use_external/enabled": true,
