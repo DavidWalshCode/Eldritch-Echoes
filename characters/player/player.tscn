@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=86 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://characters/player/weapon_manager.gd" id="2_c6p01"]
@@ -43,10 +43,16 @@
 [ext_resource type="AudioStream" uid="uid://cionacx4sdxlt" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_01.wav" id="39_tnvee"]
 [ext_resource type="AudioStream" uid="uid://cmiqntcy6rplc" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_02.wav" id="40_bbfdy"]
 [ext_resource type="AudioStream" uid="uid://ccvrd8drtsy40" path="res://audio/sfx/player/slide/slide1.wav" id="40_mkg1c"]
+[ext_resource type="AudioStream" uid="uid://d1b8pqsj88jm4" path="res://audio/sfx/player/landing/big/Footsteps_DirtyGround_Jump_Land_01.wav" id="41_lmvyg"]
 [ext_resource type="AudioStream" uid="uid://dmciahxrc6a3b" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_03.wav" id="41_svykw"]
 [ext_resource type="AudioStream" uid="uid://m3d3nmleaht" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_04.wav" id="42_01m48"]
+[ext_resource type="AudioStream" uid="uid://cj43854h3s2or" path="res://audio/sfx/player/landing/big/Footsteps_DirtyGround_Jump_Land_02.wav" id="42_l3wgr"]
+[ext_resource type="AudioStream" uid="uid://bvn4kv20osb16" path="res://audio/sfx/player/landing/small/Footsteps_DirtyGround_Jump_Land_03.wav" id="43_esbqw"]
 [ext_resource type="AudioStream" uid="uid://y2yd12pxafnd" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_05.wav" id="43_gj86l"]
+[ext_resource type="AudioStream" uid="uid://cc8qwsaa6xhed" path="res://audio/sfx/player/landing/small/Footsteps_DirtyGround_Jump_Start_01.wav" id="44_8ce5i"]
 [ext_resource type="AudioStream" uid="uid://d3cgputosjxjw" path="res://audio/sfx/player/hurt/Voice_Female_V1_Hit_Short_Mono_06.wav" id="44_fpauj"]
+[ext_resource type="AudioStream" uid="uid://b1gvyywrdvma1" path="res://audio/sfx/player/landing/small/Footsteps_DirtyGround_Jump_Start_02.wav" id="45_g87yg"]
+[ext_resource type="AudioStream" uid="uid://cu35ff54jgbtj" path="res://audio/sfx/player/landing/big/Footsteps_DirtyGround_Jump_Start_03.wav" id="46_p6lle"]
 [ext_resource type="Theme" uid="uid://du0vpxg4q0mij" path="res://ui/themes/debug_theme.tres" id="46_ynthf"]
 [ext_resource type="Script" path="res://characters/player/debug.gd" id="47_g4vyg"]
 [ext_resource type="Script" path="res://characters/player/reticle.gd" id="49_muf4y"]
@@ -343,18 +349,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Weapons:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_o41hp"]
 resource_name = "moving"
@@ -430,6 +424,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(-0.00349066, 0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera3D/WeaponManager/Weapons:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_w0ctb"]
 resource_name = "crouch"
@@ -470,10 +476,62 @@ tracks/2/keys = {
 "values": [Vector3(0, 1.89849, 0), Vector3(0, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_kqsci"]
+resource_name = "jumping"
+length = 0.4
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/WeaponManager/Weapons:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.7, -0.003), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gfps3"]
+resource_name = "landing_big"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/WeaponManager/Weapons:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1, 0.006), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nlwb1"]
+resource_name = "jump_land"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/WeaponManager/Weapons:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.55, 0.002), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_54k3e"]
 _data = {
 "RESET": SubResource("Animation_3i1ox"),
-"crouch": SubResource("Animation_w0ctb")
+"crouch": SubResource("Animation_w0ctb"),
+"jump": SubResource("Animation_kqsci"),
+"landing_big": SubResource("Animation_gfps3"),
+"landing_small": SubResource("Animation_nlwb1")
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c7i7v"]
@@ -520,6 +578,7 @@ transform = Transform3D(0.254703, 0, 0, 0, 0.222342, 0, 0, 0, 0.255777, 0.266923
 script = ExtResource("2_c6p01")
 
 [node name="Weapons" type="Node3D" parent="Camera3D/WeaponManager"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 4.65661e-10, 0, -1.49012e-08, 0.999999, 0, 0, 0)
 
 [node name="Sword" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1.25345, 0, 0, 0, 1.25346, 0, 0, 0, 1.25345, 0.727612, -0.808232, -0.0604396)
@@ -926,6 +985,40 @@ stream = ExtResource("40_mkg1c")
 volume_db = -11.0
 bus = &"SFX"
 
+[node name="LandingBigSounds" type="Node3D" parent="CharacterMover/Audio"]
+
+[node name="LandingBigSound1" type="AudioStreamPlayer" parent="CharacterMover/Audio/LandingBigSounds"]
+stream = ExtResource("41_lmvyg")
+volume_db = -11.0
+bus = &"SFX"
+
+[node name="LandingBigSound2" type="AudioStreamPlayer" parent="CharacterMover/Audio/LandingBigSounds"]
+stream = ExtResource("42_l3wgr")
+volume_db = -11.0
+bus = &"SFX"
+
+[node name="LandingBigSound3" type="AudioStreamPlayer" parent="CharacterMover/Audio/LandingBigSounds"]
+stream = ExtResource("46_p6lle")
+volume_db = -11.0
+bus = &"SFX"
+
+[node name="LandingSmallSounds" type="Node3D" parent="CharacterMover/Audio"]
+
+[node name="LandingSmallSound1" type="AudioStreamPlayer" parent="CharacterMover/Audio/LandingSmallSounds"]
+stream = ExtResource("43_esbqw")
+volume_db = -11.0
+bus = &"SFX"
+
+[node name="LandingSmallSound2" type="AudioStreamPlayer" parent="CharacterMover/Audio/LandingSmallSounds"]
+stream = ExtResource("44_8ce5i")
+volume_db = -11.0
+bus = &"SFX"
+
+[node name="LandingSmallSound3" type="AudioStreamPlayer" parent="CharacterMover/Audio/LandingSmallSounds"]
+stream = ExtResource("45_g87yg")
+volume_db = -11.0
+bus = &"SFX"
+
 [node name="HealthManager" parent="." instance=ExtResource("3_c6yru")]
 visible = false
 
@@ -1049,7 +1142,7 @@ lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_qgtxr")
 draw_pass_1 = SubResource("BoxMesh_kb1wp")
 
-[connection signal="moved" from="CharacterMover" to="Camera3D/WeaponManager" method="update_animation"]
+[connection signal="moved" from="CharacterMover" to="Camera3D/WeaponManager" method="update_move_animation"]
 [connection signal="animation_started" from="PlayerAnimations" to="CharacterMover" method="_on_animation_player_animation_started"]
 
 [editable path="Camera3D/WeaponManager/Weapons/Sword/AttackEmitter/HitScanAttackEmitter"]

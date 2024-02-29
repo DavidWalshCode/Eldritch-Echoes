@@ -26,11 +26,15 @@ var current_speed
 var double_jump_available = true
 var is_crouching : bool = false
 var is_sliding : bool = false
+var is_in_air : bool = false
 var slide_timer : Timer
 var last_footstep_time = -9999.0  # Last time a footstep sound was played
+var frames_in_air = 0
 
 @onready var jump_sounds = $Audio/JumpSounds.get_children()
 @onready var footstep_sounds = $Audio/FootstepSounds.get_children()
+@onready var landing_small_sounds = $Audio/LandingSmallSounds.get_children()
+@onready var landing_big_sounds = $Audio/LandingBigSounds.get_children()
 @onready var player_animations = $"../PlayerAnimations"
 @onready var crouch_shape_cast = $"../CrouchShapeCast"
 @onready var sliding_sound = $Audio/SlidingSounds/SlidingSound1
@@ -57,11 +61,15 @@ func jump():
 		if character_body.is_on_floor():
 			character_body.velocity.y = jump_force
 			double_jump_available = true
+			#is_in_air = true
+			#frames_since_jump = 0 # Reset the counter on jump
 			play_jump_sound()
+			player_animations.play("jump", 0.3)
 		elif double_jump_available: 
-			double_jump_available = false
 			character_body.velocity.y = jump_force
+			double_jump_available = false
 			play_jump_sound()
+			player_animations.play("jump", 0.3)
 
 func start_crouching():
 	if !is_crouching and crouch_shape_cast.is_colliding() == false:
@@ -106,6 +114,27 @@ func _physics_process(delta):
 	if not character_body.is_on_floor():
 		character_body.velocity.y -= gravity * delta
 	
+	# For jumping and landing animations, check if the character is in the air
+	if not character_body.is_on_floor():
+		is_in_air = true
+		frames_in_air += 1
+	else:
+		# Character is on the floor
+		if is_in_air:
+			# Determine the type of landing based on time spent in the air
+			if frames_in_air >= 120: # Longer time in the air, play big landing
+				player_animations.play("landing_big", 0.3)
+				play_big_landing_sound()
+			elif frames_in_air >= 2: # Shorter time in the air, play small landing
+				player_animations.play("landing_small", 0.3)
+				play_small_landing_sound()
+			
+			# Reset counter upon landing for both cases
+			frames_in_air = 0
+		
+		# Reset the air status after handling landing
+		is_in_air = false
+	
 	var drag = move_drag
 	if move_dir.is_zero_approx():
 		drag = stop_drag
@@ -124,7 +153,6 @@ func _physics_process(delta):
 			adjusted_move_accel *= crouch_movement_speed_modifier
 
 	character_body.velocity += adjusted_move_accel * move_dir - flat_velo * drag
-	#character_body.velocity += move_accel * move_dir - flat_velo * drag
 
 	character_body.move_and_slide()
 	moved.emit(character_body.velocity, character_body.is_on_floor())
@@ -147,6 +175,12 @@ func play_footstep_sound():
 
 func play_jump_sound():
 	jump_sounds[randi() % jump_sounds.size()].play() # Randomly play a jump sound
+	
+func play_small_landing_sound():
+	landing_small_sounds[randi() % landing_small_sounds.size()].play() # Randomly play a landing sound
+
+func play_big_landing_sound():
+	landing_big_sounds[randi() % landing_big_sounds.size()].play() # Randomly play a landing sound
 
 func play_sliding_sound():
 	if character_body.is_on_floor(): # Only play the sliding sound if the player is on the ground

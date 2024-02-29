@@ -59,10 +59,10 @@ func switch_to_weapon_slot(slot_index : int) -> bool:
 		
 	return true
 
-func update_animation(velocity : Vector3, grounded : bool):
+func update_move_animation(velocity : Vector3, grounded : bool):
 	if current_weapon is Weapon and !current_weapon.is_idle():
-		general_weapon_animations.play("RESET", 0.3)
+		general_weapon_animations.play("RESET", 0.4)
 	elif !grounded or velocity.length() < 2.0:
-		general_weapon_animations.play("RESET", 0.3)
+		general_weapon_animations.play("RESET", 0.4)
 	else:
-		general_weapon_animations.play("moving", 0.3)
+		general_weapon_animations.play("moving", 0.4)

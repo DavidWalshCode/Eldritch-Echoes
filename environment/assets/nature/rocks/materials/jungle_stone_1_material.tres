@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://1kth7q6d0vfg"]
+
+[ext_resource type="Texture2D" uid="uid://74chtbhr8nja" path="res://environment/assets/nature/rocks/materials/jungle_stone_1.jpg" id="1_beulo"]
+
+[resource]
+albedo_texture = ExtResource("1_beulo")
+uv1_scale = Vector3(0.08, 0.08, 0.08)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2

@@ -133,10 +133,10 @@ transform = Transform3D(0.0831386, 0, 0.996538, 0, 1, 0, -0.996538, 0, 0.0831386
 [node name="PrebuiltTowns" type="Node3D" parent="Environment"]
 
 [node name="FullSmallTown1" parent="Environment/PrebuiltTowns" instance=ExtResource("18_vr4gf")]
-transform = Transform3D(-0.364007, 0, -10.4654, 0, 8.28712, 0, 8.39763, 0, -0.45363, -77.4831, 0, -63.5078)
+transform = Transform3D(1.63091, 0, -10.2762, 0, 8.28712, 0, 8.24578, 0, 2.0325, -77.4831, 0, -55.9389)
 
 [node name="FullHarbourTown1" parent="Environment/PrebuiltTowns" instance=ExtResource("28_40i1d")]
-transform = Transform3D(0.270381, 0, 7.86548, 0, 6.98165, 0, -5.94979, 0, 0.357448, 14.6464, -3.39096, -224.224)
+transform = Transform3D(0.355524, 0, 8.1005, 0, 7.4066, 0, -7.29022, 0, 0.395051, 10.9351, -5.7197, -231.781)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ublyh")
