@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://brusqmphxxu8w"]
+[gd_scene load_steps=37 format=3 uid="uid://brusqmphxxu8w"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_1_town.gd" id="1_38psm"]
 [ext_resource type="PackedScene" uid="uid://d4dpby6nl5gx2" path="res://environment/assets/village/ground/scenes/paving_cobble_rough_1.tscn" id="4_f20o0"]
@@ -23,8 +23,11 @@
 [ext_resource type="PackedScene" uid="uid://dwnt52co5cn8t" path="res://environment/assets/village/buildings/scenes/buildings/full_castle_1.tscn" id="22_7vpp8"]
 [ext_resource type="PackedScene" uid="uid://otmsxgsqjb55" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_6.tscn" id="23_8vit4"]
 [ext_resource type="PackedScene" uid="uid://c6d6wmp5xf5c0" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_7.tscn" id="24_4ctt1"]
+[ext_resource type="PackedScene" uid="uid://cvi5p02axmc3u" path="res://environment/assets/nature/trees/scenes/retro_nature_pack/tree_01_fall.tscn" id="28_7ntp8"]
 [ext_resource type="PackedScene" uid="uid://bdc2md8pwfr0u" path="res://environment/assets/village/prebuilt_towns/harbour_town/scenes/full_harbour_town_1.tscn" id="28_40i1d"]
+[ext_resource type="PackedScene" uid="uid://dgckydkdi10tv" path="res://environment/assets/nature/trees/scenes/retro_nature_pack/tree_01_spring.tscn" id="29_3mtor"]
 [ext_resource type="PackedScene" uid="uid://dwwpoangnsb8n" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_1.tscn" id="29_ggqgj"]
+[ext_resource type="PackedScene" uid="uid://dwsyrj8ymav0l" path="res://environment/assets/nature/trees/scenes/retro_nature_pack/tree_08_spring.tscn" id="30_g4305"]
 [ext_resource type="PackedScene" uid="uid://lq7366i8slik" path="res://environment/assets/village/outside_props/scenes/gothic_weeping_angel_statue_1.tscn" id="39_6g4s1"]
 [ext_resource type="AudioStream" uid="uid://4uhgisbwq7gv" path="res://audio/ambience/Dark_Rainy_Night(ambience).ogg" id="50_axq87"]
 
@@ -40,7 +43,7 @@ background_mode = 2
 sky = SubResource("Sky_jumne")
 ambient_light_source = 3
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.04
+volumetric_fog_density = 0.0101
 
 [sub_resource type="FogMaterial" id="FogMaterial_br7ke"]
 
@@ -197,3 +200,12 @@ transform = Transform3D(-0.592618, 0, 0.805484, 0, 1, 0, -0.805484, 0, -0.592618
 stream = ExtResource("50_axq87")
 volume_db = -25.0
 bus = &"Ambience"
+
+[node name="Tree01Fall" parent="." instance=ExtResource("28_7ntp8")]
+transform = Transform3D(15, -0.0361283, 0, 0.0361283, 15, 0, 0, 0, 15, 13.3677, 0, 91.0273)
+
+[node name="Tree01Spring" parent="." instance=ExtResource("29_3mtor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -71)
+
+[node name="Tree08Spring" parent="." instance=ExtResource("30_g4305")]
+transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 60.1983, 0, 89.2072)

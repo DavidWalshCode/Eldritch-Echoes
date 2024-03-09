@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bumm0f7qx6i0v"]
+
+[ext_resource type="PackedScene" uid="uid://donr0tf66suhr" path="res://environment/assets/nature/bushes/models/retro_nature_pack/bush04_winter.glb" id="1_balmp"]
+[ext_resource type="Material" uid="uid://dgt4bexig1nrh" path="res://environment/assets/nature/bushes/materials/retro_nature_pack/bush4_winter_material.tres" id="2_wcfqf"]
+
+[node name="Bush04Winter" instance=ExtResource("1_balmp")]
+
+[node name="bush4_winter" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_wcfqf")

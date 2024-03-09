@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cjin2nk5mwu2l"]
+
+[ext_resource type="Texture2D" uid="uid://byyh4058nncwm" path="res://environment/assets/nature/trees/materials/retro_psx_nature_pack/tree03_summer.png" id="1_y2evi"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_y2evi")
+texture_filter = 2

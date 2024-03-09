@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bw8dvgslfowpl"]
+
+[ext_resource type="Texture2D" uid="uid://bkfbeuth5blx5" path="res://environment/assets/nature/grass/materials/retro_nature_pack/grass_bush_fall.png" id="1_objty"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_objty")
+texture_filter = 2

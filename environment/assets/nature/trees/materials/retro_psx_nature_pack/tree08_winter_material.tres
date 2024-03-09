@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b1syomiqrpajq"]
+
+[ext_resource type="Texture2D" uid="uid://lfvmb7vqv0gu" path="res://environment/assets/nature/trees/materials/retro_psx_nature_pack/tree08_winter.png" id="1_2sron"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_2sron")
+texture_filter = 2

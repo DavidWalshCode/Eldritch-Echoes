@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8spmc1d4yfyi"]
+
+[ext_resource type="PackedScene" uid="uid://bqukr33d4oob4" path="res://environment/assets/nature/trees/models/retro_psx_nature_pack/tree01_winter.glb" id="1_0y7y4"]
+[ext_resource type="Material" uid="uid://byr03tdeoxy14" path="res://environment/assets/nature/trees/materials/retro_psx_nature_pack/tree01_winter_material.tres" id="2_vcxx1"]
+
+[node name="Tree01Winter" instance=ExtResource("1_0y7y4")]
+
+[node name="tree01" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_vcxx1")
+
+[node name="tree01_top" parent="tree01" index="0"]
+surface_material_override/0 = ExtResource("2_vcxx1")

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b6qssqo0ssud7"]
+
+[ext_resource type="Texture2D" uid="uid://b5hfjapsbhg4v" path="res://environment/assets/nature/bushes/materials/retro_nature_pack/bush2_fall.png" id="1_mwtqr"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_mwtqr")
+texture_filter = 2

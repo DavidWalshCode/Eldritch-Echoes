@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bad6r8sfy1wfi"]
+
+[ext_resource type="Texture2D" uid="uid://cjoj3be6muo02" path="res://environment/assets/nature/bushes/materials/retro_nature_pack/bush6_winter.png" id="1_p1f4j"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_p1f4j")
+texture_filter = 2

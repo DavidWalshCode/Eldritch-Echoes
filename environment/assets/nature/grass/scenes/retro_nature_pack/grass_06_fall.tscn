@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bywxi1ui44imh"]
+
+[ext_resource type="PackedScene" uid="uid://tv0pjkgipfdt" path="res://environment/assets/nature/grass/models/retro_nature_pack/grass06.glb" id="1_v7hg2"]
+[ext_resource type="Material" uid="uid://y7rrq5p6rwro" path="res://environment/assets/nature/grass/materials/retro_nature_pack/grass_fall_material.tres" id="2_3svpj"]
+
+[node name="Grass06Fall" instance=ExtResource("1_v7hg2")]
+
+[node name="grass6" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_3svpj")

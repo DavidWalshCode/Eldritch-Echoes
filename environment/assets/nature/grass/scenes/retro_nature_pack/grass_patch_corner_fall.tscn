@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3pvrcsmdf3yo"]
+
+[ext_resource type="PackedScene" uid="uid://dj6dwkjlrn76m" path="res://environment/assets/nature/grass/models/retro_nature_pack/grass_patch_corner.glb" id="1_w057g"]
+[ext_resource type="Material" uid="uid://mk54uijnb7o7" path="res://environment/assets/nature/grass/materials/retro_nature_pack/grass_patch_fall_material.tres" id="2_vbg8a"]
+
+[node name="GrassPatchCornerFall" instance=ExtResource("1_w057g")]
+
+[node name="grass_patch_corner" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_vbg8a")

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cdhg4puoxpn5s"]
+
+[ext_resource type="Texture2D" uid="uid://bh5ucvbwrw1qj" path="res://environment/assets/nature/grass/materials/retro_nature_pack/grass_patch_winter.png" id="1_bvj3n"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_bvj3n")
+texture_filter = 2

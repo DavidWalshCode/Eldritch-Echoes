@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://mwr1ux4qbste"]
+
+[ext_resource type="PackedScene" uid="uid://bueyvc8v75qb5" path="res://environment/assets/nature/bushes/models/retro_nature_pack/bush01.glb" id="1_gswnk"]
+
+[node name="Bush01Fall" instance=ExtResource("1_gswnk")]

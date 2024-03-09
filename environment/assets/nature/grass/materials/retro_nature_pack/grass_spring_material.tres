@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://fsg8y6vo64rb"]
+
+[ext_resource type="Texture2D" uid="uid://lbj6i83ba070" path="res://environment/assets/nature/grass/materials/retro_nature_pack/grass_spring.png" id="1_hxew2"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_hxew2")
+texture_filter = 2

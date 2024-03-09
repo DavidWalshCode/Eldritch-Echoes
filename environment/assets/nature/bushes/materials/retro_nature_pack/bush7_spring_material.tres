@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bif3qbrn1irfv"]
+
+[ext_resource type="Texture2D" uid="uid://c7y7314l56l8b" path="res://environment/assets/nature/bushes/materials/retro_nature_pack/bush7_spring.png" id="1_k1eqs"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_k1eqs")
+texture_filter = 2

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://11b15bmgvx3t"]
+
+[ext_resource type="PackedScene" uid="uid://rrvym038gp51" path="res://environment/assets/nature/bushes/models/retro_nature_pack/bush03.glb" id="1_kkogu"]
+[ext_resource type="Material" uid="uid://djqy1qc6nphi2" path="res://environment/assets/nature/bushes/materials/retro_nature_pack/bush3_spring5_material.tres" id="2_r4ku6"]
+
+[node name="Bush03Spring5" instance=ExtResource("1_kkogu")]
+
+[node name="bush3" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_r4ku6")

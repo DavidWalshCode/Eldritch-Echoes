@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctr3d7ftxwil3"]
+
+[ext_resource type="PackedScene" uid="uid://dui3fv88o8l3y" path="res://environment/assets/nature/grass/models/retro_nature_pack/grass08.glb" id="1_udxgm"]
+[ext_resource type="Material" uid="uid://bsyg231espocc" path="res://environment/assets/nature/grass/materials/retro_nature_pack/grass_summer_material.tres" id="2_tqb7r"]
+
+[node name="Grass08Summer" instance=ExtResource("1_udxgm")]
+
+[node name="grass8" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_tqb7r")

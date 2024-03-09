@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://boqt0gc6n3wf1"]
+
+[ext_resource type="Texture2D" uid="uid://do2w48fpcvhyc" path="res://environment/assets/nature/bushes/materials/retro_nature_pack/bush4_summer.png" id="1_bnhot"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_bnhot")
+texture_filter = 2
