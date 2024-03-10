@@ -85,7 +85,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("jump"): # Currently 'Space'
 		character_mover.jump()
 	
-	weapon_manager.attack(Input.is_action_just_pressed("attack"), Input.is_action_pressed("attack")) # Attack (Mouse 1)
+	weapon_manager.attack(Input.is_action_just_pressed("attack"), Input.is_action_pressed("attack")) # Attack, currently 'Mouse 1'
 
 func hurt(damage_data : DamageData):
 	health_manager.hurt(damage_data)
