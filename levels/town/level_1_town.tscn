@@ -1,9 +1,8 @@
-[gd_scene load_steps=37 format=3 uid="uid://brusqmphxxu8w"]
+[gd_scene load_steps=33 format=3 uid="uid://brusqmphxxu8w"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_1_town.gd" id="1_38psm"]
 [ext_resource type="PackedScene" uid="uid://d4dpby6nl5gx2" path="res://environment/assets/village/ground/scenes/paving_cobble_rough_1.tscn" id="4_f20o0"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="5_1n71g"]
-[ext_resource type="Script" path="res://characters/health_manager.gd" id="6_h6yie"]
 [ext_resource type="PackedScene" uid="uid://deet40dn2j7nb" path="res://effects/rain/rain_effect_1.tscn" id="7_pnde6"]
 [ext_resource type="PackedScene" uid="uid://cpu20qg3iiof8" path="res://characters/npc/scenes/villager_woman_1.tscn" id="7_s5i1m"]
 [ext_resource type="PackedScene" uid="uid://htlhq6xpsfle" path="res://characters/npc/scenes/viking_armour_man_1.tscn" id="8_sh6lw"]
@@ -15,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cepvdg3h5k1hr" path="res://characters/npc/scenes/villager_male_1.tscn" id="12_khl8n"]
 [ext_resource type="PackedScene" uid="uid://b127y1uhix8do" path="res://environment/assets/village/structures/scenes/castle_big_pillar_base_1.tscn" id="13_tmwbo"]
 [ext_resource type="PackedScene" uid="uid://mcodumgw8823" path="res://characters/npc/scenes/lantern_character_1.tscn" id="14_fn874"]
-[ext_resource type="PackedScene" uid="uid://cfivxmy8y0l0i" path="res://environment/assets/village/prebuilt_towns/small_town/scenes/full_small_town_1.tscn" id="18_vr4gf"]
+[ext_resource type="PackedScene" uid="uid://cypfbadbyy0lx" path="res://environment/assets/village/prebuilt_towns/small_town/scenes/full_small_town_1.tscn" id="17_l2b83"]
 [ext_resource type="PackedScene" uid="uid://v25scml6aa42" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_2.tscn" id="19_r0s14"]
 [ext_resource type="PackedScene" uid="uid://b0vq1sr05tjhq" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_3.tscn" id="20_wbcfj"]
 [ext_resource type="PackedScene" uid="uid://co43l6kv6dbht" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_4.tscn" id="21_s8ahr"]
@@ -25,7 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://c6d6wmp5xf5c0" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_7.tscn" id="24_4ctt1"]
 [ext_resource type="PackedScene" uid="uid://cvi5p02axmc3u" path="res://environment/assets/nature/trees/scenes/retro_nature_pack/tree_01_fall.tscn" id="28_7ntp8"]
 [ext_resource type="PackedScene" uid="uid://bdc2md8pwfr0u" path="res://environment/assets/village/prebuilt_towns/harbour_town/scenes/full_harbour_town_1.tscn" id="28_40i1d"]
-[ext_resource type="PackedScene" uid="uid://dgckydkdi10tv" path="res://environment/assets/nature/trees/scenes/retro_nature_pack/tree_01_spring.tscn" id="29_3mtor"]
 [ext_resource type="PackedScene" uid="uid://dwwpoangnsb8n" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_1.tscn" id="29_ggqgj"]
 [ext_resource type="PackedScene" uid="uid://dwsyrj8ymav0l" path="res://environment/assets/nature/trees/scenes/retro_nature_pack/tree_08_spring.tscn" id="30_g4305"]
 [ext_resource type="PackedScene" uid="uid://lq7366i8slik" path="res://environment/assets/village/outside_props/scenes/gothic_weeping_angel_statue_1.tscn" id="39_6g4s1"]
@@ -43,13 +41,9 @@ background_mode = 2
 sky = SubResource("Sky_jumne")
 ambient_light_source = 3
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.0101
+volumetric_fog_density = 0.01
 
 [sub_resource type="FogMaterial" id="FogMaterial_br7ke"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_2iuiu"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_h30eo"]
 
 [node name="Level1Town" type="Node3D"]
 script = ExtResource("1_38psm")
@@ -65,10 +59,7 @@ transform = Transform3D(21.4686, 0, 0, 0, 1, 0, 0, 0, 29.0705, -3.82364, 0, -98.
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 19.4426, 0, -22.227)
 
 [node name="PavingCobbleRough5" parent="Environment/Ground" instance=ExtResource("4_f20o0")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -59.6713, 0, -22.227)
-
-[node name="PavingCobbleRough6" parent="Environment/Ground" instance=ExtResource("4_f20o0")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -98.6134, 0, -54.6067)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -57.9722, 0, -14.3791)
 
 [node name="PavingCobbleRough7" parent="Environment/Ground" instance=ExtResource("4_f20o0")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -58.008, 0, 16.9334)
@@ -88,45 +79,69 @@ transform = Transform3D(2.2158, 0, 0, 0, 1, 0, 0, 0, 1, 99.7575, 0, -43.706)
 transform = Transform3D(0.962986, 0, 0.0802279, 0, 0.957456, 0, -0.0796964, 0, 0.969408, -8.97613, 0, -3.64809)
 
 [node name="MedievalBuilding1" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("29_ggqgj")]
-transform = Transform3D(0.26827, 0, 0.493648, 0, 0.640199, 0, -0.780883, 0, 0.169591, 45.5855, -0.0159175, -20.2066)
+transform = Transform3D(0.194945, 0, 0.567448, 0, 0.6, 0, -0.567447, 0, 0.194945, 43.9626, -0.0159175, -43.5617)
+
+[node name="MedievalBuilding10" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("29_ggqgj")]
+transform = Transform3D(0.38176, 0, 0.462882, 0, 0.599998, 0, -0.46288, 0, 0.381759, 106.311, -0.0159174, 3.90717)
 
 [node name="MedievalBuilding2" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("19_r0s14")]
-transform = Transform3D(-0.0769633, 0, 0.681193, 0, 0.695263, 0, -0.695344, 0, -0.075397, 76.1527, 3.8147e-06, -24.1053)
+transform = Transform3D(-0.475163, 0, -0.366361, 0, 0.6, 0, 0.36636, 0, -0.475163, 76.9314, 3.81469e-06, -37.5015)
 
 [node name="MedievalBuilding3" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("20_wbcfj")]
-transform = Transform3D(0.62518, 0, 0.39206, 0, 0.583385, 0, -0.368274, 0, 0.665559, 57.0154, -0.00887193, 16.6329)
+transform = Transform3D(0.516972, 0, 0.304532, 0, 0.6, 0, -0.304532, 0, 0.516972, 55.7682, -0.00887192, -13.8056)
 
 [node name="MedievalBuilding4" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("21_s8ahr")]
-transform = Transform3D(-0.163412, 0, 0.986558, 0, 1, 0, -0.986558, 0, -0.163412, 51.4519, 0.0451, -65.0447)
+transform = Transform3D(-0.456142, 0, 0.389788, 0, 0.599999, 0, -0.389788, 0, -0.456141, 80.7157, 0.0450999, -67.5115)
 
 [node name="MedievalBuilding5" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("22_4wfe0")]
-transform = Transform3D(-4.47035e-08, 0, 0.712928, 0, 0.674064, 0, -0.711813, 0, -2.98023e-08, 88.5509, 0.00228453, 8.50577)
+transform = Transform3D(-0.587667, 0, 0.121026, 0, 0.599999, 0, -0.121026, 0, -0.587666, 85.2378, 0.00228452, -16.2935)
+
+[node name="MedievalBuilding11" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("22_4wfe0")]
+transform = Transform3D(-0.316396, 0, -0.509796, 0, 0.599997, 0, 0.509797, 0, -0.316395, 46.3029, 0.00228452, 14.0382)
 
 [node name="MedievalBuilding6" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("23_8vit4")]
-transform = Transform3D(0.244732, 0, 0.718327, 0, 0.681572, 0, -0.717213, 0, 0.245112, 88.7591, 0.0294365, -64.8966)
+transform = Transform3D(0.193766, 0, 0.567851, 0, 0.6, 0, -0.567851, 0, 0.193766, 54.9708, 0.0294365, -74.8531)
+
+[node name="MedievalBuilding9" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("23_8vit4")]
+transform = Transform3D(-0.596454, 0, 0.0651328, 0, 0.599999, 0, -0.0651329, 0, -0.596454, 75.732, 0.0294365, 13.997)
 
 [node name="MedievalBuilding7" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("24_4ctt1")]
-transform = Transform3D(-0.133192, 0, -0.405906, 0, 0.679425, 0, 0.693285, 0, -0.0779815, 109.442, 0.00682519, -26.5069)
+transform = Transform3D(-0.1132, 0, -0.589225, 0, 0.6, 0, 0.589225, 0, -0.1132, 110.496, 0.00682519, -39.1524)
+
+[node name="MedievalBuilding8" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("24_4ctt1")]
+transform = Transform3D(-0.374671, 0, 0.468638, 0, 0.599999, 0, -0.468637, 0, -0.374671, 104.006, 0.00682518, -86.3042)
 
 [node name="Castle" type="Node3D" parent="Environment/Buildings"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648312, 0, -6.50797)
 
 [node name="FullCastle1" parent="Environment/Buildings/Castle" instance=ExtResource("22_7vpp8")]
-transform = Transform3D(-1.05514, 0, 0.177346, 0, 1.35724, 0, -0.161534, 0, -1.15842, -6.81589, -0.0176773, -20.6417)
+transform = Transform3D(-1.70597, 0, 1.04387, 0, 2, 0, -1.04387, 0, -1.70597, -10.4847, -0.0176773, -16.2281)
 
 [node name="Structures" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 98)
 
 [node name="OutsideWalls" type="Node3D" parent="Environment/Structures"]
 
+[node name="GridMap" type="GridMap" parent="Environment/Structures/OutsideWalls"]
+
 [node name="CastleBigWallBase1" parent="Environment/Structures/OutsideWalls" instance=ExtResource("12_52cyd")]
-transform = Transform3D(-4, 0, -6.03983e-07, 0, 4, 0, 6.03983e-07, 0, -4, 6, 0, -37.4873)
+transform = Transform3D(-3.5, 0, -5.28485e-07, 0, 3.5, 0, 5.28485e-07, 0, -3.5, 12.5673, 0, -36.973)
 
 [node name="CastleBigWallBase2" parent="Environment/Structures/OutsideWalls" instance=ExtResource("12_52cyd")]
-transform = Transform3D(-4, 0, -6.03983e-07, 0, 4, 0, 6.03983e-07, 0, -4, 38, 0, -37.4873)
+transform = Transform3D(-3.5, 0, -5.28485e-07, 0, 3.5, 0, 5.28485e-07, 0, -3.5, 40.5969, 0, -37.1327)
 
 [node name="CastleBigPillarBase1" parent="Environment/Structures/OutsideWalls" instance=ExtResource("13_tmwbo")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 75, 0, -37.5922)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 59.3359, 0, -37.8128)
+
+[node name="OutsideTrees" type="Node3D" parent="Environment/Structures"]
+
+[node name="GridMap" type="GridMap" parent="Environment/Structures/OutsideTrees"]
+
+[node name="Tree01Fall" parent="Environment/Structures/OutsideTrees" instance=ExtResource("28_7ntp8")]
+transform = Transform3D(15, -0.0361283, 0, 0.0361283, 15, 0, 0, 0, 15, 13.3677, 0, -6.9727)
+
+[node name="Tree08Spring" parent="Environment/Structures/OutsideTrees" instance=ExtResource("30_g4305")]
+transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 60.1983, 0, -8.7928)
 
 [node name="Props" type="Node3D" parent="Environment"]
 
@@ -135,17 +150,17 @@ transform = Transform3D(0.0831386, 0, 0.996538, 0, 1, 0, -0.996538, 0, 0.0831386
 
 [node name="PrebuiltTowns" type="Node3D" parent="Environment"]
 
-[node name="FullSmallTown1" parent="Environment/PrebuiltTowns" instance=ExtResource("18_vr4gf")]
-transform = Transform3D(1.63091, 0, -10.2762, 0, 8.28712, 0, 8.24578, 0, 2.0325, -77.4831, 0, -55.9389)
-
 [node name="FullHarbourTown1" parent="Environment/PrebuiltTowns" instance=ExtResource("28_40i1d")]
-transform = Transform3D(0.355524, 0, 8.1005, 0, 7.4066, 0, -7.29022, 0, 0.395051, 10.9351, -5.7197, -231.781)
+transform = Transform3D(0.340966, 0, 6.99169, 0, 7, 0, -6.99169, 0, 0.340966, 10.9351, -5.7197, -231.781)
+
+[node name="FullSmallTownWithFloor1" parent="Environment/PrebuiltTowns" instance=ExtResource("17_l2b83")]
+transform = Transform3D(-0.439622, 0, -8.38849, 0, 8.4, 0, 8.38849, 0, -0.439622, -69.3808, 0.0379381, -71.3515)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ublyh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.320788, 0.890807, -0.321805, -0.643235, 0.454288, 0.616338, 0.69523, 0.00928265, 0.718728, -44.8472, 52.7676, 97.6761)
+transform = Transform3D(0.320788, 0.890807, -0.321805, -0.829448, 0.428249, 0.358635, 0.457287, 0.151875, 0.876255, -44.8472, 52.7676, 97.6761)
 shadow_enabled = true
 
 [node name="FogVolume" type="FogVolume" parent="WorldEnvironment"]
@@ -157,18 +172,6 @@ material = SubResource("FogMaterial_br7ke")
 transform = Transform3D(-0.9855, 0, 0.169676, 0, 1, 0, -0.169676, 0, -0.9855, -2.46165, 0.709427, -54.4791)
 
 [node name="RainEffect1" parent="Player" instance=ExtResource("7_pnde6")]
-
-[node name="TestTarget" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 1.60216, 5)
-collision_layer = 6
-script = ExtResource("6_h6yie")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestTarget"]
-shape = SubResource("SphereShape3D_2iuiu")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestTarget"]
-layers = 3
-mesh = SubResource("SphereMesh_h30eo")
 
 [node name="NPCs" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
@@ -200,12 +203,3 @@ transform = Transform3D(-0.592618, 0, 0.805484, 0, 1, 0, -0.805484, 0, -0.592618
 stream = ExtResource("50_axq87")
 volume_db = -25.0
 bus = &"Ambience"
-
-[node name="Tree01Fall" parent="." instance=ExtResource("28_7ntp8")]
-transform = Transform3D(15, -0.0361283, 0, 0.0361283, 15, 0, 0, 0, 15, 13.3677, 0, 91.0273)
-
-[node name="Tree01Spring" parent="." instance=ExtResource("29_3mtor")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -71)
-
-[node name="Tree08Spring" parent="." instance=ExtResource("30_g4305")]
-transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 60.1983, 0, 89.2072)

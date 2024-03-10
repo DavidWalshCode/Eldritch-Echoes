@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d38mivee4jps2"]
-
-[ext_resource type="Texture2D" uid="uid://3uhf66a3x5gp" path="res://environment/assets/village/ground/materials/Road.png" id="1_pq6ds"]
-
-[resource]
-albedo_texture = ExtResource("1_pq6ds")
-uv1_world_triplanar = true
-texture_filter = 2
