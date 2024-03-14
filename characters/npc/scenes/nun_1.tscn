@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bis8jin3jtnyo"]
-
-[ext_resource type="PackedScene" uid="uid://brou1u3t2nrrf" path="res://characters/npc/models/nun_1.obj" id="1_r7qqr"]
-
-[node name="Nun1" instance=ExtResource("1_r7qqr")]

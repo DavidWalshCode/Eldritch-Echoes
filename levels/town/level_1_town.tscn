@@ -1,19 +1,12 @@
-[gd_scene load_steps=33 format=3 uid="uid://brusqmphxxu8w"]
+[gd_scene load_steps=26 format=3 uid="uid://brusqmphxxu8w"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_1_town.gd" id="1_38psm"]
 [ext_resource type="PackedScene" uid="uid://d4dpby6nl5gx2" path="res://environment/assets/village/ground/scenes/paving_cobble_rough_1.tscn" id="4_f20o0"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="5_1n71g"]
 [ext_resource type="PackedScene" uid="uid://deet40dn2j7nb" path="res://effects/rain/rain_effect_1.tscn" id="7_pnde6"]
-[ext_resource type="PackedScene" uid="uid://cpu20qg3iiof8" path="res://characters/npc/scenes/villager_woman_1.tscn" id="7_s5i1m"]
-[ext_resource type="PackedScene" uid="uid://htlhq6xpsfle" path="res://characters/npc/scenes/viking_armour_man_1.tscn" id="8_sh6lw"]
 [ext_resource type="PackedScene" uid="uid://dxc8y7qsijn0t" path="res://environment/assets/village/ground/scenes/paving_cobble_flat_1.tscn" id="9_6udfi"]
-[ext_resource type="PackedScene" uid="uid://e4sjydpcdwsb" path="res://characters/npc/scenes/knight_1.tscn" id="9_e7xbm"]
-[ext_resource type="PackedScene" uid="uid://bupq35mm43272" path="res://characters/npc/scenes/mutant_skeleton_1.tscn" id="10_q1ejs"]
-[ext_resource type="PackedScene" uid="uid://bis8jin3jtnyo" path="res://characters/npc/scenes/nun_1.tscn" id="11_wxon7"]
 [ext_resource type="PackedScene" uid="uid://cbiwcmy6wmavi" path="res://environment/assets/village/structures/scenes/castle_big_wall_base_1.tscn" id="12_52cyd"]
-[ext_resource type="PackedScene" uid="uid://cepvdg3h5k1hr" path="res://characters/npc/scenes/villager_male_1.tscn" id="12_khl8n"]
 [ext_resource type="PackedScene" uid="uid://b127y1uhix8do" path="res://environment/assets/village/structures/scenes/castle_big_pillar_base_1.tscn" id="13_tmwbo"]
-[ext_resource type="PackedScene" uid="uid://mcodumgw8823" path="res://characters/npc/scenes/lantern_character_1.tscn" id="14_fn874"]
 [ext_resource type="PackedScene" uid="uid://cypfbadbyy0lx" path="res://environment/assets/village/prebuilt_towns/small_town/scenes/full_small_town_1.tscn" id="17_l2b83"]
 [ext_resource type="PackedScene" uid="uid://v25scml6aa42" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_2.tscn" id="19_r0s14"]
 [ext_resource type="PackedScene" uid="uid://b0vq1sr05tjhq" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_3.tscn" id="20_wbcfj"]
@@ -175,27 +168,6 @@ transform = Transform3D(-0.9855, 0, 0.169676, 0, 1, 0, -0.169676, 0, -0.9855, -2
 
 [node name="NPCs" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
-
-[node name="VikingArmourMan1" parent="NPCs" instance=ExtResource("8_sh6lw")]
-transform = Transform3D(0.211414, 0, -1.13203, 0, 1.09815, 0, 1.03608, 0, 0.230994, 35.8247, -0.0555389, -5.47083)
-
-[node name="Knight1" parent="NPCs" instance=ExtResource("9_e7xbm")]
-transform = Transform3D(0.605444, 0, -0.845191, 0, 1.12995, 0, -0.763797, 0, -0.669963, 38.0077, 0.278382, -2.59648)
-
-[node name="MutantSkeleton1" parent="NPCs" instance=ExtResource("10_q1ejs")]
-transform = Transform3D(-0.825719, 0, -1.31645, 0, 1.44362, 0, 1.13396, 0, -0.958604, 41.095, -0.158196, -10.3683)
-
-[node name="Nun1" parent="NPCs" instance=ExtResource("11_wxon7")]
-transform = Transform3D(-0.644235, 0, -1.08528, 0, 1.28761, 0, -0.889649, 0, 0.785902, 38.348, -0.167542, -8.24296)
-
-[node name="VillagerWoman1" parent="NPCs" instance=ExtResource("7_s5i1m")]
-transform = Transform3D(-0.381126, 0, -0.942566, 0, 0.846156, 0, 0.840617, 0, -0.427349, 37.4335, 0.506169, 1.0395)
-
-[node name="VillagerMale1" parent="NPCs" instance=ExtResource("12_khl8n")]
-transform = Transform3D(-0.492413, 0, -0.561319, 0, 0.8003, 0, 0.556591, 0, -0.496596, 34.8877, -0.0877167, -10.9298)
-
-[node name="LanternCharacter1" parent="NPCs" instance=ExtResource("14_fn874")]
-transform = Transform3D(-0.592618, 0, 0.805484, 0, 1, 0, -0.805484, 0, -0.592618, 33.4719, 0.181291, 1.1687)
 
 [node name="Audio" type="Node3D" parent="."]
 

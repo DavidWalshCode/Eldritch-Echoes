@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cepvdg3h5k1hr"]
+
+[ext_resource type="PackedScene" uid="uid://nkln2w8jthjx" path="res://characters/npc/assets/models/villager_male_1.obj" id="1_e6dfw"]
+
+[node name="VillagerMale1" instance=ExtResource("1_e6dfw")]

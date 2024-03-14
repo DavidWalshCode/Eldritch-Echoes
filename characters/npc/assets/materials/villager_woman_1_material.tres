@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bd4pw7tivrsmi"]
+
+[ext_resource type="Texture2D" uid="uid://cs4r60hyov1pm" path="res://characters/npc/assets/materials/VillageWomanTexture.png" id="1_6bqw2"]
+
+[resource]
+albedo_texture = ExtResource("1_6bqw2")
+texture_filter = 2

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bn5ybiyc15d3"]
+
+[ext_resource type="Texture2D" uid="uid://dd63cd1harl2o" path="res://characters/npc/assets/materials/Vik2.png" id="1_vgx2h"]
+
+[resource]
+albedo_texture = ExtResource("1_vgx2h")
+texture_filter = 2

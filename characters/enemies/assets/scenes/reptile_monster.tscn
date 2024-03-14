@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://lkk7ms2jo4a0"]
+
+[ext_resource type="PackedScene" uid="uid://dxmf75necflsn" path="res://characters/enemies/assets/models/reptile_monster.glb" id="1_gj7gm"]
+
+[node name="ReptileMonster" instance=ExtResource("1_gj7gm")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/rotation = Quaternion(-0.0508511, -1.19055e-07, 6.06192e-09, 0.998706)
+bones/2/rotation = Quaternion(-0.0159527, 0.0119727, 0.940191, -0.340064)
+bones/3/rotation = Quaternion(0.341651, -0.0318196, -0.072225, 0.936507)
+bones/4/rotation = Quaternion(0.015953, 0.0119728, 0.940191, 0.340064)
+bones/5/rotation = Quaternion(0.341651, 0.0318196, 0.072225, 0.936507)
+bones/6/rotation = Quaternion(0.109395, 0.216951, 0.969592, -0.0292533)
+bones/7/rotation = Quaternion(-0.189951, 0.00372251, -0.0376172, 0.981066)
+bones/8/rotation = Quaternion(-0.109396, 0.216951, 0.969592, 0.0292538)
+bones/9/rotation = Quaternion(-0.189951, -0.00372251, 0.0376172, 0.981066)
