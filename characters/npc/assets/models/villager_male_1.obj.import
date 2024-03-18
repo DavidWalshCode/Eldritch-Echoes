@@ -33,7 +33,7 @@ _subresources={
 "materials": {
 "Material": {
 "use_external/enabled": true,
-"use_external/path": "res://characters/npc/materials/villager_man_1_material.tres"
+"use_external/path": "res://characters/npc/assets/materials/villager_man_1_material.tres"
 }
 }
 }

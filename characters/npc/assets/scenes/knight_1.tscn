@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://e4sjydpcdwsb"]
-
-[ext_resource type="PackedScene" uid="uid://cuo4h0dxor0xj" path="res://characters/npc/assets/models/knight_1.obj" id="1_hyifw"]
-
-[node name="Knight1" instance=ExtResource("1_hyifw")]

@@ -33,7 +33,7 @@ _subresources={
 "materials": {
 "Material.021": {
 "use_external/enabled": true,
-"use_external/path": "res://characters/npc/materials/lantern_character_1_material.tres"
+"use_external/path": "res://characters/npc/assets/materials/lantern_character_1_material.tres"
 }
 }
 }

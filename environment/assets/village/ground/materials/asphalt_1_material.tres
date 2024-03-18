@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dab0thpl1ek2x"]
-
-[ext_resource type="Texture2D" uid="uid://ikvv4bbx26jq" path="res://environment/assets/village/ground/materials/Asphalt_1-4.png" id="1_31ihc"]
-
-[resource]
-albedo_texture = ExtResource("1_31ihc")
-texture_filter = 2

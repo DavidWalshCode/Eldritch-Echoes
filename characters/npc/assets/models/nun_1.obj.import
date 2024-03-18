@@ -33,11 +33,11 @@ _subresources={
 "materials": {
 "&_Beauty": {
 "use_external/enabled": true,
-"use_external/path": "res://characters/npc/materials/nun_1_material.tres"
+"use_external/path": "res://characters/npc/assets/materials/nun_1_material.tres"
 },
 "Beauty-Bois3": {
 "use_external/enabled": true,
-"use_external/path": "res://characters/npc/materials/nun_1_material.tres"
+"use_external/path": "res://characters/npc/assets/materials/nun_1_material.tres"
 }
 }
 }

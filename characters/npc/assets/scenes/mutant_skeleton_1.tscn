@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bupq35mm43272"]
-
-[ext_resource type="PackedScene" uid="uid://dxomssqepcnjo" path="res://characters/npc/assets/models/mutant_skeleton_1.obj" id="1_ngw1o"]
-
-[node name="MutantSkeleton1" instance=ExtResource("1_ngw1o")]

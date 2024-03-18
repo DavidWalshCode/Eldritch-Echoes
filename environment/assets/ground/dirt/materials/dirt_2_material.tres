@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cmjej8ej3bagw"]
+
+[ext_resource type="Texture2D" uid="uid://tquyrvieuwwf" path="res://environment/assets/ground/dirt/materials/dirt_2.png" id="1_qlaot"]
+
+[resource]
+albedo_texture = ExtResource("1_qlaot")
+uv1_scale = Vector3(3, 3, 3)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2

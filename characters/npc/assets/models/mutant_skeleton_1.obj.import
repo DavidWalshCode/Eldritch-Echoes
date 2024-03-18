@@ -33,11 +33,11 @@ _subresources={
 "materials": {
 "&_Bone": {
 "use_external/enabled": true,
-"use_external/path": "res://characters/npc/materials/mutant_skeleton_1_material.tres"
+"use_external/path": "res://characters/npc/assets/materials/mutant_skeleton_1_material.tres"
 },
 "Bone_-_Emissive": {
 "use_external/enabled": true,
-"use_external/path": "res://characters/npc/materials/mutant_skeleton_1_material.tres"
+"use_external/path": "res://characters/npc/assets/materials/mutant_skeleton_1_material.tres"
 }
 }
 }

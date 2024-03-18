@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://htlhq6xpsfle"]
-
-[ext_resource type="PackedScene" uid="uid://bm50bkqs4y6ns" path="res://characters/npc/assets/models/viking_armour_man_1.obj" id="1_cwjb6"]
-
-[node name="VikingArmourMan1" instance=ExtResource("1_cwjb6")]

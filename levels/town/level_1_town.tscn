@@ -1,10 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://brusqmphxxu8w"]
+[gd_scene load_steps=24 format=3 uid="uid://brusqmphxxu8w"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_1_town.gd" id="1_38psm"]
-[ext_resource type="PackedScene" uid="uid://d4dpby6nl5gx2" path="res://environment/assets/village/ground/scenes/paving_cobble_rough_1.tscn" id="4_f20o0"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="5_1n71g"]
 [ext_resource type="PackedScene" uid="uid://deet40dn2j7nb" path="res://effects/rain/rain_effect_1.tscn" id="7_pnde6"]
-[ext_resource type="PackedScene" uid="uid://dxc8y7qsijn0t" path="res://environment/assets/village/ground/scenes/paving_cobble_flat_1.tscn" id="9_6udfi"]
 [ext_resource type="PackedScene" uid="uid://cbiwcmy6wmavi" path="res://environment/assets/village/structures/scenes/castle_big_wall_base_1.tscn" id="12_52cyd"]
 [ext_resource type="PackedScene" uid="uid://b127y1uhix8do" path="res://environment/assets/village/structures/scenes/castle_big_pillar_base_1.tscn" id="13_tmwbo"]
 [ext_resource type="PackedScene" uid="uid://cypfbadbyy0lx" path="res://environment/assets/village/prebuilt_towns/small_town/scenes/full_small_town_1.tscn" id="17_l2b83"]
@@ -33,7 +31,6 @@ sky_material = SubResource("ProceduralSkyMaterial_7yqkd")
 background_mode = 2
 sky = SubResource("Sky_jumne")
 ambient_light_source = 3
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.01
 
 [sub_resource type="FogMaterial" id="FogMaterial_br7ke"]
@@ -44,27 +41,6 @@ script = ExtResource("1_38psm")
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="Ground" type="Node3D" parent="Environment"]
-
-[node name="PavingCobbleFlat1" parent="Environment/Ground" instance=ExtResource("9_6udfi")]
-transform = Transform3D(21.4686, 0, 0, 0, 1, 0, 0, 0, 29.0705, -3.82364, 0, -98.0508)
-
-[node name="PavingCobbleRough1" parent="Environment/Ground" instance=ExtResource("4_f20o0")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 19.4426, 0, -22.227)
-
-[node name="PavingCobbleRough5" parent="Environment/Ground" instance=ExtResource("4_f20o0")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -57.9722, 0, -14.3791)
-
-[node name="PavingCobbleRough7" parent="Environment/Ground" instance=ExtResource("4_f20o0")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -58.008, 0, 16.9334)
-
-[node name="PavingCobbleRough2" parent="Environment/Ground" instance=ExtResource("4_f20o0")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 83.2123, 0, -5.448)
-
-[node name="PavingCobbleRough3" parent="Environment/Ground" instance=ExtResource("4_f20o0")]
-transform = Transform3D(5.22846, 0, 0, 0, 1, 0, 0, 0, 1, 17.3294, 0, 30.3943)
-
-[node name="PavingCobbleRough4" parent="Environment/Ground" instance=ExtResource("4_f20o0")]
-transform = Transform3D(2.2158, 0, 0, 0, 1, 0, 0, 0, 1, 99.7575, 0, -43.706)
 
 [node name="Buildings" type="Node3D" parent="Environment"]
 
@@ -139,7 +115,7 @@ transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 60.1983, 0, -8.7928)
 [node name="Props" type="Node3D" parent="Environment"]
 
 [node name="GothicWeepingAngelStatue1" parent="Environment/Props" instance=ExtResource("39_6g4s1")]
-transform = Transform3D(0.0831386, 0, 0.996538, 0, 1, 0, -0.996538, 0, 0.0831386, -14.2903, 1.99404, -55.4223)
+transform = Transform3D(0.999923, 0, 0.0124265, 0, 1, 0, -0.0124265, 0, 0.999923, 1.92283, 1.99404, -74.5116)
 
 [node name="PrebuiltTowns" type="Node3D" parent="Environment"]
 
@@ -165,8 +141,12 @@ material = SubResource("FogMaterial_br7ke")
 transform = Transform3D(-0.9855, 0, 0.169676, 0, 1, 0, -0.169676, 0, -0.9855, -2.46165, 0.709427, -54.4791)
 
 [node name="RainEffect1" parent="Player" instance=ExtResource("7_pnde6")]
+visible = false
 
 [node name="NPCs" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
+
+[node name="Enemies" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
 
 [node name="Audio" type="Node3D" parent="."]

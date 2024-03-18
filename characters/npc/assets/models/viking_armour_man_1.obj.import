@@ -33,11 +33,11 @@ _subresources={
 "materials": {
 "Vik": {
 "use_external/enabled": true,
-"use_external/path": "res://characters/npc/materials/viking_armour_man_1_first_material.tres"
+"use_external/path": "res://characters/npc/assets/materials/viking_armour_man_1_first_material.tres"
 },
 "Vik2": {
 "use_external/enabled": true,
-"use_external/path": "res://characters/npc/materials/viking_armour_man_1_second_material.tres"
+"use_external/path": "res://characters/npc/assets/materials/viking_armour_man_1_second_material.tres"
 }
 },
 "nodes": {
