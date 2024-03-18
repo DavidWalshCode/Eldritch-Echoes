@@ -169,54 +169,55 @@ func get_resolved_line_data(data: Dictionary, extra_game_states: Array = []) -> 
 	var markers: ResolvedLineData = parser.extract_markers(text)
 
 	# Resolve any conditionals and update marker positions as needed
-	var resolved_text: String = markers.text
-	var conditionals: Array[RegExMatch] = parser.INLINE_CONDITIONALS_REGEX.search_all(resolved_text)
-	var replacements: Array = []
-	for conditional in conditionals:
-		var condition_raw: String = conditional.strings[conditional.names.condition]
-		var body: String = conditional.strings[conditional.names.body]
-		var body_else: String = ""
-		if "[else]" in body:
-			var bits = body.split("[else]")
-			body = bits[0]
-			body_else = bits[1]
-		var condition: Dictionary = parser.extract_condition("if " + condition_raw, false, 0)
-		# If the condition fails then use the else of ""
-		if not await check_condition({ condition = condition }, extra_game_states):
-			body = body_else
-		replacements.append({
-			start = conditional.get_start(),
-			end = conditional.get_end(),
-			string = conditional.get_string(),
-			body = body
-		})
+	if data.type == DialogueConstants.TYPE_DIALOGUE:
+		var resolved_text: String = markers.text
+		var conditionals: Array[RegExMatch] = parser.INLINE_CONDITIONALS_REGEX.search_all(resolved_text)
+		var replacements: Array = []
+		for conditional in conditionals:
+			var condition_raw: String = conditional.strings[conditional.names.condition]
+			var body: String = conditional.strings[conditional.names.body]
+			var body_else: String = ""
+			if "[else]" in body:
+				var bits = body.split("[else]")
+				body = bits[0]
+				body_else = bits[1]
+			var condition: Dictionary = parser.extract_condition("if " + condition_raw, false, 0)
+			# If the condition fails then use the else of ""
+			if not await check_condition({ condition = condition }, extra_game_states):
+				body = body_else
+			replacements.append({
+				start = conditional.get_start(),
+				end = conditional.get_end(),
+				string = conditional.get_string(),
+				body = body
+			})
 
-	for i in range(replacements.size() -1, -1, -1):
-		var r: Dictionary = replacements[i]
-		resolved_text = resolved_text.substr(0, r.start) + r.body + resolved_text.substr(r.end, 9999)
-		# Move any other markers now that the text has changed
-		var offset: int = r.end - r.start - r.body.length()
-		for key in ["pauses", "speeds", "time"]:
-			if markers.get(key) == null: continue
-			var marker = markers.get(key)
-			var next_marker: Dictionary = {}
-			for index in marker:
+		for i in range(replacements.size() -1, -1, -1):
+			var r: Dictionary = replacements[i]
+			resolved_text = resolved_text.substr(0, r.start) + r.body + resolved_text.substr(r.end, 9999)
+			# Move any other markers now that the text has changed
+			var offset: int = r.end - r.start - r.body.length()
+			for key in ["pauses", "speeds", "time"]:
+				if markers.get(key) == null: continue
+				var marker = markers.get(key)
+				var next_marker: Dictionary = {}
+				for index in marker:
+					if index < r.start:
+						next_marker[index] = marker[index]
+					elif index > r.start:
+						next_marker[index - offset] = marker[index]
+				markers.set(key, next_marker)
+			var mutations: Array[Array] = markers.mutations
+			var next_mutations: Array[Array] = []
+			for mutation in mutations:
+				var index = mutation[0]
 				if index < r.start:
-					next_marker[index] = marker[index]
+					next_mutations.append(mutation)
 				elif index > r.start:
-					next_marker[index - offset] = marker[index]
-			markers.set(key, next_marker)
-		var mutations: Array[Array] = markers.mutations
-		var next_mutations: Array[Array] = []
-		for mutation in mutations:
-			var index = mutation[0]
-			if index < r.start:
-				next_mutations.append(mutation)
-			elif index > r.start:
-				next_mutations.append([index - offset, mutation[1]])
-		markers.mutations = next_mutations
+					next_mutations.append([index - offset, mutation[1]])
+			markers.mutations = next_mutations
 
-	markers.text = resolved_text
+		markers.text = resolved_text
 
 	parser.free()
 
@@ -409,14 +410,27 @@ func get_line(resource: DialogueResource, key: String, extra_game_states: Array)
 
 	# If we are the first of a list of responses then get the other ones
 	if data.type == DialogueConstants.TYPE_RESPONSE:
-		line.responses = await get_responses(data.responses, resource, id_trail, extra_game_states)
+		# Note: For some reason C# has occasional issues with using the responses property directly
+		# so instead we use set and get here.
+		line.set("responses", await get_responses(data.get("responses", []), resource, id_trail, extra_game_states))
 		return line
 
 	# Inject the next node's responses if they have any
 	if resource.lines.has(line.next_id):
 		var next_line: Dictionary = resource.lines.get(line.next_id)
+
+		# If the response line is marked as a title then make sure to emit the passed_title signal.
+		if line.next_id in resource.titles.values():
+			passed_title.emit(resource.titles.find_key(line.next_id))
+
+		# If the next line is a title then check where it points to see if that is a set of responses.
+		if next_line.type == DialogueConstants.TYPE_GOTO and resource.lines.has(next_line.next_id):
+			next_line = resource.lines.get(next_line.next_id)
+
 		if next_line != null and next_line.type == DialogueConstants.TYPE_RESPONSE:
-			line.responses = await get_responses(next_line.responses, resource, id_trail, extra_game_states)
+			# Note: For some reason C# has occasional issues with using the responses property directly
+			# so instead we use set and get here.
+			line.set("responses", await get_responses(next_line.get("responses", []), resource, id_trail, extra_game_states))
 
 	line.next_id = "|".join(stack) if line.next_id == DialogueConstants.ID_NULL else line.next_id + id_trail
 	return line
@@ -514,7 +528,7 @@ func create_response(data: Dictionary, extra_game_states: Array) -> DialogueResp
 		id = data.get("id", ""),
 		type = DialogueConstants.TYPE_RESPONSE,
 		next_id = data.next_id,
-		is_allowed = await check_condition(data, extra_game_states),
+		is_allowed = data.is_allowed,
 		character = await get_resolved_character(data, extra_game_states),
 		character_replacements = data.get("character_replacements", [] as Array[Dictionary]),
 		text = resolved_data.text,
@@ -589,8 +603,9 @@ func resolve_each(array: Array, extra_game_states: Array) -> Array:
 func get_responses(ids: Array, resource: DialogueResource, id_trail: String, extra_game_states: Array) -> Array[DialogueResponse]:
 	var responses: Array[DialogueResponse] = []
 	for id in ids:
-		var data: Dictionary = resource.lines.get(id)
-		if DialogueSettings.get_setting("include_all_responses", false) or await check_condition(data, extra_game_states):
+		var data: Dictionary = resource.lines.get(id).duplicate(true)
+		data.is_allowed = await check_condition(data, extra_game_states)
+		if DialogueSettings.get_setting("include_all_responses", false) or data.is_allowed:
 			var response: DialogueResponse = await create_response(data, extra_game_states)
 			response.next_id += id_trail
 			responses.append(response)
@@ -1102,7 +1117,7 @@ func is_valid(line: DialogueLine) -> bool:
 		return false
 	if line.type == DialogueConstants.TYPE_MUTATION and line.mutation == null:
 		return false
-	if line.type == DialogueConstants.TYPE_RESPONSE and line.responses.size() == 0:
+	if line.type == DialogueConstants.TYPE_RESPONSE and line.get("responses").size() == 0:
 		return false
 	return true
 
