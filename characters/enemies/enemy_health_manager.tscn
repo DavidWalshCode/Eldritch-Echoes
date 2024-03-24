@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwegof2iu52vd"]
+
+[ext_resource type="Script" path="res://characters/enemies/enemy_health_manager.gd" id="1_67ujc"]
+
+[node name="EnemyHealthManager" type="Node3D"]
+script = ExtResource("1_67ujc")

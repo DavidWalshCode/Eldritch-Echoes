@@ -1,6 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://brusqmphxxu8w"]
+[gd_scene load_steps=27 format=3 uid="uid://brusqmphxxu8w"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_1_town.gd" id="1_38psm"]
+[ext_resource type="PackedScene" uid="uid://c5vtixmsma8xo" path="res://environment/assets/ground/stone/scenes/paving_cobble_1_rough.tscn" id="2_n3tu1"]
+[ext_resource type="PackedScene" uid="uid://o8ngiergmnaa" path="res://environment/assets/ground/stone/scenes/paving_cobble_1_flat.tscn" id="3_ydw22"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="5_1n71g"]
 [ext_resource type="PackedScene" uid="uid://deet40dn2j7nb" path="res://effects/rain/rain_effect_1.tscn" id="7_pnde6"]
 [ext_resource type="PackedScene" uid="uid://cbiwcmy6wmavi" path="res://environment/assets/village/structures/scenes/castle_big_wall_base_1.tscn" id="12_52cyd"]
@@ -8,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cypfbadbyy0lx" path="res://environment/assets/village/prebuilt_towns/small_town/scenes/full_small_town_1.tscn" id="17_l2b83"]
 [ext_resource type="PackedScene" uid="uid://v25scml6aa42" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_2.tscn" id="19_r0s14"]
 [ext_resource type="PackedScene" uid="uid://b0vq1sr05tjhq" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_3.tscn" id="20_wbcfj"]
+[ext_resource type="PackedScene" uid="uid://do5d5q3ct36mm" path="res://characters/enemies/assets/scenes/bird_monster_melee.tscn" id="21_8satp"]
 [ext_resource type="PackedScene" uid="uid://co43l6kv6dbht" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_4.tscn" id="21_s8ahr"]
 [ext_resource type="PackedScene" uid="uid://bd8fhmfjorfay" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_5.tscn" id="22_4wfe0"]
 [ext_resource type="PackedScene" uid="uid://dwnt52co5cn8t" path="res://environment/assets/village/buildings/scenes/buildings/full_castle_1.tscn" id="22_7vpp8"]
@@ -41,6 +44,44 @@ script = ExtResource("1_38psm")
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="Ground" type="Node3D" parent="Environment"]
+
+[node name="PavingCobble1Rough" parent="Environment/Ground" instance=ExtResource("2_n3tu1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.08542, 0, 28.5025)
+
+[node name="PavingCobble1Rough2" parent="Environment/Ground" instance=ExtResource("2_n3tu1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 8.42324, 0, -52.3488)
+
+[node name="PavingCobble1Rough3" parent="Environment/Ground" instance=ExtResource("2_n3tu1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 51.3383, 0, 34.7596)
+
+[node name="PavingCobble1Rough4" parent="Environment/Ground" instance=ExtResource("2_n3tu1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 68.9069, 0, -45.287)
+
+[node name="PavingCobble1Rough5" parent="Environment/Ground" instance=ExtResource("2_n3tu1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 56.7247, 0, -85.26)
+
+[node name="PavingCobble1Rough6" parent="Environment/Ground" instance=ExtResource("2_n3tu1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.92268, 0, -85.26)
+
+[node name="PavingCobble1Rough7" parent="Environment/Ground" instance=ExtResource("2_n3tu1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -91.7961, 0, -22.351)
+
+[node name="PavingCobble1Rough8" parent="Environment/Ground" instance=ExtResource("2_n3tu1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -65.3189, 0, 11.6576)
+
+[node name="PavingCobble1Rough9" parent="Environment/Ground" instance=ExtResource("2_n3tu1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 22.2215, 0, -6.78052)
+
+[node name="PavingCobble1Rough10" parent="Environment/Ground" instance=ExtResource("2_n3tu1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 59.3887, 0, -6.78052)
+
+[node name="PavingCobble1Rough11" parent="Environment/Ground" instance=ExtResource("2_n3tu1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 85.2685, 0, -60.2341)
+
+[node name="PavingCobble1Flat" parent="Environment/Ground" instance=ExtResource("3_ydw22")]
+transform = Transform3D(17.9951, 0, 0, 0, 30, 0, 0, 0, 26.0693, 0, 0, -74.0726)
+
+[node name="GridMap" type="GridMap" parent="Environment/Ground"]
 
 [node name="Buildings" type="Node3D" parent="Environment"]
 
@@ -148,6 +189,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
 
 [node name="Enemies" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
+
+[node name="BirdMonsterMelee" parent="Enemies" instance=ExtResource("21_8satp")]
+transform = Transform3D(-1.98743, 0, 0.22391, 0, 2, 0, -0.22391, 0, -1.98743, 4, 0.14892, -37)
 
 [node name="Audio" type="Node3D" parent="."]
 
