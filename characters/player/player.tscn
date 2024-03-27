@@ -551,7 +551,7 @@ color = Color(0, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_kb1wp"]
 size = Vector3(0.01, 0.01, 2)
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 6
 collision_mask = 3
 script = ExtResource("1_sw706")
