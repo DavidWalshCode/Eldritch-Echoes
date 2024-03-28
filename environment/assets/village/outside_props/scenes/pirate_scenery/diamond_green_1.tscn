@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d22yv3cx0jp1q"]
+
+[ext_resource type="PackedScene" uid="uid://caewy1l2pdmk4" path="res://environment/assets/village/outside_props/models/pirate_scenery/dimond_green.obj" id="1_plkfd"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f2v0h"]
+points = PackedVector3Array(0.074817, 0.00364964, 0.0431786, -1.46478e-05, 0.00364964, 0.086391, -1.46478e-05, -0.086391, -1.69128e-05, 0.074817, 0.00364964, -0.0432124, 0.0568744, 0.032823, 0.0328279, -1.46478e-05, 0.032823, 0.0656727, -0.056889, 0.032823, 0.0328279, -0.074817, 0.00364964, 0.0431786, -0.074817, 0.00364964, -0.0432124, -1.46478e-05, 0.00364964, -0.086391, -1.46478e-05, 0.032823, -0.0656896, 0.0568744, 0.032823, -0.0328448, -0.056889, 0.032823, -0.0328448)
+
+[node name="DiamondGreen1" instance=ExtResource("1_plkfd")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="dimond_green_Cylinder_017" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="dimond_green_Cylinder_017/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_f2v0h")

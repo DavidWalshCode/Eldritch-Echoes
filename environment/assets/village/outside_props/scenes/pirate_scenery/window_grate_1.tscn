@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://l5s1expj0anr"]
+
+[ext_resource type="PackedScene" uid="uid://bd1fef37les4y" path="res://environment/assets/village/outside_props/models/pirate_scenery/window_005.obj" id="1_fghqh"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d1e0l"]
+points = PackedVector3Array(0.38387, 0.451206, 0.069536, 0.38387, 0.451206, -0.005898, -0.38387, 0.451206, 0.069536, 0.38387, -0.316531, 0.069536, 0.38387, -0.316531, -0.005898, -0.38387, 0.451206, -0.005898, -0.38387, -0.316531, 0.069536, -0.38387, -0.316531, -0.005898)
+
+[node name="WindowGrate1" instance=ExtResource("1_fghqh")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="window_005_Plane_021" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="window_005_Plane_021/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_d1e0l")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3srl1ur63l7u"]
+
+[ext_resource type="PackedScene" uid="uid://wti7veq1fq0g" path="res://environment/assets/village/outside_props/models/pirate_scenery/chest_001.obj" id="1_eb8xa"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eycy6"]
+points = PackedVector3Array(0.655659, 0.891221, -7.46846e-05, 0.655659, 0.8576, 0.190673, 0.655659, 0.8576, -0.190823, -0.655659, 0.891221, -7.46846e-05, -0.655659, 0.8576, 0.190673, 0.655659, 0.682756, 0.381496, 0.655659, 0.682756, -0.381496, -0.655659, 0.8576, -0.190823, -0.655659, 0.682756, 0.381496, 0.655659, -0.003224, 0.381496, 0.655659, -0.003224, -0.381496, -0.655659, 0.682756, -0.381496, -0.655659, -0.003224, 0.381496, -0.655659, -0.003224, -0.381496)
+
+[node name="ChestClosed1" instance=ExtResource("1_eb8xa")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="chest_001_Cube_007" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="chest_001_Cube_007/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_eycy6")

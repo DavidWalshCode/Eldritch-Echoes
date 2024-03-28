@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5o2pnn0h4267"]
+
+[ext_resource type="PackedScene" uid="uid://62j8as65id7e" path="res://environment/assets/village/outside_props/models/pirate_scenery/door_001.obj" id="1_pav28"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_umgk5"]
+points = PackedVector3Array(-0.842008, -0.005636, -0.001619, -0.842008, -0.005636, 0.0973407, -0.842008, 2.31916, -0.001619, 0.841977, -0.005636, -0.001619, 0.841977, -0.005636, 0.0973407, -0.735028, 2.22791, 0.0973504, -0.842008, 2.31916, 0.0973504, 0.841977, 2.31916, -0.001619, 0.841977, 2.31916, 0.0973504, 0.734832, 2.22791, 0.0973504)
+
+[node name="Door1Pirate" instance=ExtResource("1_pav28")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="door_001_Plane_019" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door_001_Plane_019/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_umgk5")

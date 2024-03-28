@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b871h24x1ihw6"]
+
+[ext_resource type="PackedScene" uid="uid://c5kdaq0d0rkes" path="res://environment/assets/village/outside_props/models/pirate_scenery/goblet_001.obj" id="1_xd623"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6hbn1"]
+points = PackedVector3Array(-1.9215e-05, 0.305082, 0.113276, 0.098123, 0.305082, 0.0566262, -0.098123, 0.305082, 0.0566262, -1.9215e-05, 0, 0.0987479, 0.098123, 0.305082, -0.056674, 0.0855022, 0, 0.0493509, -0.098123, 0.305082, -0.056674, -0.0855407, 0, 0.0493509, -1.9215e-05, 0.305082, -0.113302, 0.0855022, 0, -0.0493987, -1.9215e-05, 0, -0.0987735, -0.0855407, 0, -0.0493987)
+
+[node name="Goblet1" instance=ExtResource("1_xd623")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="goblet_001_Cylinder_014" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="goblet_001_Cylinder_014/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_6hbn1")

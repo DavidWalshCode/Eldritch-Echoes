@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3fyl50w1610i"]
+
+[ext_resource type="PackedScene" uid="uid://b0fms2la5634" path="res://environment/assets/village/outside_props/models/pirate_scenery/shovel_001.obj" id="1_5f1nq"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hbswo"]
+points = PackedVector3Array(-0.158585, 0.158579, 0.0510864, -0.13915, -0.113946, 0.0510864, 0.158585, 0.158579, 0.0510864, -0.11748, 1.13696, 0.0309927, -0.11748, 1.13696, -0.005819, -0.11748, 1.10005, -0.005819, -3.1054e-05, -0.116736, -3.11434e-06, -3.1054e-05, -0.158585, 0.0430645, 0.139119, -0.113946, 0.0510864, 0.117448, 1.10005, -0.005819, 0.117448, 1.13696, -0.005819, 0.117448, 1.13696, 0.0309927, -3.1054e-05, 0.0312569, -0.00152951, -0.0157716, 0.0774175, -0.00152951, 0.0157405, 0.0774175, -0.00152951)
+
+[node name="Shovel1" instance=ExtResource("1_5f1nq")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="shovel_001_Plane_006" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shovel_001_Plane_006/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_hbswo")

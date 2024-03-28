@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c445gvrqjupfx"]
+
+[ext_resource type="PackedScene" uid="uid://cn8e6nbw286q7" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/cannon_2_carrier.tscn" id="1_diiji"]
+[ext_resource type="PackedScene" uid="uid://ilm3mbohu7ar" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/wagon_wheel_1.tscn" id="2_rf6e3"]
+[ext_resource type="PackedScene" uid="uid://5h8b2pm4upaq" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/cannon_barrel_1.tscn" id="3_smpxc"]
+
+[node name="Pirate1Cannon" type="Node3D"]
+
+[node name="Cannon2Carrier" parent="." instance=ExtResource("1_diiji")]
+
+[node name="WagonWheel1" parent="." instance=ExtResource("2_rf6e3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.793956, 0.702853, 0.742898)
+
+[node name="WagonWheel2" parent="." instance=ExtResource("2_rf6e3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.804889, 0.702853, 0.742898)
+
+[node name="CannonBarrel1" parent="." instance=ExtResource("3_smpxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.996723, 0.720863)

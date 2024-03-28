@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnq46vjp6cgta"]
+
+[ext_resource type="PackedScene" uid="uid://dd1uatvbf3k18" path="res://environment/assets/village/outside_props/models/pirate_scenery/cannonball.obj" id="1_dqiq8"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6o8m2"]
+points = PackedVector3Array(-0.083738, -0.0418806, -1.55866e-05, -1.63913e-05, -0.093622, -1.55866e-05, -0.0258853, -0.0418806, 0.079639, -0.0677543, 0.0418623, 0.0492053, -0.0677543, 0.0418623, -0.0492209, -0.0258853, -0.0418806, -0.079639, 0.0677379, -0.0418806, -0.0492209, 0.0677379, -0.0418806, 0.0492053, 0.0258689, 0.0418623, 0.079639, -1.63913e-05, 0.093622, -1.55866e-05, 0.0258689, 0.0418623, -0.079639, 0.083738, 0.0418623, -1.55866e-05)
+
+[node name="Cannonball1" instance=ExtResource("1_dqiq8")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cannonball_Icosphere_001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cannonball_Icosphere_001/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_6o8m2")

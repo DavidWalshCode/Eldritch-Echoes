@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj52p88ipyo3j"]
+
+[ext_resource type="PackedScene" uid="uid://dbeepuxt85d0g" path="res://environment/assets/village/outside_props/models/pirate_scenery/cannon_wheel.obj" id="1_xawlu"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8ycn4"]
+points = PackedVector3Array(0.0848637, 0.0895008, 0.216156, -0.084881, 0.0895008, 0.216156, 0.0848637, -0.0895431, 0.216156, 0.0848637, 0.216156, 0.0895008, -0.084881, 0.216156, 0.0895008, -0.084881, -0.0895431, 0.216156, 0.0848637, -0.216156, 0.0895008, 0.0848637, 0.216156, -0.0895431, -0.084881, 0.216156, -0.0895431, -0.084881, -0.216156, 0.0895008, 0.0848637, -0.216156, -0.0895431, 0.0848637, 0.0895008, -0.216156, -0.084881, 0.0895008, -0.216156, -0.084881, -0.216156, -0.0895431, 0.0848637, -0.0895431, -0.216156, -0.084881, -0.0895431, -0.216156)
+
+[node name="CannonWheel1" instance=ExtResource("1_xawlu")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cannon_wheel_Cylinder_001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cannon_wheel_Cylinder_001/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_8ycn4")

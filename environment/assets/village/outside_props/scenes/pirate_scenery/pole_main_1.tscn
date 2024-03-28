@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://db4yiwfsm44ag"]
+
+[ext_resource type="PackedScene" uid="uid://bgro4pphx1f4i" path="res://environment/assets/village/outside_props/models/pirate_scenery/pole_002.obj" id="1_rsr8t"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6hdg4"]
+points = PackedVector3Array(0.0276649, 2.18265, 0.12952, -0.071372, 2.18265, 0.12952, 0.0661165, 1.07085, 0.12952, 0.09673, 1.07085, 0.035345, 0.0582589, 2.18265, 0.035345, -0.101966, 2.18265, 0.035345, -0.0495302, -0.058954, 0.0625128, -0.0329203, 1.07085, 0.12952, 0.0495066, -0.058954, 0.0625128, 0.0801007, -0.058954, -0.0316617, -0.0218535, 2.18265, -0.0228778, -0.0801242, -0.058954, -0.0316617, -1.17645e-05, -0.058954, -0.089863)
+
+[node name="PoleMain1" instance=ExtResource("1_rsr8t")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pole_002_Cylinder_010" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pole_002_Cylinder_010/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_6hdg4")

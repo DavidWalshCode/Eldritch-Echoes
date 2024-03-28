@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b06ec3y4i3a38"]
+
+[ext_resource type="PackedScene" uid="uid://u0e5dyabugvs" path="res://environment/assets/village/outside_props/models/pirate_scenery/lantern_001.obj" id="1_wtujg"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_26yuq"]
+points = PackedVector3Array(0.247046, 0.463016, 0.247102, -5.21243e-05, 0.595677, -4.83692e-05, -0.247102, 0.463016, 0.247102, 0.134623, 0.00048, 0.134629, 0.247046, 0.463016, -0.247102, -0.247102, 0.463016, -0.247102, -0.134679, 0.00048, 0.134629, 0.134623, 0.00048, -0.134677, -0.134679, 0.00048, -0.134677)
+
+[node name="Lantern1" instance=ExtResource("1_wtujg")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="lantern_001_Cube_006" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lantern_001_Cube_006/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_26yuq")

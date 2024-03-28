@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqi2dovvtvsde"]
+
+[ext_resource type="PackedScene" uid="uid://c6jvtuibjh51q" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/cannon_1_carrier.tscn" id="1_1bjj7"]
+[ext_resource type="PackedScene" uid="uid://bj52p88ipyo3j" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/cannon_wheel_1.tscn" id="2_ufuwe"]
+[ext_resource type="PackedScene" uid="uid://5h8b2pm4upaq" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/cannon_barrel_1.tscn" id="3_vnfw6"]
+
+[node name="Pirate2Cannon" type="Node3D"]
+
+[node name="Cannon1Carrier" parent="." instance=ExtResource("1_1bjj7")]
+
+[node name="CannonWheel1" parent="." instance=ExtResource("2_ufuwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.504087, 0.106778, 0.513468)
+
+[node name="CannonWheel2" parent="." instance=ExtResource("2_ufuwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50699, 0.106778, 0.513468)
+
+[node name="CannonWheel3" parent="." instance=ExtResource("2_ufuwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50699, 0.106778, -0.699005)
+
+[node name="CannonWheel4" parent="." instance=ExtResource("2_ufuwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.510705, 0.106778, -0.699005)
+
+[node name="CannonBarrel1" parent="." instance=ExtResource("3_vnfw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.551014, 0.271003)

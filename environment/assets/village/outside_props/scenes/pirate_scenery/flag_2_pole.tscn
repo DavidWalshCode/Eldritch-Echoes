@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://g6023gycygfj"]
+
+[ext_resource type="PackedScene" uid="uid://b2pab6yuf82io" path="res://environment/assets/village/outside_props/models/pirate_scenery/flag_pole_002.obj" id="1_buupm"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c4n2k"]
+points = PackedVector3Array(-0.078865, -0.070137, -0.0256354, -0.0487573, -0.070137, 0.0670773, -0.0408548, 2.52269, 0.00403636, 0.0135263, 3.80979, -0.0261583, -0.00460797, 1.34382, -0.063094, -1.45286e-05, -0.070137, -0.0829437, 0.0487282, -0.070137, 0.0670773, -0.0160154, 2.52269, 0.080466, 0.038344, 3.77637, 0.0502527, 0.143536, 3.80979, -0.0261583, 0.0785312, 3.80979, -0.0734016, 0.0603969, 1.34382, -0.1103, 0.125402, 1.34382, -0.063094, 0.0788577, -0.070137, -0.0256354, 0.100562, 1.34382, 0.0133356, 0.118697, 3.77637, 0.0502527, 0.0643154, 2.52269, 0.080466)
+
+[node name="Flag2Pole" instance=ExtResource("1_buupm")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="flag_pole_002_Cylinder_013" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="flag_pole_002_Cylinder_013/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_c4n2k")

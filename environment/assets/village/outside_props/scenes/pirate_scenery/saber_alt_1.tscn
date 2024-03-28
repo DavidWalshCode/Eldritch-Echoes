@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://br1rrmev3f4dc"]
+
+[ext_resource type="PackedScene" uid="uid://cgu0r4wvpr5gn" path="res://environment/assets/village/outside_props/models/pirate_scenery/saber_002.obj" id="1_lcosf"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_606uc"]
+points = PackedVector3Array(-4.96209e-06, 0.641249, 0.093448, 0.0197352, 0.811768, -0.000745062, -4.96209e-06, 0.840259, 0.0577759, -0.0197405, 0.811768, -0.000745062, -0.0207899, 0.122993, 0.0593351, -4.96209e-06, 0.0747285, 0.0872986, 0.0207846, 0.122993, 0.0593351, 0.0198043, 0.136494, -0.026246, -4.96209e-06, 0.174446, -0.055419, -4.96209e-06, 0.955179, -0.003164, 0.0235093, -0.0941964, -0.0047232, -0.0198096, 0.136494, -0.026246, -0.02351, -0.0941964, -0.0047232, -4.96209e-06, -0.0941964, 0.0456957, -4.96209e-06, -0.130873, 0.0120783)
+
+[node name="SaberAlt1" instance=ExtResource("1_lcosf")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="saber_002_Plane_018" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="saber_002_Plane_018/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_606uc")

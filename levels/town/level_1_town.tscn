@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://brusqmphxxu8w"]
+[gd_scene load_steps=29 format=3 uid="uid://brusqmphxxu8w"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_1_town.gd" id="1_38psm"]
 [ext_resource type="PackedScene" uid="uid://c5vtixmsma8xo" path="res://environment/assets/ground/stone/scenes/paving_cobble_1_rough.tscn" id="2_n3tu1"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cbiwcmy6wmavi" path="res://environment/assets/village/structures/scenes/castle_big_wall_base_1.tscn" id="12_52cyd"]
 [ext_resource type="PackedScene" uid="uid://b127y1uhix8do" path="res://environment/assets/village/structures/scenes/castle_big_pillar_base_1.tscn" id="13_tmwbo"]
 [ext_resource type="PackedScene" uid="uid://cypfbadbyy0lx" path="res://environment/assets/village/prebuilt_towns/small_town/scenes/full_small_town_1.tscn" id="17_l2b83"]
+[ext_resource type="PackedScene" uid="uid://c445gvrqjupfx" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/pirate_1_cannon.tscn" id="17_my4ot"]
+[ext_resource type="PackedScene" uid="uid://dqi2dovvtvsde" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/pirate_2_cannon.tscn" id="18_xx60d"]
 [ext_resource type="PackedScene" uid="uid://v25scml6aa42" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_2.tscn" id="19_r0s14"]
 [ext_resource type="PackedScene" uid="uid://b0vq1sr05tjhq" path="res://environment/assets/village/buildings/scenes/buildings/medieval_building_3.tscn" id="20_wbcfj"]
 [ext_resource type="PackedScene" uid="uid://do5d5q3ct36mm" path="res://characters/enemies/assets/scenes/bird_monster_melee.tscn" id="21_8satp"]
@@ -98,13 +100,13 @@ transform = Transform3D(0.38176, 0, 0.462882, 0, 0.599998, 0, -0.46288, 0, 0.381
 transform = Transform3D(-0.475163, 0, -0.366361, 0, 0.6, 0, 0.36636, 0, -0.475163, 76.9314, 3.81469e-06, -37.5015)
 
 [node name="MedievalBuilding3" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("20_wbcfj")]
-transform = Transform3D(0.516972, 0, 0.304532, 0, 0.6, 0, -0.304532, 0, 0.516972, 55.7682, -0.00887192, -13.8056)
+transform = Transform3D(0.586378, 0, 0.127122, 0, 0.6, 0, -0.127122, 0, 0.586378, 49.7127, -0.00887191, -16.0432)
 
 [node name="MedievalBuilding4" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("21_s8ahr")]
 transform = Transform3D(-0.456142, 0, 0.389788, 0, 0.599999, 0, -0.389788, 0, -0.456141, 80.7157, 0.0450999, -67.5115)
 
 [node name="MedievalBuilding5" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("22_4wfe0")]
-transform = Transform3D(-0.587667, 0, 0.121026, 0, 0.599999, 0, -0.121026, 0, -0.587666, 85.2378, 0.00228452, -16.2935)
+transform = Transform3D(-0.587667, 0, 0.121026, 0, 0.599999, 0, -0.121026, 0, -0.587666, 79.7767, 0.00228452, -14.0589)
 
 [node name="MedievalBuilding11" parent="Environment/Buildings/MedievalBuildings" instance=ExtResource("22_4wfe0")]
 transform = Transform3D(-0.316396, 0, -0.509796, 0, 0.599997, 0, 0.509797, 0, -0.316395, 46.3029, 0.00228452, 14.0382)
@@ -156,7 +158,13 @@ transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 60.1983, 0, -8.7928)
 [node name="Props" type="Node3D" parent="Environment"]
 
 [node name="GothicWeepingAngelStatue1" parent="Environment/Props" instance=ExtResource("39_6g4s1")]
-transform = Transform3D(0.999923, 0, 0.0124265, 0, 1, 0, -0.0124265, 0, 0.999923, 1.92283, 1.99404, -74.5116)
+transform = Transform3D(1.19991, 0, 0.0149118, 0, 1.2, 0, -0.0149118, 0, 1.19991, 1.92283, 2.22491, -74.5116)
+
+[node name="Pirate1Cannon" parent="Environment/Props" instance=ExtResource("17_my4ot")]
+transform = Transform3D(-2.78377, 0, -0.301038, 0, 2.8, 0, 0.301038, 0, -2.78377, 0.734282, -0.0614411, -24.2005)
+
+[node name="Pirate2Cannon" parent="Environment/Props" instance=ExtResource("18_xx60d")]
+transform = Transform3D(-1.47577, 0, 2.61192, 0, 3, 0, -2.61192, 0, -1.47577, -14.674, 0.22205, -32.0539)
 
 [node name="PrebuiltTowns" type="Node3D" parent="Environment"]
 

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5sx3bd1r388m"]
+
+[ext_resource type="PackedScene" uid="uid://wvkaak6edmaw" path="res://environment/assets/ground/stone/models/flat_terrain_template_1.glb" id="1_yh0aq"]
+[ext_resource type="Material" uid="uid://cvnavjy4m06g5" path="res://environment/assets/village/prebuilt_towns/harbour_town/materials/steffi_druystpomne_material.tres" id="2_3rxau"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i6luq"]
+points = PackedVector3Array(800, 800, 0, 800, -800, 0, -800, 800, 0, -800, -800, 0)
+
+[node name="SteffiFloorFlat1" instance=ExtResource("1_yh0aq")]
+
+[node name="Alphalt_Floor" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_3rxau")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Alphalt_Floor" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Alphalt_Floor/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_i6luq")

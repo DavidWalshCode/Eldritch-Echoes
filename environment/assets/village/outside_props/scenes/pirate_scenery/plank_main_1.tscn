@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://drcixbmjposbl"]
+
+[ext_resource type="PackedScene" uid="uid://cia0c1xbh2hwl" path="res://environment/assets/village/outside_props/models/pirate_scenery/plank_001.obj" id="1_fac5j"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kphsl"]
+points = PackedVector3Array(0.1, 0.05, 0.959431, 0.0348864, 0.05, 0.991422, 0.1, 0, 0.959431, 0.1, 0.05, -0.86227, -0.0226899, 0.05, 1.00889, 0.0348864, 0, 0.991422, 0.1, 0, -0.86227, -0.00847691, 0.05, -0.995924, -0.0226899, 0, 1.00889, -0.1, 0.05, 0.979646, -0.00847691, 0, -0.995924, -0.1, 0.05, -0.976887, -0.1, 0, 0.979646, -0.1, 0, -0.976887)
+
+[node name="PlankMain1" instance=ExtResource("1_fac5j")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="plank_001_Cube_004" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plank_001_Cube_004/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_kphsl")

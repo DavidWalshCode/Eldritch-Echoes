@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://chs3lucsf5enr"]
+
+[ext_resource type="Texture2D" uid="uid://bng3ew0g5x88n" path="res://environment/assets/village/outside_props/materials/tex_pirate_scenery.png" id="1_1cr35"]
+
+[resource]
+albedo_texture = ExtResource("1_1cr35")
+texture_filter = 2
