@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm2b4wrpid53g"]
+
+[ext_resource type="Script" path="res://weapons/attack_emitters/hit_scan_attack_emitter.gd" id="1_05kio"]
+
+[node name="HitScanAttackEmitter" type="Node3D"]
+script = ExtResource("1_05kio")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+enabled = false
+target_position = Vector3(0, 0, -10000)
+collision_mask = 5

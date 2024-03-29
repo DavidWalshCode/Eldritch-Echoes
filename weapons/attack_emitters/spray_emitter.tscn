@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvih676eskm1v"]
+
+[ext_resource type="Script" path="res://weapons/attack_emitters/spray_emitter.gd" id="1_2xry0"]
+
+[node name="SprayEmitter" type="Node3D"]
+script = ExtResource("1_2xry0")

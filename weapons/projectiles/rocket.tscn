@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://weapons/projectiles/rocket.gd" id="2_u5d6h"]
 [ext_resource type="PackedScene" uid="uid://cbi2uae24fd3r" path="res://effects/muzzleflash/muzzleflash3.glb" id="3_erksw"]
 [ext_resource type="Texture2D" uid="uid://dhud8rywluaw6" path="res://effects/circle32.png" id="5_8nqg7"]
-[ext_resource type="PackedScene" uid="uid://cbtf6d7s603ra" path="res://weapons/attackemitters/area_damage_emitter.tscn" id="5_jg43v"]
+[ext_resource type="PackedScene" uid="uid://cbtf6d7s603ra" path="res://weapons/attack_emitters/area_damage_emitter.tscn" id="5_jg43v"]
 [ext_resource type="AudioStream" uid="uid://cx5us4ek6ywj6" path="res://audio/sfx/weapons/explosion/Magic Fire Impact 1.wav" id="7_mbqls"]
 [ext_resource type="AudioStream" uid="uid://eklhlaqd8tjm" path="res://audio/sfx/weapons/explosion/Magic Fire Impact 2.wav" id="8_qhvkq"]
 [ext_resource type="AudioStream" uid="uid://dg7h4w75y51m6" path="res://audio/sfx/weapons/explosion/Magic Fire Impact 3.wav" id="9_jba4f"]

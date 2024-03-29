@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dfbmlfbd1pvbv"]
-
-[ext_resource type="Texture2D" uid="uid://xwyip4anpg0e" path="res://weapons/assets/materials/AxeBloody.png" id="1_ra1ow"]
-
-[resource]
-albedo_texture = ExtResource("1_ra1ow")
-texture_filter = 2

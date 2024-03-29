@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbtf6d7s603ra"]
+
+[ext_resource type="Script" path="res://weapons/attack_emitters/area_damage_emitter.gd" id="1_j5fh4"]
+
+[node name="AreaDamageEmitter" type="Node3D"]
+script = ExtResource("1_j5fh4")
+
+[node name="LineOfSightRayCast" type="RayCast3D" parent="."]
