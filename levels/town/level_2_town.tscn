@@ -522,10 +522,6 @@ transform = Transform3D(21.6357, 0, 3.98727, 0, 22, 0, -3.98727, 0, 21.6357, -20
 
 [node name="Tree7" type="Node3D" parent="Environment/Structures/OutsideTrees"]
 
-[node name="Tree07Spring" parent="Environment/Structures/OutsideTrees/Tree7" instance=ExtResource("18_tvcit")]
-transform = Transform3D(-16.7604, 0, 8.94922, 0, 19, 0, -8.94922, 0, -16.7604, -169.753, 0, -48.4327)
-visible = false
-
 [node name="Tree07Fall" parent="Environment/Structures/OutsideTrees/Tree7" instance=ExtResource("25_qlptb")]
 transform = Transform3D(-16.7604, 0, 8.94922, 0, 19, 0, -8.94922, 0, -16.7604, -169.753, 0, -48.433)
 
@@ -538,19 +534,11 @@ transform = Transform3D(-14.7986, 0, -10.247, 0, 18, 0, 10.247, 0, -14.7986, -16
 [node name="Tree07Spring4" parent="Environment/Structures/OutsideTrees/Tree7" instance=ExtResource("18_tvcit")]
 transform = Transform3D(-0.872388, 0, -19.981, 0, 20, 0, 19.981, 0, -0.872388, 124.995, 0, -463.673)
 
-[node name="Tree07Spring5" parent="Environment/Structures/OutsideTrees/Tree7" instance=ExtResource("18_tvcit")]
-transform = Transform3D(16.2002, 0, 9.92747, 0, 19, 0, -9.92747, 0, 16.2002, 220.063, 0, -177.449)
-visible = false
-
 [node name="Tree07Fall2" parent="Environment/Structures/OutsideTrees/Tree7" instance=ExtResource("25_qlptb")]
 transform = Transform3D(16.2002, 0, 9.92747, 0, 19, 0, -9.92747, 0, 16.2002, 220.063, 0, -177.449)
 
 [node name="Tree07Spring6" parent="Environment/Structures/OutsideTrees/Tree7" instance=ExtResource("18_tvcit")]
 transform = Transform3D(13.1858, 0, -12.253, 0, 18, 0, 12.253, 0, 13.1858, 220.063, 0, -223.687)
-
-[node name="Tree07Spring7" parent="Environment/Structures/OutsideTrees/Tree7" instance=ExtResource("18_tvcit")]
-transform = Transform3D(-15.8783, 0, 8.47822, 0, 18, 0, -8.47822, 0, -15.8783, -46.9388, 0, 40.0938)
-visible = false
 
 [node name="Tree07Fall3" parent="Environment/Structures/OutsideTrees/Tree7" instance=ExtResource("25_qlptb")]
 transform = Transform3D(-15.8783, 0, 8.47821, 0, 18, 0, -8.47821, 0, -15.8783, -46.939, 0, 40.094)

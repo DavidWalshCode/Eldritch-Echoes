@@ -43,7 +43,6 @@
 [ext_resource type="PackedScene" uid="uid://dqegu5drc4svl" path="res://environment/assets/nature/grass/scenes/retro_nature_pack/grass_03_spring.tscn" id="30_p0s7r"]
 [ext_resource type="PackedScene" uid="uid://dnkwjnej7hy8h" path="res://environment/assets/nature/bushes/scenes/retro_nature_pack/bush_05_spring_5.tscn" id="31_1yfvy"]
 [ext_resource type="PackedScene" uid="uid://cuvsdnmlqwqhm" path="res://environment/assets/nature/grass/scenes/retro_nature_pack/grass_04_spring.tscn" id="31_6itqx"]
-[ext_resource type="AudioStream" uid="uid://4uhgisbwq7gv" path="res://audio/ambience/Dark_Rainy_Night(ambience).ogg" id="31_h3jdc"]
 [ext_resource type="PackedScene" uid="uid://do5j0mnyjbqcp" path="res://environment/assets/nature/bushes/scenes/retro_nature_pack/bush_05_spring_3.tscn" id="32_kkmox"]
 [ext_resource type="PackedScene" uid="uid://cvhlam7d5j6vr" path="res://environment/assets/nature/bushes/scenes/retro_nature_pack/bush_05_spring_4.tscn" id="33_gkmfb"]
 [ext_resource type="PackedScene" uid="uid://bnq46vjp6cgta" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/cannonball_1.tscn" id="42_vg0xk"]
@@ -57,6 +56,7 @@
 [ext_resource type="PackedScene" uid="uid://bon43w0ahe6hx" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/flag_1_pole.tscn" id="50_1svic"]
 [ext_resource type="PackedScene" uid="uid://c3srl1ur63l7u" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/chest_closed_1.tscn" id="50_w18rs"]
 [ext_resource type="PackedScene" uid="uid://g6023gycygfj" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/flag_2_pole.tscn" id="51_ufb7n"]
+[ext_resource type="AudioStream" uid="uid://thxjd66rsnr2" path="res://audio/ambience/forest.ogg" id="57_tvl81"]
 
 [node name="Level1Town" type="Node3D"]
 script = ExtResource("1_opw3t")
@@ -934,6 +934,6 @@ transform = Transform3D(-1.98743, 0, 0.22391, 0, 2, 0, -0.22391, 0, -1.98743, 7.
 [node name="Audio" type="Node3D" parent="."]
 
 [node name="AmbienceLevel1" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("31_h3jdc")
-volume_db = -25.0
+stream = ExtResource("57_tvl81")
+volume_db = -10.0
 bus = &"Ambience"
