@@ -99,23 +99,23 @@ void sky() {
 }
 "
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_btbxm"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_aop1q"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_d1vpk"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_05pay"]
 width = 1024
 height = 1024
 seamless = true
-noise = SubResource("FastNoiseLite_btbxm")
+noise = SubResource("FastNoiseLite_aop1q")
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_4sq52"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1wheb"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vowk6"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_apuko"]
 width = 1024
 height = 1024
 seamless = true
-noise = SubResource("FastNoiseLite_4sq52")
+noise = SubResource("FastNoiseLite_1wheb")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iadnm"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nnm31"]
 shader = SubResource("Shader_yuwe3")
 shader_parameter/sky_top_color = Color(0.898039, 0.443137, 0, 1)
 shader_parameter/sky_horizon_color = Color(0.733333, 0.141176, 0, 1)
@@ -134,11 +134,11 @@ shader_parameter/cloud_scale = Vector2(0.05, 0.05)
 shader_parameter/cloud_distance = 0.035
 shader_parameter/cloud_speed = 0.1
 shader_parameter/cloud_speed2 = 0.1
-shader_parameter/cloud_texture = SubResource("NoiseTexture2D_d1vpk")
-shader_parameter/cloud_texture2 = SubResource("NoiseTexture2D_vowk6")
+shader_parameter/cloud_texture = SubResource("NoiseTexture2D_05pay")
+shader_parameter/cloud_texture2 = SubResource("NoiseTexture2D_apuko")
 
 [sub_resource type="Sky" id="Sky_k7pg3"]
-sky_material = SubResource("ShaderMaterial_iadnm")
+sky_material = SubResource("ShaderMaterial_nnm31")
 
 [resource]
 background_mode = 2
@@ -148,7 +148,7 @@ tonemap_mode = 2
 tonemap_exposure = 0.7
 glow_normalized = true
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.009
+volumetric_fog_density = 0.011
 volumetric_fog_albedo = Color(1, 0.631373, 0.388235, 1)
 volumetric_fog_sky_affect = 0.5
 adjustment_enabled = true

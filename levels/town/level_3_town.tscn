@@ -75,22 +75,31 @@ script = ExtResource("1_udk8r")
 transform = Transform3D(19.8124, 0, 0, 0, 30, 0, 0, 0, 26.0693, -0.957794, 0, -105.595)
 
 [node name="PavingCobble1Rough" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.78606, 0, 15.0686)
+transform = Transform3D(1.85915, 0, 0, 0, 2.36942, 0, 0, 0, 1.88949, 6.78606, 0, 15.0686)
 
 [node name="PavingCobble1Rough2" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
-transform = Transform3D(1.06763, 0, 1.05364, 0, 1.5, 0, -1.05364, 0, 1.06763, 14.2042, 0, -0.472263)
+transform = Transform3D(0.965458, 0, 1.15581, 0, 1.78857, 0, -0.952807, 0, 1.17116, 14.2042, 0, -0.472263)
 
 [node name="PavingCobble1Rough3" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
-transform = Transform3D(1.06763, 0, 1.05364, 0, 1.5, 0, -1.05364, 0, 1.06763, 14.2042, 0, -36.0372)
+transform = Transform3D(1.23818, 0, 1.21975, 0, 1.63867, 0, -1.22196, 0, 1.23595, 19.7516, 0, -36.0372)
 
 [node name="PavingCobble1Rough4" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
 transform = Transform3D(0.999928, 0, -0.0119901, 0, 1, 0, 0.0119901, 0, 0.999928, 46.0694, 0, -58.4642)
 
+[node name="PavingCobble1Rough11" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
+transform = Transform3D(0.999928, 0, -0.0119901, 0, 1, 0, 0.0119901, 0, 0.999928, 52.4168, 0, -25.1508)
+
+[node name="PavingCobble1Rough12" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
+transform = Transform3D(0.999928, 0, -0.0119901, 0, 1, 0, 0.0119901, 0, 0.999928, 70.7802, 0, -0.633843)
+
+[node name="PavingCobble1Rough13" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
+transform = Transform3D(0.999928, 0, -0.0119901, 0, 1, 0, 0.0119901, 0, 0.999928, 60.2681, 0, -114.633)
+
 [node name="PavingCobble1Rough5" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
-transform = Transform3D(0.999928, 0, -0.0119901, 0, 1, 0, 0.0119901, 0, 0.999928, 27.9138, 0, -94.6534)
+transform = Transform3D(1.34825, 0, -0.0142707, 0, 1.41588, 0, 0.0161668, 0, 1.19012, 27.9138, 0, -94.6534)
 
 [node name="PavingCobble1Rough6" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
-transform = Transform3D(0.999928, 0, -0.0119901, 0, 1, 0, 0.0119901, 0, 0.999928, -15.8969, 0, -94.6534)
+transform = Transform3D(1.25453, 0, -0.0147281, 0, 1.55331, 0, 0.0150431, 0, 1.22827, -12.4813, 0, -92.7424)
 
 [node name="PavingCobble1Rough9" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
 transform = Transform3D(0.999928, 0, -0.0119901, 0, 1, 0, 0.0119901, 0, 0.999928, 73.5243, 0, -142.677)
@@ -98,95 +107,181 @@ transform = Transform3D(0.999928, 0, -0.0119901, 0, 1, 0, 0.0119901, 0, 0.999928
 [node name="PavingCobble1Rough10" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
 transform = Transform3D(0.69995, 0, -0.00839308, 0, 0.7, 0, 0.00839308, 0, 0.69995, -92.2933, 0, -108.746)
 
+[node name="PavingCobble1Rough14" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
+transform = Transform3D(0.505875, 0, 0.48383, 0, 0.7, 0, -0.48383, 0, 0.505875, -92.2933, 0, -132.178)
+
+[node name="PavingCobble1Rough17" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
+transform = Transform3D(0.699824, 0, -0.0156979, 0, 0.7, 0, 0.0156979, 0, 0.699824, -92.2933, 0, -68.6852)
+
+[node name="PavingCobble1Rough18" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
+transform = Transform3D(0.623244, 0, -0.318697, 0, 0.7, 0, 0.318697, 0, 0.623244, -76.0976, 0, -68.6852)
+
+[node name="PavingCobble1Rough19" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
+transform = Transform3D(-0.110674, 0, 0.691196, 0, 0.7, 0, -0.691196, 0, -0.110674, -31.8929, 0, -68.6852)
+
+[node name="PavingCobble1Rough20" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
+transform = Transform3D(0.353908, 0, 0.603945, 0, 0.7, 0, -0.603945, 0, 0.353908, -42.5968, 0, -68.6852)
+
+[node name="PavingCobble1Rough15" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
+transform = Transform3D(0.644659, 0, -0.272792, 0, 0.7, 0, 0.272792, 0, 0.644659, -91.6423, 0, -166.69)
+
+[node name="PavingCobble1Rough16" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
+transform = Transform3D(0.644659, 0, -0.272792, 0, 0.7, 0, 0.272792, 0, 0.644659, -91.6423, 0, -192.434)
+
 [node name="PavingCobble1Rough7" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
-transform = Transform3D(0.999928, 0, -0.0119901, 0, 1, 0, 0.0119901, 0, 0.999928, -15.8969, 0, -62.072)
+transform = Transform3D(1.27093, 0, -0.0141148, 0, 1.25737, 0, 0.0152397, 0, 1.17712, -12.9025, 0, -61.6277)
 
 [node name="PavingCobble1Rough8" parent="Environment/Ground/Stone" instance=ExtResource("3_6gmd4")]
-transform = Transform3D(1.49989, 0, -0.0179852, 0, 1.5, 0, 0.0179852, 0, 1.49989, -79.4588, 0, -16.1378)
+transform = Transform3D(1.68005, 0, -0.0201769, 0, 2.39772, 0, 0.0201455, 0, 1.68267, -79.4588, 0, -16.1378)
 
 [node name="Sand" type="Node3D" parent="Environment/Ground"]
 
-[node name="1stHalf" type="Node3D" parent="Environment/Ground/Sand"]
+[node name="Outside1stHalf" type="Node3D" parent="Environment/Ground/Sand"]
 
-[node name="Sand1Rough4" parent="Environment/Ground/Sand/1stHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(1.28463, 0, 1.28723, 0, 1.5, 0, -1.05607, 0, 1.56581, -113.633, -0.165805, -0.302588)
+[node name="Sand1Rough4" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(0.975935, 0, 1.64125, 0, 2.6324, 0, -1.34652, 0, 1.18955, -103.999, -0.165805, -0.302588)
 
-[node name="Sand1Rough5" parent="Environment/Ground/Sand/1stHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(-0.183008, 0, -2.01469, 0, 1.5, 0, 1.6529, 0, -0.223064, -118.058, -0.165805, -22.5067)
+[node name="Sand1Rough17" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(0.498744, 0, 2.05309, 0, 3.86971, 0, -2.77273, 0, 0.369298, -92.31, -0.165805, 24.1425)
 
-[node name="Sand1Rough6" parent="Environment/Ground/Sand/1stHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(-1.18813, 0, 1.41827, 0, 1.5, 0, -1.16358, 0, -1.44819, -125.816, -0.165805, -40.8381)
+[node name="Sand1Rough18" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-0.213187, 0, 2.42411, 0, 4.0621, 0, -1.98861, 0, -0.259875, -66.5051, -0.165805, 49.2028)
 
-[node name="Sand1Rough7" parent="Environment/Ground/Sand/1stHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(1.2829, 0, 1.2898, 0, 1.5, 0, -1.05818, 0, 1.5637, -126.692, -0.165805, -59.4191)
+[node name="Sand1Rough5" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-0.296759, 0, -2.32072, 0, 2.35149, 0, 2.68028, 0, -0.256947, -118.058, -0.165805, -22.5067)
 
-[node name="Sand1Rough8" parent="Environment/Ground/Sand/1stHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(-0.704916, 0, -1.83589, 0, 1.5, 0, 1.50621, 0, -0.859209, -125.689, -0.165805, -82.7894)
+[node name="Sand1Rough6" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-1.2549, 0, -1.33047, 0, 3.09725, 0, 1.33064, 0, -1.25474, -121.283, -0.165805, -40.8381)
 
-[node name="Sand1Rough9" parent="Environment/Ground/Sand/1stHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(0.481022, 0, 1.94035, 0, 1.5, 0, -1.59191, 0, 0.586309, -130.703, -0.165805, -98.1951)
+[node name="Sand1Rough7" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(1.72301, 0, 1.06093, 0, 3.81577, 0, -0.892777, 0, 2.04752, -122.571, -0.165805, -59.4191)
 
-[node name="Sand1Rough10" parent="Environment/Ground/Sand/1stHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(1.09372, 0, 1.52694, 0, 1.5, 0, -1.25274, 0, 1.33311, -136.349, -0.165805, -113.701)
+[node name="Sand1Rough8" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-1.39356, 0, -1.41022, 0, 3.333, 0, 1.08497, 0, -1.81131, -121.093, -0.165805, -79.7868)
 
-[node name="Sand1Rough11" parent="Environment/Ground/Sand/1stHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(1.30561, 0, 1.25548, 0, 1.5, 0, -1.03003, 0, 1.59138, -136.349, -0.165805, -134.014)
+[node name="Sand1Rough9" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(0.00860923, 0, 2.38903, 0, 3.44995, 0, -2.45337, 0, 0.00838362, -133.356, -0.165805, -98.1951)
 
-[node name="Sand1Rough12" parent="Environment/Ground/Sand/1stHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(1.30561, 0, 1.25548, 0, 1.5, 0, -1.03003, 0, 1.59138, -136.349, -0.165805, -154.928)
+[node name="Sand1Rough10" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(1.02005, 0, 1.40914, 0, 2.99759, 0, -1.16836, 0, 1.23026, -136.349, -0.165805, -113.701)
 
-[node name="Sand1Rough13" parent="Environment/Ground/Sand/1stHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(1.52031, 0, 0.821478, 0, 1.5, 0, -0.67396, 0, 1.85308, -136.349, -0.165805, -174.538)
+[node name="Sand1Rough11" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(1.30956, 0, 0.976156, 0, 2.76363, 0, -0.786299, 0, 1.62576, -136.349, -0.165805, -134.014)
 
-[node name="Sand1Rough14" parent="Environment/Ground/Sand/1stHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(1.2859, 0, 1.28534, 0, 1.5, 0, -1.05453, 0, 1.56736, -135.68, -0.165805, -193.328)
+[node name="Sand1Rough12" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(1.33216, 0, 1.21334, 0, 3.85397, 0, -0.995454, 0, 1.62374, -137.563, -0.165805, -154.928)
 
-[node name="Sand1Rough15" parent="Environment/Ground/Sand/1stHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(1.66278, 0, -0.0328652, 0, 1.5, 0, 0.0269634, 0, 2.02673, -128.668, -0.165805, -210.252)
+[node name="Sand1Rough13" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(1.29749, 0, 1.26792, 0, 2.88958, 0, -1.04023, 0, 1.58149, -137.028, -0.165805, -174.538)
 
-[node name="Sand1Rough16" parent="Environment/Ground/Sand/1stHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(1.64199, 0, 0.321214, 0, 1.5, 0, -0.263532, 0, 2.00139, -121.261, -0.165805, -226.746)
+[node name="Sand1Rough14" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(1.59517, 0, 0.572985, 0, 5.28173, 0, -0.470097, 0, 1.94433, -137.926, -0.165805, -193.328)
 
-[node name="2ndHalf" type="Node3D" parent="Environment/Ground/Sand"]
+[node name="Sand1Rough15" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(1.95727, 0, -0.0327708, 0, 4.30412, 0, 0.0317389, 0, 2.02091, -128.668, -0.165805, -210.252)
 
-[node name="Sand1Rough17" parent="Environment/Ground/Sand/2ndHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(-0.226242, 0, 2.00815, 0, 1.5, 0, -1.64754, 0, -0.275762, 99.9128, -0.165805, -226.558)
+[node name="Sand1Rough16" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(1.85964, 0, 0.328047, 0, 3.21077, 0, -0.298463, 0, 2.04397, -121.261, -0.165805, -226.746)
 
-[node name="Sand1Rough18" parent="Environment/Ground/Sand/2ndHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(-0.596943, 0, -1.89191, 0, 1.5, 0, 1.55217, 0, -0.727602, 105.088, -0.165805, -211.119)
+[node name="Sand1Rough19" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(1.65055, 0, -0.997133, 0, 3.21077, 0, 0.90721, 0, 1.81415, -108.192, -0.165805, -246.864)
 
-[node name="Sand1Rough19" parent="Environment/Ground/Sand/2ndHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(-1.03227, 0, -1.58923, 0, 1.5, 0, 1.30384, 0, -1.25821, 95.9477, -0.165805, -241.249)
+[node name="Sand1Rough20" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(1.10522, 0, -1.67623, 0, 3.92594, 0, 1.52507, 0, 1.21477, -84.6584, -0.165805, -263.994)
 
-[node name="Sand1Rough20" parent="Environment/Ground/Sand/2ndHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(-1.03227, 0, -1.58923, 0, 1.5, 0, 1.30384, 0, -1.25821, 106.544, -0.165805, -189.95)
+[node name="Sand1Rough21" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(1.85525, 0, -0.356771, 0, 3.92594, 0, 0.324596, 0, 2.03915, -65.0956, -0.165805, -274.404)
 
-[node name="Sand1Rough21" parent="Environment/Ground/Sand/2ndHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(0.434313, 0, 1.95665, 0, 1.5, 0, -1.60529, 0, 0.529376, 111.702, -0.165805, -167.259)
+[node name="Sand1Rough22" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-1.4905, 0, 1.26554, 0, 5.11731, 0, -1.15141, 0, -1.63824, -40.0106, -0.165805, -290.163)
 
-[node name="Sand1Rough22" parent="Environment/Ground/Sand/2ndHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(-1.32063, 0, -1.23191, 0, 1.5, 0, 1.01069, 0, -1.6097, 114.532, -0.165805, -153.6)
+[node name="Sand1Rough23" parent="Environment/Ground/Sand/Outside1stHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-1.77902, 0, 0.679705, 0, 4.48264, 0, -0.618407, 0, -1.95536, -11.7153, -0.165805, -292.358)
 
-[node name="Sand1Rough23" parent="Environment/Ground/Sand/2ndHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(-0.70471, 0, -1.83601, 0, 1.5, 0, 1.5063, 0, -0.858958, 117.333, -0.165805, -132.291)
+[node name="Outside2ndHalf" type="Node3D" parent="Environment/Ground/Sand"]
 
-[node name="Sand1Rough24" parent="Environment/Ground/Sand/2ndHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(-1.41216, 0, -1.07051, 0, 1.5, 0, 0.878274, 0, -1.72126, 117.333, -0.165805, -112.381)
+[node name="Sand1Rough17" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-0.226242, 0, 2.00815, 0, 2.81192, 0, -1.64754, 0, -0.275762, 99.9128, -0.165805, -226.558)
 
-[node name="Sand1Rough25" parent="Environment/Ground/Sand/2ndHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(-0.970526, 0, -1.64601, 0, 1.5, 0, 1.35043, 0, -1.18296, 117.333, -0.165805, -91.3733)
+[node name="Sand1Rough18" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-0.596943, 0, -1.89191, 0, 2.81192, 0, 1.55217, 0, -0.727602, 105.088, -0.165805, -211.119)
 
-[node name="Sand1Rough26" parent="Environment/Ground/Sand/2ndHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(-1.46588, 0, -0.957237, 0, 1.5, 0, 0.785341, 0, -1.78674, 117.333, -0.165805, -74.7935)
+[node name="Sand1Rough19" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-1.76681, 0, -3.0176, 0, 4.09899, 0, 2.23163, 0, -2.38907, 95.9477, -0.165805, -241.249)
 
-[node name="Sand1Rough27" parent="Environment/Ground/Sand/2ndHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(-1.05715, 0, -1.56474, 0, 1.5, 0, 1.28375, 0, -1.28854, 120.238, -0.165805, -56.0913)
+[node name="Sand1Rough30" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-0.586015, 0, -1.89698, 0, 3.57637, 0, 1.55633, 0, -0.714278, 58.307, -0.165805, -280.367)
 
-[node name="Sand1Rough28" parent="Environment/Ground/Sand/2ndHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(-1.61401, 0, -0.488384, 0, 1.5, 0, 0.400682, 0, -1.96728, 116.946, -0.165805, -37.2247)
+[node name="Sand1Rough31" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(0.757719, 0, -2.76067, 0, 3.57637, 0, 1.824, 0, 1.14684, 28.1719, -0.165805, -291.493)
 
-[node name="Sand1Rough29" parent="Environment/Ground/Sand/2ndHalf" instance=ExtResource("4_2ud86")]
-transform = Transform3D(-1.61401, 0, -0.488384, 0, 1.5, 0, 0.400682, 0, -1.96728, 115.187, -0.165805, -19.9898)
+[node name="Sand1Rough20" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-1.03227, 0, -1.58923, 0, 2.81192, 0, 1.30384, 0, -1.25821, 106.544, -0.165805, -189.95)
+
+[node name="Sand1Rough21" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(0.434313, 0, 1.95665, 0, 2.81192, 0, -1.60529, 0, 0.529376, 111.702, -0.165805, -167.259)
+
+[node name="Sand1Rough22" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-1.32063, 0, -1.23191, 0, 2.81192, 0, 1.01069, 0, -1.6097, 114.532, -0.165805, -153.6)
+
+[node name="Sand1Rough23" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-0.70471, 0, -1.83601, 0, 2.81192, 0, 1.5063, 0, -0.858958, 117.333, -0.165805, -132.291)
+
+[node name="Sand1Rough24" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-1.41216, 0, -1.07051, 0, 2.81192, 0, 0.878274, 0, -1.72126, 117.333, -0.165805, -112.381)
+
+[node name="Sand1Rough25" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-0.970526, 0, -1.64601, 0, 2.81192, 0, 1.35043, 0, -1.18296, 117.333, -0.165805, -91.3733)
+
+[node name="Sand1Rough26" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-1.46588, 0, -0.957237, 0, 2.81192, 0, 0.785341, 0, -1.78674, 117.333, -0.165805, -74.7935)
+
+[node name="Sand1Rough27" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-1.05715, 0, -1.56474, 0, 2.81192, 0, 1.28375, 0, -1.28854, 120.238, -0.165805, -56.0913)
+
+[node name="Sand1Rough28" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-1.61401, 0, -0.488384, 0, 2.81192, 0, 0.400682, 0, -1.96728, 116.946, -0.165805, -37.2247)
+
+[node name="Sand1Rough29" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-1.6862, 0, -0.542963, 0, 2.81192, 0, 0.418603, 0, -2.18713, 115.187, -0.165805, -19.9898)
+
+[node name="Sand1Rough32" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-1.55123, 0, 1.01487, 0, 3.71754, 0, -0.782427, 0, -2.01206, 108.552, -0.165805, 1.40209)
+
+[node name="Sand1Rough33" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-1.71444, 0, -0.364994, 0, 3.71755, 0, 0.281395, 0, -2.22377, 95.3559, -0.165805, 21.1252)
+
+[node name="Sand1Rough34" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-1.69916, 0, 0.47011, 0, 3.71755, 0, -0.362439, 0, -2.20394, 83.4735, -0.165805, 37.9786)
+
+[node name="Sand1Rough35" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-1.21541, 0, 1.6103, 0, 4.32713, 0, -1.24148, 0, -1.57648, 60.6127, -0.165805, 54.2797)
+
+[node name="Sand1Rough36" parent="Environment/Ground/Sand/Outside2ndHalf" instance=ExtResource("4_2ud86")]
+transform = Transform3D(0.25932, 0.289902, 2.21036, -0.136644, 4.8459, -0.107446, -1.69493, -0.346318, 0.346838, 42.9864, -0.165805, 60.9808)
+
+[node name="Inside" type="Node3D" parent="Environment/Ground/Sand"]
+
+[node name="Sand1Rough" parent="Environment/Ground/Sand/Inside" instance=ExtResource("4_2ud86")]
+transform = Transform3D(0.5, 0, 0, 0, 0.746713, 0, 0, 0, 0.5, 22.8482, -0.15313, -69.8433)
+
+[node name="Sand1Rough2" parent="Environment/Ground/Sand/Inside" instance=ExtResource("4_2ud86")]
+transform = Transform3D(0.299576, 0, 0.623018, 0, 1.3959, 0, -0.747403, 0, 0.249719, -17.3229, -0.240221, -41.0324)
+
+[node name="Sand1Rough3" parent="Environment/Ground/Sand/Inside" instance=ExtResource("4_2ud86")]
+transform = Transform3D(0.181679, 0, 0.363475, 0, 1.03659, 0, -0.453267, 0, 0.145689, -61.8969, -0.240221, -107.023)
+
+[node name="Sand1Rough4" parent="Environment/Ground/Sand/Inside" instance=ExtResource("4_2ud86")]
+transform = Transform3D(0.181679, 0, 0.363475, 0, 1.13047, 0, -0.453267, 0, 0.145689, 81.8136, -0.240221, -74.3135)
+
+[node name="Sand1Rough5" parent="Environment/Ground/Sand/Inside" instance=ExtResource("4_2ud86")]
+transform = Transform3D(0.320385, 0, 0.492713, 0, 1.35217, 0, -0.799321, 0, 0.19749, 40.653, -0.240221, -5.51227)
+
+[node name="Sand1Rough6" parent="Environment/Ground/Sand/Inside" instance=ExtResource("4_2ud86")]
+transform = Transform3D(-0.162589, 0, 0.557902, 0, 1.2199, 0, -0.651674, 0, -0.139194, 0.650805, -0.240221, -99.227)
+
+[node name="Sand1Rough7" parent="Environment/Ground/Sand/Inside" instance=ExtResource("4_2ud86")]
+transform = Transform3D(0.589965, 0, -0.00638902, 0, 1.16249, 0, 0.00730073, 0, 0.516291, 57.1431, -0.316149, -143.909)
 
 [node name="Buildings" type="Node3D" parent="Environment"]
 
