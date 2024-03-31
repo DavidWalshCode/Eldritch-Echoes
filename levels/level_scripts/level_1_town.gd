@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var ambience_1 = $Audio/Ambience1
+@onready var ambience_level_1 = $Audio/AmbienceLevel1
 
 func _ready():
-	ambience_1.play()
+	ambience_level_1.play()
