@@ -35,7 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://cirlgxw2hqiqk" path="res://environment/assets/nature/bushes/scenes/retro_nature_pack/bush_04_spring_4.tscn" id="28_0g3vy"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="28_01geb"]
 [ext_resource type="PackedScene" uid="uid://bictrbdokooec" path="res://environment/assets/nature/grass/scenes/retro_nature_pack/grass_01_spring.tscn" id="28_kq4co"]
-[ext_resource type="Environment" uid="uid://ddrbs8mxigttm" path="res://environment/lighting/level_1_lighting.tres" id="28_qlpf1"]
+[ext_resource type="Environment" uid="uid://ddrbs8mxigttm" path="res://environment/sky/level_1_lighting.tres" id="28_qlpf1"]
 [ext_resource type="PackedScene" uid="uid://byfdqvnlgx8a6" path="res://environment/assets/nature/grass/scenes/retro_nature_pack/grass_02_spring.tscn" id="29_1ce84"]
 [ext_resource type="PackedScene" uid="uid://vg1mbsw3dyq1" path="res://environment/assets/nature/bushes/scenes/retro_nature_pack/bush_04_spring_3.tscn" id="29_an6c5"]
 [ext_resource type="PackedScene" uid="uid://bs0gy55bmecae" path="res://environment/assets/nature/bushes/scenes/retro_nature_pack/bush_04_spring_6.tscn" id="30_8d7up"]

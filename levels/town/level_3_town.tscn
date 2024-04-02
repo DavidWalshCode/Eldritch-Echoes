@@ -59,7 +59,7 @@
 [ext_resource type="PackedScene" uid="uid://lq7366i8slik" path="res://environment/assets/village/outside_props/scenes/weeping_angel_statue_1.tscn" id="64_8mahq"]
 [ext_resource type="PackedScene" uid="uid://b080gf8n15f43" path="res://environment/assets/village/prebuilt_towns/harbour_town/scenes/full_harbour_town_3.tscn" id="65_tjf8j"]
 [ext_resource type="PackedScene" uid="uid://chtwrqnehsngw" path="res://environment/assets/village/prebuilt_towns/small_town/scenes/full_small_town_3.tscn" id="66_fgafl"]
-[ext_resource type="Environment" uid="uid://b7u0cknwnxxrh" path="res://environment/lighting/level_3_lighting.tres" id="67_vn8jh"]
+[ext_resource type="Environment" uid="uid://b7u0cknwnxxrh" path="res://environment/sky/level_3_lighting.tres" id="67_vn8jh"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="68_48gp5"]
 
 [node name="Level3Town" type="Node3D"]
@@ -1146,6 +1146,7 @@ transform = Transform3D(0.372808, 0, -1.96495, 0, 2, 0, 1.96495, 0, 0.372808, 29
 [node name="TownSquareProps" type="Node3D" parent="Environment/Props"]
 
 [node name="WeepingAngelStatue" type="Node3D" parent="Environment/Props/TownSquareProps"]
+transform = Transform3D(0.996462, 0, -0.0840431, 0, 1, 0, 0.0840431, 0, 0.996462, -6.0055, 0, 0)
 
 [node name="WeepingAngelStatue1" parent="Environment/Props/TownSquareProps/WeepingAngelStatue" instance=ExtResource("64_8mahq")]
 transform = Transform3D(-1.2, 0, 1.04908e-07, 0, 1.2, 0, -1.04908e-07, 0, -1.2, 2.70859, 2.24068, -71.8327)
@@ -1164,10 +1165,14 @@ transform = Transform3D(-2.72167, 0, -0.657638, 0, 2.8, 0, 0.657638, 0, -2.72167
 [node name="Pirate1Cannon5" parent="Environment/Props/TownSquareProps/Cannons" instance=ExtResource("52_kas84")]
 transform = Transform3D(-1.81306, 0, 2.13373, 0, 2.8, 0, -2.13373, 0, -1.81306, -10.3957, -0.0614411, -32.673)
 
+[node name="Portal" type="Node3D" parent="Environment/Props/TownSquareProps"]
+
+[node name="Fires" type="Node3D" parent="Environment/Props"]
+
 [node name="PrebuiltTowns" type="Node3D" parent="Environment"]
 
 [node name="FullHarbourTown3" parent="Environment/PrebuiltTowns" instance=ExtResource("65_tjf8j")]
-transform = Transform3D(-3.0598e-07, 0, 7, 0, 7, 0, -7, 0, -3.0598e-07, -0.76, -5.27702, -231.781)
+transform = Transform3D(-3.0598e-07, 0, 7, 0, 7, 0, -7, 0, -3.0598e-07, -0.76, -5.10738, -231.781)
 
 [node name="FullSmallTown3" parent="Environment/PrebuiltTowns" instance=ExtResource("66_fgafl")]
 transform = Transform3D(-3.67176e-07, 0, -8.4, 0, 8.4, 0, 8.4, 0, -3.67176e-07, -66.207, 0.038, -67.281)
