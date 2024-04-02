@@ -2,6 +2,9 @@ extends Node3D
 
 @onready var weapons = $Weapons.get_children()
 @onready var general_weapon_animations = $GeneralWeaponAnimations
+@onready var alert_area_hearing = $AlertAreaHearing
+@onready var alert_area_line_of_sight = $AlertAreaLineOfSight
+
 var weapons_unlocked = []
 var current_slot = 0
 var current_weapon = null
@@ -16,7 +19,11 @@ func _ready():
 		#weapons_unlocked.append(false)
 		weapons_unlocked.append(true)
 	switch_to_weapon_slot(0)
-
+	
+	for weapon in weapons:
+			weapon.connect("fired", Callable(self, "alert_nearby_enenmies"))
+	
+	
 func attack(input_just_pressed : bool, input_held : bool):
 	if current_weapon is Weapon:
 		current_weapon.attack(input_just_pressed, input_held)
@@ -66,3 +73,14 @@ func update_move_animation(velocity : Vector3, grounded : bool):
 		general_weapon_animations.play("RESET", 0.4)
 	else:
 		general_weapon_animations.play("moving", 0.4)
+
+func alert_nearby_enemies():
+	var nearby_enemies = alert_area_line_of_sight.get_overlapping_bodies()
+	for nearby_enemy in nearby_enemies:
+		if nearby_enemy.has_method("alert"):
+			nearby_enemy.alert()
+			
+	nearby_enemies = alert_area_hearing.get_overlapping_bodies()
+	for nearby_enemy in nearby_enemies:
+		if nearby_enemy.has_method("alert"):
+			nearby_enemy.alert(false) #

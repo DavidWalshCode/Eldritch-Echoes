@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=88 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://weapons/weapon_manager.gd" id="2_c6p01"]
@@ -373,6 +373,12 @@ _data = {
 "RESET": SubResource("Animation_uaauj"),
 "moving": SubResource("Animation_o41hp")
 }
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5m1xi"]
+radius = 150.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t7da3"]
+radius = 300.0
 
 [sub_resource type="Animation" id="Animation_3i1ox"]
 length = 0.001
@@ -922,6 +928,20 @@ stream = ExtResource("16_gfb3c")
 libraries = {
 "": SubResource("AnimationLibrary_ayyqv")
 }
+
+[node name="AlertAreaHearing" type="Area3D" parent="Camera3D/WeaponManager"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/WeaponManager/AlertAreaHearing"]
+shape = SubResource("SphereShape3D_5m1xi")
+
+[node name="AlertAreaLineOfSight" type="Area3D" parent="Camera3D/WeaponManager"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/WeaponManager/AlertAreaLineOfSight"]
+shape = SubResource("SphereShape3D_t7da3")
 
 [node name="CharacterMover" parent="." instance=ExtResource("2_k2lt6")]
 visible = false

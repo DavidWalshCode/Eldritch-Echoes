@@ -37,15 +37,6 @@ func fire():
 				hit_effect_instance.look_at(look_at_position, Vector3.RIGHT) # Set the direction to right
 			else:
 				hit_effect_instance.look_at(look_at_position)
-			
-			# Schedule the hit effect instance to be freed after a certain amount of time
-			#var delay = 5.0 # Time in seconds before the hit effect is deleted
-			#var timer = get_tree().create_timer(delay)
-			#var callable = Callable(self, "_on_Timer_timeout").bind(hit_effect_instance)
-			#timer.connect("timeout", callable)
 	
 	ray_cast_3d.enabled = false
 	super()
-
-#func _on_Timer_timeout(hit_effect_instance : Node3D):
-	#hit_effect_instance.queue_free()

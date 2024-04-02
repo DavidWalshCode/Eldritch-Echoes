@@ -19,7 +19,7 @@ func _ready():
 			if child is Hitbox:
 				child.connect("hurt_signal", Callable(self, "hurt"))
 				
-	enemy_health_manager.connect("died", Callable(self, "set_state_dead"))
+	enemy_health_manager.connect("enemy_died", Callable(self, "set_state_dead"))
 	
 	set_state_idle()
 	
@@ -40,10 +40,11 @@ func set_state_idle():
 	enemy_animation_player.get_animation("idle").loop = true
 	enemy_animation_player.play("idle")
 	
-
 func set_state_chase():
 	current_state = STATES.CHASE
+	enemy_animation_player.get_animation("walk").loop = true
 	enemy_animation_player.play("walk")
+	print("alerted")
 	
 func set_state_attack():
 	current_state = STATES.ATTACK
@@ -54,7 +55,8 @@ func set_state_dead():
 	enemy_animation_player.play("die")
 
 func process_state_idle(delta):
-	pass
+	if can_see_player():
+		set_state_chase()
 
 func process_state_chase(delta):
 	pass
@@ -66,6 +68,8 @@ func process_state_dead(delta):
 	pass
 
 func hurt(damage_data : DamageData):
+	if current_state == STATES.IDLE:
+		set_state_chase()
 	enemy_health_manager.hurt(damage_data)
 
 func can_see_player():
@@ -82,7 +86,7 @@ func has_line_of_sight_player():
 	query_params.from = enemy_position
 	query_params.to = player_position
 	query_params.collision_mask = 1
-	query_params.exclude = []  # Make sure to se,t any needed parameters
+	query_params.exclude = []  # Make sure to set any needed parameters
 	# Assume other necessary parameters are set here
 
 	var result = space_state.intersect_ray(query_params)
@@ -91,3 +95,10 @@ func has_line_of_sight_player():
 	if result.size() == 0:  # or simply if not result:
 		return true  # No collision means clear line of sight
 	return false  # Collision detected
+
+func alert(check_line_of_sight = true):
+	if current_state != STATES.IDLE:
+		return
+	if check_line_of_sight and !has_line_of_sight_player():
+		return
+	set_state_chase()

@@ -55,6 +55,8 @@ func attack(input_just_pressed : bool, input_held : bool):
 	last_attack_time = current_time
 	animation_player.stop()
 	animation_player.play("attack")
+	fired.emit()
+	
 	if has_node("Graphics/MuzzleFlash"):
 		$Graphics/MuzzleFlash.flash()
 	if has_node("Graphics/MuzzleFlash2"): # Not the best implementation for making the second flash show, keep an eye on it
@@ -88,4 +90,4 @@ func play_shoot_sound():
 	shoot_sound.play()
 
 func is_idle() -> bool:
-	return !animation_player.is_playing()
+	return !animation_player.is_playing() # Not shooting/attacking

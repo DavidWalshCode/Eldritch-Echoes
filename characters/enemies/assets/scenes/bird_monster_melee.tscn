@@ -234,6 +234,7 @@ shape = SubResource("SphereShape3D_7yjnb")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="EnemyHealthManager" parent="." instance=ExtResource("4_5jwiq")]
-max_health = 80
+max_health = 60
+gib_at = -20
 
 [editable path="Graphics"]
