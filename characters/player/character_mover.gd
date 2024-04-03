@@ -21,7 +21,7 @@ signal moved(velocity : Vector3, grounded : bool)
 
 var character_body : CharacterBody3D
 var move_drag = 0.0
-var move_dir : Vector3
+var move_direction : Vector3
 var current_speed
 var double_jump_available = true
 var is_crouching : bool = false
@@ -53,8 +53,8 @@ func _ready():
 	add_child(slide_timer)
 	slide_timer.connect("timeout", Callable(self, "_on_slide_timer_timeout"))
 
-func set_move_dir(new_move_dir : Vector3):
-	move_dir = new_move_dir
+func set_move_direction(new_move_direction : Vector3):
+	move_direction = new_move_direction # Maybe .normalized()
 
 func jump():
 	if is_crouching == false: # Can only jump if you are not crouching
@@ -136,7 +136,7 @@ func _physics_process(delta):
 		is_in_air = false
 	
 	var drag = move_drag
-	if move_dir.is_zero_approx():
+	if move_direction.is_zero_approx():
 		drag = stop_drag
 	if not character_body.is_on_floor(): # Use air_drag if the character is not on the floor
 		drag = air_drag
@@ -152,7 +152,7 @@ func _physics_process(delta):
 		else:
 			adjusted_move_accel *= crouch_movement_speed_modifier
 
-	character_body.velocity += adjusted_move_accel * move_dir - flat_velo * drag
+	character_body.velocity += adjusted_move_accel * move_direction - flat_velo * drag
 
 	character_body.move_and_slide()
 	moved.emit(character_body.velocity, character_body.is_on_floor())
@@ -161,7 +161,7 @@ func _physics_process(delta):
 	Global.debug.add_property("Movement Speed", current_speed, 1) # Adding movement speed to debug panel
 
 	# Footstep sound logic
-	if character_body.is_on_floor() and not move_dir.is_zero_approx():
+	if character_body.is_on_floor() and not move_direction.is_zero_approx():
 		var current_time = Time.get_ticks_msec() / 1000.0
 		footstep_sound_interval = 0.3
 		if is_crouching:

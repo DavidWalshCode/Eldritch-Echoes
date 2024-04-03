@@ -77,9 +77,9 @@ func _process(delta):
 	if dead:
 		return
 	
-	var input_dir = Input.get_vector("move_left", "move_right", "move_forwards", "move_backwards") # Currently 'WASD'
-	var move_dir = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	character_mover.set_move_dir(move_dir)
+	var input_direction = Input.get_vector("move_left", "move_right", "move_forwards", "move_backwards") # Currently 'WASD'
+	var move_direction = (transform.basis * Vector3(input_direction.x, 0, input_direction.y)).normalized()
+	character_mover.set_move_direction(move_direction)
 	update_camera_lean(delta) # Update camera lean
 	
 	if Input.is_action_just_pressed("jump"): # Currently 'Space'
