@@ -6,7 +6,6 @@ var current_state = STATES.IDLE
 @onready var enemy_animation_player = $Graphics/AnimationPlayer
 @onready var enemy_health_manager = $EnemyHealthManager
 @onready var enemy_character_mover = $EnemyCharacterMover
-
 @onready var navigation_agent = $NavigationAgent3D
 
 var player = null
@@ -15,7 +14,21 @@ var path = []
 @export var sight_angle = 45.0
 @export var turn_speed = 360.0 # Converted from degrees to radians when used
 
+@export var attack_range = 2.0
+@export var attack_rate = 0.5
+@export var attack_animation_speed_mod = 0.2
+var attack_timer : Timer
+var can_attack = true
+
+signal enemy_attack
+
 func _ready():
+	attack_timer = Timer.new()
+	attack_timer.wait_time = attack_rate
+	attack_timer.connect("timeout", Callable(self, "finish_attack"))
+	attack_timer.one_shot = true
+	add_child(attack_timer)
+	
 	player = get_tree().get_nodes_in_group("player")[0]
 	
 	var bone_attachments = $Graphics/Armature/Skeleton3D.get_children()
@@ -26,8 +39,6 @@ func _ready():
 				child.connect("hurt_signal", Callable(self, "hurt"))
 				
 	enemy_health_manager.connect("enemy_died", Callable(self, "set_state_dead"))
-	
-	#enemy_character_mover.init(self) # might not need
 	
 	set_state_idle()
 	
@@ -56,7 +67,6 @@ func set_state_chase():
 	
 func set_state_attack():
 	current_state = STATES.ATTACK
-	enemy_animation_player.play("attack")
 	
 func set_state_dead():
 	current_state = STATES.DEAD
@@ -69,55 +79,31 @@ func process_state_idle(delta):
 		set_state_chase()
 
 func process_state_chase(delta):
+	if within_distance_of_player(attack_range) and has_line_of_sight_player():
+		set_state_attack()
+	
 	var player_position = player.global_transform.origin
 	var enemy_position = global_transform.origin
 	
-	'''
-	path = navigation_region_3d.get_simple_path(enemy_position, player_position)
-	var goal_position = player_position
-	
-	if path.size() > 1:
-		goal_position = path[1]
-	
-	var direction = goal_position - enemy_position
-	direction.y = 0
-	enemy_character_mover.set_move_direction(direction)
-	'''
-	
-	navigation_agent.set_target_position(player.position)
+	velocity = Vector3.ZERO
+	navigation_agent.set_target_position(player_position)
 	var next_navigation_point = navigation_agent.get_next_path_position()
+	velocity = (next_navigation_point - enemy_position).normalized() * enemy_character_mover.max_speed
 	
-	var direction = next_navigation_point - enemy_position.normalized()
-	#direction.y = 0
-	
-	enemy_character_mover.set_move_direction(direction)
-	face_direction(direction, delta)
-	
-	#### - GPT
-	var max_speed = 10
-	var target_position = player.global_transform.origin
-	navigation_agent.set_target_location(target_position)
-	
-	var velocity = Vector3.ZERO
-	if navigation_agent.is_navigation_finished():
-		pass# If close enough or navigation finished, you might want to switch to ATTACK state or stop moving.
-	else:
-		var next_point = navigation_agent.get_next_location()
-		var direction_d = (next_point - global_transform.origin).normalized()
-		velocity = direction_d * max_speed
-		face_direction(direction_d, delta)  # Ensure facing towards the movement direction
-		
-	# Apply the velocity, considering Y-axis separately if needed for gravity/jumping
-	#character_body.velocity.x = velocity.x
-	#character_body.velocity.z = velocity.z
-	#character_body.move_and_slide()
-	enemy_character_mover.velocity.x = velocity.x
-	enemy_character_mover.velocity.z = velocity.z
-	enemy_character_mover.move_and_slide()
-	
+	face_direction(velocity, delta)
+	enemy_character_mover.set_move_direction(velocity)
 
 func process_state_attack(delta):
-	pass
+	enemy_character_mover.set_move_direction(Vector3.ZERO) # Currently dont want to move while attack
+	
+	# face_direction(global_transform.origin.direction_to(player.global_transform.origin), delta)
+	
+	if can_attack:
+		
+		if !within_distance_of_player(attack_range) or !can_see_player():
+			set_state_chase()
+		else:
+			start_attack()
 
 func process_state_dead(delta):
 	pass
@@ -126,6 +112,14 @@ func hurt(damage_data : DamageData):
 	if current_state == STATES.IDLE:
 		set_state_chase()
 	enemy_health_manager.hurt(damage_data)
+
+func start_attack():
+	can_attack = false
+	enemy_animation_player.play("attack", -1, attack_animation_speed_mod)
+	attack_timer.start()
+
+func finish_attack():
+	can_attack = true
 
 func can_see_player():
 	var direction_to_player = global_transform.origin.direction_to(player.global_transform.origin)
@@ -165,3 +159,6 @@ func alert(check_line_of_sight = true):
 	if check_line_of_sight and !has_line_of_sight_player():
 		return
 	set_state_chase()
+
+func within_distance_of_player(distance : float):
+	return global_transform.origin.distance_to(player.global_transform.origin) < attack_range
