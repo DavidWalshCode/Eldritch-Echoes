@@ -7,6 +7,7 @@ var current_state = STATES.IDLE
 @onready var enemy_health_manager = $EnemyHealthManager
 @onready var enemy_character_mover = $EnemyCharacterMover
 @onready var navigation_agent = $NavigationAgent3D
+@onready var enemy_aimer = $EnemyAimer
 
 var player = null
 var path = []
@@ -16,7 +17,7 @@ var path = []
 
 @export var attack_range = 2.0
 @export var attack_rate = 0.5
-@export var attack_animation_speed_mod = 0.2
+@export var attack_animation_speed_mod = 0.7
 var attack_timer : Timer
 var can_attack = true
 
@@ -56,12 +57,12 @@ func _process(delta):
 
 func set_state_idle():
 	current_state = STATES.IDLE
-	enemy_animation_player.get_animation("idle").loop = true
+	#enemy_animation_player.get_animation("idle").loop = true
 	enemy_animation_player.play("idle")
 	
 func set_state_chase():
 	current_state = STATES.CHASE
-	enemy_animation_player.get_animation("walk").loop = true
+	#enemy_animation_player.get_animation("walk").loop = true
 	enemy_animation_player.play("walk", 0.2)
 	print("alerted")
 	
@@ -111,12 +112,16 @@ func process_state_dead(delta):
 func hurt(damage_data : DamageData):
 	if current_state == STATES.IDLE:
 		set_state_chase()
-	enemy_health_manager.hurt(damage_data)
+	enemy_health_manager.hurt(damage_data) # Change to player health manager?
 
 func start_attack():
 	can_attack = false
 	enemy_animation_player.play("attack", -1, attack_animation_speed_mod)
 	attack_timer.start()
+	enemy_aimer.aim_at_position(player.global_transform.origin + Vector3.UP)
+
+func emit_attack():
+	enemy_attack.emit()
 
 func finish_attack():
 	can_attack = true
