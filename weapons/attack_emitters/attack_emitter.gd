@@ -6,13 +6,13 @@ class_name AttackEmitter
 var bodies_to_exclude = []
 var damage = 1
 
-func set_damage(d: int):
+func set_damage(d : int):
 	damage = d
 	for child in get_children():
 		if child is AttackEmitter:
 			child.set_damage(d)
 
-func set_bodies_to_exclude(bodies: Array):
+func set_bodies_to_exclude(bodies : Array):
 	bodies_to_exclude = bodies
 	for child in get_children():
 		if child is AttackEmitter:

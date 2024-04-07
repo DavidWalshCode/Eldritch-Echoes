@@ -71,6 +71,8 @@ func update_move_animation(velocity : Vector3, grounded : bool):
 		general_weapon_animations.play("RESET", 0.4)
 	elif !grounded or velocity.length() < 2.0:
 		general_weapon_animations.play("RESET", 0.4)
+	#elif current_weapon.is_idle():
+		#general_weapon_animations.play("idle", 0.4)
 	else:
 		general_weapon_animations.play("moving", 0.4)
 

@@ -4,7 +4,7 @@ extends Node3D
 @onready var current_health = max_health
 @export var verbose = true
 
-@onready var hurt_sounds = $Audio/HurtSounds.get_children()
+#@onready var hurt_sounds = $Audio/HurtSounds.get_children()
 
 signal died
 signal healed
@@ -14,7 +14,7 @@ signal health_changed(current_health, max_health)
 func _ready():
 	health_changed.emit(current_health, max_health)
 	if verbose:
-		print("Starting Health: %s/%s" % [current_health, max_health])
+		print("Current Health: %s\nMax Health: %s" % [current_health, max_health])
 
 func hurt(damage_data : DamageData):
 	if current_health <= 0:
@@ -26,10 +26,10 @@ func hurt(damage_data : DamageData):
 		died.emit()
 	else:
 		damaged.emit()
-		play_hurt_sound()
+		#play_hurt_sound()
 	health_changed.emit()
 	if verbose:
-		print("Damaged for %s, Current Health: %s/%s" % [damage_data.amount, current_health, max_health])
+		print("Damaged for %s\nCurrent Health: %s/%s" % [damage_data.amount, current_health, max_health])
 
 func heal(amount : int):
 	if current_health <= 0:
@@ -38,7 +38,7 @@ func heal(amount : int):
 	healed.emit()
 	health_changed.emit(current_health, max_health)
 	if verbose:
-		print("Healed for %s, Health: %s/%s" % [amount, current_health, max_health])
+		print("Healed for %s\nHealth: %s/%s" % [amount, current_health, max_health])
 
-func play_hurt_sound():
-	hurt_sounds[randi() % hurt_sounds.size()].play() # Randomly play a hurt sound
+#func play_hurt_sound():
+	#hurt_sounds[randi() % hurt_sounds.size()].play() # Randomly play a hurt sound

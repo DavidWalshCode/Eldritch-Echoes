@@ -29,5 +29,5 @@ func hurt(damage_data : DamageData):
 		enemy_damaged.emit()
 	enemy_health_changed.emit()
 	if verbose:
-		print("Enemy damaged for %s, Current Health: %s/%s" % [damage_data.amount, current_health, max_health])
+		print("Enemy damaged for %s\nEnemy Current Health: %s/%s" % [damage_data.amount, current_health, max_health])
 
