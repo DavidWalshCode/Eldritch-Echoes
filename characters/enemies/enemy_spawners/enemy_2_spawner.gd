@@ -21,7 +21,6 @@ var enemy_types = [
 	{"scene": enemy_b_scene, "weight": 25}   # 25% chance to spawn
 ]
 
-
 func _ready():
 	randomize()
 	spawn_timer = Timer.new()
@@ -66,11 +65,13 @@ func _spawn_enemy():
 		current_sum += enemy_type.weight
 		if random_pick < current_sum:
 			var enemy_instance = enemy_type.scene.instantiate()  # var enemy_instance = enemy_scene.instantiate() 
+			var enemy_health_manager = enemy_instance.get_node("EnemyHealthManager")
+			enemy_health_manager.connect("enemy_died", Callable(self, "_on_enemy_despawned"))
 			get_parent().add_child(enemy_instance)
 			enemy_instance.global_transform = global_transform
 			enemies_spawned += 1
 			emit_signal("enemy_spawned")
-			enemy_instance.connect("enemy_died", Callable(self, "_on_enemy_despawned"))
+
 			break  # Exit the loop once the enemy type is selected
 
 func _on_enemy_despawned():

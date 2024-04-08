@@ -6,8 +6,6 @@ extends Node3D
 @export var spawn_interval_max = 5.0  # Random range for spawn intervals
 @export var max_enemies = 3  # Max number of enemies this spawner can handle
 
-@onready var enemy_health_manager = $EnemyHealthManager
-
 # Signals to inform the central manager about spawning activities
 signal enemy_spawned
 signal enemy_despawned
@@ -50,20 +48,14 @@ func _on_spawn_timer_timeout():
 
 func _spawn_enemy():
 	var enemy_instance = enemy_scene.instantiate()
-
+	var enemy_health_manager = enemy_instance.get_node("EnemyHealthManager")
+	enemy_health_manager.connect("enemy_died", Callable(self, "_on_enemy_despawned"))
+	
 	get_parent().add_child(enemy_instance)  # Add the enemy to the scene
 	enemy_instance.global_transform = global_transform  # Position the enemy
 
 	enemies_spawned += 1
 	emit_signal("enemy_spawned")
-
-	enemy_instance.connect("enemy_died", Callable(enemy_health_manager, "_on_enemy_despawned"))
-	#enemy_health_manager.connect("enemy_died", Callable(enemy_instance, "_on_enemy_despawned"))
-	
-	# enemy_instance.connect("enemy_died", Callable(self, "_on_enemy_despawned"))
-	# enemy_health_manager.connect("enemy_died", Callable(self, "_on_enemy_despawned"))
-	
-	# enemy_health_manager.connect("enemy_died", self, "on_enemy_died", [enemy_instance])
 
 func _on_enemy_despawned():
 	emit_signal("enemy_despawned")
