@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://iokk6um0pqgp"
-path="res://.godot/imported/grenade_mag_open_04.wav-e710fe7022f1d440902b8da737781730.sample"
+path="res://.godot/imported/grenade_mag_open_04.wav-94a0f4899569c4690959c22d28a5d3bd.sample"
 
 [deps]
 
-source_file="res://audio/sfx/weapons/rocketlauncher/grenade_mag_open_04.wav"
-dest_files=["res://.godot/imported/grenade_mag_open_04.wav-e710fe7022f1d440902b8da737781730.sample"]
+source_file="res://audio/sfx/weapons/switch/grenade_mag_open_04.wav"
+dest_files=["res://.godot/imported/grenade_mag_open_04.wav-94a0f4899569c4690959c22d28a5d3bd.sample"]
 
 [params]
 

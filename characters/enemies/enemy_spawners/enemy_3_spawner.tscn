@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwjsgem1pt51k"]
+
+[ext_resource type="Script" path="res://characters/enemies/enemy_spawners/enemy_3_spawner.gd" id="1_gaove"]
+
+[node name="Enemy3Spawner" type="Node3D"]
+script = ExtResource("1_gaove")

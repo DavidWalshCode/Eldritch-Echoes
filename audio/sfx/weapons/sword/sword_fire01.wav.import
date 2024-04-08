@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://mnn65pyepjqs"
-path="res://.godot/imported/sword_fire01.wav-c4e150065257e3be4d8cd103b31c5a72.sample"
+path="res://.godot/imported/sword_fire01.wav-431a30bd6a33edda728fb93e0d01b7d0.sample"
 
 [deps]
 
-source_file="res://audio/sfx/weapons/melee/sword_fire01.wav"
-dest_files=["res://.godot/imported/sword_fire01.wav-c4e150065257e3be4d8cd103b31c5a72.sample"]
+source_file="res://audio/sfx/weapons/sword/sword_fire01.wav"
+dest_files=["res://.godot/imported/sword_fire01.wav-431a30bd6a33edda728fb93e0d01b7d0.sample"]
 
 [params]
 
