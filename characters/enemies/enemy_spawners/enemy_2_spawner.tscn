@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://gv45800howtk"]
+[gd_scene load_steps=3 format=3 uid="uid://gv45800howtk"]
 
 [ext_resource type="Script" path="res://characters/enemies/enemy_spawners/enemy_2_spawner.gd" id="1_qi3u1"]
+[ext_resource type="PackedScene" uid="uid://dj0ihtumamdok" path="res://effects/enemy_spawn/enemy_2_spawn_effect.tscn" id="2_2ux8g"]
 
 [node name="Enemy2Spawner" type="Node3D"]
 script = ExtResource("1_qi3u1")
+
+[node name="Enemy2SpawnEffect" parent="." instance=ExtResource("2_2ux8g")]
+
+[node name="SpawnSound" type="Node3D" parent="."]
+
+[node name="Enemy2SpawnSound" type="AudioStreamPlayer3D" parent="SpawnSound"]
+
+[editable path="Enemy2SpawnEffect"]

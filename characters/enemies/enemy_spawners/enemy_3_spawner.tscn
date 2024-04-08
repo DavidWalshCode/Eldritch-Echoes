@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwjsgem1pt51k"]
+[gd_scene load_steps=4 format=3 uid="uid://bwjsgem1pt51k"]
 
 [ext_resource type="Script" path="res://characters/enemies/enemy_spawners/enemy_3_spawner.gd" id="1_gaove"]
+[ext_resource type="PackedScene" uid="uid://svogacaol6qf" path="res://effects/enemy_spawn/enemy_3_spawn_effect.tscn" id="2_rovap"]
+[ext_resource type="AudioStream" uid="uid://iokk6um0pqgp" path="res://audio/sfx/weapons/switch/grenade_mag_open_04.wav" id="2_sthky"]
 
 [node name="Enemy3Spawner" type="Node3D"]
 script = ExtResource("1_gaove")
+
+[node name="Enemy3SpawnEffect" parent="." instance=ExtResource("2_rovap")]
+
+[node name="SpawnSound" type="Node3D" parent="."]
+
+[node name="Enemy3SpawnSound" type="AudioStreamPlayer3D" parent="SpawnSound"]
+stream = ExtResource("2_sthky")
+
+[editable path="Enemy3SpawnEffect"]

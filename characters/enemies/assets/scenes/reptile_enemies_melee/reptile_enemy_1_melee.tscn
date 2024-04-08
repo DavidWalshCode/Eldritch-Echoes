@@ -68,7 +68,7 @@ bones/8/rotation = Quaternion(-0.109396, 0.216951, 0.969592, 0.0292538)
 bones/9/rotation = Quaternion(-0.189951, -0.00372251, 0.0376172, 0.981066)
 
 [node name="UpperArmLeft" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="1"]
-transform = Transform3D(-0.768204, 0.639068, -0.0381404, -0.634004, -0.767684, -0.0932756, -0.0888892, -0.0474735, 0.994909, 0.218738, 1.59086, 0.0117653)
+transform = Transform3D(-0.768204, 0.639068, -0.0381404, -0.634004, -0.767684, -0.0932755, -0.0888891, -0.0474735, 0.99491, 0.218738, 1.59086, 0.0117653)
 bone_name = "upper_arm.l"
 bone_idx = 2
 
@@ -79,7 +79,7 @@ transform = Transform3D(0.120694, 0.000945128, -0.000748357, -0.000631958, 0.179
 shape = SubResource("CapsuleShape3D_jiiat")
 
 [node name="LowerArmLeft" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.859372, 0.371408, -0.351477, -0.506519, -0.712558, 0.48549, -0.0701327, 0.595246, 0.800477, 0.43137, 1.33543, -0.00403016)
+transform = Transform3D(-0.859371, 0.371409, -0.351477, -0.506519, -0.712558, 0.485489, -0.0701325, 0.595245, 0.800478, 0.43137, 1.33543, -0.00403018)
 bone_name = "lower_arm.l"
 bone_idx = 3
 
@@ -102,7 +102,7 @@ transform = Transform3D(0.0915531, 0.0601952, -0.0107023, -0.0312381, 0.177313, 
 shape = SubResource("CapsuleShape3D_3q3wt")
 
 [node name="UpperArmRight" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="3"]
-transform = Transform3D(-0.768204, -0.639067, 0.0381405, 0.634003, -0.767684, -0.0932756, 0.0888892, -0.0474735, 0.994909, -0.218738, 1.59086, 0.0117653)
+transform = Transform3D(-0.768204, -0.639068, 0.0381405, 0.634004, -0.767684, -0.0932755, 0.0888892, -0.0474734, 0.994909, -0.218738, 1.59086, 0.0117653)
 bone_name = "upper_arm.r"
 bone_idx = 4
 
@@ -113,7 +113,7 @@ transform = Transform3D(0.120997, 0.000947395, -0.000748733, -0.000633543, 0.179
 shape = SubResource("CapsuleShape3D_jiiat")
 
 [node name="LowerArmRight" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="4"]
-transform = Transform3D(-0.859372, -0.371408, 0.351477, 0.506518, -0.712558, 0.48549, 0.0701327, 0.595246, 0.800477, -0.43137, 1.33543, -0.00403018)
+transform = Transform3D(-0.859371, -0.371409, 0.351477, 0.506519, -0.712558, 0.485489, 0.0701326, 0.595245, 0.800478, -0.43137, 1.33543, -0.00403017)
 bone_name = "lower_arm.r"
 bone_idx = 5
 
@@ -136,7 +136,7 @@ transform = Transform3D(0.0843145, -0.0694136, -0.0346209, 0.019237, 0.175528, -
 shape = SubResource("CapsuleShape3D_3q3wt")
 
 [node name="UpperLegLeft" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="5"]
-transform = Transform3D(-0.974353, 0.104194, 0.199444, -0.0552489, -0.969979, 0.236828, 0.218133, 0.219736, 0.950858, 0.123436, 0.961497, 1.56462e-07)
+transform = Transform3D(-0.974353, 0.104194, 0.199444, -0.055249, -0.969979, 0.236829, 0.218133, 0.219736, 0.950858, 0.123436, 0.961497, 1.56462e-07)
 bone_name = "upperleg.l"
 bone_idx = 6
 
@@ -147,7 +147,7 @@ transform = Transform3D(0.108574, -0.0206892, 0.00547139, 0.00954582, 0.241201, 
 shape = SubResource("CapsuleShape3D_4cimx")
 
 [node name="LowerLegLeft" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="6"]
-transform = Transform3D(-0.978013, -0.0485491, 0.20281, 0.0195293, -0.989571, -0.14271, 0.207624, -0.135611, 0.968761, 0.175063, 0.48088, 0.108877)
+transform = Transform3D(-0.978013, -0.0485487, 0.20281, 0.0195293, -0.989572, -0.142709, 0.207623, -0.13561, 0.968762, 0.175063, 0.48088, 0.108878)
 bone_name = "lowerleg.l"
 bone_idx = 7
 
@@ -158,7 +158,7 @@ transform = Transform3D(0.122895, -0.0207929, 0.00282745, 0.00982457, 0.259068, 
 shape = SubResource("CapsuleShape3D_ma2s7")
 
 [node name="UpperLegRight" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="7"]
-transform = Transform3D(-0.974353, -0.104195, -0.199445, 0.0552499, -0.969979, 0.236828, -0.218134, 0.219736, 0.950857, -0.123436, 0.961497, 1.56462e-07)
+transform = Transform3D(-0.974353, -0.104196, -0.199445, 0.0552499, -0.969979, 0.236829, -0.218135, 0.219736, 0.950857, -0.123436, 0.961497, 1.56462e-07)
 bone_name = "upperleg.r"
 bone_idx = 8
 
@@ -169,7 +169,7 @@ transform = Transform3D(0.108896, -0.0109695, 0.00356982, 0.00498009, 0.242481, 
 shape = SubResource("CapsuleShape3D_6eldn")
 
 [node name="LowerLegRight" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="8"]
-transform = Transform3D(-0.978013, 0.0485482, -0.202811, -0.0195284, -0.989572, -0.14271, -0.207625, -0.13561, 0.968761, -0.175064, 0.48088, 0.108877)
+transform = Transform3D(-0.978013, 0.048548, -0.202812, -0.0195283, -0.989572, -0.142709, -0.207625, -0.135609, 0.968761, -0.175064, 0.48088, 0.108878)
 bone_name = "lowerleg.r"
 bone_idx = 9
 
@@ -191,7 +191,7 @@ transform = Transform3D(0.298681, 0, 0, 0, 0.242261, -0.0592371, 0, 0.0561487, 0
 shape = SubResource("BoxShape3D_o40r8")
 
 [node name="Body" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="10"]
-transform = Transform3D(1, 8.88178e-16, -2.38419e-07, -2.5024e-08, 0.994477, -0.104958, 2.37102e-07, 0.104958, 0.994477, 2.84689e-18, 1.20205, -0.042127)
+transform = Transform3D(1, 4.44089e-15, -2.38419e-07, -2.50239e-08, 0.994477, -0.104958, 2.37102e-07, 0.104958, 0.994477, 2.84689e-18, 1.20205, -0.042127)
 bone_name = "body"
 bone_idx = 1
 

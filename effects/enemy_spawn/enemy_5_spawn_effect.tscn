@@ -1,0 +1,104 @@
+[gd_scene load_steps=15 format=3 uid="uid://iohwvbfrsqf5"]
+
+[sub_resource type="Gradient" id="Gradient_tvjy8"]
+offsets = PackedFloat32Array(0, 0.682836)
+colors = PackedColorArray(1, 0.513726, 0, 1, 0.87451, 0.0392157, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bccrq"]
+gradient = SubResource("Gradient_tvjy8")
+
+[sub_resource type="Curve" id="Curve_dxbgy"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.361487, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_dg88p"]
+curve = SubResource("Curve_dxbgy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fq1j2"]
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 15.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 1.0
+linear_accel_max = 1.0
+scale_min = 2.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_dg88p")
+color_ramp = SubResource("GradientTexture1D_bccrq")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v0otl"]
+load_path = "res://.godot/imported/fire_02_small.png-9fca14e8d9371571590a032c898fea40.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3hjl"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("CompressedTexture2D_v0otl")
+texture_filter = 0
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_hgnmu"]
+material = SubResource("StandardMaterial3D_h3hjl")
+
+[sub_resource type="Gradient" id="Gradient_jckik"]
+offsets = PackedFloat32Array(0.33209, 0.712687, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.513726, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_y1mdx"]
+gradient = SubResource("Gradient_jckik")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hvqnp"]
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 8.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 1.0
+linear_accel_max = 1.0
+color_ramp = SubResource("GradientTexture1D_y1mdx")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ca175"]
+load_path = "res://.godot/imported/smoke_01_small.png-6d6d18bc9ed4e9a2fe78e8e50d0e9f0e.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4khbs"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("CompressedTexture2D_ca175")
+texture_filter = 2
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_k0hf2"]
+material = SubResource("StandardMaterial3D_4khbs")
+
+[node name="Enemy5SpawnEffect" type="Node3D"]
+
+[node name="SpawnFlames" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.998718, 0, 0, 0, 0.998718, 0, 0, 0, 0.998718, 0, 0, 0)
+emitting = false
+amount = 20
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_fq1j2")
+draw_pass_1 = SubResource("QuadMesh_hgnmu")
+
+[node name="SpawnSmoke" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 16
+lifetime = 1.2
+one_shot = true
+speed_scale = 0.66
+process_material = SubResource("ParticleProcessMaterial_hvqnp")
+draw_pass_1 = SubResource("QuadMesh_k0hf2")

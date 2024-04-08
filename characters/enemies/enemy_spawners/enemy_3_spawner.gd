@@ -1,26 +1,34 @@
 extends Node3D
 
-# Exported variables for setting in the editor
-@export var enemy_a_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_1_melee.tscn")
-@export var enemy_b_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_1_melee.tscn")
-@export var enemy_c_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_1_melee.tscn")
+@export_category("Spawning")
+@export var bird_enemy_melee_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_1_melee.tscn")
+@export var bird_enemy_ranged_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_1_melee.tscn")
+@export var reptile_enemy_melee_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_1_melee.tscn")
+@export var bird_enemy_melee_spawn_weight = 60
+@export var bird_enemy_ranged_spawn_weight = 30
+@export var reptile_enemy_meleed_spawn_weight = 10
 @export var spawn_interval_min = 2.0
 @export var spawn_interval_max = 5.0  # Random range for spawn intervals
 @export var max_enemies = 3  # Max number of enemies this spawner can handle
+
+@export_category("Audio")
+@export var min_pitch_scale = 0.9
+@export var max_pitch_scale = 1.1
+
+@onready var enemy_3_spawn_sound = $SpawnSound/Enemy3SpawnSound
 
 # Signals to inform the central manager about spawning activities
 signal enemy_spawned
 signal enemy_despawned
 
-# Local variables
 var enemies_spawned = 0
 var spawn_timer = null
 
 # Define enemy types and their spawn weights
 var enemy_types = [
-	{"scene": enemy_a_scene, "weight": 60},  # 75% chance to spawn
-	{"scene": enemy_b_scene, "weight": 30},   # 25% chance to spawn
-	{"scene": enemy_c_scene, "weight": 10}   # 25% chance to spawn
+	{"scene": bird_enemy_melee_scene, "weight": bird_enemy_melee_spawn_weight},  # 60% chance to spawn
+	{"scene": bird_enemy_ranged_scene, "weight": bird_enemy_ranged_spawn_weight},   # 30% chance to spawn
+	{"scene": reptile_enemy_melee_scene, "weight": reptile_enemy_meleed_spawn_weight}   # 10% chance to spawn
 ]
 
 func _ready():
@@ -35,7 +43,7 @@ func start_spawning():
 	_reset_timer()
 
 func _reset_timer():
-	spawn_timer.wait_time = rand_range(spawn_interval_min, spawn_interval_max)
+	spawn_timer.wait_time = randf_range(spawn_interval_min, spawn_interval_max)
 	spawn_timer.start()
 
 func _process(delta):
@@ -69,16 +77,26 @@ func _spawn_enemy():
 			var enemy_instance = enemy_type.scene.instantiate()  # var enemy_instance = enemy_scene.instantiate() 
 			var enemy_health_manager = enemy_instance.get_node("EnemyHealthManager")
 			enemy_health_manager.connect("enemy_died", Callable(self, "_on_enemy_despawned"))
+			
+			$Enemy3SpawnEffect/SpawnFlames.restart() # Spawn effects
+			$Enemy3SpawnEffect/SpawnSmoke.restart() # Spawn effects
+			
 			get_parent().add_child(enemy_instance)
 			enemy_instance.global_transform = global_transform
+			
+			play_spawn_sound()
+			
 			enemies_spawned += 1
 			emit_signal("enemy_spawned")
+
 			break  # Exit the loop once the enemy type is selected
 
 func _on_enemy_despawned():
 	emit_signal("enemy_despawned")
 	enemies_spawned -= 1  # Adjust the count when an enemy is despawned
 
-# Utility to randomly choose between the defined min and max intervals
-func rand_range(min, max):
-	return randf() * (max - min) + min
+func play_spawn_sound():
+	# Randomize pitch scale
+	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
+	enemy_3_spawn_sound.pitch_scale = random_pitch
+	enemy_3_spawn_sound.play()
