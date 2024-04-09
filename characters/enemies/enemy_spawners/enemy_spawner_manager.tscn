@@ -4,3 +4,4 @@
 
 [node name="EnemySpawnerManager" type="Node3D"]
 script = ExtResource("1_58j7f")
+max_global_enemies = 5
