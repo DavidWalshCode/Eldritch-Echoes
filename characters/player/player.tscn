@@ -859,6 +859,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/WeaponManager/AlertAreaHearing"]
+transform = Transform3D(1.31829, 0, 0, 0, 0.123268, 3.72529e-09, 0, -1.45519e-10, 1.39439, 0, 0, 0)
 shape = SubResource("SphereShape3D_5m1xi")
 
 [node name="AlertAreaLineOfSight" type="Area3D" parent="Camera3D/WeaponManager"]
@@ -866,6 +867,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/WeaponManager/AlertAreaLineOfSight"]
+transform = Transform3D(1.19639, 0, 0, 0, 0.111409, 5.58794e-09, 0, -3.7835e-10, 1.31879, 0, 0, 0)
 shape = SubResource("SphereShape3D_t7da3")
 
 [node name="CharacterMover" parent="." instance=ExtResource("2_k2lt6")]

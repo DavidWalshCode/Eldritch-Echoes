@@ -227,10 +227,6 @@ shape = SubResource("SphereShape3D_7yjnb")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Audio/DeathSounds"]
 
-[node name="SpawnSounds" type="Node3D" parent="Audio"]
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Audio/SpawnSounds"]
-
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_height_offset = 0.2
 

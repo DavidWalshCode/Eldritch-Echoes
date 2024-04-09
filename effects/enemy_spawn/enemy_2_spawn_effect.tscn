@@ -93,7 +93,6 @@ process_material = SubResource("ParticleProcessMaterial_lcap1")
 draw_pass_1 = SubResource("QuadMesh_oafme")
 
 [node name="SpawnSmoke" type="GPUParticles3D" parent="."]
-emitting = false
 amount = 16
 lifetime = 1.2
 speed_scale = 0.66

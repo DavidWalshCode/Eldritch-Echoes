@@ -1,8 +1,9 @@
 extends AttackEmitter
 
-@onready var line_of_sight_ray_cast = $LineOfSightRayCast
 @export var attack_radius := 1.0
 @export var offset_by_radius = false
+
+@onready var line_of_sight_ray_cast = $LineOfSightRayCast
 
 func fire():
 	var query_params := PhysicsShapeQueryParameters3D.new()

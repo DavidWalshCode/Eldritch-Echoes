@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var flash_time := 0.05
+
 var timer : Timer
 
 func _ready():

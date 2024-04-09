@@ -1,5 +1,9 @@
 extends Node3D
 
+# Signals to inform the central manager about spawning activities
+signal enemy_spawned
+signal enemy_despawned
+
 @export_category("Spawning")
 @export var bird_enemy_melee_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_1_melee.tscn")
 @export var bird_enemy_ranged_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_1_melee.tscn")
@@ -15,12 +19,6 @@ extends Node3D
 @export var min_pitch_scale = 0.9
 @export var max_pitch_scale = 1.1
 
-@onready var enemy_3_spawn_sound = $SpawnSound/Enemy3SpawnSound
-
-# Signals to inform the central manager about spawning activities
-signal enemy_spawned
-signal enemy_despawned
-
 var enemies_spawned = 0
 var spawn_timer = null
 
@@ -30,6 +28,8 @@ var enemy_types = [
 	{"scene": bird_enemy_ranged_scene, "weight": bird_enemy_ranged_spawn_weight},   # 30% chance to spawn
 	{"scene": reptile_enemy_melee_scene, "weight": reptile_enemy_meleed_spawn_weight}   # 10% chance to spawn
 ]
+
+@onready var enemy_3_spawn_sound = $SpawnSound/Enemy3SpawnSound
 
 func _ready():
 	randomize()

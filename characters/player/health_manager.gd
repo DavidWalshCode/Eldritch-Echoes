@@ -1,15 +1,15 @@
 extends Node3D
 
-@export var max_health = 100
-@onready var current_health = max_health
-@export var verbose = true
-
-#@onready var hurt_sounds = $Audio/HurtSounds.get_children()
-
 signal died
 signal healed
 signal damaged
 signal health_changed(current_health, max_health)
+
+@export var max_health = 100
+@export var verbose = true
+
+@onready var current_health = max_health
+@onready var hurt_sounds = $Audio/HurtSounds.get_children()
 
 func _ready():
 	health_changed.emit(current_health, max_health)

@@ -1,13 +1,13 @@
 extends Node3D
 
+var weapons_unlocked = []
+var current_slot = 0
+var current_weapon = null
+
 @onready var weapons = $Weapons.get_children()
 @onready var general_weapon_animations = $GeneralWeaponAnimations
 @onready var alert_area_hearing = $AlertAreaHearing
 @onready var alert_area_line_of_sight = $AlertAreaLineOfSight
-
-var weapons_unlocked = []
-var current_slot = 0
-var current_weapon = null
 
 func _ready():
 	for weapon in weapons:
@@ -85,4 +85,4 @@ func alert_nearby_enemies():
 	nearby_enemies = alert_area_hearing.get_overlapping_bodies()
 	for nearby_enemy in nearby_enemies:
 		if nearby_enemy.has_method("alert"):
-			nearby_enemy.alert(false) #
+			nearby_enemy.alert() #false

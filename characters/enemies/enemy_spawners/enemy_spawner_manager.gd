@@ -1,7 +1,8 @@
 extends Node3D
 
+@export var max_global_enemies = 10
+
 var total_enemies_spawned = 0
-var max_global_enemies = 20
 
 func _ready():
 	var spawners = get_children()  # Assuming all children are spawners

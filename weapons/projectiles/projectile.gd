@@ -1,7 +1,6 @@
-class_name Projectile
 extends Node3D
 
-@onready var collision_ray_cast = $CollisionRayCast
+class_name Projectile
 
 @export var speed = 65
 @export var show_after_time := 0.1
@@ -10,8 +9,9 @@ extends Node3D
 const MAX_PROJECTILE_LIFESPAN := 10.0
 var bodies_to_exclude = []
 var damage = 1
-
 var last_position : Vector3
+
+@onready var collision_ray_cast = $CollisionRayCast
 
 func _ready():
 	hide()

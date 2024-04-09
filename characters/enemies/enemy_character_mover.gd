@@ -13,7 +13,6 @@ var move_drag = 0.0
 var move_direction : Vector3
 var current_speed
 var double_jump_available = true
-
 var frozen = false
 
 func _ready():

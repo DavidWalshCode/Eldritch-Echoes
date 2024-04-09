@@ -6,6 +6,7 @@
 
 [node name="Enemy4Spawner" type="Node3D"]
 script = ExtResource("1_5qfyt")
+max_enemies = 1
 
 [node name="Enemy4SpawnEffect" parent="." instance=ExtResource("2_1b5co")]
 

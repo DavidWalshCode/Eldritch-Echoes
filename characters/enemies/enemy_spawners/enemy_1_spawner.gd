@@ -1,5 +1,9 @@
 extends Node3D
 
+# Signals to inform the central manager about spawning activities
+signal enemy_spawned
+signal enemy_despawned
+
 @export_category("Spawning")
 @export var bird_enemy_melee_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_1_melee.tscn")
 @export var spawn_interval_min = 2.0
@@ -10,14 +14,10 @@ extends Node3D
 @export var min_pitch_scale = 0.9
 @export var max_pitch_scale = 1.1
 
-@onready var enemy_1_spawn_sound = $SpawnSound/Enemy1SpawnSound
-
-# Signals to inform the central manager about spawning activities
-signal enemy_spawned
-signal enemy_despawned
-
 var enemies_spawned = 0
 var spawn_timer = null
+
+@onready var enemy_1_spawn_sound = $SpawnSound/Enemy1SpawnSound
 
 func _ready():
 	randomize()
@@ -56,8 +56,9 @@ func _spawn_enemy():
 	var enemy_health_manager = enemy_instance.get_node("EnemyHealthManager")
 	enemy_health_manager.connect("enemy_died", Callable(self, "_on_enemy_despawned"))
 	
-	$Enemy1SpawnEffect/SpawnFlames.restart() # Spawn effects
-	$Enemy1SpawnEffect/SpawnSmoke.restart() # Spawn effects
+	# Spawn effects
+	$Enemy1SpawnEffect/SpawnFlames.restart() 
+	$Enemy1SpawnEffect/SpawnSmoke.restart()
 	
 	get_parent().add_child(enemy_instance)  # Add the enemy to the scene
 	enemy_instance.global_transform = global_transform  # Position the enemy

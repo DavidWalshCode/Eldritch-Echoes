@@ -1,6 +1,7 @@
 extends PanelContainer
 
 @onready var property_container = $MarginContainer/VBoxContainer
+
 var frames_per_second : String
 
 func _ready():

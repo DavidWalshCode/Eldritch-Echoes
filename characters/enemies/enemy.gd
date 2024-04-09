@@ -1,27 +1,27 @@
 extends CharacterBody3D
 
+signal enemy_attack
+
 enum STATES {IDLE, CHASE, ATTACK, DEAD}
+
+@export var sight_angle = 45.0
+@export var turn_speed = 360.0 # Converted from degrees to radians when used
+@export var attack_range = 2.0
+@export var attack_rate = 0.5
+@export var attack_animation_speed_mod = 0.7
+
 var current_state = STATES.IDLE
+var player = null
+var path = []
+
+var attack_timer : Timer
+var can_attack = true
 
 @onready var enemy_animation_player = $Graphics/AnimationPlayer
 @onready var enemy_health_manager = $EnemyHealthManager
 @onready var enemy_character_mover = $EnemyCharacterMover
 @onready var navigation_agent = $NavigationAgent3D
 @onready var enemy_aimer = $EnemyAimer
-
-var player = null
-var path = []
-
-@export var sight_angle = 45.0
-@export var turn_speed = 360.0 # Converted from degrees to radians when used
-
-@export var attack_range = 2.0
-@export var attack_rate = 0.5
-@export var attack_animation_speed_mod = 0.7
-var attack_timer : Timer
-var can_attack = true
-
-signal enemy_attack
 
 func _ready():
 	attack_timer = Timer.new()

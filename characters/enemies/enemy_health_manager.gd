@@ -1,14 +1,15 @@
 extends Node3D
 
-@export var max_health = 100
-@onready var current_health = max_health
-@export var gib_at = -10
-@export var verbose = true
-
 signal enemy_died
 signal enemy_damaged
 signal enemy_gibbed
 signal enemy_health_changed(current_health, max_health)
+
+@export var max_health = 100
+@export var gib_at = -10
+@export var verbose = true
+
+@onready var current_health = max_health
 
 func _ready():
 	enemy_health_changed.emit(current_health, max_health)
