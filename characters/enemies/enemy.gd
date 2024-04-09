@@ -4,11 +4,12 @@ signal enemy_attack
 
 enum STATES {IDLE, CHASE, ATTACK, DEAD}
 
-@export var sight_angle = 45.0
-@export var turn_speed = 360.0 # Converted from degrees to radians when used
 @export var attack_range = 2.0
 @export var attack_rate = 0.5
 @export var attack_animation_speed_mod = 0.7
+@export var attack_angle = 5.0
+@export var sight_angle = 45.0
+@export var turn_speed = 360.0 # Converted from degrees to radians when used
 
 var current_state = STATES.IDLE
 var player = null
@@ -57,12 +58,10 @@ func _process(delta):
 
 func set_state_idle():
 	current_state = STATES.IDLE
-	#enemy_animation_player.get_animation("idle").loop = true
 	enemy_animation_player.play("idle")
 	
 func set_state_chase():
 	current_state = STATES.CHASE
-	#enemy_animation_player.get_animation("walk").loop = true
 	enemy_animation_player.play("walk", 0.2)
 	print("alerted")
 	
@@ -97,12 +96,11 @@ func process_state_chase(delta):
 func process_state_attack(delta):
 	enemy_character_mover.set_move_direction(Vector3.ZERO) # Currently dont want to move while attack
 	
-	# face_direction(global_transform.origin.direction_to(player.global_transform.origin), delta)
-	
 	if can_attack:
-		
 		if !within_distance_of_player(attack_range) or !can_see_player():
 			set_state_chase()
+		elif !player_within_angle(attack_angle):
+			face_direction(global_transform.origin.direction_to(player.global_transform.origin), delta)
 		else:
 			start_attack()
 
@@ -127,9 +125,12 @@ func finish_attack():
 	can_attack = true
 
 func can_see_player():
+	return player_within_angle(sight_angle) and has_line_of_sight_player()
+
+func player_within_angle(angle : float):
 	var direction_to_player = global_transform.origin.direction_to(player.global_transform.origin)
 	var forwards = global_transform.basis.z
-	return rad_to_deg(forwards.angle_to(direction_to_player)) < sight_angle and has_line_of_sight_player()
+	return rad_to_deg(forwards.angle_to(direction_to_player)) < angle
 
 func has_line_of_sight_player():
 	var enemy_position = global_transform.origin + Vector3.UP

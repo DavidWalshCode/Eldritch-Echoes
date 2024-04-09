@@ -1,17 +1,5 @@
 extends CharacterBody3D
 
-@export var mouse_sensitivity_h = 0.13 # Horizontal mouse sens
-@export var mouse_sensitivity_v = 0.13 # Vertical mouse sens
-@export var max_camera_lean = 1.5  # Maximum lean angle in degrees
-@export var camera_lean_speed = 10.0  # Speed at which the camera leans
-
-var current_camera_lean = 0.0  # Current lean angle
-
-@onready var camera_3d = $Camera3D # The $Camera3D is equivalent to get_node("Camera3D")
-@onready var character_mover = $CharacterMover
-@onready var health_manager = $HealthManager
-@onready var weapon_manager = $Camera3D/WeaponManager
-
 const HOTKEYS = { # Hotkeys for weapon switching
 	KEY_1: 0, # 1 for sword
 	KEY_2: 1, # 2 for revolvers
@@ -25,7 +13,18 @@ const HOTKEYS = { # Hotkeys for weapon switching
 	KEY_0: 9,
 }
 
+@export var mouse_sensitivity_h = 0.13 # Horizontal mouse sens
+@export var mouse_sensitivity_v = 0.13 # Vertical mouse sens
+@export var max_camera_lean = 1.5  # Maximum lean angle in degrees
+@export var camera_lean_speed = 10.0  # Speed at which the camera leans
+
+var current_camera_lean = 0.0  # Current lean angle
 var dead = false
+
+@onready var camera_3d = $Camera3D # The $Camera3D is equivalent to get_node("Camera3D")
+@onready var character_mover = $CharacterMover
+@onready var health_manager = $HealthManager
+@onready var weapon_manager = $Camera3D/WeaponManager
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

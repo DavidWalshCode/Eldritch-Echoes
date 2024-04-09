@@ -13,8 +13,9 @@ func _ready():
 	for weapon in weapons:
 		if weapon.has_method("set_bodies_to_exclude"):
 			weapon.set_bodies_to_exclude([get_parent().get_parent()]) # Excludes the player and camera, knows dont hit the player
-			
+	
 	disable_all_weapons()
+	
 	for _i in range(weapons.size()):
 		#weapons_unlocked.append(false)
 		weapons_unlocked.append(true)
@@ -22,7 +23,6 @@ func _ready():
 	
 	for weapon in weapons:
 			weapon.connect("fired", Callable(self, "alert_nearby_enenmies"))
-	
 	
 func attack(input_just_pressed : bool, input_held : bool):
 	if current_weapon is Weapon:
@@ -68,9 +68,9 @@ func switch_to_weapon_slot(slot_index : int) -> bool:
 
 func update_move_animation(velocity : Vector3, grounded : bool):
 	if current_weapon is Weapon and !current_weapon.is_idle():
-		general_weapon_animations.play("RESET", 0.4)
+		general_weapon_animations.play("RESET", 0.4) # idle?
 	elif !grounded or velocity.length() < 2.0:
-		general_weapon_animations.play("RESET", 0.4)
+		general_weapon_animations.play("RESET", 0.4) # idle?
 	#elif current_weapon.is_idle():
 		#general_weapon_animations.play("idle", 0.4)
 	else:
@@ -85,4 +85,4 @@ func alert_nearby_enemies():
 	nearby_enemies = alert_area_hearing.get_overlapping_bodies()
 	for nearby_enemy in nearby_enemies:
 		if nearby_enemy.has_method("alert"):
-			nearby_enemy.alert() #false
+			nearby_enemy.alert(false) #false
