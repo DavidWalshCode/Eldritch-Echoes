@@ -6,8 +6,8 @@ signal enemy_despawned
 
 @export_category("Spawning")
 @export var bird_enemy_melee_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_1_melee.tscn")
-@export var bird_enemy_ranged_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_1_melee.tscn")
-@export var reptile_enemy_melee_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_1_melee.tscn")
+@export var bird_enemy_ranged_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_ranged/bird_enemy_1_ranged.tscn")
+@export var reptile_enemy_melee_scene = preload("res://characters/enemies/assets/scenes/reptile_enemies_melee/reptile_enemy_1_melee.tscn")
 @export var bird_enemy_melee_spawn_weight = 25
 @export var bird_enemy_ranged_spawn_weight = 45
 @export var reptile_enemy_meleed_spawn_weight = 30

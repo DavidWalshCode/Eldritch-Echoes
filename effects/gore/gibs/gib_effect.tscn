@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3 uid="uid://b20exsdqb3ie8"]
+
+[ext_resource type="PackedScene" uid="uid://d28b4r3m8floh" path="res://effects/gore/gibs/models/gib.glb" id="1_1ters"]
+[ext_resource type="Script" path="res://effects/gore/gibs/gib_effect.gd" id="1_l1p5s"]
+[ext_resource type="Texture2D" uid="uid://dhud8rywluaw6" path="res://effects/circle32.png" id="2_uwe4k"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mdibb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7apk"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_uwe4k")
+texture_filter = 2
+
+[sub_resource type="Gradient" id="Gradient_7mxba"]
+offsets = PackedFloat32Array(0, 0.529851, 1)
+colors = PackedColorArray(0.566092, 1.76881e-06, 3.36915e-07, 1, 0.187149, 0.00103662, 3.60981e-08, 1, 0.103051, 0.000372355, 1.50409e-08, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_whgxu"]
+gradient = SubResource("Gradient_7mxba")
+
+[sub_resource type="Curve" id="Curve_ddkep"]
+_data = [Vector2(0.0135135, 0), 0.0, 0.0, 0, 0, Vector2(0.503378, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_lk2qo"]
+curve = SubResource("Curve_ddkep")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ecrjw"]
+direction = Vector3(0, 1, 0)
+spread = 60.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+scale_min = 0.2
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_lk2qo")
+color_ramp = SubResource("GradientTexture1D_whgxu")
+
+[sub_resource type="SphereMesh" id="SphereMesh_v5hnb"]
+radial_segments = 7
+rings = 3
+
+[node name="GibEffect" type="CharacterBody3D"]
+script = ExtResource("1_l1p5s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.275019, -0.0966643, 0, 0.132683, 0.200361, 0, 0, 0, 0.33451, 0.00349023, 0.00862142, -0.00732278)
+shape = SubResource("SphereShape3D_mdibb")
+
+[node name="gib" parent="." instance=ExtResource("1_1ters")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="Blood" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_k7apk")
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_ecrjw")
+draw_pass_1 = SubResource("SphereMesh_v5hnb")
+
+[node name="HideTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="HideTimer" to="Blood" method="set_emitting" binds= [false]]

@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=3 uid="uid://ckvf1aeucia5i"]
+
+[ext_resource type="PackedScene" uid="uid://b20exsdqb3ie8" path="res://effects/gore/gibs/gib_effect.tscn" id="1_7wil6"]
+[ext_resource type="Script" path="res://effects/gore/gibs/gibs.gd" id="1_lg5xp"]
+[ext_resource type="Texture2D" uid="uid://dhud8rywluaw6" path="res://effects/circle32.png" id="3_lds3m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7apk"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_lds3m")
+texture_filter = 2
+
+[sub_resource type="Gradient" id="Gradient_7mxba"]
+offsets = PackedFloat32Array(0, 0.529851, 1)
+colors = PackedColorArray(0.566092, 1.76881e-06, 3.36915e-07, 1, 0.187149, 0.00103662, 3.60981e-08, 1, 0.103051, 0.000372355, 1.50409e-08, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_whgxu"]
+gradient = SubResource("Gradient_7mxba")
+
+[sub_resource type="Curve" id="Curve_ddkep"]
+_data = [Vector2(0.0135135, 0), 0.0, 0.0, 0, 0, Vector2(0.503378, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_lk2qo"]
+curve = SubResource("Curve_ddkep")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u2s8f"]
+direction = Vector3(0, 1, 0)
+spread = 60.0
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+scale_min = 0.2
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_lk2qo")
+color_ramp = SubResource("GradientTexture1D_whgxu")
+
+[sub_resource type="SphereMesh" id="SphereMesh_v5hnb"]
+radial_segments = 7
+rings = 3
+
+[node name="Gibs" type="Node3D"]
+script = ExtResource("1_lg5xp")
+
+[node name="GibEffect" parent="." instance=ExtResource("1_7wil6")]
+transform = Transform3D(0.996542, -0.0830865, 0, 0.0830865, 0.996542, 0, 0, 0, 1, 0.246645, 0, 0)
+
+[node name="GibEffect2" parent="." instance=ExtResource("1_7wil6")]
+transform = Transform3D(0.81464, 0.243243, 0.295289, -0.0399352, 0.744935, -0.503465, -0.380484, 0.442611, 0.685075, 0, 0.177104, 0.281377)
+
+[node name="GibEffect3" parent="." instance=ExtResource("1_7wil6")]
+transform = Transform3D(0.286961, 0.202944, 0.718656, -0.479035, 0.640639, 0.0103667, -0.572869, -0.434045, 0.35132, 0.0391977, 0.141001, -0.279592)
+
+[node name="GibEffect4" parent="." instance=ExtResource("1_7wil6")]
+transform = Transform3D(0.672157, -0.62321, 0.399768, 0.594887, 0.133113, -0.79271, 0.440811, 0.770643, 0.460213, -0.200069, 0.105933, -0.0789293)
+
+[node name="Blood" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_k7apk")
+emitting = false
+amount = 11
+one_shot = true
+explosiveness = 0.8
+process_material = SubResource("ParticleProcessMaterial_u2s8f")
+draw_pass_1 = SubResource("SphereMesh_v5hnb")

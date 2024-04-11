@@ -198,7 +198,7 @@ rings = 3
 
 [node name="RocketEnemy" instance=ExtResource("1_dtn62")]
 script = ExtResource("2_n27vq")
-speed = 35
+speed = 37
 delete_on_hit_after_time = 2.0
 
 [node name="rocket" parent="Graphics" index="0" instance=ExtResource("3_nfn7h")]

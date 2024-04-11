@@ -41,6 +41,7 @@ func _ready():
 				child.connect("hurt_signal", Callable(self, "hurt"))
 				
 	enemy_health_manager.connect("enemy_died", Callable(self, "set_state_dead"))
+	enemy_health_manager.connect("enemy_gibbed", Callable($Graphics, "hide"))
 	
 	set_state_idle()
 	
