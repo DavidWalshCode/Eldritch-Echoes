@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=88 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://weapons/weapon_manager.gd" id="2_c6p01"]
@@ -350,6 +350,20 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_qb0mk"]
 resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapons:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.05, 0), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_o41hp"]
 resource_name = "moving"
@@ -369,11 +383,29 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(-0.1, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_8akrd"]
+resource_name = "switch_in"
+length = 0.3
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapons:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.41907, -11.9315, -0.0362046), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ayyqv"]
 _data = {
 "RESET": SubResource("Animation_uaauj"),
 "idle": SubResource("Animation_qb0mk"),
-"moving": SubResource("Animation_o41hp")
+"moving": SubResource("Animation_o41hp"),
+"switch": SubResource("Animation_8akrd")
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5m1xi"]
@@ -586,7 +618,7 @@ transform = Transform3D(0.254703, 0, 0, 0, 0.222342, 0, 0, 0, 0.255777, 0.266923
 script = ExtResource("2_c6p01")
 
 [node name="Weapons" type="Node3D" parent="Camera3D/WeaponManager"]
-transform = Transform3D(0.999999, 0, 0, 0, 1, 4.65661e-10, 0, -1.49012e-08, 0.999999, 0, 0, 0)
+transform = Transform3D(0.999999, 0, 0, 0, 1, 1.58325e-08, 0, -1.88593e-08, 0.999999, 0, 0, 0)
 
 [node name="Sword" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1.25345, 0, 0, 0, 1.25346, 0, 0, 0, 1.25345, 0.727612, -0.808232, -0.0604396)
@@ -633,20 +665,16 @@ bus = &"SFX"
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Sword/Audio"]
 bus = &"SFX"
 
-[node name="SwitchSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Sword/Audio"]
-stream = ExtResource("26_7yiv5")
-bus = &"SFX"
-
 [node name="Revolvers" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.104714)
 visible = false
 script = ExtResource("4_qyhjh")
-min_pitch_scale = 0.85
-max_pitch_scale = 0.9
 automatic = true
 damage = 25
 attack_rate = 0.5
 recoil_strength = 1.6
+min_pitch_scale = 0.85
+max_pitch_scale = 0.9
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/Revolvers"]
 transform = Transform3D(0.999996, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0.272566)
@@ -697,19 +725,15 @@ bus = &"SFX"
 stream = ExtResource("10_6b3cn")
 bus = &"SFX"
 
-[node name="SwitchSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Revolvers/Audio"]
-stream = ExtResource("26_7yiv5")
-bus = &"SFX"
-
 [node name="MachineGun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1352e-05, 0, -0.104714)
 visible = false
 script = ExtResource("4_qyhjh")
-min_pitch_scale = 0.7
-max_pitch_scale = 0.8
 automatic = true
 damage = 15
 attack_rate = 0.1
+min_pitch_scale = 0.7
+max_pitch_scale = 0.8
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/MachineGun"]
 
@@ -741,10 +765,6 @@ bus = &"SFX"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/MachineGun/Audio"]
 stream = ExtResource("10_6b3cn")
-bus = &"SFX"
-
-[node name="SwitchSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/MachineGun/Audio"]
-stream = ExtResource("26_7yiv5")
 bus = &"SFX"
 
 [node name="Shotgun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
@@ -802,18 +822,14 @@ bus = &"SFX"
 stream = ExtResource("10_6b3cn")
 bus = &"SFX"
 
-[node name="SwitchSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Shotgun/Audio"]
-stream = ExtResource("26_7yiv5")
-bus = &"SFX"
-
 [node name="RocketLauncher" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 script = ExtResource("4_qyhjh")
-min_pitch_scale = 0.7
-max_pitch_scale = 0.8
 automatic = true
 damage = 60
 attack_rate = 0.7
 recoil_strength = 4.0
+min_pitch_scale = 0.7
+max_pitch_scale = 0.8
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/RocketLauncher"]
 
@@ -845,10 +861,6 @@ bus = &"SFX"
 stream = ExtResource("10_6b3cn")
 bus = &"SFX"
 
-[node name="SwitchSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Audio"]
-stream = ExtResource("26_7yiv5")
-bus = &"SFX"
-
 [node name="GeneralWeaponAnimations" type="AnimationPlayer" parent="Camera3D/WeaponManager"]
 libraries = {
 "": SubResource("AnimationLibrary_ayyqv")
@@ -869,6 +881,11 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/WeaponManager/AlertAreaLineOfSight"]
 transform = Transform3D(1.7436, 0, 0, 0, 0.0667613, 1.07102e-08, 0, -2.32831e-10, 1.79303, 0, 0, 0)
 shape = SubResource("SphereShape3D_t7da3")
+
+[node name="SwitchSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager"]
+stream = ExtResource("26_7yiv5")
+volume_db = -14.0
+bus = &"SFX"
 
 [node name="CharacterMover" parent="." instance=ExtResource("2_k2lt6")]
 visible = false
@@ -1027,7 +1044,7 @@ target_position = Vector3(0, 0.5, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
 [node name="SlideEffect" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.877472, -3.4704)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07747, -3.4704)
 emitting = false
 amount = 20
 lifetime = 0.1

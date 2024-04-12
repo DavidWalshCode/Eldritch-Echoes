@@ -17,7 +17,7 @@ func _on_enemy_spawned():
 
 func _on_enemy_despawned():
 	total_enemies_spawned -= 1
-	print("Total enemies spawned: ", total_enemies_spawned)
+	print("Total enemies currently: ", total_enemies_spawned)
 	update_spawners()
 
 func update_spawners():

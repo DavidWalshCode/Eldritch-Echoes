@@ -9,10 +9,16 @@ signal enemy_health_changed(current_health, max_health)
 @export var gib_at = -10
 @export var verbose = true
 
+@export_category("Sound")
+@export var min_pitch_scale = 0.9 # Pitch variation range
+@export var max_pitch_scale = 1.0 # Pitch variation range
+
 var blood_spray = preload("res://effects/gore/blood/blood_spray_effect.tscn")
 var gibs = preload("res://effects/gore/gibs/gibs.tscn")
 
 @onready var current_health = max_health
+@onready var death_sounds = $Audio/DeathSounds.get_children()
+@onready var hurt_sounds = $Audio/HurtSounds.get_children()
 
 func _ready():
 	enemy_health_changed.emit(current_health, max_health)
@@ -77,3 +83,15 @@ func spawn_gibs():
 	get_tree().get_root().add_child(gibs_instance)
 	gibs_instance.global_transform.origin = global_transform.origin
 	gibs_instance.enable_gibs()
+
+func play_death_sound():
+	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
+	var death_sound_selected = death_sounds[randi() % death_sounds.size()]
+	death_sound_selected.pitch_scale = random_pitch
+	death_sound_selected.play()
+
+func play_hurt_sound():
+	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
+	var hurt_sound_selected = hurt_sounds[randi() % hurt_sounds.size()]
+	hurt_sound_selected.pitch_scale = random_pitch
+	hurt_sound_selected.play()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=35 format=3 uid="uid://caw80merhbn8g"]
+[gd_scene load_steps=38 format=3 uid="uid://caw80merhbn8g"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_1_battlefield.gd" id="1_hl1dr"]
 [ext_resource type="PackedScene" uid="uid://b06oiwxe7csbi" path="res://environment/assets/ground/grass/scenes/grass_1_flat.tscn" id="2_glj68"]
+[ext_resource type="PackedScene" uid="uid://cts88y68fd6ue" path="res://environment/assets/nature/rocks/scenes/rock_cliff_1.tscn" id="10_heuw5"]
 [ext_resource type="PackedScene" uid="uid://dgckydkdi10tv" path="res://environment/assets/nature/trees/scenes/retro_nature_pack/tree_01_spring.tscn" id="13_4q7ob"]
 [ext_resource type="PackedScene" uid="uid://csc37h8oywmuf" path="res://environment/assets/nature/trees/scenes/retro_nature_pack/tree_02_spring.tscn" id="14_iyilc"]
 [ext_resource type="PackedScene" uid="uid://doxc3oagbfeug" path="res://environment/assets/nature/trees/scenes/retro_nature_pack/tree_03_spring.tscn" id="15_am01i"]
@@ -19,7 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://cy6eb6kesgi4p" path="res://environment/assets/nature/bushes/scenes/retro_nature_pack/bush_03_spring_6.tscn" id="27_3ewv6"]
 [ext_resource type="PackedScene" uid="uid://cirlgxw2hqiqk" path="res://environment/assets/nature/bushes/scenes/retro_nature_pack/bush_04_spring_4.tscn" id="28_lhf25"]
 [ext_resource type="PackedScene" uid="uid://vg1mbsw3dyq1" path="res://environment/assets/nature/bushes/scenes/retro_nature_pack/bush_04_spring_3.tscn" id="29_soe7b"]
+[ext_resource type="PackedScene" uid="uid://cwvyf2ysn153u" path="res://environment/assets/nature/rocks/scenes/rock_boulder_1.tscn" id="30_c5218"]
 [ext_resource type="PackedScene" uid="uid://bs0gy55bmecae" path="res://environment/assets/nature/bushes/scenes/retro_nature_pack/bush_04_spring_6.tscn" id="30_g3rht"]
+[ext_resource type="PackedScene" uid="uid://bq1ifswcqf5o2" path="res://environment/assets/nature/rocks/scenes/rock_pillar_1.tscn" id="31_0w1vk"]
 [ext_resource type="PackedScene" uid="uid://dnkwjnej7hy8h" path="res://environment/assets/nature/bushes/scenes/retro_nature_pack/bush_05_spring_5.tscn" id="31_d4mfs"]
 [ext_resource type="PackedScene" uid="uid://do5j0mnyjbqcp" path="res://environment/assets/nature/bushes/scenes/retro_nature_pack/bush_05_spring_3.tscn" id="32_u5li0"]
 [ext_resource type="PackedScene" uid="uid://cvhlam7d5j6vr" path="res://environment/assets/nature/bushes/scenes/retro_nature_pack/bush_05_spring_4.tscn" id="33_bkw2g"]
@@ -58,343 +61,357 @@ transform = Transform3D(35, 0, 0, 0, 1, 0, 0, 0, 35, 0, 0, -126.048)
 
 [node name="Nature" type="Node3D" parent="NavigationRegion3D/Environment"]
 
-[node name="OutsideTrees" type="Node3D" parent="NavigationRegion3D/Environment/Nature"]
+[node name="Outside" type="Node3D" parent="NavigationRegion3D/Environment/Nature"]
+
+[node name="Trees" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Outside"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 98)
 
-[node name="Tree1" type="Node3D" parent="NavigationRegion3D/Environment/Nature/OutsideTrees"]
+[node name="Tree1" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Outside/Trees"]
 
-[node name="Tree01Spring" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree1" instance=ExtResource("13_4q7ob")]
+[node name="Tree01Spring" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree1" instance=ExtResource("13_4q7ob")]
 transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, -46.2023, 0, -4.33891)
 
-[node name="Tree01Spring2" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree1" instance=ExtResource("13_4q7ob")]
+[node name="Tree01Spring2" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree1" instance=ExtResource("13_4q7ob")]
 transform = Transform3D(12.3734, 0, 8.47926, 0, 15, 0, -8.47926, 0, 12.3734, -163.667, 0, -197.573)
 
-[node name="Tree01Spring3" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree1" instance=ExtResource("13_4q7ob")]
+[node name="Tree01Spring3" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree1" instance=ExtResource("13_4q7ob")]
 transform = Transform3D(-10.3797, 0, -12.1763, 0, 16, 0, 12.1763, 0, -10.3797, -138.124, 0, -352.975)
 
-[node name="Tree01Spring4" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree1" instance=ExtResource("13_4q7ob")]
+[node name="Tree01Spring4" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree1" instance=ExtResource("13_4q7ob")]
 transform = Transform3D(-18.5803, 0, -7.40078, 0, 20, 0, 7.40078, 0, -18.5803, 7.32956, 0, -432.704)
 
-[node name="Tree01Spring5" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree1" instance=ExtResource("13_4q7ob")]
+[node name="Tree01Spring5" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree1" instance=ExtResource("13_4q7ob")]
 transform = Transform3D(-18.5526, 0, 4.09875, 0, 19, 0, -4.09875, 0, -18.5526, 143.628, 0, -318.941)
 
-[node name="Tree01Spring6" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree1" instance=ExtResource("13_4q7ob")]
+[node name="Tree01Spring6" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree1" instance=ExtResource("13_4q7ob")]
 transform = Transform3D(-15.6233, 0, 3.45158, 0, 16, 0, -3.45158, 0, -15.6233, 151.742, 0, -141.26)
 
-[node name="Tree01Spring7" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree1" instance=ExtResource("13_4q7ob")]
+[node name="Tree01Spring7" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree1" instance=ExtResource("13_4q7ob")]
 transform = Transform3D(-14.6468, 0, 3.23585, 0, 15, 0, -3.23585, 0, -14.6468, 92.3471, 0, -25.6558)
 
-[node name="Tree01Spring8" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree1" instance=ExtResource("13_4q7ob")]
+[node name="Tree01Spring8" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree1" instance=ExtResource("13_4q7ob")]
 transform = Transform3D(-21.482, 0, 4.74592, 0, 22, 0, -4.74592, 0, -21.482, -241.595, 0, -252.959)
 
-[node name="Tree2" type="Node3D" parent="NavigationRegion3D/Environment/Nature/OutsideTrees"]
+[node name="Tree2" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Outside/Trees"]
 
-[node name="Tree02Spring" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree2" instance=ExtResource("14_iyilc")]
+[node name="Tree02Spring" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree2" instance=ExtResource("14_iyilc")]
 transform = Transform3D(19, 0, 0, 0, 19, 0, 0, 0, 19, 22.7747, 0, -7.08797)
 
-[node name="Tree02Spring2" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree2" instance=ExtResource("14_iyilc")]
+[node name="Tree02Spring2" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree2" instance=ExtResource("14_iyilc")]
 transform = Transform3D(-4.72418, 0, -21.4868, 0, 22, 0, 21.4868, 0, -4.72418, 157.206, 0, -96.5233)
 
-[node name="Tree02Spring3" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree2" instance=ExtResource("14_iyilc")]
+[node name="Tree02Spring3" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree2" instance=ExtResource("14_iyilc")]
 transform = Transform3D(-12.6082, 0, 9.85058, 0, 16, 0, -9.85058, 0, -12.6082, 139.712, 0, -357.881)
 
-[node name="Tree02Spring4" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree2" instance=ExtResource("14_iyilc")]
+[node name="Tree02Spring4" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree2" instance=ExtResource("14_iyilc")]
 transform = Transform3D(11.6583, 0, -13.7144, 0, 18, 0, 13.7144, 0, 11.6583, -118.386, 0, -432.87)
 
-[node name="Tree02Spring5" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree2" instance=ExtResource("14_iyilc")]
+[node name="Tree02Spring5" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree2" instance=ExtResource("14_iyilc")]
 transform = Transform3D(14.9736, 0, -0.889596, 0, 15, 0, 0.889596, 0, 14.9736, -159.69, 0, -260.247)
 
-[node name="Tree02Spring6" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree2" instance=ExtResource("14_iyilc")]
+[node name="Tree02Spring6" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree2" instance=ExtResource("14_iyilc")]
 transform = Transform3D(2.61052, 0, 19.8289, 0, 20, 0, -19.8289, 0, 2.61052, -162.677, 0, -86.686)
 
-[node name="Tree02Spring7" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree2" instance=ExtResource("14_iyilc")]
+[node name="Tree02Spring7" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree2" instance=ExtResource("14_iyilc")]
 transform = Transform3D(-14.5258, 0, -8.83183, 0, 17, 0, 8.83183, 0, -14.5258, -146.107, 0, -8.78062)
 
-[node name="Tree3" type="Node3D" parent="NavigationRegion3D/Environment/Nature/OutsideTrees"]
+[node name="Tree3" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Outside/Trees"]
 
-[node name="Tree03Spring" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree3" instance=ExtResource("15_am01i")]
+[node name="Tree03Spring" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree3" instance=ExtResource("15_am01i")]
 transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -92.2197, 0, -24.7858)
 
-[node name="Tree03Spring2" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree3" instance=ExtResource("15_am01i")]
+[node name="Tree03Spring2" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree3" instance=ExtResource("15_am01i")]
 transform = Transform3D(8.14466, 0, 13.7719, 0, 16, 0, -13.7719, 0, 8.14466, -176.881, 0, -156.279)
 
-[node name="Tree03Spring3" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree3" instance=ExtResource("15_am01i")]
+[node name="Tree03Spring3" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree3" instance=ExtResource("15_am01i")]
 transform = Transform3D(-19.5915, 0, -4.02156, 0, 20, 0, 4.02156, 0, -19.5915, -166.866, 0, -307.448)
 
-[node name="Tree03Spring4" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree3" instance=ExtResource("15_am01i")]
+[node name="Tree03Spring4" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree3" instance=ExtResource("15_am01i")]
 transform = Transform3D(3.15633, 0, -16.7044, 0, 17, 0, 16.7044, 0, 3.15633, -71.3177, 0, -463.601)
 
-[node name="Tree03Spring5" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree3" instance=ExtResource("15_am01i")]
+[node name="Tree03Spring5" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree3" instance=ExtResource("15_am01i")]
 transform = Transform3D(-6.10105, 0, 13.7032, 0, 15, 0, -13.7032, 0, -6.10105, 84.1672, 0, -404.771)
 
-[node name="Tree03Spring6" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree3" instance=ExtResource("15_am01i")]
+[node name="Tree03Spring6" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree3" instance=ExtResource("15_am01i")]
 transform = Transform3D(0.307171, 0, -21.9979, 0, 22, 0, 21.9979, 0, 0.307171, 186.494, 0, -245.605)
 
-[node name="Tree03Spring7" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree3" instance=ExtResource("15_am01i")]
+[node name="Tree03Spring7" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree3" instance=ExtResource("15_am01i")]
 transform = Transform3D(14.6398, 0, 12.1111, 0, 19, 0, -12.1111, 0, 14.6398, 144.758, 0, -26.191)
 
-[node name="Tree03Spring8" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree3" instance=ExtResource("15_am01i")]
+[node name="Tree03Spring8" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree3" instance=ExtResource("15_am01i")]
 transform = Transform3D(7.77066, 0, 15.1201, 0, 17, 0, -15.1201, 0, 7.77066, -6.50764, 0, 22.2987)
 
-[node name="Tree4" type="Node3D" parent="NavigationRegion3D/Environment/Nature/OutsideTrees"]
+[node name="Tree4" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Outside/Trees"]
 
-[node name="Tree04Spring" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree4" instance=ExtResource("16_p5jw2")]
+[node name="Tree04Spring" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree4" instance=ExtResource("16_p5jw2")]
 transform = Transform3D(14.6398, 0, 12.1111, 0, 19, 0, -12.1111, 0, 14.6398, 151.571, 0, -191.437)
 
-[node name="Tree04Spring2" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree4" instance=ExtResource("16_p5jw2")]
+[node name="Tree04Spring2" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree4" instance=ExtResource("16_p5jw2")]
 transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 127.633, 0, -413.205)
 
-[node name="Tree04Spring3" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree4" instance=ExtResource("16_p5jw2")]
+[node name="Tree04Spring3" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree4" instance=ExtResource("16_p5jw2")]
 transform = Transform3D(4.93798, 0, 20.4112, 0, 21, 0, -20.4112, 0, 4.93798, -123.981, 0, -64.0898)
 
-[node name="Tree04Spring4" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree4" instance=ExtResource("16_p5jw2")]
+[node name="Tree04Spring4" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree4" instance=ExtResource("16_p5jw2")]
 transform = Transform3D(-12.8033, 0, -7.81514, 0, 15, 0, 7.81514, 0, -12.8033, -179.145, 0, -235.278)
 
-[node name="Tree04Spring5" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree4" instance=ExtResource("16_p5jw2")]
+[node name="Tree04Spring5" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree4" instance=ExtResource("16_p5jw2")]
 transform = Transform3D(13.2399, 0, -17.57, 0, 22, 0, 17.57, 0, 13.2399, -73.4061, 0, -413.962)
 
-[node name="Tree04Spring6" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree4" instance=ExtResource("16_p5jw2")]
+[node name="Tree04Spring6" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree4" instance=ExtResource("16_p5jw2")]
 transform = Transform3D(16.9359, 0, -6.09728, 0, 18, 0, 6.09728, 0, 16.9359, 72.0467, 0, -463.304)
 
-[node name="Tree04Spring7" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree4" instance=ExtResource("16_p5jw2")]
+[node name="Tree04Spring7" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree4" instance=ExtResource("16_p5jw2")]
 transform = Transform3D(-18.9277, 0, 1.65596, 0, 19, 0, -1.65596, 0, -18.9277, 184.164, 0, -360.477)
 
-[node name="Tree04Spring8" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree4" instance=ExtResource("16_p5jw2")]
+[node name="Tree04Spring8" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree4" instance=ExtResource("16_p5jw2")]
 transform = Transform3D(-12.5321, 0, -15.5868, 0, 20, 0, 15.5868, 0, -12.5321, 44.9116, 0, 28.7226)
 
-[node name="Tree04Spring9" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree4" instance=ExtResource("16_p5jw2")]
+[node name="Tree04Spring9" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree4" instance=ExtResource("16_p5jw2")]
 transform = Transform3D(2.30565, 0, 14.8217, 0, 15, 0, -14.8217, 0, 2.30565, 36.6912, 0, -503.06)
 
-[node name="Tree04Spring10" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree4" instance=ExtResource("16_p5jw2")]
+[node name="Tree04Spring10" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree4" instance=ExtResource("16_p5jw2")]
 transform = Transform3D(0.796577, 0, -21.9856, 0, 22, 0, 21.9856, 0, 0.796577, 104.313, 0, 14.0049)
 
-[node name="Tree5" type="Node3D" parent="NavigationRegion3D/Environment/Nature/OutsideTrees"]
+[node name="Tree5" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Outside/Trees"]
 
-[node name="Tree05Spring" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree5" instance=ExtResource("17_jq1f2")]
+[node name="Tree05Spring" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree5" instance=ExtResource("17_jq1f2")]
 transform = Transform3D(19, 0, 0, 0, 19, 0, 0, 0, 19, 126.424, 0, -66.9158)
 
-[node name="Tree05Spring2" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree5" instance=ExtResource("17_jq1f2")]
+[node name="Tree05Spring2" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree5" instance=ExtResource("17_jq1f2")]
 transform = Transform3D(15.8972, 0, -1.81125, 0, 16, 0, 1.81125, 0, 15.8972, 214.054, 0, -137.36)
 
-[node name="Tree05Spring3" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree5" instance=ExtResource("17_jq1f2")]
+[node name="Tree05Spring3" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree5" instance=ExtResource("17_jq1f2")]
 transform = Transform3D(-10.4527, 0, 14.6541, 0, 18, 0, -14.6541, 0, -10.4527, 197.317, 0, -302.786)
 
-[node name="Tree05Spring4" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree5" instance=ExtResource("17_jq1f2")]
+[node name="Tree05Spring4" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree5" instance=ExtResource("17_jq1f2")]
 transform = Transform3D(-20.8994, 0, -6.87137, 0, 22, 0, 6.87137, 0, -20.8994, -28.1226, 0, -495.34)
 
-[node name="Tree05Spring5" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree5" instance=ExtResource("17_jq1f2")]
+[node name="Tree05Spring5" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree5" instance=ExtResource("17_jq1f2")]
 transform = Transform3D(-14.9429, 0, 1.30734, 0, 15, 0, -1.30734, 0, -14.9429, -151.844, 0, -122.078)
 
-[node name="Tree05Spring6" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree5" instance=ExtResource("17_jq1f2")]
+[node name="Tree05Spring6" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree5" instance=ExtResource("17_jq1f2")]
 transform = Transform3D(-6.8883, 0, 16.6298, 0, 18, 0, -16.6298, 0, -6.8883, -115.652, 0, -388.035)
 
-[node name="Tree05Spring7" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree5" instance=ExtResource("17_jq1f2")]
+[node name="Tree05Spring7" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree5" instance=ExtResource("17_jq1f2")]
 transform = Transform3D(-14.1272, 0, -7.51155, 0, 16, 0, 7.51155, 0, -14.1272, 108.279, 0, -371.829)
 
-[node name="Tree05Spring8" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree5" instance=ExtResource("17_jq1f2")]
+[node name="Tree05Spring8" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree5" instance=ExtResource("17_jq1f2")]
 transform = Transform3D(-14.2405, 0, -14.0431, 0, 20, 0, 14.0431, 0, -14.2405, -186.219, 0, -368.51)
 
-[node name="Tree05Spring9" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree5" instance=ExtResource("17_jq1f2")]
+[node name="Tree05Spring9" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree5" instance=ExtResource("17_jq1f2")]
 transform = Transform3D(11.7664, 0, -12.2699, 0, 17, 0, 12.2699, 0, 11.7664, -85.4487, 0, 35.0455)
 
-[node name="Tree05Spring10" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree5" instance=ExtResource("17_jq1f2")]
+[node name="Tree05Spring10" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree5" instance=ExtResource("17_jq1f2")]
 transform = Transform3D(21.6357, 0, 3.98727, 0, 22, 0, -3.98727, 0, 21.6357, -204.464, 0, -115.298)
 
-[node name="Tree6" type="Node3D" parent="NavigationRegion3D/Environment/Nature/OutsideTrees"]
+[node name="Tree6" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Outside/Trees"]
 
-[node name="Tree7" type="Node3D" parent="NavigationRegion3D/Environment/Nature/OutsideTrees"]
+[node name="Tree7" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Outside/Trees"]
 
-[node name="Tree07Spring" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree7" instance=ExtResource("18_fctlm")]
+[node name="Tree07Spring" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree7" instance=ExtResource("18_fctlm")]
 transform = Transform3D(-16.7604, 0, 8.94922, 0, 19, 0, -8.94922, 0, -16.7604, -169.753, 0, -48.4327)
 
-[node name="Tree07Spring2" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree7" instance=ExtResource("18_fctlm")]
+[node name="Tree07Spring2" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree7" instance=ExtResource("18_fctlm")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -215.777, 0, -320.945)
 
-[node name="Tree07Spring3" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree7" instance=ExtResource("18_fctlm")]
+[node name="Tree07Spring3" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree7" instance=ExtResource("18_fctlm")]
 transform = Transform3D(-14.7986, 0, -10.247, 0, 18, 0, 10.247, 0, -14.7986, -166.02, 0, -414.673)
 
-[node name="Tree07Spring4" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree7" instance=ExtResource("18_fctlm")]
+[node name="Tree07Spring4" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree7" instance=ExtResource("18_fctlm")]
 transform = Transform3D(-0.872388, 0, -19.981, 0, 20, 0, 19.981, 0, -0.872388, 124.995, 0, -463.673)
 
-[node name="Tree07Spring5" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree7" instance=ExtResource("18_fctlm")]
+[node name="Tree07Spring5" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree7" instance=ExtResource("18_fctlm")]
 transform = Transform3D(16.2002, 0, 9.92747, 0, 19, 0, -9.92747, 0, 16.2002, 220.063, 0, -177.449)
 
-[node name="Tree07Spring6" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree7" instance=ExtResource("18_fctlm")]
+[node name="Tree07Spring6" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree7" instance=ExtResource("18_fctlm")]
 transform = Transform3D(13.1858, 0, -12.253, 0, 18, 0, 12.253, 0, 13.1858, 220.063, 0, -223.687)
 
-[node name="Tree07Spring7" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree7" instance=ExtResource("18_fctlm")]
+[node name="Tree07Spring7" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree7" instance=ExtResource("18_fctlm")]
 transform = Transform3D(-15.8783, 0, 8.47822, 0, 18, 0, -8.47822, 0, -15.8783, -46.9388, 0, 40.0938)
 
-[node name="Tree8" type="Node3D" parent="NavigationRegion3D/Environment/Nature/OutsideTrees"]
+[node name="Tree8" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Outside/Trees"]
 
-[node name="Tree08Spring" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree8" instance=ExtResource("19_ag6yj")]
+[node name="Tree08Spring" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree8" instance=ExtResource("19_ag6yj")]
 transform = Transform3D(13.0987, 0, 10.8362, 0, 17, 0, -10.8362, 0, 13.0987, 60.1983, 1.60229, -8.7928)
 
-[node name="Tree08Spring2" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree8" instance=ExtResource("19_ag6yj")]
+[node name="Tree08Spring2" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree8" instance=ExtResource("19_ag6yj")]
 transform = Transform3D(-13.4085, 0, -14.8395, 0, 20, 0, 14.8395, 0, -13.4085, 183.046, 1.60229, -58.7792)
 
-[node name="Tree08Spring3" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree8" instance=ExtResource("19_ag6yj")]
+[node name="Tree08Spring3" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree8" instance=ExtResource("19_ag6yj")]
 transform = Transform3D(14.5067, 0, -10.6562, 0, 18, 0, 10.6562, 0, 14.5067, 48.2025, 1.60229, -416.891)
 
-[node name="Tree08Spring4" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree8" instance=ExtResource("19_ag6yj")]
+[node name="Tree08Spring4" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree8" instance=ExtResource("19_ag6yj")]
 transform = Transform3D(3.71333, 0, -19.6523, 0, 20, 0, 19.6523, 0, 3.71333, -32.4034, 1.60229, -422.031)
 
-[node name="Tree08Spring5" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree8" instance=ExtResource("19_ag6yj")]
+[node name="Tree08Spring5" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree8" instance=ExtResource("19_ag6yj")]
 transform = Transform3D(-20.2939, 0, 5.39979, 0, 21, 0, -5.39979, 0, -20.2939, 140.847, 1.60229, -269.748)
 
-[node name="Tree08Spring6" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree8" instance=ExtResource("19_ag6yj")]
+[node name="Tree08Spring6" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree8" instance=ExtResource("19_ag6yj")]
 transform = Transform3D(-20.4692, 0, 8.06303, 0, 22, 0, -8.06303, 0, -20.4692, -222.021, 1.60229, -169.239)
 
-[node name="Tree08Spring7" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree8" instance=ExtResource("19_ag6yj")]
+[node name="Tree08Spring7" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree8" instance=ExtResource("19_ag6yj")]
 transform = Transform3D(3.52767, 0, -18.6696, 0, 19, 0, 18.6696, 0, 3.52767, -204.288, 1.60229, -277.188)
 
-[node name="Tree08Spring8" parent="NavigationRegion3D/Environment/Nature/OutsideTrees/Tree8" instance=ExtResource("19_ag6yj")]
+[node name="Tree08Spring8" parent="NavigationRegion3D/Environment/Nature/Outside/Trees/Tree8" instance=ExtResource("19_ag6yj")]
 transform = Transform3D(-19.7905, 0, 2.88712, 0, 20, 0, -2.88712, 0, -19.7905, -228.758, 1.60229, -206.227)
 
-[node name="InsideNature" type="Node3D" parent="NavigationRegion3D/Environment/Nature"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 98)
+[node name="Rocks" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Outside"]
 
-[node name="Trees" type="Node3D" parent="NavigationRegion3D/Environment/Nature/InsideNature"]
-transform = Transform3D(0.998675, 0, 0.0514645, 0, 1, 0, -0.0514645, 0, 0.998675, 5.12583, 0, -6.65608)
+[node name="RockCliff1" parent="NavigationRegion3D/Environment/Nature/Outside/Rocks" instance=ExtResource("10_heuw5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.932, 0.864172, 0)
 
-[node name="Tree01Spring" parent="NavigationRegion3D/Environment/Nature/InsideNature/Trees" instance=ExtResource("13_4q7ob")]
+[node name="Inside" type="Node3D" parent="NavigationRegion3D/Environment/Nature"]
+
+[node name="Trees" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Inside"]
+transform = Transform3D(0.998675, 0, 0.0514645, 0, 1, 0, -0.0514645, 0, 0.998675, 5.12583, 0, 91.3439)
+
+[node name="Tree01Spring" parent="NavigationRegion3D/Environment/Nature/Inside/Trees" instance=ExtResource("13_4q7ob")]
 transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, -42.1088, 1.2786, -70.6868)
 
-[node name="Tree02Spring" parent="NavigationRegion3D/Environment/Nature/InsideNature/Trees" instance=ExtResource("14_iyilc")]
+[node name="Tree02Spring" parent="NavigationRegion3D/Environment/Nature/Inside/Trees" instance=ExtResource("14_iyilc")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -42.2537, 1.18683, -82.804)
 
-[node name="Tree03Spring" parent="NavigationRegion3D/Environment/Nature/InsideNature/Trees" instance=ExtResource("15_am01i")]
+[node name="Tree03Spring" parent="NavigationRegion3D/Environment/Nature/Inside/Trees" instance=ExtResource("15_am01i")]
 transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, -52.0877, 0.583874, -87.484)
 
-[node name="Tree04Spring" parent="NavigationRegion3D/Environment/Nature/InsideNature/Trees" instance=ExtResource("16_p5jw2")]
+[node name="Tree04Spring" parent="NavigationRegion3D/Environment/Nature/Inside/Trees" instance=ExtResource("16_p5jw2")]
 transform = Transform3D(3, 0, 1.49012e-08, 0, 3, 0, -1.49012e-08, 0, 3, -38.6575, 1.38719, -94.9371)
 
-[node name="Tree01Spring2" parent="NavigationRegion3D/Environment/Nature/InsideNature/Trees" instance=ExtResource("13_4q7ob")]
+[node name="Tree01Spring2" parent="NavigationRegion3D/Environment/Nature/Inside/Trees" instance=ExtResource("13_4q7ob")]
 transform = Transform3D(1.94421, 0, 1.57164, 0, 2.5, 0, -1.57164, 0, 1.94421, -23.6902, 0.827957, -89.9787)
 
-[node name="Tree02Spring2" parent="NavigationRegion3D/Environment/Nature/InsideNature/Trees" instance=ExtResource("14_iyilc")]
+[node name="Tree02Spring2" parent="NavigationRegion3D/Environment/Nature/Inside/Trees" instance=ExtResource("14_iyilc")]
 transform = Transform3D(1.77275, 0, -3.01784, 0, 3.5, 0, 3.01784, 0, 1.77275, -21.0881, 0.214825, -101.72)
 
-[node name="Tree03Spring2" parent="NavigationRegion3D/Environment/Nature/InsideNature/Trees" instance=ExtResource("15_am01i")]
+[node name="Tree03Spring2" parent="NavigationRegion3D/Environment/Nature/Inside/Trees" instance=ExtResource("15_am01i")]
 transform = Transform3D(0.366459, 0, 2.473, 0, 2.5, 0, -2.473, 0, 0.366459, -30.454, 1.03351, -79.0472)
 
-[node name="Tree04Spring2" parent="NavigationRegion3D/Environment/Nature/InsideNature/Trees" instance=ExtResource("16_p5jw2")]
+[node name="Tree04Spring2" parent="NavigationRegion3D/Environment/Nature/Inside/Trees" instance=ExtResource("16_p5jw2")]
 transform = Transform3D(1.84538, 0, 2.97398, 0, 3.5, 0, -2.97398, 0, 1.84538, -34.3066, 0.314297, -108.516)
 
-[node name="Bushes" type="Node3D" parent="NavigationRegion3D/Environment/Nature/InsideNature"]
-transform = Transform3D(0.998675, 0, 0.0514645, 0, 1, 0, -0.0514645, 0, 0.998675, 5.12583, 0, -6.65608)
+[node name="Bushes" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Inside"]
+transform = Transform3D(0.998675, 0, 0.0514645, 0, 1, 0, -0.0514645, 0, 0.998675, 5.12583, 0, 91.3439)
 
-[node name="Bush2" type="Node3D" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes"]
+[node name="Bush2" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes"]
 
-[node name="Bush02Spring3" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes/Bush2" instance=ExtResource("20_lqgb3")]
+[node name="Bush02Spring3" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes/Bush2" instance=ExtResource("20_lqgb3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -28.2313, 0.969311, -86.1457)
 
-[node name="Bush02Spring4" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes/Bush2" instance=ExtResource("21_sq2yt")]
+[node name="Bush02Spring4" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes/Bush2" instance=ExtResource("21_sq2yt")]
 transform = Transform3D(4, 0, -2.98023e-08, 0, 4, 0, 2.98023e-08, 0, 4, -43.8748, 0.738418, -77.4976)
 
-[node name="Bush02Spring5" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes/Bush2" instance=ExtResource("22_4eaqc")]
+[node name="Bush02Spring5" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes/Bush2" instance=ExtResource("22_4eaqc")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -24.3761, 0.397151, -99.0562)
 
-[node name="Bush02Spring6" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes/Bush2" instance=ExtResource("23_r8iq6")]
+[node name="Bush02Spring6" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes/Bush2" instance=ExtResource("23_r8iq6")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -17.8438, -0.0104068, -91.0598)
 
-[node name="Bush3" type="Node3D" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes"]
+[node name="Bush3" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes"]
 
-[node name="Bush03Spring2" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes/Bush3" instance=ExtResource("24_hgkgp")]
+[node name="Bush03Spring2" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes/Bush3" instance=ExtResource("24_hgkgp")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -36.231, 1.06178, -76.658)
 
-[node name="Bush03Spring3" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes/Bush3" instance=ExtResource("25_qtk8l")]
+[node name="Bush03Spring3" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes/Bush3" instance=ExtResource("25_qtk8l")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -34.4707, 1.39308, -91.047)
 
-[node name="Bush03Spring4" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes/Bush3" instance=ExtResource("26_26oce")]
+[node name="Bush03Spring4" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes/Bush3" instance=ExtResource("26_26oce")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -43.9593, 0.847122, -91.0123)
 
-[node name="Bush03Spring6" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes/Bush3" instance=ExtResource("27_3ewv6")]
+[node name="Bush03Spring6" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes/Bush3" instance=ExtResource("27_3ewv6")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -34.4707, 0.556256, -100.19)
 
-[node name="Bush4" type="Node3D" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes"]
+[node name="Bush4" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes"]
 
-[node name="Bush04Spring4" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes/Bush4" instance=ExtResource("28_lhf25")]
+[node name="Bush04Spring4" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes/Bush4" instance=ExtResource("28_lhf25")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -36.3023, 1.83244, -84.3223)
 
-[node name="Bush04Spring3" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes/Bush4" instance=ExtResource("29_soe7b")]
+[node name="Bush04Spring3" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes/Bush4" instance=ExtResource("29_soe7b")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -45.1009, 0.136882, -100.349)
 
-[node name="Bush04Spring6" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes/Bush4" instance=ExtResource("30_g3rht")]
+[node name="Bush04Spring6" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes/Bush4" instance=ExtResource("30_g3rht")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -17.2544, -0.0377591, -105.544)
 
-[node name="Bush5" type="Node3D" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes"]
+[node name="Bush5" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes"]
 
-[node name="Bush05Spring5" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes/Bush5" instance=ExtResource("31_d4mfs")]
+[node name="Bush05Spring5" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes/Bush5" instance=ExtResource("31_d4mfs")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -30.9402, 0.421811, -71.9868)
 
-[node name="Bush05Spring3" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes/Bush5" instance=ExtResource("32_u5li0")]
+[node name="Bush05Spring3" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes/Bush5" instance=ExtResource("32_u5li0")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -28.9647, 1.07329, -96.8304)
 
-[node name="Bush05Spring4" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes/Bush5" instance=ExtResource("33_bkw2g")]
+[node name="Bush05Spring4" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes/Bush5" instance=ExtResource("33_bkw2g")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -50.1546, 0.349894, -93.6841)
 
-[node name="Bush05Spring6" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes/Bush5" instance=ExtResource("33_bkw2g")]
+[node name="Bush05Spring6" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes/Bush5" instance=ExtResource("33_bkw2g")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -21.0908, 0.099384, -83.9469)
 
-[node name="Bush05Spring7" parent="NavigationRegion3D/Environment/Nature/InsideNature/Bushes/Bush5" instance=ExtResource("33_bkw2g")]
+[node name="Bush05Spring7" parent="NavigationRegion3D/Environment/Nature/Inside/Bushes/Bush5" instance=ExtResource("33_bkw2g")]
 transform = Transform3D(1.81883, 0, 2.12882, 0, 2.8, 0, -2.12882, 0, 1.81883, -27.325, 0.15145, -108.111)
 
-[node name="GrassPieces" type="Node3D" parent="NavigationRegion3D/Environment/Nature/InsideNature"]
-transform = Transform3D(0.998675, 0, 0.0514645, 0, 1, 0, -0.0514645, 0, 0.998675, 5.12583, 0, -6.65608)
+[node name="GrassPieces" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Inside"]
+transform = Transform3D(0.998675, 0, 0.0514645, 0, 1, 0, -0.0514645, 0, 0.998675, 5.12583, 0, 91.3439)
 
-[node name="Grass01" type="Node3D" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces"]
+[node name="Grass01" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces"]
 
-[node name="Grass01Spring" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces/Grass01" instance=ExtResource("34_pyi61")]
+[node name="Grass01Spring" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces/Grass01" instance=ExtResource("34_pyi61")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -32.4683, 1.43607, -87.0068)
 
-[node name="Grass01Spring2" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces/Grass01" instance=ExtResource("34_pyi61")]
+[node name="Grass01Spring2" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces/Grass01" instance=ExtResource("34_pyi61")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -49.8463, 0.600716, -91.5613)
 
-[node name="Grass01Spring3" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces/Grass01" instance=ExtResource("34_pyi61")]
+[node name="Grass01Spring3" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces/Grass01" instance=ExtResource("34_pyi61")]
 transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, -37.9496, 0.576584, -67.3337)
 
-[node name="Grass01Spring4" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces/Grass01" instance=ExtResource("34_pyi61")]
+[node name="Grass01Spring4" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces/Grass01" instance=ExtResource("34_pyi61")]
 transform = Transform3D(0.62583, 0, 1.89956, 0, 2, 0, -1.89956, 0, 0.62583, -22.2315, 0.378992, -95.0146)
 
-[node name="Grass02" type="Node3D" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces"]
+[node name="Grass02" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces"]
 
-[node name="Grass02Spring" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces/Grass02" instance=ExtResource("35_q0f4f")]
+[node name="Grass02Spring" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces/Grass02" instance=ExtResource("35_q0f4f")]
 transform = Transform3D(1.29637, 0, -1.52296, 0, 2, 0, 1.52296, 0, 1.29637, -28.6611, 1.20291, -91.9264)
 
-[node name="Grass02Spring2" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces/Grass02" instance=ExtResource("35_q0f4f")]
+[node name="Grass02Spring2" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces/Grass02" instance=ExtResource("35_q0f4f")]
 transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, -39.3475, 1.71221, -86.7912)
 
-[node name="Grass02Spring3" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces/Grass02" instance=ExtResource("35_q0f4f")]
+[node name="Grass02Spring3" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces/Grass02" instance=ExtResource("35_q0f4f")]
 transform = Transform3D(0.110998, 0, 2.1972, 0, 2.2, 0, -2.1972, 0, 0.110998, -20.7522, 0.369092, -88.9962)
 
-[node name="Grass03" type="Node3D" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces"]
+[node name="Grass03" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces"]
 
-[node name="Grass03Spring" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces/Grass03" instance=ExtResource("36_qqqti")]
+[node name="Grass03Spring" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces/Grass03" instance=ExtResource("36_qqqti")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -28.1678, 0.303682, -103.593)
 
-[node name="Grass03Spring2" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces/Grass03" instance=ExtResource("36_qqqti")]
+[node name="Grass03Spring2" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces/Grass03" instance=ExtResource("36_qqqti")]
 transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, -42.7027, 0.412747, -99.0307)
 
-[node name="Grass03Spring3" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces/Grass03" instance=ExtResource("36_qqqti")]
+[node name="Grass03Spring3" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces/Grass03" instance=ExtResource("36_qqqti")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -24.6926, 0.276329, -79.7196)
 
-[node name="Grass04" type="Node3D" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces"]
+[node name="Grass04" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces"]
 
-[node name="Grass04Spring" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces/Grass04" instance=ExtResource("37_twmvh")]
+[node name="Grass04Spring" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces/Grass04" instance=ExtResource("37_twmvh")]
 transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, -16.5465, 0.0765024, -96.4835)
 
-[node name="Grass04Spring2" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces/Grass04" instance=ExtResource("37_twmvh")]
+[node name="Grass04Spring2" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces/Grass04" instance=ExtResource("37_twmvh")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -27.3764, 0.0628616, -110.872)
 
-[node name="Grass04Spring3" parent="NavigationRegion3D/Environment/Nature/InsideNature/GrassPieces/Grass04" instance=ExtResource("37_twmvh")]
+[node name="Grass04Spring3" parent="NavigationRegion3D/Environment/Nature/Inside/GrassPieces/Grass04" instance=ExtResource("37_twmvh")]
 transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, -20.7265, 0.0411564, -106.115)
 
-[node name="Grass" type="Node3D" parent="NavigationRegion3D/Environment/Nature/InsideNature"]
-transform = Transform3D(0.998675, 0, 0.0514645, 0, 1, 0, -0.0514645, 0, 0.998675, 0.0823088, 0, -104.526)
+[node name="Grass" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Inside"]
+transform = Transform3D(0.998675, 0, 0.0514645, 0, 1, 0, -0.0514645, 0, 0.998675, 0.0823088, 0, -6.526)
 
-[node name="Grass1Rough" parent="NavigationRegion3D/Environment/Nature/InsideNature/Grass" instance=ExtResource("38_okiay")]
+[node name="Grass1Rough" parent="NavigationRegion3D/Environment/Nature/Inside/Grass" instance=ExtResource("38_okiay")]
 transform = Transform3D(2.98559, 0, -0.293687, 0, 3, 0, 0.293687, 0, 2.98559, -36.7341, -0.344326, 9.15948)
+
+[node name="Rocks" type="Node3D" parent="NavigationRegion3D/Environment/Nature/Inside"]
+
+[node name="RockBoulder1" parent="NavigationRegion3D/Environment/Nature/Inside/Rocks" instance=ExtResource("30_c5218")]
+transform = Transform3D(0.873148, -0.245645, 0.421036, 0.270819, 0.96263, 0, -0.405302, 0.114024, 0.907044, 39.8321, 1.52536, 0)
+
+[node name="RockPillar1" parent="NavigationRegion3D/Environment/Nature/Inside/Rocks" instance=ExtResource("31_0w1vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.2924, -5.07909, -36.3342)
 
 [node name="Structures" type="Node3D" parent="NavigationRegion3D/Environment"]
 

@@ -1,5 +1,9 @@
 extends Node3D
 
+@export_category("Sound")
+@export var min_pitch_scale = 0.9 # Pitch variation range
+@export var max_pitch_scale = 1.0 # Pitch variation range
+
 var weapons_unlocked = []
 var current_slot = 0
 var current_weapon = null
@@ -8,6 +12,7 @@ var current_weapon = null
 @onready var general_weapon_animations = $GeneralWeaponAnimations
 @onready var alert_area_hearing = $AlertAreaHearing
 @onready var alert_area_line_of_sight = $AlertAreaLineOfSight
+@onready var switch_sound = $SwitchSound
 
 func _ready():
 	for weapon in weapons:
@@ -61,6 +66,8 @@ func switch_to_weapon_slot(slot_index : int) -> bool:
 	
 	if current_weapon.has_method("set_active"):
 		current_weapon.set_active(true)
+		general_weapon_animations.play("switch", 0.4)
+		play_switch_sound()
 	else:
 		current_weapon.show()
 		
@@ -68,11 +75,9 @@ func switch_to_weapon_slot(slot_index : int) -> bool:
 
 func update_move_animation(velocity : Vector3, grounded : bool):
 	if current_weapon is Weapon and !current_weapon.is_idle():
-		general_weapon_animations.play("RESET", 0.4) # idle?
+		general_weapon_animations.play("idle", 0.4) # idle? RESET
 	elif !grounded or velocity.length() < 2.0:
-		general_weapon_animations.play("RESET", 0.4) # idle?
-	#elif current_weapon.is_idle():
-		#general_weapon_animations.play("idle", 0.4)
+		general_weapon_animations.play("idle", 0.4) # idle? RESET
 	else:
 		general_weapon_animations.play("moving", 0.4)
 
@@ -86,3 +91,8 @@ func alert_nearby_enemies():
 	for nearby_enemy in nearby_enemies:
 		if nearby_enemy.has_method("alert"):
 			nearby_enemy.alert(false) #false
+
+func play_switch_sound():
+	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
+	switch_sound.pitch_scale = random_pitch
+	switch_sound.play()

@@ -5,14 +5,16 @@ class_name Weapon
 signal fired
 signal out_of_ammo
 
-@export var min_pitch_scale = 0.9
-@export var max_pitch_scale = 1.1
 @export var automatic = false
 @export var damage = 5
 @export var ammo = 1000
 @export var attack_rate = 0.2
 @export var animation_controlled_attack = false
 @export var recoil_strength = 0.8
+
+@export_category("Sound")
+@export var min_pitch_scale = 0.9 # Pitch variation range
+@export var max_pitch_scale = 1.0 # Pitch variation range
 
 var last_attack_time = -9999.9
 var recoil_amount = 0.0
@@ -84,7 +86,6 @@ func apply_recoil():
 		await get_tree().create_timer(0.02).timeout # Wait for a short duration between each step
 
 func play_shoot_sound():
-	# Randomize pitch scale
 	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
 	shoot_sound.pitch_scale = random_pitch
 	shoot_sound.play()

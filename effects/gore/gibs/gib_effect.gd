@@ -21,5 +21,4 @@ func _physics_process(delta):
 
 	# Check if the velocity magnitude is below the threshold and the gib is not moving
 	if velocity.length() < stationary_threshold:
-		# Assume the gib is stationary and delete the collision shape
-		queue_free()
+		queue_free() # Assume the gib is stationary and delete the collision shape

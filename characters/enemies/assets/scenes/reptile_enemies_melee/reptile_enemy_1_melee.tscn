@@ -207,19 +207,11 @@ shape = SubResource("SphereShape3D_7yjnb")
 [node name="AnimationPlayer" parent="Graphics" index="1"]
 autoplay = "idle"
 
-[node name="Audio" type="Node3D" parent="."]
+[node name="EnemyAudio" type="Node3D" parent="."]
 
-[node name="HurtSounds" type="Node3D" parent="Audio"]
+[node name="AttackSounds" type="Node3D" parent="EnemyAudio"]
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Audio/HurtSounds"]
-
-[node name="AttackSounds" type="Node3D" parent="Audio"]
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Audio/AttackSounds"]
-
-[node name="DeathSounds" type="Node3D" parent="Audio"]
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Audio/DeathSounds"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="EnemyAudio/AttackSounds"]
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_height_offset = 0.2
@@ -227,6 +219,18 @@ path_height_offset = 0.2
 [node name="EnemyHealthManager" parent="." instance=ExtResource("4_u2u7n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12315, 0)
 max_health = 140
+
+[node name="Audio" type="Node3D" parent="EnemyHealthManager"]
+
+[node name="DeathSounds" type="Node3D" parent="EnemyHealthManager/Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.12315, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="EnemyHealthManager/Audio/DeathSounds"]
+
+[node name="HurtSounds" type="Node3D" parent="EnemyHealthManager/Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.12315, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="EnemyHealthManager/Audio/HurtSounds"]
 
 [node name="EnemyCharacterMover" parent="." instance=ExtResource("5_4g7qp")]
 max_speed = 10.0

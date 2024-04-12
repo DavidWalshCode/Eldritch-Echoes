@@ -44,7 +44,7 @@ rings = 3
 [node name="Blood" type="GPUParticles3D" parent="."]
 material_override = SubResource("StandardMaterial3D_k7apk")
 emitting = false
-amount = 11
+amount = 14
 one_shot = true
 explosiveness = 0.8
 process_material = SubResource("ParticleProcessMaterial_u2s8f")

@@ -11,6 +11,10 @@ enum STATES {IDLE, CHASE, ATTACK, DEAD}
 @export var sight_angle = 45.0
 @export var turn_speed = 360.0 # Converted from degrees to radians when used
 
+@export_category("Audio")
+@export var min_pitch_scale = 0.9 # Pitch variation range
+@export var max_pitch_scale = 1.0 # Pitch variation range
+
 var current_state = STATES.IDLE
 var player = null
 var path = []
@@ -23,6 +27,8 @@ var can_attack = true
 @onready var enemy_character_mover = $EnemyCharacterMover
 @onready var navigation_agent = $NavigationAgent3D
 @onready var enemy_aimer = $EnemyAimer
+
+@onready var attack_sounds = $EnemyAudio/AttackSounds.get_children()
 
 func _ready():
 	attack_timer = Timer.new()
@@ -169,3 +175,9 @@ func alert(check_line_of_sight = true):
 
 func within_distance_of_player(distance : float):
 	return global_transform.origin.distance_to(player.global_transform.origin) < attack_range
+
+func play_attack_sound():
+	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
+	var attack_sound_selected = attack_sounds[randi() % attack_sounds.size()]
+	attack_sound_selected.pitch_scale = random_pitch
+	attack_sound_selected.play()

@@ -14,5 +14,6 @@ max_enemies = 1
 
 [node name="Enemy1SpawnSound" type="AudioStreamPlayer3D" parent="SpawnSound"]
 stream = ExtResource("3_ploiq")
+volume_db = -10.0
 
 [editable path="Enemy1SpawnEffect"]

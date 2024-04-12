@@ -14,7 +14,7 @@ signal moved(velocity : Vector3, grounded : bool)
 @export var min_slide_speed = 10.0  # Minimum speed to start sliding
 @export var slide_speed_modifier = 1.5  # Speed modifier during sliding
 
-@export_category("Sound")
+@export_category("Audio")
 @export var footstep_sound_interval = 0.3  # Time in seconds between footstep sounds
 @export var min_pitch_scale = 0.9 # Pitch variation range
 @export var max_pitch_scale = 1.0 # Pitch variation range
@@ -174,7 +174,10 @@ func play_footstep_sound():
 	footstep_sounds[randi() % footstep_sounds.size()].play() # Randomly play a footstep sound
 
 func play_jump_sound():
-	jump_sounds[randi() % jump_sounds.size()].play() # Randomly play a jump sound
+	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
+	var jump_sound_selected = jump_sounds[randi() % jump_sounds.size()]
+	jump_sound_selected.pitch_scale = random_pitch
+	jump_sound_selected.play()
 	
 func play_small_landing_sound():
 	landing_small_sounds[randi() % landing_small_sounds.size()].play() # Randomly play a landing sound

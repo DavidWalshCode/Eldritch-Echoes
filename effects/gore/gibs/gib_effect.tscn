@@ -51,11 +51,11 @@ transform = Transform3D(0.275019, -0.0966643, 0, 0.132683, 0.200361, 0, 0, 0, 0.
 shape = SubResource("SphereShape3D_mdibb")
 
 [node name="gib" parent="." instance=ExtResource("1_1ters")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
 [node name="Blood" type="GPUParticles3D" parent="."]
 material_override = SubResource("StandardMaterial3D_k7apk")
-amount = 6
+amount = 14
 process_material = SubResource("ParticleProcessMaterial_ecrjw")
 draw_pass_1 = SubResource("SphereMesh_v5hnb")
 

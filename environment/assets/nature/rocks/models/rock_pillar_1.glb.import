@@ -33,7 +33,7 @@ _subresources={
 "materials": {
 "Material": {
 "use_external/enabled": true,
-"use_external/path": "res://environment/assets/battlefield/nature/materials/jungle_stone_1_material.tres"
+"use_external/path": "res://environment/assets/nature/rocks/materials/jungle_stone_1_material.tres"
 }
 }
 }

@@ -91,7 +91,7 @@ func hurt(damage_data : DamageData):
 
 func kill():
 	#dead = true
-	#character_mover.set_move_dir(Vector3.ZERO) # Make sure the player can't move when they die
+	#character_mover.set_move_direction(Vector3.ZERO) # Make sure the player can't move when they die
 	
 	Global.death_count += 1  # Increment death count
 	load_next_level_based_on_death_count()
