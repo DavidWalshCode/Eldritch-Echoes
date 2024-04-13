@@ -90,10 +90,12 @@ func hurt(damage_data : DamageData):
 	health_manager.hurt(damage_data)
 
 func kill():
-	#dead = true
-	#character_mover.set_move_direction(Vector3.ZERO) # Make sure the player can't move when they die
+	dead = true
+	character_mover.set_move_direction(Vector3.ZERO) # Make sure the player can't move when they die
 	
 	Global.death_count += 1  # Increment death count
+	await get_tree().create_timer(2).timeout
+	
 	load_next_level_based_on_death_count()
 
 func load_next_level_based_on_death_count():

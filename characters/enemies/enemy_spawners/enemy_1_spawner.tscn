@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://characters/enemies/enemy_spawners/enemy_1_spawner.gd" id="1_66iyf"]
 [ext_resource type="PackedScene" uid="uid://bb82lv0wuilew" path="res://effects/enemy_spawn/enemy_1_spawn_effect.tscn" id="2_v36sb"]
-[ext_resource type="AudioStream" uid="uid://iokk6um0pqgp" path="res://audio/sfx/weapons/switch/grenade_mag_open_04.wav" id="3_ploiq"]
+[ext_resource type="AudioStream" uid="uid://coirp34l0svif" path="res://audio/sfx/enemy/spawn/252083__pepingrillin__spawn.ogg" id="3_02eid"]
 
 [node name="Enemy1Spawner" type="Node3D"]
 script = ExtResource("1_66iyf")
@@ -13,7 +13,10 @@ max_enemies = 1
 [node name="SpawnSound" type="Node3D" parent="."]
 
 [node name="Enemy1SpawnSound" type="AudioStreamPlayer3D" parent="SpawnSound"]
-stream = ExtResource("3_ploiq")
-volume_db = -10.0
+stream = ExtResource("3_02eid")
+volume_db = -13.0
+max_db = 1.0
+bus = &"SFX"
+attenuation_filter_cutoff_hz = 8000.0
 
 [editable path="Enemy1SpawnEffect"]

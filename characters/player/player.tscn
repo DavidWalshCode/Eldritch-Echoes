@@ -1,9 +1,8 @@
-[gd_scene load_steps=88 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=86 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://weapons/weapon_manager.gd" id="2_c6p01"]
 [ext_resource type="PackedScene" uid="uid://d167a1bqe4u0o" path="res://characters/player/character_mover.tscn" id="2_k2lt6"]
-[ext_resource type="Material" uid="uid://cmj2yny3jsvtl" path="res://characters/npc/assets/materials/viking_armour_man_1_first_material.tres" id="2_xnvd3"]
 [ext_resource type="PackedScene" uid="uid://m5rjrq1bs3oo" path="res://characters/player/health_manager.tscn" id="3_c6yru"]
 [ext_resource type="Script" path="res://weapons/weapon.gd" id="4_qyhjh"]
 [ext_resource type="PackedScene" uid="uid://cfnr0uiu3amis" path="res://weapons/assets/models/EspadaSword.obj" id="5_u532v"]
@@ -56,9 +55,6 @@
 [ext_resource type="AudioStream" uid="uid://bfrcq18ijjyly" path="res://audio/sfx/player/death/Voice_Female_V1_Breath_Shocked_Mono_10.wav" id="55_q14st"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwpu4"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_oe3gr"]
-material = ExtResource("2_xnvd3")
 
 [sub_resource type="Animation" id="Animation_8nud0"]
 length = 0.001
@@ -601,11 +597,6 @@ max_camera_lean = 1.55
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_xwpu4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-visible = false
-mesh = SubResource("CapsuleMesh_oe3gr")
-skeleton = NodePath("../..")
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.999994, 0.00349065, 0, -0.00349065, 0.999994, 0, 1.89849, 0)
 fov = 90.0
@@ -884,7 +875,7 @@ shape = SubResource("SphereShape3D_t7da3")
 
 [node name="SwitchSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager"]
 stream = ExtResource("26_7yiv5")
-volume_db = -14.0
+volume_db = -18.0
 bus = &"SFX"
 
 [node name="CharacterMover" parent="." instance=ExtResource("2_k2lt6")]
@@ -1024,12 +1015,12 @@ bus = &"SFX"
 
 [node name="DeathSound1" type="AudioStreamPlayer" parent="HealthManager/Audio/DeathSounds"]
 stream = ExtResource("54_uydrg")
-volume_db = -10.0
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="DeathSound2" type="AudioStreamPlayer" parent="HealthManager/Audio/DeathSounds"]
 stream = ExtResource("55_q14st")
-volume_db = -10.0
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="PlayerAnimations" type="AnimationPlayer" parent="."]

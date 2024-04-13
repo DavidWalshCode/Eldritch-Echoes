@@ -275,24 +275,34 @@ attack_radius = 2.5
 [node name="ExplosionSound1" type="AudioStreamPlayer3D" parent="Audio/ExplosionSounds" index="0"]
 stream = ExtResource("6_1264l")
 volume_db = -5.0
+max_db = 1.0
 bus = &"SFX"
+attenuation_filter_cutoff_hz = 7000.0
 
 [node name="ExplosionSound2" type="AudioStreamPlayer3D" parent="Audio/ExplosionSounds" index="1"]
 stream = ExtResource("7_ha7v5")
 volume_db = -5.0
+max_db = 1.0
 bus = &"SFX"
+attenuation_filter_cutoff_hz = 7000.0
 
 [node name="ExplosionSound3" type="AudioStreamPlayer3D" parent="Audio/ExplosionSounds" index="2"]
 stream = ExtResource("8_pmsov")
 volume_db = -5.0
+max_db = 1.0
 bus = &"SFX"
+attenuation_filter_cutoff_hz = 7000.0
 
 [node name="ExplosionSound4" type="AudioStreamPlayer3D" parent="Audio/ExplosionSounds" index="3"]
 stream = ExtResource("9_giy6e")
 volume_db = -5.0
+max_db = 1.0
 bus = &"SFX"
+attenuation_filter_cutoff_hz = 7000.0
 
 [node name="ExplosionSound5" type="AudioStreamPlayer3D" parent="Audio/ExplosionSounds" index="4"]
 stream = ExtResource("10_vqb7d")
 volume_db = -5.0
+max_db = 1.0
 bus = &"SFX"
+attenuation_filter_cutoff_hz = 7000.0

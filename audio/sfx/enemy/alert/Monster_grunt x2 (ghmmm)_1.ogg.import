@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c408a22a5t0d2"
+path="res://.godot/imported/Monster_grunt x2 (ghmmm)_1.ogg-108719b364cf03e5d666e5b4d253f470.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/sfx/enemy/alert/Monster_grunt x2 (ghmmm)_1.ogg"
+dest_files=["res://.godot/imported/Monster_grunt x2 (ghmmm)_1.ogg-108719b364cf03e5d666e5b4d253f470.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

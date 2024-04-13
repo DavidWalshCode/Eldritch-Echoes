@@ -28,7 +28,8 @@ var can_attack = true
 @onready var navigation_agent = $NavigationAgent3D
 @onready var enemy_aimer = $EnemyAimer
 
-@onready var attack_sounds = $EnemyAudio/AttackSounds.get_children()
+@onready var attack_sound = $EnemyAudio/AttackSounds/AttackSound1
+@onready var alert_sounds = $EnemyAudio/AlertSounds.get_children()
 
 func _ready():
 	attack_timer = Timer.new()
@@ -52,7 +53,6 @@ func _ready():
 	set_state_idle()
 	
 func _process(delta):
-	#print(can_see_player())
 	match current_state:
 		STATES.IDLE:
 			process_state_idle(delta)
@@ -70,6 +70,7 @@ func set_state_idle():
 func set_state_chase():
 	current_state = STATES.CHASE
 	enemy_animation_player.play("walk", 0.2)
+	play_alert_sound()
 	print("alerted")
 	
 func set_state_attack():
@@ -124,6 +125,7 @@ func start_attack():
 	enemy_animation_player.play("attack", -1, attack_animation_speed_mod)
 	attack_timer.start()
 	enemy_aimer.aim_at_position(player.global_transform.origin + Vector3.UP)
+	play_attack_sound()
 
 func emit_attack():
 	enemy_attack.emit()
@@ -171,6 +173,8 @@ func alert(check_line_of_sight = true):
 		return
 	if check_line_of_sight and !has_line_of_sight_player():
 		return
+	
+	play_alert_sound()
 	set_state_chase()
 
 func within_distance_of_player(distance : float):
@@ -178,6 +182,11 @@ func within_distance_of_player(distance : float):
 
 func play_attack_sound():
 	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
-	var attack_sound_selected = attack_sounds[randi() % attack_sounds.size()]
-	attack_sound_selected.pitch_scale = random_pitch
-	attack_sound_selected.play()
+	attack_sound.pitch_scale = random_pitch
+	attack_sound.play()
+	
+func play_alert_sound():
+	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
+	var alert_sound_selected = alert_sounds[randi() % alert_sounds.size()]
+	alert_sound_selected.pitch_scale = random_pitch
+	alert_sound_selected.play()

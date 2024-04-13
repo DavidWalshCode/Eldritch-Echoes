@@ -28,11 +28,11 @@ func hurt(damage_data : DamageData):
 	current_health -= damage_data.amount
 	
 	if current_health <= 0:
+		#play_death_sound()
 		died.emit()
-		play_death_sound()
 	else:
-		damaged.emit()
 		play_hurt_sound()
+		damaged.emit()
 	health_changed.emit()
 	if verbose:
 		print("Damaged for %s\nCurrent Health: %s/%s" % [damage_data.amount, current_health, max_health])
@@ -46,14 +46,15 @@ func heal(amount : int):
 	if verbose:
 		print("Healed for %s\nHealth: %s/%s" % [amount, current_health, max_health])
 
+func play_death_sound():
+	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
+	var death_sound_selected = death_sounds[randi() % death_sounds.size()]
+	death_sound_selected.pitch_scale = random_pitch
+	death_sound_selected.play()
+
 func play_hurt_sound():
 	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
 	var hurt_sound_selected = hurt_sounds[randi() % hurt_sounds.size()]
 	hurt_sound_selected.pitch_scale = random_pitch
 	hurt_sound_selected.play()
 
-func play_death_sound():
-	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
-	var death_sound_selected = death_sounds[randi() % death_sounds.size()]
-	death_sound_selected.pitch_scale = random_pitch
-	death_sound_selected.play()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cyo4axkk6ift6"]
+[gd_scene load_steps=16 format=3 uid="uid://cyo4axkk6ift6"]
 
 [ext_resource type="Texture2D" uid="uid://c3tnc2vnvtw0" path="res://effects/fire/fire_02_small.png" id="1_gbea1"]
 [ext_resource type="Texture2D" uid="uid://703qd0qc14na" path="res://effects/fire/smoke_01_small.png" id="2_rw556"]
+[ext_resource type="AudioStream" uid="uid://nnr3yqr7r2q5" path="res://audio/sfx/fire/483318__craigsmith__r27-25-large-fire-burning.wav" id="3_cew21"]
 
 [sub_resource type="Gradient" id="Gradient_xraon"]
 offsets = PackedFloat32Array(0, 0.682836)
@@ -95,3 +96,15 @@ lifetime = 2.0
 speed_scale = 0.66
 process_material = SubResource("ParticleProcessMaterial_1rkva")
 draw_pass_1 = SubResource("QuadMesh_mdpyj")
+
+[node name="FireSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_cew21")
+volume_db = -15.0
+max_db = 2.0
+autoplay = true
+bus = &"SFX"
+attenuation_filter_cutoff_hz = 7000.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.537255, 0.168627, 1)
+omni_range = 15.0

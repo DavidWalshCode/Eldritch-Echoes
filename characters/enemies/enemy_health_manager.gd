@@ -18,7 +18,8 @@ var gibs = preload("res://effects/gore/gibs/gibs.tscn")
 
 @onready var current_health = max_health
 @onready var death_sounds = $Audio/DeathSounds.get_children()
-@onready var hurt_sounds = $Audio/HurtSounds.get_children()
+@onready var gib_sounds = $Audio/GibSounds.get_children()
+@onready var hit_sound = $Audio/HitSounds/HitSound
 
 func _ready():
 	enemy_health_changed.emit(current_health, max_health)
@@ -27,6 +28,7 @@ func _ready():
 
 func hurt(damage_data : DamageData):
 	spawn_blood(damage_data.direction)
+	hit_sound.play()
 	
 	if current_health <= 0:
 		return
@@ -35,8 +37,11 @@ func hurt(damage_data : DamageData):
 
 	if current_health <= gib_at:
 		spawn_gibs()
+		play_gib_sound()
+		#play_death_sound()
 		enemy_gibbed.emit()
 	if current_health <= 0:
+		play_death_sound()
 		enemy_died.emit()
 	else:
 		enemy_damaged.emit()
@@ -89,9 +94,9 @@ func play_death_sound():
 	var death_sound_selected = death_sounds[randi() % death_sounds.size()]
 	death_sound_selected.pitch_scale = random_pitch
 	death_sound_selected.play()
-
-func play_hurt_sound():
+	
+func play_gib_sound():
 	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
-	var hurt_sound_selected = hurt_sounds[randi() % hurt_sounds.size()]
-	hurt_sound_selected.pitch_scale = random_pitch
-	hurt_sound_selected.play()
+	var gib_sound_selected = gib_sounds[randi() % gib_sounds.size()]
+	gib_sound_selected.pitch_scale = random_pitch
+	gib_sound_selected.play()

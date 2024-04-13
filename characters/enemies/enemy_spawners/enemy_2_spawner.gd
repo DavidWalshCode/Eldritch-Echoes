@@ -14,8 +14,8 @@ signal enemy_despawned
 @export var max_enemies = 3  # Max number of enemies this spawner can handle
 
 @export_category("Audio")
-@export var min_pitch_scale = 0.9
-@export var max_pitch_scale = 1.1
+@export var min_pitch_scale = 0.8
+@export var max_pitch_scale = 1.0
 
 var enemies_spawned = 0
 var spawn_timer = null
