@@ -5,15 +5,15 @@ signal enemy_spawned
 signal enemy_despawned
 
 @export_category("Spawning")
-@export var bird_enemy_melee_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_1_melee.tscn")
-@export var bird_enemy_ranged_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_1_melee.tscn")
-@export var reptile_enemy_melee_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_1_melee.tscn")
+@export var bird_enemy_melee_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_4_melee.tscn")
+@export var bird_enemy_ranged_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_ranged/bird_enemy_4_ranged.tscn")
+@export var reptile_enemy_melee_scene = preload("res://characters/enemies/assets/scenes/reptile_enemies_melee/reptile_enemy_4_melee.tscn")
 @export var bird_enemy_melee_spawn_weight = 40
 @export var bird_enemy_ranged_spawn_weight = 40
 @export var reptile_enemy_meleed_spawn_weight = 20
 @export var spawn_interval_min = 2.0
 @export var spawn_interval_max = 5.0  # Random range for spawn intervals
-@export var max_enemies = 3  # Max number of enemies this spawner can handle
+@export var max_enemies = 1  # Max number of enemies this spawner can handle
 
 @export_category("Audio")
 @export var min_pitch_scale = 0.6

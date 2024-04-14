@@ -1,25 +1,21 @@
-[gd_scene load_steps=34 format=3 uid="uid://c5x8o1ga6xfpi"]
+[gd_scene load_steps=30 format=3 uid="uid://c5x8o1ga6xfpi"]
 
 [ext_resource type="Script" path="res://characters/enemies/enemy.gd" id="1_3unck"]
 [ext_resource type="PackedScene" uid="uid://b77meisd57h8f" path="res://characters/enemies/assets/models/bird_monster_ranged.glb" id="2_abkre"]
 [ext_resource type="PackedScene" uid="uid://br7d1hkf8a86c" path="res://characters/enemies/hitbox.tscn" id="3_h2b2g"]
 [ext_resource type="PackedScene" uid="uid://dwegof2iu52vd" path="res://characters/enemies/enemy_health_manager.tscn" id="4_iwode"]
 [ext_resource type="AudioStream" uid="uid://bommu3b52a8vr" path="res://audio/sfx/enemy/attack/219005__yap_audio_production__weaponswipe03.mp3" id="4_rjlye"]
-[ext_resource type="AudioStream" uid="uid://cuqy7mo3by8mf" path="res://audio/sfx/enemy/alert/Hiss.wav" id="5_30yoo"]
 [ext_resource type="AudioStream" uid="uid://dtqjovfal3x4b" path="res://audio/sfx/enemy/hit/464623__d001447733__enemy_hit.wav" id="5_dqwpa"]
 [ext_resource type="PackedScene" uid="uid://gkk5qn7iptjh" path="res://characters/enemies/enemy_character_mover.tscn" id="5_lftsd"]
-[ext_resource type="AudioStream" uid="uid://cwialasgej5e1" path="res://audio/sfx/enemy/death/674746__eminyildirim__monster-scream-pain-1.ogg" id="6_1wk2t"]
-[ext_resource type="AudioStream" uid="uid://o7mg0keg3l0f" path="res://audio/sfx/enemy/alert/Monster_breath.wav" id="6_7b3nj"]
 [ext_resource type="Script" path="res://characters/enemies/enemy_aimer.gd" id="6_crgxc"]
-[ext_resource type="AudioStream" uid="uid://b860vvlxnutby" path="res://audio/sfx/enemy/death/674746__eminyildirim__monster-scream-pain-2.ogg" id="7_5s264"]
 [ext_resource type="AudioStream" uid="uid://c408a22a5t0d2" path="res://audio/sfx/enemy/alert/Monster_grunt x2 (ghmmm)_1.ogg" id="7_q5pbd"]
 [ext_resource type="PackedScene" uid="uid://cseo8mpaiiufc" path="res://weapons/attack_emitters/attack_emitter.tscn" id="7_w1rbi"]
 [ext_resource type="AudioStream" uid="uid://dsuljfiyci4k4" path="res://audio/sfx/enemy/alert/Monster_grunt x2 (ghmmm)_2.ogg" id="8_lx13o"]
-[ext_resource type="AudioStream" uid="uid://d4kr6mftlv1ve" path="res://audio/sfx/enemy/death/674746__eminyildirim__monster-scream-pain_3.ogg" id="8_o46ip"]
 [ext_resource type="PackedScene" uid="uid://bm64bcj3p4lw5" path="res://weapons/attack_emitters/projectile_emitter.tscn" id="9_6ic6m"]
-[ext_resource type="AudioStream" uid="uid://cstaw5pkc2vo4" path="res://audio/sfx/enemy/gibbed/681767__supersouper__big-impact-blood-1.wav" id="13_o4mqd"]
-[ext_resource type="AudioStream" uid="uid://yr13p2n2r8nq" path="res://audio/sfx/enemy/gibbed/681768__supersouper__big-impact-blood-2.wav" id="14_coriy"]
-[ext_resource type="AudioStream" uid="uid://d0j04a0bolkbc" path="res://audio/sfx/enemy/gibbed/681769__supersouper__big-impact-blood-3.wav" id="15_velht"]
+[ext_resource type="AudioStream" uid="uid://dhvx3p365au8p" path="res://audio/sfx/enemy/death/double_monster-scream-pain-1.ogg" id="10_e8vab"]
+[ext_resource type="AudioStream" uid="uid://c5umy64axiym2" path="res://audio/sfx/enemy/death/double_monster-scream-pain-2.ogg" id="11_w1cfl"]
+[ext_resource type="AudioStream" uid="uid://cy6rynhw18yw1" path="res://audio/sfx/enemy/death/double_monster-scream-pain-3.ogg" id="12_mfirr"]
+[ext_resource type="AudioStream" uid="uid://bsf0oqthfakqs" path="res://audio/sfx/enemy/gibbed/681767__supersouper__big-impact-blood.ogg" id="13_ljht2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f8rsi"]
 
@@ -61,9 +57,8 @@ transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
 collision_layer = 6
 collision_mask = 3
 script = ExtResource("1_3unck")
-attack_range = 70.0
+attack_range = 50.0
 attack_rate = 2.0
-min_pitch_scale = 0.8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.1, 0, 0, 0, 0.9146, 0, 0, 0, 1, 0, 0.897616, 0.162)
@@ -238,7 +233,7 @@ autoplay = "idle"
 
 [node name="AttackSound1" type="AudioStreamPlayer3D" parent="EnemyAudio/AttackSounds"]
 stream = ExtResource("4_rjlye")
-volume_db = -15.0
+volume_db = -14.0
 max_db = 1.0
 pitch_scale = 0.8
 bus = &"SFX"
@@ -248,27 +243,17 @@ attenuation_filter_cutoff_hz = 7000.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1786, 0)
 
 [node name="AlertSound1" type="AudioStreamPlayer3D" parent="EnemyAudio/AlertSounds"]
-stream = ExtResource("5_30yoo")
-volume_db = -13.0
+stream = ExtResource("7_q5pbd")
+volume_db = -5.0
 max_db = 1.0
+bus = &"SFX"
 attenuation_filter_cutoff_hz = 7000.0
 
 [node name="AlertSound2" type="AudioStreamPlayer3D" parent="EnemyAudio/AlertSounds"]
-stream = ExtResource("6_7b3nj")
-volume_db = -3.0
-max_db = 1.0
-attenuation_filter_cutoff_hz = 7000.0
-
-[node name="AlertSound3" type="AudioStreamPlayer3D" parent="EnemyAudio/AlertSounds"]
-stream = ExtResource("7_q5pbd")
-volume_db = -4.0
-max_db = 1.0
-attenuation_filter_cutoff_hz = 7000.0
-
-[node name="AlertSound4" type="AudioStreamPlayer3D" parent="EnemyAudio/AlertSounds"]
 stream = ExtResource("8_lx13o")
-volume_db = -4.0
+volume_db = -5.0
 max_db = 1.0
+bus = &"SFX"
 attenuation_filter_cutoff_hz = 7000.0
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -276,8 +261,8 @@ path_height_offset = 0.2
 
 [node name="EnemyHealthManager" parent="." instance=ExtResource("4_iwode")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1786, 0)
-max_health = 50
-min_pitch_scale = 0.8
+max_health = 40
+verbose = false
 
 [node name="Audio" type="Node3D" parent="EnemyHealthManager"]
 
@@ -285,44 +270,31 @@ min_pitch_scale = 0.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1786, 0)
 
 [node name="DeathSound1" type="AudioStreamPlayer3D" parent="EnemyHealthManager/Audio/DeathSounds"]
-stream = ExtResource("6_1wk2t")
-volume_db = -22.0
+stream = ExtResource("10_e8vab")
+volume_db = -10.0
 max_db = 1.0
-attenuation_filter_cutoff_hz = 7000.0
+bus = &"SFX"
+attenuation_filter_cutoff_hz = 9000.0
 
 [node name="DeathSound2" type="AudioStreamPlayer3D" parent="EnemyHealthManager/Audio/DeathSounds"]
-stream = ExtResource("7_5s264")
-volume_db = -22.0
+stream = ExtResource("11_w1cfl")
+volume_db = -10.0
 max_db = 1.0
-attenuation_filter_cutoff_hz = 7000.0
+bus = &"SFX"
+attenuation_filter_cutoff_hz = 9000.0
 
 [node name="DeathSound3" type="AudioStreamPlayer3D" parent="EnemyHealthManager/Audio/DeathSounds"]
-stream = ExtResource("8_o46ip")
-volume_db = -22.0
+stream = ExtResource("12_mfirr")
+volume_db = -10.0
 max_db = 1.0
-attenuation_filter_cutoff_hz = 7000.0
+bus = &"SFX"
+attenuation_filter_cutoff_hz = 9000.0
 
 [node name="GibSounds" type="Node3D" parent="EnemyHealthManager/Audio"]
 
 [node name="GibSound1" type="AudioStreamPlayer3D" parent="EnemyHealthManager/Audio/GibSounds"]
-stream = ExtResource("13_o4mqd")
-volume_db = -10.0
-max_db = 1.0
-pitch_scale = 0.8
-bus = &"SFX"
-attenuation_filter_cutoff_hz = 7000.0
-
-[node name="GibSound2" type="AudioStreamPlayer3D" parent="EnemyHealthManager/Audio/GibSounds"]
-stream = ExtResource("14_coriy")
-volume_db = -10.0
-max_db = 1.0
-pitch_scale = 0.8
-bus = &"SFX"
-attenuation_filter_cutoff_hz = 7000.0
-
-[node name="GibSound3" type="AudioStreamPlayer3D" parent="EnemyHealthManager/Audio/GibSounds"]
-stream = ExtResource("15_velht")
-volume_db = -10.0
+stream = ExtResource("13_ljht2")
+volume_db = -2.0
 max_db = 1.0
 pitch_scale = 0.8
 bus = &"SFX"
@@ -342,7 +314,7 @@ move_accel = 2.0
 [node name="EnemyAimer" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("6_crgxc")
-damage = 15
+damage = 10
 
 [node name="AttackEmitter" parent="EnemyAimer" instance=ExtResource("7_w1rbi")]
 

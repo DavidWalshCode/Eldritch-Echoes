@@ -2,9 +2,9 @@
 
 [sub_resource type="Gradient" id="Gradient_tvjy8"]
 offsets = PackedFloat32Array(0, 0.682836)
-colors = PackedColorArray(1, 0.513726, 0, 1, 0.87451, 0.0392157, 0, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.324258, 0.000785735, 0.485561, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_bccrq"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_esnn0"]
 gradient = SubResource("Gradient_tvjy8")
 
 [sub_resource type="Curve" id="Curve_dxbgy"]
@@ -28,7 +28,7 @@ linear_accel_max = 1.0
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_dg88p")
-color_ramp = SubResource("GradientTexture1D_bccrq")
+color_ramp = SubResource("GradientTexture1D_esnn0")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v0otl"]
 load_path = "res://.godot/imported/fire_02_small.png-9fca14e8d9371571590a032c898fea40.s3tc.ctex"

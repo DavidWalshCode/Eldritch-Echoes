@@ -1,0 +1,311 @@
+[gd_scene load_steps=31 format=3 uid="uid://ckys8lfqdjybs"]
+
+[ext_resource type="Script" path="res://characters/enemies/enemy.gd" id="1_xc6vq"]
+[ext_resource type="PackedScene" uid="uid://dxmf75necflsn" path="res://characters/enemies/assets/models/reptile_monster.glb" id="2_bp6hg"]
+[ext_resource type="PackedScene" uid="uid://br7d1hkf8a86c" path="res://characters/enemies/hitbox.tscn" id="3_4on3e"]
+[ext_resource type="AudioStream" uid="uid://bommu3b52a8vr" path="res://audio/sfx/enemy/attack/219005__yap_audio_production__weaponswipe03.mp3" id="4_t7j85"]
+[ext_resource type="AudioStream" uid="uid://c408a22a5t0d2" path="res://audio/sfx/enemy/alert/Monster_grunt x2 (ghmmm)_1.ogg" id="5_ddmup"]
+[ext_resource type="AudioStream" uid="uid://dsuljfiyci4k4" path="res://audio/sfx/enemy/alert/Monster_grunt x2 (ghmmm)_2.ogg" id="6_1foqf"]
+[ext_resource type="PackedScene" uid="uid://dwegof2iu52vd" path="res://characters/enemies/enemy_health_manager.tscn" id="7_4kcsp"]
+[ext_resource type="AudioStream" uid="uid://dhvx3p365au8p" path="res://audio/sfx/enemy/death/double_monster-scream-pain-1.ogg" id="8_gd4b7"]
+[ext_resource type="AudioStream" uid="uid://c5umy64axiym2" path="res://audio/sfx/enemy/death/double_monster-scream-pain-2.ogg" id="9_8rqs3"]
+[ext_resource type="AudioStream" uid="uid://cy6rynhw18yw1" path="res://audio/sfx/enemy/death/double_monster-scream-pain-3.ogg" id="10_etrcn"]
+[ext_resource type="AudioStream" uid="uid://bsf0oqthfakqs" path="res://audio/sfx/enemy/gibbed/681767__supersouper__big-impact-blood.ogg" id="11_idpph"]
+[ext_resource type="AudioStream" uid="uid://dtqjovfal3x4b" path="res://audio/sfx/enemy/hit/464623__d001447733__enemy_hit.wav" id="12_cjk38"]
+[ext_resource type="PackedScene" uid="uid://gkk5qn7iptjh" path="res://characters/enemies/enemy_character_mover.tscn" id="13_wj6ys"]
+[ext_resource type="Script" path="res://characters/enemies/enemy_aimer.gd" id="14_urfaj"]
+[ext_resource type="PackedScene" uid="uid://cseo8mpaiiufc" path="res://weapons/attack_emitters/attack_emitter.tscn" id="15_oqgbn"]
+[ext_resource type="PackedScene" uid="uid://cbtf6d7s603ra" path="res://weapons/attack_emitters/area_damage_emitter.tscn" id="16_6lnrt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f8rsi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jiiat"]
+radius = 0.57979
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dmwxr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nawfi"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sc8l5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4cimx"]
+radius = 0.57979
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ma2s7"]
+radius = 0.57979
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6eldn"]
+radius = 0.57979
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0y1ta"]
+radius = 0.57979
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o40r8"]
+size = Vector3(1, 1.03516, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ac7vp"]
+size = Vector3(1, 0.61438, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1hv31"]
+size = Vector3(1, 0.609436, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p2qrm"]
+size = Vector3(0.779053, 0.609436, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7yjnb"]
+radius = 0.264657
+
+[node name="ReptileEnemy3Melee" type="CharacterBody3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+collision_layer = 6
+collision_mask = 3
+script = ExtResource("1_xc6vq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.2056, 0.0026823, -0.00164649, -0.003191, 1.01249, 0.00144878, 0.00198963, -0.00146248, 0.999991, 0, 0.941256, 0.162)
+shape = SubResource("CapsuleShape3D_f8rsi")
+
+[node name="Graphics" parent="." instance=ExtResource("2_bp6hg")]
+
+[node name="Skeleton3D" parent="Graphics/Armature" index="0"]
+bones/1/rotation = Quaternion(-0.0300803, -1.18566e-07, 8.48615e-09, 0.999547)
+bones/2/rotation = Quaternion(-0.06394, 0.0291059, 0.934498, -0.348968)
+bones/3/rotation = Quaternion(0.353056, -0.0141366, -0.0743382, 0.932537)
+bones/4/rotation = Quaternion(0.0639402, 0.029106, 0.934498, 0.348968)
+bones/5/rotation = Quaternion(0.353056, 0.0141366, 0.0743382, 0.932537)
+bones/6/rotation = Quaternion(0.109395, 0.216951, 0.969592, -0.0292533)
+bones/7/rotation = Quaternion(-0.189951, 0.00372251, -0.0376172, 0.981066)
+bones/8/rotation = Quaternion(-0.109396, 0.216951, 0.969592, 0.0292538)
+bones/9/rotation = Quaternion(-0.189951, -0.00372251, 0.0376172, 0.981066)
+
+[node name="UpperArmLeft" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="1"]
+transform = Transform3D(-0.748266, 0.648497, -0.139818, -0.634391, -0.761116, -0.135091, -0.194024, -0.0123849, 0.980919, 0.218738, 1.58828, 0.0278791)
+bone_name = "upper_arm.l"
+bone_idx = 2
+
+[node name="Hitbox" parent="Graphics/Armature/Skeleton3D/UpperArmLeft" instance=ExtResource("3_4on3e")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Graphics/Armature/Skeleton3D/UpperArmLeft/Hitbox"]
+transform = Transform3D(0.120694, 0.000945128, -0.000748357, -0.000631958, 0.179564, 0.000748368, 0.000635267, -0.000935269, 0.142924, -0.00117314, 0.109599, 0.0137922)
+shape = SubResource("CapsuleShape3D_jiiat")
+
+[node name="LowerArmLeft" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="2"]
+transform = Transform3D(-0.832429, 0.291026, -0.471556, -0.510473, -0.733822, 0.448244, -0.215588, 0.613848, 0.759416, 0.434507, 1.33504, 0.0237584)
+bone_name = "lower_arm.l"
+bone_idx = 3
+
+[node name="Hitbox" parent="Graphics/Armature/Skeleton3D/LowerArmLeft" instance=ExtResource("3_4on3e")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Graphics/Armature/Skeleton3D/LowerArmLeft/Hitbox"]
+transform = Transform3D(0.101438, -0.00974365, -0.0240213, 0.006483, 0.18388, 0.00457144, 0.0213616, -0.00953753, 0.112679, -0.00742841, 0.173518, 0.00284681)
+shape = SubResource("CapsuleShape3D_dmwxr")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Graphics/Armature/Skeleton3D/LowerArmLeft/Hitbox"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.00516379, 0.419478, 0.00409472)
+shape = SubResource("SphereShape3D_nawfi")
+
+[node name="UpperArmRight" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="3"]
+transform = Transform3D(-0.748266, -0.648497, 0.139818, 0.634391, -0.761116, -0.135091, 0.194024, -0.0123849, 0.980919, -0.218738, 1.58828, 0.0278791)
+bone_name = "upper_arm.r"
+bone_idx = 4
+
+[node name="Hitbox" parent="Graphics/Armature/Skeleton3D/UpperArmRight" instance=ExtResource("3_4on3e")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Graphics/Armature/Skeleton3D/UpperArmRight/Hitbox"]
+transform = Transform3D(0.120997, 0.000947376, -0.000748733, -0.000633541, 0.179995, 0.000748742, 0.000636858, -0.000937514, 0.142996, 0.001, 0.11, 0.014)
+shape = SubResource("CapsuleShape3D_jiiat")
+
+[node name="LowerArmRight" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="4"]
+transform = Transform3D(-0.832429, -0.291026, 0.471556, 0.510473, -0.733822, 0.448244, 0.215588, 0.613848, 0.759416, -0.434507, 1.33504, 0.0237584)
+bone_name = "lower_arm.r"
+bone_idx = 5
+
+[node name="Hitbox" parent="Graphics/Armature/Skeleton3D/LowerArmRight" instance=ExtResource("3_4on3e")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Graphics/Armature/Skeleton3D/LowerArmRight/Hitbox"]
+transform = Transform3D(0.103742, 0.0103595, -0.00484674, -0.00552207, 0.18324, 0.00845558, 0.0047951, -0.0130835, 0.114585, 0.00652075, 0.178561, -0.00213122)
+shape = SubResource("CapsuleShape3D_dmwxr")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Graphics/Armature/Skeleton3D/LowerArmRight/Hitbox"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.005, 0.419, 0.004)
+shape = SubResource("SphereShape3D_sc8l5")
+
+[node name="UpperLegLeft" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="5"]
+transform = Transform3D(-0.974353, 0.104194, 0.199444, -0.055249, -0.969979, 0.236829, 0.218133, 0.219736, 0.950858, 0.123436, 0.961497, 1.56462e-07)
+bone_name = "upperleg.l"
+bone_idx = 6
+
+[node name="Hitbox" parent="Graphics/Armature/Skeleton3D/UpperLegLeft" instance=ExtResource("3_4on3e")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Graphics/Armature/Skeleton3D/UpperLegLeft/Hitbox"]
+transform = Transform3D(0.149874, -0.0247754, 0.00804156, 0.0153518, 0.241066, 0.00221017, -0.00677737, -0.00182512, 0.182846, 0.0187039, 0.234342, -0.0084144)
+shape = SubResource("CapsuleShape3D_4cimx")
+
+[node name="LowerLegLeft" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="6"]
+transform = Transform3D(-0.978013, -0.0485487, 0.20281, 0.0195293, -0.989572, -0.142709, 0.207623, -0.13561, 0.968762, 0.175063, 0.48088, 0.108878)
+bone_name = "lowerleg.l"
+bone_idx = 7
+
+[node name="Hitbox" parent="Graphics/Armature/Skeleton3D/LowerLegLeft" instance=ExtResource("3_4on3e")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Graphics/Armature/Skeleton3D/LowerLegLeft/Hitbox"]
+transform = Transform3D(0.123193, -0.0086595, 0.0035617, 0.00401572, 0.259718, 0.00214885, -0.00449406, -0.00529654, 0.0995597, 0.00674418, 0.206321, -0.00156809)
+shape = SubResource("CapsuleShape3D_ma2s7")
+
+[node name="UpperLegRight" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="7"]
+transform = Transform3D(-0.974353, -0.104196, -0.199445, 0.0552499, -0.969979, 0.236829, -0.218135, 0.219736, 0.950857, -0.123436, 0.961497, 1.56462e-07)
+bone_name = "upperleg.r"
+bone_idx = 8
+
+[node name="Hitbox" parent="Graphics/Armature/Skeleton3D/UpperLegRight" instance=ExtResource("3_4on3e")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Graphics/Armature/Skeleton3D/UpperLegRight/Hitbox"]
+transform = Transform3D(0.150443, 0.0207546, -0.000386525, -0.0129534, 0.240959, -0.00639836, -0.000135228, 0.0084739, 0.182888, -0.019, 0.234, -0.00799999)
+shape = SubResource("CapsuleShape3D_6eldn")
+
+[node name="LowerLegRight" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="8"]
+transform = Transform3D(-0.978013, 0.048548, -0.202812, -0.0195283, -0.989572, -0.142709, -0.207625, -0.135609, 0.968761, -0.175064, 0.48088, 0.108878)
+bone_name = "lowerleg.r"
+bone_idx = 9
+
+[node name="Hitbox" parent="Graphics/Armature/Skeleton3D/LowerLegRight" instance=ExtResource("3_4on3e")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Graphics/Armature/Skeleton3D/LowerLegRight/Hitbox"]
+transform = Transform3D(0.123195, -0.00880216, 0.00347684, 0.00408849, 0.259716, 0.00208684, -0.00438775, -0.00513621, 0.0995638, -0.007, 0.206, -0.002)
+shape = SubResource("CapsuleShape3D_0y1ta")
+
+[node name="Hip" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="9"]
+transform = Transform3D(1, 0, 0, 0, 0.978673, -0.205425, 0, 0.205425, 0.978673, 2.84689e-18, 0.948998, -0.0952436)
+bone_name = "hip"
+bone_idx = 0
+
+[node name="Hitbox" parent="Graphics/Armature/Skeleton3D/Hip" instance=ExtResource("3_4on3e")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Graphics/Armature/Skeleton3D/Hip/Hitbox"]
+transform = Transform3D(0.298681, 0, 0, 0, 0.246157, 0.0789622, 0, -0.0480888, 0.404192, 0.000177205, 0.14848, 0.139185)
+shape = SubResource("BoxShape3D_o40r8")
+
+[node name="Body" type="BoneAttachment3D" parent="Graphics/Armature/Skeleton3D" index="10"]
+transform = Transform3D(1, -9.83162e-09, -2.37535e-07, -2.50022e-08, 0.989255, -0.146202, 2.3642e-07, 0.146202, 0.989255, 2.84689e-18, 1.20205, -0.042127)
+bone_name = "body"
+bone_idx = 1
+
+[node name="Hitbox" parent="Graphics/Armature/Skeleton3D/Body" instance=ExtResource("3_4on3e")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Graphics/Armature/Skeleton3D/Body/Hitbox"]
+transform = Transform3D(0.282553, -8.27062e-09, -4.93316e-10, 6.85687e-09, 0.339039, 0.0405457, -3.49878e-10, -0.0346895, 0.396275, 0.000177233, 0.121523, 0.135887)
+shape = SubResource("BoxShape3D_ac7vp")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Graphics/Armature/Skeleton3D/Body/Hitbox"]
+transform = Transform3D(0.365153, -8.30709e-08, -5.6576e-09, 4.8806e-08, 0.554949, 0.134342, -1.39905e-08, -0.232207, 0.321061, -0.000584964, 0.356525, 0.069894)
+shape = SubResource("BoxShape3D_1hv31")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Graphics/Armature/Skeleton3D/Body/Hitbox"]
+transform = Transform3D(0.304715, -3.08392e-08, -2.88751e-09, 4.0728e-08, 0.206019, 0.0685636, -1.16749e-08, -0.0862045, 0.163859, -0.00150433, 0.587248, 0.00196703)
+shape = SubResource("BoxShape3D_p2qrm")
+
+[node name="Hitbox2" parent="Graphics/Armature/Skeleton3D/Body" instance=ExtResource("3_4on3e")]
+transform = Transform3D(1, -3.55271e-15, -4.26326e-14, 7.10543e-15, 1, -1.49012e-08, 0, 1.49012e-08, 1, 0, 0, 0)
+weak_spot = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Graphics/Armature/Skeleton3D/Body/Hitbox2"]
+transform = Transform3D(0.464392, -3.02056e-08, 1.29683e-08, 3.38927e-08, 0.394006, -0.347027, 5.31485e-09, 0.126691, 1.07924, 0.00017713, 0.627006, 0.25899)
+shape = SubResource("SphereShape3D_7yjnb")
+
+[node name="AnimationPlayer" parent="Graphics" index="1"]
+autoplay = "idle"
+
+[node name="EnemyAudio" type="Node3D" parent="."]
+
+[node name="AttackSounds" type="Node3D" parent="EnemyAudio"]
+
+[node name="AttackSound1" type="AudioStreamPlayer3D" parent="EnemyAudio/AttackSounds"]
+stream = ExtResource("4_t7j85")
+volume_db = -14.0
+max_db = 1.0
+pitch_scale = 0.8
+bus = &"SFX"
+attenuation_filter_cutoff_hz = 7000.0
+
+[node name="AlertSounds" type="Node3D" parent="EnemyAudio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1786, 0)
+
+[node name="AlertSound1" type="AudioStreamPlayer3D" parent="EnemyAudio/AlertSounds"]
+stream = ExtResource("5_ddmup")
+volume_db = -5.0
+max_db = 1.0
+bus = &"SFX"
+attenuation_filter_cutoff_hz = 7000.0
+
+[node name="AlertSound2" type="AudioStreamPlayer3D" parent="EnemyAudio/AlertSounds"]
+stream = ExtResource("6_1foqf")
+volume_db = -5.0
+max_db = 1.0
+bus = &"SFX"
+attenuation_filter_cutoff_hz = 7000.0
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_height_offset = 0.2
+
+[node name="EnemyHealthManager" parent="." instance=ExtResource("7_4kcsp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12315, 0)
+max_health = 160
+verbose = false
+
+[node name="Audio" type="Node3D" parent="EnemyHealthManager"]
+
+[node name="DeathSounds" type="Node3D" parent="EnemyHealthManager/Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.12315, 0)
+
+[node name="DeathSound1" type="AudioStreamPlayer3D" parent="EnemyHealthManager/Audio/DeathSounds"]
+stream = ExtResource("8_gd4b7")
+volume_db = -10.0
+max_db = 1.0
+bus = &"SFX"
+attenuation_filter_cutoff_hz = 9000.0
+
+[node name="DeathSound2" type="AudioStreamPlayer3D" parent="EnemyHealthManager/Audio/DeathSounds"]
+stream = ExtResource("9_8rqs3")
+volume_db = -10.0
+max_db = 1.0
+bus = &"SFX"
+attenuation_filter_cutoff_hz = 9000.0
+
+[node name="DeathSound3" type="AudioStreamPlayer3D" parent="EnemyHealthManager/Audio/DeathSounds"]
+stream = ExtResource("10_etrcn")
+volume_db = -10.0
+max_db = 1.0
+bus = &"SFX"
+attenuation_filter_cutoff_hz = 9000.0
+
+[node name="GibSounds" type="Node3D" parent="EnemyHealthManager/Audio"]
+
+[node name="GibSound1" type="AudioStreamPlayer3D" parent="EnemyHealthManager/Audio/GibSounds"]
+stream = ExtResource("11_idpph")
+volume_db = -2.0
+max_db = 1.0
+pitch_scale = 0.8
+bus = &"SFX"
+attenuation_filter_cutoff_hz = 7000.0
+
+[node name="HitSounds" type="Node3D" parent="EnemyHealthManager/Audio"]
+
+[node name="HitSound" type="AudioStreamPlayer" parent="EnemyHealthManager/Audio/HitSounds"]
+stream = ExtResource("12_cjk38")
+volume_db = -5.0
+
+[node name="EnemyCharacterMover" parent="." instance=ExtResource("13_wj6ys")]
+max_speed = 14.0
+move_accel = 2.0
+
+[node name="EnemyAimer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("14_urfaj")
+damage = 40
+
+[node name="AttackEmitter" parent="EnemyAimer" instance=ExtResource("15_oqgbn")]
+
+[node name="AreaDamageEmitter" parent="EnemyAimer/AttackEmitter" instance=ExtResource("16_6lnrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0010798, 0)
+
+[editable path="Graphics"]

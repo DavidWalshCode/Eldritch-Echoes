@@ -2,9 +2,9 @@
 
 [sub_resource type="Gradient" id="Gradient_ksxgr"]
 offsets = PackedFloat32Array(0, 0.682836)
-colors = PackedColorArray(1, 0.513726, 0, 1, 0.87451, 0.0392157, 0, 1)
+colors = PackedColorArray(0.87451, 0.0392157, 0, 1, 0, 0.0823529, 0.678431, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_2x37r"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5mfdk"]
 gradient = SubResource("Gradient_ksxgr")
 
 [sub_resource type="Curve" id="Curve_pryya"]
@@ -28,7 +28,7 @@ linear_accel_max = 1.0
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_8r8sh")
-color_ramp = SubResource("GradientTexture1D_2x37r")
+color_ramp = SubResource("GradientTexture1D_5mfdk")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gu7xs"]
 load_path = "res://.godot/imported/fire_02_small.png-9fca14e8d9371571590a032c898fea40.s3tc.ctex"
@@ -88,13 +88,17 @@ material = SubResource("StandardMaterial3D_6otgt")
 
 [node name="SpawnFlames" type="GPUParticles3D" parent="."]
 transform = Transform3D(0.998718, 0, 0, 0, 0.998718, 0, 0, 0, 0.998718, 0, 0, 0)
+emitting = false
 amount = 20
+one_shot = true
 process_material = SubResource("ParticleProcessMaterial_lcap1")
 draw_pass_1 = SubResource("QuadMesh_oafme")
 
 [node name="SpawnSmoke" type="GPUParticles3D" parent="."]
+emitting = false
 amount = 16
 lifetime = 1.2
+one_shot = true
 speed_scale = 0.66
 process_material = SubResource("ParticleProcessMaterial_fh2lg")
 draw_pass_1 = SubResource("QuadMesh_78wuq")

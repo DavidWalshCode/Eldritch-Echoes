@@ -55,7 +55,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
 [node name="Blood" type="GPUParticles3D" parent="."]
 material_override = SubResource("StandardMaterial3D_k7apk")
-amount = 14
+amount = 16
 process_material = SubResource("ParticleProcessMaterial_ecrjw")
 draw_pass_1 = SubResource("SphereMesh_v5hnb")
 

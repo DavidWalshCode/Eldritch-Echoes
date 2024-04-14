@@ -68,7 +68,7 @@
 [ext_resource type="PackedScene" uid="uid://crubn077w28ds" path="res://environment/assets/village/prebuilt_towns/small_town/scenes/full_small_town_2.tscn" id="53_6fae2"]
 [ext_resource type="Environment" uid="uid://brnvj7uytytvy" path="res://environment/sky/level_2_lighting.tres" id="55_fbt7w"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="55_vckry"]
-[ext_resource type="AudioStream" uid="uid://thxjd66rsnr2" path="res://audio/ambience/forest.ogg" id="57_cgxeo"]
+[ext_resource type="AudioStream" uid="uid://thxjd66rsnr2" path="res://audio/ambience/level_1/forest.ogg" id="57_cgxeo"]
 [ext_resource type="PackedScene" uid="uid://cyo4axkk6ift6" path="res://effects/fire/fire_1_effect.tscn" id="70_o2k0l"]
 
 [node name="Level2Town" type="Node3D"]

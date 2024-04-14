@@ -12,7 +12,7 @@ enum STATES {IDLE, CHASE, ATTACK, DEAD}
 @export var turn_speed = 360.0 # Converted from degrees to radians when used
 
 @export_category("Audio")
-@export var min_pitch_scale = 0.9 # Pitch variation range
+@export var min_pitch_scale = 0.8 # Pitch variation range
 @export var max_pitch_scale = 1.0 # Pitch variation range
 
 var current_state = STATES.IDLE

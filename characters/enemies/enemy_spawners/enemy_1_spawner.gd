@@ -8,7 +8,7 @@ signal enemy_despawned
 @export var bird_enemy_melee_scene = preload("res://characters/enemies/assets/scenes/bird_enemies_melee/bird_enemy_1_melee.tscn")
 @export var spawn_interval_min = 2.0
 @export var spawn_interval_max = 5.0  # Random range for spawn intervals
-@export var max_enemies = 3  # Max number of enemies this spawner can handle
+@export var max_enemies = 1  # Max number of enemies this spawner can handle
 
 @export_category("Audio")
 @export var min_pitch_scale = 0.9

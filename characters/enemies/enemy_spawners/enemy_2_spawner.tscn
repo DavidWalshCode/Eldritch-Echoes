@@ -10,13 +10,21 @@ max_enemies = 1
 
 [node name="Enemy2SpawnEffect" parent="." instance=ExtResource("2_2ux8g")]
 
+[node name="SpawnFlames" parent="Enemy2SpawnEffect" index="0"]
+emitting = false
+one_shot = true
+
+[node name="SpawnSmoke" parent="Enemy2SpawnEffect" index="1"]
+emitting = false
+one_shot = true
+
 [node name="SpawnSound" type="Node3D" parent="."]
 
 [node name="Enemy2SpawnSound" type="AudioStreamPlayer3D" parent="SpawnSound"]
 stream = ExtResource("3_4rx63")
-volume_db = -13.0
+volume_db = -3.0
 max_db = 1.0
 bus = &"SFX"
-attenuation_filter_cutoff_hz = 8000.0
+attenuation_filter_cutoff_hz = 9000.0
 
 [editable path="Enemy2SpawnEffect"]

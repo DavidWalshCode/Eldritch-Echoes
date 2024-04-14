@@ -6,6 +6,8 @@
 
 [node name="Enemy1Spawner" type="Node3D"]
 script = ExtResource("1_66iyf")
+spawn_interval_min = 3.0
+spawn_interval_max = 6.0
 max_enemies = 1
 
 [node name="Enemy1SpawnEffect" parent="." instance=ExtResource("2_v36sb")]
@@ -14,9 +16,9 @@ max_enemies = 1
 
 [node name="Enemy1SpawnSound" type="AudioStreamPlayer3D" parent="SpawnSound"]
 stream = ExtResource("3_02eid")
-volume_db = -13.0
+volume_db = -3.0
 max_db = 1.0
 bus = &"SFX"
-attenuation_filter_cutoff_hz = 8000.0
+attenuation_filter_cutoff_hz = 9000.0
 
 [editable path="Enemy1SpawnEffect"]

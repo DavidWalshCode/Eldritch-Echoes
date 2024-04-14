@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var max_global_enemies = 10
+@export var max_global_enemies = 5
 
 var total_enemies_spawned = 0
 
