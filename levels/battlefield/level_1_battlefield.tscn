@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://caw80merhbn8g"]
+[gd_scene load_steps=39 format=3 uid="uid://caw80merhbn8g"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_1_battlefield.gd" id="1_hl1dr"]
 [ext_resource type="PackedScene" uid="uid://b06oiwxe7csbi" path="res://environment/assets/ground/grass/scenes/grass_1_flat.tscn" id="2_glj68"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://byfdqvnlgx8a6" path="res://environment/assets/nature/grass/scenes/retro_nature_pack/grass_02_spring.tscn" id="35_q0f4f"]
 [ext_resource type="AudioStream" uid="uid://pvqy6o3xk346" path="res://audio/ambience/Ritual Site 2 Full Song.wav" id="36_jef0l"]
 [ext_resource type="PackedScene" uid="uid://dqegu5drc4svl" path="res://environment/assets/nature/grass/scenes/retro_nature_pack/grass_03_spring.tscn" id="36_qqqti"]
+[ext_resource type="AudioStream" uid="uid://iffr78vmmncx" path="res://audio/sfx/portal/617761__cogfirestudios__big-scary-portal-open.wav" id="37_jiurp"]
 [ext_resource type="PackedScene" uid="uid://cuvsdnmlqwqhm" path="res://environment/assets/nature/grass/scenes/retro_nature_pack/grass_04_spring.tscn" id="37_twmvh"]
 [ext_resource type="PackedScene" uid="uid://o2uxtulpkthc" path="res://environment/assets/ground/grass/scenes/grass_1_rough.tscn" id="38_okiay"]
 [ext_resource type="Environment" uid="uid://ddrbs8mxigttm" path="res://environment/sky/level_1_lighting.tres" id="54_4o3hm"]
@@ -454,3 +455,8 @@ transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 20.735, 
 stream = ExtResource("36_jef0l")
 volume_db = -15.0
 bus = &"Ambience"
+
+[node name="PortalExitSound" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("37_jiurp")
+volume_db = -10.0
+bus = &"SFX"
