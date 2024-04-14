@@ -1,9 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://ced6rng1o1snv"]
+[gd_scene load_steps=28 format=3 uid="uid://cy5l46i6k664t"]
 
-[ext_resource type="Texture2D" uid="uid://cni117yk8152i" path="res://effects/portal/materials/Spark1.jpg" id="1_q43x7"]
-[ext_resource type="Texture2D" uid="uid://c6r3eh33mdloy" path="res://effects/portal/materials/Spark2.jpg" id="2_vw0uk"]
-[ext_resource type="Texture2D" uid="uid://crpey7k6atkml" path="res://effects/portal/materials/IceCrystal1.jpg" id="3_xf7f0"]
-[ext_resource type="Texture2D" uid="uid://b8f5qi6mnc1mm" path="res://effects/portal/materials/IceCrystal2.jpg" id="4_x36jn"]
+[ext_resource type="Texture2D" uid="uid://cni117yk8152i" path="res://effects/portal/materials/Spark1.jpg" id="1_l3ms4"]
+[ext_resource type="Texture2D" uid="uid://c6r3eh33mdloy" path="res://effects/portal/materials/Spark2.jpg" id="2_b30r1"]
+[ext_resource type="Texture2D" uid="uid://crpey7k6atkml" path="res://effects/portal/materials/IceCrystal1.jpg" id="3_xjy3a"]
+[ext_resource type="Texture2D" uid="uid://b8f5qi6mnc1mm" path="res://effects/portal/materials/IceCrystal2.jpg" id="4_1uh0d"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g5gmo"]
 particle_flag_disable_z = true
@@ -13,8 +13,8 @@ emission_ring_height = 0.0
 emission_ring_radius = 1.0
 emission_ring_inner_radius = 0.99
 direction = Vector3(0, 0, 0)
-orbit_velocity_min = 0.2
-orbit_velocity_max = 0.2
+orbit_velocity_min = 0.1
+orbit_velocity_max = 0.1
 gravity = Vector3(0, 0, 0)
 sub_emitter_mode = 1
 sub_emitter_frequency = 20.0
@@ -42,13 +42,12 @@ point_count = 2
 curve = SubResource("Curve_ivcdu")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pf5v2"]
-particle_flag_disable_z = true
 angle_min = -360.0
 angle_max = 360.0
-angular_velocity_max = 50.0
-orbit_velocity_max = 0.1
+angular_velocity_max = 10.0
 gravity = Vector3(0, 0, 0)
-scale_min = 0.5
+scale_min = 2.0
+scale_max = 2.5
 scale_curve = SubResource("CurveTexture_jnbg0")
 color_ramp = SubResource("GradientTexture1D_rl2eh")
 sub_emitter_mode = 1
@@ -70,7 +69,7 @@ emission_enabled = true
 emission = Color(0.25098, 0.878431, 1, 1)
 emission_energy_multiplier = 3.5
 emission_operator = 1
-emission_texture = ExtResource("1_q43x7")
+emission_texture = ExtResource("1_l3ms4")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
@@ -88,13 +87,13 @@ alpha_antialiasing_mode = 0
 blend_mode = 1
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 1, 1, 0.686275)
-albedo_texture = ExtResource("2_vw0uk")
+albedo_texture = ExtResource("2_b30r1")
 albedo_texture_msdf = true
 emission_enabled = true
 emission = Color(0, 0.52549, 0.988235, 1)
 emission_energy_multiplier = 3.0
 emission_operator = 1
-emission_texture = ExtResource("2_vw0uk")
+emission_texture = ExtResource("2_b30r1")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
@@ -112,13 +111,13 @@ alpha_antialiasing_mode = 0
 blend_mode = 1
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 1, 1, 0.686275)
-albedo_texture = ExtResource("3_xf7f0")
+albedo_texture = ExtResource("3_xjy3a")
 albedo_texture_msdf = true
 emission_enabled = true
 emission = Color(0, 0.52549, 0.988235, 1)
 emission_energy_multiplier = 4.0
 emission_operator = 1
-emission_texture = ExtResource("3_xf7f0")
+emission_texture = ExtResource("3_xjy3a")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
@@ -146,11 +145,9 @@ curve = SubResource("Curve_c41u0")
 particle_flag_disable_z = true
 angle_min = -360.0
 angle_max = 360.0
-angular_velocity_max = 50.0
-orbit_velocity_max = 2.0
+angular_velocity_max = 10.0
 gravity = Vector3(0, 0.5, 0)
-scale_min = 0.1
-scale_max = 0.2
+scale_max = 1.5
 scale_curve = SubResource("CurveTexture_nikka")
 color_ramp = SubResource("GradientTexture1D_oqpdv")
 
@@ -160,13 +157,13 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 blend_mode = 1
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("4_x36jn")
+albedo_texture = ExtResource("4_1uh0d")
 albedo_texture_msdf = true
 emission_enabled = true
 emission = Color(0, 0.788235, 1, 1)
 emission_energy_multiplier = 0.8
 emission_operator = 1
-emission_texture = ExtResource("4_x36jn")
+emission_texture = ExtResource("4_1uh0d")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
@@ -177,15 +174,19 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_sfrbs")
 size = Vector2(0.5, 0.5)
 
-[node name="Town1Portal" type="Node3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_si2bl"]
+
+[node name="Town1PortalTester" type="Node3D"]
 
 [node name="PortalEffect" type="GPUParticles3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.06714, 0)
 amount = 6
 sub_emitter = NodePath("../PortalEffect2")
 process_material = SubResource("ParticleProcessMaterial_g5gmo")
 draw_pass_1 = SubResource("QuadMesh_sb7hv")
 
 [node name="PortalEffect2" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06714, 0)
 emitting = false
 amount = 200
 sub_emitter = NodePath("../PortalEffect3")
@@ -196,7 +197,14 @@ draw_pass_2 = SubResource("QuadMesh_23bl8")
 draw_pass_3 = SubResource("QuadMesh_vwgas")
 
 [node name="PortalEffect3" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06714, 0)
 emitting = false
 amount = 200
 process_material = SubResource("ParticleProcessMaterial_titgy")
 draw_pass_1 = SubResource("QuadMesh_mhjsw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(5.77109, 0, 0, 0, 6.3719, 0, 0, 0, 1.08423, 0, 1.12855, 0)
+shape = SubResource("SphereShape3D_si2bl")

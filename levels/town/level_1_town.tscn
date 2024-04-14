@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cgph20bto862l"]
+[gd_scene load_steps=61 format=3 uid="uid://cgph20bto862l"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_1_town.gd" id="1_opw3t"]
 [ext_resource type="PackedScene" uid="uid://o8ngiergmnaa" path="res://environment/assets/ground/stone/scenes/paving_cobble_1_flat.tscn" id="2_8f67n"]
@@ -55,6 +55,7 @@
 [ext_resource type="PackedScene" uid="uid://bon43w0ahe6hx" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/flag_1_pole.tscn" id="50_1svic"]
 [ext_resource type="PackedScene" uid="uid://c3srl1ur63l7u" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/chest_closed_1.tscn" id="50_w18rs"]
 [ext_resource type="PackedScene" uid="uid://g6023gycygfj" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/flag_2_pole.tscn" id="51_ufb7n"]
+[ext_resource type="PackedScene" uid="uid://cy5l46i6k664t" path="res://effects/portal/town_1_portal_testing.tscn" id="52_uui6b"]
 [ext_resource type="PackedScene" uid="uid://s3re3a6gjbsw" path="res://characters/enemies/enemy_spawners/enemy_spawner_manager.tscn" id="57_hynql"]
 [ext_resource type="PackedScene" uid="uid://b2gx020q3dwn2" path="res://characters/enemies/enemy_spawners/enemy_1_spawner.tscn" id="57_qdl3j"]
 [ext_resource type="AudioStream" uid="uid://pvqy6o3xk346" path="res://audio/music/Ritual Site 2 Full Song.wav" id="58_7dpso"]
@@ -908,6 +909,10 @@ transform = Transform3D(-2.72167, 0, -0.657638, 0, 2.8, 0, 0.657638, 0, -2.72167
 transform = Transform3D(-1.81306, 0, 2.13373, 0, 2.8, 0, -2.13373, 0, -1.81306, -10.3957, -0.0614411, -32.673)
 
 [node name="Portal" type="Node3D" parent="NavigationRegion3D/Environment/Props/TownSquareProps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23053, 0, -60.1743)
+
+[node name="Town1PortalTester" parent="NavigationRegion3D/Environment/Props/TownSquareProps/Portal" instance=ExtResource("52_uui6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.22428, 0)
 
 [node name="PrebuiltTowns" type="Node3D" parent="NavigationRegion3D/Environment"]
 
@@ -930,7 +935,7 @@ light_volumetric_fog_energy = 5.0
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("28_01geb")]
-transform = Transform3D(-0.996516, 0, 0.0833992, 0, 1, 0, -0.0833992, 0, -0.996516, 0.687584, 0.709427, -57.9451)
+transform = Transform3D(-0.996516, 0, 0.0833992, 0, 1, 0, -0.0833992, 0, -0.996516, 0.687584, 0.709427, -48.5855)
 
 [node name="NPCs" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
