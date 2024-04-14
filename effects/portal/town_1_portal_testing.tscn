@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://crpey7k6atkml" path="res://effects/portal/materials/IceCrystal1.jpg" id="3_xjy3a"]
 [ext_resource type="Texture2D" uid="uid://b8f5qi6mnc1mm" path="res://effects/portal/materials/IceCrystal2.jpg" id="4_1uh0d"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_si2bl"]
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g5gmo"]
 particle_flag_disable_z = true
 emission_shape = 6
@@ -174,9 +176,13 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_sfrbs")
 size = Vector2(0.5, 0.5)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_si2bl"]
+[node name="Town1PortalTester" type="Area3D"]
+collision_layer = 3
+collision_mask = 3
 
-[node name="Town1PortalTester" type="Node3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(5.77109, 0, 0, 0, 6.3719, 0, 0, 0, 1.08423, 0, 1.12855, 0)
+shape = SubResource("SphereShape3D_si2bl")
 
 [node name="PortalEffect" type="GPUParticles3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.06714, 0)
@@ -202,9 +208,3 @@ emitting = false
 amount = 200
 process_material = SubResource("ParticleProcessMaterial_titgy")
 draw_pass_1 = SubResource("QuadMesh_mhjsw")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(5.77109, 0, 0, 0, 6.3719, 0, 0, 0, 1.08423, 0, 1.12855, 0)
-shape = SubResource("SphereShape3D_si2bl")

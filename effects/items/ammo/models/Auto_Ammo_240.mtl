@@ -1,0 +1,22 @@
+# Blender 3.3.1 MTL File: 'None'
+# www.blender.org
+
+newmtl Material.008
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Texture/Automatic-Ammo-Front_240px.png
+map_d Texture/Automatic-Ammo-Front_240px.png
+
+newmtl Material.009
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd Texture/Automatic-Ammo-Front.png
+map_d Texture/Automatic-Ammo-Front.png

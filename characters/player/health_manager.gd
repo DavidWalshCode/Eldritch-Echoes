@@ -8,7 +8,7 @@ signal health_changed(current_health, max_health)
 @export var max_health = 100
 @export var verbose = true
 
-@export_category("Sound")
+@export_category("Audio")
 @export var min_pitch_scale = 0.9 # Pitch variation range
 @export var max_pitch_scale = 1.0 # Pitch variation range
 

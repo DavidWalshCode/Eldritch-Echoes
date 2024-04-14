@@ -12,5 +12,3 @@ func aim_at_position(position : Vector3):
 	var offset = to_local(position)
 	offset.x = 0
 	rotation.x = -atan2(offset.y, offset.z)
-	
-

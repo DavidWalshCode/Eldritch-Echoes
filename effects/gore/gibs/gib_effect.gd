@@ -10,6 +10,8 @@ func _ready():
 	velocity = -global_transform.basis.y * start_move_speed
 
 func _physics_process(delta):
+	# All this logic can be used for grenades as well
+	
 	velocity += -velocity * drag + Vector3.DOWN * gravity * delta
 	var collision = move_and_collide(velocity * delta)
 	

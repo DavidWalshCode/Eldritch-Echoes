@@ -12,7 +12,7 @@ signal out_of_ammo
 @export var animation_controlled_attack = false
 @export var recoil_strength = 0.8
 
-@export_category("Sound")
+@export_category("Audio")
 @export var min_pitch_scale = 0.9 # Pitch variation range
 @export var max_pitch_scale = 1.0 # Pitch variation range
 
