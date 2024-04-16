@@ -46,6 +46,7 @@ folder_colors={
 "res://effects/": "orange",
 "res://environment/": "green",
 "res://levels/": "yellow",
+"res://resources/": "gray",
 "res://ui/": "pink",
 "res://weapons/": "purple"
 }

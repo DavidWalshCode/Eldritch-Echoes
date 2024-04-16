@@ -33,28 +33,28 @@ extends Node
 ## approach will have limitations as well. The way I intended SceneManager for my own use, this will rarely
 ## if ever, be an issue, which is why that was an acceptable limitation. Just something to be aware of. 
 
-const LEVEL_H:int = 960 # height of levels (viewport) - only used by Zelda transition
-const LEVEL_W:int = 540 ## width of levels (viewport) - only used by Zelda transition
+const LEVEL_H:int = 960 # Height of levels (viewport) - only used by Zelda transition
+const LEVEL_W:int = 540 # Width of levels (viewport) - only used by Zelda transition
 
-signal load_start(loading_screen) ## Triggered when an asset begins loading
-signal scene_added(loaded_scene : Node, loading_screen) ## Triggered right after asset is added to SceneTree but before transition animation finishes
-signal load_complete(loaded_scene : Node) ## Triggered when loading has completed
+signal load_start(loading_screen) # Triggered when an asset begins loading
+signal scene_added(loaded_scene : Node, loading_screen) # Triggered right after asset is added to SceneTree but before transition animation finishes
+signal load_complete(loaded_scene : Node) # Triggered when loading has completed
 
-signal _content_finished_loading(content) ## internal - triggered when content is loaded and final data handoff and transition out begins
-signal _content_invalid(content_path : String) ## internal - triggered when attempting to load invalid content (e.g. an asset does not exist or path is incorrect)
-signal _content_failed_to_load(content_path : String) ## internal - triggered when loading has started but failed to complete
+signal _content_finished_loading(content) # Internal - triggered when content is loaded and final data handoff and transition out begins
+signal _content_invalid(content_path : String) # Internal - triggered when attempting to load invalid content (e.g. an asset does not exist or path is incorrect)
+signal _content_failed_to_load(content_path : String) # Internal - triggered when loading has started but failed to complete
 
-var _loading_screen_scene : PackedScene = preload("res://ui/menus/loading_canvas.tscn") ## reference to loading screen PackedScene, if you don't want the loading screen to ALWAYS be on top and instead want more granular control, instead preload loading_screen and then use the signals above to reposition nodes as needed
-var _loading_screen : LoadingScreen ## internal - reference to loading screen instance
-var _transition : String ## internal - transition being used for current load
-var _zelda_transition_direction : Vector2 ## internal - direction of zelda transition (should only be passed Vector2.UP/RIGHT/DOWN/LEFT) Is passed in when calling [code]swap_scenes_zelda()[/code]
-var _content_path : String ## internal - stores the path to the asset SceneManager is trying to load
-var _load_progress_timer : Timer ## internal - Timer used to check in on load progress
-var _load_scene_into : Node ## internal - Node into which we're loading the new scene, defaults to [code]get_tree().root[/code] if left [code]null[/null] 
-var _scene_to_unload : Node ## internal - Node we're unloading. In almost all cases, SceneManager will be used to swap between two scenes - after all that it the primary focus. However, passing in [code]null[/code] for the scene to unload will skip the unloading process and simply add the new scene. This isn't recommended, as it can have some adverse affects depending on how it is used, but it does work. Use with caution :)
-var _loading_in_progress : bool = false ## internal - used to block SceneManager from attempting to load two things at the same time
+var _loading_screen_scene : PackedScene = preload("res://ui/menus/loading_canvas.tscn") # Reference to loading screen PackedScene, if you don't want the loading screen to ALWAYS be on top and instead want more granular control, instead preload loading_screen and then use the signals above to reposition nodes as needed
+var _loading_screen : LoadingScreen # Internal - reference to loading screen instance
+var _transition : String # Internal - transition being used for current load
+var _zelda_transition_direction : Vector2 # Internal - direction of zelda transition (should only be passed Vector2.UP/RIGHT/DOWN/LEFT) Is passed in when calling [code]swap_scenes_zelda()[/code]
+var _content_path : String # Internal - stores the path to the asset SceneManager is trying to load
+var _load_progress_timer : Timer # Internal - Timer used to check in on load progress
+var _load_scene_into : Node # Internal - Node into which we're loading the new scene, defaults to [code]get_tree().root[/code] if left [code]null[/null] 
+var _scene_to_unload : Node # Internal - Node we're unloading. In almost all cases, SceneManager will be used to swap between two scenes - after all that it the primary focus. However, passing in [code]null[/code] for the scene to unload will skip the unloading process and simply add the new scene. This isn't recommended, as it can have some adverse affects depending on how it is used, but it does work. Use with caution :)
+var _loading_in_progress : bool = false # Internal - used to block SceneManager from attempting to load two things at the same time
 
-## Currently only being used to connect to required, internal signals
+# Currently only being used to connect to required, internal signals
 func _ready() -> void:
 	_content_invalid.connect(_on_content_invalid)
 	_content_failed_to_load.connect(_on_content_failed_to_load)
@@ -77,7 +77,7 @@ func _ready() -> void:
 ## before loading asset OR having yet another parameter to pass in (several if you want to options to control
 ## where in the scene tree or relative to which node you want to put it. By simply listening for this event,
 ## you can write any logic you want and handle it as needed without having to change SceneManager to suit your specific needs :)
-func _add_loading_screen(transition_type:String="fade_to_black"):
+func _add_loading_screen(transition_type : String = "fade_to_black"):
 	# using "no_in_transition" as the transition name when skipping a transition felt... weird
 	# dunno if this solution is better, but it's only one line so I can live with this one-off
 	# An alternative would be to store strating animations in a dictionary and swap them for the animation name
@@ -87,12 +87,12 @@ func _add_loading_screen(transition_type:String="fade_to_black"):
 	get_tree().root.add_child(_loading_screen)
 	_loading_screen.start_transition(_transition)
 	
-## This is likely the most common public method. It's used to change between two scenes (assets)[br][br]
+# This is used to change between two scenes (assets)[br][br]
 ## [b][color=plum]scene_to_load[/color][/b] - [String] path to the resource you'd like to load[br]	
 ## [b][color=plum]load_into[/color][/b] - [Node] Node you'd like to load the resource into[br]
 ## [b][color=plum]scene_to_unload[/color][/b] - [Node] scene you're unloading, leave null to skip unloading step thought YRMV - use with caution[br]
 ## [b][color=plum]transition_type[/color][/b] - [String] name of transition[br] see top of [Door] class for options
-func swap_scenes(scene_to_load:String, load_into:Node=null, scene_to_unload:Node=null, transition_type:String="fade_to_black") -> void:
+func swap_scenes(scene_to_load : String, load_into : Node = null, scene_to_unload : Node = null, transition_type : String = "fade_to_black") -> void:
 	
 	if _loading_in_progress:
 		push_warning("SceneManager is already loading something")
@@ -126,7 +126,7 @@ func swap_scenes_zelda(scene_to_load:String, load_into:Node, scene_to_unload:Nod
 	_zelda_transition_direction = move_dir
 	_load_content(scene_to_load)
 
-## internal - initailizes content. It's broken out in to its own function because this code would be repeated in
+## Internal - initailizes content. It's broken out in to its own function because this code would be repeated in
 ## [code]swap_scenes[/code] and [code]swap_scenes_zelda[/code]. In future versions, I'd like to find a more elegant
 ## solution for handing all transitions in the same fashion, but that wasn't in scope for this version. So for now,
 ## there is one method for the Zelda-style transition and another for the rest. All in due time. Don't bite off more thank you can chew :)
@@ -134,7 +134,7 @@ func _load_content(content_path:String) -> void:
 	
 	load_start.emit(_loading_screen)
 	
-	# zelda transition doesn't use a loading screen
+	# Zelda transition doesn't use a loading screen
 	if _transition != "zelda":
 		await _loading_screen.transition_in_complete
 		
@@ -142,17 +142,16 @@ func _load_content(content_path:String) -> void:
 	var loader = ResourceLoader.load_threaded_request(content_path)
 	if not ResourceLoader.exists(content_path) or loader == null:
 		_content_invalid.emit(content_path)
-		return 		
+		return
 	
 	_load_progress_timer = Timer.new()
 	_load_progress_timer.wait_time = 0.1
 	_load_progress_timer.timeout.connect(_monitor_load_status)
 	
-	get_tree().root.add_child(_load_progress_timer)		# NEW > insert loading bar into?
+	get_tree().root.add_child(_load_progress_timer) # NEW > insert loading bar into?
 	_load_progress_timer.start()
 
-## internal - checks in on loading status - this can also be done with a while loop, but I found that ran too fast
-## and ended up skipping over the loading display. 
+# Internal - checks in on loading status - this can also be done with a while loop, but I found that ran too fast and ended up skipping over the loading display. 
 func _monitor_load_status() -> void:
 	var load_progress = []
 	var load_status = ResourceLoader.load_threaded_get_status(_content_path, load_progress)
@@ -173,17 +172,17 @@ func _monitor_load_status() -> void:
 			_load_progress_timer.stop()
 			_load_progress_timer.queue_free()
 			_content_finished_loading.emit(ResourceLoader.load_threaded_get(_content_path).instantiate())
-			return # this last return isn't necessary but I like how the 3 dead ends stand out as similar
+			return # This last return isn't necessary but I like how the 3 dead ends stand out as similar
 
-## internal - fires when content has begun loading but failed to complete
+# Internal - fires when content has begun loading but failed to complete
 func _on_content_failed_to_load(path:String) -> void:
 	printerr("error: Failed to load resource: '%s'" % [path])	
 
-## internal - fires when attemption to load invalid content (e.g. content does not exist or path is incorrect)
+# Internal - fires when attemption to load invalid content (e.g. content does not exist or path is incorrect)
 func _on_content_invalid(path:String) -> void:
 	printerr("error: Cannot load resource: '%s'" % [path])
 	
-## internal - fires when content is done loading. This is responsible for data transfer, adding the incoming scene
+## Internal - fires when content is done loading. This is responsible for data transfer, adding the incoming scene
 ## removing the outgoing scene, hanlding the zelda transition (if of that type), halting the game until the 
 ## out transition finishes, and also fires off the signals you can listen for to manage the SceneTree as things
 ## are added. These will also be useful for initializing things before the user gains control after a transition
@@ -199,58 +198,58 @@ func _on_content_invalid(path:String) -> void:
 ## [b][color=plum]start_scene[/color][/b] implement this to kick off your scene. I use it to return control to the player. But you could also trigger events with the scene or anything else you want to hold until loading and transitioning are both totally done.[br][br]
 ## For sample implementations, see [Level]
 func _on_content_finished_loading(incoming_scene) -> void:
-	var outgoing_scene = _scene_to_unload	# NEW > can't use current_scene anymore
+	var outgoing_scene = _scene_to_unload
 	
-	# if our outgoing_scene has data to pass, give it to our incoming_scene
+	# If our outgoing_scene has data to pass, give it to our incoming_scene
 	if outgoing_scene != null:	
 		if outgoing_scene.has_method("get_data") and incoming_scene.has_method("receive_data"):
 			incoming_scene.receive_data(outgoing_scene.get_data())
 	
-	# load the incoming into the designated node
+	# Load the incoming into the designated node
 	_load_scene_into.add_child(incoming_scene)
-		# listen for this if you want to perform tasks on the scene immeidately after adding it to the tree
+	# Listen for this if you want to perform tasks on the scene immeidately after adding it to the tree
 	# ex: moveing the HUD back up to the top of the stack
-	scene_added.emit(incoming_scene,_loading_screen)
+	scene_added.emit(incoming_scene, _loading_screen)
 	
 #	This block is only used by the zelda transition, which is a special case that doesn't use the loading screen
 	if _transition == "zelda":
-		# slide new level in
+		# Slide new level in
 		incoming_scene.position.x = _zelda_transition_direction.x * LEVEL_W
 		incoming_scene.position.y = _zelda_transition_direction.y * LEVEL_H
 		var tween_in:Tween = get_tree().create_tween()
 		tween_in.tween_property(incoming_scene, "position", Vector2.ZERO, 1).set_trans(Tween.TRANS_SINE)
 
-		# slide old level out
+		# Slide old level out
 		var tween_out:Tween = get_tree().create_tween()
 		var vector_off_screen:Vector2 = Vector2.ZERO
 		vector_off_screen.x = -_zelda_transition_direction.x * LEVEL_W
 		vector_off_screen.y = -_zelda_transition_direction.y * LEVEL_H
 		tween_out.tween_property(outgoing_scene, "position", vector_off_screen, 1).set_trans(Tween.TRANS_SINE)
-	#	# once the tweens are done, do some cleanup
+	#	# Once the tweens are done, do some cleanup
 		await tween_in.finished
 	
-		# Remove the old scene
+	# Remove the old scene
 	if _scene_to_unload != null:
 		if _scene_to_unload != get_tree().root: 
 			_scene_to_unload.queue_free()
 	
-	# called right after scene is added to tree (presuming _ready has fired)
+	# Called right after scene is added to tree (presuming _ready has fired)
 	# ex: do some setup before player gains control (I'm using it to position the player) 
 	if incoming_scene.has_method("init_scene"): 
 		incoming_scene.init_scene()
 	
-	# probably not necssary since we split our _content_finished_loading but it won't hurt to have an extra check
+	# Probably not necssary since we split our _content_finished_loading but it won't hurt to have an extra check
 	if _loading_screen != null:
 		_loading_screen.finish_transition()
 		
 		# Wait or loading animation to finish
 		await _loading_screen.anim_player.animation_finished
 
-	# if your incoming scene implements init_scene() > call it here
+	# If your incoming scene implements init_scene() > call it here
 	# ex: I'm using it to enable control of the player (they're locked while in transition)
 	if incoming_scene.has_method("start_scene"): 
 		incoming_scene.start_scene()
 	
-	# load is complete, free up SceneManager to load something else and report load_complete signal
+	# Load is complete, free up SceneManager to load something else and report load_complete signal
 	_loading_in_progress = false
 	load_complete.emit(incoming_scene)

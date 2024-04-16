@@ -1326,8 +1326,6 @@ transform = Transform3D(-2.72167, 0, -0.657638, 0, 2.8, 0, 0.657638, 0, -2.72167
 [node name="Pirate1Cannon5" parent="NavigationRegion3D/Environment/Props/TownSquareProps/Cannons" instance=ExtResource("38_6qjwj")]
 transform = Transform3D(-1.81306, 0, 2.13373, 0, 2.8, 0, -2.13373, 0, -1.81306, -10.3957, -0.0614411, -32.673)
 
-[node name="Portal" type="Node3D" parent="NavigationRegion3D/Environment/Props/TownSquareProps"]
-
 [node name="PrebuiltTowns" type="Node3D" parent="NavigationRegion3D/Environment"]
 
 [node name="FullHarbourTown5" parent="NavigationRegion3D/Environment/PrebuiltTowns" instance=ExtResource("53_66mer")]

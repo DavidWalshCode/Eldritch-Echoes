@@ -28,7 +28,7 @@ func hurt(damage_data : DamageData):
 	current_health -= damage_data.amount
 	
 	if current_health <= 0:
-		#play_death_sound()
+		play_death_sound()
 		died.emit()
 	else:
 		play_hurt_sound()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=87 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://weapons/weapon_manager.gd" id="2_c6p01"]
@@ -512,6 +512,10 @@ tracks/2/keys = {
 "values": [Vector3(0, 1.89849, 0), Vector3(0, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_2odt7"]
+resource_name = "death"
+length = 3.0
+
 [sub_resource type="Animation" id="Animation_kqsci"]
 resource_name = "jumping"
 length = 0.4
@@ -565,6 +569,7 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_3i1ox"),
 "crouch": SubResource("Animation_w0ctb"),
+"death": SubResource("Animation_2odt7"),
 "jump": SubResource("Animation_kqsci"),
 "landing_big": SubResource("Animation_gfps3"),
 "landing_small": SubResource("Animation_nlwb1")

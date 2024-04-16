@@ -14,7 +14,6 @@ const LANGUAGES : Dictionary = {
 
 var user_prefs : UserPrefs
 
-# Temp: Not wild about preloads, but this menu is fairly light (to revise in a future version)
 var settings_menu_scene : PackedScene = preload("res://ui/menus/settings_menu.tscn")
 var settings_menu = null
 
@@ -28,13 +27,15 @@ var level_3_survived_passed_time = false # Used for unlocking the grenade launch
 var level_4_survived_passed_time = false # Maybe used for another chance at getting a weapon unlock if died before
 var level_5_survived_passed_time = false # Used for determining which ending the player gets
 
+@onready var MASTER_BUS_ID = AudioServer.get_bus_index("Master")
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
+@onready var AMBIENCE_BUS_ID = AudioServer.get_bus_index("Ambience")
 @onready var MUSIC_BUS_ID = AudioServer.get_bus_index("Music")
+@onready var UI_BUS_ID = AudioServer.get_bus_index("UI")
  
 func _ready():
 	user_prefs = UserPrefs.load_or_create()
 	
-	# temp - Will probably relocate to an audio-specfiic class in future versions
 	AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(user_prefs.sfx_volume))
 	AudioServer.set_bus_mute(SFX_BUS_ID, user_prefs.sfx_volume < .05)
 	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(user_prefs.music_volume))
@@ -46,7 +47,6 @@ func get_selected_language() -> String:
 		return s
 	return LANGUAGES[0]
 
-# Temp: Maybe the settings menu doesn't need to live in a global spot? (will decide in future version)
 func open_settings_menu():
 	if not settings_menu:
 		settings_menu = settings_menu_scene.instantiate()
