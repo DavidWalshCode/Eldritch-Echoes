@@ -74,7 +74,9 @@ func _spawn_enemy():
 	for enemy_type in enemy_types:
 		current_sum += enemy_type.weight
 		if random_pick < current_sum:
-			var enemy_instance = enemy_type.scene.instantiate()  # var enemy_instance = enemy_scene.instantiate() 
+			var enemy_instance = enemy_type.scene.instantiate()  # var enemy_instance = enemy_scene.instantiate()
+			enemy_instance.add_to_group("instanced")
+			
 			var enemy_health_manager = enemy_instance.get_node("EnemyHealthManager")
 			enemy_health_manager.connect("enemy_died", Callable(self, "_on_enemy_despawned"))
 			

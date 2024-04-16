@@ -94,7 +94,11 @@ func kill():
 	character_mover.set_move_direction(Vector3.ZERO) # Make sure the player can't move when they die
 	
 	Global.death_count += 1  # Increment death count
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(0.5).timeout
+	
+	
+
+	get_tree().call_group("instanced", "queue_free") # For changing scenes, this deletes all of the things in the instanced group (enemies and projectiles) in between scenes
 	
 	load_next_level_based_on_death_count()
 
@@ -102,22 +106,27 @@ func load_next_level_based_on_death_count():
 	# Switch case for loading a level based on the player death count
 	match Global.death_count: 
 		1:
-			load_next_level() # Load level 2, death count is 1
+			# Load level 2, death count is 1
+			SceneManager.swap_scenes(SceneRegistry.levels["level_2_town"], get_tree().root, self, "fade_to_white")
 		2:
-			load_next_level() # Load level 3, death count is 2
+			# Load level 3, death count is 2
+			SceneManager.swap_scenes(SceneRegistry.levels["level_3_town"], get_tree().root, self, "fade_to_white")
 		3:
-			load_next_level() # Load level 4, death count is 3
+			# Load level 4, death count is 3
+			SceneManager.swap_scenes(SceneRegistry.levels["level_4_town"], get_tree().root, self, "fade_to_white")
 		4:
-			load_next_level() # load Level 5, death count is 4
+			# Load Level 5, death count is 4
+			SceneManager.swap_scenes(SceneRegistry.levels["level_5_town"], get_tree().root, self, "fade_to_white")
 		_:
-			get_tree().quit() # get_tree().change_scene("res://Game_Over.tscn") # Default case
-
-func load_next_level():
-	var current_scene_file = get_tree().current_scene.scene_file_path
-	var next_level_number = current_scene_file.to_int() + 1
-	
-	var next_level_path = "res://levels/town/level_" + str(next_level_number) + "_town.tscn" # Could also have const FILE_BEGIN = "res://levels/level_"
-	get_tree().change_scene_to_file(next_level_path)
+			# Load endings based on time survived
+			if Global.level_5_survived_passed_time == false:
+				get_tree().quit() # To remove later
+				SceneManager.swap_scenes(SceneRegistry.main_scenes["ending_died"], get_tree().root, self, "fade_to_black")
+			elif Global.level_5_survived_passed_time == true:
+				get_tree().quit() # To remove later
+				SceneManager.swap_scenes(SceneRegistry.main_scenes["ending_survived"], get_tree().root, self, "fade_to_black")
+			
+			get_tree().quit() # To remove later
 
 func update_camera_lean(delta):
 	var input_direction = 0.0

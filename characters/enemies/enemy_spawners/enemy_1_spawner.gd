@@ -53,6 +53,8 @@ func _on_spawn_timer_timeout():
 
 func _spawn_enemy():
 	var enemy_instance = bird_enemy_melee_scene.instantiate()
+	enemy_instance.add_to_group("instanced")
+	
 	var enemy_health_manager = enemy_instance.get_node("EnemyHealthManager")
 	enemy_health_manager.connect("enemy_died", Callable(self, "_on_enemy_despawned"))
 	

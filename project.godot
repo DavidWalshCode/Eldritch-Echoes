@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Eldritch Echoes"
-run/main_scene="res://levels/town/level_1_town.tscn"
+run/main_scene="res://ui/menus/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0, 0.0352941, 0.0196078, 1)
 boot_splash/show_image=false
@@ -23,8 +23,9 @@ buses/default_bus_layout="res://audio/default_bus_layout.tres"
 
 [autoload]
 
-Global="*res://global.gd"
+Global="*res://autoloads/global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+SceneManager="*res://autoloads/scene_manager.gd"
 
 [display]
 
