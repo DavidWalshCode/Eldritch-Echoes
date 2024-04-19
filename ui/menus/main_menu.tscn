@@ -21,10 +21,10 @@ script = ExtResource("1_v6k1a")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = -27.0
-offset_top = -24.0
-offset_right = 1214.0
-offset_bottom = 689.0
+offset_left = -47.0
+offset_top = -32.0
+offset_right = 1194.0
+offset_bottom = 681.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_hjfrw")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -60,7 +60,7 @@ layout_mode = 2
 theme_override_constants/v_separation = 9
 
 [node name="Start" type="Button" parent="VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(200, 40)
+custom_minimum_size = Vector2(230, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_lu6a0")
 theme_override_font_sizes/font_size = 50
@@ -69,7 +69,7 @@ theme_override_styles/hover = ExtResource("5_5cv1b")
 text = "BEGIN"
 
 [node name="Settings" type="Button" parent="VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(200, 40)
+custom_minimum_size = Vector2(230, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_lu6a0")
 theme_override_font_sizes/font_size = 50
@@ -78,7 +78,7 @@ theme_override_styles/hover = ExtResource("5_5cv1b")
 text = "SETTINGS"
 
 [node name="Quit" type="Button" parent="VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(200, 40)
+custom_minimum_size = Vector2(230, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_lu6a0")
 theme_override_font_sizes/font_size = 50
