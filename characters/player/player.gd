@@ -57,8 +57,9 @@ func _input(event):
 
 # Equivalent to update() in Unity, runs every frame
 func _process(delta):
-	if Input.is_action_just_pressed("quit"): # Currently 'Esc'
-		get_tree().quit()
+	if Input.is_action_just_pressed("settings_menu"): # Currently 'Esc'
+		Global.open_settings_menu()
+		#get_tree().quit()
 	
 	if Input.is_action_just_pressed("restart"): # Currently 'r'
 		get_tree().reload_current_scene()

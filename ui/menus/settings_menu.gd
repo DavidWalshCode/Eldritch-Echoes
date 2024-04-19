@@ -36,9 +36,6 @@ func _ready():
 	# Note: If you want the option to save your game from this menu, replace the hardcoded false with logic that assures the game is in a savable state
 	save_button.visible = false
 	
-	# Note: Change this to true or replace with logic that assure the player is safe to quit the game from this menu
-	quit_button.visible = false
-	
 	# Set saved values (will be default values if first load)
 	if music_slider:
 		music_slider.value = user_prefs.music_volume

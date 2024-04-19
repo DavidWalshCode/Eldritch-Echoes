@@ -99,11 +99,11 @@ draw_pass_1 = SubResource("QuadMesh_mdpyj")
 
 [node name="FireSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_cew21")
-volume_db = -15.0
-max_db = 2.0
+volume_db = -17.0
+max_db = 0.8
 autoplay = true
 bus = &"SFX"
-attenuation_filter_cutoff_hz = 7000.0
+attenuation_filter_cutoff_hz = 5200.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(1, 0.537255, 0.168627, 1)

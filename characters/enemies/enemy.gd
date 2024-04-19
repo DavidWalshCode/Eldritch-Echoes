@@ -8,7 +8,7 @@ enum STATES {IDLE, CHASE, ATTACK, DEAD}
 @export var attack_rate = 0.5
 @export var attack_animation_speed_mod = 0.7
 @export var attack_angle = 5.0
-@export var sight_angle = 45.0
+@export var sight_angle = 360
 @export var turn_speed = 360.0 # Converted from degrees to radians when used
 
 @export_category("Audio")

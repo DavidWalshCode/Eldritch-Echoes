@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bf5lqnuo56nsd"
+path="res://.godot/imported/Title Song Alternate.wav-f019eeae7795b4b11908f1e1d03a1e3d.sample"
+
+[deps]
+
+source_file="res://audio/music/main_menu/Title Song Alternate.wav"
+dest_files=["res://.godot/imported/Title Song Alternate.wav-f019eeae7795b4b11908f1e1d03a1e3d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

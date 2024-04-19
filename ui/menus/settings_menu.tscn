@@ -1,17 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds3g65fim75uk"]
+[gd_scene load_steps=8 format=3 uid="uid://ds3g65fim75uk"]
 
 [ext_resource type="Script" path="res://ui/menus/settings_menu.gd" id="1_pkcrv"]
+[ext_resource type="FontFile" uid="uid://c355n3j7jdkeb" path="res://ui/fonts/PR Viking.ttf" id="2_hvf7f"]
+[ext_resource type="StyleBox" uid="uid://bep683xuf5pq0" path="res://ui/themes/menu_button_hover.tres" id="3_cf0vr"]
+[ext_resource type="StyleBox" uid="uid://ywddocya07iu" path="res://ui/themes/menu_button_normal.tres" id="4_ligfm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ute6"]
 bg_color = Color(0, 0, 0, 0.396078)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1pkg"]
-bg_color = Color(0.309804, 0.309804, 0.309804, 1)
+bg_color = Color(0, 0, 0, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(1, 1, 1, 1)
+border_color = Color(0.462745, 0.462745, 0.462745, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -62,11 +65,12 @@ theme_override_constants/margin_bottom = 50
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/BackgroundPanel/MarginContainer"]
 layout_mode = 2
 
-[node name="Heading" type="Label" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer"]
+[node name="SettingsHeading" type="Label" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_hvf7f")
 theme_override_font_sizes/font_size = 32
-text = "Settings"
+text = "SETTINGS"
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer"]
@@ -83,6 +87,8 @@ columns = 2
 [node name="MusicVol" type="Label" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hvf7f")
+theme_override_font_sizes/font_size = 22
 text = "Music Volume"
 
 [node name="MusicSlider" type="HSlider" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
@@ -99,6 +105,8 @@ value = 1.0
 [node name="SFXVol" type="Label" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hvf7f")
+theme_override_font_sizes/font_size = 22
 text = "SFX Volume"
 
 [node name="SFXSlider" type="HSlider" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
@@ -115,12 +123,17 @@ value = 1.0
 [node name="Language" type="Label" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hvf7f")
+theme_override_font_sizes/font_size = 22
 text = "Language
 "
 
 [node name="LanguageDropdown" type="OptionButton" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hvf7f")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/hover = ExtResource("3_cf0vr")
 item_count = 2
 selected = 0
 popup/item_0/text = "English"
@@ -143,7 +156,11 @@ custom_minimum_size = Vector2(100, 2.08165e-12)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-text = "Close"
+theme_override_fonts/font = ExtResource("2_hvf7f")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("4_ligfm")
+theme_override_styles/hover = ExtResource("3_cf0vr")
+text = "CLOSE"
 
 [node name="SaveButton" type="Button" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -151,7 +168,11 @@ custom_minimum_size = Vector2(100, 2.08165e-12)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-text = "Save Game"
+theme_override_fonts/font = ExtResource("2_hvf7f")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("4_ligfm")
+theme_override_styles/hover = ExtResource("3_cf0vr")
+text = "SAVE GAME"
 
 [node name="QuitButton" type="Button" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -159,7 +180,11 @@ custom_minimum_size = Vector2(100, 2.08165e-12)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-text = "Quit"
+theme_override_fonts/font = ExtResource("2_hvf7f")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("4_ligfm")
+theme_override_styles/hover = ExtResource("3_cf0vr")
+text = "QUIT"
 
 [connection signal="value_changed" from="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]

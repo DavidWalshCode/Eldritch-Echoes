@@ -1,9 +1,9 @@
 class_name UserPrefs extends Resource
 
-@export_range(0, 1, 0.05) var music_volume: float = 1.0
-@export_range(0, 1, 0.05) var sfx_volume: float = 1.0
-@export var use_smooth_movement:bool = true
-@export var language:int = 0
+@export_range(0, 1, 0.05) var music_volume : float = 1.0
+@export_range(0, 1, 0.05) var sfx_volume : float = 1.0
+@export var use_smooth_movement : bool = true
+@export var language : int = 0
 
 const USER_PREFS_PATH : String = "user://user_prefs.tres"
 

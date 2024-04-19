@@ -3,13 +3,14 @@ class_name StartScreen extends Control
 const template_version : String = "0.1"
 
 @onready var version_num : Label = %VersionNum
+@onready var main_menu_ambience = $MainMenuAmbience
 
 func _ready() -> void:
 	version_num.text = "v%s" % template_version
 
 func _on_start_button_up() -> void:
-	# Structure for swaping scenes: Level to swap to, the current scene, the transition
-	SceneManager.swap_scenes(SceneRegistry.levels["level_1_town"], get_tree().root, self, "fade_to_black")
+	main_menu_ambience.queue_free()
+	SceneManager.swap_scenes(SceneRegistry.levels["level_1_town"], get_tree().root, self, "fade_to_black") # Structure for swaping scenes: Level to swap to, the current scene, the transition
 
 func _on_settings_button_up() -> void:
 	Global.open_settings_menu()

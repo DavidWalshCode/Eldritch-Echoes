@@ -58,7 +58,7 @@
 [ext_resource type="PackedScene" uid="uid://bsfdocab5ls3" path="res://effects/portal/town_1_portal_testing_2.tscn" id="52_kjsjn"]
 [ext_resource type="PackedScene" uid="uid://s3re3a6gjbsw" path="res://characters/enemies/enemy_spawners/enemy_spawner_manager.tscn" id="57_hynql"]
 [ext_resource type="PackedScene" uid="uid://b2gx020q3dwn2" path="res://characters/enemies/enemy_spawners/enemy_1_spawner.tscn" id="57_qdl3j"]
-[ext_resource type="AudioStream" uid="uid://pvqy6o3xk346" path="res://audio/ambience/Ritual Site 2 Full Song.wav" id="58_7dpso"]
+[ext_resource type="AudioStream" uid="uid://thxjd66rsnr2" path="res://audio/ambience/forest.ogg" id="59_xw4ub"]
 [ext_resource type="AudioStream" uid="uid://d3s4ep4vkk0ht" path="res://audio/sfx/portal/617762__cogfirestudios__big-scary-portal-2.wav" id="60_p5lnj"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_vdt3c"]
@@ -961,8 +961,8 @@ transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 27.3494,
 [node name="Audio" type="Node3D" parent="."]
 
 [node name="AmbienceLevel1" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("58_7dpso")
-volume_db = -15.0
+stream = ExtResource("59_xw4ub")
+volume_db = -10.0
 bus = &"Ambience"
 
 [node name="PortalEnterSound" type="AudioStreamPlayer" parent="Audio"]
