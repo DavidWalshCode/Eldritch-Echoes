@@ -81,8 +81,64 @@ theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
 [node name="GridContainer" type="GridContainer" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 170)
 layout_mode = 2
 columns = 2
+
+[node name="MasterVol" type="Label" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hvf7f")
+theme_override_font_sizes/font_size = 22
+text = "Master Volume
+"
+
+[node name="MasterSlider" type="HSlider" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SFXVol" type="Label" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hvf7f")
+theme_override_font_sizes/font_size = 22
+text = "SFX Volume"
+
+[node name="SFXSlider" type="HSlider" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="AmbienceVol" type="Label" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hvf7f")
+theme_override_font_sizes/font_size = 22
+text = "Ambience Volume"
+
+[node name="AmbienceSlider" type="HSlider" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+max_value = 1.0
+step = 0.05
+value = 1.0
 
 [node name="MusicVol" type="Label" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(175, 0)
@@ -102,14 +158,14 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="SFXVol" type="Label" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+[node name="UIVol" type="Label" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_hvf7f")
 theme_override_font_sizes/font_size = 22
-text = "SFX Volume"
+text = "UI Volume"
 
-[node name="SFXSlider" type="HSlider" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+[node name="UISlider" type="HSlider" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
 layout_direction = 2
 layout_mode = 2
@@ -190,8 +246,11 @@ theme_override_styles/normal = ExtResource("4_ligfm")
 theme_override_styles/hover = ExtResource("3_cf0vr")
 text = "QUIT"
 
-[connection signal="value_changed" from="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer/AmbienceSlider" to="." method="_on_ambience_slider_value_changed"]
+[connection signal="value_changed" from="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer/UISlider" to="." method="_on_ui_slider_value_changed"]
 [connection signal="item_selected" from="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer/LanguageDropdown" to="." method="_on_language_dropdown_item_selected"]
 [connection signal="pressed" from="Panel/BackgroundPanel/MarginContainer/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="Panel/BackgroundPanel/MarginContainer/VBoxContainer/HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]

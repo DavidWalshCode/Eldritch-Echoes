@@ -10,11 +10,11 @@ class_name SettingsMenu extends CanvasLayer
 
 signal language_changed(language : String)
 
-@onready var master_slider : HSlider = %MusicSlider as HSlider
+@onready var master_slider : HSlider = %MasterSlider as HSlider
 @onready var sfx_slider : HSlider = %SFXSlider as HSlider
-@onready var ambience_slider : HSlider = %MusicSlider as HSlider
+@onready var ambience_slider : HSlider = %AmbienceSlider as HSlider
 @onready var music_slider : HSlider = %MusicSlider as HSlider
-@onready var ui_slider : HSlider = %SFXSlider as HSlider
+@onready var ui_slider : HSlider = %UISlider as HSlider
 
 @onready var MASTER_BUS_ID = AudioServer.get_bus_index("Master")
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
@@ -37,10 +37,16 @@ func _ready():
 	save_button.visible = false
 	
 	# Set saved values (will be default values if first load)
-	if music_slider:
-		music_slider.value = user_prefs.music_volume
+	if master_slider:
+		master_slider.value = user_prefs.master_volume
 	if sfx_slider:
 		sfx_slider.value = user_prefs.sfx_volume
+	if ambience_slider:
+		ambience_slider.value = user_prefs.ambience_volume
+	if music_slider:
+		music_slider.value = user_prefs.music_volume
+	if ui_slider:
+		ui_slider.value = user_prefs.ui_volume
 	if language_dropdown:
 		language_dropdown.selected = user_prefs.language
 
@@ -66,15 +72,30 @@ func _on_quit_button_pressed():
 	# TODO: Save before quitting if in-game
 	get_tree().quit()
 
-func _on_music_slider_value_changed(_value):
-	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(_value))
-	AudioServer.set_bus_mute(MUSIC_BUS_ID, _value < .05)
-	user_prefs.music_volume = _value
+func _on_master_slider_value_changed(_value):
+	AudioServer.set_bus_volume_db(MASTER_BUS_ID, linear_to_db(_value))
+	AudioServer.set_bus_mute(MASTER_BUS_ID, _value < .05)
+	user_prefs.master_volume = _value
 
 func _on_sfx_slider_value_changed(_value):
 	AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(_value))
 	AudioServer.set_bus_mute(SFX_BUS_ID, _value < .05)
 	user_prefs.sfx_volume = _value
+
+func _on_ambience_slider_value_changed(_value):
+	AudioServer.set_bus_volume_db(AMBIENCE_BUS_ID, linear_to_db(_value))
+	AudioServer.set_bus_mute(AMBIENCE_BUS_ID, _value < .05)
+	user_prefs.ambience_volume = _value
+
+func _on_music_slider_value_changed(_value):
+	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(_value))
+	AudioServer.set_bus_mute(MUSIC_BUS_ID, _value < .05)
+	user_prefs.music_volume = _value
+
+func _on_ui_slider_value_changed(_value):
+	AudioServer.set_bus_volume_db(UI_BUS_ID, linear_to_db(_value))
+	AudioServer.set_bus_mute(UI_BUS_ID, _value < .05)
+	user_prefs.ui_volume = _value
 
 func _on_language_dropdown_item_selected(_index):
 	# TODO: Set selected language
