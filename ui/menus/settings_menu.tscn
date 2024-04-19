@@ -134,12 +134,16 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_hvf7f")
 theme_override_font_sizes/font_size = 22
 theme_override_styles/hover = ExtResource("3_cf0vr")
-item_count = 2
+item_count = 4
 selected = 0
 popup/item_0/text = "English"
 popup/item_0/id = 0
-popup/item_1/text = "Spanish (Latin America)"
+popup/item_1/text = "Spanish (Not working)"
 popup/item_1/id = 1
+popup/item_2/text = "Mandarin (Not working)"
+popup/item_2/id = 2
+popup/item_3/text = "Hindi (Not working)"
+popup/item_3/id = 3
 
 [node name="Panel" type="Panel" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 25)
