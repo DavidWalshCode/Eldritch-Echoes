@@ -367,3 +367,6 @@ bus = &"Ambience"
 stream = ExtResource("37_jiurp")
 volume_db = -10.0
 bus = &"SFX"
+
+[editable path="Player"]
+[editable path="Player/Camera3D/WeaponManager/Weapons/Sword/AttackEmitter/HitScanAttackEmitter"]

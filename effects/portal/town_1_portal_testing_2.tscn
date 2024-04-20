@@ -1,4 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://bsfdocab5ls3"]
+[gd_scene load_steps=36 format=3 uid="uid://bsfdocab5ls3"]
+
+[ext_resource type="Script" path="res://effects/portal/portal.gd" id="1_najr6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_si2bl"]
 
@@ -211,8 +213,9 @@ material = SubResource("StandardMaterial3D_6x4la")
 size = Vector2(0.5, 0.5)
 
 [node name="Town1PortalTester2" type="Area3D"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_najr6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(5.77109, 0, 0, 0, 6.3719, 0, 0, 0, 1.08423, 0, 1.12855, 0)

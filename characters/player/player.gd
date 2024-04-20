@@ -102,33 +102,33 @@ func kill():
 	
 	Global.death_count += 1  # Increment death count
 	
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(4).timeout
 	get_tree().call_group("instanced", "queue_free") # For changing scenes, this deletes all of the things in the instanced group (enemies and projectiles) in between scenes
 	
 	await get_tree().create_timer(4).timeout
 	load_next_level_based_on_death_count()
 
 func load_next_level_based_on_death_count():
-	# Switch case for loading a level based on the player death count
+	# Switch case for loading the town level based on the player death count
 	match Global.death_count: 
 		1:
-			# Load level 2, death count is 1
+			# Load town level 2, death count is 1
 			$"..".queue_free() # TO UPDATE: Removing the Level1Town node, should be Level1Battlefield
 			SceneManager.swap_scenes(SceneRegistry.levels["level_2_town"], get_tree().root, self, "fade_to_white")
 		2:
-			# Load level 3, death count is 2
+			# Load town level 3, death count is 2
 			$"..".queue_free() # TO UPDATE: Removing the Level2Town node, should be Level2Battlefield
 			SceneManager.swap_scenes(SceneRegistry.levels["level_3_town"], get_tree().root, self, "fade_to_white")
 		3:
-			# Load level 4, death count is 3
+			# Load town level 4, death count is 3
 			$"..".queue_free() # TO UPDATE: Removing the Level3Town node, should be Level3Battlefield
 			SceneManager.swap_scenes(SceneRegistry.levels["level_4_town"], get_tree().root, self, "fade_to_white")
 		4:
-			# Load Level 5, death count is 4
+			# Load town level 5, death count is 4
 			$"..".queue_free() # TO UPDATE: Removing the Level4Town node, should be Level4Battlefield
 			SceneManager.swap_scenes(SceneRegistry.levels["level_5_town"], get_tree().root, self, "fade_to_white")
 		_:
-			# Load endings based on time survived
+			# Default case, load endings based on time survived
 			$"..".queue_free() # Removing the Level5Town node
 			
 			if Global.level_5_survived_passed_time == false:

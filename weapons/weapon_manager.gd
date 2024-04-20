@@ -18,29 +18,28 @@ var current_weapon = null
 @onready var switch_sound = $SwitchSound
 @onready var ammo_pickup_sound = $"../../ItemPickupManager/Audio/AmmoPickupSound"
 
-
 func _ready():
 	for weapon in weapons:
 		if weapon.has_method("set_bodies_to_exclude"):
 			weapon.set_bodies_to_exclude([get_parent().get_parent()]) # Excludes the player and camera, knows dont hit the player
 	
 	disable_all_weapons()
-	
+
 	for i in range(weapons.size()):
 		if i == 0:
 			weapons_unlocked.append(true) # Sword
 		if i == 1:
 			weapons_unlocked.append(true) # Revolvers
-		if i == 2: # and Global.level_1_survived_passed_time == true or Global.level_2_survived_passed_time == true or Global.level_3_survived_passed_time == true or Global.level_4_survived_passed_time == true
-			weapons_unlocked.append(true) # Machine Gun
+		if i == 2: #and Global.level_1_survived_passed_time: # or Global.level_2_survived_passed_time == true or Global.level_3_survived_passed_time == true or Global.level_4_survived_passed_time == true
+			weapons_unlocked.append(false) # Machine Gun
 		if i == 3: # and Global.level_2_survived_passed_time == true or Global.level_3_survived_passed_time == true or Global.level_4_survived_passed_time == true
-			weapons_unlocked.append(true) # Shtogun
+			weapons_unlocked.append(false) # Shotgun
 		if i == 4: # and Global.level_3_survived_passed_time == true or Global.level_4_survived_passed_time == true
-			weapons_unlocked.append(true) # Rocket Launcher
-		
+			weapons_unlocked.append(false) # Rocket Launcher
+
 		# weapons_unlocked.append(false) # Lock all weapons
 		# weapons_unlocked.append(true) # Unlock all weapons
-		
+	
 	switch_to_weapon_slot(0)
 	
 	for weapon in weapons:

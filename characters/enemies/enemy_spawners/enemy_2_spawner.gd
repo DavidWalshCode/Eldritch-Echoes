@@ -19,6 +19,7 @@ signal enemy_despawned
 
 var enemies_spawned = 0
 var spawn_timer = null
+var is_spawning_enabled = true  # Keeps track of whether spawning is currently allowed
 
 # Define enemy types and their spawn weights
 var enemy_types = [
@@ -30,33 +31,27 @@ var enemy_types = [
 
 func _ready():
 	randomize()
+	add_to_group("spawners")
 	spawn_timer = Timer.new()
 	spawn_timer.connect("timeout", Callable(self, "_on_spawn_timer_timeout"))
 	add_child(spawn_timer)
 	start_spawning()
 
 func start_spawning():
-	set_process(true)
-	_reset_timer()
+	if not is_spawning_enabled:
+		is_spawning_enabled = true
+		_reset_timer()  # Start or restart the timer
+
+func stop_spawning():
+	spawn_timer.stop()  # Stop the timer to halt spawning
+	is_spawning_enabled = false
 
 func _reset_timer():
 	spawn_timer.wait_time = randf_range(spawn_interval_min, spawn_interval_max)
 	spawn_timer.start()
 
-func _process(delta):
-	'''
-	if not is_processing():
-		return
-
-	if enemies_spawned < max_enemies:
-		spawn_enemy()
-		
-	# The actual spawning process is triggered by the timer's timeout signal,
-	# so there's no need to implement the spawning logic here directly.
-	'''
-
 func _on_spawn_timer_timeout():
-	if is_processing() and enemies_spawned < max_enemies:
+	if is_spawning_enabled and enemies_spawned < max_enemies:
 		_spawn_enemy()
 		_reset_timer()  # Prepare for the next spawn
 

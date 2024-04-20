@@ -1,6 +1,6 @@
 class_name SceneRegistry extends Node
 
-# The idea is to centrailse these strings so that when the game needs refactoring the only changes have to be here
+# The idea is to centrailse these strings so that when the game needs refactoring the only changes have to be heref
 
 const main_scenes = {
 	"main_menu": "res://ui/menus/main_menu.tscn",

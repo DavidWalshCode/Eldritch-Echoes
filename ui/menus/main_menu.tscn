@@ -102,7 +102,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_lu6a0")
 theme_override_font_sizes/font_size = 25
-text = "Version"
+text = "VERSION"
 
 [node name="DeveloperContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -122,7 +122,7 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_lu6a0")
 theme_override_font_sizes/font_size = 25
-text = "Developed by David Walsh"
+text = "DEVELOPED BY DAVID WALSH"
 
 [node name="MainMenuAmbience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_n2157")

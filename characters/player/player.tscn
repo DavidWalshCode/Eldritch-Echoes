@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=102 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://weapons/weapon_manager.gd" id="2_c6p01"]
@@ -59,6 +59,7 @@
 [ext_resource type="AudioStream" uid="uid://5yhhkqr3lh32" path="res://audio/sfx/items/health/471834__keshafilm__health-pickup.wav" id="53_5qu77"]
 [ext_resource type="FontFile" uid="uid://c355n3j7jdkeb" path="res://ui/fonts/PR Viking.ttf" id="55_5digl"]
 [ext_resource type="Script" path="res://characters/player/stats_display.gd" id="56_n0ntf"]
+[ext_resource type="Script" path="res://characters/player/level_timer.gd" id="58_qjhws"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwpu4"]
 
@@ -713,7 +714,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_grr4j"]
 resource_name = "dead"
-length = 6.0
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -721,7 +722,7 @@ tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 6),
+"times": PackedFloat32Array(0, 10),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -733,7 +734,7 @@ tracks/1/path = NodePath(".:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 6),
+"times": PackedFloat32Array(0, 3, 10),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.670588, 0, 0, 0.780392), Color(0.270588, 0, 0, 1), Color(0.270588, 0, 0, 1)]
@@ -745,7 +746,7 @@ tracks/2/path = NodePath("../../Camera3D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 1.89849, 0), Vector3(0, 0.7, 0)]
@@ -856,7 +857,7 @@ volume_db = -16.0
 bus = &"SFX"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Sword/Audio"]
-volume_db = -5.0
+volume_db = -15.0
 bus = &"SFX"
 
 [node name="Revolvers" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
@@ -918,7 +919,7 @@ bus = &"SFX"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Revolvers/Audio"]
 stream = ExtResource("10_6b3cn")
-volume_db = -5.0
+volume_db = -15.0
 bus = &"SFX"
 
 [node name="MachineGun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
@@ -962,7 +963,7 @@ bus = &"SFX"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/MachineGun/Audio"]
 stream = ExtResource("10_6b3cn")
-volume_db = -5.0
+volume_db = -15.0
 bus = &"SFX"
 
 [node name="Shotgun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
@@ -1019,7 +1020,7 @@ bus = &"SFX"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Shotgun/Audio"]
 stream = ExtResource("10_6b3cn")
-volume_db = -5.0
+volume_db = -15.0
 bus = &"SFX"
 
 [node name="RocketLauncher" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
@@ -1060,7 +1061,7 @@ bus = &"SFX"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Audio"]
 stream = ExtResource("10_6b3cn")
-volume_db = -5.0
+volume_db = -15.0
 bus = &"SFX"
 
 [node name="GeneralWeaponAnimations" type="AnimationPlayer" parent="Camera3D/WeaponManager"]
@@ -1155,17 +1156,17 @@ bus = &"SFX"
 
 [node name="LandingBigSound1" type="AudioStreamPlayer" parent="CharacterMover/Audio/LandingBigSounds"]
 stream = ExtResource("41_lmvyg")
-volume_db = -11.0
+volume_db = -15.0
 bus = &"SFX"
 
 [node name="LandingBigSound2" type="AudioStreamPlayer" parent="CharacterMover/Audio/LandingBigSounds"]
 stream = ExtResource("42_l3wgr")
-volume_db = -11.0
+volume_db = -15.0
 bus = &"SFX"
 
 [node name="LandingBigSound3" type="AudioStreamPlayer" parent="CharacterMover/Audio/LandingBigSounds"]
 stream = ExtResource("46_p6lle")
-volume_db = -11.0
+volume_db = -15.0
 bus = &"SFX"
 
 [node name="LandingSmallSounds" type="Node3D" parent="CharacterMover/Audio"]
@@ -1373,6 +1374,26 @@ libraries = {
 "": SubResource("AnimationLibrary_31e24")
 }
 autoplay = "start"
+
+[node name="TimerContainer" type="HBoxContainer" parent="UserInterface"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -39.5
+offset_right = 39.5
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="LevelTimer" type="Label" parent="UserInterface/TimerContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("55_5digl")
+theme_override_font_sizes/font_size = 50
+text = "TIME"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("58_qjhws")
 
 [node name="DebugPanel" type="PanelContainer" parent="UserInterface"]
 custom_minimum_size = Vector2(200, 0)

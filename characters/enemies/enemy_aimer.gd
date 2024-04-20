@@ -7,8 +7,8 @@ extends Node3D
 func _ready():
 	attack_emitter.set_damage(damage)
 
-func aim_at_position(position : Vector3):
+func aim_at_position(aim_position : Vector3):
 	rotation = Vector3.ZERO
-	var offset = to_local(position)
+	var offset = to_local(aim_position)
 	offset.x = 0
 	rotation.x = -atan2(offset.y, offset.z)

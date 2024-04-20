@@ -6,7 +6,7 @@ const template_version : String = "0.7"
 @onready var main_menu_ambience = $MainMenuAmbience
 
 func _ready() -> void:
-	version_num.text = "v%s" % template_version
+	version_num.text = "V%s" % template_version
 
 func _on_start_button_up() -> void:
 	main_menu_ambience.queue_free()
