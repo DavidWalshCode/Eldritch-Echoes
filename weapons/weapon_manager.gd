@@ -15,6 +15,8 @@ var current_weapon = null
 @onready var alert_area_hearing = $AlertAreaHearing
 @onready var alert_area_line_of_sight = $AlertAreaLineOfSight
 @onready var switch_sound = $SwitchSound
+@onready var ammo_pickup_sound = $"../../ItemPickupManager/Audio/AmmoPickupSound"
+
 
 func _ready():
 	for weapon in weapons:
@@ -25,15 +27,15 @@ func _ready():
 	
 	for i in range(weapons.size()):
 		if i == 0:
-			weapons_unlocked.append(true)
+			weapons_unlocked.append(true) # Sword
 		if i == 1:
-			weapons_unlocked.append(true)
+			weapons_unlocked.append(true) # Revolvers
 		if i == 2: # and Global.level_1_survived_passed_time == true or Global.level_2_survived_passed_time == true or Global.level_3_survived_passed_time == true or Global.level_4_survived_passed_time == true
-			weapons_unlocked.append(true)
-		if i == 3: # and Global.level_2_survived_passed_time == true
-			weapons_unlocked.append(true)
+			weapons_unlocked.append(true) # Machine Gun
+		if i == 3: # and Global.level_2_survived_passed_time == true or Global.level_3_survived_passed_time == true or Global.level_4_survived_passed_time == true
+			weapons_unlocked.append(true) # Shtogun
 		if i == 4: # and Global.level_3_survived_passed_time == true or Global.level_4_survived_passed_time == true
-			weapons_unlocked.append(true)
+			weapons_unlocked.append(true) # Rocket Launcher
 		
 		# weapons_unlocked.append(false) # Lock all weapons
 		# weapons_unlocked.append(true) # Unlock all weapons
@@ -113,17 +115,23 @@ func get_item_pickup(item_pickup_type, ammo):
 	match item_pickup_type:
 		ItemPickup.ITEM_PICKUP_TYPES.REVOLVER_AMMO:
 			weapons[1].ammo += ammo
+			play_ammo_pickup_sound()
 
 		ItemPickup.ITEM_PICKUP_TYPES.MACHINE_GUN_AMMO:
 			weapons[2].ammo += ammo
+			play_ammo_pickup_sound()
 
 		ItemPickup.ITEM_PICKUP_TYPES.SHOTGUN_AMMO:
 			weapons[3].ammo += ammo
+			play_ammo_pickup_sound()
 
 		ItemPickup.ITEM_PICKUP_TYPES.ROCKET_LAUNCHER_AMMO:
 			weapons[4].ammo += ammo
-	
+			play_ammo_pickup_sound()
+
+	#play_ammo_pickup_sound()
 	emit_ammo_changed_signal()
+	
 
 func emit_ammo_changed_signal():
 	ammo_changed.emit(current_weapon.ammo)
@@ -133,3 +141,8 @@ func play_switch_sound():
 	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
 	switch_sound.pitch_scale = random_pitch
 	switch_sound.play()
+
+func play_ammo_pickup_sound():
+	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
+	ammo_pickup_sound.pitch_scale = random_pitch
+	ammo_pickup_sound.play()

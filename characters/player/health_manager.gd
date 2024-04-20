@@ -15,6 +15,7 @@ signal health_changed(current_health, max_health)
 @onready var current_health = max_health
 @onready var hurt_sounds = $Audio/HurtSounds.get_children()
 @onready var death_sounds = $Audio/DeathSounds.get_children()
+@onready var health_pickup_sound = $"../ItemPickupManager/Audio/HealthPickupSound"
 
 func _ready():
 	health_changed.emit(current_health, max_health)
@@ -52,6 +53,7 @@ func get_item_pickup(item_pickup_type, ammo):
 	match item_pickup_type:
 		ItemPickup.ITEM_PICKUP_TYPES.HEALTH:
 			heal(ammo)
+			play_health_pickup_sound()
 			print("Picked up health")
 
 func play_death_sound():
@@ -66,3 +68,7 @@ func play_hurt_sound():
 	hurt_sound_selected.pitch_scale = random_pitch
 	hurt_sound_selected.play()
 
+func play_health_pickup_sound():
+	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
+	health_pickup_sound.pitch_scale = random_pitch
+	health_pickup_sound.play()

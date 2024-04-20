@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=91 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://weapons/weapon_manager.gd" id="2_c6p01"]
@@ -52,6 +52,8 @@
 [ext_resource type="Script" path="res://characters/player/debug.gd" id="47_g4vyg"]
 [ext_resource type="Script" path="res://characters/player/reticle.gd" id="49_muf4y"]
 [ext_resource type="Script" path="res://items/item_pickup_manager.gd" id="51_y0pqt"]
+[ext_resource type="AudioStream" uid="uid://by1jb7huvtxl2" path="res://audio/sfx/items/ammo/433770__zivs__ammo-pickup-1.ogg" id="52_aq6o6"]
+[ext_resource type="AudioStream" uid="uid://5yhhkqr3lh32" path="res://audio/sfx/items/health/471834__keshafilm__health-pickup.wav" id="53_5qu77"]
 [ext_resource type="AudioStream" uid="uid://cjhuv41fc0p2k" path="res://audio/sfx/player/death/Voice_Female_V1_Breath_Shocked_Mono_05.wav" id="54_uydrg"]
 [ext_resource type="AudioStream" uid="uid://bfrcq18ijjyly" path="res://audio/sfx/player/death/Voice_Female_V1_Breath_Shocked_Mono_10.wav" id="55_q14st"]
 
@@ -663,6 +665,7 @@ volume_db = -16.0
 bus = &"SFX"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Sword/Audio"]
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="Revolvers" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
@@ -671,6 +674,7 @@ visible = false
 script = ExtResource("4_qyhjh")
 automatic = true
 damage = 25
+ammo = 40
 attack_rate = 0.5
 recoil_strength = 1.6
 min_pitch_scale = 0.85
@@ -723,6 +727,7 @@ bus = &"SFX"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Revolvers/Audio"]
 stream = ExtResource("10_6b3cn")
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="MachineGun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
@@ -731,6 +736,7 @@ visible = false
 script = ExtResource("4_qyhjh")
 automatic = true
 damage = 15
+ammo = 70
 attack_rate = 0.1
 min_pitch_scale = 0.7
 max_pitch_scale = 0.8
@@ -765,6 +771,7 @@ bus = &"SFX"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/MachineGun/Audio"]
 stream = ExtResource("10_6b3cn")
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="Shotgun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
@@ -773,6 +780,7 @@ visible = false
 script = ExtResource("4_qyhjh")
 automatic = true
 damage = 20
+ammo = 25
 attack_rate = 0.9
 recoil_strength = 4.0
 
@@ -820,12 +828,14 @@ bus = &"SFX"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Shotgun/Audio"]
 stream = ExtResource("10_6b3cn")
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="RocketLauncher" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 script = ExtResource("4_qyhjh")
 automatic = true
 damage = 60
+ammo = 12
 attack_rate = 0.7
 recoil_strength = 4.0
 min_pitch_scale = 0.7
@@ -859,6 +869,7 @@ bus = &"SFX"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Audio"]
 stream = ExtResource("10_6b3cn")
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="GeneralWeaponAnimations" type="AnimationPlayer" parent="Camera3D/WeaponManager"]
@@ -1044,10 +1055,14 @@ shape = SubResource("CapsuleShape3D_r86ji")
 [node name="Audio" type="Node3D" parent="ItemPickupManager"]
 
 [node name="AmmoPickupSound" type="AudioStreamPlayer" parent="ItemPickupManager/Audio"]
-volume_db = -10.0
+stream = ExtResource("52_aq6o6")
+volume_db = -4.0
+bus = &"SFX"
 
 [node name="HealthPickupSound" type="AudioStreamPlayer" parent="ItemPickupManager/Audio"]
-volume_db = -10.0
+stream = ExtResource("53_5qu77")
+volume_db = -6.0
+bus = &"SFX"
 
 [node name="PlayerAnimations" type="AnimationPlayer" parent="."]
 libraries = {
