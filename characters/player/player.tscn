@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=101 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://weapons/weapon_manager.gd" id="2_c6p01"]
@@ -50,12 +50,15 @@
 [ext_resource type="AudioStream" uid="uid://cu35ff54jgbtj" path="res://audio/sfx/player/landing/big/Footsteps_DirtyGround_Jump_Start_03.wav" id="46_p6lle"]
 [ext_resource type="Theme" uid="uid://du0vpxg4q0mij" path="res://ui/themes/debug_theme.tres" id="46_ynthf"]
 [ext_resource type="Script" path="res://characters/player/debug.gd" id="47_g4vyg"]
+[ext_resource type="AudioStream" uid="uid://xyqybcv1rs1p" path="res://audio/sfx/player/death/Voice_Female_V1_Pain_Mono_04.wav" id="49_d2s8v"]
 [ext_resource type="Script" path="res://characters/player/reticle.gd" id="49_muf4y"]
+[ext_resource type="AudioStream" uid="uid://cqkyyfjoehlud" path="res://audio/sfx/player/death/Voice_Female_V1_Pain_Mono_07.wav" id="50_5jdiv"]
+[ext_resource type="AudioStream" uid="uid://cbsu0qai37a60" path="res://audio/sfx/player/death/Voice_Female_V2_Pain_Mono_01.wav" id="51_1y44i"]
 [ext_resource type="Script" path="res://items/item_pickup_manager.gd" id="51_y0pqt"]
 [ext_resource type="AudioStream" uid="uid://by1jb7huvtxl2" path="res://audio/sfx/items/ammo/433770__zivs__ammo-pickup-1.ogg" id="52_aq6o6"]
 [ext_resource type="AudioStream" uid="uid://5yhhkqr3lh32" path="res://audio/sfx/items/health/471834__keshafilm__health-pickup.wav" id="53_5qu77"]
-[ext_resource type="AudioStream" uid="uid://cjhuv41fc0p2k" path="res://audio/sfx/player/death/Voice_Female_V1_Breath_Shocked_Mono_05.wav" id="54_uydrg"]
-[ext_resource type="AudioStream" uid="uid://bfrcq18ijjyly" path="res://audio/sfx/player/death/Voice_Female_V1_Breath_Shocked_Mono_10.wav" id="55_q14st"]
+[ext_resource type="FontFile" uid="uid://c355n3j7jdkeb" path="res://ui/fonts/PR Viking.ttf" id="55_5digl"]
+[ext_resource type="Script" path="res://characters/player/stats_display.gd" id="56_n0ntf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwpu4"]
 
@@ -598,6 +601,194 @@ color = Color(0, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_kb1wp"]
 size = Vector3(0.01, 0.01, 2)
 
+[sub_resource type="Animation" id="Animation_cwj4w"]
+resource_name = "hurt"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.560784, 0, 0, 0.470588), Color(0.560784, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2r2vg"]
+resource_name = "start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ykxsi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.560784, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.89849, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_87kdg"]
+resource_name = "heal"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.00392157, 0.286275, 0.00392157, 0.470588), Color(0, 0.298039, 0.137255, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_grr4j"]
+resource_name = "dead"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.670588, 0, 0, 0.780392), Color(0.270588, 0, 0, 1), Color(0.270588, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.89849, 0), Vector3(0, 0.7, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6r488"]
+resource_name = "got_ammo"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.286275, 0, 0.568627, 0.470588), Color(0, 0.298039, 0.137255, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_31e24"]
+_data = {
+"RESET": SubResource("Animation_ykxsi"),
+"dead": SubResource("Animation_grr4j"),
+"got_ammo": SubResource("Animation_6r488"),
+"heal": SubResource("Animation_87kdg"),
+"hurt": SubResource("Animation_cwj4w"),
+"start": SubResource("Animation_2r2vg")
+}
+
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 6
 collision_mask = 3
@@ -996,6 +1187,7 @@ bus = &"SFX"
 
 [node name="HealthManager" parent="." instance=ExtResource("3_c6yru")]
 visible = false
+verbose = false
 
 [node name="Audio" type="Node3D" parent="HealthManager"]
 
@@ -1034,13 +1226,15 @@ bus = &"SFX"
 [node name="DeathSounds" type="Node3D" parent="HealthManager/Audio"]
 
 [node name="DeathSound1" type="AudioStreamPlayer" parent="HealthManager/Audio/DeathSounds"]
-stream = ExtResource("54_uydrg")
-volume_db = -5.0
+stream = ExtResource("49_d2s8v")
 bus = &"SFX"
 
 [node name="DeathSound2" type="AudioStreamPlayer" parent="HealthManager/Audio/DeathSounds"]
-stream = ExtResource("55_q14st")
-volume_db = -5.0
+stream = ExtResource("50_5jdiv")
+bus = &"SFX"
+
+[node name="DeathSound3" type="AudioStreamPlayer" parent="HealthManager/Audio/DeathSounds"]
+stream = ExtResource("51_1y44i")
 bus = &"SFX"
 
 [node name="ItemPickupManager" type="Area3D" parent="."]
@@ -1130,6 +1324,56 @@ points = PackedVector2Array(-5, 0, -15, 0)
 width = 2.0
 default_color = Color(0.847059, 0.847059, 0.847059, 1)
 
+[node name="HealthAndAmmo" type="VBoxContainer" parent="UserInterface"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -99.0
+offset_top = -110.0
+offset_right = 99.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="HealthDisplay" type="Label" parent="UserInterface/HealthAndAmmo"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("55_5digl")
+theme_override_font_sizes/font_size = 50
+text = "HEALTH: 0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("56_n0ntf")
+
+[node name="AmmoDisplay" type="Label" parent="UserInterface/HealthAndAmmo"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("55_5digl")
+theme_override_font_sizes/font_size = 50
+text = "AMMO: 0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("56_n0ntf")
+
+[node name="HealthAndAmmoEffects" type="ColorRect" parent="UserInterface"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.560784, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UserInterface/HealthAndAmmoEffects"]
+libraries = {
+"": SubResource("AnimationLibrary_31e24")
+}
+autoplay = "start"
+
 [node name="DebugPanel" type="PanelContainer" parent="UserInterface"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
@@ -1144,7 +1388,13 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/DebugPanel/MarginContainer"]
 layout_mode = 2
 
+[connection signal="ammo_changed" from="Camera3D/WeaponManager" to="UserInterface/HealthAndAmmo/AmmoDisplay" method="update_ammo"]
+[connection signal="got_ammo" from="Camera3D/WeaponManager" to="UserInterface/HealthAndAmmoEffects/AnimationPlayer" method="play" binds= ["got_ammo"]]
 [connection signal="moved" from="CharacterMover" to="Camera3D/WeaponManager" method="update_move_animation"]
+[connection signal="damaged" from="HealthManager" to="UserInterface/HealthAndAmmoEffects/AnimationPlayer" method="play" binds= ["hurt"]]
+[connection signal="died" from="HealthManager" to="UserInterface/HealthAndAmmoEffects/AnimationPlayer" method="play" binds= ["dead"]]
+[connection signal="healed" from="HealthManager" to="UserInterface/HealthAndAmmoEffects/AnimationPlayer" method="play" binds= ["heal"]]
+[connection signal="health_changed" from="HealthManager" to="UserInterface/HealthAndAmmo/HealthDisplay" method="update_health"]
 [connection signal="animation_started" from="PlayerAnimations" to="CharacterMover" method="_on_animation_player_animation_started"]
 
 [editable path="Camera3D/WeaponManager/Weapons/Sword/AttackEmitter/HitScanAttackEmitter"]

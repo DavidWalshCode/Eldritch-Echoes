@@ -101,10 +101,11 @@ func kill():
 	character_mover.set_move_direction(Vector3.ZERO) # Make sure the player can't move when they die
 	
 	Global.death_count += 1  # Increment death count
-	await get_tree().create_timer(1.0).timeout
 	
+	await get_tree().create_timer(2).timeout
 	get_tree().call_group("instanced", "queue_free") # For changing scenes, this deletes all of the things in the instanced group (enemies and projectiles) in between scenes
 	
+	await get_tree().create_timer(4).timeout
 	load_next_level_based_on_death_count()
 
 func load_next_level_based_on_death_count():

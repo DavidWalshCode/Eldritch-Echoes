@@ -1,6 +1,6 @@
 class_name StartScreen extends Control
 
-const template_version : String = "0.5"
+const template_version : String = "0.7"
 
 @onready var version_num : Label = %VersionNum
 @onready var main_menu_ambience = $MainMenuAmbience

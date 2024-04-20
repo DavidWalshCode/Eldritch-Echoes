@@ -18,7 +18,7 @@ signal health_changed(current_health, max_health)
 @onready var health_pickup_sound = $"../ItemPickupManager/Audio/HealthPickupSound"
 
 func _ready():
-	health_changed.emit(current_health, max_health)
+	health_changed.emit(current_health) #, max_health
 	if verbose:
 		print("Current Health: %s\nMax Health: %s" % [current_health, max_health])
 
@@ -45,7 +45,7 @@ func heal(amount : int):
 		return
 	current_health = clamp(current_health + amount, 0, max_health)
 	healed.emit()
-	health_changed.emit(current_health) # max_health
+	health_changed.emit(current_health) #, max_health
 	if verbose:
 		print("Healed for %s\nHealth: %s/%s" % [amount, current_health, max_health])
 
@@ -54,7 +54,6 @@ func get_item_pickup(item_pickup_type, ammo):
 		ItemPickup.ITEM_PICKUP_TYPES.HEALTH:
 			heal(ammo)
 			play_health_pickup_sound()
-			print("Picked up health")
 
 func play_death_sound():
 	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)

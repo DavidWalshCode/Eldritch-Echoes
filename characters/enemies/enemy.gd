@@ -76,7 +76,6 @@ func set_state_chase():
 	current_state = STATES.CHASE
 	enemy_animation_player.play("walk", 0.2)
 	play_alert_sound()
-	print("alerted")
 	
 func set_state_attack():
 	current_state = STATES.ATTACK

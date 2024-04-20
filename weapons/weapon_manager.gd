@@ -1,6 +1,7 @@
 extends Node3D
 
 signal ammo_changed
+signal got_ammo
 
 @export_category("Audio")
 @export var min_pitch_scale = 0.9 # Pitch variation range
@@ -129,13 +130,11 @@ func get_item_pickup(item_pickup_type, ammo):
 			weapons[4].ammo += ammo
 			play_ammo_pickup_sound()
 
-	#play_ammo_pickup_sound()
 	emit_ammo_changed_signal()
-	
+	got_ammo.emit()
 
 func emit_ammo_changed_signal():
 	ammo_changed.emit(current_weapon.ammo)
-	print("Current Weapon Ammo: ", current_weapon.ammo)
 
 func play_switch_sound():
 	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)
