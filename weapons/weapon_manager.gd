@@ -1,5 +1,7 @@
 extends Node3D
 
+signal ammo_changed
+
 @export_category("Audio")
 @export var min_pitch_scale = 0.9 # Pitch variation range
 @export var max_pitch_scale = 1.0 # Pitch variation range
@@ -21,13 +23,26 @@ func _ready():
 	
 	disable_all_weapons()
 	
-	for _i in range(weapons.size()):
-		#weapons_unlocked.append(false)
-		weapons_unlocked.append(true)
+	for i in range(weapons.size()):
+		if i == 0:
+			weapons_unlocked.append(true)
+		if i == 1:
+			weapons_unlocked.append(true)
+		if i == 2: # and Global.level_1_survived_passed_time == true or Global.level_2_survived_passed_time == true or Global.level_3_survived_passed_time == true or Global.level_4_survived_passed_time == true
+			weapons_unlocked.append(true)
+		if i == 3: # and Global.level_2_survived_passed_time == true
+			weapons_unlocked.append(true)
+		if i == 4: # and Global.level_3_survived_passed_time == true or Global.level_4_survived_passed_time == true
+			weapons_unlocked.append(true)
+		
+		# weapons_unlocked.append(false) # Lock all weapons
+		# weapons_unlocked.append(true) # Unlock all weapons
+		
 	switch_to_weapon_slot(0)
 	
 	for weapon in weapons:
 			weapon.connect("fired", Callable(self, "alert_nearby_enenmies"))
+			weapon.connect("fired", Callable(self, "emit_ammo_changed_signal"))
 	
 func attack(input_just_pressed : bool, input_held : bool):
 	if current_weapon is Weapon:
@@ -70,14 +85,16 @@ func switch_to_weapon_slot(slot_index : int) -> bool:
 		play_switch_sound()
 	else:
 		current_weapon.show()
-		
+	
+	emit_ammo_changed_signal()
+	
 	return true
 
 func update_move_animation(velocity : Vector3, grounded : bool):
 	if current_weapon is Weapon and !current_weapon.is_idle():
-		general_weapon_animations.play("idle", 0.4) # idle? RESET
+		general_weapon_animations.play("idle", 0.4)
 	elif !grounded or velocity.length() < 2.0:
-		general_weapon_animations.play("idle", 0.4) # idle? RESET
+		general_weapon_animations.play("idle", 0.4)
 	else:
 		general_weapon_animations.play("moving", 0.4)
 
@@ -91,6 +108,26 @@ func alert_nearby_enemies():
 	for nearby_enemy in nearby_enemies:
 		if nearby_enemy.has_method("alert"):
 			nearby_enemy.alert(false)
+
+func get_item_pickup(item_pickup_type, ammo):
+	match item_pickup_type:
+		ItemPickup.ITEM_PICKUP_TYPES.REVOLVER_AMMO:
+			weapons[1].ammo += ammo
+
+		ItemPickup.ITEM_PICKUP_TYPES.MACHINE_GUN_AMMO:
+			weapons[2].ammo += ammo
+
+		ItemPickup.ITEM_PICKUP_TYPES.SHOTGUN_AMMO:
+			weapons[3].ammo += ammo
+
+		ItemPickup.ITEM_PICKUP_TYPES.ROCKET_LAUNCHER_AMMO:
+			weapons[4].ammo += ammo
+	
+	emit_ammo_changed_signal()
+
+func emit_ammo_changed_signal():
+	ammo_changed.emit(current_weapon.ammo)
+	print("Current Weapon Ammo: ", current_weapon.ammo)
 
 func play_switch_sound():
 	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)

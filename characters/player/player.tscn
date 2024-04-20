@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=89 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://weapons/weapon_manager.gd" id="2_c6p01"]
@@ -51,6 +51,7 @@
 [ext_resource type="Theme" uid="uid://du0vpxg4q0mij" path="res://ui/themes/debug_theme.tres" id="46_ynthf"]
 [ext_resource type="Script" path="res://characters/player/debug.gd" id="47_g4vyg"]
 [ext_resource type="Script" path="res://characters/player/reticle.gd" id="49_muf4y"]
+[ext_resource type="Script" path="res://items/item_pickup_manager.gd" id="51_y0pqt"]
 [ext_resource type="AudioStream" uid="uid://cjhuv41fc0p2k" path="res://audio/sfx/player/death/Voice_Female_V1_Breath_Shocked_Mono_05.wav" id="54_uydrg"]
 [ext_resource type="AudioStream" uid="uid://bfrcq18ijjyly" path="res://audio/sfx/player/death/Voice_Female_V1_Breath_Shocked_Mono_10.wav" id="55_q14st"]
 
@@ -409,6 +410,9 @@ radius = 300.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t7da3"]
 radius = 400.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r86ji"]
+radius = 0.7
 
 [sub_resource type="Animation" id="Animation_3i1ox"]
 length = 0.001
@@ -1027,6 +1031,23 @@ bus = &"SFX"
 stream = ExtResource("55_q14st")
 volume_db = -5.0
 bus = &"SFX"
+
+[node name="ItemPickupManager" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("51_y0pqt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ItemPickupManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_r86ji")
+
+[node name="Audio" type="Node3D" parent="ItemPickupManager"]
+
+[node name="AmmoPickupSound" type="AudioStreamPlayer" parent="ItemPickupManager/Audio"]
+volume_db = -10.0
+
+[node name="HealthPickupSound" type="AudioStreamPlayer" parent="ItemPickupManager/Audio"]
+volume_db = -10.0
 
 [node name="PlayerAnimations" type="AnimationPlayer" parent="."]
 libraries = {

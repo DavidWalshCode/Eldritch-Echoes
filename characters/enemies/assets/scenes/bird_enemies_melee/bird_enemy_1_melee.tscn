@@ -57,7 +57,6 @@ transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
 collision_layer = 6
 collision_mask = 3
 script = ExtResource("1_4q8d1")
-sight_angle = 90.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.1, 0, 0, 0, 0.9146, 0, 0, 0, 1, 0, 0.897616, 0.162)
@@ -265,7 +264,6 @@ path_height_offset = 0.2
 [node name="EnemyHealthManager" parent="." instance=ExtResource("4_5jwiq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0942, 0)
 max_health = 60
-verbose = false
 
 [node name="Audio" type="Node3D" parent="EnemyHealthManager"]
 

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://drupvw14m8x40"]
+
+[ext_resource type="Texture2D" uid="uid://c5an56doqehj8" path="res://items/ammo/materials/12g.png" id="1_hoy64"]
+
+[resource]
+albedo_texture = ExtResource("1_hoy64")
+texture_filter = 2

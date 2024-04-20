@@ -33,7 +33,9 @@ func hurt(damage_data : DamageData):
 	else:
 		play_hurt_sound()
 		damaged.emit()
-	health_changed.emit()
+		
+	health_changed.emit(current_health)
+	
 	if verbose:
 		print("Damaged for %s\nCurrent Health: %s/%s" % [damage_data.amount, current_health, max_health])
 
@@ -42,9 +44,15 @@ func heal(amount : int):
 		return
 	current_health = clamp(current_health + amount, 0, max_health)
 	healed.emit()
-	health_changed.emit(current_health, max_health)
+	health_changed.emit(current_health) # max_health
 	if verbose:
 		print("Healed for %s\nHealth: %s/%s" % [amount, current_health, max_health])
+
+func get_item_pickup(item_pickup_type, ammo):
+	match item_pickup_type:
+		ItemPickup.ITEM_PICKUP_TYPES.HEALTH:
+			heal(ammo)
+			print("Picked up health")
 
 func play_death_sound():
 	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)

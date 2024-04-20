@@ -2,7 +2,12 @@ extends CharacterBody3D
 
 signal enemy_attack
 
-enum STATES {IDLE, CHASE, ATTACK, DEAD}
+enum STATES {
+	IDLE, 
+	CHASE, 
+	ATTACK, 
+	DEAD
+}
 
 @export var attack_range = 2.0
 @export var attack_rate = 0.5

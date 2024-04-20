@@ -15,19 +15,25 @@ const HOTKEYS = { # Hotkeys for weapon switching
 
 @export var mouse_sensitivity_h = 0.13 # Horizontal mouse sens
 @export var mouse_sensitivity_v = 0.13 # Vertical mouse sens
-@export var max_camera_lean = 1.5  # Maximum lean angle in degrees
-@export var camera_lean_speed = 10.0  # Speed at which the camera leans
+@export var max_camera_lean = 1.5 # Maximum lean angle in degrees
+@export var camera_lean_speed = 10.0 # Speed at which the camera leans
 
-var current_camera_lean = 0.0  # Current lean angle
+var current_camera_lean = 0.0 # Current lean angle
 var dead = false
 
 @onready var camera_3d = $Camera3D # The $Camera3D is equivalent to get_node("Camera3D")
 @onready var character_mover = $CharacterMover
 @onready var health_manager = $HealthManager
+@onready var item_pickup_manager = $ItemPickupManager
 @onready var weapon_manager = $Camera3D/WeaponManager
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	item_pickup_manager.max_player_health = health_manager.max_health
+	health_manager.connect("health_changed", Callable(item_pickup_manager, "update_player_health"))
+	item_pickup_manager.connect("got_item_pickup", Callable(weapon_manager, "get_item_pickup"))
+	item_pickup_manager.connect("got_item_pickup", Callable(health_manager, "get_item_pickup"))
 	health_manager.died.connect(kill)
 	
 	Global.debug.add_property("Death Count", Global.death_count, 1) # Adding death count to debug panel

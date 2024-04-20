@@ -7,7 +7,6 @@ signal enemy_health_changed(current_health, max_health)
 
 @export var max_health = 100
 @export var gib_at = -10
-@export var verbose = true
 
 @export_category("Sound")
 @export var min_pitch_scale = 0.8 # Pitch variation range
@@ -23,8 +22,6 @@ var gibs = preload("res://effects/gore/gibs/gibs.tscn")
 
 func _ready():
 	enemy_health_changed.emit(current_health, max_health)
-	if verbose:
-		print("Enemy Starting Health: %s/%s" % [current_health, max_health])
 
 func hurt(damage_data : DamageData):
 	spawn_blood(damage_data.direction)
@@ -46,9 +43,6 @@ func hurt(damage_data : DamageData):
 		enemy_damaged.emit()
 		
 	enemy_health_changed.emit()
-	
-	if verbose:
-		print("Enemy damaged for %s\nEnemy Current Health: %s/%s" % [damage_data.amount, current_health, max_health])
 
 func spawn_blood(direction):
 	var blood_spray_instance = blood_spray.instantiate()

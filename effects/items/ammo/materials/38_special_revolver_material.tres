@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d0p0ngl3jbopk"]
-
-[ext_resource type="Texture2D" uid="uid://gb77mwfa1ukb" path="res://effects/items/ammo/materials/38_Special.png" id="1_ha4of"]
-
-[resource]
-albedo_texture = ExtResource("1_ha4of")
-texture_filter = 2

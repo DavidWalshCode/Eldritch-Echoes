@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c0pkchj672dib"]
-
-[ext_resource type="Texture2D" uid="uid://btxur5uki5dpy" path="res://effects/items/ammo/materials/RifleAmmoText.png" id="1_kv8o2"]
-
-[resource]
-albedo_texture = ExtResource("1_kv8o2")
-texture_filter = 2

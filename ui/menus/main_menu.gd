@@ -10,7 +10,9 @@ func _ready() -> void:
 
 func _on_start_button_up() -> void:
 	main_menu_ambience.queue_free()
-	SceneManager.swap_scenes(SceneRegistry.levels["level_1_town"], get_tree().root, self, "fade_to_black") # Structure for swaping scenes: Level to swap to, the current scene, the transition
+	
+	# Structure for swaping scenes: Level to swap to, the current scene, the transition
+	SceneManager.swap_scenes(SceneRegistry.levels["level_1_town"], get_tree().root, self, "fade_to_black") 
 
 func _on_settings_button_up() -> void:
 	Global.open_settings_menu()
