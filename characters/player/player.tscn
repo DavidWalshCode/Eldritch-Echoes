@@ -966,7 +966,7 @@ volume_db = -16.0
 bus = &"SFX"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Sword/Audio"]
-volume_db = -15.0
+volume_db = -14.0
 bus = &"SFX"
 
 [node name="Revolvers" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
@@ -975,7 +975,7 @@ visible = false
 script = ExtResource("4_qyhjh")
 automatic = true
 damage = 25
-ammo = 40
+ammo = 50
 attack_rate = 0.5
 recoil_strength = 1.6
 min_pitch_scale = 0.85
@@ -1028,7 +1028,7 @@ bus = &"SFX"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Revolvers/Audio"]
 stream = ExtResource("10_6b3cn")
-volume_db = -15.0
+volume_db = -14.0
 bus = &"SFX"
 
 [node name="MachineGun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
@@ -1037,7 +1037,7 @@ visible = false
 script = ExtResource("4_qyhjh")
 automatic = true
 damage = 15
-ammo = 70
+ammo = 120
 attack_rate = 0.1
 min_pitch_scale = 0.7
 max_pitch_scale = 0.8
@@ -1072,7 +1072,7 @@ bus = &"SFX"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/MachineGun/Audio"]
 stream = ExtResource("10_6b3cn")
-volume_db = -15.0
+volume_db = -14.0
 bus = &"SFX"
 
 [node name="Shotgun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
@@ -1081,7 +1081,7 @@ visible = false
 script = ExtResource("4_qyhjh")
 automatic = true
 damage = 20
-ammo = 25
+ammo = 40
 attack_rate = 0.9
 recoil_strength = 4.0
 
@@ -1129,14 +1129,14 @@ bus = &"SFX"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/Shotgun/Audio"]
 stream = ExtResource("10_6b3cn")
-volume_db = -15.0
+volume_db = -14.0
 bus = &"SFX"
 
 [node name="RocketLauncher" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 script = ExtResource("4_qyhjh")
 automatic = true
 damage = 60
-ammo = 12
+ammo = 15
 attack_rate = 0.7
 recoil_strength = 4.0
 min_pitch_scale = 0.7
@@ -1170,7 +1170,7 @@ bus = &"SFX"
 
 [node name="OutOfAmmoSound" type="AudioStreamPlayer" parent="Camera3D/WeaponManager/Weapons/RocketLauncher/Audio"]
 stream = ExtResource("10_6b3cn")
-volume_db = -15.0
+volume_db = -14.0
 bus = &"SFX"
 
 [node name="GeneralWeaponAnimations" type="AnimationPlayer" parent="Camera3D/WeaponManager"]

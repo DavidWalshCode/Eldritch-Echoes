@@ -49,6 +49,7 @@ collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_m8xb2")
 item_pickup_type = 3
+ammo = 60
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.31077, 0, 0, 0, 1, 0, 0, 0, 1.02883, 0, -0.5, 0)

@@ -132,11 +132,11 @@ func load_next_level_based_on_death_count():
 			$"..".queue_free() # Removing the Level5Town node
 			
 			if Global.level_5_survived_passed_time == false:
-				get_tree().quit() # To remove later
 				SceneManager.swap_scenes(SceneRegistry.main_scenes["ending_died"], get_tree().root, self, "fade_to_black")
-			elif Global.level_5_survived_passed_time == true:
-				get_tree().quit() # To remove later
+			elif Global.level_5_survived_passed_time:
 				SceneManager.swap_scenes(SceneRegistry.main_scenes["ending_survived"], get_tree().root, self, "fade_to_black")
+			
+			get_tree().quit() # To remove later
 
 func load_level_through_portal(level_number : int):
 	if level_number == 1:
