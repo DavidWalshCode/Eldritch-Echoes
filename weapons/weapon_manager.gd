@@ -3,6 +3,14 @@ extends Node3D
 signal ammo_changed
 signal got_ammo
 
+enum WEAPON_SLOTS {
+	SWORD, 
+	REVOLVERS,
+	MACHINE_GUN, 
+	SHOTGUN, 
+	ROCKET_LAUNCHER
+}
+
 @export_category("Audio")
 @export var min_pitch_scale = 0.9 # Pitch variation range
 @export var max_pitch_scale = 1.0 # Pitch variation range
@@ -10,6 +18,14 @@ signal got_ammo
 var weapons_unlocked = []
 var current_slot = 0
 var current_weapon = null
+
+var weapon_slots_unlocked = {
+	WEAPON_SLOTS.SWORD : true,
+	WEAPON_SLOTS.REVOLVERS : true,
+	WEAPON_SLOTS.MACHINE_GUN : false,
+	WEAPON_SLOTS.SHOTGUN : false,
+	WEAPON_SLOTS.ROCKET_LAUNCHER : false,
+}
 
 @onready var weapons = $Weapons.get_children()
 @onready var general_weapon_animations = $GeneralWeaponAnimations
@@ -24,32 +40,15 @@ func _ready():
 			weapon.set_bodies_to_exclude([get_parent().get_parent()]) # Excludes the player and camera, knows dont hit the player
 	
 	disable_all_weapons()
-
-	for i in range(weapons.size()):
-		if i == 0:
-			weapons_unlocked.append(true) # Sword
-		if i == 1:
-			weapons_unlocked.append(true) # Revolvers
-			
-		if i == 2: #and Global.level_1_survived_passed_time or Global.level_2_survived_passed_time or Global.level_3_survived_passed_time or Global.level_4_survived_passed_time:
-			weapons_unlocked.append(true) # Machine Gun
-		#else:
-			#weapons_unlocked.append(false)
-			
-		if i == 3: #and Global.level_2_survived_passed_time or Global.level_3_survived_passed_time or Global.level_4_survived_passed_time:
-			weapons_unlocked.append(true) # Shotgun
-		#else:
-			#weapons_unlocked.append(false)
-			
-		if i == 4: #and Global.level_3_survived_passed_time or Global.level_4_survived_passed_time:
-			weapons_unlocked.append(true) # Rocket Launcher
-		#else:
-			#weapons_unlocked.append(false)
-
-		# weapons_unlocked.append(false) # Lock all weapons
-		# weapons_unlocked.append(true) # Unlock all weapons
 	
-	switch_to_weapon_slot(0)
+	if Global.level_1_survived_passed_time or Global.level_2_survived_passed_time or Global.level_3_survived_passed_time or Global.level_4_survived_passed_time:
+		unlock_weapon(WEAPON_SLOTS.MACHINE_GUN)
+	if Global.level_2_survived_passed_time or Global.level_3_survived_passed_time or Global.level_4_survived_passed_time:
+		unlock_weapon(WEAPON_SLOTS.SHOTGUN)
+	if Global.level_3_survived_passed_time or Global.level_4_survived_passed_time:
+		unlock_weapon(WEAPON_SLOTS.ROCKET_LAUNCHER)
+	
+	switch_to_weapon_slot(WEAPON_SLOTS.SWORD)
 	
 	for weapon in weapons:
 			weapon.connect("fired", Callable(self, "alert_nearby_enenmies"))
@@ -82,7 +81,7 @@ func switch_to_weapon_slot(slot_index : int) -> bool:
 	if slot_index >= weapons.size() or slot_index < 0:
 		return false
 	
-	if weapons_unlocked.size() == 0 or !weapons_unlocked[slot_index]:
+	if weapon_slots_unlocked.size() == 0 or !weapon_slots_unlocked[slot_index]:
 		return false
 		
 	disable_all_weapons()
@@ -100,6 +99,13 @@ func switch_to_weapon_slot(slot_index : int) -> bool:
 	emit_ammo_changed_signal()
 	
 	return true
+
+func unlock_weapon(slot_index : int):
+	if slot_index < 0 or slot_index >= weapon_slots_unlocked.size():
+		return # Invalid
+
+	if not weapon_slots_unlocked[slot_index]:
+		weapon_slots_unlocked[slot_index] = true
 
 func update_move_animation(velocity : Vector3, grounded : bool):
 	if current_weapon is Weapon and !current_weapon.is_idle():
