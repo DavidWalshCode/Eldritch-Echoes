@@ -4,7 +4,11 @@ extends Node3D
 signal time_survived
 signal time_not_survived
 
-@onready var ambience_level_2 = $Audio/AmbienceLevel2
+@onready var general_ambience_level_2 = $Audio/GeneralAmbienceLevel1
+@onready var battle_ambience_level_2 = $Audio/BattleAmbienceLevel
+
+@onready var portal_exit_sound = $Player/PortalManager/Audio/PortalExitSound
+
 @onready var level_timer = $Player/UserInterface/TimerContainer/LevelTimer
 @onready var player = $Player
 @onready var enemy_spawner_manager = $Enemies/EnemySpawnerManager
@@ -13,13 +17,17 @@ signal time_not_survived
 var weapon_unlocked = false  # Flag to track weapon unlock status
 
 func _ready():
-	ambience_level_2.play()
+	portal_exit_sound.play()
+	general_ambience_level_2.play()
 	
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(7).timeout
 	level_timer.visible = true
 	level_timer.start_timer()
 	
-	await get_tree().create_timer(3).timeout
+	battle_ambience_level_2.play()
+	await get_tree().create_timer(4).timeout
+	general_ambience_level_2.queue_free()
+	
 	enemy_spawner_manager.manager_start_spawning()
 
 func _process(delta):

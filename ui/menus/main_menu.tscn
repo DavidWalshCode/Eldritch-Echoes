@@ -10,7 +10,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjfrw"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="StartScreen" type="Control"]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

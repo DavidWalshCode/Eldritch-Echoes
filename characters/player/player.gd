@@ -65,7 +65,6 @@ func _input(event):
 func _process(delta):
 	if Input.is_action_just_pressed("settings_menu"): # Currently 'Esc'
 		Global.open_settings_menu()
-		#get_tree().quit()
 	
 	if Input.is_action_just_pressed("restart"): # Currently 'r'
 		get_tree().reload_current_scene()
@@ -109,26 +108,28 @@ func kill():
 	load_next_level_based_on_death_count()
 
 func load_next_level_based_on_death_count():
+	# Global.queue_free_scene() # Doesn't currently work for switching from battlefield to town stranegly, to fix later
 	# Switch case for loading the town level based on the player death count
 	match Global.death_count: 
 		1:
 			# Load town level 2, death count is 1
-			$"..".queue_free() # TO UPDATE: Removing the Level1Town node, should be Level1Battlefield
+			$"..".queue_free() # Removing the Level1Battlefield node
+			#Global.queue_free_node_by_name("Level1Battlefield")
 			SceneManager.swap_scenes(SceneRegistry.levels["level_2_town"], get_tree().root, self, "fade_to_white")
 		2:
 			# Load town level 3, death count is 2
-			$"..".queue_free() # TO UPDATE: Removing the Level2Town node, should be Level2Battlefield
+			$"..".queue_free() # TO UPDATE: Removing the Level2Battlefield node
 			SceneManager.swap_scenes(SceneRegistry.levels["level_3_town"], get_tree().root, self, "fade_to_white")
 		3:
 			# Load town level 4, death count is 3
-			$"..".queue_free() # TO UPDATE: Removing the Level3Town node, should be Level3Battlefield
+			$"..".queue_free() # TO UPDATE: Removing the Level3Battlefield node
 			SceneManager.swap_scenes(SceneRegistry.levels["level_4_town"], get_tree().root, self, "fade_to_white")
 		4:
 			# Load town level 5, death count is 4
-			$"..".queue_free() # TO UPDATE: Removing the Level4Town node, should be Level4Battlefield
+			$"..".queue_free() # TO UPDATE: Removing the Level4Battlefield node
 			SceneManager.swap_scenes(SceneRegistry.levels["level_5_town"], get_tree().root, self, "fade_to_white")
 		_:
-			# Default case, load endings based on time survived
+			# Default case (5 deaths), load endings based on time survived
 			await get_tree().create_timer(2).timeout
 			$"..".queue_free() # Removing the Level5Town node
 			
@@ -138,8 +139,6 @@ func load_next_level_based_on_death_count():
 			elif Global.level_5_survived_passed_time == true:
 				get_tree().quit() # To remove later
 				SceneManager.swap_scenes(SceneRegistry.main_scenes["ending_survived"], get_tree().root, self, "fade_to_black")
-			
-			get_tree().quit() # To remove later
 
 func update_camera_lean(delta):
 	var input_direction = 0.0
@@ -160,3 +159,4 @@ func update_camera_lean(delta):
 
 	# Apply the lean to the camera's rotation
 	camera_3d.rotation_degrees.z = current_camera_lean
+

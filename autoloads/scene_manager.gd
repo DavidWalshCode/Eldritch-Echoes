@@ -33,8 +33,8 @@ extends Node
 ## approach will have limitations as well. The way I intended SceneManager for my own use, this will rarely
 ## if ever, be an issue, which is why that was an acceptable limitation. Just something to be aware of. 
 
-const LEVEL_H:int = 960 # Height of levels (viewport) - only used by Zelda transition
-const LEVEL_W:int = 540 # Width of levels (viewport) - only used by Zelda transition
+const LEVEL_H : int = 960 # Height of levels (viewport) - only used by Zelda transition
+const LEVEL_W : int = 540 # Width of levels (viewport) - only used by Zelda transition
 
 signal load_start(loading_screen) # Triggered when an asset begins loading
 signal scene_added(loaded_scene : Node, loading_screen) # Triggered right after asset is added to SceneTree but before transition animation finishes
@@ -78,7 +78,7 @@ func _ready() -> void:
 ## where in the scene tree or relative to which node you want to put it. By simply listening for this event,
 ## you can write any logic you want and handle it as needed without having to change SceneManager to suit your specific needs :)
 func _add_loading_screen(transition_type : String = "fade_to_black"):
-	# using "no_in_transition" as the transition name when skipping a transition felt... weird
+	# Using "no_in_transition" as the transition name when skipping a transition felt... weird
 	# dunno if this solution is better, but it's only one line so I can live with this one-off
 	# An alternative would be to store strating animations in a dictionary and swap them for the animation name
 	# it removes this one-off, but adds a step elsewhere - all about preference.

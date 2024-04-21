@@ -56,6 +56,10 @@ func _process(_delta):
 
 func close_settings():
 	queue_free()
+	if Global.main_menu:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE # For main menu
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED # For in-game
 
 func _on_close_button_pressed():
 	close_settings()
@@ -64,7 +68,7 @@ func _on_save_button_pressed():
 	print("save button pressed")
 	# Note: This is where I would/will put the ability for players to manually save data
 	# Ex: something like the below
-	# Globals.user_save.save_all_game_data()
+	# Global.user_save.save_all_game_data()
 
 func _on_quit_button_pressed():
 	# https://docs.godotengine.org/en/stable/tutorials/inputs/handling_quit_requests.html

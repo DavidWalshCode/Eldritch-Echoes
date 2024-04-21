@@ -189,15 +189,6 @@ func alert(check_line_of_sight = true):
 func within_distance_of_player(distance : float):
 	return global_transform.origin.distance_to(player.global_transform.origin) < attack_range
 
-'''
-func drop_item():
-	var random_val = randf()
-	if random_val < health_drop_chance:
-		spawn_item(health_pickup)
-	elif random_val < ammo_drop_chance:
-		spawn_item(ammo_pickup)
-'''
-
 func drop_item():
 	var cumulative_chance = 0.0
 	var random_val = randf()

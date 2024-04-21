@@ -6,10 +6,12 @@ const template_version : String = "0.7"
 @onready var main_menu_ambience = $MainMenuAmbience
 
 func _ready() -> void:
+	Global.main_menu = true
 	version_num.text = "V%s" % template_version
 
 func _on_start_button_up() -> void:
 	main_menu_ambience.queue_free()
+	Global.main_menu = false
 	
 	# Structure for swaping scenes: Level to swap to, the current scene, the transition
 	SceneManager.swap_scenes(SceneRegistry.levels["level_1_town"], get_tree().root, self, "fade_to_black") 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=110 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://weapons/weapon_manager.gd" id="2_c6p01"]
@@ -58,7 +58,10 @@
 [ext_resource type="AudioStream" uid="uid://by1jb7huvtxl2" path="res://audio/sfx/items/ammo/433770__zivs__ammo-pickup-1.ogg" id="52_aq6o6"]
 [ext_resource type="AudioStream" uid="uid://5yhhkqr3lh32" path="res://audio/sfx/items/health/471834__keshafilm__health-pickup.wav" id="53_5qu77"]
 [ext_resource type="FontFile" uid="uid://c355n3j7jdkeb" path="res://ui/fonts/PR Viking.ttf" id="55_5digl"]
+[ext_resource type="Script" path="res://characters/player/portal_manager.gd" id="55_neymo"]
 [ext_resource type="Script" path="res://characters/player/stats_display.gd" id="56_n0ntf"]
+[ext_resource type="AudioStream" uid="uid://d3s4ep4vkk0ht" path="res://audio/sfx/portal/617762__cogfirestudios__big-scary-portal-2.wav" id="56_pjaff"]
+[ext_resource type="AudioStream" uid="uid://iffr78vmmncx" path="res://audio/sfx/portal/617761__cogfirestudios__big-scary-portal-open.wav" id="57_oogef"]
 [ext_resource type="Script" path="res://characters/player/level_timer.gd" id="58_qjhws"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwpu4"]
@@ -765,6 +768,34 @@ tracks/1/keys = {
 "values": [Color(0.560784, 0, 0, 0.470588), Color(0.560784, 0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_8t87a"]
+resource_name = "portal_entered"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0.266667, 0.843137, 0.337255), Color(0.0156863, 0, 0.431373, 1), Color(0.0156863, 0, 0.431373, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_2r2vg"]
 resource_name = "start"
 tracks/0/type = "value"
@@ -787,6 +818,7 @@ _data = {
 "got_ammo": SubResource("Animation_6r488"),
 "heal": SubResource("Animation_87kdg"),
 "hurt": SubResource("Animation_cwj4w"),
+"portal_entered": SubResource("Animation_8t87a"),
 "start": SubResource("Animation_2r2vg")
 }
 
@@ -1336,6 +1368,27 @@ stream = ExtResource("53_5qu77")
 volume_db = -6.0
 bus = &"SFX"
 
+[node name="PortalManager" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("55_neymo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PortalManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_r86ji")
+
+[node name="Audio" type="Node3D" parent="PortalManager"]
+
+[node name="PortalEnterSound" type="AudioStreamPlayer" parent="PortalManager/Audio"]
+stream = ExtResource("56_pjaff")
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="PortalExitSound" type="AudioStreamPlayer" parent="PortalManager/Audio"]
+stream = ExtResource("57_oogef")
+volume_db = -6.0
+bus = &"SFX"
+
 [node name="PlayerAnimations" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_54k3e")
@@ -1692,6 +1745,7 @@ autoplay = "start"
 [connection signal="died" from="HealthManager" to="UserInterface/HealthAndAmmoEffects/AnimationPlayer" method="play" binds= ["dead"]]
 [connection signal="healed" from="HealthManager" to="UserInterface/HealthAndAmmoEffects/AnimationPlayer" method="play" binds= ["heal"]]
 [connection signal="health_changed" from="HealthManager" to="UserInterface/HealthAndAmmo/HealthDisplay" method="update_health"]
+[connection signal="portal_entered" from="PortalManager" to="UserInterface/HealthAndAmmoEffects/AnimationPlayer" method="play" binds= ["portal_entered"]]
 [connection signal="animation_started" from="PlayerAnimations" to="CharacterMover" method="_on_animation_player_animation_started"]
 
 [editable path="Camera3D/WeaponManager/Weapons/Sword/AttackEmitter/HitScanAttackEmitter"]
