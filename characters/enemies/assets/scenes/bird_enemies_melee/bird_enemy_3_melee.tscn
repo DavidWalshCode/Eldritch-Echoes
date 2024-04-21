@@ -321,7 +321,7 @@ move_accel = 2.0
 [node name="EnemyAimer" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("14_ccmj0")
-damage = 25
+damage = 30
 
 [node name="AttackEmitter" parent="EnemyAimer" instance=ExtResource("15_vwond")]
 
