@@ -20,6 +20,10 @@ enum STATES {
 @export var min_pitch_scale = 0.8 # Pitch variation range
 @export var max_pitch_scale = 1.0 # Pitch variation range
 
+@export_category("Items")
+@export var drop_items : Array[PackedScene] # Health and ammo
+@export var drop_chances : Array[float] # Sum should ideally be <= 1 for proper probability calculation
+
 var current_state = STATES.IDLE
 var player = null
 var path = []
@@ -85,6 +89,7 @@ func set_state_dead():
 	enemy_animation_player.play("die")
 	enemy_character_mover.freeze()
 	$CollisionShape3D.disabled = true
+	drop_item()
 
 func process_state_idle(delta):
 	if can_see_player():
@@ -183,6 +188,36 @@ func alert(check_line_of_sight = true):
 
 func within_distance_of_player(distance : float):
 	return global_transform.origin.distance_to(player.global_transform.origin) < attack_range
+
+'''
+func drop_item():
+	var random_val = randf()
+	if random_val < health_drop_chance:
+		spawn_item(health_pickup)
+	elif random_val < ammo_drop_chance:
+		spawn_item(ammo_pickup)
+'''
+
+func drop_item():
+	var cumulative_chance = 0.0
+	var random_val = randf()
+	
+	for i in range(drop_items.size()):
+		cumulative_chance += drop_chances[i]
+		if random_val < cumulative_chance:
+			spawn_item(drop_items[i])
+			break  # Ensure only one item drops
+
+func spawn_item(item_scene):
+	if item_scene:
+		var item = item_scene.instantiate()
+		get_parent().add_child(item)
+		
+		# Set the global position, raising the item up by a specified offset
+		var spawn_height = 1.0  # Height in units to spawn the item above the ground
+		var spawn_position = global_transform.origin + Vector3.UP * spawn_height
+		
+		item.global_transform.origin = spawn_position
 
 func play_attack_sound():
 	var random_pitch = randf_range(min_pitch_scale, max_pitch_scale)

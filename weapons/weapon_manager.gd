@@ -30,12 +30,21 @@ func _ready():
 			weapons_unlocked.append(true) # Sword
 		if i == 1:
 			weapons_unlocked.append(true) # Revolvers
-		if i == 2: #and Global.level_1_survived_passed_time: # or Global.level_2_survived_passed_time == true or Global.level_3_survived_passed_time == true or Global.level_4_survived_passed_time == true
-			weapons_unlocked.append(false) # Machine Gun
-		if i == 3: # and Global.level_2_survived_passed_time == true or Global.level_3_survived_passed_time == true or Global.level_4_survived_passed_time == true
-			weapons_unlocked.append(false) # Shotgun
-		if i == 4: # and Global.level_3_survived_passed_time == true or Global.level_4_survived_passed_time == true
-			weapons_unlocked.append(false) # Rocket Launcher
+			
+		if i == 2: #and Global.level_1_survived_passed_time or Global.level_2_survived_passed_time or Global.level_3_survived_passed_time or Global.level_4_survived_passed_time:
+			weapons_unlocked.append(true) # Machine Gun
+		#else:
+			#weapons_unlocked.append(false)
+			
+		if i == 3: #and Global.level_2_survived_passed_time or Global.level_3_survived_passed_time or Global.level_4_survived_passed_time:
+			weapons_unlocked.append(true) # Shotgun
+		#else:
+			#weapons_unlocked.append(false)
+			
+		if i == 4: #and Global.level_3_survived_passed_time or Global.level_4_survived_passed_time:
+			weapons_unlocked.append(true) # Rocket Launcher
+		#else:
+			#weapons_unlocked.append(false)
 
 		# weapons_unlocked.append(false) # Lock all weapons
 		# weapons_unlocked.append(true) # Unlock all weapons

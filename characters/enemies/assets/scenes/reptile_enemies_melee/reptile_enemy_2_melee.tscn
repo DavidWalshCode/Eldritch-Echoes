@@ -1,9 +1,12 @@
-[gd_scene load_steps=31 format=3 uid="uid://ifrj8hsk67es"]
+[gd_scene load_steps=34 format=3 uid="uid://ifrj8hsk67es"]
 
 [ext_resource type="Script" path="res://characters/enemies/enemy.gd" id="1_xkcev"]
+[ext_resource type="PackedScene" uid="uid://duxcuq4it2g1c" path="res://items/health/scenes/health_pickup.tscn" id="2_v2d54"]
 [ext_resource type="PackedScene" uid="uid://dxmf75necflsn" path="res://characters/enemies/assets/models/reptile_monster.glb" id="2_wes5a"]
+[ext_resource type="PackedScene" uid="uid://dm7vdjs2svw1f" path="res://items/ammo/scenes/revolver_ammo_pickup.tscn" id="3_s2nuh"]
 [ext_resource type="PackedScene" uid="uid://br7d1hkf8a86c" path="res://characters/enemies/hitbox.tscn" id="3_ua4ki"]
 [ext_resource type="AudioStream" uid="uid://bommu3b52a8vr" path="res://audio/sfx/enemy/attack/219005__yap_audio_production__weaponswipe03.mp3" id="4_0ejk2"]
+[ext_resource type="PackedScene" uid="uid://bvj8i1xorj5g5" path="res://items/ammo/scenes/machine_gun_ammo_pickup.tscn" id="4_wos11"]
 [ext_resource type="AudioStream" uid="uid://c408a22a5t0d2" path="res://audio/sfx/enemy/alert/Monster_grunt x2 (ghmmm)_1.ogg" id="5_8qkqm"]
 [ext_resource type="AudioStream" uid="uid://dsuljfiyci4k4" path="res://audio/sfx/enemy/alert/Monster_grunt x2 (ghmmm)_2.ogg" id="6_hqs0t"]
 [ext_resource type="PackedScene" uid="uid://dwegof2iu52vd" path="res://characters/enemies/enemy_health_manager.tscn" id="7_lcuqj"]
@@ -60,6 +63,8 @@ transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
 collision_layer = 6
 collision_mask = 3
 script = ExtResource("1_xkcev")
+drop_items = Array[PackedScene]([ExtResource("2_v2d54"), ExtResource("3_s2nuh"), ExtResource("4_wos11")])
+drop_chances = Array[float]([0.1, 0.1, 0.1])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.2056, 0.0026823, -0.00164649, -0.003191, 1.01249, 0.00144878, 0.00198963, -0.00146248, 0.999991, 0, 0.941256, 0.162)
@@ -250,7 +255,6 @@ path_height_offset = 0.2
 [node name="EnemyHealthManager" parent="." instance=ExtResource("7_lcuqj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12315, 0)
 max_health = 150
-verbose = false
 
 [node name="Audio" type="Node3D" parent="EnemyHealthManager"]
 

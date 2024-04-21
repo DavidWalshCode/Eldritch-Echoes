@@ -1,8 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://c5x8o1ga6xfpi"]
+[gd_scene load_steps=32 format=3 uid="uid://c5x8o1ga6xfpi"]
 
 [ext_resource type="Script" path="res://characters/enemies/enemy.gd" id="1_3unck"]
 [ext_resource type="PackedScene" uid="uid://b77meisd57h8f" path="res://characters/enemies/assets/models/bird_monster_ranged.glb" id="2_abkre"]
+[ext_resource type="PackedScene" uid="uid://duxcuq4it2g1c" path="res://items/health/scenes/health_pickup.tscn" id="2_invy2"]
 [ext_resource type="PackedScene" uid="uid://br7d1hkf8a86c" path="res://characters/enemies/hitbox.tscn" id="3_h2b2g"]
+[ext_resource type="PackedScene" uid="uid://dm7vdjs2svw1f" path="res://items/ammo/scenes/revolver_ammo_pickup.tscn" id="3_kwujc"]
 [ext_resource type="PackedScene" uid="uid://dwegof2iu52vd" path="res://characters/enemies/enemy_health_manager.tscn" id="4_iwode"]
 [ext_resource type="AudioStream" uid="uid://bommu3b52a8vr" path="res://audio/sfx/enemy/attack/219005__yap_audio_production__weaponswipe03.mp3" id="4_rjlye"]
 [ext_resource type="AudioStream" uid="uid://dtqjovfal3x4b" path="res://audio/sfx/enemy/hit/464623__d001447733__enemy_hit.wav" id="5_dqwpa"]
@@ -59,6 +61,8 @@ collision_mask = 3
 script = ExtResource("1_3unck")
 attack_range = 50.0
 attack_rate = 2.0
+drop_items = Array[PackedScene]([ExtResource("2_invy2"), ExtResource("3_kwujc")])
+drop_chances = Array[float]([0.1, 0.1])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.1, 0, 0, 0, 0.9146, 0, 0, 0, 1, 0, 0.897616, 0.162)
@@ -262,7 +266,6 @@ path_height_offset = 0.2
 [node name="EnemyHealthManager" parent="." instance=ExtResource("4_iwode")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1786, 0)
 max_health = 40
-verbose = false
 
 [node name="Audio" type="Node3D" parent="EnemyHealthManager"]
 

@@ -1,11 +1,16 @@
-[gd_scene load_steps=30 format=3 uid="uid://difkqodbod0y1"]
+[gd_scene load_steps=35 format=3 uid="uid://difkqodbod0y1"]
 
 [ext_resource type="Script" path="res://characters/enemies/enemy.gd" id="1_mf0qy"]
 [ext_resource type="PackedScene" uid="uid://b77meisd57h8f" path="res://characters/enemies/assets/models/bird_monster_ranged.glb" id="2_gvtpc"]
+[ext_resource type="PackedScene" uid="uid://duxcuq4it2g1c" path="res://items/health/scenes/health_pickup.tscn" id="2_yvwot"]
 [ext_resource type="PackedScene" uid="uid://br7d1hkf8a86c" path="res://characters/enemies/hitbox.tscn" id="3_hh0d3"]
+[ext_resource type="PackedScene" uid="uid://dm7vdjs2svw1f" path="res://items/ammo/scenes/revolver_ammo_pickup.tscn" id="3_j5e17"]
 [ext_resource type="AudioStream" uid="uid://bommu3b52a8vr" path="res://audio/sfx/enemy/attack/219005__yap_audio_production__weaponswipe03.mp3" id="4_eau0c"]
+[ext_resource type="PackedScene" uid="uid://bvj8i1xorj5g5" path="res://items/ammo/scenes/machine_gun_ammo_pickup.tscn" id="4_k0m4y"]
 [ext_resource type="AudioStream" uid="uid://c408a22a5t0d2" path="res://audio/sfx/enemy/alert/Monster_grunt x2 (ghmmm)_1.ogg" id="5_jear0"]
+[ext_resource type="PackedScene" uid="uid://dd55lqskh6x6j" path="res://items/ammo/scenes/shotgun_ammo_pickup.tscn" id="5_pdjx3"]
 [ext_resource type="AudioStream" uid="uid://dsuljfiyci4k4" path="res://audio/sfx/enemy/alert/Monster_grunt x2 (ghmmm)_2.ogg" id="6_ieki3"]
+[ext_resource type="PackedScene" uid="uid://jcgaeygiqnvl" path="res://items/ammo/scenes/rocket_launcher_ammo_pickup.tscn" id="6_n2in4"]
 [ext_resource type="PackedScene" uid="uid://dwegof2iu52vd" path="res://characters/enemies/enemy_health_manager.tscn" id="7_uw610"]
 [ext_resource type="AudioStream" uid="uid://dhvx3p365au8p" path="res://audio/sfx/enemy/death/double_monster-scream-pain-1.ogg" id="8_ohuum"]
 [ext_resource type="AudioStream" uid="uid://c5umy64axiym2" path="res://audio/sfx/enemy/death/double_monster-scream-pain-2.ogg" id="9_n7vm3"]
@@ -59,6 +64,8 @@ collision_mask = 3
 script = ExtResource("1_mf0qy")
 attack_range = 50.0
 attack_rate = 2.0
+drop_items = Array[PackedScene]([ExtResource("2_yvwot"), ExtResource("3_j5e17"), ExtResource("4_k0m4y"), ExtResource("5_pdjx3"), ExtResource("6_n2in4")])
+drop_chances = Array[float]([0.1, 0.1, 0.1, 0.1, 0.1])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.1, 0, 0, 0, 0.9146, 0, 0, 0, 1, 0, 0.897616, 0.162)
@@ -262,7 +269,6 @@ path_height_offset = 0.2
 [node name="EnemyHealthManager" parent="." instance=ExtResource("7_uw610")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1786, 0)
 max_health = 70
-verbose = false
 
 [node name="Audio" type="Node3D" parent="EnemyHealthManager"]
 

@@ -34,9 +34,7 @@ func update_spawners():
 func manager_start_spawning():
 	spawning_enabled = true
 	update_spawners()
-	print("Spawning enabled")
 
 func manager_stop_spawning():
 	spawning_enabled = false
 	update_spawners()
-	print("Spawning disabled")

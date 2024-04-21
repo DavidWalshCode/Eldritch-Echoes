@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://do5d5q3ct36mm"]
+[gd_scene load_steps=32 format=3 uid="uid://do5d5q3ct36mm"]
 
 [ext_resource type="Script" path="res://characters/enemies/enemy.gd" id="1_4q8d1"]
 [ext_resource type="PackedScene" uid="uid://b1ldkr45qc8ln" path="res://characters/enemies/assets/models/bird_monster.glb" id="1_b5e45"]
@@ -16,6 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://c5umy64axiym2" path="res://audio/sfx/enemy/death/double_monster-scream-pain-2.ogg" id="11_4g5ad"]
 [ext_resource type="AudioStream" uid="uid://cy6rynhw18yw1" path="res://audio/sfx/enemy/death/double_monster-scream-pain-3.ogg" id="12_5ior2"]
 [ext_resource type="AudioStream" uid="uid://bsf0oqthfakqs" path="res://audio/sfx/enemy/gibbed/681767__supersouper__big-impact-blood.ogg" id="13_sj0y1"]
+[ext_resource type="PackedScene" uid="uid://duxcuq4it2g1c" path="res://items/health/scenes/health_pickup.tscn" id="13_x4wnu"]
+[ext_resource type="PackedScene" uid="uid://dm7vdjs2svw1f" path="res://items/ammo/scenes/revolver_ammo_pickup.tscn" id="15_ndv6a"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f8rsi"]
 
@@ -57,6 +59,8 @@ transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
 collision_layer = 6
 collision_mask = 3
 script = ExtResource("1_4q8d1")
+drop_items = Array[PackedScene]([ExtResource("13_x4wnu"), ExtResource("15_ndv6a")])
+drop_chances = Array[float]([0.1, 0.1])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.1, 0, 0, 0, 0.9146, 0, 0, 0, 1, 0, 0.897616, 0.162)

@@ -8,7 +8,7 @@ signal enemy_health_changed(current_health, max_health)
 @export var max_health = 100
 @export var gib_at = -10
 
-@export_category("Sound")
+@export_category("Audio")
 @export var min_pitch_scale = 0.8 # Pitch variation range
 @export var max_pitch_scale = 1.0 # Pitch variation range
 

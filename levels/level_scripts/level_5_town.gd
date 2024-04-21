@@ -4,29 +4,23 @@ extends Node3D
 @onready var level_timer = $Player/UserInterface/TimerContainer/LevelTimer
 @onready var player = $Player
 @onready var enemy_spawner_manager = $Enemies/EnemySpawnerManager
+@onready var weapon_manager = $Player/Camera3D/WeaponManager
 
 func _ready():
 	ambience_level_5.play()
 	
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(20).timeout
 	level_timer.visible = true
 	level_timer.start_timer()
 	
-	await get_tree().create_timer(3).timeout
-	enemy_spawner_manager.start_spawning()
+	await get_tree().create_timer(2).timeout
+	enemy_spawner_manager.manager_start_spawning()
 
 func _process(delta):
-	if level_timer.get_time() > 60.0: # Check if more than a minute has passed
-		print("More than a minute has passed.")
-
-	if level_timer.get_time() > 120.0: # Check if more than 2 minutes have passed
-		print("More than 2 minutes have passed.")
-	
-	if level_timer.get_time() > 180.0: # Check if more than 2 minutes have passed
-		print("More than 3 minutes have passed.")
-		Global.level_1_survived_passed_time = true
+	if level_timer.get_time() > 300.0: # Check if more than 5 minutes have passed
+		Global.level_5_survived_passed_time = true
 	
 	if player.dead == true:
+		Global.level_5_survived_passed_time = false
 		level_timer.stop_timer()
-		enemy_spawner_manager.stop_spawning()
-		print("player dead")
+		enemy_spawner_manager.manager_stop_spawning()
