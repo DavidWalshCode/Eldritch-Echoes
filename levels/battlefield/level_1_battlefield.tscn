@@ -368,5 +368,8 @@ stream = ExtResource("37_jiurp")
 volume_db = -10.0
 bus = &"SFX"
 
+[connection signal="time_not_survived" from="." to="Player/UserInterface/NegativeMessageContainer1/DespicableMessage/AnimationPlayer" method="play" binds= ["message"]]
+[connection signal="time_survived" from="." to="Player/UserInterface/PositiveMessageContainer1/ShowPromiseMessage/AnimationPlayer" method="play" binds= ["message"]]
+
 [editable path="Player"]
 [editable path="Player/Camera3D/WeaponManager/Weapons/Sword/AttackEmitter/HitScanAttackEmitter"]

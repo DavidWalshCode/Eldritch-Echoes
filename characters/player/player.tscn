@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://b3g4rtj8g2p3d"]
+[gd_scene load_steps=106 format=3 uid="uid://b3g4rtj8g2p3d"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sw706"]
 [ext_resource type="Script" path="res://weapons/weapon_manager.gd" id="2_c6p01"]
@@ -602,49 +602,6 @@ color = Color(0, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_kb1wp"]
 size = Vector3(0.01, 0.01, 2)
 
-[sub_resource type="Animation" id="Animation_cwj4w"]
-resource_name = "hurt"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.560784, 0, 0, 0.470588), Color(0.560784, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_2r2vg"]
-resource_name = "start"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="Animation" id="Animation_ykxsi"]
 length = 0.001
 tracks/0/type = "value"
@@ -684,37 +641,9 @@ tracks/2/keys = {
 "values": [Vector3(0, 1.89849, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_87kdg"]
-resource_name = "heal"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.00392157, 0.286275, 0.00392157, 0.470588), Color(0, 0.298039, 0.137255, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_grr4j"]
 resource_name = "dead"
-length = 10.0
+length = 14.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -722,7 +651,7 @@ tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
+"times": PackedFloat32Array(0, 14),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -734,7 +663,7 @@ tracks/1/path = NodePath(".:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 3, 10),
+"times": PackedFloat32Array(0, 3, 14),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.670588, 0, 0, 0.780392), Color(0.270588, 0, 0, 1), Color(0.270588, 0, 0, 1)]
@@ -780,6 +709,77 @@ tracks/1/keys = {
 "values": [Color(0.286275, 0, 0.568627, 0.470588), Color(0, 0.298039, 0.137255, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_87kdg"]
+resource_name = "heal"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.00392157, 0.286275, 0.00392157, 0.470588), Color(0, 0.298039, 0.137255, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cwj4w"]
+resource_name = "hurt"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.560784, 0, 0, 0.470588), Color(0.560784, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2r2vg"]
+resource_name = "start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_31e24"]
 _data = {
 "RESET": SubResource("Animation_ykxsi"),
@@ -788,6 +788,83 @@ _data = {
 "heal": SubResource("Animation_87kdg"),
 "hurt": SubResource("Animation_cwj4w"),
 "start": SubResource("Animation_2r2vg")
+}
+
+[sub_resource type="Animation" id="Animation_msuel"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.533333)]
+}
+
+[sub_resource type="Animation" id="Animation_cvny2"]
+resource_name = "message"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1, 0, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ixv8y"]
+resource_name = "start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l22g3"]
+_data = {
+"RESET": SubResource("Animation_msuel"),
+"message": SubResource("Animation_cvny2"),
+"start": SubResource("Animation_ixv8y")
 }
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
@@ -1408,6 +1485,205 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/DebugPanel/MarginContainer"]
 layout_mode = 2
+
+[node name="PositiveMessageContainer1" type="HBoxContainer" parent="UserInterface"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -351.5
+offset_top = 170.0
+offset_right = 351.5
+offset_bottom = 265.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="ShowPromiseMessage" type="Label" parent="UserInterface/PositiveMessageContainer1"]
+visible = false
+modulate = Color(1, 1, 1, 0.533333)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("55_5digl")
+theme_override_font_sizes/font_size = 90
+text = "YOU SHOW PROMISE..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UserInterface/PositiveMessageContainer1/ShowPromiseMessage"]
+libraries = {
+"": SubResource("AnimationLibrary_l22g3")
+}
+autoplay = "start"
+
+[node name="PositiveMessageContainer2" type="HBoxContainer" parent="UserInterface"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -507.5
+offset_top = 170.0
+offset_right = 507.5
+offset_bottom = 265.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="StrengthMessage" type="Label" parent="UserInterface/PositiveMessageContainer2"]
+visible = false
+modulate = Color(1, 1, 1, 0.533333)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("55_5digl")
+theme_override_font_sizes/font_size = 90
+text = "THERE IS STRENGTH IN YOU..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UserInterface/PositiveMessageContainer2/StrengthMessage"]
+libraries = {
+"": SubResource("AnimationLibrary_l22g3")
+}
+autoplay = "start"
+
+[node name="PositiveMessageContainer3" type="HBoxContainer" parent="UserInterface"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.5
+offset_top = 170.0
+offset_right = 350.5
+offset_bottom = 265.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="JoinMessage" type="Label" parent="UserInterface/PositiveMessageContainer3"]
+visible = false
+modulate = Color(1, 1, 1, 0.533333)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("55_5digl")
+theme_override_font_sizes/font_size = 90
+text = "YOU COULD JOIN ME..."
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UserInterface/PositiveMessageContainer3/JoinMessage"]
+libraries = {
+"": SubResource("AnimationLibrary_l22g3")
+}
+autoplay = "start"
+
+[node name="PositiveMessageContainer4" type="HBoxContainer" parent="UserInterface"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -416.5
+offset_top = 170.0
+offset_right = 416.5
+offset_bottom = 363.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="FinalChallengeMessage" type="Label" parent="UserInterface/PositiveMessageContainer4"]
+visible = false
+modulate = Color(1, 1, 1, 0.533333)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("55_5digl")
+theme_override_font_sizes/font_size = 90
+text = "ONE FINAL CHALLENGE...
+SOON.."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UserInterface/PositiveMessageContainer4/FinalChallengeMessage"]
+libraries = {
+"": SubResource("AnimationLibrary_l22g3")
+}
+autoplay = "start"
+
+[node name="PositiveMessageContainer5" type="HBoxContainer" parent="UserInterface"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -385.0
+offset_top = 170.0
+offset_right = 385.0
+offset_bottom = 363.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="WorthyMessage" type="Label" parent="UserInterface/PositiveMessageContainer5"]
+visible = false
+modulate = Color(1, 1, 1, 0.533333)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("55_5digl")
+theme_override_font_sizes/font_size = 90
+text = "YOU ARE WORTHY TO 
+BECOME MY CHAMPION."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UserInterface/PositiveMessageContainer5/WorthyMessage"]
+libraries = {
+"": SubResource("AnimationLibrary_l22g3")
+}
+autoplay = "start"
+
+[node name="NegativeMessageContainer1" type="HBoxContainer" parent="UserInterface"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -221.0
+offset_top = 170.0
+offset_right = 221.0
+offset_bottom = 363.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="DespicableMessage" type="Label" parent="UserInterface/NegativeMessageContainer1"]
+visible = false
+modulate = Color(1, 1, 1, 0.533333)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("55_5digl")
+theme_override_font_sizes/font_size = 90
+text = "DESPICABLE...
+AGAIN..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UserInterface/NegativeMessageContainer1/DespicableMessage"]
+libraries = {
+"": SubResource("AnimationLibrary_l22g3")
+}
+autoplay = "start"
+
+[node name="NegativeMessageContainer2" type="HBoxContainer" parent="UserInterface"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -453.5
+offset_top = 170.0
+offset_right = 453.5
+offset_bottom = 363.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="NotWorthyMessage" type="Label" parent="UserInterface/NegativeMessageContainer2"]
+visible = false
+modulate = Color(1, 1, 1, 0.533333)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("55_5digl")
+theme_override_font_sizes/font_size = 90
+text = "YOU ARE NOT WORTHY TO 
+BECOME MY CHAMPION."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UserInterface/NegativeMessageContainer2/NotWorthyMessage"]
+libraries = {
+"": SubResource("AnimationLibrary_l22g3")
+}
+autoplay = "start"
 
 [connection signal="ammo_changed" from="Camera3D/WeaponManager" to="UserInterface/HealthAndAmmo/AmmoDisplay" method="update_ammo"]
 [connection signal="got_ammo" from="Camera3D/WeaponManager" to="UserInterface/HealthAndAmmoEffects/AnimationPlayer" method="play" binds= ["got_ammo"]]

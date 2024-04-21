@@ -1,36 +1,37 @@
 extends Node3D
 
+# Signals connected to the messages in the UI, the eldritch entity talking to the player
 signal time_survived
 signal time_not_survived
 
-@onready var ambience_level_5 = $Audio/AmbienceLevel5
+@onready var ambience_level_4 = $Audio/AmbienceLevel4
 @onready var level_timer = $Player/UserInterface/TimerContainer/LevelTimer
 @onready var player = $Player
 @onready var enemy_spawner_manager = $Enemies/EnemySpawnerManager
 @onready var weapon_manager = $Player/Camera3D/WeaponManager
 
+var weapon_unlocked = false  # Flag to track weapon unlock status
+
 func _ready():
-	ambience_level_5.play()
+	ambience_level_4.play()
 	
-	await get_tree().create_timer(20).timeout
+	await get_tree().create_timer(5).timeout
 	level_timer.visible = true
 	level_timer.start_timer()
 	
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(3).timeout
 	enemy_spawner_manager.manager_start_spawning()
 
 func _process(delta):
-	if level_timer.get_time() > 300.0: # Survived ending
+	if level_timer.get_time() > 10.0 and not weapon_unlocked:
 		time_survived.emit()
 		
-		Global.level_5_survived_passed_time = true
-		level_timer.stop_timer()
-		enemy_spawner_manager.manager_stop_spawning()
+		weapon_unlocked = true
+		Global.level_4_survived_passed_time = true
 		
-		player.kill()
-		
-	if player.dead == true: # Died ending
+		weapon_manager.check_weapon_unlocks()
+	
+	if player.dead:
 		time_not_survived.emit()
-		Global.level_5_survived_passed_time = false
 		level_timer.stop_timer()
 		enemy_spawner_manager.manager_stop_spawning()

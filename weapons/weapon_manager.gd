@@ -40,14 +40,7 @@ func _ready():
 			weapon.set_bodies_to_exclude([get_parent().get_parent()]) # Excludes the player and camera, knows dont hit the player
 	
 	disable_all_weapons()
-	
-	if Global.level_1_survived_passed_time or Global.level_2_survived_passed_time or Global.level_3_survived_passed_time or Global.level_4_survived_passed_time:
-		unlock_weapon(WEAPON_SLOTS.MACHINE_GUN)
-	if Global.level_2_survived_passed_time or Global.level_3_survived_passed_time or Global.level_4_survived_passed_time:
-		unlock_weapon(WEAPON_SLOTS.SHOTGUN)
-	if Global.level_3_survived_passed_time or Global.level_4_survived_passed_time:
-		unlock_weapon(WEAPON_SLOTS.ROCKET_LAUNCHER)
-	
+	check_weapon_unlocks()
 	switch_to_weapon_slot(WEAPON_SLOTS.SWORD)
 	
 	for weapon in weapons:
@@ -106,6 +99,20 @@ func unlock_weapon(slot_index : int):
 
 	if not weapon_slots_unlocked[slot_index]:
 		weapon_slots_unlocked[slot_index] = true
+
+func check_weapon_unlocks():
+	# Check and unlock sequentially without skipping
+	if (Global.level_1_survived_passed_time or Global.level_2_survived_passed_time or Global.level_3_survived_passed_time or Global.level_4_survived_passed_time) and not weapon_slots_unlocked[WEAPON_SLOTS.MACHINE_GUN]:
+		unlock_weapon(WEAPON_SLOTS.MACHINE_GUN)
+		switch_to_weapon_slot(WEAPON_SLOTS.MACHINE_GUN)
+	
+	if (Global.level_2_survived_passed_time or Global.level_3_survived_passed_time or Global.level_4_survived_passed_time) and not weapon_slots_unlocked[WEAPON_SLOTS.SHOTGUN]:
+		unlock_weapon(WEAPON_SLOTS.SHOTGUN)
+		switch_to_weapon_slot(WEAPON_SLOTS.SHOTGUN)
+	
+	if (Global.level_3_survived_passed_time or Global.level_4_survived_passed_time) and not weapon_slots_unlocked[WEAPON_SLOTS.ROCKET_LAUNCHER]:
+		unlock_weapon(WEAPON_SLOTS.ROCKET_LAUNCHER)
+		switch_to_weapon_slot(WEAPON_SLOTS.ROCKET_LAUNCHER)
 
 func update_move_animation(velocity : Vector3, grounded : bool):
 	if current_weapon is Weapon and !current_weapon.is_idle():

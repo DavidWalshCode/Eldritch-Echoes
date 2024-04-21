@@ -129,6 +129,7 @@ func load_next_level_based_on_death_count():
 			SceneManager.swap_scenes(SceneRegistry.levels["level_5_town"], get_tree().root, self, "fade_to_white")
 		_:
 			# Default case, load endings based on time survived
+			await get_tree().create_timer(2).timeout
 			$"..".queue_free() # Removing the Level5Town node
 			
 			if Global.level_5_survived_passed_time == false:
