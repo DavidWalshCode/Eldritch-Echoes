@@ -4,8 +4,8 @@ extends Node3D
 signal time_survived
 signal time_not_survived
 
-@onready var general_ambience_level_2 = $Audio/GeneralAmbienceLevel1
-@onready var battle_ambience_level_2 = $Audio/BattleAmbienceLevel
+@onready var general_ambience_level_2 = $Audio/GeneralAmbienceLevel2
+@onready var battle_ambience_level_2 = $Audio/BattleAmbienceLevel2
 
 @onready var portal_exit_sound = $Player/PortalManager/Audio/PortalExitSound
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://1bqkkacruegj"]
+[gd_scene load_steps=72 format=3 uid="uid://1bqkkacruegj"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_2_town.gd" id="1_7dh5c"]
 [ext_resource type="PackedScene" uid="uid://o8ngiergmnaa" path="res://environment/assets/ground/stone/scenes/paving_cobble_1_flat.tscn" id="2_i8byq"]
@@ -69,6 +69,7 @@
 [ext_resource type="Environment" uid="uid://brnvj7uytytvy" path="res://environment/sky/level_2_lighting.tres" id="55_fbt7w"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="55_vckry"]
 [ext_resource type="AudioStream" uid="uid://thxjd66rsnr2" path="res://audio/ambience/forest.ogg" id="57_cgxeo"]
+[ext_resource type="PackedScene" uid="uid://bvc2uk6e7n5jc" path="res://effects/portal/town_2_portal.tscn" id="65_ichrq"]
 [ext_resource type="PackedScene" uid="uid://cyo4axkk6ift6" path="res://effects/fire/fire_1_effect.tscn" id="70_o2k0l"]
 
 [node name="Level2Town" type="Node3D"]
@@ -1053,6 +1054,10 @@ transform = Transform3D(-2.72167, 0, -0.657638, 0, 2.8, 0, 0.657638, 0, -2.72167
 transform = Transform3D(-1.81306, 0, 2.13373, 0, 2.8, 0, -2.13373, 0, -1.81306, -10.3957, -0.0614411, -32.673)
 
 [node name="Portal" type="Node3D" parent="Environment/Props/TownSquareProps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.231, 0, -60.174)
+
+[node name="Town2Portal" parent="Environment/Props/TownSquareProps/Portal" instance=ExtResource("65_ichrq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.06026, 0)
 
 [node name="Fires" type="Node3D" parent="Environment/Props"]
 
@@ -1092,7 +1097,7 @@ light_volumetric_fog_energy = 5.0
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("55_vckry")]
-transform = Transform3D(-0.996516, 0, 0.0833992, 0, 1, 0, -0.0833992, 0, -0.996516, 0.687584, 0.709427, -57.9451)
+transform = Transform3D(-0.984503, 0, 0.175367, 0, 1, 0, -0.175367, 0, -0.984503, 0.297, 19.2035, -259.964)
 
 [node name="NPCs" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
@@ -1103,3 +1108,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
 stream = ExtResource("57_cgxeo")
 volume_db = -10.0
 bus = &"Ambience"
+
+[editable path="Player"]
+[editable path="Player/Camera3D/WeaponManager/Weapons/Sword/AttackEmitter/HitScanAttackEmitter"]

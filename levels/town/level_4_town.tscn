@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://vb76i2pa2gne"]
+[gd_scene load_steps=60 format=3 uid="uid://vb76i2pa2gne"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_4_town.gd" id="1_1nadg"]
 [ext_resource type="PackedScene" uid="uid://o8ngiergmnaa" path="res://environment/assets/ground/stone/scenes/paving_cobble_1_flat.tscn" id="2_ypx5d"]
@@ -48,6 +48,7 @@
 [ext_resource type="PackedScene" uid="uid://dguou52s5tbgv" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/box_small_1.tscn" id="50_1c7pl"]
 [ext_resource type="PackedScene" uid="uid://ilm3mbohu7ar" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/wagon_wheel_1.tscn" id="51_u57kg"]
 [ext_resource type="PackedScene" uid="uid://c3srl1ur63l7u" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/chest_closed_1.tscn" id="52_2f7bo"]
+[ext_resource type="PackedScene" uid="uid://h23j8lwiv87p" path="res://effects/portal/town_4_portal.tscn" id="53_csqvh"]
 [ext_resource type="PackedScene" uid="uid://bon43w0ahe6hx" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/flag_1_pole.tscn" id="53_hfswn"]
 [ext_resource type="PackedScene" uid="uid://g6023gycygfj" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/flag_2_pole.tscn" id="54_nknn4"]
 [ext_resource type="PackedScene" uid="uid://lq7366i8slik" path="res://environment/assets/village/outside_props/scenes/weeping_angel_statue_1.tscn" id="55_e6ena"]
@@ -1446,6 +1447,10 @@ transform = Transform3D(-2.72167, 0, -0.657638, 0, 2.8, 0, 0.657638, 0, -2.72167
 transform = Transform3D(-1.81306, 0, 2.13373, 0, 2.8, 0, -2.13373, 0, -1.81306, -10.3957, -0.0614411, -32.673)
 
 [node name="Portal" type="Node3D" parent="Environment/Props/TownSquareProps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.231, 0, -60.174)
+
+[node name="Town4Portal" parent="Environment/Props/TownSquareProps/Portal" instance=ExtResource("53_csqvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98419, 0)
 
 [node name="PrebuiltTowns" type="Node3D" parent="Environment"]
 
@@ -1468,7 +1473,7 @@ light_volumetric_fog_energy = 5.0
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("59_n825r")]
-transform = Transform3D(-0.996516, 0, 0.0833992, 0, 1, 0, -0.0833992, 0, -0.996516, 0.687584, 0.709427, -57.9451)
+transform = Transform3D(-0.984643, 0, 0.174576, 0, 1, 0, -0.174576, 0, -0.984643, 0.297355, 20.2209, -259.964)
 
 [node name="RainEffect2" parent="Player" instance=ExtResource("61_1uimg")]
 
@@ -1481,3 +1486,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
 stream = ExtResource("61_uqa2v")
 volume_db = -20.0
 bus = &"Ambience"
+
+[editable path="Player"]
+[editable path="Player/Camera3D/WeaponManager/Weapons/Sword/AttackEmitter/HitScanAttackEmitter"]

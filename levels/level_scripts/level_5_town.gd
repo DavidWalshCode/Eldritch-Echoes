@@ -4,8 +4,8 @@ extends Node3D
 signal time_survived
 signal time_not_survived
 
-@onready var general_ambience_level_5 = $Audio/GeneralAmbienceLevel1
-@onready var battle_ambience_level_5 = $Audio/BattleAmbienceLevel
+@onready var general_ambience_level_5 = $Audio/GeneralAmbienceLevel5
+@onready var battle_ambience_level_5 = $Audio/BattleAmbienceLevel5
 
 @onready var level_timer = $Player/UserInterface/TimerContainer/LevelTimer
 @onready var player = $Player
@@ -18,8 +18,10 @@ func _ready():
 	await get_tree().create_timer(25).timeout
 	level_timer.visible = true
 	level_timer.start_timer()
-	general_ambience_level_5.queue_free()
+	
 	battle_ambience_level_5.play()
+	await get_tree().create_timer(4).timeout
+	general_ambience_level_5.queue_free()
 	
 	enemy_spawner_manager.manager_start_spawning()
 

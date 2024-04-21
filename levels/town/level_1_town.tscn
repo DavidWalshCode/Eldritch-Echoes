@@ -55,7 +55,7 @@
 [ext_resource type="PackedScene" uid="uid://bon43w0ahe6hx" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/flag_1_pole.tscn" id="50_1svic"]
 [ext_resource type="PackedScene" uid="uid://c3srl1ur63l7u" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/chest_closed_1.tscn" id="50_w18rs"]
 [ext_resource type="PackedScene" uid="uid://g6023gycygfj" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/flag_2_pole.tscn" id="51_ufb7n"]
-[ext_resource type="PackedScene" uid="uid://bsfdocab5ls3" path="res://effects/portal/town_1_portal_testing_2.tscn" id="52_kjsjn"]
+[ext_resource type="PackedScene" uid="uid://bsfdocab5ls3" path="res://effects/portal/town_1_portal.tscn" id="52_kjsjn"]
 [ext_resource type="PackedScene" uid="uid://s3re3a6gjbsw" path="res://characters/enemies/enemy_spawners/enemy_spawner_manager.tscn" id="57_hynql"]
 [ext_resource type="PackedScene" uid="uid://b2gx020q3dwn2" path="res://characters/enemies/enemy_spawners/enemy_1_spawner.tscn" id="57_qdl3j"]
 [ext_resource type="AudioStream" uid="uid://thxjd66rsnr2" path="res://audio/ambience/forest.ogg" id="59_xw4ub"]
@@ -941,7 +941,7 @@ light_volumetric_fog_energy = 5.0
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("28_01geb")]
-transform = Transform3D(-0.996516, 0, 0.0833992, 0, 1, 0, -0.0833992, 0, -0.996516, 0.687584, 0.709427, -48.5855)
+transform = Transform3D(-0.984503, 0, 0.175367, 0, 1, 0, -0.175367, 0, -0.984503, 0.297, 18.7048, -259.964)
 
 [node name="NPCs" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
@@ -989,3 +989,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9747, 1, -42.4263)
 
 [node name="ShotgunAmmoPickup" parent="." instance=ExtResource("64_f1nam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.90152, 1, -49.2728)
+
+[editable path="Player"]
+[editable path="Player/Camera3D/WeaponManager/Weapons/Sword/AttackEmitter/HitScanAttackEmitter"]

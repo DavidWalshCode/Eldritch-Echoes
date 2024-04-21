@@ -4,27 +4,27 @@ signal portal_entered
 
 @onready var portal_enter_sound = $Audio/PortalEnterSound
 
+var player = null
+
 func _ready():
 	connect("area_entered", Callable(self, "on_area_entered"))
-	connect("area_exited", Callable(self, "on_area_exited"))
+	player = get_tree().get_nodes_in_group("player")[0]
 
 func on_area_entered(portal : Portal):
 	print("Entered portal")
 	portal_enter_sound.play()
 	portal_entered.emit()
 	
-	await get_tree().create_timer(4).timeout
-	
-	Global.queue_free_scene()
+	await get_tree().create_timer(3).timeout
 	
 	if portal.portal_type == Portal.PORTAL_TYPES.TOWN_PORTAL_1:
-		SceneManager.swap_scenes(SceneRegistry.levels["level_1_battlefield"], get_tree().root, self, "fade_to_black")
+		player.load_level_through_portal(1)
 	
-	if portal.portal_type == Portal.PORTAL_TYPES.TOWN_PORTAL_2:
-		SceneManager.swap_scenes(SceneRegistry.levels["level_2_battlefield"], get_tree().root, self, "fade_to_black")
+	elif portal.portal_type == Portal.PORTAL_TYPES.TOWN_PORTAL_2:
+		player.load_level_through_portal(2)
 	
-	if portal.portal_type == Portal.PORTAL_TYPES.TOWN_PORTAL_3:
-		SceneManager.swap_scenes(SceneRegistry.levels["level_3_battlefield"], get_tree().root, self, "fade_to_black")
+	elif portal.portal_type == Portal.PORTAL_TYPES.TOWN_PORTAL_3:
+		player.load_level_through_portal(3)
 	
-	if portal.portal_type == Portal.PORTAL_TYPES.TOWN_PORTAL_4:
-		SceneManager.swap_scenes(SceneRegistry.levels["level_4_battlefield"], get_tree().root, self, "fade_to_black")
+	elif portal.portal_type == Portal.PORTAL_TYPES.TOWN_PORTAL_4:
+		player.load_level_through_portal(4)

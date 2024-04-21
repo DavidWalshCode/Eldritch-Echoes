@@ -104,7 +104,7 @@ func swap_scenes(scene_to_load : String, load_into : Node = null, scene_to_unloa
 	_scene_to_unload = scene_to_unload
 	
 	_add_loading_screen(transition_type)
-	_load_content(scene_to_load)	
+	_load_content(scene_to_load)
 
 ## Slight variation on swap_scenes that will result in a sliding, Zelda-dungeon-style transition between scenes[br][br]
 ## [b]Note:[/b] This version of SceneManager assumes that all levels are the same size (defined above as [code]LEVEL_H[/code] and [code]LEVEL_W[/code]

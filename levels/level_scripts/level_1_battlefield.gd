@@ -5,7 +5,7 @@ signal time_survived
 signal time_not_survived
 
 @onready var general_ambience_level_1 = $Audio/GeneralAmbienceLevel1
-@onready var battle_ambience_level_1 = $Audio/BattleAmbienceLevel
+@onready var battle_ambience_level_1 = $Audio/BattleAmbienceLevel1
 
 @onready var portal_exit_sound = $Player/PortalManager/Audio/PortalExitSound
 

@@ -108,13 +108,11 @@ func kill():
 	load_next_level_based_on_death_count()
 
 func load_next_level_based_on_death_count():
-	# Global.queue_free_scene() # Doesn't currently work for switching from battlefield to town stranegly, to fix later
 	# Switch case for loading the town level based on the player death count
 	match Global.death_count: 
 		1:
 			# Load town level 2, death count is 1
 			$"..".queue_free() # Removing the Level1Battlefield node
-			#Global.queue_free_node_by_name("Level1Battlefield")
 			SceneManager.swap_scenes(SceneRegistry.levels["level_2_town"], get_tree().root, self, "fade_to_white")
 		2:
 			# Load town level 3, death count is 2
@@ -140,6 +138,23 @@ func load_next_level_based_on_death_count():
 				get_tree().quit() # To remove later
 				SceneManager.swap_scenes(SceneRegistry.main_scenes["ending_survived"], get_tree().root, self, "fade_to_black")
 
+func load_level_through_portal(level_number : int):
+	if level_number == 1:
+		$"..".queue_free() # Removing the Level1Town node
+		SceneManager.swap_scenes(SceneRegistry.levels["level_1_battlefield"], get_tree().root, self, "fade_to_black")
+	
+	elif level_number == 2:
+		$"..".queue_free() # Removing the Level2Town node
+		SceneManager.swap_scenes(SceneRegistry.levels["level_2_battlefield"], get_tree().root, self, "fade_to_black")
+
+	elif level_number == 3:
+		$"..".queue_free() # Removing the Level3Town node
+		SceneManager.swap_scenes(SceneRegistry.levels["level_3_battlefield"], get_tree().root, self, "fade_to_black")
+
+	elif level_number == 4:
+		$"..".queue_free() # Removing the Level4Town node
+		SceneManager.swap_scenes(SceneRegistry.levels["level_4_battlefield"], get_tree().root, self, "fade_to_black")
+
 func update_camera_lean(delta):
 	var input_direction = 0.0
 
@@ -159,4 +174,5 @@ func update_camera_lean(delta):
 
 	# Apply the lean to the camera's rotation
 	camera_3d.rotation_degrees.z = current_camera_lean
+
 

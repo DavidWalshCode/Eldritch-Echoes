@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://7rehxe2n12h2"]
+[gd_scene load_steps=48 format=3 uid="uid://7rehxe2n12h2"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_5_town.gd" id="1_jdijj"]
 [ext_resource type="PackedScene" uid="uid://cqnk8hybqeqt" path="res://environment/assets/ground/sand/scenes/sand_1_flat.tscn" id="2_8t2ye"]
@@ -31,7 +31,9 @@
 [ext_resource type="PackedScene" uid="uid://dni1pq0tcql1p" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/barrel_medium_1.tscn" id="41_qe1t3"]
 [ext_resource type="PackedScene" uid="uid://bskbwwg0ytlmp" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/barrel_small_1.tscn" id="42_37htg"]
 [ext_resource type="PackedScene" uid="uid://63jnvm01xm4n" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/box_long_1.tscn" id="43_6kk3q"]
+[ext_resource type="PackedScene" uid="uid://s3re3a6gjbsw" path="res://characters/enemies/enemy_spawners/enemy_spawner_manager.tscn" id="44_4hli8"]
 [ext_resource type="PackedScene" uid="uid://di1eqrh46hkvd" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/box_medium_1.tscn" id="44_fjm1s"]
+[ext_resource type="PackedScene" uid="uid://dirle7oj750c" path="res://characters/enemies/enemy_spawners/enemy_5_spawner.tscn" id="45_kat8j"]
 [ext_resource type="PackedScene" uid="uid://dguou52s5tbgv" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/box_small_1.tscn" id="45_xoju3"]
 [ext_resource type="PackedScene" uid="uid://ilm3mbohu7ar" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/wagon_wheel_1.tscn" id="46_sg6yh"]
 [ext_resource type="PackedScene" uid="uid://c3srl1ur63l7u" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/chest_closed_1.tscn" id="47_jou05"]
@@ -1347,7 +1349,7 @@ light_volumetric_fog_energy = 5.0
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("54_0janu")]
-transform = Transform3D(-0.996516, 0, 0.0833992, 0, 1, 0, -0.0833992, 0, -0.996516, 0.687584, 0.709427, -57.9451)
+transform = Transform3D(-0.984503, 0, 0.175367, 0, 1, 0, -0.175367, 0, -0.984503, 0.297, 18.096, -259.964)
 
 [node name="BloodRainEffect1" parent="Player" instance=ExtResource("57_ullqw")]
 
@@ -1357,9 +1359,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
 [node name="Enemies" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
 
+[node name="EnemySpawnerManager" parent="Enemies" instance=ExtResource("44_4hli8")]
+
+[node name="Enemy5Spawner" parent="Enemies/EnemySpawnerManager" instance=ExtResource("45_kat8j")]
+
 [node name="Audio" type="Node3D" parent="."]
 
-[node name="AmbienceLevel5" type="AudioStreamPlayer" parent="Audio"]
+[node name="GeneralAmbienceLevel5" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("56_4tngs")
 volume_db = -10.0
 bus = &"Ambience"
+
+[node name="BattleAmbienceLevel5" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("56_4tngs")
+volume_db = -10.0
+bus = &"Ambience"
+
+[editable path="Player"]
+[editable path="Player/Camera3D/WeaponManager/Weapons/Sword/AttackEmitter/HitScanAttackEmitter"]

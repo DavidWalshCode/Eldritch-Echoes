@@ -1,28 +1,28 @@
-[gd_scene load_steps=36 format=3 uid="uid://bsfdocab5ls3"]
+[gd_scene load_steps=36 format=3 uid="uid://h23j8lwiv87p"]
 
-[ext_resource type="Script" path="res://effects/portal/portal.gd" id="1_najr6"]
+[ext_resource type="Script" path="res://effects/portal/portal.gd" id="1_4vdq2"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_si2bl"]
 
-[sub_resource type="Curve" id="Curve_u2bwg"]
+[sub_resource type="Curve" id="Curve_711mg"]
 min_value = -2.0
 max_value = 2.0
 _data = [Vector2(0, -2), 0.0, 0.0, 0, 0, Vector2(0.496622, 2), 0.0, 0.0, 0, 0, Vector2(1, -2), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_h33sq"]
-curve = SubResource("Curve_u2bwg")
+[sub_resource type="CurveTexture" id="CurveTexture_l0tqg"]
+curve = SubResource("Curve_711mg")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4u8xy"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mlwg2"]
 emission_shape = 6
 emission_ring_axis = Vector3(0, 0, 1)
 emission_ring_height = 0.0
 emission_ring_radius = 1.0
 emission_ring_inner_radius = 0.99
 direction = Vector3(0, 0, 0)
-orbit_velocity_min = 0.1
-orbit_velocity_max = 0.1
-orbit_velocity_curve = SubResource("CurveTexture_h33sq")
+orbit_velocity_min = 0.4
+orbit_velocity_max = 0.5
+orbit_velocity_curve = SubResource("CurveTexture_l0tqg")
 gravity = Vector3(0, 0, 0)
 sub_emitter_mode = 1
 sub_emitter_frequency = 20.0
@@ -35,120 +35,120 @@ albedo_color = Color(1, 1, 1, 0)
 [sub_resource type="QuadMesh" id="QuadMesh_35bqd"]
 material = SubResource("StandardMaterial3D_k7i3y")
 
-[sub_resource type="Gradient" id="Gradient_m48yd"]
+[sub_resource type="Gradient" id="Gradient_ngr5l"]
 offsets = PackedFloat32Array(0, 0.257463, 0.526119, 0.791045, 1)
-colors = PackedColorArray(1, 1, 1, 0, 0.027451, 0.529412, 1, 1, 0.400971, 0.253419, 1, 1, 0.027451, 0.529412, 1, 1, 1, 1, 1, 0)
+colors = PackedColorArray(1, 1, 1, 0, 0, 0.531834, 0.379611, 1, 0.166199, 0.000298699, 0.290991, 1, 0.835718, 3.22476e-06, 7.70092e-07, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_l7que"]
-gradient = SubResource("Gradient_m48yd")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1trpf"]
+gradient = SubResource("Gradient_ngr5l")
 
-[sub_resource type="Curve" id="Curve_r6sqs"]
+[sub_resource type="Curve" id="Curve_lu0xg"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_itcnf"]
-curve = SubResource("Curve_r6sqs")
+[sub_resource type="CurveTexture" id="CurveTexture_nl14k"]
+curve = SubResource("Curve_lu0xg")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uajkk"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tro3c"]
 angle_min = -360.0
 angle_max = 360.0
 angular_velocity_max = 10.0
 gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.5
-scale_curve = SubResource("CurveTexture_itcnf")
-color_ramp = SubResource("GradientTexture1D_l7que")
+scale_curve = SubResource("CurveTexture_nl14k")
+color_ramp = SubResource("GradientTexture1D_1trpf")
 sub_emitter_mode = 1
 sub_emitter_frequency = 2.0
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p3ypl"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_757sg"]
 load_path = "res://.godot/imported/Spark1.jpg-330699124e9b7cabde367a32cff972f0.s3tc.ctex"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ggakr"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yheoh"]
 load_path = "res://.godot/imported/Spark1.jpg-330699124e9b7cabde367a32cff972f0.s3tc.ctex"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kq4he"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekl7l"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 blend_mode = 1
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 1, 1, 0.686275)
-albedo_texture = SubResource("CompressedTexture2D_p3ypl")
+albedo_texture = SubResource("CompressedTexture2D_757sg")
 albedo_texture_msdf = true
 emission_enabled = true
-emission = Color(0.25098, 0.878431, 1, 1)
+emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 3.5
 emission_operator = 1
-emission_texture = SubResource("CompressedTexture2D_ggakr")
+emission_texture = SubResource("CompressedTexture2D_yheoh")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="QuadMesh" id="QuadMesh_rt2rk"]
-material = SubResource("StandardMaterial3D_kq4he")
+[sub_resource type="QuadMesh" id="QuadMesh_fpcrk"]
+material = SubResource("StandardMaterial3D_ekl7l")
 size = Vector2(0.5, 0.5)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_68ep4"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lwuj3"]
 load_path = "res://.godot/imported/Spark2.jpg-85bed96ae2af912d95fafab7dec36a45.s3tc.ctex"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hqiri"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7d40a"]
 load_path = "res://.godot/imported/Spark2.jpg-85bed96ae2af912d95fafab7dec36a45.s3tc.ctex"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_by18v"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7f46g"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 blend_mode = 1
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 1, 1, 0.686275)
-albedo_texture = SubResource("CompressedTexture2D_68ep4")
+albedo_texture = SubResource("CompressedTexture2D_lwuj3")
 albedo_texture_msdf = true
 emission_enabled = true
-emission = Color(0, 0.52549, 0.988235, 1)
+emission = Color(0, 0.505882, 0.258824, 1)
 emission_energy_multiplier = 3.0
 emission_operator = 1
-emission_texture = SubResource("CompressedTexture2D_hqiri")
+emission_texture = SubResource("CompressedTexture2D_7d40a")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="QuadMesh" id="QuadMesh_b3bri"]
-material = SubResource("StandardMaterial3D_by18v")
+[sub_resource type="QuadMesh" id="QuadMesh_rraou"]
+material = SubResource("StandardMaterial3D_7f46g")
 size = Vector2(0.5, 0.5)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_spgtp"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4qeor"]
 load_path = "res://.godot/imported/IceCrystal1.jpg-311d679b7da3a46555d18493c2d0d935.s3tc.ctex"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e5edx"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cjcar"]
 load_path = "res://.godot/imported/IceCrystal1.jpg-311d679b7da3a46555d18493c2d0d935.s3tc.ctex"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53uod"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q43bx"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 blend_mode = 1
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 1, 1, 0.686275)
-albedo_texture = SubResource("CompressedTexture2D_spgtp")
+albedo_texture = SubResource("CompressedTexture2D_4qeor")
 albedo_texture_msdf = true
 emission_enabled = true
-emission = Color(0, 0.52549, 0.988235, 1)
+emission = Color(0, 0.239216, 0.321569, 1)
 emission_energy_multiplier = 4.0
 emission_operator = 1
-emission_texture = SubResource("CompressedTexture2D_e5edx")
+emission_texture = SubResource("CompressedTexture2D_cjcar")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="QuadMesh" id="QuadMesh_i6fff"]
-material = SubResource("StandardMaterial3D_53uod")
+[sub_resource type="QuadMesh" id="QuadMesh_m6n66"]
+material = SubResource("StandardMaterial3D_q43bx")
 
 [sub_resource type="Gradient" id="Gradient_52vkb"]
 offsets = PackedFloat32Array(0, 0.257463, 0.526119, 0.791045, 1)
@@ -183,39 +183,40 @@ scale_max = 1.5
 scale_curve = SubResource("CurveTexture_dqlqd")
 color_ramp = SubResource("GradientTexture1D_778es")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ca0v0"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gyuqs"]
 load_path = "res://.godot/imported/IceCrystal2.jpg-d976614c336850022c7391c648279f08.s3tc.ctex"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6ts13"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_11p1q"]
 load_path = "res://.godot/imported/IceCrystal2.jpg-d976614c336850022c7391c648279f08.s3tc.ctex"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6x4la"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7b4s"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 blend_mode = 1
 vertex_color_use_as_albedo = true
-albedo_texture = SubResource("CompressedTexture2D_ca0v0")
+albedo_texture = SubResource("CompressedTexture2D_gyuqs")
 albedo_texture_msdf = true
 emission_enabled = true
-emission = Color(0, 0.788235, 1, 1)
+emission = Color(0.513726, 0, 0, 1)
 emission_energy_multiplier = 0.8
 emission_operator = 1
-emission_texture = SubResource("CompressedTexture2D_6ts13")
+emission_texture = SubResource("CompressedTexture2D_11p1q")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="QuadMesh" id="QuadMesh_6f0dq"]
-material = SubResource("StandardMaterial3D_6x4la")
+[sub_resource type="QuadMesh" id="QuadMesh_1m2kd"]
+material = SubResource("StandardMaterial3D_h7b4s")
 size = Vector2(0.5, 0.5)
 
-[node name="Town1Portal" type="Area3D"]
+[node name="Town4Portal" type="Area3D"]
 collision_layer = 16
 collision_mask = 0
-script = ExtResource("1_najr6")
+script = ExtResource("1_4vdq2")
+portal_type = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(5.77109, 0, 0, 0, 6.3719, 0, 0, 0, 1.41588, 0, 1.12855, 0)
@@ -225,7 +226,7 @@ shape = SubResource("SphereShape3D_si2bl")
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.06714, 0)
 amount = 6
 sub_emitter = NodePath("../PortalEffect2")
-process_material = SubResource("ParticleProcessMaterial_4u8xy")
+process_material = SubResource("ParticleProcessMaterial_mlwg2")
 draw_pass_1 = SubResource("QuadMesh_35bqd")
 
 [node name="PortalEffect2" type="GPUParticles3D" parent="."]
@@ -233,15 +234,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06714, 0)
 emitting = false
 amount = 200
 sub_emitter = NodePath("../PortalEffect3")
-process_material = SubResource("ParticleProcessMaterial_uajkk")
+process_material = SubResource("ParticleProcessMaterial_tro3c")
 draw_passes = 3
-draw_pass_1 = SubResource("QuadMesh_rt2rk")
-draw_pass_2 = SubResource("QuadMesh_b3bri")
-draw_pass_3 = SubResource("QuadMesh_i6fff")
+draw_pass_1 = SubResource("QuadMesh_fpcrk")
+draw_pass_2 = SubResource("QuadMesh_rraou")
+draw_pass_3 = SubResource("QuadMesh_m6n66")
 
 [node name="PortalEffect3" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06714, 0)
 emitting = false
 amount = 200
 process_material = SubResource("ParticleProcessMaterial_nxco0")
-draw_pass_1 = SubResource("QuadMesh_6f0dq")
+draw_pass_1 = SubResource("QuadMesh_1m2kd")
