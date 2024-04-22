@@ -1,11 +1,14 @@
 extends Node3D
 
 # Signals connected to the messages in the UI, the eldritch entity talking to the player
-signal time_survived
-signal time_not_survived
+signal level_5_time_survived
+signal level_5_time_not_survived
 
 @onready var general_ambience_level_5 = $Audio/GeneralAmbienceLevel5
 @onready var battle_ambience_level_5 = $Audio/BattleAmbienceLevel5
+
+@onready var postive_message_reaction_sound = $Audio/PostiveMessageReactionSound
+@onready var negative_message_reaction_sound = $Audio/NegativeMessageReactionSound
 
 @onready var level_timer = $Player/UserInterface/TimerContainer/LevelTimer
 @onready var player = $Player
@@ -20,14 +23,14 @@ func _ready():
 	level_timer.start_timer()
 	
 	battle_ambience_level_5.play()
-	await get_tree().create_timer(4).timeout
-	general_ambience_level_5.queue_free()
 	
+	await get_tree().create_timer(2).timeout
 	enemy_spawner_manager.manager_start_spawning()
 
 func _process(delta):
 	if level_timer.get_time() > 300.0: # Survived ending
-		time_survived.emit()
+		level_5_time_survived.emit()
+		postive_message_reaction_sound.play()
 		
 		Global.level_5_survived_passed_time = true
 		level_timer.stop_timer()
@@ -36,7 +39,8 @@ func _process(delta):
 		player.kill()
 		
 	if player.dead == true: # Died ending
-		time_not_survived.emit()
+		level_5_time_not_survived.emit()
+		negative_message_reaction_sound.play()
 		Global.level_5_survived_passed_time = false
 		level_timer.stop_timer()
 		enemy_spawner_manager.manager_stop_spawning()

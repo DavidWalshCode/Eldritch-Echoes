@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://7rehxe2n12h2"]
+[gd_scene load_steps=50 format=3 uid="uid://7rehxe2n12h2"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_5_town.gd" id="1_jdijj"]
 [ext_resource type="PackedScene" uid="uid://cqnk8hybqeqt" path="res://environment/assets/ground/sand/scenes/sand_1_flat.tscn" id="2_8t2ye"]
@@ -36,8 +36,10 @@
 [ext_resource type="PackedScene" uid="uid://dirle7oj750c" path="res://characters/enemies/enemy_spawners/enemy_5_spawner.tscn" id="45_kat8j"]
 [ext_resource type="PackedScene" uid="uid://dguou52s5tbgv" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/box_small_1.tscn" id="45_xoju3"]
 [ext_resource type="PackedScene" uid="uid://ilm3mbohu7ar" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/wagon_wheel_1.tscn" id="46_sg6yh"]
+[ext_resource type="AudioStream" uid="uid://bj6hi6orv14so" path="res://audio/sfx/eldritch_horror/positive_reaction/EldritchAbomination_Breathing2.mp3" id="47_byvhh"]
 [ext_resource type="PackedScene" uid="uid://c3srl1ur63l7u" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/chest_closed_1.tscn" id="47_jou05"]
 [ext_resource type="PackedScene" uid="uid://bon43w0ahe6hx" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/flag_1_pole.tscn" id="48_1wob7"]
+[ext_resource type="AudioStream" uid="uid://dh0rl8axov684" path="res://audio/sfx/eldritch_horror/negative_reaction/EldritchAbomination_Roar.mp3" id="48_nvf18"]
 [ext_resource type="PackedScene" uid="uid://g6023gycygfj" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/flag_2_pole.tscn" id="49_88t2g"]
 [ext_resource type="PackedScene" uid="uid://lq7366i8slik" path="res://environment/assets/village/outside_props/scenes/weeping_angel_statue_1.tscn" id="50_ndnmt"]
 [ext_resource type="PackedScene" uid="uid://dnvuf1gma3joe" path="res://environment/assets/village/prebuilt_towns/harbour_town/scenes/full_harbour_town_5.tscn" id="53_66mer"]
@@ -1374,6 +1376,19 @@ bus = &"Ambience"
 stream = ExtResource("56_4tngs")
 volume_db = -10.0
 bus = &"Ambience"
+
+[node name="PostiveMessageReactionSound" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("47_byvhh")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="NegativeMessageReactionSound" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("48_nvf18")
+volume_db = -10.0
+bus = &"SFX"
+
+[connection signal="level_5_time_not_survived" from="." to="Player/UserInterface/NegativeMessageContainer2/NotWorthyMessage/AnimationPlayer" method="play" binds= ["message"]]
+[connection signal="level_5_time_survived" from="." to="Player/UserInterface/PositiveMessageContainer5/WorthyMessage/AnimationPlayer" method="play" binds= ["message"]]
 
 [editable path="Player"]
 [editable path="Player/Camera3D/WeaponManager/Weapons/Sword/AttackEmitter/HitScanAttackEmitter"]

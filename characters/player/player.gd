@@ -116,15 +116,15 @@ func load_next_level_based_on_death_count():
 			SceneManager.swap_scenes(SceneRegistry.levels["level_2_town"], get_tree().root, self, "fade_to_white")
 		2:
 			# Load town level 3, death count is 2
-			$"..".queue_free() # TO UPDATE: Removing the Level2Battlefield node
+			$"..".queue_free() # Removing the Level2Battlefield node
 			SceneManager.swap_scenes(SceneRegistry.levels["level_3_town"], get_tree().root, self, "fade_to_white")
 		3:
 			# Load town level 4, death count is 3
-			$"..".queue_free() # TO UPDATE: Removing the Level3Battlefield node
+			$"..".queue_free() # Removing the Level3Battlefield node
 			SceneManager.swap_scenes(SceneRegistry.levels["level_4_town"], get_tree().root, self, "fade_to_white")
 		4:
 			# Load town level 5, death count is 4
-			$"..".queue_free() # TO UPDATE: Removing the Level4Battlefield node
+			$"..".queue_free() # Removing the Level4Battlefield node
 			SceneManager.swap_scenes(SceneRegistry.levels["level_5_town"], get_tree().root, self, "fade_to_white")
 		_:
 			# Default case (5 deaths), load endings based on time survived
