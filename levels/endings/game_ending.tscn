@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhpxiwvkcb0dv"]
+
+[ext_resource type="FontFile" uid="uid://c355n3j7jdkeb" path="res://ui/fonts/PR Viking.ttf" id="1_jjwx8"]
+[ext_resource type="Script" path="res://levels/endings/ending.gd" id="1_w6o5c"]
+
+[node name="GameEnding" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="EndingText" type="RichTextLabel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("1_jjwx8")
+theme_override_fonts/bold_font = ExtResource("1_jjwx8")
+theme_override_fonts/italics_font = ExtResource("1_jjwx8")
+theme_override_fonts/bold_italics_font = ExtResource("1_jjwx8")
+theme_override_fonts/mono_font = ExtResource("1_jjwx8")
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 50
+theme_override_font_sizes/italics_font_size = 50
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/mono_font_size = 50
+bbcode_enabled = true
+script = ExtResource("1_w6o5c")

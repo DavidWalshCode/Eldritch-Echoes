@@ -4,8 +4,7 @@ class_name SceneRegistry extends Node
 
 const main_scenes = {
 	"main_menu": "res://ui/menus/main_menu.tscn",
-	"ending_survived": "res://levels/endings/ending_survived.tscn", # TO UPDATE SCENE PATH WHEN ENDINGS ARE CREATED
-	"ending_died": "res://levels/endings/ending_survived.tscn" # TO UPDATE SCENE PATH WHEN ENDINGS ARE CREATED
+	"game_ending": "res://levels/endings/game_ending.tscn"
 }
 
 const levels = {
