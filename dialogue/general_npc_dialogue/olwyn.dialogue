@@ -3,17 +3,18 @@
 # Name: Olwyn
 # Role: 
 # Unimportant character
+# Is dead in level 5
 
 if Global.is_level_1:
-	Olwyn: Level 1
+	Olwyn: So you’re the new Challenger?
 
 elif Global.is_level_2:
-	Olwyn: Level 2
+	Olwyn: Keep up the good work!?
 
 elif Global.is_level_3:
-	Olwyn: Level 3
+	Olwyn: More...more!
 
 elif Global.is_level_4:
-	Olwyn: Level 4
+	Olwyn: Red sun… dark omens… it approaches…
 
 => END

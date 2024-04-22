@@ -1,19 +1,20 @@
 ~ start
 
-# Name: Olwyn
+# Name: Philter
 # Role: 
 # Unimportant character
+# Is dead in level 5
 
 if Global.is_level_1:
-	Olwyn: Level 1
+	Philter: Are... bin... jerr.
 
 elif Global.is_level_2:
-	Olwyn: Level 2
+	Philter: Ahhhh... rrrr... innnn... jrrrr...
 
 elif Global.is_level_3:
-	Olwyn: Level 3
+	Philter: Ahr-bin-jer.
 
 elif Global.is_level_4:
-	Olwyn: Level 4
+	Philter: HARBINGER.
 
 => END

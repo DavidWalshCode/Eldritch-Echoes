@@ -1,19 +1,17 @@
 ~ start
 
-# Name: Olwyn
+# Name: Tormund
 # Role: 
 # Unimportant character
+# Is dead in level 4
 
 if Global.is_level_1:
-	Olwyn: Level 1
+	Tormund: Beautiful day we’re having, isn’t it?
 
 elif Global.is_level_2:
-	Olwyn: Level 2
+	Tormund: Have you noticed the fog? It’s common in the morning but rarely lingers this long.
 
 elif Global.is_level_3:
-	Olwyn: Level 3
-
-elif Global.is_level_4:
-	Olwyn: Level 4
+	Tormund: What’s up with this accursed fog? It won’t seem to lift.
 
 => END

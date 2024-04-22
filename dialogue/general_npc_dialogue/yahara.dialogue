@@ -1,19 +1,11 @@
 ~ start
 
-# Name: Olwyn
+# Name: Yahara
 # Role: 
 # Unimportant character
+# Is dead in level 2
 
 if Global.is_level_1:
-	Olwyn: Level 1
-
-elif Global.is_level_2:
-	Olwyn: Level 2
-
-elif Global.is_level_3:
-	Olwyn: Level 3
-
-elif Global.is_level_4:
-	Olwyn: Level 4
+	Yahara: Did you hear about the talking skeleton hiding in the town? Usually keeps to himself.
 
 => END

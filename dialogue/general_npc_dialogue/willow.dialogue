@@ -1,19 +1,14 @@
 ~ start
 
-# Name: Olwyn
+# Name: Willow
 # Role: 
 # Unimportant character
+# Is dead in level 3
 
 if Global.is_level_1:
-	Olwyn: Level 1
+	Willow: Are you here to save us?
 
 elif Global.is_level_2:
-	Olwyn: Level 2
-
-elif Global.is_level_3:
-	Olwyn: Level 3
-
-elif Global.is_level_4:
-	Olwyn: Level 4
+	Willow: My hero. I shall be waiting for your return, come meet me for a reward.
 
 => END

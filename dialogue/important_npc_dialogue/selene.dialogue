@@ -1,27 +1,26 @@
 ~ start
 
-# Name: Morrigan
-# Role: Mother-type
+# Name: Selene
+# Role: Blesses player as she leaves. Changes dramatically each day. Goes insane at the end
 # Important character
 
 if Global.is_level_1:
-	Morrigan: Wake up, sleepy head. You were in such a deep long sleep. We are still at Oldtown, the last bastion of hope for the Harbingers. Though many have come before, none have yet bested the Challenge. Are you indeed the Holy Warrior we dreamed of that can wield these ungodly powers?
-		Stretch your legs and have a look around, it may take some time to regain complete control. Head to the portal in the town centre when you are ready.
+	Selene: O Holy One, please accept this blessing as you do your duty. Should your soul be set adrift from this mortal coil, I shall pull you back to this time and place. Be warned, this blessing can only be granted a handful of times to each person. Each time, it may take some small toll, but we are out of options, and you are the most promising Challenger we have seen in years. 
+		We can't afford to lose you. Should you prove your mettle to the Powers that Be, mighty boons may be awarded to you for future engagements.
 
 elif Global.is_level_2:
-	Morrigan: Once, many Challengers from the far lands sought the power held in these lands. The streets were filled with life, but the infidels took much from us, and few yet remain to carry the torch. 
-		Please make us carry it no longer. Keep it up, I can feel the powers in you grow.
+	Selene: Hmmm... you did well, and the blessing did work. You have returned to us. And I'm not seeing any signs of harm... that's strange. Usually, there would be some impairment... a blemish on the body or soul. Ask the other Challengers. Each of them paid their price, and none were willing to pay it again. But you seem fine. 
+		Let me bless you again, and I hope you have some immunity to the repercussions. The harder you fight now, the easier the next fight will be.
 
 elif Global.is_level_3:
-	Morrigan: The Dread Moon approaches, and time is short. The seasons are shifting. What once was Summer shall soon turn to Autumn. The harvest grows ripe in the fields and Fat off the land. Soon, it will be time to pluck. 
-		The place is a lot quieter than it used to be... 
+	Selene: Still looking good. It's strange, like, none of the weird hoodoo magic we do to pull your soul back is having any effects on your fleshy meat sack. And your soul must be untainted since it is as clean as everyone else's. Well, except for the skeletons, he's strange, so ignore him. 
+		Either way, if you keep this up, we might get wrapped up here sooner than expected. Here's your blessing. Boop! Hey, only one blessing at a time! Aw shucks, here's another. Boop!
 
 elif Global.is_level_4:
-	Morrigan: The powers within you swell. Soon, what is shall pass, and what is to be will come. You have already proven more remarkable than any that has come before. 
-		Nothing is left for you but to push forward and take what is yours. A little more... you are almost there.
+	Selene: Okay. People are getting weird, and what's happening to the sky? What are you doing out there? Morrigan says it's working, but what is it? She keeps me in the dark on so many things. She needs my powers to send you to the island and pull you back, but she won't tell me anything else. 
+		If what you're doing can fix things, please save us! Please save us!
 
 elif Global.is_level_5:
-	Morrigan: Yes, more, more. You are so close! I can feel it. Maybe you really are the One. The One to bring an end to these accursed times. The one to reap souls of this land as the True Harbinger! And bring in a new world! 
-		Do It! Achieve what you were created for! End it all! (her eyes are deranged)
+	Selene: The Harbinger has arrived! Bring the Reaping to the Unworthy. If they will not kneel, they will be cut down! Oh, Unholy Challenger of Order, bring your destructive powers to ruin and smite first creatures that dwell below... and then those that dwell above. Reap them all! (laughing hysterically)
 
 => END

@@ -1,27 +1,27 @@
 ~ start
 
-# Name: Morrigan
-# Role: Mother-type
+# Name: Skellig
+# Role: Has beef with the Syr Duncan over who is tougher
 # Important character
 
 if Global.is_level_1:
-	Morrigan: Wake up, sleepy head. You were in such a deep long sleep. We are still at Oldtown, the last bastion of hope for the Harbingers. Though many have come before, none have yet bested the Challenge. Are you indeed the Holy Warrior we dreamed of that can wield these ungodly powers?
-		Stretch your legs and have a look around, it may take some time to regain complete control. Head to the portal in the town centre when you are ready.
+	Skellig: Whachoo lookin' a'? Tinkin' you better'n me, just 'cause I could'n beat da sec'nd stage? Come back if'n you survive ev'n dat long. 
+		Lookin' fer a bi' a... (indistinct mumbling)... ger away.
 
 elif Global.is_level_2:
-	Morrigan: Once, many Challengers from the far lands sought the power held in these lands. The streets were filled with life, but the infidels took much from us, and few yet remain to carry the torch. 
-		Please make us carry it no longer. Keep it up, I can feel the powers in you grow.
+	Skellig: Held yerself pretty well if'n I do say so meself. Next stage is da real deal. Only one feller managed to do it wat I evr 'erd of. He's a right knob 'ed en all 'e is. 
+		Alway's actin' so tough, but ev'n 'e could'n wield the powers 'e was given in da end. Get past 'ere, and den we'll talk.
 
 elif Global.is_level_3:
-	Morrigan: The Dread Moon approaches, and time is short. The seasons are shifting. What once was Summer shall soon turn to Autumn. The harvest grows ripe in the fields and Fat off the land. Soon, it will be time to pluck. 
-		The place is a lot quieter than it used to be... 
+	Skellig: 'Ow da 'ell'd you manage dat! Ne'er seen da likes o' it 'afore. Survivin' da horror is only da first step. Haf'n to figure out 'ow to use wat ya got now'n you got it is da next. Wat worked 'afore might'n work on bigger swarms. 
+		Keep gainin' powers and learnin' to wield dem. Keep gett'n stronger, it's da only way we'll ever be free.
 
 elif Global.is_level_4:
-	Morrigan: The powers within you swell. Soon, what is shall pass, and what is to be will come. You have already proven more remarkable than any that has come before. 
-		Nothing is left for you but to push forward and take what is yours. A little more... you are almost there.
+	Skellig: Yer makin' me believe again. After da old fool Syr Duncan failed, I was afeared we'd ne'r see a Challenger approach again in me lifetime, but 'ere you are. 
+		Show dem Underdwellers oo's boss, make 'em follow you. For the 'Arb'n'gr! For the 'Arb'n'gr!
 
 elif Global.is_level_5:
-	Morrigan: Yes, more, more. You are so close! I can feel it. Maybe you really are the One. The One to bring an end to these accursed times. The one to reap souls of this land as the True Harbinger! And bring in a new world! 
-		Do It! Achieve what you were created for! End it all! (her eyes are deranged)
+	Skellig: Last stage... (heavy panting)... prove you are what I know you to be. Master dem, control dem, prove dey should'n follow you. Take 'em all across da lands... kill 'ed all... burn it all... reap it all...
+		'Arb'n'gr is a plague on da land... maim... slau'tr... fire... death... kill... (his mind is fractured)
 
 => END

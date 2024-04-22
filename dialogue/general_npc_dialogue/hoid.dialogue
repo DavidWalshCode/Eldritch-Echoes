@@ -1,19 +1,20 @@
 ~ start
 
-# Name: Olwyn
-# Role: 
+# Name: Hoid
+# Role: The portal master
 # Unimportant character
+# Is dead in level 5
 
 if Global.is_level_1:
-	Olwyn: Level 1
+	Hoid: Hey bud! I'm the portal master, jump on in!
 
 elif Global.is_level_2:
-	Olwyn: Level 2
+	Hoid: I am the portal master... wait... nah, it can't be. Hey bud! Jump on in!
 
 elif Global.is_level_3:
-	Olwyn: Level 3
+	Hoid: I am the portal master... no, it can't be... no, it can't be... jump...
 
 elif Global.is_level_4:
-	Olwyn: Level 4
+	Hoid: I am the portal master... I am the portal master... I am the portal master... I am the portal master...
 
 => END

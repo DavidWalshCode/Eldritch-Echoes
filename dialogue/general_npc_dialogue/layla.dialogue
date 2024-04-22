@@ -1,19 +1,17 @@
 ~ start
 
-# Name: Olwyn
+# Name: Layla
 # Role: 
 # Unimportant character
+# Is dead in level 4
 
 if Global.is_level_1:
-	Olwyn: Level 1
+	Layla: I love the scent of the flowers blooming this time of year.
 
 elif Global.is_level_2:
-	Olwyn: Level 2
+	Layla: Is it just me, or does the sky seem a little… different today?
 
 elif Global.is_level_3:
-	Olwyn: Level 3
-
-elif Global.is_level_4:
-	Olwyn: Level 4
+	Layla: Why does the sky grow more dissatisfied every day? What will keep the dark from us should it fail?
 
 => END

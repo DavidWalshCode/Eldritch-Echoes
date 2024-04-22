@@ -1,19 +1,14 @@
 ~ start
 
-# Name: Olwyn
-# Role: 
+# Name: Aengus
+# Role:
 # Unimportant character
+# Is dead in level 3
 
 if Global.is_level_1:
-	Olwyn: Level 1
+	Aengus: Do you have any idea what you're signing up for?
 
 elif Global.is_level_2:
-	Olwyn: Level 2
-
-elif Global.is_level_3:
-	Olwyn: Level 3
-
-elif Global.is_level_4:
-	Olwyn: Level 4
+	Aengus: You’ll probably face new threats in the trial ahead Challenger.
 
 => END

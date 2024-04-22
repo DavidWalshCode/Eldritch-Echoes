@@ -1,19 +1,20 @@
 ~ start
 
-# Name: Olwyn
-# Role: 
+# Name: Brigid
+# Role: Talks about the murders/disappearances around town
 # Unimportant character
+# Is dead in level 5
 
 if Global.is_level_1:
-	Olwyn: Level 1
+	Brigid: Have you spoken to everyone in town yet? Why haven't you gone to the portal yet?
 
 elif Global.is_level_2:
-	Olwyn: Level 2
+	Brigid: Dear lord, someone killed Yahara in the night! Who would do such a thing?
 
 elif Global.is_level_3:
-	Olwyn: Level 3
+	Brigid: First Yahara, now Willow and Aengus... why is this happening. Shouldn't you be stopping this?
 
 elif Global.is_level_4:
-	Olwyn: Level 4
+	Brigid: Layla! FIONN!!! You've taken everyone else already. Take me! Take me to the reaping!
 
 => END

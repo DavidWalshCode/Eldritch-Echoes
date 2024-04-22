@@ -153,7 +153,7 @@ talk={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/main.dialogue", "res://dialogue/important_npc_dialogue/morrigan.dialogue", "res://dialogue/important_npc_dialogue/skellig.dialogue", "res://dialogue/important_npc_dialogue/selene.dialogue", "res://dialogue/important_npc_dialogue/alhoon.dialogue", "res://dialogue/important_npc_dialogue/syr_duncan.dialogue", "res://dialogue/general_npc_dialogue/olwyn.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/main.dialogue", "res://dialogue/important_npc_dialogue/morrigan.dialogue", "res://dialogue/important_npc_dialogue/skellig.dialogue", "res://dialogue/important_npc_dialogue/selene.dialogue", "res://dialogue/important_npc_dialogue/alhoon.dialogue", "res://dialogue/important_npc_dialogue/syr_duncan.dialogue", "res://dialogue/general_npc_dialogue/olwyn.dialogue", "res://dialogue/general_npc_dialogue/willow.dialogue", "res://dialogue/general_npc_dialogue/faye.dialogue", "res://dialogue/general_npc_dialogue/tormund.dialogue", "res://dialogue/general_npc_dialogue/rastog.dialogue", "res://dialogue/general_npc_dialogue/aengus.dialogue", "res://dialogue/general_npc_dialogue/layla.dialogue", "res://dialogue/general_npc_dialogue/brigid.dialogue", "res://dialogue/general_npc_dialogue/bones.dialogue", "res://dialogue/general_npc_dialogue/hoid.dialogue", "res://dialogue/general_npc_dialogue/philter.dialogue", "res://dialogue/general_npc_dialogue/dante.dialogue", "res://dialogue/general_npc_dialogue/yahara.dialogue", "res://dialogue/general_npc_dialogue/fionn.dialogue")
 
 [layer_names]
 

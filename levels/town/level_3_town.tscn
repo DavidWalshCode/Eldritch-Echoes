@@ -1240,6 +1240,9 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("68_48gp5")]
 transform = Transform3D(-0.984503, 0, 0.175367, 0, 1, 0, -0.175367, 0, -0.984503, 0.297, 19.6728, -259.964)
 
+[node name="Camera3D" parent="Player" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999994, 0.00349065, 0, -0.00349065, 0.999994, 0, 1.89849, 0)
+
 [node name="RainEffect1" parent="Player" instance=ExtResource("60_4pc02")]
 
 [node name="NPCs" type="Node3D" parent="."]

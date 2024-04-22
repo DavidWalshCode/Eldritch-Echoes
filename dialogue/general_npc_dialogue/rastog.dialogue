@@ -1,19 +1,20 @@
 ~ start
 
-# Name: Olwyn
+# Name: Rastog
 # Role: 
 # Unimportant character
+# Is dead in level 5
 
 if Global.is_level_1:
-	Olwyn: Level 1
+	Rastog: I hope you're not looking to disturb this quiet town.
 
 elif Global.is_level_2:
-	Olwyn: Level 2
+	Rastog: Trouble brewing ever since you showed up. It better not get any worse, or I'm coming for you.
 
 elif Global.is_level_3:
-	Olwyn: Level 3
+	Rastog: When surrounded by fire, fight fire with fire. Here that everyone? More fire!
 
 elif Global.is_level_4:
-	Olwyn: Level 4
+	Rastog: HehheeheehHHheeEEHhhaeaaAAAAAGGGHHH...
 
 => END
