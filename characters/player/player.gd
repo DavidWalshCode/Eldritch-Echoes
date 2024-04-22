@@ -27,6 +27,8 @@ var dead = false
 @onready var item_pickup_manager = $ItemPickupManager
 @onready var weapon_manager = $Camera3D/WeaponManager
 
+@onready var actionable_finder = $NPCInteractionManager/ActionableFinder # For NPC dialogue
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
@@ -60,6 +62,13 @@ func _input(event):
 		character_mover.start_crouching()
 	elif event.is_action_released("crouch"):
 		character_mover.stop_crouching()
+	
+	# Dialogue stuff
+	if Input.is_action_just_pressed("talk"): #"ui_accept"
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return
 
 # Equivalent to update() in Unity, runs every frame
 func _process(delta):

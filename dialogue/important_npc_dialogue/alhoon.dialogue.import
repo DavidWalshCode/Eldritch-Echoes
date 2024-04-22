@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bmo2mcbh4gw3m"
+path="res://.godot/imported/alhoon.dialogue-56967f638c1d3cb11dfefc02f2db1b44.tres"
+
+[deps]
+
+source_file="res://dialogue/important_npc_dialogue/alhoon.dialogue"
+dest_files=["res://.godot/imported/alhoon.dialogue-56967f638c1d3cb11dfefc02f2db1b44.tres"]
+
+[params]
+
+defaults=true

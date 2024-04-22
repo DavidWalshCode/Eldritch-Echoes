@@ -18,6 +18,13 @@ signal level_5_time_not_survived
 func _ready():
 	general_ambience_level_5.play()
 	
+	# For NPC dialogue
+	Global.is_level_1 = false
+	Global.is_level_2 = false
+	Global.is_level_3 = false
+	Global.is_level_4 = false
+	Global.is_level_5 = true
+	
 	await get_tree().create_timer(25).timeout
 	level_timer.visible = true
 	level_timer.start_timer()

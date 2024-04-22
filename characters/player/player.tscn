@@ -1389,6 +1389,28 @@ stream = ExtResource("57_oogef")
 volume_db = -6.0
 bus = &"SFX"
 
+[node name="NPCInteractionManager" type="Marker3D" parent="."]
+
+[node name="ActionableFinder" type="Area3D" parent="NPCInteractionManager"]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCInteractionManager/ActionableFinder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.18666)
+shape = SubResource("CapsuleShape3D_r86ji")
+
+[node name="Audio" type="Node3D" parent="NPCInteractionManager/ActionableFinder"]
+
+[node name="DialgoueEnterSound" type="AudioStreamPlayer" parent="NPCInteractionManager/ActionableFinder/Audio"]
+stream = ExtResource("56_pjaff")
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="DialogueExitSound" type="AudioStreamPlayer" parent="NPCInteractionManager/ActionableFinder/Audio"]
+stream = ExtResource("57_oogef")
+volume_db = -6.0
+bus = &"SFX"
+
 [node name="PlayerAnimations" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_54k3e")

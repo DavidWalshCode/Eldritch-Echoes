@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://mkxugq3syol1"
+path="res://.godot/imported/rastog.dialogue-3a68b8a7bc166849a7617cc3ed6043c3.tres"
+
+[deps]
+
+source_file="res://dialogue/general_npc_dialogue/rastog.dialogue"
+dest_files=["res://.godot/imported/rastog.dialogue-3a68b8a7bc166849a7617cc3ed6043c3.tres"]
+
+[params]
+
+defaults=true

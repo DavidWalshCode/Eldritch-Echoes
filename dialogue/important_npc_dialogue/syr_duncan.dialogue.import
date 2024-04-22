@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dc1k4nsnyvg3"
+path="res://.godot/imported/syr_duncan.dialogue-b9253da42f4eea152e0276cc4df50222.tres"
+
+[deps]
+
+source_file="res://dialogue/important_npc_dialogue/syr_duncan.dialogue"
+dest_files=["res://.godot/imported/syr_duncan.dialogue-b9253da42f4eea152e0276cc4df50222.tres"]
+
+[params]
+
+defaults=true

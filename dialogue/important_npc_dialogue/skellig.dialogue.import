@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cd4d02017rcev"
+path="res://.godot/imported/skellig.dialogue-c1923b358e86291d53edf43f5a116850.tres"
+
+[deps]
+
+source_file="res://dialogue/important_npc_dialogue/skellig.dialogue"
+dest_files=["res://.godot/imported/skellig.dialogue-c1923b358e86291d53edf43f5a116850.tres"]
+
+[params]
+
+defaults=true

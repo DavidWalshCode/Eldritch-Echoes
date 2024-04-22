@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://cgph20bto862l"]
+[gd_scene load_steps=68 format=3 uid="uid://cgph20bto862l"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_1_town.gd" id="1_opw3t"]
 [ext_resource type="PackedScene" uid="uid://o8ngiergmnaa" path="res://environment/assets/ground/stone/scenes/paving_cobble_1_flat.tscn" id="2_8f67n"]
@@ -58,6 +58,7 @@
 [ext_resource type="PackedScene" uid="uid://bsfdocab5ls3" path="res://effects/portal/town_1_portal.tscn" id="52_kjsjn"]
 [ext_resource type="PackedScene" uid="uid://s3re3a6gjbsw" path="res://characters/enemies/enemy_spawners/enemy_spawner_manager.tscn" id="57_hynql"]
 [ext_resource type="PackedScene" uid="uid://b2gx020q3dwn2" path="res://characters/enemies/enemy_spawners/enemy_1_spawner.tscn" id="57_qdl3j"]
+[ext_resource type="PackedScene" uid="uid://b612nf0asac87" path="res://characters/npc/assets/scenes/temp_1_morrigan.tscn" id="57_xq405"]
 [ext_resource type="AudioStream" uid="uid://thxjd66rsnr2" path="res://audio/ambience/forest.ogg" id="59_xw4ub"]
 [ext_resource type="AudioStream" uid="uid://d3s4ep4vkk0ht" path="res://audio/sfx/portal/617762__cogfirestudios__big-scary-portal-2.wav" id="60_p5lnj"]
 [ext_resource type="PackedScene" uid="uid://duxcuq4it2g1c" path="res://items/health/scenes/health_pickup.tscn" id="61_wjhdj"]
@@ -946,6 +947,9 @@ transform = Transform3D(-0.984503, 0, 0.175367, 0, 1, 0, -0.175367, 0, -0.984503
 [node name="NPCs" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
 
+[node name="Temp1Morrigan" parent="NPCs" instance=ExtResource("57_xq405")]
+transform = Transform3D(-0.540255, 0, 0.841501, 0, 1, 0, -0.841501, 0, -0.540255, 4.91879, 18.4515, -247.56)
+
 [node name="Enemies" type="Node3D" parent="."]
 transform = Transform3D(0.95983, 0, -0.280583, 0, 1, 0, 0.280583, 0, 0.95983, -18.128, 0, 41.3079)
 
@@ -975,19 +979,21 @@ stream = ExtResource("60_p5lnj")
 volume_db = -10.0
 bus = &"SFX"
 
-[node name="HealthPickup" parent="." instance=ExtResource("61_wjhdj")]
+[node name="Items" type="Node3D" parent="."]
+
+[node name="HealthPickup" parent="Items" instance=ExtResource("61_wjhdj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -42.1183)
 
-[node name="MachineGunAmmoPickup" parent="." instance=ExtResource("65_jpgx2")]
+[node name="MachineGunAmmoPickup" parent="Items" instance=ExtResource("65_jpgx2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.90152, 1, -36.7845)
 
-[node name="RevolverAmmoPickup" parent="." instance=ExtResource("62_k4xw8")]
+[node name="RevolverAmmoPickup" parent="Items" instance=ExtResource("62_k4xw8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3525, 1, -46.3534)
 
-[node name="RocketLauncherAmmoPickup" parent="." instance=ExtResource("63_dpirw")]
+[node name="RocketLauncherAmmoPickup" parent="Items" instance=ExtResource("63_dpirw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9747, 1, -42.4263)
 
-[node name="ShotgunAmmoPickup" parent="." instance=ExtResource("64_f1nam")]
+[node name="ShotgunAmmoPickup" parent="Items" instance=ExtResource("64_f1nam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.90152, 1, -49.2728)
 
 [editable path="Player"]

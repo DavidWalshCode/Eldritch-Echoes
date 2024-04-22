@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://hbq2rbrbi2ec"
+path="res://.godot/imported/willow.dialogue-fe265d13ff27da5e20795a05b463ebe1.tres"
+
+[deps]
+
+source_file="res://dialogue/general_npc_dialogue/willow.dialogue"
+dest_files=["res://.godot/imported/willow.dialogue-fe265d13ff27da5e20795a05b463ebe1.tres"]
+
+[params]
+
+defaults=true

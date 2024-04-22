@@ -1,6 +1,5 @@
 extends Node
 
-
 const DialogueConstants = preload("./constants.gd")
 const Builtins = preload("./utilities/builtins.gd")
 const DialogueSettings = preload("./settings.gd")
@@ -10,7 +9,6 @@ const DialogueResponse = preload("./dialogue_response.gd")
 const DialogueManagerParser = preload("./components/parser.gd")
 const DialogueManagerParseResult = preload("./components/parse_result.gd")
 const ResolvedLineData = preload("./components/resolved_line_data.gd")
-
 
 ## Emitted when a title is encountered while traversing dialogue, usually when jumping from a
 ## goto line
@@ -31,7 +29,6 @@ signal bridge_get_next_dialogue_line_completed(line: DialogueLine)
 ## Used inernally
 signal bridge_mutated()
 
-
 enum MutationBehaviour {
 	Wait,
 	DoNotWait,
@@ -44,7 +41,6 @@ enum TranslationSource {
 	CSV,
 	PO
 }
-
 
 ## The list of globals that dialogue can query
 var game_states: Array = []
@@ -68,9 +64,7 @@ var get_current_scene: Callable = func():
 var _has_loaded_autoloads: bool = false
 var _autoloads: Dictionary = {}
 
-
 var _node_properties: Array = []
-
 
 func _ready() -> void:
 	# Cache the known Node2D properties
@@ -88,7 +82,6 @@ func _ready() -> void:
 	# Connect up the C# signals if need be
 	if DialogueSettings.has_dotnet_solution():
 		_get_dotnet_dialogue_manager().Prepare()
-
 
 ## Step through lines and run any mutations until we either hit some dialogue or the end of the conversation
 func get_next_dialogue_line(resource: DialogueResource, key: String = "", extra_game_states: Array = [], mutation_behaviour: MutationBehaviour = MutationBehaviour.Wait) -> DialogueLine:
@@ -133,7 +126,6 @@ func get_next_dialogue_line(resource: DialogueResource, key: String = "", extra_
 	else:
 		got_dialogue.emit(dialogue)
 		return dialogue
-
 
 func get_resolved_line_data(data: Dictionary, extra_game_states: Array = []) -> ResolvedLineData:
 	var text: String = translate(data)
@@ -209,7 +201,6 @@ func get_resolved_line_data(data: Dictionary, extra_game_states: Array = []) -> 
 
 	return markers
 
-
 ## Replace any variables, etc in the character name
 func get_resolved_character(data: Dictionary, extra_game_states: Array = []) -> String:
 	var character: String = data.get(&"character", "")
@@ -228,7 +219,6 @@ func get_resolved_character(data: Dictionary, extra_game_states: Array = []) -> 
 		character = character.replace("[[%s]]" % found.get_string(&"options"), options[randi_range(0, options.size() - 1)])
 
 	return character
-
 
 ## Generate a dialogue resource on the fly from some text
 func create_resource_from_text(text: String) -> Resource:
@@ -257,7 +247,6 @@ func create_resource_from_text(text: String) -> Resource:
 
 	return resource
 
-
 ## Show the example balloon
 func show_example_dialogue_balloon(resource: DialogueResource, title: String = "", extra_game_states: Array = []) -> CanvasLayer:
 	var balloon: Node = load(_get_example_balloon_path()).instantiate()
@@ -266,14 +255,12 @@ func show_example_dialogue_balloon(resource: DialogueResource, title: String = "
 
 	return balloon
 
-
 ## Show the configured dialogue balloon
 func show_dialogue_balloon(resource: DialogueResource, title: String = "", extra_game_states: Array = []) -> Node:
 	var balloon_path: String = DialogueSettings.get_setting(&"balloon_path", _get_example_balloon_path())
 	if not ResourceLoader.exists(balloon_path):
 		balloon_path = _get_example_balloon_path()
 	return show_dialogue_balloon_scene(balloon_path, resource, title, extra_game_states)
-
 
 ## Show a given balloon scene
 func show_dialogue_balloon_scene(balloon_scene, resource: DialogueResource, title: String = "", extra_game_states: Array = []) -> Node:
@@ -292,20 +279,16 @@ func show_dialogue_balloon_scene(balloon_scene, resource: DialogueResource, titl
 		assert(false, DialogueConstants.translate(&"runtime.dialogue_balloon_missing_start_method"))
 	return balloon
 
-
 # Get the path to the example balloon
 func _get_example_balloon_path() -> String:
 	var is_small_window: bool = ProjectSettings.get_setting("display/window/size/viewport_width") < 400
 	var balloon_path: String = "/example_balloon/small_example_balloon.tscn" if is_small_window else "/example_balloon/example_balloon.tscn"
 	return get_script().resource_path.get_base_dir() + balloon_path
 
-
 ### Dotnet bridge
-
 
 func _get_dotnet_dialogue_manager() -> Node:
 	return load(get_script().resource_path.get_base_dir() + "/DialogueManager.cs").new()
-
 
 func _bridge_get_next_dialogue_line(resource: DialogueResource, key: String, extra_game_states: Array = []) -> void:
 	# dotnet needs at least one await tick of the signal gets called too quickly
@@ -314,14 +297,11 @@ func _bridge_get_next_dialogue_line(resource: DialogueResource, key: String, ext
 	var line = await get_next_dialogue_line(resource, key, extra_game_states)
 	bridge_get_next_dialogue_line_completed.emit(line)
 
-
 func _bridge_mutate(mutation: Dictionary, extra_game_states: Array, is_inline_mutation: bool = false) -> void:
 	await mutate(mutation, extra_game_states, is_inline_mutation)
 	bridge_mutated.emit()
 
-
 ### Helpers
-
 
 # Get a line by its ID
 func get_line(resource: DialogueResource, key: String, extra_game_states: Array) -> DialogueLine:
@@ -421,7 +401,6 @@ func get_line(resource: DialogueResource, key: String, extra_game_states: Array)
 	line.next_id = "|".join(stack) if line.next_id == DialogueConstants.ID_NULL else line.next_id + id_trail
 	return line
 
-
 # Show a message or crash with error
 func show_error_for_missing_state_value(message: String, will_show: bool = true) -> void:
 	if not will_show: return
@@ -432,7 +411,6 @@ func show_error_for_missing_state_value(message: String, will_show: bool = true)
 		# If you're here then you're missing a method or property in your game state. The error
 		# message down in the debugger will give you some more information.
 		assert(false, message)
-
 
 # Translate a string
 func translate(data: Dictionary) -> String:
@@ -462,7 +440,6 @@ func translate(data: Dictionary) -> String:
 					return tr(data.translation_key)
 
 	return tr(data.translation_key)
-
 
 # Create a line of dialogue
 func create_dialogue_line(data: Dictionary, extra_game_states: Array) -> DialogueLine:
@@ -506,7 +483,6 @@ func create_dialogue_line(data: Dictionary, extra_game_states: Array) -> Dialogu
 
 	return null
 
-
 # Create a response
 func create_response(data: Dictionary, extra_game_states: Array) -> DialogueResponse:
 	var resolved_data: ResolvedLineData = await get_resolved_line_data(data, extra_game_states)
@@ -522,7 +498,6 @@ func create_response(data: Dictionary, extra_game_states: Array) -> DialogueResp
 		tags = data.get(&"tags", []),
 		translation_key = data.translation_key
 	})
-
 
 # Get the current game states
 func get_game_states(extra_game_states: Array) -> Array:
@@ -550,14 +525,12 @@ func get_game_states(extra_game_states: Array) -> Array:
 			unique_states.append(state)
 	return unique_states
 
-
 # Check if a condition is met
 func check_condition(data: Dictionary, extra_game_states: Array) -> bool:
 	if data.get(&"condition", null) == null: return true
 	if data.condition.size() == 0: return true
 
 	return await resolve(data.condition.expression.duplicate(true), extra_game_states)
-
 
 # Make a change to game state or run a method
 func mutate(mutation: Dictionary, extra_game_states: Array, is_inline_mutation: bool = false) -> void:
@@ -590,20 +563,17 @@ func mutate(mutation: Dictionary, extra_game_states: Array, is_inline_mutation: 
 	# Wait one frame to give the dialogue handler a chance to yield
 	await get_tree().process_frame
 
-
 func mutation_contains_assignment(mutation: Array) -> bool:
 	for token in mutation:
 		if token.type == DialogueConstants.TOKEN_ASSIGNMENT:
 			return true
 	return false
 
-
 func resolve_each(array: Array, extra_game_states: Array) -> Array:
 	var results: Array = []
 	for item in array:
 		results.append(await resolve(item.duplicate(true), extra_game_states))
 	return results
-
 
 # Replace an array of line IDs with their response prompts
 func get_responses(ids: Array, resource: DialogueResource, id_trail: String, extra_game_states: Array) -> Array[DialogueResponse]:
@@ -617,7 +587,6 @@ func get_responses(ids: Array, resource: DialogueResource, id_trail: String, ext
 			responses.append(response)
 
 	return responses
-
 
 # Get a value on the current scene or game state
 func get_state_value(property: String, extra_game_states: Array):
@@ -656,7 +625,6 @@ func get_state_value(property: String, extra_game_states: Array):
 
 	show_error_for_missing_state_value(DialogueConstants.translate(&"runtime.property_not_found").format({ property = property, states = str(get_game_states(extra_game_states)) }))
 
-
 # Set a value on the current scene or game state
 func set_state_value(property: String, value, extra_game_states: Array) -> void:
 	for state in get_game_states(extra_game_states):
@@ -672,7 +640,6 @@ func set_state_value(property: String, value, extra_game_states: Array) -> void:
 		show_error_for_missing_state_value(DialogueConstants.translate(&"runtime.property_not_found_missing_export").format({ property = property, states = str(get_game_states(extra_game_states)) }))
 	else:
 		show_error_for_missing_state_value(DialogueConstants.translate(&"runtime.property_not_found").format({ property = property, states = str(get_game_states(extra_game_states)) }))
-
 
 # Collapse any expressions
 func resolve(tokens: Array, extra_game_states: Array):
@@ -1116,7 +1083,6 @@ func apply_operation(operator: String, first_value, second_value):
 
 	assert(false, DialogueConstants.translate(&"runtime.unknown_operator"))
 
-
 # Check if a dialogue line contains meaningful information
 func is_valid(line: DialogueLine) -> bool:
 	if line == null:
@@ -1126,7 +1092,6 @@ func is_valid(line: DialogueLine) -> bool:
 	if line.type == DialogueConstants.TYPE_RESPONSE and line.get(&"responses").size() == 0:
 		return false
 	return true
-
 
 func thing_has_method(thing, method: String, args: Array) -> bool:
 	if Builtins.is_supported(thing):
@@ -1147,7 +1112,6 @@ func thing_has_method(thing, method: String, args: Array) -> bool:
 
 	return false
 
-
 # Check if a given property exists
 func thing_has_property(thing: Object, property: String) -> bool:
 	if thing == null:
@@ -1161,7 +1125,6 @@ func thing_has_property(thing: Object, property: String) -> bool:
 			return true
 
 	return false
-
 
 func resolve_signal(args: Array, extra_game_states: Array):
 	if args[0] is Signal:
@@ -1192,7 +1155,6 @@ func resolve_signal(args: Array, extra_game_states: Array):
 
 	# The signal hasn't been found anywhere
 	show_error_for_missing_state_value(DialogueConstants.translate(&"runtime.signal_not_found").format({ signal_name = args[0], states = str(get_game_states(extra_game_states)) }))
-
 
 func resolve_thing_method(thing, method: String, args: Array):
 	if Builtins.is_supported(thing):

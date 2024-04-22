@@ -4,3 +4,10 @@ extends Node3D
 
 func _ready():
 	ambience_level_1.play()
+	
+	# For NPC dialogue
+	Global.is_level_1 = true
+	Global.is_level_2 = false
+	Global.is_level_3 = false
+	Global.is_level_4 = false
+	Global.is_level_5 = false

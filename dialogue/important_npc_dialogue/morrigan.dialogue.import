@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dbiuf7bl62uwm"
+path="res://.godot/imported/morrigan.dialogue-6efd89dc1c4054c2ace05b55fc4016ce.tres"
+
+[deps]
+
+source_file="res://dialogue/important_npc_dialogue/morrigan.dialogue"
+dest_files=["res://.godot/imported/morrigan.dialogue-6efd89dc1c4054c2ace05b55fc4016ce.tres"]
+
+[params]
+
+defaults=true

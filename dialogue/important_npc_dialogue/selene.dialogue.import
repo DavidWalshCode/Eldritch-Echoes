@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://beggmjok2txs4"
+path="res://.godot/imported/selene.dialogue-4933f565ee951726de96c0778af371ce.tres"
+
+[deps]
+
+source_file="res://dialogue/important_npc_dialogue/selene.dialogue"
+dest_files=["res://.godot/imported/selene.dialogue-4933f565ee951726de96c0778af371ce.tres"]
+
+[params]
+
+defaults=true

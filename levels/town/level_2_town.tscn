@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://1bqkkacruegj"]
+[gd_scene load_steps=73 format=3 uid="uid://1bqkkacruegj"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_2_town.gd" id="1_7dh5c"]
 [ext_resource type="PackedScene" uid="uid://o8ngiergmnaa" path="res://environment/assets/ground/stone/scenes/paving_cobble_1_flat.tscn" id="2_i8byq"]
@@ -71,6 +71,7 @@
 [ext_resource type="AudioStream" uid="uid://thxjd66rsnr2" path="res://audio/ambience/forest.ogg" id="57_cgxeo"]
 [ext_resource type="PackedScene" uid="uid://bvc2uk6e7n5jc" path="res://effects/portal/town_2_portal.tscn" id="65_ichrq"]
 [ext_resource type="PackedScene" uid="uid://cyo4axkk6ift6" path="res://effects/fire/fire_1_effect.tscn" id="70_o2k0l"]
+[ext_resource type="PackedScene" uid="uid://b612nf0asac87" path="res://characters/npc/assets/scenes/temp_1_morrigan.tscn" id="71_8wwu4"]
 
 [node name="Level2Town" type="Node3D"]
 script = ExtResource("1_7dh5c")
@@ -1101,6 +1102,9 @@ transform = Transform3D(-0.984503, 0, 0.175367, 0, 1, 0, -0.175367, 0, -0.984503
 
 [node name="NPCs" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
+
+[node name="Temp1Morrigan" parent="NPCs" instance=ExtResource("71_8wwu4")]
+transform = Transform3D(-0.540255, 0, 0.841501, 0, 1, 0, -0.841501, 0, -0.540255, 4.91879, 18.9693, -247.56)
 
 [node name="Audio" type="Node3D" parent="."]
 

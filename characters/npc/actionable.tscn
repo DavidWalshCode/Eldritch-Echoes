@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://2utaorr0j4p7"]
+
+[ext_resource type="Script" path="res://characters/npc/actionable.gd" id="1_xek78"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1vx17"]
+
+[node name="Actionable" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01567, 0)
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_xek78")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 1.5, 0, 0, 0, 3, 0, 0.484816, 0)
+shape = SubResource("CapsuleShape3D_1vx17")

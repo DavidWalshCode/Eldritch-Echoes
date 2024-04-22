@@ -21,8 +21,18 @@ var settings_menu = null
 
 var main_menu = false
 
+var main_dialogue_balloon_scene : PackedScene = preload("res://dialogue/dialogue_balloons/main_dialogue_balloon.tscn")
+var main_dialogue_balloon = null
+
 var death_count = 0 # Keeping track of the player death count
 var debug # Reference to DebugPanel for debug property assignment
+
+# Level specifc varaiables used for NPC dialogue
+var is_level_1 = false
+var is_level_2 = false
+var is_level_3 = false
+var is_level_4 = false
+var is_level_5 = false
 
 # Level specifc varaiables used for unlocking weapons and endings
 var level_1_survived_passed_time = false
@@ -69,11 +79,10 @@ func open_settings_menu():
 	else:
 		push_warning('Settings menu already exists in this scene')
 
-# Method to queue the root node of the current scene for deletion
-func queue_free_scene():
-	var current_scene = get_tree().current_scene
-	if current_scene:
-		current_scene.queue_free()
-		print("Current scene queued for free.")
+func open_dialogue():
+	if not main_dialogue_balloon:
+		main_dialogue_balloon = main_dialogue_balloon_scene.instantiate()
+		get_tree().root.add_child(main_dialogue_balloon)
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
-		printerr("No current scene to free.")
+		push_warning('Dialogue balloon already exists in this scene')

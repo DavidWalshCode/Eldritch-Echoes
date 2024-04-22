@@ -477,6 +477,9 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("33_urie4")]
 transform = Transform3D(-0.839259, 0, -0.543731, 0, 1, 0, 0.543731, 0, -0.839259, -42.0384, 0.709427, -31.2595)
 
+[node name="Camera3D" parent="Player" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999994, 0.00349065, 0, -0.00349065, 0.999994, 0, 1.89849, 0)
+
 [node name="Enemies" type="Node3D" parent="."]
 transform = Transform3D(0.95983, 0, -0.280583, 0, 1, 0, 0.280583, 0, 0.95983, -18.128, 0, 41.3079)
 
