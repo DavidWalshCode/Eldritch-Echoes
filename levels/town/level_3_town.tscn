@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://cd284f8ftkm7"]
+[gd_scene load_steps=82 format=3 uid="uid://cd284f8ftkm7"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_3_town.gd" id="1_udk8r"]
 [ext_resource type="PackedScene" uid="uid://o8ngiergmnaa" path="res://environment/assets/ground/stone/scenes/paving_cobble_1_flat.tscn" id="2_mt1io"]
@@ -53,7 +53,7 @@
 [ext_resource type="PackedScene" uid="uid://dguou52s5tbgv" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/box_small_1.tscn" id="59_s0rva"]
 [ext_resource type="PackedScene" uid="uid://ilm3mbohu7ar" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/wagon_wheel_1.tscn" id="60_0w3rw"]
 [ext_resource type="PackedScene" uid="uid://deet40dn2j7nb" path="res://effects/rain/rain_effect_1.tscn" id="60_4pc02"]
-[ext_resource type="AudioStream" uid="uid://4uhgisbwq7gv" path="res://audio/ambience/Dark_Rainy_Night(ambience).ogg" id="61_8f8dg"]
+[ext_resource type="AudioStream" uid="uid://4uhgisbwq7gv" path="res://audio/ambience/level_3/Dark_Rainy_Night(ambience).ogg" id="61_8f8dg"]
 [ext_resource type="PackedScene" uid="uid://c3srl1ur63l7u" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/chest_closed_1.tscn" id="61_hir2a"]
 [ext_resource type="PackedScene" uid="uid://cyo4axkk6ift6" path="res://effects/fire/fire_1_effect.tscn" id="62_0ywkc"]
 [ext_resource type="PackedScene" uid="uid://bon43w0ahe6hx" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/flag_1_pole.tscn" id="62_4a8tf"]
@@ -79,6 +79,8 @@
 [ext_resource type="PackedScene" uid="uid://t6uuevlbit8j" path="res://characters/npc/assets/scenes/unimportant_npcs/viking_model/rastog_npc.tscn" id="76_4xd1w"]
 [ext_resource type="PackedScene" uid="uid://buvdx45dwi5sk" path="res://characters/npc/assets/scenes/unimportant_npcs/viking_model/tormund_npc.tscn" id="77_uj5oa"]
 [ext_resource type="PackedScene" uid="uid://cwvcbajviop4o" path="res://characters/npc/assets/scenes/unimportant_npcs/villager_female_model/layla_npc.tscn" id="78_73qqn"]
+[ext_resource type="AudioStream" uid="uid://deq5adp3r1gji" path="res://audio/ambience/level_3/33796__yewbic__ambience03.wav" id="79_ylqko"]
+[ext_resource type="AudioStream" uid="uid://dvgi0ug0d0fek" path="res://audio/music/Intro Sting.wav" id="80_bmsxu"]
 
 [node name="Level3Town" type="Node3D"]
 script = ExtResource("1_udk8r")
@@ -1319,8 +1321,18 @@ transform = Transform3D(-0.425479, 0, 0.904968, 0, 1, 0, -0.904968, 0, -0.425479
 [node name="Audio" type="Node3D" parent="."]
 
 [node name="AmbienceLevel3" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("79_ylqko")
+volume_db = -15.0
+bus = &"Ambience"
+
+[node name="RainAmbienceLevel3" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("61_8f8dg")
-volume_db = -30.0
+volume_db = -25.0
+bus = &"Ambience"
+
+[node name="IntroStingLevel3" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("80_bmsxu")
+volume_db = -15.0
 bus = &"Ambience"
 
 [editable path="Player"]

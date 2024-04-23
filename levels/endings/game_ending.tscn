@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhpxiwvkcb0dv"]
+[gd_scene load_steps=5 format=3 uid="uid://bhpxiwvkcb0dv"]
 
 [ext_resource type="FontFile" uid="uid://c355n3j7jdkeb" path="res://ui/fonts/PR Viking.ttf" id="1_jjwx8"]
 [ext_resource type="Script" path="res://levels/endings/ending.gd" id="1_w6o5c"]
+[ext_resource type="AudioStream" uid="uid://d4i2dqhwlys40" path="res://audio/music/endings/died_ending/Leave Ending 1 Looped.wav" id="3_gbvi4"]
+[ext_resource type="AudioStream" uid="uid://brmix0wrh2b7b" path="res://audio/music/endings/survived_ending/Leave Ending 2.wav" id="4_mh4gj"]
 
 [node name="GameEnding" type="Control"]
 layout_mode = 3
@@ -47,9 +49,11 @@ script = ExtResource("1_w6o5c")
 [node name="Audio" type="Node3D" parent="."]
 
 [node name="DiedEndingAmbience" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("3_gbvi4")
 volume_db = -10.0
 bus = &"Ambience"
 
 [node name="SurvivedEndingAmbience" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("4_mh4gj")
 volume_db = -10.0
 bus = &"Ambience"

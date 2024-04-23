@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cp1rp00wkkgbk"]
+[gd_scene load_steps=48 format=3 uid="uid://cp1rp00wkkgbk"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_4_battlefield.gd" id="1_doxeo"]
 [ext_resource type="PackedScene" uid="uid://b06oiwxe7csbi" path="res://environment/assets/ground/grass/scenes/grass_1_flat.tscn" id="2_8nq2t"]
@@ -39,10 +39,11 @@
 [ext_resource type="Environment" uid="uid://d3ivruwjt4jyv" path="res://environment/sky/level_4_lighting.tres" id="37_llk4k"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="38_mjh0b"]
 [ext_resource type="PackedScene" uid="uid://s3re3a6gjbsw" path="res://characters/enemies/enemy_spawners/enemy_spawner_manager.tscn" id="39_pcxpf"]
-[ext_resource type="AudioStream" uid="uid://4uhgisbwq7gv" path="res://audio/ambience/Dark_Rainy_Night(ambience).ogg" id="41_s8t0a"]
+[ext_resource type="AudioStream" uid="uid://cqfim5ftbif5w" path="res://audio/ambience/level_4/66015__yewbic__ambience06.wav" id="41_63sbu"]
 [ext_resource type="PackedScene" uid="uid://b82dn1cskq362" path="res://characters/enemies/enemy_spawners/enemy_4_spawner.tscn" id="41_v15qv"]
-[ext_resource type="AudioStream" uid="uid://pvqy6o3xk346" path="res://audio/ambience/level_1/Ritual Site 2 Full Song.wav" id="42_dqef6"]
+[ext_resource type="AudioStream" uid="uid://d1jnjmmwlxtek" path="res://audio/ambience/level_4/Dark_Rainy_Night(ambience)1.ogg" id="42_17sef"]
 [ext_resource type="AudioStream" uid="uid://iffr78vmmncx" path="res://audio/sfx/portal/617761__cogfirestudios__big-scary-portal-open.wav" id="43_k7tth"]
+[ext_resource type="AudioStream" uid="uid://qicdvj381q23" path="res://audio/ambience/level_4/569787__taure__death-magic-prolonged.wav" id="43_sw4rm"]
 [ext_resource type="AudioStream" uid="uid://bj6hi6orv14so" path="res://audio/sfx/eldritch_horror/positive_reaction/EldritchAbomination_Breathing2.mp3" id="44_xyoq8"]
 [ext_resource type="AudioStream" uid="uid://dh0rl8axov684" path="res://audio/sfx/eldritch_horror/negative_reaction/EldritchAbomination_Roar.mp3" id="45_h7tay"]
 
@@ -540,12 +541,17 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14.284
 [node name="Audio" type="Node3D" parent="."]
 
 [node name="GeneralAmbienceLevel4" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("41_s8t0a")
+stream = ExtResource("41_63sbu")
+volume_db = -20.0
+bus = &"Ambience"
+
+[node name="RainAmbienceLevel4" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("42_17sef")
 volume_db = -20.0
 bus = &"Ambience"
 
 [node name="BattleAmbienceLevel4" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("42_dqef6")
+stream = ExtResource("43_sw4rm")
 volume_db = -15.0
 bus = &"Ambience"
 

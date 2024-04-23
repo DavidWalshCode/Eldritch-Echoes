@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c67rcug7usnr8"
+path="res://.godot/imported/Leave Ending 1.wav-5ef4622adf921c7b53db20e3c989247a.sample"
+
+[deps]
+
+source_file="res://audio/music/endings/died_ending/Leave Ending 1.wav"
+dest_files=["res://.godot/imported/Leave Ending 1.wav-5ef4622adf921c7b53db20e3c989247a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

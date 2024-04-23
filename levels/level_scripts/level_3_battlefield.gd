@@ -6,6 +6,7 @@ signal level_3_time_not_survived
 
 @onready var general_ambience_level_3 = $Audio/GeneralAmbienceLevel3
 @onready var battle_ambience_level_3 = $Audio/BattleAmbienceLevel3
+@onready var rain_ambience_level_3 = $Audio/RainAmbienceLevel3
 
 @onready var portal_exit_sound = $Player/PortalManager/Audio/PortalExitSound
 
@@ -21,6 +22,7 @@ var weapon_unlocked = false  # Flag to track weapon unlock status
 
 func _ready():
 	portal_exit_sound.play()
+	rain_ambience_level_3.play()
 	general_ambience_level_3.play()
 	
 	await get_tree().create_timer(5).timeout

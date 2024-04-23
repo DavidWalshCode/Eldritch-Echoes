@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bni4f3imy1eh0"
+path="res://.godot/imported/Ritual Site 1.wav-372eed60864aa58d3175020faa20eb72.sample"
+
+[deps]
+
+source_file="res://audio/ambience/level_2/Ritual Site 1.wav"
+dest_files=["res://.godot/imported/Ritual Site 1.wav-372eed60864aa58d3175020faa20eb72.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

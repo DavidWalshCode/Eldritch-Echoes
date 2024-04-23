@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://c2f8evu3lbo14"]
+[gd_scene load_steps=48 format=3 uid="uid://c2f8evu3lbo14"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_3_battlefield.gd" id="1_fgbwg"]
 [ext_resource type="PackedScene" uid="uid://b06oiwxe7csbi" path="res://environment/assets/ground/grass/scenes/grass_1_flat.tscn" id="2_j6uhc"]
@@ -32,10 +32,12 @@
 [ext_resource type="PackedScene" uid="uid://c4q16lojqmkll" path="res://environment/assets/nature/grass/scenes/retro_nature_pack/grass_03_fall.tscn" id="38_ojl4d"]
 [ext_resource type="PackedScene" uid="uid://dqegu5drc4svl" path="res://environment/assets/nature/grass/scenes/retro_nature_pack/grass_03_spring.tscn" id="39_k8uc4"]
 [ext_resource type="PackedScene" uid="uid://7rx700s2au5a" path="res://environment/assets/nature/grass/scenes/retro_nature_pack/grass_04_fall.tscn" id="40_rnuho"]
-[ext_resource type="AudioStream" uid="uid://4uhgisbwq7gv" path="res://audio/ambience/Dark_Rainy_Night(ambience).ogg" id="41_ron55"]
+[ext_resource type="AudioStream" uid="uid://deq5adp3r1gji" path="res://audio/ambience/level_3/33796__yewbic__ambience03.wav" id="41_ctv01"]
+[ext_resource type="AudioStream" uid="uid://4uhgisbwq7gv" path="res://audio/ambience/level_3/Dark_Rainy_Night(ambience).ogg" id="41_ron55"]
 [ext_resource type="PackedScene" uid="uid://cuvsdnmlqwqhm" path="res://environment/assets/nature/grass/scenes/retro_nature_pack/grass_04_spring.tscn" id="41_srdd0"]
 [ext_resource type="PackedScene" uid="uid://cwvyf2ysn153u" path="res://environment/assets/nature/rocks/scenes/rock_boulder_1.tscn" id="42_mhvn3"]
 [ext_resource type="PackedScene" uid="uid://bq1ifswcqf5o2" path="res://environment/assets/nature/rocks/scenes/rock_pillar_1.tscn" id="43_khpm8"]
+[ext_resource type="AudioStream" uid="uid://dfyvem5j7igxw" path="res://audio/ambience/level_3/Ritual Site 3.wav" id="43_mfj1s"]
 [ext_resource type="PackedScene" uid="uid://vbl2hipleqsb" path="res://environment/assets/village/structures/scenes/castle_archway_base_1.tscn" id="44_wjygm"]
 [ext_resource type="AudioStream" uid="uid://bj6hi6orv14so" path="res://audio/sfx/eldritch_horror/positive_reaction/EldritchAbomination_Breathing2.mp3" id="44_x3bwa"]
 [ext_resource type="Environment" uid="uid://b7u0cknwnxxrh" path="res://environment/sky/level_3_lighting.tres" id="45_2aq8e"]
@@ -43,7 +45,6 @@
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="46_remsh"]
 [ext_resource type="PackedScene" uid="uid://s3re3a6gjbsw" path="res://characters/enemies/enemy_spawners/enemy_spawner_manager.tscn" id="47_yt0es"]
 [ext_resource type="PackedScene" uid="uid://bwjsgem1pt51k" path="res://characters/enemies/enemy_spawners/enemy_3_spawner.tscn" id="49_8sqvo"]
-[ext_resource type="AudioStream" uid="uid://pvqy6o3xk346" path="res://audio/ambience/level_1/Ritual Site 2 Full Song.wav" id="50_8x7y1"]
 [ext_resource type="AudioStream" uid="uid://iffr78vmmncx" path="res://audio/sfx/portal/617761__cogfirestudios__big-scary-portal-open.wav" id="51_ia37d"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_vdt3c"]
@@ -513,12 +514,17 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.284
 [node name="Audio" type="Node3D" parent="."]
 
 [node name="GeneralAmbienceLevel3" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("41_ctv01")
+volume_db = -20.0
+bus = &"Ambience"
+
+[node name="RainAmbienceLevel3" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("41_ron55")
-volume_db = -30.0
+volume_db = -22.0
 bus = &"Ambience"
 
 [node name="BattleAmbienceLevel3" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("50_8x7y1")
+stream = ExtResource("43_mfj1s")
 volume_db = -15.0
 bus = &"Ambience"
 

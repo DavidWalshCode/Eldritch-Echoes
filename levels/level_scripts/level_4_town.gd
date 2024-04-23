@@ -1,8 +1,12 @@
 extends Node3D
 
 @onready var ambience_level_4 = $Audio/AmbienceLevel4
+@onready var rain_ambience_level_4 = $Audio/RainAmbienceLevel4
+@onready var intro_sting_level_4 = $Audio/IntroStingLevel4
 
 func _ready():
+	intro_sting_level_4.play()
+	rain_ambience_level_4.play()
 	ambience_level_4.play()
 	
 	# For NPC dialogue

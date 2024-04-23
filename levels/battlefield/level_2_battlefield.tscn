@@ -45,12 +45,12 @@
 [ext_resource type="PackedScene" uid="uid://s3re3a6gjbsw" path="res://characters/enemies/enemy_spawners/enemy_spawner_manager.tscn" id="34_ec8u0"]
 [ext_resource type="PackedScene" uid="uid://gv45800howtk" path="res://characters/enemies/enemy_spawners/enemy_2_spawner.tscn" id="35_ra6ir"]
 [ext_resource type="PackedScene" uid="uid://c5r81gihyi3od" path="res://environment/assets/nature/grass/scenes/retro_nature_pack/grass_01_fall.tscn" id="35_sxxme"]
-[ext_resource type="AudioStream" uid="uid://thxjd66rsnr2" path="res://audio/ambience/level_1/forest.ogg" id="36_00p4t"]
 [ext_resource type="PackedScene" uid="uid://c56hnyc22jgnh" path="res://environment/assets/nature/grass/scenes/retro_nature_pack/grass_02_fall.tscn" id="37_10hux"]
-[ext_resource type="AudioStream" uid="uid://pvqy6o3xk346" path="res://audio/ambience/level_1/Ritual Site 2 Full Song.wav" id="37_g6dgk"]
 [ext_resource type="PackedScene" uid="uid://c4q16lojqmkll" path="res://environment/assets/nature/grass/scenes/retro_nature_pack/grass_03_fall.tscn" id="38_ajol3"]
 [ext_resource type="AudioStream" uid="uid://iffr78vmmncx" path="res://audio/sfx/portal/617761__cogfirestudios__big-scary-portal-open.wav" id="38_gkobm"]
 [ext_resource type="PackedScene" uid="uid://7rx700s2au5a" path="res://environment/assets/nature/grass/scenes/retro_nature_pack/grass_04_fall.tscn" id="40_3u4m3"]
+[ext_resource type="AudioStream" uid="uid://o34eooven856" path="res://audio/ambience/level_2/31904__yewbic__ambience01.wav" id="49_e1ixv"]
+[ext_resource type="AudioStream" uid="uid://bni4f3imy1eh0" path="res://audio/ambience/level_2/Ritual Site 1.wav" id="50_ykmig"]
 [ext_resource type="AudioStream" uid="uid://bj6hi6orv14so" path="res://audio/sfx/eldritch_horror/positive_reaction/EldritchAbomination_Breathing2.mp3" id="52_m4hs0"]
 [ext_resource type="AudioStream" uid="uid://dh0rl8axov684" path="res://audio/sfx/eldritch_horror/negative_reaction/EldritchAbomination_Roar.mp3" id="53_ey4se"]
 
@@ -500,12 +500,12 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14.284
 [node name="Audio" type="Node3D" parent="."]
 
 [node name="GeneralAmbienceLevel2" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("36_00p4t")
-volume_db = -10.0
+stream = ExtResource("49_e1ixv")
+volume_db = -15.0
 bus = &"Ambience"
 
 [node name="BattleAmbienceLevel2" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("37_g6dgk")
+stream = ExtResource("50_ykmig")
 volume_db = -15.0
 bus = &"Ambience"
 

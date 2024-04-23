@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://cgph20bto862l"]
+[gd_scene load_steps=78 format=3 uid="uid://cgph20bto862l"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_1_town.gd" id="1_opw3t"]
 [ext_resource type="PackedScene" uid="uid://o8ngiergmnaa" path="res://environment/assets/ground/stone/scenes/paving_cobble_1_flat.tscn" id="2_8f67n"]
@@ -76,6 +76,7 @@
 [ext_resource type="PackedScene" uid="uid://c371fdv7yv7wk" path="res://characters/npc/assets/scenes/unimportant_npcs/viking_model/willow_npc.tscn" id="73_fe4gy"]
 [ext_resource type="PackedScene" uid="uid://cwvcbajviop4o" path="res://characters/npc/assets/scenes/unimportant_npcs/villager_female_model/layla_npc.tscn" id="74_wgka8"]
 [ext_resource type="PackedScene" uid="uid://sbbvug4i2iol" path="res://characters/npc/assets/scenes/unimportant_npcs/villager_female_model/yahara_npc.tscn" id="75_oayei"]
+[ext_resource type="AudioStream" uid="uid://dvgi0ug0d0fek" path="res://audio/music/Intro Sting.wav" id="77_qsyl3"]
 
 [node name="Level1Town" type="Node3D"]
 script = ExtResource("1_opw3t")
@@ -1019,6 +1020,11 @@ transform = Transform3D(-0.484306, 0, 0.874899, 0, 1, 0, -0.874899, 0, -0.484306
 [node name="AmbienceLevel1" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("59_xw4ub")
 volume_db = -10.0
+bus = &"Ambience"
+
+[node name="IntroStingLevel1" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("77_qsyl3")
+volume_db = -15.0
 bus = &"Ambience"
 
 [editable path="Player"]

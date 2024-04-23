@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://1bqkkacruegj"]
+[gd_scene load_steps=91 format=3 uid="uid://1bqkkacruegj"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_2_town.gd" id="1_7dh5c"]
 [ext_resource type="PackedScene" uid="uid://o8ngiergmnaa" path="res://environment/assets/ground/stone/scenes/paving_cobble_1_flat.tscn" id="2_i8byq"]
@@ -68,7 +68,6 @@
 [ext_resource type="PackedScene" uid="uid://crubn077w28ds" path="res://environment/assets/village/prebuilt_towns/small_town/scenes/full_small_town_2.tscn" id="53_6fae2"]
 [ext_resource type="Environment" uid="uid://brnvj7uytytvy" path="res://environment/sky/level_2_lighting.tres" id="55_fbt7w"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="55_vckry"]
-[ext_resource type="AudioStream" uid="uid://thxjd66rsnr2" path="res://audio/ambience/level_1/forest.ogg" id="57_cgxeo"]
 [ext_resource type="PackedScene" uid="uid://bvc2uk6e7n5jc" path="res://effects/portal/town_2_portal.tscn" id="65_ichrq"]
 [ext_resource type="PackedScene" uid="uid://cyo4axkk6ift6" path="res://effects/fire/fire_1_effect.tscn" id="70_o2k0l"]
 [ext_resource type="PackedScene" uid="uid://b612nf0asac87" path="res://characters/npc/assets/scenes/important_npcs/morrigan_npc.tscn" id="71_8wwu4"]
@@ -89,6 +88,8 @@
 [ext_resource type="PackedScene" uid="uid://buvdx45dwi5sk" path="res://characters/npc/assets/scenes/unimportant_npcs/viking_model/tormund_npc.tscn" id="86_y68pq"]
 [ext_resource type="PackedScene" uid="uid://c371fdv7yv7wk" path="res://characters/npc/assets/scenes/unimportant_npcs/viking_model/willow_npc.tscn" id="87_lqjil"]
 [ext_resource type="PackedScene" uid="uid://cwvcbajviop4o" path="res://characters/npc/assets/scenes/unimportant_npcs/villager_female_model/layla_npc.tscn" id="88_t6s2k"]
+[ext_resource type="AudioStream" uid="uid://o34eooven856" path="res://audio/ambience/level_2/31904__yewbic__ambience01.wav" id="89_oy1ul"]
+[ext_resource type="AudioStream" uid="uid://dvgi0ug0d0fek" path="res://audio/music/Intro Sting.wav" id="90_d7ta3"]
 
 [node name="Level2Town" type="Node3D"]
 script = ExtResource("1_7dh5c")
@@ -1184,8 +1185,13 @@ transform = Transform3D(-0.425479, 0, 0.904968, 0, 1, 0, -0.904968, 0, -0.425479
 [node name="Audio" type="Node3D" parent="."]
 
 [node name="AmbienceLevel2" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("57_cgxeo")
+stream = ExtResource("89_oy1ul")
 volume_db = -10.0
+bus = &"Ambience"
+
+[node name="IntroStingLevel2" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("90_d7ta3")
+volume_db = -15.0
 bus = &"Ambience"
 
 [editable path="Player"]

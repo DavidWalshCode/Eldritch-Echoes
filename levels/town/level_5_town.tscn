@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://7rehxe2n12h2"]
+[gd_scene load_steps=59 format=3 uid="uid://7rehxe2n12h2"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_5_town.gd" id="1_jdijj"]
 [ext_resource type="PackedScene" uid="uid://cqnk8hybqeqt" path="res://environment/assets/ground/sand/scenes/sand_1_flat.tscn" id="2_8t2ye"]
@@ -47,11 +47,15 @@
 [ext_resource type="AudioStream" uid="uid://dh0rl8axov684" path="res://audio/sfx/eldritch_horror/negative_reaction/EldritchAbomination_Roar.mp3" id="48_nvf18"]
 [ext_resource type="PackedScene" uid="uid://g6023gycygfj" path="res://environment/assets/village/outside_props/scenes/pirate_scenery/flag_2_pole.tscn" id="49_88t2g"]
 [ext_resource type="PackedScene" uid="uid://lq7366i8slik" path="res://environment/assets/village/outside_props/scenes/weeping_angel_statue_1.tscn" id="50_ndnmt"]
+[ext_resource type="AudioStream" uid="uid://thxjd66rsnr2" path="res://audio/ambience/level_1/forest.ogg" id="51_e411l"]
+[ext_resource type="AudioStream" uid="uid://b4x8sf3qrwrgv" path="res://audio/ambience/level_5/66057__yewbic__ambience07_Internal.wav" id="52_1idql"]
+[ext_resource type="AudioStream" uid="uid://pvqy6o3xk346" path="res://audio/ambience/level_1/Ritual Site 2 Full Song.wav" id="52_lm1vl"]
 [ext_resource type="PackedScene" uid="uid://dnvuf1gma3joe" path="res://environment/assets/village/prebuilt_towns/harbour_town/scenes/full_harbour_town_5.tscn" id="53_66mer"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="54_0janu"]
 [ext_resource type="PackedScene" uid="uid://bvn30fuvyspiu" path="res://environment/assets/village/prebuilt_towns/small_town/scenes/full_small_town_5.tscn" id="54_jfgny"]
 [ext_resource type="Environment" uid="uid://c21mqn5i0baxr" path="res://environment/sky/level_5_lighting.tres" id="55_vnnhd"]
-[ext_resource type="AudioStream" uid="uid://4uhgisbwq7gv" path="res://audio/ambience/Dark_Rainy_Night(ambience).ogg" id="56_4tngs"]
+[ext_resource type="AudioStream" uid="uid://dvgi0ug0d0fek" path="res://audio/music/Intro Sting.wav" id="55_yvc6m"]
+[ext_resource type="AudioStream" uid="uid://4uhgisbwq7gv" path="res://audio/ambience/level_3/Dark_Rainy_Night(ambience).ogg" id="56_4tngs"]
 [ext_resource type="PackedScene" uid="uid://cn1ff2mgj720p" path="res://effects/rain/blood_rain_effect_1.tscn" id="57_ullqw"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_odjoq"]
@@ -1403,13 +1407,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18606, 8.71389, -178.988)
 [node name="Audio" type="Node3D" parent="."]
 
 [node name="GeneralAmbienceLevel5" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("56_4tngs")
+stream = ExtResource("51_e411l")
 volume_db = -10.0
 bus = &"Ambience"
 
-[node name="BattleAmbienceLevel5" type="AudioStreamPlayer" parent="Audio"]
+[node name="HorrorAmbienceLevel5" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("52_1idql")
+volume_db = -15.0
+bus = &"Ambience"
+
+[node name="RainAmbienceLevel5" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("56_4tngs")
+volume_db = -21.0
+bus = &"Ambience"
+
+[node name="BattleAmbienceLevel5" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("52_lm1vl")
 volume_db = -10.0
+bus = &"Ambience"
+
+[node name="IntroStingLevel5" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("55_yvc6m")
+volume_db = -15.0
 bus = &"Ambience"
 
 [node name="PostiveMessageReactionSound" type="AudioStreamPlayer" parent="Audio"]

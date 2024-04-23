@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dvgi0ug0d0fek"
+path="res://.godot/imported/Intro Sting.wav-1017e9c89ae592a1b6027a98c66a401c.sample"
+
+[deps]
+
+source_file="res://audio/music/Intro Sting.wav"
+dest_files=["res://.godot/imported/Intro Sting.wav-1017e9c89ae592a1b6027a98c66a401c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

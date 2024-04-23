@@ -5,7 +5,10 @@ signal level_5_time_survived
 signal level_5_time_not_survived
 
 @onready var general_ambience_level_5 = $Audio/GeneralAmbienceLevel5
+@onready var horror_ambience_level_5 = $Audio/HorrorAmbienceLevel5
+@onready var rain_ambience_level_5 = $Audio/RainAmbienceLevel5
 @onready var battle_ambience_level_5 = $Audio/BattleAmbienceLevel5
+@onready var intro_sting_level_5 = $Audio/IntroStingLevel5
 
 @onready var postive_message_reaction_sound = $Audio/PostiveMessageReactionSound
 @onready var negative_message_reaction_sound = $Audio/NegativeMessageReactionSound
@@ -16,7 +19,10 @@ signal level_5_time_not_survived
 @onready var weapon_manager = $Player/Camera3D/WeaponManager
 
 func _ready():
+	intro_sting_level_5.play()
+	rain_ambience_level_5.play()
 	general_ambience_level_5.play()
+	horror_ambience_level_5.play()
 	
 	# For NPC dialogue
 	Global.is_level_1 = false
