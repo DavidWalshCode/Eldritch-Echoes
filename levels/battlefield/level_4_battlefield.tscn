@@ -544,7 +544,7 @@ bus = &"Ambience"
 
 [node name="RainAmbienceLevel4" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("42_17sef")
-volume_db = -20.0
+volume_db = -16.0
 bus = &"Ambience"
 
 [node name="BattleAmbienceLevel4" type="AudioStreamPlayer" parent="Audio"]

@@ -1324,7 +1324,7 @@ bus = &"Ambience"
 
 [node name="RainAmbienceLevel3" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("61_8f8dg")
-volume_db = -25.0
+volume_db = -22.0
 bus = &"Ambience"
 
 [node name="IntroStingLevel3" type="AudioStreamPlayer" parent="Audio"]

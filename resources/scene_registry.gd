@@ -4,7 +4,6 @@ class_name SceneRegistry extends Node
 
 const main_scenes = {
 	"main_menu": "res://ui/menus/main_menu.tscn",
-	"game_ending": "res://levels/endings/game_ending.tscn"
 }
 
 const levels = {
@@ -16,5 +15,6 @@ const levels = {
 	"level_3_battlefield" : "res://levels/battlefield/level_3_battlefield.tscn",
 	"level_4_town" : "res://levels/town/level_4_town.tscn",
 	"level_4_battlefield" : "res://levels/battlefield/level_4_battlefield.tscn",
-	"level_5_town" : "res://levels/town/level_5_town.tscn"
+	"level_5_town" : "res://levels/town/level_5_town.tscn",
+	"game_ending": "res://levels/endings/game_ending.tscn"
 }

@@ -35,7 +35,7 @@ func _ready():
 	enemy_spawner_manager.manager_start_spawning()
 
 func _process(delta):
-	if level_timer.get_time() > 10.0 and not weapon_unlocked:
+	if level_timer.get_time() > 180.0 and not weapon_unlocked:
 		level_3_time_survived.emit()
 		postive_message_reaction_sound.play()
 		

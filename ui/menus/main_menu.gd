@@ -1,6 +1,6 @@
 class_name StartScreen extends Control
 
-const template_version : String = "0.7"
+const template_version : String = "0.9"
 
 @onready var version_num : Label = %VersionNum
 @onready var main_menu_ambience = $MainMenuAmbience
@@ -8,6 +8,7 @@ const template_version : String = "0.7"
 func _ready() -> void:
 	Global.main_menu = true
 	version_num.text = "V%s" % template_version
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _on_start_button_up() -> void:
 	main_menu_ambience.queue_free()

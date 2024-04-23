@@ -68,12 +68,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("settings_menu"): # Currently 'Esc'
 		Global.open_settings_menu()
 	
-	if Input.is_action_just_pressed("restart"): # Currently 'r'
-		get_tree().reload_current_scene()
-	
-	if Input.is_action_just_pressed("kill_player"): # Currently 'k'
-		kill()
-	
 	if Input.is_action_just_pressed("fullscreen"): # Currently 'f'
 		var fullscreen = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
 		if fullscreen:
@@ -137,10 +131,8 @@ func load_next_level_based_on_death_count():
 			SceneManager.swap_scenes(SceneRegistry.levels["level_5_town"], get_tree().root, self, "fade_to_white")
 		_:
 			# Default case (5 deaths), game ending
-			await get_tree().create_timer(2).timeout
 			$"..".queue_free() # Removing the Level5Town node
-			
-			SceneManager.swap_scenes(SceneRegistry.main_scenes["game_ending"], get_tree().root, self, "fade_to_black")
+			SceneManager.swap_scenes(SceneRegistry.levels["game_ending"], get_tree().root, self, "fade_to_black")
 
 func load_level_through_portal(level_number : int):
 	if level_number == 1:

@@ -1390,16 +1390,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06803, 0, -7.85306)
 [node name="EnemySpawnerManager" parent="Enemies" instance=ExtResource("44_4hli8")]
 
 [node name="Enemy5Spawner" parent="Enemies/EnemySpawnerManager" instance=ExtResource("45_kat8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.22812, 0, -46.207)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.22812, 0.0705289, -46.207)
 
 [node name="Enemy5Spawner2" parent="Enemies/EnemySpawnerManager" instance=ExtResource("45_kat8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.9254, 0, -96.3586)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.9254, 0.0821232, -96.3586)
 
 [node name="Enemy5Spawner3" parent="Enemies/EnemySpawnerManager" instance=ExtResource("45_kat8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.0631, 0, -105.76)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.0631, 0.0732447, -105.76)
 
 [node name="Enemy5Spawner4" parent="Enemies/EnemySpawnerManager" instance=ExtResource("45_kat8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18606, 8.71389, -178.988)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18606, 8.78215, -178.988)
+
+[node name="Enemy5Spawner5" parent="Enemies/EnemySpawnerManager" instance=ExtResource("45_kat8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4957, 0.516869, 21.0438)
+
+[node name="Enemy5Spawner6" parent="Enemies/EnemySpawnerManager" instance=ExtResource("45_kat8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.5278, 0.881812, -32.7982)
+
+[node name="Enemy5Spawner7" parent="Enemies/EnemySpawnerManager" instance=ExtResource("45_kat8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.6537, 0.881812, -180.643)
+
+[node name="Enemy5Spawner8" parent="Enemies/EnemySpawnerManager" instance=ExtResource("45_kat8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.23812, 16.2979, -211.793)
+
+[node name="Enemy5Spawner9" parent="Enemies/EnemySpawnerManager" instance=ExtResource("45_kat8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299485, 0.52141, -139.264)
 
 [node name="Audio" type="Node3D" parent="."]
 
@@ -1415,7 +1430,7 @@ bus = &"Ambience"
 
 [node name="RainAmbienceLevel5" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("56_4tngs")
-volume_db = -21.0
+volume_db = -16.0
 bus = &"Ambience"
 
 [node name="BattleAmbienceLevel5" type="AudioStreamPlayer" parent="Audio"]

@@ -43,7 +43,7 @@ func _ready():
 	enemy_spawner_manager.manager_start_spawning()
 
 func _process(delta):
-	if level_timer.get_time() > 300.0: # Survived ending
+	if level_timer.get_time() > 10.0: # Survived ending 240.0
 		level_5_time_survived.emit()
 		postive_message_reaction_sound.play()
 		
@@ -51,7 +51,9 @@ func _process(delta):
 		level_timer.stop_timer()
 		enemy_spawner_manager.manager_stop_spawning()
 		
-		player.kill()
+		await get_tree().create_timer(5).timeout
+		$".".queue_free()
+		SceneManager.swap_scenes(SceneRegistry.levels["game_ending"], get_tree().root, self, "fade_to_black")
 		
 	if player.dead == true: # Died ending
 		level_5_time_not_survived.emit()
