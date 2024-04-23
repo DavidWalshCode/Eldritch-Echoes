@@ -14,10 +14,15 @@ At her master’s orders, the Harbinger swept across the land. Bringing indiscri
 When no other creatures remained, the beasts turned on themselves, tearing each other apart before eviscerating their own bodies. When the Harbinger stood alone in a world burned and devoid of life, the Horror finally released his grasp and drifted back to its own realm to sleep in peace. Leaving the Challenger to look out on all she had wrought and felt the total weight of her crimes, but nobody left to make her pay for them.\n
 "
 
+@onready var survived_ending_ambience = $"../../../Audio/SurvivedEndingAmbience"
+@onready var died_ending_ambience = $"../../../Audio/DiedEndingAmbience"
+
 func _ready() -> void:
 	if Global.level_5_survived_passed_time:
+		survived_ending_ambience.play()
 		scroll_text(ending_survived_text)
 	else:
+		died_ending_ambience.play()
 		scroll_text(ending_died_text)
 
 func scroll_text(input_text : String) -> void:
@@ -26,4 +31,4 @@ func scroll_text(input_text : String) -> void:
 	
 	for i in get_parsed_text():
 		visible_characters += 1
-		await  get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(0.1).timeout

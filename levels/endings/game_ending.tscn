@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhpxiwvkcb0dv"]
+[gd_scene load_steps=6 format=3 uid="uid://bhpxiwvkcb0dv"]
 
 [ext_resource type="FontFile" uid="uid://c355n3j7jdkeb" path="res://ui/fonts/PR Viking.ttf" id="1_jjwx8"]
 [ext_resource type="Script" path="res://levels/endings/ending.gd" id="1_w6o5c"]
 [ext_resource type="AudioStream" uid="uid://d4i2dqhwlys40" path="res://audio/music/endings/died_ending/Leave Ending 1 Looped.wav" id="3_gbvi4"]
 [ext_resource type="AudioStream" uid="uid://brmix0wrh2b7b" path="res://audio/music/endings/survived_ending/Leave Ending 2.wav" id="4_mh4gj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0qlc"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="GameEnding" type="Control"]
 layout_mode = 3
@@ -15,7 +18,16 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n0qlc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -30,7 +42,7 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="EndingText" type="RichTextLabel" parent="HBoxContainer"]
+[node name="EndingText" type="RichTextLabel" parent="Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_fonts/normal_font = ExtResource("1_jjwx8")
