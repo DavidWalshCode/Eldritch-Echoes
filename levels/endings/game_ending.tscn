@@ -43,3 +43,13 @@ theme_override_font_sizes/bold_italics_font_size = 50
 theme_override_font_sizes/mono_font_size = 50
 bbcode_enabled = true
 script = ExtResource("1_w6o5c")
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="DiedEndingAmbience" type="AudioStreamPlayer" parent="Audio"]
+volume_db = -10.0
+bus = &"Ambience"
+
+[node name="SurvivedEndingAmbience" type="AudioStreamPlayer" parent="Audio"]
+volume_db = -10.0
+bus = &"Ambience"

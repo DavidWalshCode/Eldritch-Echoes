@@ -6,22 +6,22 @@
 
 if Global.is_level_1:
 	Morrigan: Wake up, sleepy head. You were in such a deep long sleep. We are still at Oldtown, the last bastion of hope for the Harbingers. Though many have come before, none have yet bested the Challenge. Are you indeed the Holy Warrior we dreamed of that can wield these ungodly powers?
-		Stretch your legs and have a look around, it may take some time to regain complete control. Head to the portal in the town centre when you are ready.
+	Morrigan: Stretch your legs and have a look around, it may take some time to regain complete control. Head to the portal in the town centre when you are ready.
 
 elif Global.is_level_2:
 	Morrigan: Once, many Challengers from the far lands sought the power held in these lands. The streets were filled with life, but the infidels took much from us, and few yet remain to carry the torch. 
-		Please make us carry it no longer. Keep it up, I can feel the powers in you grow.
+	Morrigan: Please make us carry it no longer. Keep it up, I can feel the powers in you grow.
 
 elif Global.is_level_3:
 	Morrigan: The Dread Moon approaches, and time is short. The seasons are shifting. What once was Summer shall soon turn to Autumn. The harvest grows ripe in the fields and Fat off the land. Soon, it will be time to pluck. 
-		The place is a lot quieter than it used to be... 
+	Morrigan: The place is a lot quieter than it used to be... 
 
 elif Global.is_level_4:
 	Morrigan: The powers within you swell. Soon, what is shall pass, and what is to be will come. You have already proven more remarkable than any that has come before. 
-		Nothing is left for you but to push forward and take what is yours. A little more... you are almost there.
+	Morrigan: Nothing is left for you but to push forward and take what is yours. A little more... you are almost there.
 
 elif Global.is_level_5:
 	Morrigan: Yes, more, more. You are so close! I can feel it. Maybe you really are the One. The One to bring an end to these accursed times. The one to reap souls of this land as the True Harbinger! And bring in a new world! 
-		Do It! Achieve what you were created for! End it all! (her eyes are deranged)
+	Morrigan: Do It! Achieve what you were created for! End it all! (her eyes are deranged)
 
 => END

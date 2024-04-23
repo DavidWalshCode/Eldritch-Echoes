@@ -93,22 +93,22 @@ theme = SubResource("Theme_qq3yp")
 
 [node name="Panel" type="Panel" parent="Balloon"]
 clip_children = 2
-custom_minimum_size = Vector2(0, 250)
+custom_minimum_size = Vector2(0, 280)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 21.0
-offset_top = -269.0
+offset_top = -299.0
 offset_right = -19.0
-offset_bottom = -19.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
 
 [node name="Dialogue" type="MarginContainer" parent="Balloon/Panel"]
-custom_minimum_size = Vector2(0, 250)
+custom_minimum_size = Vector2(0, 280)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -148,7 +148,7 @@ anchor_bottom = 1.0
 offset_left = -146.0
 offset_top = -640.0
 offset_right = 495.0
-offset_bottom = -258.0
+offset_bottom = -289.0
 grow_horizontal = 2
 grow_vertical = 0
 

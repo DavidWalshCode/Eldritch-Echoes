@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dn5ty0g7kh132"
+path="res://.godot/imported/uvs_1 01.wav-73cd3707503f5b049e8195fb154d38d4.sample"
+
+[deps]
+
+source_file="res://audio/sfx/npc/uvs_1 01.wav"
+dest_files=["res://.godot/imported/uvs_1 01.wav-73cd3707503f5b049e8195fb154d38d4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -62,13 +62,6 @@ func _input(event):
 		character_mover.start_crouching()
 	elif event.is_action_released("crouch"):
 		character_mover.stop_crouching()
-	
-	# Dialogue stuff
-	if Input.is_action_just_pressed("talk"): #"ui_accept"
-		var actionables = actionable_finder.get_overlapping_areas()
-		if actionables.size() > 0:
-			actionables[0].action()
-			return
 
 # Equivalent to update() in Unity, runs every frame
 func _process(delta):
@@ -98,6 +91,13 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("jump"): # Currently 'Space'
 		character_mover.jump()
+	
+	# Dialogue stuff
+	if Input.is_action_just_pressed("talk"): #"ui_accept"
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return
 	
 	weapon_manager.attack(Input.is_action_just_pressed("attack"), Input.is_action_pressed("attack")) # Attack, currently 'Mouse 1'
 
