@@ -6,7 +6,7 @@
 # Is dead in level 5
 
 if Global.is_level_1:
-	FAYE: Hard to keep up with the hustle and bustle of big city life.
+	FAYE: Hard to keep up with the hustle and bustle of big town life.
 
 elif Global.is_level_2:
 	FAYE: Strange disturbances in town. Some fella went mad and just attacked some people... never did find out what that was about.

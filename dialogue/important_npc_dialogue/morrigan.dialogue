@@ -10,7 +10,7 @@ if Global.is_level_1:
 	MORRIGAN: Stretch your legs and have a look around, it may take some time to regain complete control. Head to the portal in the town centre when you are ready.
 
 elif Global.is_level_2:
-	MORRIGAN: Once, many Challengers from the far lands sought the power held in these lands. The streets were filled with life, but the infidels took much from us, and few yet remain to carry the torch. 
+	MORRIGAN: Once, many Challengers from the far lands sought the power held in here. The streets were filled with life, but the infidels took much from us, and few yet remain to carry the torch. 
 	MORRIGAN: Please make us carry it no longer. Keep it up, I can feel the powers in you grow.
 
 elif Global.is_level_3:

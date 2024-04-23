@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var max_global_enemies = 5
+@export var max_global_enemies = 4
 
 var total_enemies_spawned = 0
 var spawning_enabled = false  # A flag to control whether spawning is allowed
@@ -15,12 +15,10 @@ func _ready():
 	
 func _on_enemy_spawned():
 	total_enemies_spawned += 1
-	print("Total enemies spawned: ", total_enemies_spawned)
 	update_spawners()
 
 func _on_enemy_despawned():
 	total_enemies_spawned -= 1
-	print("Total enemies currently: ", total_enemies_spawned)
 	update_spawners()
 
 func update_spawners():

@@ -10,7 +10,7 @@ data = PackedVector3Array(0.1023, 2.1965, -0.0846, 0.0722, 1.9404, -0.0783, 0.23
 [node name="YaharaNPC" instance=ExtResource("1_hfwjd")]
 
 [node name="Body" parent="." index="0"]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+transform = Transform3D(0.95, 0, 0, 0, 0.95, 0, 0, 0, 0.95, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Body" index="0"]
 

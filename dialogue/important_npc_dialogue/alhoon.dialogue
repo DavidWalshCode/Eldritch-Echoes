@@ -5,7 +5,7 @@
 # Important character
 
 if Global.is_level_1:
-	ALHOON: Run from here...
+	ALHOON: Run from here before it is too late...
 
 elif Global.is_level_2:
 	ALHOON: Ah, a seed of madness has already set root in your flesh. You must remove it as I have, lest it grow. Remove the flesh, not the seed.

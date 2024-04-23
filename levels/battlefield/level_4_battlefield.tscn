@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cp1rp00wkkgbk"]
+[gd_scene load_steps=49 format=3 uid="uid://cp1rp00wkkgbk"]
 
 [ext_resource type="Script" path="res://levels/level_scripts/level_4_battlefield.gd" id="1_doxeo"]
 [ext_resource type="PackedScene" uid="uid://b06oiwxe7csbi" path="res://environment/assets/ground/grass/scenes/grass_1_flat.tscn" id="2_8nq2t"]
@@ -39,6 +39,7 @@
 [ext_resource type="Environment" uid="uid://d3ivruwjt4jyv" path="res://environment/sky/level_4_lighting.tres" id="37_llk4k"]
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="38_mjh0b"]
 [ext_resource type="PackedScene" uid="uid://s3re3a6gjbsw" path="res://characters/enemies/enemy_spawners/enemy_spawner_manager.tscn" id="39_pcxpf"]
+[ext_resource type="PackedScene" uid="uid://cwi5txcvyqehd" path="res://effects/rain/rain_effect_2.tscn" id="39_ppf3q"]
 [ext_resource type="AudioStream" uid="uid://cqfim5ftbif5w" path="res://audio/ambience/level_4/66015__yewbic__ambience06.wav" id="41_63sbu"]
 [ext_resource type="PackedScene" uid="uid://b82dn1cskq362" path="res://characters/enemies/enemy_spawners/enemy_4_spawner.tscn" id="41_v15qv"]
 [ext_resource type="AudioStream" uid="uid://d1jnjmmwlxtek" path="res://audio/ambience/level_4/Dark_Rainy_Night(ambience)1.ogg" id="42_17sef"]
@@ -518,10 +519,16 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("38_mjh0b")]
 transform = Transform3D(-0.839259, 0, -0.543731, 0, 1, 0, 0.543731, 0, -0.839259, -42.0384, 0.709427, -31.2595)
 
+[node name="Camera3D" parent="Player" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999994, 0.00349065, 0, -0.00349065, 0.999994, 0, 1.89849, 0)
+
+[node name="RainEffect2" parent="Player" instance=ExtResource("39_ppf3q")]
+
 [node name="Enemies" type="Node3D" parent="."]
 transform = Transform3D(0.95983, 0, -0.280583, 0, 1, 0, 0.280583, 0, 0.95983, -18.128, 0, 41.3079)
 
 [node name="EnemySpawnerManager" parent="Enemies" instance=ExtResource("39_pcxpf")]
+max_global_enemies = 4
 
 [node name="Enemy4Spawner" parent="Enemies/EnemySpawnerManager" instance=ExtResource("41_v15qv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -34.418, 0, -19.33)

@@ -76,7 +76,7 @@ points = PackedVector3Array(-0.178016, 0.64658, 0.17924, -0.199242, 0.695341, 0.
 [node name="BonesNPC" instance=ExtResource("1_jt78c")]
 
 [node name="Skeleton_-_Body" parent="." index="0"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Body" index="0"]
 
@@ -84,7 +84,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_7b65n")
 
 [node name="Skeleton_-_Pelvis" parent="." index="1"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Pelvis" index="0"]
 
@@ -92,7 +92,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_a2877")
 
 [node name="Skeleton_-_Spine" parent="." index="2"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Spine" index="0"]
 
@@ -100,7 +100,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_q0muh")
 
 [node name="Skeleton_-_Neck" parent="." index="3"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Neck" index="0"]
 
@@ -108,7 +108,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_jpo47")
 
 [node name="Skeleton_-_Arm_1" parent="." index="4"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Arm_1" index="0"]
 
@@ -116,7 +116,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_oqe5b")
 
 [node name="Skeleton_-_Arm_1_Bis" parent="." index="5"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Arm_1_Bis" index="0"]
 
@@ -124,7 +124,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_y1d1j")
 
 [node name="Skeleton_-_Head" parent="." index="6"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Head" index="0"]
 
@@ -132,10 +132,10 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_kbxt8")
 
 [node name="Skeleton_-_Cocsis" parent="." index="7"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="Skeleton_-_Arm_2" parent="." index="8"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Arm_2" index="0"]
 
@@ -143,7 +143,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_dwtb5")
 
 [node name="Skeleton_-_Arm_2Bis" parent="." index="9"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Arm_2Bis" index="0"]
 
@@ -151,7 +151,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_857q7")
 
 [node name="Skeleton_-_Hand" parent="." index="10"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Hand" index="0"]
 
@@ -159,7 +159,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_cvgpc")
 
 [node name="Skeleton_-_HandBis" parent="." index="11"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_HandBis" index="0"]
 
@@ -167,7 +167,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_64t4j")
 
 [node name="Skeleton_-_Foot" parent="." index="12"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Foot" index="0"]
 
@@ -175,7 +175,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_3lxg8")
 
 [node name="Skeleton_-_Leg_1" parent="." index="13"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Leg_1" index="0"]
 
@@ -183,7 +183,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_nvi1g")
 
 [node name="Skeleton_-_Leg_2" parent="." index="14"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Leg_2" index="0"]
 
@@ -191,13 +191,13 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_yf5m6")
 
 [node name="Skeleton_-_Cocsis_001" parent="." index="15"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="Cube_002" parent="." index="16"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="Skeleton_-_Leg_2_001" parent="." index="17"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Leg_2_001" index="0"]
 
@@ -205,7 +205,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_eh38h")
 
 [node name="Skeleton_-_Foot_001" parent="." index="18"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Foot_001" index="0"]
 
@@ -213,7 +213,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_rxbh4")
 
 [node name="Skeleton_-_Leg_1_001" parent="." index="19"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Leg_1_001" index="0"]
 
@@ -221,10 +221,10 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_c6jnj")
 
 [node name="Skeleton_-_Spine_001" parent="." index="20"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="Skeleton_-_Arm_1_001" parent="." index="21"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Arm_1_001" index="0"]
 
@@ -232,7 +232,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_fe8p8")
 
 [node name="Skeleton_-_Arm_1_Bis_001" parent="." index="22"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Arm_1_Bis_001" index="0"]
 
@@ -240,7 +240,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_k54n2")
 
 [node name="Skeleton_-_Arm_2_001" parent="." index="23"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Arm_2_001" index="0"]
 
@@ -248,7 +248,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_slc3t")
 
 [node name="Skeleton_-_Arm_2Bis_001" parent="." index="24"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Arm_2Bis_001" index="0"]
 
@@ -256,7 +256,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_gptlj")
 
 [node name="Skeleton_-_Hand_001" parent="." index="25"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_Hand_001" index="0"]
 
@@ -264,7 +264,7 @@ transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_0edq8")
 
 [node name="Skeleton_-_HandBis_001" parent="." index="26"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Skeleton_-_HandBis_001" index="0"]
 

@@ -461,6 +461,7 @@ transform = Transform3D(1, 0, 0, 0, 0.999994, 0.00349065, 0, -0.00349065, 0.9999
 transform = Transform3D(0.95983, 0, -0.280583, 0, 1, 0, 0.280583, 0, 0.95983, -18.128, 0, 41.3079)
 
 [node name="EnemySpawnerManager" parent="Enemies" instance=ExtResource("56_tpjmh")]
+max_global_enemies = 4
 
 [node name="Enemy1Spawner" parent="Enemies/EnemySpawnerManager" instance=ExtResource("57_so5u5")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -34.418, 0, -19.3295)
