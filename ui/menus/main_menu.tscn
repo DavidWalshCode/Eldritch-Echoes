@@ -64,7 +64,7 @@ layout_mode = 2
 theme_override_constants/v_separation = 9
 
 [node name="Start" type="Button" parent="VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(230, 40)
+custom_minimum_size = Vector2(320, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_lu6a0")
 theme_override_font_sizes/font_size = 80
@@ -73,7 +73,7 @@ theme_override_styles/hover = ExtResource("5_5cv1b")
 text = "BEGIN"
 
 [node name="Settings" type="Button" parent="VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(230, 40)
+custom_minimum_size = Vector2(320, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_lu6a0")
 theme_override_font_sizes/font_size = 80
@@ -82,7 +82,7 @@ theme_override_styles/hover = ExtResource("5_5cv1b")
 text = "SETTINGS"
 
 [node name="Quit" type="Button" parent="VBoxContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(230, 40)
+custom_minimum_size = Vector2(320, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_lu6a0")
 theme_override_font_sizes/font_size = 80
