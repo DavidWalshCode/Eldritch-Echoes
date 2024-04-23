@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://d3dylnyi6qvcd"
+path="res://.godot/imported/olwyn.dialogue-6555536d4335aad240fb6760499417a3.tres"
+
+[deps]
+
+source_file="res://dialogue/unimportant_npc_dialogue/olwyn.dialogue"
+dest_files=["res://.godot/imported/olwyn.dialogue-6555536d4335aad240fb6760499417a3.tres"]
+
+[params]
+
+defaults=true

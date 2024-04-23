@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://ovqqag62sggy"
+path="res://.godot/imported/brigid.dialogue-59a32791c51ba02a13d5904a63418ad7.tres"
+
+[deps]
+
+source_file="res://dialogue/unimportant_npc_dialogue/brigid.dialogue"
+dest_files=["res://.godot/imported/brigid.dialogue-59a32791c51ba02a13d5904a63418ad7.tres"]
+
+[params]
+
+defaults=true

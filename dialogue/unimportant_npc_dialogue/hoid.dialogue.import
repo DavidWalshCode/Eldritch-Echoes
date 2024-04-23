@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://tim6p742i80q"
+path="res://.godot/imported/hoid.dialogue-f625076f028a94cb7e190cb0a30ebac4.tres"
+
+[deps]
+
+source_file="res://dialogue/unimportant_npc_dialogue/hoid.dialogue"
+dest_files=["res://.godot/imported/hoid.dialogue-f625076f028a94cb7e190cb0a30ebac4.tres"]
+
+[params]
+
+defaults=true

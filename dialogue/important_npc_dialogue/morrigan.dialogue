@@ -14,7 +14,7 @@ elif Global.is_level_2:
 	MORRIGAN: Please make us carry it no longer. Keep it up, I can feel the powers in you grow.
 
 elif Global.is_level_3:
-	MORRIGAN: The Dread Moon approaches, and time is short. The seasons are shifting. What once was Summer shall soon turn to Autumn. The harvest grows ripe in the fields and Fat off the land. Soon, it will be time to pluck. 
+	MORRIGAN: The Dread Moon approaches, and time is short. The seasons are shifting. What once was Summer shall soon turn to Autumn. The harvest grows ripe in the fields and fat off the land. Soon, it will be time to pluck. 
 	MORRIGAN: The place is a lot quieter than it used to be... 
 
 elif Global.is_level_4:

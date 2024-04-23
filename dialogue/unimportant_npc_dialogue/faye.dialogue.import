@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://mw38s5rib8dc"
+path="res://.godot/imported/faye.dialogue-15231aa5574ec1d6c83a9201cf713b48.tres"
+
+[deps]
+
+source_file="res://dialogue/unimportant_npc_dialogue/faye.dialogue"
+dest_files=["res://.godot/imported/faye.dialogue-15231aa5574ec1d6c83a9201cf713b48.tres"]
+
+[params]
+
+defaults=true

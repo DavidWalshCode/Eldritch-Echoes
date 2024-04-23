@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bfd5u1asrjj6j"
+path="res://.godot/imported/yahara.dialogue-a540495aaa4e7563011e1d928648ca10.tres"
+
+[deps]
+
+source_file="res://dialogue/unimportant_npc_dialogue/yahara.dialogue"
+dest_files=["res://.godot/imported/yahara.dialogue-a540495aaa4e7563011e1d928648ca10.tres"]
+
+[params]
+
+defaults=true

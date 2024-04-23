@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bm50bkqs4y6ns" path="res://characters/npc/assets/models/viking_armour_man_1.obj" id="1_rm6h0"]
 [ext_resource type="PackedScene" uid="uid://2utaorr0j4p7" path="res://characters/npc/actionable.tscn" id="2_6r66e"]
-[ext_resource type="Resource" uid="uid://mkxugq3syol1" path="res://dialogue/general_npc_dialogue/rastog.dialogue" id="3_hhdrk"]
+[ext_resource type="Resource" uid="uid://mkxugq3syol1" path="res://dialogue/unimportant_npc_dialogue/rastog.dialogue" id="3_hhdrk"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_je4lu"]
 points = PackedVector3Array(-0.460943, 0.814655, 0.0369737, -0.464081, 0.831635, 0.0396531, -0.482263, 0.95617, -0.860463, -0.460234, 0.903608, -0.847661, -0.43825, 0.956208, -0.860463, -0.457804, 0.831635, 0.0396531, -0.460943, 0.82257, 0.0874873, -0.489664, 0.975807, 0.0109725, -0.489664, 0.975807, 0.06883, -0.482263, 0.973169, -0.7902, -0.460273, 0.998215, -0.855302, -0.46313, 0.958149, -0.881998, -0.43825, 0.973207, -0.790299, -0.43221, 0.975807, 0.0109725, -0.43221, 0.975807, 0.06883, -0.460943, 0.852253, 0.131848, -0.482263, 0.977541, -0.70386, -0.471285, 1.00719, 0.0427296, -0.482263, 0.977541, 0.0850063, -0.471285, 1.00157, 0.0685323, -0.43825, 0.977579, -0.70386, -0.450443, 1.00719, 0.0427296, -0.450443, 1.00157, 0.0685323, -0.43825, 0.977579, 0.0850063, -0.460611, 0.999553, 0.0850063)

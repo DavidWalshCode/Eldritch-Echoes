@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bdv7scl2m6363"
+path="res://.godot/imported/bones.dialogue-7a051e272db00016dcbb9a8d56ec9d64.tres"
+
+[deps]
+
+source_file="res://dialogue/unimportant_npc_dialogue/bones.dialogue"
+dest_files=["res://.godot/imported/bones.dialogue-7a051e272db00016dcbb9a8d56ec9d64.tres"]
+
+[params]
+
+defaults=true

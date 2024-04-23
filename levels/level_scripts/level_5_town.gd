@@ -19,17 +19,19 @@ signal level_5_time_not_survived
 @onready var weapon_manager = $Player/Camera3D/WeaponManager
 
 func _ready():
-	intro_sting_level_5.play()
-	rain_ambience_level_5.play()
-	general_ambience_level_5.play()
-	horror_ambience_level_5.play()
-	
 	# For NPC dialogue
 	Global.is_level_1 = false
 	Global.is_level_2 = false
 	Global.is_level_3 = false
 	Global.is_level_4 = false
 	Global.is_level_5 = true
+	
+	intro_sting_level_5.play()
+	rain_ambience_level_5.play()
+	
+	await get_tree().create_timer(4).timeout
+	general_ambience_level_5.play()
+	horror_ambience_level_5.play()
 	
 	await get_tree().create_timer(25).timeout
 	level_timer.visible = true

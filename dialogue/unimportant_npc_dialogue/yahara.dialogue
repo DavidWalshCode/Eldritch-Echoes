@@ -6,6 +6,6 @@
 # Is dead in level 2
 
 if Global.is_level_1:
-	YAHARA: Did you hear about the talking skeleton hiding in the town? Usually keeps to himself.
+	YAHARA: Did you hear about the mad skeleton hiding in the town? Usually keeps to himself.
 
 => END

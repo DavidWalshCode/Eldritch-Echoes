@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://trnkkoxeessk"
+path="res://.godot/imported/dante.dialogue-e0bc919c84b533bc197ef966a80afdf6.tres"
+
+[deps]
+
+source_file="res://dialogue/unimportant_npc_dialogue/dante.dialogue"
+dest_files=["res://.godot/imported/dante.dialogue-e0bc919c84b533bc197ef966a80afdf6.tres"]
+
+[params]
+
+defaults=true

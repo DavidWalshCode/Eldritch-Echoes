@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cj4ohy14q0pdb"
+path="res://.godot/imported/fionn.dialogue-548016426c8040834568b15853c9149b.tres"
+
+[deps]
+
+source_file="res://dialogue/unimportant_npc_dialogue/fionn.dialogue"
+dest_files=["res://.godot/imported/fionn.dialogue-548016426c8040834568b15853c9149b.tres"]
+
+[params]
+
+defaults=true

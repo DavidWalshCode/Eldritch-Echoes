@@ -150,10 +150,15 @@ talk={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"echo":false,"script":null)
 ]
 }
+skip_dialogue={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(72, 14),"global_position":Vector2(76, 55),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/main.dialogue", "res://dialogue/important_npc_dialogue/morrigan.dialogue", "res://dialogue/important_npc_dialogue/skellig.dialogue", "res://dialogue/important_npc_dialogue/selene.dialogue", "res://dialogue/important_npc_dialogue/alhoon.dialogue", "res://dialogue/important_npc_dialogue/syr_duncan.dialogue", "res://dialogue/general_npc_dialogue/olwyn.dialogue", "res://dialogue/general_npc_dialogue/willow.dialogue", "res://dialogue/general_npc_dialogue/faye.dialogue", "res://dialogue/general_npc_dialogue/tormund.dialogue", "res://dialogue/general_npc_dialogue/rastog.dialogue", "res://dialogue/general_npc_dialogue/aengus.dialogue", "res://dialogue/general_npc_dialogue/layla.dialogue", "res://dialogue/general_npc_dialogue/brigid.dialogue", "res://dialogue/general_npc_dialogue/bones.dialogue", "res://dialogue/general_npc_dialogue/hoid.dialogue", "res://dialogue/general_npc_dialogue/philter.dialogue", "res://dialogue/general_npc_dialogue/dante.dialogue", "res://dialogue/general_npc_dialogue/yahara.dialogue", "res://dialogue/general_npc_dialogue/fionn.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/main.dialogue", "res://dialogue/important_npc_dialogue/morrigan.dialogue", "res://dialogue/important_npc_dialogue/skellig.dialogue", "res://dialogue/important_npc_dialogue/selene.dialogue", "res://dialogue/important_npc_dialogue/alhoon.dialogue", "res://dialogue/important_npc_dialogue/syr_duncan.dialogue", "res://dialogue/unimportant_npc_dialogue/aengus.dialogue", "res://dialogue/unimportant_npc_dialogue/bones.dialogue", "res://dialogue/unimportant_npc_dialogue/brigid.dialogue", "res://dialogue/unimportant_npc_dialogue/dante.dialogue", "res://dialogue/unimportant_npc_dialogue/faye.dialogue", "res://dialogue/unimportant_npc_dialogue/fionn.dialogue", "res://dialogue/unimportant_npc_dialogue/hoid.dialogue", "res://dialogue/unimportant_npc_dialogue/layla.dialogue", "res://dialogue/unimportant_npc_dialogue/olwyn.dialogue", "res://dialogue/unimportant_npc_dialogue/philter.dialogue", "res://dialogue/unimportant_npc_dialogue/rastog.dialogue", "res://dialogue/unimportant_npc_dialogue/tormund.dialogue", "res://dialogue/unimportant_npc_dialogue/willow.dialogue", "res://dialogue/unimportant_npc_dialogue/yahara.dialogue")
 
 [layer_names]
 

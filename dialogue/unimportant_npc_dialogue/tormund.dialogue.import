@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://1cjqf4olvk7p"
+path="res://.godot/imported/tormund.dialogue-27e6e284f9077f40fb6c5c1d5048286d.tres"
+
+[deps]
+
+source_file="res://dialogue/unimportant_npc_dialogue/tormund.dialogue"
+dest_files=["res://.godot/imported/tormund.dialogue-27e6e284f9077f40fb6c5c1d5048286d.tres"]
+
+[params]
+
+defaults=true

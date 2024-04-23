@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://c0vqddpldv08y"
+path="res://.godot/imported/philter.dialogue-3e462932b0a1b3388a9ee6cda13c855f.tres"
+
+[deps]
+
+source_file="res://dialogue/unimportant_npc_dialogue/philter.dialogue"
+dest_files=["res://.godot/imported/philter.dialogue-3e462932b0a1b3388a9ee6cda13c855f.tres"]
+
+[params]
+
+defaults=true

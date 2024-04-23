@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://brsjdg5ujieqv"
+path="res://.godot/imported/aengus.dialogue-342b907cd5a0129b44cdf08fe40a883d.tres"
+
+[deps]
+
+source_file="res://dialogue/unimportant_npc_dialogue/aengus.dialogue"
+dest_files=["res://.godot/imported/aengus.dialogue-342b907cd5a0129b44cdf08fe40a883d.tres"]
+
+[params]
+
+defaults=true

@@ -1,27 +1,35 @@
 extends CanvasLayer
 
 ## The action to use for advancing the dialogue
-@export var next_action : StringName = &"ui_accept"
+@export var next_action : StringName = &"skip_dialogue" # &"ui_accept"
 
 ## The action to use to skip typing the dialogue
-@export var skip_action : StringName = &"ui_cancel"
+@export var skip_action : StringName = &"skip_dialogue"
 
 @onready var balloon : Control = %Balloon
 @onready var character_label : RichTextLabel = %CharacterLabel
 @onready var dialogue_label : DialogueLabel = %DialogueLabel
 @onready var responses_menu : DialogueResponsesMenu = %ResponsesMenu
+@onready var indicator = $Balloon/Panel/Indicator
+
+@onready var npc_talk_sounds = $NPCTalkSounds.get_children()
 
 ## The dialogue resource
 var resource: DialogueResource
 
 ## Temporary game states
-var temporary_game_states: Array = []
+var temporary_game_states : Array = []
 
 ## See if we are waiting for the player
-var is_waiting_for_input: bool = false
+var is_waiting_for_input : bool = false:
+	set(value):
+		is_waiting_for_input = value
+		indicator.visible = value
+	get:
+		return is_waiting_for_input
 
 ## See if we are running a long mutation and should hide the balloon
-var will_hide_balloon: bool = false
+var will_hide_balloon : bool = false
 
 ## The current line
 var dialogue_line: DialogueLine:
@@ -76,6 +84,7 @@ var dialogue_line: DialogueLine:
 
 func _ready() -> void:
 	balloon.hide()
+	indicator.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
 	# If the responses menu doesn't have a next action set, use this one
@@ -132,3 +141,20 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
+
+func _on_dialogue_label_spoke(letter, letter_index, speed):
+	var talk_sound_selected = npc_talk_sounds[randi() % npc_talk_sounds.size()]
+	
+	if Global.is_level_1:
+		talk_sound_selected.pitch_scale = randf_range(0.9, 1.1)
+	elif Global.is_level_2:
+		talk_sound_selected.pitch_scale = randf_range(0.8, 1.0)
+	elif Global.is_level_3:
+		talk_sound_selected.pitch_scale = randf_range(0.7, 0.9)
+	elif Global.is_level_4:
+		talk_sound_selected.pitch_scale = randf_range(0.6, 0.8)
+	elif Global.is_level_5:
+		talk_sound_selected.pitch_scale = randf_range(0.5, 0.7)
+	
+	if not letter in [".", " "]:
+		talk_sound_selected.play()
