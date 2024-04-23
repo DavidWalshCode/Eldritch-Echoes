@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://pvqy6o3xk346"
-path="res://.godot/imported/Ritual Site 2 Full Song.wav-a61a25e509b652309176fce34845b5b8.sample"
+path="res://.godot/imported/Ritual Site 2 Full Song.wav-e7884d2779217131b57339466c8a15d2.sample"
 
 [deps]
 
-source_file="res://audio/ambience/Ritual Site 2 Full Song.wav"
-dest_files=["res://.godot/imported/Ritual Site 2 Full Song.wav-a61a25e509b652309176fce34845b5b8.sample"]
+source_file="res://audio/ambience/level_1/Ritual Site 2 Full Song.wav"
+dest_files=["res://.godot/imported/Ritual Site 2 Full Song.wav-e7884d2779217131b57339466c8a15d2.sample"]
 
 [params]
 

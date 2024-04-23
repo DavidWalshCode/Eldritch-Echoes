@@ -6,12 +6,12 @@
 # Is dead in level 4
 
 if Global.is_level_1:
-	Tormund: Beautiful day we’re having, isn’t it?
+	TORMUND: Beautiful day we’re having, isn’t it?
 
 elif Global.is_level_2:
-	Tormund: Have you noticed the fog? It’s common in the morning but rarely lingers this long.
+	TORMUND: Have you noticed the fog? It’s common in the morning but rarely lingers this long.
 
 elif Global.is_level_3:
-	Tormund: What’s up with this accursed fog? It won’t seem to lift.
+	TORMUND: What’s up with this accursed fog? It won’t seem to lift.
 
 => END

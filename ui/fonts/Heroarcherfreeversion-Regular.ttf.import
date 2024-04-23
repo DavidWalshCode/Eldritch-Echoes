@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dlsegb1no6ooe"
-path="res://.godot/imported/DeathtoMetal.ttf-0daf2ff7b7fd3c6f0d2474491a357a65.fontdata"
+uid="uid://kscgkwa3ghjb"
+path="res://.godot/imported/Heroarcherfreeversion-Regular.ttf-3ba1360ea91497b1b342240d6e0458d7.fontdata"
 
 [deps]
 
-source_file="res://ui/fonts/DeathtoMetal.ttf"
-dest_files=["res://.godot/imported/DeathtoMetal.ttf-0daf2ff7b7fd3c6f0d2474491a357a65.fontdata"]
+source_file="res://ui/fonts/Heroarcherfreeversion-Regular.ttf"
+dest_files=["res://.godot/imported/Heroarcherfreeversion-Regular.ttf-3ba1360ea91497b1b342240d6e0458d7.fontdata"]
 
 [params]
 

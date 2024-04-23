@@ -6,15 +6,15 @@
 # Is dead in level 5
 
 if Global.is_level_1:
-	Olwyn: So you’re the new Challenger?
+	OLWYN: So you’re the new Challenger?
 
 elif Global.is_level_2:
-	Olwyn: Keep up the good work!?
+	OLWYN: Keep up the good work!?
 
 elif Global.is_level_3:
-	Olwyn: More...more!
+	OLWYN: More...more!
 
 elif Global.is_level_4:
-	Olwyn: Red sun… dark omens… it approaches…
+	OLWYN: Red sun… dark omens… it approaches…
 
 => END

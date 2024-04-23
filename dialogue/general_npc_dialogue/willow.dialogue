@@ -6,9 +6,9 @@
 # Is dead in level 3
 
 if Global.is_level_1:
-	Willow: Are you here to save us?
+	WILLOW: Are you here to save us?
 
 elif Global.is_level_2:
-	Willow: My hero. I shall be waiting for your return, come meet me for a reward.
+	WILLOW: My hero. I shall be waiting for your return, come meet me for a reward.
 
 => END

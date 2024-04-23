@@ -1493,6 +1493,7 @@ alignment = 1
 
 [node name="HealthDisplay" type="Label" parent="UserInterface/HealthAndAmmo"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("55_5digl")
 theme_override_font_sizes/font_size = 50
 text = "HEALTH: 0
@@ -1503,6 +1504,7 @@ script = ExtResource("56_n0ntf")
 
 [node name="AmmoDisplay" type="Label" parent="UserInterface/HealthAndAmmo"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("55_5digl")
 theme_override_font_sizes/font_size = 50
 text = "AMMO: 0
@@ -1540,6 +1542,7 @@ grow_horizontal = 2
 [node name="LevelTimer" type="Label" parent="UserInterface/TimerContainer"]
 visible = false
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("55_5digl")
 theme_override_font_sizes/font_size = 50
 text = "TIME"

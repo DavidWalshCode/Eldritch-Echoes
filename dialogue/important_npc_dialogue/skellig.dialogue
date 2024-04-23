@@ -5,23 +5,25 @@
 # Important character
 
 if Global.is_level_1:
-	Skellig: Whachoo lookin' a'? Tinkin' you better'n me, just 'cause I could'n beat da sec'nd stage? Come back if'n you survive ev'n dat long. 
-		Lookin' fer a bi' a... (indistinct mumbling)... ger away.
+	SKELLIG: Whachoo lookin' a'? Tinkin' you better'n me, just 'cause I could'n beat da sec'nd stage? Come back if'n you survive ev'n dat long. 
+	SKELLIG: Lookin' fer a bi' a... (indistinct mumbling)... ger away.
 
 elif Global.is_level_2:
-	Skellig: Held yerself pretty well if'n I do say so meself. Next stage is da real deal. Only one feller managed to do it wat I evr 'erd of. He's a right knob 'ed en all 'e is. 
-		Alway's actin' so tough, but ev'n 'e could'n wield the powers 'e was given in da end. Get past 'ere, and den we'll talk.
+	SKELLIG: Held yerself pretty well if'n I do say so meself. Next stage is da real deal. Only one feller managed to do it wat I evr 'erd of. He's a right knob 'ed en all 'e is. 
+	SKELLIG: Alway's actin' so tough, but ev'n 'e could'n wield the powers 'e was given in da end. Get past 'ere, and den we'll talk.
 
 elif Global.is_level_3:
-	Skellig: 'Ow da 'ell'd you manage dat! Ne'er seen da likes o' it 'afore. Survivin' da horror is only da first step. Haf'n to figure out 'ow to use wat ya got now'n you got it is da next. Wat worked 'afore might'n work on bigger swarms. 
-		Keep gainin' powers and learnin' to wield dem. Keep gett'n stronger, it's da only way we'll ever be free.
+	SKELLIG: 'Ow da 'ell'd you manage dat! Ne'er seen da likes o' it 'afore. Survivin' da horror is only da first step. 
+	SKELLIG: Haf'n to figure out 'ow to use wat ya got now'n you got it is da next. Wat worked 'afore might'n work on bigger swarms. 
+	SKELLIG: Keep gainin' powers and learnin' to wield dem. Keep gett'n stronger, it's da only way we'll ever be free.
 
 elif Global.is_level_4:
-	Skellig: Yer makin' me believe again. After da old fool Syr Duncan failed, I was afeared we'd ne'r see a Challenger approach again in me lifetime, but 'ere you are. 
-		Show dem Underdwellers oo's boss, make 'em follow you. For the 'Arb'n'gr! For the 'Arb'n'gr!
+	SKELLIG: Yer makin' me believe again. After da old fool Syr Duncan failed, I was afeared we'd ne'r see a Challenger approach again in me lifetime, but 'ere you are. 
+	SKELLIG: Show dem Underdwellers oo's boss, make 'em follow you. For the 'Arb'n'gr! For the 'Arb'n'gr!
 
 elif Global.is_level_5:
-	Skellig: Last stage... (heavy panting)... prove you are what I know you to be. Master dem, control dem, prove dey should'n follow you. Take 'em all across da lands... kill 'ed all... burn it all... reap it all...
-		'Arb'n'gr is a plague on da land... maim... slau'tr... fire... death... kill... (his mind is fractured)
+	SKELLIG: Last stage... (heavy panting)... prove you are what I know you to be. Master dem, control dem, prove dey should'n follow you. 
+	SKELLIG: Take 'em all across da lands... kill 'ed all... burn it all... reap it all...
+	SKELLIG: Arb'n'gr is a plague on da land... maim... slau'tr... fire... death... kill... (his mind is fractured)
 
 => END

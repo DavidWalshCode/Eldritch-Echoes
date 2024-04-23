@@ -6,15 +6,15 @@
 # Is dead in level 5
 
 if Global.is_level_1:
-	Philter: Are... bin... jerr.
+	PHILTER: Are... bin... jerr.
 
 elif Global.is_level_2:
-	Philter: Ahhhh... rrrr... innnn... jrrrr...
+	PHILTER: Ahhhh... rrrr... innnn... jrrrr...
 
 elif Global.is_level_3:
-	Philter: Ahr-bin-jer.
+	PHILTER: Ahr-bin-jer.
 
 elif Global.is_level_4:
-	Philter: HARBINGER.
+	PHILTER: HARBINGER.
 
 => END

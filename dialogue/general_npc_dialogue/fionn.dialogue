@@ -6,12 +6,12 @@
 # Is dead in level 4
 
 if Global.is_level_1:
-	Fionn: What makes you so special?
+	FIONN: What makes you so special?
 
 elif Global.is_level_2:
-	Fionn: Wow... I guess you are pretty good.
+	FIONN: Wow... I guess you are pretty good.
 
 elif Global.is_level_3:
-	Fionn: How do I get to be as strong as you?
+	FIONN: How do I get to be as strong as you?
 
 => END

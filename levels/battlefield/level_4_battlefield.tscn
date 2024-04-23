@@ -41,7 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://s3re3a6gjbsw" path="res://characters/enemies/enemy_spawners/enemy_spawner_manager.tscn" id="39_pcxpf"]
 [ext_resource type="AudioStream" uid="uid://4uhgisbwq7gv" path="res://audio/ambience/Dark_Rainy_Night(ambience).ogg" id="41_s8t0a"]
 [ext_resource type="PackedScene" uid="uid://b82dn1cskq362" path="res://characters/enemies/enemy_spawners/enemy_4_spawner.tscn" id="41_v15qv"]
-[ext_resource type="AudioStream" uid="uid://pvqy6o3xk346" path="res://audio/ambience/Ritual Site 2 Full Song.wav" id="42_dqef6"]
+[ext_resource type="AudioStream" uid="uid://pvqy6o3xk346" path="res://audio/ambience/level_1/Ritual Site 2 Full Song.wav" id="42_dqef6"]
 [ext_resource type="AudioStream" uid="uid://iffr78vmmncx" path="res://audio/sfx/portal/617761__cogfirestudios__big-scary-portal-open.wav" id="43_k7tth"]
 [ext_resource type="AudioStream" uid="uid://bj6hi6orv14so" path="res://audio/sfx/eldritch_horror/positive_reaction/EldritchAbomination_Breathing2.mp3" id="44_xyoq8"]
 [ext_resource type="AudioStream" uid="uid://dh0rl8axov684" path="res://audio/sfx/eldritch_horror/negative_reaction/EldritchAbomination_Roar.mp3" id="45_h7tay"]

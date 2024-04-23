@@ -5,22 +5,26 @@
 # Important character
 
 if Global.is_level_1:
-	Selene: O Holy One, please accept this blessing as you do your duty. Should your soul be set adrift from this mortal coil, I shall pull you back to this time and place. Be warned, this blessing can only be granted a handful of times to each person. Each time, it may take some small toll, but we are out of options, and you are the most promising Challenger we have seen in years. 
-		We can't afford to lose you. Should you prove your mettle to the Powers that Be, mighty boons may be awarded to you for future engagements.
+	SELENE: Holy One, please accept this blessing as you do your duty. Should your soul be set adrift from this mortal coil, I shall pull you back to this time and place. 
+	SELENE: Be warned, this blessing can only be granted a handful of times to each person. Each time, it may take some small toll, but we are out of options, and you are the most promising Challenger we have seen in years. 
+	SELENE: We can't afford to lose you. Should you prove your mettle to the Powers that Be, mighty boons may be awarded to you for future engagements.
 
 elif Global.is_level_2:
-	Selene: Hmmm... you did well, and the blessing did work. You have returned to us. And I'm not seeing any signs of harm... that's strange. Usually, there would be some impairment... a blemish on the body or soul. Ask the other Challengers. Each of them paid their price, and none were willing to pay it again. But you seem fine. 
-		Let me bless you again, and I hope you have some immunity to the repercussions. The harder you fight now, the easier the next fight will be.
+	SELENE: Hmmm... you did well, and the blessing did work. You have returned to us. And I'm not seeing any signs of harm... that's strange. 
+	SELENE: Usually, there would be some impairment... a blemish on the body or soul. Ask the other Challengers. Each of them paid their price, and none were willing to pay it again. But you seem fine. 
+	SELENE: Let me bless you again, and I hope you have some immunity to the repercussions. The harder you fight now, the easier the next fight will be.
 
 elif Global.is_level_3:
-	Selene: Still looking good. It's strange, like, none of the weird hoodoo magic we do to pull your soul back is having any effects on your fleshy meat sack. And your soul must be untainted since it is as clean as everyone else's. Well, except for the skeletons, he's strange, so ignore him. 
-		Either way, if you keep this up, we might get wrapped up here sooner than expected. Here's your blessing. Boop! Hey, only one blessing at a time! Aw shucks, here's another. Boop!
+	SELENE: Still looking good. It's strange, like, none of the weird hoodoo magic we do to pull your soul back is having any effects on your fleshy meat sack. And your soul must be untainted since it is as clean as everyone else's. Well, except for the skeletons, he's strange, so ignore him. 
+	SELENE: Either way, if you keep this up, we might get wrapped up here sooner than expected. Here's your blessing. Boop! Hey, only one blessing at a time! Aw shucks, here's another. Boop!
 
 elif Global.is_level_4:
-	Selene: Okay. People are getting weird, and what's happening to the sky? What are you doing out there? Morrigan says it's working, but what is it? She keeps me in the dark on so many things. She needs my powers to send you to the island and pull you back, but she won't tell me anything else. 
-		If what you're doing can fix things, please save us! Please save us!
+	SELENE: Okay. People are getting weird, and what's happening to the sky? What are you doing out there? Morrigan says it's working, but what is it? She keeps me in the dark on so many things. 
+	SELENE: She needs my powers to send you to the island and pull you back, but she won't tell me anything else. 
+	SELENE: If what you're doing can fix things, please save us! Please save us!
 
 elif Global.is_level_5:
-	Selene: The Harbinger has arrived! Bring the Reaping to the Unworthy. If they will not kneel, they will be cut down! Oh, Unholy Challenger of Order, bring your destructive powers to ruin and smite first creatures that dwell below... and then those that dwell above. Reap them all! (laughing hysterically)
+	SELENE: The Harbinger has arrived! Bring the Reaping to the Unworthy. If they will not kneel, they will be cut down! 
+	SELENE: Oh, Unholy Challenger of Order, bring your destructive powers to ruin and smite first creatures that dwell below... and then those that dwell above. Reap them all! (laughing hysterically)
 
 => END

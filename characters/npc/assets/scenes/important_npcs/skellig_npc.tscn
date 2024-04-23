@@ -19,7 +19,7 @@ points = PackedVector3Array(-0.473465, 1.36478, -0.319384, -0.453626, 1.36478, -
 [node name="SkelligNPC" instance=ExtResource("1_hmo65")]
 
 [node name="Axe_00" parent="." index="0"]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Axe_00" index="0"]
 
@@ -27,7 +27,7 @@ transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_je4lu")
 
 [node name="Sword_00" parent="." index="1"]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sword_00" index="0"]
 
@@ -35,7 +35,7 @@ transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_v6ior")
 
 [node name="Viking" parent="." index="2"]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Viking" index="0"]
 
@@ -43,10 +43,10 @@ transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_7o4py")
 
 [node name="Knife_00" parent="." index="3"]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
 
 [node name="Shield" parent="." index="4"]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Shield" index="0"]
 

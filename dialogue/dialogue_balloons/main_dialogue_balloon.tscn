@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://d03n3xq5esye2"]
+[gd_scene load_steps=12 format=3 uid="uid://d03n3xq5esye2"]
 
 [ext_resource type="Script" path="res://dialogue/dialogue_balloons/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="FontFile" uid="uid://c355n3j7jdkeb" path="res://ui/fonts/PR Viking.ttf" id="2_hf7ky"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
+[ext_resource type="FontFile" uid="uid://kscgkwa3ghjb" path="res://ui/fonts/Heroarcherfreeversion-Regular.ttf" id="4_7t430"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -125,7 +126,7 @@ modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
 theme_override_fonts/normal_font = ExtResource("2_hf7ky")
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 55
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -135,7 +136,8 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 30
+theme_override_fonts/normal_font = ExtResource("4_7t430")
+theme_override_font_sizes/normal_font_size = 38
 text = "Dialogue..."
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
@@ -162,7 +164,8 @@ response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("4_7t430")
+theme_override_font_sizes/font_size = 38
 text = "Response example"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]

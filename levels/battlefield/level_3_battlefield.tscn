@@ -43,7 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://b3g4rtj8g2p3d" path="res://characters/player/player.tscn" id="46_remsh"]
 [ext_resource type="PackedScene" uid="uid://s3re3a6gjbsw" path="res://characters/enemies/enemy_spawners/enemy_spawner_manager.tscn" id="47_yt0es"]
 [ext_resource type="PackedScene" uid="uid://bwjsgem1pt51k" path="res://characters/enemies/enemy_spawners/enemy_3_spawner.tscn" id="49_8sqvo"]
-[ext_resource type="AudioStream" uid="uid://pvqy6o3xk346" path="res://audio/ambience/Ritual Site 2 Full Song.wav" id="50_8x7y1"]
+[ext_resource type="AudioStream" uid="uid://pvqy6o3xk346" path="res://audio/ambience/level_1/Ritual Site 2 Full Song.wav" id="50_8x7y1"]
 [ext_resource type="AudioStream" uid="uid://iffr78vmmncx" path="res://audio/sfx/portal/617761__cogfirestudios__big-scary-portal-open.wav" id="51_ia37d"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_vdt3c"]

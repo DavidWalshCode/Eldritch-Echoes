@@ -6,15 +6,15 @@
 # Is dead in level 5
 
 if Global.is_level_1:
-	Bones: Valahu… ishnar telengu alawaat belissimar. Shura marowat kinge dofinmak.
+	BONES: Valahu… ishnar telengu alawaat belissimar. Shura marowat kinge dofinmak.
 
 elif Global.is_level_2:
-	Bones: Is it really you? Are you sane?
+	BONES: Is it really you? Are you sane?
 
 elif Global.is_level_3:
-	Bones: Let the heavens weep over what is to come.
+	BONES: Let the heavens weep over what is to come.
 
 elif Global.is_level_4:
-	Bones: The reaping is nigh.
+	BONES: The reaping is nigh.
 
 => END

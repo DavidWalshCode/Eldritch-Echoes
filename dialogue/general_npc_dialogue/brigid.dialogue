@@ -6,15 +6,15 @@
 # Is dead in level 5
 
 if Global.is_level_1:
-	Brigid: Have you spoken to everyone in town yet? Why haven't you gone to the portal yet?
+	BRIGID: Have you spoken to everyone in town yet? Why haven't you gone to the portal yet?
 
 elif Global.is_level_2:
-	Brigid: Dear lord, someone killed Yahara in the night! Who would do such a thing?
+	BRIGID: Dear lord, someone killed Yahara in the night! Who would do such a thing?
 
 elif Global.is_level_3:
-	Brigid: First Yahara, now Willow and Aengus... why is this happening. Shouldn't you be stopping this?
+	BRIGID: First Yahara, now Willow and Aengus... why is this happening. Shouldn't you be stopping this?
 
 elif Global.is_level_4:
-	Brigid: Layla! FIONN!!! You've taken everyone else already. Take me! Take me to the reaping!
+	BRIGID: Layla! FIONN!!! You've taken everyone else already. Take me! Take me to the reaping!
 
 => END

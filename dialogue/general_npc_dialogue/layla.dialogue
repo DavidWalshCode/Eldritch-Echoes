@@ -6,12 +6,12 @@
 # Is dead in level 4
 
 if Global.is_level_1:
-	Layla: I love the scent of the flowers blooming this time of year.
+	LAYLA: I love the scent of the flowers blooming this time of year.
 
 elif Global.is_level_2:
-	Layla: Is it just me, or does the sky seem a little… different today?
+	LAYLA: Is it just me, or does the sky seem a little… different today?
 
 elif Global.is_level_3:
-	Layla: Why does the sky grow more dissatisfied every day? What will keep the dark from us should it fail?
+	LAYLA: Why does the sky grow more dissatisfied every day? What will keep the dark from us should it fail?
 
 => END

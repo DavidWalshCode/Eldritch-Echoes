@@ -6,15 +6,15 @@
 # Is dead in level 5
 
 if Global.is_level_1:
-	Dante: Have you heard about the creatures that lurk below? I hear a new Challenger showed up to put them back to rest.
+	DANTE: Have you heard about the creatures that lurk below? I hear a new Challenger showed up to put them back to rest.
 
 elif Global.is_level_2:
-	Dante: It only gets tougher from here.
+	DANTE: It only gets tougher from here.
 
 elif Global.is_level_3:
-	Dante: Look out for the lizards. They’re hungry. I can hear them.
+	DANTE: Look out for the lizards. They’re hungry. I can hear them.
 
 elif Global.is_level_4:
-	Dante: They creep, they crawl... they are here.
+	DANTE: They creep, they crawl... they are here.
 
 => END

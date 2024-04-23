@@ -6,15 +6,15 @@
 # Is dead in level 5
 
 if Global.is_level_1:
-	Hoid: Hey bud! I'm the portal master, jump on in!
+	HOID: Hey bud! I'm the portal master, jump on in!
 
 elif Global.is_level_2:
-	Hoid: I am the portal master... wait... nah, it can't be. Hey bud! Jump on in!
+	HOID: I am the portal master... wait... nah, it can't be. Hey bud! Jump on in!
 
 elif Global.is_level_3:
-	Hoid: I am the portal master... no, it can't be... no, it can't be... jump...
+	HOID: I am the portal master... no, it can't be... no, it can't be... jump...
 
 elif Global.is_level_4:
-	Hoid: I am the portal master... I am the portal master... I am the portal master... I am the portal master...
+	HOID: I am the portal master... I am the portal master... I am the portal master... I am the portal master...
 
 => END

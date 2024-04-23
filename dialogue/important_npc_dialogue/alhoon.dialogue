@@ -5,20 +5,21 @@
 # Important character
 
 if Global.is_level_1:
-	Alhoon: Run from here...
+	ALHOON: Run from here...
 
 elif Global.is_level_2:
-	Alhoon: Ah, a seed of madness has already set root in your flesh. You must remove it as I have, lest it grow. Remove the flesh, not the seed.
+	ALHOON: Ah, a seed of madness has already set root in your flesh. You must remove it as I have, lest it grow. Remove the flesh, not the seed.
 
 elif Global.is_level_3:
-	Alhoon: Continue this path at your own peril. There is no good end for you here. You speak to false prophets and of false gods. The best you can hope for is to remove your flesh from the equation. It is unbecoming. Tread no further.
+	ALHOON: Continue this path at your own peril. There is no good end for you here. You speak to false prophets and of false gods. The best you can hope for is to remove your flesh from the equation. It is unbecoming. Tread no further.
 
 elif Global.is_level_4:
-	Alhoon: Foolish meatsack. Skellig lost his ferocity, and Duncan lost his heart. Were you truly so naive to think playing with such powers would leave you unscathed. Instead of offering that entity a piece of you, you have offered it a free ride back here, to this place. Are you mad or simply ignorant?
-		One has one more chance to set this right. Simply remove your flesh from the situation, and you can stop this before it is too late. Just stop this, I'm begging you.
+	ALHOON: Foolish meatsack. Skellig lost his ferocity, and Duncan lost his heart. Were you truly so naive to think playing with such powers would leave you unscathed. Instead of offering that entity a piece of you, you have offered it a free ride back here, to this place. Are you mad or simply ignorant?
+	ALHOON: One has one more chance to set this right. Simply remove your flesh from the situation, and you can stop this before it is too late. Just stop this, I'm begging you.
 
 elif Global.is_level_5:
-	Alhoon: Well, that's it. We're all fucked now. I hope you're happy with yourself. There's no going back now. Guess you might as well just continue on and finish fucking everything up. Either way, all these people have been driven mad, and there is no saving them. 
-		You couldn't just heed my warning, get up and stop playing... you just had to keep killing things... God, I am so sick of fucking humans not paying attention to the skeleton telling them to put down their laptop and just extract themselves from the situation to prevent the calamity of this world. Hope you're happy with yourself. I hope you're satisfied with yourself, you meatbag.
+	ALHOON: Well, that's it. We're all fucked now. I hope you're happy with yourself. There's no going back now. Guess you might as well just continue on and finish fucking everything up. Either way, all these people have been driven mad, and there is no saving them. 
+	ALHOON: You couldn't just heed my warning, get up and stop playing... you just had to keep killing things... 
+	ALHOON: God, I am so sick of fucking humans not paying attention to the skeleton telling them to put down their laptop and just extract themselves from the situation to prevent the calamity of this world. Hope you're happy with yourself. I hope you're satisfied with yourself, you meatbag.
 
 => END

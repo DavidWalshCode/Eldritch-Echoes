@@ -6,9 +6,9 @@
 # Is dead in level 3
 
 if Global.is_level_1:
-	Aengus: Do you have any idea what you're signing up for?
+	AENGUS: Do you have any idea what you're signing up for?
 
 elif Global.is_level_2:
-	Aengus: You’ll probably face new threats in the trial ahead Challenger.
+	AENGUS: You’ll probably face new threats in the trial ahead Challenger.
 
 => END
