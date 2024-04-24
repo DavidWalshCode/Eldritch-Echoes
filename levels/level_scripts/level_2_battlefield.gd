@@ -29,7 +29,6 @@ func _ready():
 	
 	battle_ambience_level_2.play()
 	await get_tree().create_timer(4).timeout
-	#general_ambience_level_2.queue_free()
 	
 	enemy_spawner_manager.manager_start_spawning()
 

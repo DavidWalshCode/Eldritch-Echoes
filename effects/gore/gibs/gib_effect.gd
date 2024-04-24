@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var gravity = 35.0
 @export var drag = 0.01
 @export var velocity_retained_on_bounce = 0.8
-@export var stationary_threshold = 0.2  # Threshold below which the gib is considered stationary
+@export var stationary_threshold = 0.3  # Threshold below which the gib is considered stationary
 
 func _ready():
 	velocity = -global_transform.basis.y * start_move_speed

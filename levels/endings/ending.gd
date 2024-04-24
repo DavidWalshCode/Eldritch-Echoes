@@ -1,6 +1,5 @@
 extends Label
 
-
 var ending_died_text = "And thus, Aisling the Challenger fell to the horde.\n
 The dark powers that had latched onto her from the very first trial dissipated and diffused back into the land, awaiting the next Challenger to come, seeking their strength. The town’s denizens succumbed to the madness of Arakzul's elder eldritch horror and perished to infighting and ritualistic slaughter, but it was contained to the city alone.\n
 With no survivors to tell the tale, it was only a matter of time before new wanderers emerged, stumbling across the ruins before taking up residence. As the population grew, the otherworldly entity returned with alluring calls to adventure and promises of power. Over time, Arakzul's religion was founded anew… and a new Challenger approaches...
@@ -16,7 +15,6 @@ When no other creatures remained, the beasts turned on themselves, tearing each 
 @onready var survived_ending_ambience = $"../../../Audio/SurvivedEndingAmbience"
 
 func _ready() -> void:
-	Global.level_5_survived_passed_time = true
 	if Global.level_5_survived_passed_time:
 		survived_ending_ambience.play()
 		await get_tree().create_timer(7).timeout

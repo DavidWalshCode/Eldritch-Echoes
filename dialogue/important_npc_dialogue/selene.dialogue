@@ -5,7 +5,7 @@
 # Important character
 
 if Global.is_level_1:
-	SELENE: Holy One, please accept this blessing as you do your duty. Should your soul be set adrift from this mortal coil, I shall pull you back to this time and place. 
+	SELENE: Please accept this blessing as you do your duty. Should your soul be set adrift from this mortal coil, I shall pull you back to this time and place. 
 	SELENE: Be warned, this blessing can only be granted a handful of times to each person. Each time, it may take some small toll, but we are out of options, and you are the most promising Challenger we have seen in years. 
 	SELENE: We can't afford to lose you. Should you prove your mettle to the powers that be, mighty boons may be awarded to you for future engagements.
 
