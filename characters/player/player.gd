@@ -87,7 +87,7 @@ func _process(delta):
 		character_mover.jump()
 	
 	# Dialogue stuff
-	if Input.is_action_just_pressed("talk"): #"ui_accept"
+	if Input.is_action_just_pressed("talk"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
 			actionables[0].action()

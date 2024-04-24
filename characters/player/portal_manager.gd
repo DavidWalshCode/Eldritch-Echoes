@@ -11,7 +11,6 @@ func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
 
 func on_area_entered(portal : Portal):
-	print("Entered portal")
 	portal_enter_sound.play()
 	portal_entered.emit()
 	

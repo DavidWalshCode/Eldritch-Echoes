@@ -15,7 +15,8 @@ run/main_scene="res://ui/menus/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
-config/icon="res://eldritch_echoes_logo.png"
+config/icon="res://ui/eldritch_echoes_logo.png"
+config/windows_native_icon="res://ui/eldritch_echoes_logo.ico"
 
 [audio]
 
@@ -149,7 +150,7 @@ skip_dialogue={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/main.dialogue", "res://dialogue/important_npc_dialogue/morrigan.dialogue", "res://dialogue/important_npc_dialogue/skellig.dialogue", "res://dialogue/important_npc_dialogue/selene.dialogue", "res://dialogue/important_npc_dialogue/alhoon.dialogue", "res://dialogue/important_npc_dialogue/syr_duncan.dialogue", "res://dialogue/unimportant_npc_dialogue/aengus.dialogue", "res://dialogue/unimportant_npc_dialogue/bones.dialogue", "res://dialogue/unimportant_npc_dialogue/brigid.dialogue", "res://dialogue/unimportant_npc_dialogue/dante.dialogue", "res://dialogue/unimportant_npc_dialogue/faye.dialogue", "res://dialogue/unimportant_npc_dialogue/fionn.dialogue", "res://dialogue/unimportant_npc_dialogue/hoid.dialogue", "res://dialogue/unimportant_npc_dialogue/layla.dialogue", "res://dialogue/unimportant_npc_dialogue/olwyn.dialogue", "res://dialogue/unimportant_npc_dialogue/philter.dialogue", "res://dialogue/unimportant_npc_dialogue/rastog.dialogue", "res://dialogue/unimportant_npc_dialogue/tormund.dialogue", "res://dialogue/unimportant_npc_dialogue/willow.dialogue", "res://dialogue/unimportant_npc_dialogue/yahara.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/important_npc_dialogue/morrigan.dialogue", "res://dialogue/important_npc_dialogue/skellig.dialogue", "res://dialogue/important_npc_dialogue/selene.dialogue", "res://dialogue/important_npc_dialogue/alhoon.dialogue", "res://dialogue/important_npc_dialogue/syr_duncan.dialogue", "res://dialogue/unimportant_npc_dialogue/aengus.dialogue", "res://dialogue/unimportant_npc_dialogue/bones.dialogue", "res://dialogue/unimportant_npc_dialogue/brigid.dialogue", "res://dialogue/unimportant_npc_dialogue/dante.dialogue", "res://dialogue/unimportant_npc_dialogue/faye.dialogue", "res://dialogue/unimportant_npc_dialogue/fionn.dialogue", "res://dialogue/unimportant_npc_dialogue/hoid.dialogue", "res://dialogue/unimportant_npc_dialogue/layla.dialogue", "res://dialogue/unimportant_npc_dialogue/olwyn.dialogue", "res://dialogue/unimportant_npc_dialogue/philter.dialogue", "res://dialogue/unimportant_npc_dialogue/rastog.dialogue", "res://dialogue/unimportant_npc_dialogue/tormund.dialogue", "res://dialogue/unimportant_npc_dialogue/willow.dialogue", "res://dialogue/unimportant_npc_dialogue/yahara.dialogue")
 
 [layer_names]
 
