@@ -1,24 +1,25 @@
 # Eldritch Echoes
  Final Year Project for BSc Computer Games Development
+ 
  Essentially: Groundhog Day meets a first-person shooter (FPS) game with a Lovecraftian Horror theme.
 
  Eldritch Echoes is my final year project for my degree and first major project as a solo developer!
 
  Game Controls: 
 
- ‘WASD’ to move around.
+    ‘WASD’ to move around.
 
- ‘Mouse look’ to look around.
+    ‘Mouse look’ to look around.
 
- ‘Mouse 1’ (left-click) to attack.
+    ‘Mouse 1’ (left-click) to attack.
 
- ‘Space’ to jump and press it again while in the air to double jump.
+    ‘Space’ to jump and press it again while in the air to double jump.
 
- ‘Ctrl’ to crouch. Hold it while moving to slide (this gives the player more speed). Hold it while in the air to gain more speed and control.
+    ‘Ctrl’ to crouch. Hold it while moving to slide (this gives the player more speed). Hold it while in the air to gain more speed and control.
 
- ‘E’ to talk to the townspeople (NPCs). While talking, press ‘Mouse 2’ (right-click) to go to the following dialogue or skip it.
+    ‘E’ to talk to the townspeople (NPCs). While talking, press ‘Mouse 2’ (right-click) to go to the following dialogue or skip it.
 
- ‘Esc’ to open the settings menu and pause the game.
+   ‘Esc’ to open the settings menu and pause the game.
 
 
  Main Pillars of the Game:
