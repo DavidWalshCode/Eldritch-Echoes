@@ -18,8 +18,10 @@ elif Global.is_level_4:
 	ALHOON: One has one more chance to set this right. Simply remove your flesh from the situation, and you can stop this before it is too late. Just stop this, I'm begging you.
 
 elif Global.is_level_5:
-	ALHOON: Well, that's it. We're all fucked now. I hope you're happy with yourself. There's no going back now. Guess you might as well just continue on and finish fucking everything up. Either way, all these people have been driven mad, and there is no saving them. 
+	ALHOON: Well, that's it. We're all fucked now. I hope you're happy with yourself. There's no going back now. Guess you might as well just continue on and finish fucking everything up. 
+	ALHOON: Either way, all these people have been driven mad, and there is no saving them. 
 	ALHOON: You couldn't just heed my warning, get up and stop playing... you just had to keep killing things... 
-	ALHOON: God, I am so sick of fucking humans not paying attention to the skeleton telling them to put down their laptop and just extract themselves from the situation to prevent the calamity of this world. Hope you're happy with yourself. I hope you're satisfied with yourself, you meatbag.
+	ALHOON: God, I am so sick of fucking humans not paying attention to the skeleton telling them to put down their laptop and just extract themselves from the situation to prevent the calamity of this world. Hope you're happy with yourself. 
+	ALHOON: I hope you're satisfied with yourself, you meatbag.
 
 => END

@@ -16,7 +16,7 @@ elif Global.is_level_3:
 	SYR DUNCAN: Your mettle is mighty, and your fury ferocious. Take you on as a squire? Should you pass the next trial, I may be looking to you for training. Where did you study to get so strong? I must know!
 
 elif Global.is_level_4:
-	SYR DUNCAN: It was supposed to be me... I was supposed to be the hero... how come you get to lead the hoard? It's not fair... even that fool Skellig has fallen for your charm... no, you will fail, and I will have my chance again...
+	SYR DUNCAN: It was supposed to be me... I was supposed to be the hero... how come you get to lead the hordew ? It's not fair... even that fool Skellig has fallen for your charm... no, you will fail, and I will have my chance again...
 
 elif Global.is_level_5:
 	SYR DUNCAN: If I cAN't be The Harbinger tHen thERE IS NO plACe fOr me HEre! End It befORE yoU EnD EverThIng! END ME!!

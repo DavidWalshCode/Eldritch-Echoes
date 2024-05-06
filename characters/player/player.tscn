@@ -391,8 +391,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_8akrd"]
 resource_name = "switch_in"
-length = 0.3
-step = 0.15
+length = 0.2
+step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -400,7 +400,7 @@ tracks/0/path = NodePath("Weapons:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(2.41907, -11.9315, -0.0362046), Vector3(0, 0, 0)]

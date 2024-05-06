@@ -24,7 +24,7 @@ elif Global.is_level_4:
 	SELENE: If what you're doing can fix things, please save us! Please save us!
 
 elif Global.is_level_5:
-	SELENE: The Harbinger has arrived! Bring the Reaping to the Unworthy. If they will not kneel, they will be cut down! 
+	SELENE: The Harbinger has arrived! Bring the reaping to the unworthy. If they will not kneel, they will be cut down! 
 	SELENE: Oh, Unholy Challenger of Order, bring your destructive powers to ruin and smite first creatures that dwell below... and then those that dwell above. Reap them all! (laughing hysterically)
 
 => END

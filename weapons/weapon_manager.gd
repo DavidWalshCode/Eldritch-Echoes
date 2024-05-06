@@ -22,9 +22,9 @@ var current_weapon = null
 var weapon_slots_unlocked = {
 	WEAPON_SLOTS.SWORD : true,
 	WEAPON_SLOTS.REVOLVERS : true,
-	WEAPON_SLOTS.MACHINE_GUN : false,
-	WEAPON_SLOTS.SHOTGUN : false,
-	WEAPON_SLOTS.ROCKET_LAUNCHER : false,
+	WEAPON_SLOTS.MACHINE_GUN : true, # false
+	WEAPON_SLOTS.SHOTGUN : true, # false
+	WEAPON_SLOTS.ROCKET_LAUNCHER : true # false
 }
 
 @onready var weapons = $Weapons.get_children()
@@ -84,7 +84,7 @@ func switch_to_weapon_slot(slot_index : int) -> bool:
 	
 	if current_weapon.has_method("set_active"):
 		current_weapon.set_active(true)
-		general_weapon_animations.play("switch", 0.4)
+		general_weapon_animations.play("switch")  # , 0.4
 		play_switch_sound()
 	else:
 		current_weapon.show()
