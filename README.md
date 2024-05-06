@@ -19,7 +19,7 @@
 
     - ‘E’ to talk to the townspeople (NPCs). While talking, press ‘Mouse 2’ (right-click) to go to the following dialogue or skip it.
 
-    ‘Esc’ to open the settings menu and pause the game.
+    - ‘Esc’ to open the settings menu and pause the game.
 
 
  **Main Pillars of the Game:**
