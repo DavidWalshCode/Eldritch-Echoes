@@ -1,6 +1,5 @@
 # Eldritch Echoes
- Final Year Project for BSc Computer Games Development
- 
+
  ***Essentially:*** Groundhog Day meets a first-person shooter (FPS) game with a Lovecraftian Horror theme.
 
  Eldritch Echoes is my final year project for my degree and first major project as a solo developer!
