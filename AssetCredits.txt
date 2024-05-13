@@ -1,0 +1,45 @@
+Asset Credits for Eldritch Echoes by David Walsh
+(in alphabetical order)
+
+- Ace Spectre. (2021) ‘PS1 Heavy and Light Weapons Pack’ [graphics], available: https://acespectre.itch.io/ps1-heavy-and-light-weapons-pack [accessed 21 Jan 2024].
+- Bacon and Games. (2024) ‘godot4-game-template’ [code], available: https://github.com/baconandgames/godot4-gametemplate/tree/e12493ba61b474dab4b7c9d3b520a408dae3c1ad [accessed 20 Apr 2024].
+- Baradari, M. (2009) ‘Chaingun, pistol, rifle, shotgun shots’ [audio], available: https://opengameart.org/content/chaingun-pistol-rifle-shotgun-shots [accessed 18 Jan 2024].
+- Beelim Solutions. (2023) ‘3d Models: Early Modern / Colonial Harbour Scene’ [graphics], available: https://beelim-solutions.itch.io/port-pack [accessed 11 Mar 2024].
+- Beelim Solutions. (2023) ‘3d Models: Early Modern / Colonial Town Scene’ [graphics], available: https://beelim-solutions.itch.io/3d-models-early-town [accessed 11 Mar 2024].
+- chilly_durango. (2021) ‘3D Retro Medieval/Fantasy Building Kit’ [graphics], available: https://chilly-durango.itch.io/medieval-building-parts [accessed 04 Feb 2024].
+- CogFireStudios. (2022) ‘Big Scary Portal 2’ [audio], available: https://freesound.org/people/CogFireStudios/sounds/617762/ [accessed 20 Apr 2024].
+- CogFireStudios. (2022) ‘Big Scary Portal Open’ [audio], available: https://freesound.org/people/CogFireStudios/sounds/617761/ [accessed 20 Apr 2024].
+- Coppio, L. (2021) ‘Fullplate Armor Knight’ [graphics], available: https://scoppio.itch.io/fullplate-armor-knight [accessed 14 Jan 2024].
+- craigsmith. (2019) ‘R27-25-Large Fire Burning.wav’ [audio], available: https://freesound.org/people/craigsmith/sounds/483318/ [accessed 04 Apr 2024].
+- CrimsongCat. (2022) ‘PSX Sword / Espada PS1’ [graphics], available: https://crimsongcat.itch.io/psx-sword-espada-ps1 [accessed 21 Jan 2024].
+- D001447733. (2019) ‘Enemy_Hit.wav’ [audio], available: https://freesound.org/people/D001447733/sounds/464623/ [accessed 03 Apr 2024].
+- De Groote, H. (2022) ‘#Sacritober [2022]’ [graphics], available: https://hugodg.itch.io/sacritober-2022 [accessed 14 Jan 2024].
+- Doctor_sci3ence. (2022) ‘PSX Revolver Pack’ [graphics], available: https://doctorsci3nce.itch.io/psx-revolver-pack [accessed 21 Jan 2024].
+- Doctor_sci3ence. (2022) ‘PSX Shotgun Asset Pack’ [graphics], available: https://doctorsci3nce.itch.io/psx-shotgun-asset-pack [accessed 21 Jan 2024].71
+- Elegant Crow. (2022) ‘Retro PSX Nature Pack’ [graphics], available: https://elegantcrow.itch.io/retro-psx-nature-pack [accessed 25 Feb 2024].
+- EminYILDIRIM. (2022) ‘Magic Fire Impact’ [audio], available: https://freesound.org/people/EminYILDIRIM/sounds/626120/ [accessed 17 Feb 2024].
+- EminYILDRIM. (2023) ‘Monster Scream Pain’ [audio], available: https://freesound.org/people/EminYILDIRIM/sounds/674746/ [accessed 12 Apr 2024].
+- ito. (2022) ‘TSOR80 Soundtrack’ [audio], available: https://theitoproject.itch.io/the-shadowover-route-80-soundtrack [accessed 02 Apr 2024].
+- halfhuman. (2022) ‘PS1 Asset Pack Volume 1’ [graphics], available: https://halfhuman.itch.io/ps1-game-asset-vol1 [accessed 15 Jan 2024].
+- Hoad, N. (2022) ‘godot_dialogue_manager’ [code], available: https://github.com/nathanhoad/godot_dialogue_manager [accessed 21 Apr 2024].
+- Kamelionn. (2023) ‘MG 3 for Low Poly, PSX n PS2’ [graphics], available: https://kamelionn.itch.io/mg-3-for-psx-n-ps2 [accessed 21 Jan 2024].
+- Kenny. (2018) ‘Particle Pack’ [graphics], available: https://www.kenney.nl/assets/particle-pack [accessed 10 Apr 2024].
+- KeshaFilm. (2019) ‘Health Pickup’ [audio], available: https://freesound.org/people/KeshaFilm/sounds/471834/ [accessed 14 Apr 2024].
+- Koenig, M. (n.d.) ‘Bottle Rocket’ [audio], available: https://soundbible.com/709-BottleRocket.html [accessed 15 Feb 2024].
+- LeMudCrab. (2012) ‘Grenade Launcher’ [audio], available: https://freesound.org/people/LeMudCrab/sounds/163458/ [accessed 15 Feb 2024].
+- MCSTEEG. (2022) ‘PSX Village Woman Character’ [graphics], available: https://mcsteeg.itch.io/psx-style-villager-woman [accessed 14 Jan 2024].
+- Megabyte Games. (2022) ‘Mouse Cursor Pack’ [graphics], available: https://megabytegames.itch.io/mouse-cursor-pack [accessed 02 Mar 2024].
+- Nox_Sound_Design. (2022) ‘Essentials Series NOX SOUND’ [audio], available: https://noxsound-design.itch.io/essentials-series-sfx-nox-sound [accessed 15 Mar 2024].
+- pepingrillin. (2014) ‘spawn.ogg’ [audio], available: https://freesound.org/people/pepingrillin/sounds/252083/ [accessed 20 Mar 2024].
+- Philip_Erd. (2022) ‘LoFi3D Pirate Scenery’ [graphics], available: https://philiperd.itch.io/lofi3d-pirate-scenery [accessed 21 Feb 2024].
+- Philip_Erd. (2023) ‘LoFi3D Castle’ [graphics], available: https://philip-erd.itch.io/lofi3d-castle [accessed 04 Feb 2024].
+- SamGrady. (2023) ‘medieval buildings’ [graphics], available: https://samgrady.itch.io/medieval-buildings [accessed 02 Feb 2024].72
+- SonoFxAudio. (2022) ‘Sword_Fire01.wav’ [audio], available: https://freesound.org/people/SonoFxAudio/sounds/649361/ [accessed 27 Feb 2024].
+- SuperSouper. (2023) ‘Big impact blood 1.WAV’ [audio], available: https://freesound.org/people/SuperSouper/sounds/681767/ [accessed 03 Apr 2024].
+- SuperSouper. (2023) ‘Big impact blood 2.WAV’ [audio], available: https://freesound.org/people/SuperSouper/sounds/681768/ [accessed 03 Apr 2024].
+- SuperSouper. (2023) ‘Big impact blood 3.WAV’ [audio], available: https://freesound.org/people/SuperSouper/sounds/681769/ [accessed 03 Apr 2024].
+- taure. (2021) ‘Death Magic prolonged.wav’ [audio], available: https://freesound.org/people/taure/sounds/569787/ [accessed 02 Feb 2024].
+- Titanium Rat. (2022) ‘PSX Viking armor chad’ [graphics], available: https://titaniumrat42.itch.io/psx-viking-armor-chad [accessed 14 Jan 2024].
+- Walters, N. (2021) ‘How to Make a Retro Style 3D FPS in the Godot Game Engine’, Udemy, available: https://www.udemy.com/course/how-to-make-a-retro-style-3d-fps-in-the-godotgame-engine/ [accessed 06 Jan 2024].
+- xFromarge1. (2020) ‘Grenade_Mag_Open_04.wav’ [audio], available: https://freesound.org/people/xFromarge1/sounds/520043/ [accessed 19 Feb 2024].
+- zivs. (2018) ‘Ammo pickup #1’ [audio], available: https://freesound.org/people/zivs/sounds/433770/ [accessed 14 Apr 2024].
