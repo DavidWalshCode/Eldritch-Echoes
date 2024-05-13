@@ -1,6 +1,6 @@
 # Eldritch Echoes
 
- ***Essentially:*** Groundhog Day meets a first-person shooter (FPS) game with a Lovecraftian Horror theme.
+ ***Essentially:*** Groundhog Day meets a retro first-person shooter (FPS) game with a Lovecraftian Horror theme.
 
  Eldritch Echoes is my final year project for my degree and first major project as a solo developer!
 
