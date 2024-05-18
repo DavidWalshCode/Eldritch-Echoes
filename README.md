@@ -41,9 +41,12 @@
 
  **Goals:**
 
-    - Create a narrative linked to the game’s environment. The player's death has a lasting impact, meaningfully altering the world and its inhabitants. 
-    - Emphasis on the technical implementation within the Godot game engine, developing a system that enables the game environment and its narrative components to adapt dynamically in response to player death.
-    - Game maintains the feel of a classic retro FPS, preserving the aesthetic and gameplay characteristics of the genre, fast, fluid, and visually reminiscent of the genre’s classics all while integrating modern narrative techniques. 
+    - Create a narrative linked to the game’s environment. The player's death has a lasting impact, meaningfully altering the world and its inhabitants.
+    
+    - Emphasis on the technical implementation within the Godot game engine, developing a system that enables the game environment and its narrative components to adapt dynamically in response to player death/
+    
+    - Game maintains the feel of a classic retro FPS, preserving the aesthetic and gameplay characteristics of the genre, fast, fluid, and visually reminiscent of the genre’s classics all while integrating modern narrative techniques.
+    
     - Weave in the essence of Lovecraftian horror, utilising its themes to cultivate an atmosphere filled with cosmic dread and mystery, enriching the storytelling and enhancing the overall experience for the player.
 
 ***Research Question:*** “To what extent is it possible to implement environmental storytelling in a retro first-person shooter game in Godot?”.
@@ -62,9 +65,13 @@
  **Insights & Learnings:**
 
     - Diversity in enemy design and responsive weapon mechanics were crucial for enriching combat dynamics, offering varied encounters and satisfying player interactions.
+    
     - Environmental storytelling through progressive-level corruption, atmospheric effects, and NPC dialogue effectively conveyed the narrative depth and escalating tension.
+    
     - Strategic asset management, including modular assets and dynamic loading techniques, was vital for balancing visual richness and optimal game performance.
+    
     - A systematic asset tagging and organization approach facilitated smooth transitions between development phases and ensured assets were easily identifiable and accessible.
+    
     - The cyclical game structure, leveraging repeating levels with increasing corruption, built anticipation and highlighted the game's central themes, making every iteration meaningful and engaging.
 
  **Known Issues (ran out of time to fix/implement):**
