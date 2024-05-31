@@ -76,7 +76,9 @@
 
  **Known Issues (ran out of time to fix/implement):**
 
-    - Only 4 enemies can be spawned at once because of performance problem, more enemies would be way better.
-    - Big FPS issues on final level, especially when on an elevated surface with enemies chasing you.
-    - NPCs with no idle animations or hurt/death state.
+    - Only 4 enemies can be spawned at once because of massive performance problems, more enemies would be way better.
+    - Big FPS issues on the final level, especially when on an elevated surface with enemies chasing you.
+    - NPCs with no idle animations or a hurt/death state.
     - Game does not get more difficult after recieving a new weapon/surviving the time limit.
+    - No mouse sensitivty setting.
+    - Getting stuck on certain characters and buildings (have to restart sorry).
